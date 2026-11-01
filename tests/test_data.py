@@ -1,9 +1,18 @@
 import unittest
 
-from catvision.data import audit_records, choose_comparison
+from catvision.data import audit_records, choose_comparison, make_view_record
 
 
 class DataTests(unittest.TestCase):
+    def test_detection_failure_cannot_overwrite_source_label_or_split(self):
+        source = {"image_id": "r", "breed": "Ragdoll", "split": "train", "sha256": "source-hash"}
+        prediction = {"status": "no_cat", "breed": None, "split": "test"}
+        view = make_view_record(source, prediction)
+        self.assertEqual(view["breed"], "Ragdoll")
+        self.assertEqual(view["split"], "train")
+        self.assertEqual(view["status"], "no_cat")
+        self.assertTrue(view["classifier_view_fallback"])
+
     def test_same_photo_in_train_and_test_is_rejected(self):
         records = [
             {"image_id": "a", "sha256": "same", "split": "train", "breed": "Ragdoll"},

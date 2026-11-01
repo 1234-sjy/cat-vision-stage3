@@ -11,6 +11,11 @@ import random
 from .common import BREEDS, load_image, save_json
 
 
+def make_view_record(source: dict, prediction: dict) -> dict:
+    # Ground truth belongs to the source image; model status must never replace it.
+    return {**prediction, **source, "classifier_view_fallback": prediction.get("status") != "ok"}
+
+
 def audit_records(records: list[dict]) -> None:
     seen = {}
     for record in records:

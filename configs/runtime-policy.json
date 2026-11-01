@@ -1,0 +1,15 @@
+{
+  "allow_formal_training": false,
+  "max_model_tasks": 1,
+  "download_parallelism": 1,
+  "download_attempts": 1,
+  "gpu_validation_batch": 2,
+  "gpu_interactive_batch": 1,
+  "workers": 0,
+  "synchronize_after_batch": true,
+  "pause_seconds_after_sync": 0.2,
+  "automatic_retry": false,
+  "automatic_restart": false,
+  "failure_requires_manual_handling": true,
+  "preserve_requirements_and_stage2_data": true
+}

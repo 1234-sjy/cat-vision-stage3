@@ -1,0 +1,10 @@
+{
+  "detector": "yolo26n.pt",
+  "detector_conf": 0.15,
+  "segmenter": "sam2.1_t.pt",
+  "crop_margin": 0.06,
+  "training_views_per_source": 2,
+  "validation_views_per_source": 1,
+  "source_count": 1188,
+  "note": "Views share original source split; test images excluded."
+}

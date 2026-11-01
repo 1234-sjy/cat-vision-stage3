@@ -1,0 +1,23 @@
+[
+  {
+    "file": "weights\\yolo26n.pt",
+    "bytes": 5544453,
+    "sha256": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+    "source": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yolo26n.pt",
+    "upstream_source": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yolo26n.pt"
+  },
+  {
+    "file": "weights\\yolo26s-cls.pt",
+    "bytes": 13622082,
+    "sha256": "816790029d5df3fef358f03c8144b96339d8824ee25577aeda8be0963e5c5f09",
+    "source": "https://hf-mirror.com/Ultralytics/YOLO26/resolve/main/yolo26s-cls.pt",
+    "upstream_source": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yolo26s-cls.pt"
+  },
+  {
+    "file": "weights\\sam2.1_t.pt",
+    "bytes": 78105722,
+    "sha256": "3c1e81ca9b037dd39d70a014ddb9a813d6c4c4e12555420db7eaff31689bd4e3",
+    "source": "https://hf-mirror.com/spaces/ArctionO/sam2-mask-replacement/resolve/main/sam2.1_t.pt",
+    "upstream_source": "https://github.com/ultralytics/assets/releases/download/v8.4.0/sam2.1_t.pt"
+  }
+]

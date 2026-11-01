@@ -1,0 +1,20 @@
+TASK START repair-zero-configurations; logs=artifacts/run-logs/20261101T155433Z-repair-zero-configurations-a2ff02be
+DOWNLOAD ONCE model.safetensors.index.json.verified resume 0
+READY model.safetensors.index.json.verified 64742
+REPAIRED ALL-ZERO CONFIG model.safetensors.index.json
+DOWNLOAD ONCE preprocessor_config.json.verified resume 0
+READY preprocessor_config.json.verified 390
+REPAIRED ALL-ZERO CONFIG preprocessor_config.json
+DOWNLOAD ONCE tokenizer.json.verified resume 0
+READY tokenizer.json.verified 7032403
+REPAIRED ALL-ZERO CONFIG tokenizer.json
+DOWNLOAD ONCE tokenizer_config.json.verified resume 0
+READY tokenizer_config.json.verified 10868
+REPAIRED ALL-ZERO CONFIG tokenizer_config.json
+DOWNLOAD ONCE video_preprocessor_config.json.verified resume 0
+READY video_preprocessor_config.json.verified 385
+REPAIRED ALL-ZERO CONFIG video_preprocessor_config.json
+DOWNLOAD ONCE vocab.json.verified resume 0
+READY vocab.json.verified 2776833
+REPAIRED ALL-ZERO CONFIG vocab.json
+TASK END repair-zero-configurations; state=completed

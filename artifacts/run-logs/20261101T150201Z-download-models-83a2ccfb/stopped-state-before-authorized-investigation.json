@@ -1,0 +1,16 @@
+{
+  "task": "download-models",
+  "state": "failed",
+  "pid": 11480,
+  "created_utc": "2026-11-01T15:02:01.712915+00:00",
+  "logs": "artifacts/run-logs/20261101T150201Z-download-models-83a2ccfb",
+  "automatic_retry": false,
+  "automatic_restart": false,
+  "argv": [
+    "scripts/download_models.py",
+    "--only",
+    "vlm"
+  ],
+  "finished_utc": "2026-11-01T15:06:45.238451+00:00",
+  "error": "RuntimeError: Assembled model checksum mismatch: model-00001-of-00002.safetensors"
+}

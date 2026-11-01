@@ -1,0 +1,1506 @@
+{
+  "yolo26n.pt": {
+    "metrics": {
+      "0.05": {
+        "localized_cats": 230,
+        "cat_count": 238,
+        "false_cat_on_dog": 7,
+        "dog_count": 50
+      },
+      "0.1": {
+        "localized_cats": 230,
+        "cat_count": 238,
+        "false_cat_on_dog": 4,
+        "dog_count": 50
+      },
+      "0.15": {
+        "localized_cats": 229,
+        "cat_count": 238,
+        "false_cat_on_dog": 4,
+        "dog_count": 50
+      },
+      "0.25": {
+        "localized_cats": 221,
+        "cat_count": 238,
+        "false_cat_on_dog": 4,
+        "dog_count": 50
+      }
+    },
+    "origin": "earlier completed validation; older batch/timing settings"
+  },
+  "yolo26m.pt": {
+    "metrics": {
+      "0.05": {
+        "localized_cats": 229,
+        "cat_count": 238,
+        "false_cat_on_dog": 2,
+        "dog_count": 50
+      },
+      "0.1": {
+        "localized_cats": 228,
+        "cat_count": 238,
+        "false_cat_on_dog": 1,
+        "dog_count": 50
+      },
+      "0.15": {
+        "localized_cats": 226,
+        "cat_count": 238,
+        "false_cat_on_dog": 0,
+        "dog_count": 50
+      },
+      "0.25": {
+        "localized_cats": 224,
+        "cat_count": 238,
+        "false_cat_on_dog": 0,
+        "dog_count": 50
+      }
+    },
+    "seconds": 441.4721399,
+    "records": [
+      {
+        "image_id": "Abyssinian_111",
+        "is_cat": true,
+        "cat_score": 0.9491407871246338
+      },
+      {
+        "image_id": "Abyssinian_113",
+        "is_cat": true,
+        "cat_score": 0.9408915638923645
+      },
+      {
+        "image_id": "Abyssinian_117",
+        "is_cat": true,
+        "cat_score": 0.9413726329803467
+      },
+      {
+        "image_id": "Abyssinian_121",
+        "is_cat": true,
+        "cat_score": 0.8966227769851685
+      },
+      {
+        "image_id": "Abyssinian_124",
+        "is_cat": true,
+        "cat_score": 0.942783772945404
+      },
+      {
+        "image_id": "Abyssinian_128",
+        "is_cat": true,
+        "cat_score": 0.962345540523529
+      },
+      {
+        "image_id": "Abyssinian_132",
+        "is_cat": true,
+        "cat_score": 0.9428979158401489
+      },
+      {
+        "image_id": "Abyssinian_136",
+        "is_cat": true,
+        "cat_score": 0.9452896118164062
+      },
+      {
+        "image_id": "Abyssinian_142",
+        "is_cat": true,
+        "cat_score": 0.9280281662940979
+      },
+      {
+        "image_id": "Abyssinian_157",
+        "is_cat": true,
+        "cat_score": 0.9647634029388428
+      },
+      {
+        "image_id": "Abyssinian_170",
+        "is_cat": true,
+        "cat_score": 0.9609968662261963
+      },
+      {
+        "image_id": "Abyssinian_174",
+        "is_cat": true,
+        "cat_score": 0.9150646328926086
+      },
+      {
+        "image_id": "Abyssinian_18",
+        "is_cat": true,
+        "cat_score": 0.9462077617645264
+      },
+      {
+        "image_id": "Abyssinian_180",
+        "is_cat": true,
+        "cat_score": 0.9445616006851196
+      },
+      {
+        "image_id": "Abyssinian_181",
+        "is_cat": true,
+        "cat_score": 0.90080326795578
+      },
+      {
+        "image_id": "Abyssinian_182",
+        "is_cat": true,
+        "cat_score": 0.8079653978347778
+      },
+      {
+        "image_id": "Abyssinian_185",
+        "is_cat": true,
+        "cat_score": 0.9316797852516174
+      },
+      {
+        "image_id": "Abyssinian_19",
+        "is_cat": true,
+        "cat_score": 0.9572858810424805
+      },
+      {
+        "image_id": "Abyssinian_193",
+        "is_cat": true,
+        "cat_score": 0.6877610683441162
+      },
+      {
+        "image_id": "Abyssinian_196",
+        "is_cat": true,
+        "cat_score": 0.908722996711731
+      },
+      {
+        "image_id": "Bengal_104",
+        "is_cat": true,
+        "cat_score": 0.9663691520690918
+      },
+      {
+        "image_id": "Bengal_106",
+        "is_cat": true,
+        "cat_score": 0.9679710865020752
+      },
+      {
+        "image_id": "Bengal_115",
+        "is_cat": true,
+        "cat_score": 0.9599226117134094
+      },
+      {
+        "image_id": "Bengal_119",
+        "is_cat": true,
+        "cat_score": 0.9446728229522705
+      },
+      {
+        "image_id": "Bengal_124",
+        "is_cat": true,
+        "cat_score": 0.9511106014251709
+      },
+      {
+        "image_id": "Bengal_130",
+        "is_cat": true,
+        "cat_score": 0.9468920826911926
+      },
+      {
+        "image_id": "Bengal_131",
+        "is_cat": true,
+        "cat_score": 0.7600908875465393
+      },
+      {
+        "image_id": "Bengal_138",
+        "is_cat": true,
+        "cat_score": 0.9364352226257324
+      },
+      {
+        "image_id": "Bengal_14",
+        "is_cat": true,
+        "cat_score": 0.9658921360969543
+      },
+      {
+        "image_id": "Bengal_141",
+        "is_cat": true,
+        "cat_score": 0.9145932197570801
+      },
+      {
+        "image_id": "Bengal_146",
+        "is_cat": true,
+        "cat_score": 0.8271089792251587
+      },
+      {
+        "image_id": "Bengal_155",
+        "is_cat": true,
+        "cat_score": 0.9034977555274963
+      },
+      {
+        "image_id": "Bengal_158",
+        "is_cat": true,
+        "cat_score": 0.9301772117614746
+      },
+      {
+        "image_id": "Bengal_162",
+        "is_cat": true,
+        "cat_score": 0.9394221901893616
+      },
+      {
+        "image_id": "Bengal_163",
+        "is_cat": true,
+        "cat_score": 0.934766948223114
+      },
+      {
+        "image_id": "Bengal_165",
+        "is_cat": true,
+        "cat_score": 0.9533397555351257
+      },
+      {
+        "image_id": "Bengal_175",
+        "is_cat": true,
+        "cat_score": 0.9462184906005859
+      },
+      {
+        "image_id": "Bengal_180",
+        "is_cat": true,
+        "cat_score": 0.9598402976989746
+      },
+      {
+        "image_id": "Bengal_186",
+        "is_cat": true,
+        "cat_score": 0.9511191248893738
+      },
+      {
+        "image_id": "Bengal_190",
+        "is_cat": true,
+        "cat_score": 0.9639516472816467
+      },
+      {
+        "image_id": "Birman_105",
+        "is_cat": true,
+        "cat_score": 0.4342787265777588
+      },
+      {
+        "image_id": "Birman_108",
+        "is_cat": true,
+        "cat_score": 0.948314905166626
+      },
+      {
+        "image_id": "Birman_110",
+        "is_cat": true,
+        "cat_score": 0.8786135911941528
+      },
+      {
+        "image_id": "Birman_114",
+        "is_cat": true,
+        "cat_score": 0.9496779441833496
+      },
+      {
+        "image_id": "Birman_115",
+        "is_cat": true,
+        "cat_score": 0.822431743144989
+      },
+      {
+        "image_id": "Birman_116",
+        "is_cat": true,
+        "cat_score": 0.9628238081932068
+      },
+      {
+        "image_id": "Birman_117",
+        "is_cat": true,
+        "cat_score": 0.9572123289108276
+      },
+      {
+        "image_id": "Birman_12",
+        "is_cat": true,
+        "cat_score": 0.9184586405754089
+      },
+      {
+        "image_id": "Birman_127",
+        "is_cat": true,
+        "cat_score": 0.9517252445220947
+      },
+      {
+        "image_id": "Birman_139",
+        "is_cat": true,
+        "cat_score": 0.9703727960586548
+      },
+      {
+        "image_id": "Birman_140",
+        "is_cat": true,
+        "cat_score": 0.9690866470336914
+      },
+      {
+        "image_id": "Birman_143",
+        "is_cat": true,
+        "cat_score": 0.8398459553718567
+      },
+      {
+        "image_id": "Birman_15",
+        "is_cat": true,
+        "cat_score": 0.6374046802520752
+      },
+      {
+        "image_id": "Birman_164",
+        "is_cat": true,
+        "cat_score": 0.9362978339195251
+      },
+      {
+        "image_id": "Birman_165",
+        "is_cat": true,
+        "cat_score": 0.7471030950546265
+      },
+      {
+        "image_id": "Birman_167",
+        "is_cat": true,
+        "cat_score": 0.9511011242866516
+      },
+      {
+        "image_id": "Birman_168",
+        "is_cat": true,
+        "cat_score": 0.34047791361808777
+      },
+      {
+        "image_id": "Birman_170",
+        "is_cat": true,
+        "cat_score": 0.9322085380554199
+      },
+      {
+        "image_id": "Birman_171",
+        "is_cat": true,
+        "cat_score": 0.9341649413108826
+      },
+      {
+        "image_id": "Birman_172",
+        "is_cat": true,
+        "cat_score": 0.19977861642837524
+      },
+      {
+        "image_id": "Bombay_105",
+        "is_cat": true,
+        "cat_score": 0.9339491724967957
+      },
+      {
+        "image_id": "Bombay_106",
+        "is_cat": true,
+        "cat_score": 0.9547129273414612
+      },
+      {
+        "image_id": "Bombay_109",
+        "is_cat": true,
+        "cat_score": 0.9528793692588806
+      },
+      {
+        "image_id": "Bombay_110",
+        "is_cat": true,
+        "cat_score": 0.9356472492218018
+      },
+      {
+        "image_id": "Bombay_115",
+        "is_cat": true,
+        "cat_score": 0.93072909116745
+      },
+      {
+        "image_id": "Bombay_122",
+        "is_cat": true,
+        "cat_score": 0.3298833966255188
+      },
+      {
+        "image_id": "Bombay_126",
+        "is_cat": true,
+        "cat_score": 0.944514274597168
+      },
+      {
+        "image_id": "Bombay_130",
+        "is_cat": true,
+        "cat_score": 0.11197881400585175
+      },
+      {
+        "image_id": "Bombay_131",
+        "is_cat": true,
+        "cat_score": 0.949876606464386
+      },
+      {
+        "image_id": "Bombay_140",
+        "is_cat": true,
+        "cat_score": 0.9362609386444092
+      },
+      {
+        "image_id": "Bombay_145",
+        "is_cat": true,
+        "cat_score": 0.9678747057914734
+      },
+      {
+        "image_id": "Bombay_156",
+        "is_cat": true,
+        "cat_score": 0.8047254681587219
+      },
+      {
+        "image_id": "Bombay_16",
+        "is_cat": true,
+        "cat_score": 0.9580036997795105
+      },
+      {
+        "image_id": "Bombay_160",
+        "is_cat": true,
+        "cat_score": 0.9104579091072083
+      },
+      {
+        "image_id": "Bombay_168",
+        "is_cat": true,
+        "cat_score": 0.9458502531051636
+      },
+      {
+        "image_id": "Bombay_171",
+        "is_cat": true,
+        "cat_score": 0.49240317940711975
+      },
+      {
+        "image_id": "Bombay_174",
+        "is_cat": true,
+        "cat_score": 0.9553976058959961
+      },
+      {
+        "image_id": "Bombay_175",
+        "is_cat": true,
+        "cat_score": 0.9292459487915039
+      },
+      {
+        "image_id": "Bombay_182",
+        "is_cat": true,
+        "cat_score": 0.9528229236602783
+      },
+      {
+        "image_id": "British_Shorthair_10",
+        "is_cat": true,
+        "cat_score": 0.9630061388015747
+      },
+      {
+        "image_id": "British_Shorthair_104",
+        "is_cat": true,
+        "cat_score": 0.9493207335472107
+      },
+      {
+        "image_id": "British_Shorthair_109",
+        "is_cat": true,
+        "cat_score": 0.9722621440887451
+      },
+      {
+        "image_id": "British_Shorthair_116",
+        "is_cat": true,
+        "cat_score": 0.9444465041160583
+      },
+      {
+        "image_id": "British_Shorthair_120",
+        "is_cat": true,
+        "cat_score": 0.3248874545097351
+      },
+      {
+        "image_id": "British_Shorthair_125",
+        "is_cat": true,
+        "cat_score": 0.9736498594284058
+      },
+      {
+        "image_id": "British_Shorthair_129",
+        "is_cat": true,
+        "cat_score": 0.9530449509620667
+      },
+      {
+        "image_id": "British_Shorthair_148",
+        "is_cat": true,
+        "cat_score": 0.9397966265678406
+      },
+      {
+        "image_id": "British_Shorthair_153",
+        "is_cat": true,
+        "cat_score": 0.9537456631660461
+      },
+      {
+        "image_id": "British_Shorthair_157",
+        "is_cat": true,
+        "cat_score": 0.8803935647010803
+      },
+      {
+        "image_id": "British_Shorthair_163",
+        "is_cat": true,
+        "cat_score": 0.9616589546203613
+      },
+      {
+        "image_id": "British_Shorthair_168",
+        "is_cat": true,
+        "cat_score": 0.9212439656257629
+      },
+      {
+        "image_id": "British_Shorthair_17",
+        "is_cat": true,
+        "cat_score": 0.9454957842826843
+      },
+      {
+        "image_id": "British_Shorthair_177",
+        "is_cat": true,
+        "cat_score": 0.9427088499069214
+      },
+      {
+        "image_id": "British_Shorthair_180",
+        "is_cat": true,
+        "cat_score": 0.9104764461517334
+      },
+      {
+        "image_id": "British_Shorthair_185",
+        "is_cat": true,
+        "cat_score": 0.9392293095588684
+      },
+      {
+        "image_id": "British_Shorthair_188",
+        "is_cat": true,
+        "cat_score": 0.9379982948303223
+      },
+      {
+        "image_id": "British_Shorthair_190",
+        "is_cat": true,
+        "cat_score": 0.8862985372543335
+      },
+      {
+        "image_id": "British_Shorthair_195",
+        "is_cat": true,
+        "cat_score": 0.8931673169136047
+      },
+      {
+        "image_id": "British_Shorthair_204",
+        "is_cat": true,
+        "cat_score": 0.9576819539070129
+      },
+      {
+        "image_id": "Egyptian_Mau_102",
+        "is_cat": true,
+        "cat_score": 0.9437023401260376
+      },
+      {
+        "image_id": "Egyptian_Mau_117",
+        "is_cat": true,
+        "cat_score": 0.9630196690559387
+      },
+      {
+        "image_id": "Egyptian_Mau_119",
+        "is_cat": true,
+        "cat_score": 0.9455038905143738
+      },
+      {
+        "image_id": "Egyptian_Mau_12",
+        "is_cat": true,
+        "cat_score": 0.9643688797950745
+      },
+      {
+        "image_id": "Egyptian_Mau_125",
+        "is_cat": true,
+        "cat_score": 0.9492496848106384
+      },
+      {
+        "image_id": "Egyptian_Mau_127",
+        "is_cat": true,
+        "cat_score": 0.9450179934501648
+      },
+      {
+        "image_id": "Egyptian_Mau_128",
+        "is_cat": true,
+        "cat_score": 0.8884853720664978
+      },
+      {
+        "image_id": "Egyptian_Mau_133",
+        "is_cat": true,
+        "cat_score": 0.9597912430763245
+      },
+      {
+        "image_id": "Egyptian_Mau_14",
+        "is_cat": true,
+        "cat_score": 0.7770023941993713
+      },
+      {
+        "image_id": "Egyptian_Mau_141",
+        "is_cat": true,
+        "cat_score": 0.9635952115058899
+      },
+      {
+        "image_id": "Egyptian_Mau_150",
+        "is_cat": true,
+        "cat_score": 0.935816764831543
+      },
+      {
+        "image_id": "Egyptian_Mau_173",
+        "is_cat": true,
+        "cat_score": 0.9023721218109131
+      },
+      {
+        "image_id": "Egyptian_Mau_175",
+        "is_cat": true,
+        "cat_score": 0.9654918909072876
+      },
+      {
+        "image_id": "Egyptian_Mau_178",
+        "is_cat": true,
+        "cat_score": 0.9393428564071655
+      },
+      {
+        "image_id": "Egyptian_Mau_185",
+        "is_cat": true,
+        "cat_score": 0.9073424935340881
+      },
+      {
+        "image_id": "Egyptian_Mau_187",
+        "is_cat": true,
+        "cat_score": 0.9581339955329895
+      },
+      {
+        "image_id": "Egyptian_Mau_189",
+        "is_cat": true,
+        "cat_score": 0.8982588648796082
+      },
+      {
+        "image_id": "Egyptian_Mau_190",
+        "is_cat": true,
+        "cat_score": 0.9561898708343506
+      },
+      {
+        "image_id": "Egyptian_Mau_195",
+        "is_cat": true,
+        "cat_score": 0.9363890886306763
+      },
+      {
+        "image_id": "Maine_Coon_1",
+        "is_cat": true,
+        "cat_score": 0.71600341796875
+      },
+      {
+        "image_id": "Maine_Coon_10",
+        "is_cat": true,
+        "cat_score": 0.9486767649650574
+      },
+      {
+        "image_id": "Maine_Coon_106",
+        "is_cat": true,
+        "cat_score": 0.9323620796203613
+      },
+      {
+        "image_id": "Maine_Coon_128",
+        "is_cat": true,
+        "cat_score": 0.9639748930931091
+      },
+      {
+        "image_id": "Maine_Coon_132",
+        "is_cat": true,
+        "cat_score": 0.8943181037902832
+      },
+      {
+        "image_id": "Maine_Coon_138",
+        "is_cat": true,
+        "cat_score": 0.8479427099227905
+      },
+      {
+        "image_id": "Maine_Coon_140",
+        "is_cat": true,
+        "cat_score": 0.9631107449531555
+      },
+      {
+        "image_id": "Maine_Coon_143",
+        "is_cat": true,
+        "cat_score": 0.7924656867980957
+      },
+      {
+        "image_id": "Maine_Coon_16",
+        "is_cat": true,
+        "cat_score": 0.28655433654785156
+      },
+      {
+        "image_id": "Maine_Coon_163",
+        "is_cat": true,
+        "cat_score": 0.9508253335952759
+      },
+      {
+        "image_id": "Maine_Coon_168",
+        "is_cat": true,
+        "cat_score": 0.9571945667266846
+      },
+      {
+        "image_id": "Maine_Coon_170",
+        "is_cat": true,
+        "cat_score": 0.9408738017082214
+      },
+      {
+        "image_id": "Maine_Coon_182",
+        "is_cat": true,
+        "cat_score": 0.9596136808395386
+      },
+      {
+        "image_id": "Maine_Coon_186",
+        "is_cat": true,
+        "cat_score": 0.9573007225990295
+      },
+      {
+        "image_id": "Maine_Coon_193",
+        "is_cat": true,
+        "cat_score": 0.9461707472801208
+      },
+      {
+        "image_id": "Maine_Coon_197",
+        "is_cat": true,
+        "cat_score": 0.9616028666496277
+      },
+      {
+        "image_id": "Maine_Coon_203",
+        "is_cat": true,
+        "cat_score": 0.9205204248428345
+      },
+      {
+        "image_id": "Maine_Coon_204",
+        "is_cat": true,
+        "cat_score": 0.9683555960655212
+      },
+      {
+        "image_id": "Maine_Coon_211",
+        "is_cat": true,
+        "cat_score": 0.8756732940673828
+      },
+      {
+        "image_id": "Maine_Coon_219",
+        "is_cat": true,
+        "cat_score": 0.9551834464073181
+      },
+      {
+        "image_id": "Persian_111",
+        "is_cat": true,
+        "cat_score": 0.8070346117019653
+      },
+      {
+        "image_id": "Persian_114",
+        "is_cat": true,
+        "cat_score": 0.9036516547203064
+      },
+      {
+        "image_id": "Persian_115",
+        "is_cat": true,
+        "cat_score": 0.9633522033691406
+      },
+      {
+        "image_id": "Persian_116",
+        "is_cat": true,
+        "cat_score": 0.9454073309898376
+      },
+      {
+        "image_id": "Persian_13",
+        "is_cat": true,
+        "cat_score": 0.9183477759361267
+      },
+      {
+        "image_id": "Persian_132",
+        "is_cat": true,
+        "cat_score": 0.7501243948936462
+      },
+      {
+        "image_id": "Persian_135",
+        "is_cat": true,
+        "cat_score": 0.8795769214630127
+      },
+      {
+        "image_id": "Persian_141",
+        "is_cat": true,
+        "cat_score": 0.5863752365112305
+      },
+      {
+        "image_id": "Persian_143",
+        "is_cat": true,
+        "cat_score": 0.9609357714653015
+      },
+      {
+        "image_id": "Persian_145",
+        "is_cat": true,
+        "cat_score": 0.9311361312866211
+      },
+      {
+        "image_id": "Persian_156",
+        "is_cat": true,
+        "cat_score": 0.9545272588729858
+      },
+      {
+        "image_id": "Persian_159",
+        "is_cat": true,
+        "cat_score": 0.9543010592460632
+      },
+      {
+        "image_id": "Persian_160",
+        "is_cat": true,
+        "cat_score": 0.9368808269500732
+      },
+      {
+        "image_id": "Persian_164",
+        "is_cat": true,
+        "cat_score": 0.9627858996391296
+      },
+      {
+        "image_id": "Persian_173",
+        "is_cat": true,
+        "cat_score": 0.9362190365791321
+      },
+      {
+        "image_id": "Persian_18",
+        "is_cat": true,
+        "cat_score": 0.9352278709411621
+      },
+      {
+        "image_id": "Persian_185",
+        "is_cat": true,
+        "cat_score": 0.9454347491264343
+      },
+      {
+        "image_id": "Persian_187",
+        "is_cat": true,
+        "cat_score": 0.5640921592712402
+      },
+      {
+        "image_id": "Persian_20",
+        "is_cat": true,
+        "cat_score": 0.9195688962936401
+      },
+      {
+        "image_id": "Persian_202",
+        "is_cat": true,
+        "cat_score": 0.9635136723518372
+      },
+      {
+        "image_id": "Ragdoll_10",
+        "is_cat": true,
+        "cat_score": 0.9083198308944702
+      },
+      {
+        "image_id": "Ragdoll_100",
+        "is_cat": true,
+        "cat_score": 0.9613494277000427
+      },
+      {
+        "image_id": "Ragdoll_106",
+        "is_cat": true,
+        "cat_score": 0.8700786828994751
+      },
+      {
+        "image_id": "Ragdoll_118",
+        "is_cat": true,
+        "cat_score": 0.9528312087059021
+      },
+      {
+        "image_id": "Ragdoll_121",
+        "is_cat": true,
+        "cat_score": 0.9380010366439819
+      },
+      {
+        "image_id": "Ragdoll_131",
+        "is_cat": true,
+        "cat_score": 0.9065949320793152
+      },
+      {
+        "image_id": "Ragdoll_133",
+        "is_cat": true,
+        "cat_score": 0.9563353061676025
+      },
+      {
+        "image_id": "Ragdoll_138",
+        "is_cat": true,
+        "cat_score": 0.8710415959358215
+      },
+      {
+        "image_id": "Ragdoll_142",
+        "is_cat": true,
+        "cat_score": 0.9668033123016357
+      },
+      {
+        "image_id": "Ragdoll_145",
+        "is_cat": true,
+        "cat_score": 0.8716304302215576
+      },
+      {
+        "image_id": "Ragdoll_148",
+        "is_cat": true,
+        "cat_score": 0.9364742040634155
+      },
+      {
+        "image_id": "Ragdoll_154",
+        "is_cat": true,
+        "cat_score": 0.9476268291473389
+      },
+      {
+        "image_id": "Ragdoll_162",
+        "is_cat": true,
+        "cat_score": 0.9544897675514221
+      },
+      {
+        "image_id": "Ragdoll_176",
+        "is_cat": true,
+        "cat_score": 0.9526584148406982
+      },
+      {
+        "image_id": "Ragdoll_18",
+        "is_cat": true,
+        "cat_score": 0.9420650601387024
+      },
+      {
+        "image_id": "Ragdoll_184",
+        "is_cat": true,
+        "cat_score": 0.9110886454582214
+      },
+      {
+        "image_id": "Ragdoll_187",
+        "is_cat": true,
+        "cat_score": 0.954102098941803
+      },
+      {
+        "image_id": "Ragdoll_188",
+        "is_cat": true,
+        "cat_score": 0.9583460688591003
+      },
+      {
+        "image_id": "Ragdoll_194",
+        "is_cat": true,
+        "cat_score": 0.9599860906600952
+      },
+      {
+        "image_id": "Ragdoll_199",
+        "is_cat": true,
+        "cat_score": 0.9361138343811035
+      },
+      {
+        "image_id": "Russian_Blue_1",
+        "is_cat": true,
+        "cat_score": 0.9418321847915649
+      },
+      {
+        "image_id": "Russian_Blue_100",
+        "is_cat": true,
+        "cat_score": 0.96235191822052
+      },
+      {
+        "image_id": "Russian_Blue_107",
+        "is_cat": true,
+        "cat_score": 0.9608060121536255
+      },
+      {
+        "image_id": "Russian_Blue_110",
+        "is_cat": true,
+        "cat_score": 0.9471202492713928
+      },
+      {
+        "image_id": "Russian_Blue_116",
+        "is_cat": true,
+        "cat_score": 0.9532662630081177
+      },
+      {
+        "image_id": "Russian_Blue_117",
+        "is_cat": true,
+        "cat_score": 0.9427652955055237
+      },
+      {
+        "image_id": "Russian_Blue_139",
+        "is_cat": true,
+        "cat_score": 0.9528733491897583
+      },
+      {
+        "image_id": "Russian_Blue_14",
+        "is_cat": true,
+        "cat_score": 0.7969509959220886
+      },
+      {
+        "image_id": "Russian_Blue_142",
+        "is_cat": true,
+        "cat_score": 0.9367347955703735
+      },
+      {
+        "image_id": "Russian_Blue_148",
+        "is_cat": true,
+        "cat_score": 0.9535492062568665
+      },
+      {
+        "image_id": "Russian_Blue_158",
+        "is_cat": true,
+        "cat_score": 0.9438884854316711
+      },
+      {
+        "image_id": "Russian_Blue_16",
+        "is_cat": true,
+        "cat_score": 0.9493020176887512
+      },
+      {
+        "image_id": "Russian_Blue_161",
+        "is_cat": true,
+        "cat_score": 0.9486972689628601
+      },
+      {
+        "image_id": "Russian_Blue_173",
+        "is_cat": true,
+        "cat_score": 0.9556885957717896
+      },
+      {
+        "image_id": "Russian_Blue_174",
+        "is_cat": true,
+        "cat_score": 0.9424651265144348
+      },
+      {
+        "image_id": "Russian_Blue_182",
+        "is_cat": true,
+        "cat_score": 0.8204087615013123
+      },
+      {
+        "image_id": "Russian_Blue_19",
+        "is_cat": true,
+        "cat_score": 0.9455503821372986
+      },
+      {
+        "image_id": "Russian_Blue_191",
+        "is_cat": true,
+        "cat_score": 0.9012307524681091
+      },
+      {
+        "image_id": "Russian_Blue_194",
+        "is_cat": true,
+        "cat_score": 0.942034900188446
+      },
+      {
+        "image_id": "Russian_Blue_199",
+        "is_cat": true,
+        "cat_score": 0.9500555992126465
+      },
+      {
+        "image_id": "Siamese_104",
+        "is_cat": true,
+        "cat_score": 0.9525225758552551
+      },
+      {
+        "image_id": "Siamese_106",
+        "is_cat": true,
+        "cat_score": 0.9614080190658569
+      },
+      {
+        "image_id": "Siamese_112",
+        "is_cat": true,
+        "cat_score": 0.8509145975112915
+      },
+      {
+        "image_id": "Siamese_120",
+        "is_cat": true,
+        "cat_score": 0.9001966118812561
+      },
+      {
+        "image_id": "Siamese_125",
+        "is_cat": true,
+        "cat_score": 0.9437580108642578
+      },
+      {
+        "image_id": "Siamese_127",
+        "is_cat": true,
+        "cat_score": 0.9435383677482605
+      },
+      {
+        "image_id": "Siamese_128",
+        "is_cat": true,
+        "cat_score": 0.8914982676506042
+      },
+      {
+        "image_id": "Siamese_130",
+        "is_cat": true,
+        "cat_score": 0.293316513299942
+      },
+      {
+        "image_id": "Siamese_131",
+        "is_cat": true,
+        "cat_score": 0.906542956829071
+      },
+      {
+        "image_id": "Siamese_133",
+        "is_cat": true,
+        "cat_score": 0.9503415822982788
+      },
+      {
+        "image_id": "Siamese_140",
+        "is_cat": true,
+        "cat_score": 0.9595631957054138
+      },
+      {
+        "image_id": "Siamese_150",
+        "is_cat": true,
+        "cat_score": 0.9529076218605042
+      },
+      {
+        "image_id": "Siamese_156",
+        "is_cat": true,
+        "cat_score": 0.9598540663719177
+      },
+      {
+        "image_id": "Siamese_161",
+        "is_cat": true,
+        "cat_score": 0.9582852721214294
+      },
+      {
+        "image_id": "Siamese_163",
+        "is_cat": true,
+        "cat_score": 0.9155417084693909
+      },
+      {
+        "image_id": "Siamese_174",
+        "is_cat": true,
+        "cat_score": 0.728691041469574
+      },
+      {
+        "image_id": "Siamese_183",
+        "is_cat": true,
+        "cat_score": 0.8418588042259216
+      },
+      {
+        "image_id": "Siamese_189",
+        "is_cat": true,
+        "cat_score": 0.9657653570175171
+      },
+      {
+        "image_id": "Siamese_205",
+        "is_cat": true,
+        "cat_score": 0.9339581727981567
+      },
+      {
+        "image_id": "Siamese_206",
+        "is_cat": true,
+        "cat_score": 0.9539233446121216
+      },
+      {
+        "image_id": "Sphynx_104",
+        "is_cat": true,
+        "cat_score": 0.7533445954322815
+      },
+      {
+        "image_id": "Sphynx_105",
+        "is_cat": true,
+        "cat_score": 0.6827338337898254
+      },
+      {
+        "image_id": "Sphynx_115",
+        "is_cat": true,
+        "cat_score": 0.5753512978553772
+      },
+      {
+        "image_id": "Sphynx_126",
+        "is_cat": true,
+        "cat_score": 0
+      },
+      {
+        "image_id": "Sphynx_128",
+        "is_cat": true,
+        "cat_score": 0.8487347364425659
+      },
+      {
+        "image_id": "Sphynx_134",
+        "is_cat": true,
+        "cat_score": 0.23416079580783844
+      },
+      {
+        "image_id": "Sphynx_138",
+        "is_cat": true,
+        "cat_score": 0
+      },
+      {
+        "image_id": "Sphynx_144",
+        "is_cat": true,
+        "cat_score": 0
+      },
+      {
+        "image_id": "Sphynx_152",
+        "is_cat": true,
+        "cat_score": 0.10129289329051971
+      },
+      {
+        "image_id": "Sphynx_156",
+        "is_cat": true,
+        "cat_score": 0
+      },
+      {
+        "image_id": "Sphynx_157",
+        "is_cat": true,
+        "cat_score": 0.0894295945763588
+      },
+      {
+        "image_id": "Sphynx_164",
+        "is_cat": true,
+        "cat_score": 0
+      },
+      {
+        "image_id": "Sphynx_166",
+        "is_cat": true,
+        "cat_score": 0.5465606451034546
+      },
+      {
+        "image_id": "Sphynx_171",
+        "is_cat": true,
+        "cat_score": 0
+      },
+      {
+        "image_id": "Sphynx_172",
+        "is_cat": true,
+        "cat_score": 0.9123051762580872
+      },
+      {
+        "image_id": "Sphynx_180",
+        "is_cat": true,
+        "cat_score": 0.7402816414833069
+      },
+      {
+        "image_id": "Sphynx_182",
+        "is_cat": true,
+        "cat_score": 0
+      },
+      {
+        "image_id": "Sphynx_183",
+        "is_cat": true,
+        "cat_score": 0
+      },
+      {
+        "image_id": "Sphynx_189",
+        "is_cat": true,
+        "cat_score": 0.27868276834487915
+      },
+      {
+        "image_id": "Sphynx_190",
+        "is_cat": true,
+        "cat_score": 0
+      },
+      {
+        "image_id": "american_bulldog_169",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "american_bulldog_149",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "american_pit_bull_terrier_134",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "american_pit_bull_terrier_141",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "basset_hound_133",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "basset_hound_12",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "beagle_193",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "beagle_185",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "boxer_181",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "boxer_162",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "chihuahua_176",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "chihuahua_131",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "english_cocker_spaniel_112",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "english_cocker_spaniel_102",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "english_setter_128",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "english_setter_144",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "german_shorthaired_186",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "german_shorthaired_148",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "great_pyrenees_129",
+        "is_cat": false,
+        "cat_score": 0.06302234530448914
+      },
+      {
+        "image_id": "great_pyrenees_158",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "havanese_136",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "havanese_173",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "japanese_chin_179",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "japanese_chin_183",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "keeshond_146",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "keeshond_115",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "leonberger_163",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "leonberger_106",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "miniature_pinscher_115",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "miniature_pinscher_122",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "newfoundland_117",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "newfoundland_185",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "pomeranian_161",
+        "is_cat": false,
+        "cat_score": 0.13119599223136902
+      },
+      {
+        "image_id": "pomeranian_164",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "pug_180",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "pug_124",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "saint_bernard_138",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "saint_bernard_162",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "samoyed_113",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "samoyed_182",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "scottish_terrier_173",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "scottish_terrier_107",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "shiba_inu_135",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "shiba_inu_15",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "staffordshire_bull_terrier_108",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "staffordshire_bull_terrier_162",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "wheaten_terrier_154",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "wheaten_terrier_173",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "yorkshire_terrier_169",
+        "is_cat": false,
+        "cat_score": 0
+      },
+      {
+        "image_id": "yorkshire_terrier_116",
+        "is_cat": false,
+        "cat_score": 0
+      }
+    ],
+    "batch": 2,
+    "workers": 0,
+    "pause_seconds_after_sync": 0.2,
+    "partial": false
+  }
+}

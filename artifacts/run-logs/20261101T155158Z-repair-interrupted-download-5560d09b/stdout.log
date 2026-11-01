@@ -1,0 +1,17 @@
+TASK START repair-interrupted-download; logs=artifacts/run-logs/20261101T155158Z-repair-interrupted-download-5560d09b
+REPAIR PLAN model-00001-of-00002.safetensors; identified blank blocks=[221, 227, 228, 229]; preserve=model-00001-of-00002.safetensors.assembled
+PATCH model-00001-of-00002.safetensors block=221; first_difference=14741504
+PATCH model-00001-of-00002.safetensors block=227; first_difference=14856192
+PATCH model-00001-of-00002.safetensors block=228; first_difference=8941568
+PATCH model-00001-of-00002.safetensors block=229; first_difference=3698688
+VERIFIED AND READY model-00001-of-00002.safetensors 30a01a0556622645a3cce87b655bbbbbc1f170c196099f1b666c93202c3339a9
+REPAIR PLAN model-00002-of-00002.safetensors; identified blank blocks=[227, 228, 229, 230, 231, 232]; preserve=model-00002-of-00002.safetensors
+PATCH model-00002-of-00002.safetensors block=227; first_difference=8388608
+PATCH model-00002-of-00002.safetensors block=228; first_difference=0
+PATCH model-00002-of-00002.safetensors block=229; first_difference=0
+PATCH model-00002-of-00002.safetensors block=230; first_difference=0
+PATCH model-00002-of-00002.safetensors block=231; first_difference=0
+PATCH model-00002-of-00002.safetensors block=232; first_difference=0
+VERIFIED AND READY model-00002-of-00002.safetensors 046296a2a387efb43b0c997d5833c789604d168834f6e0d3064bf7bb13d002a6
+IDENTIFIED BLANK RANGES REPAIRED; no GPU used
+TASK END repair-interrupted-download; state=completed

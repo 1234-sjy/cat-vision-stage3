@@ -1,0 +1,13 @@
+{
+  "task": "repair-interrupted-download",
+  "state": "completed",
+  "pid": 33980,
+  "created_utc": "2026-11-01T15:51:58.304226+00:00",
+  "logs": "artifacts/run-logs/20261101T155158Z-repair-interrupted-download-5560d09b",
+  "automatic_retry": false,
+  "automatic_restart": false,
+  "argv": [
+    "scripts/repair_interrupted_weights.py"
+  ],
+  "finished_utc": "2026-11-01T15:52:49.491692+00:00"
+}

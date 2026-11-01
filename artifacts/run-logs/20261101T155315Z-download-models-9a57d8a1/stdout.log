@@ -1,0 +1,10 @@
+TASK START download-models; logs=artifacts/run-logs/20261101T155315Z-download-models-9a57d8a1
+CACHED modelscope-files.json
+CACHED chat_template.json
+CACHED config.json
+CACHED configuration.json
+CACHED generation_config.json
+CACHED merges.txt
+CACHED model-00001-of-00002.safetensors
+CACHED model-00002-of-00002.safetensors
+TASK END download-models; state=failed

@@ -1,0 +1,15 @@
+{
+  "task": "validate-detector",
+  "state": "completed",
+  "pid": 31640,
+  "created_utc": "2026-11-01T15:55:23.031570+00:00",
+  "logs": "artifacts/run-logs/20261101T155523Z-validate-detector-c82611be",
+  "automatic_retry": false,
+  "automatic_restart": false,
+  "argv": [
+    "scripts/validate_detector.py",
+    "--data-root",
+    "../../work/cat-data/oxford-iiit-pet"
+  ],
+  "finished_utc": "2026-11-01T16:02:54.095731+00:00"
+}

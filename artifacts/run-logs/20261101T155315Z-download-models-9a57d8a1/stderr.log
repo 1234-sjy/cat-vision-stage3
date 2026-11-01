@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "C:\Users\sjysj\Documents\Codex\2026-10-31\new-chat\outputs\cat-vision-stage2\scripts\download_models.py", line 163, in <module>
+    main()
+  File "C:\Users\sjysj\Documents\Codex\2026-10-31\new-chat\outputs\cat-vision-stage2\scripts\download_models.py", line 157, in main
+    records = [fetch(item) for item in files]
+               ^^^^^^^^^^^
+  File "C:\Users\sjysj\Documents\Codex\2026-10-31\new-chat\outputs\cat-vision-stage2\scripts\download_models.py", line 156, in fetch
+    return download(url, ROOT / "weights/qwen3-vl-4b" / name, item["Size"], item["Sha256"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sjysj\Documents\Codex\2026-10-31\new-chat\outputs\cat-vision-stage2\scripts\download_models.py", line 90, in download
+    raise RuntimeError(f"Existing model size/checksum mismatch: {path.name}; stopped without replacement")
+RuntimeError: Existing model size/checksum mismatch: model.safetensors.index.json; stopped without replacement

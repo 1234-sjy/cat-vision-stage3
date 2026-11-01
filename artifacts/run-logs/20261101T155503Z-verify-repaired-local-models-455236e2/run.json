@@ -1,0 +1,13 @@
+{
+  "task": "verify-repaired-local-models",
+  "state": "completed",
+  "pid": 11268,
+  "created_utc": "2026-11-01T15:55:03.913300+00:00",
+  "logs": "artifacts/run-logs/20261101T155503Z-verify-repaired-local-models-455236e2",
+  "automatic_retry": false,
+  "automatic_restart": false,
+  "argv": [
+    "-"
+  ],
+  "finished_utc": "2026-11-01T15:55:10.365191+00:00"
+}

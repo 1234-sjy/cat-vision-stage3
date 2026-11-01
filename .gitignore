@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.superpowers/
+/weights/
+/data/
+/runtime/
+/runs/
+*.pt
+*.pth
+*.safetensors
+*.mp4
+.env

@@ -1,0 +1,74 @@
+{
+  "source": "Oxford-IIIT Pet",
+  "split_seed": 314159,
+  "comparison_seed": 20261101,
+  "counts": {
+    "train": 950,
+    "val": 238,
+    "test": 1183
+  },
+  "comparison_count": 120,
+  "removed_duplicates": [],
+  "class_counts": {
+    "Abyssinian": {
+      "train": 80,
+      "val": 20,
+      "test": 98
+    },
+    "Bengal": {
+      "test": 100,
+      "train": 80,
+      "val": 20
+    },
+    "Birman": {
+      "test": 100,
+      "train": 80,
+      "val": 20
+    },
+    "Bombay": {
+      "train": 77,
+      "val": 19,
+      "test": 88
+    },
+    "British_Shorthair": {
+      "val": 20,
+      "train": 80,
+      "test": 100
+    },
+    "Egyptian_Mau": {
+      "test": 97,
+      "train": 74,
+      "val": 19
+    },
+    "Maine_Coon": {
+      "val": 20,
+      "train": 80,
+      "test": 100
+    },
+    "Persian": {
+      "train": 80,
+      "val": 20,
+      "test": 100
+    },
+    "Ragdoll": {
+      "train": 80,
+      "val": 20,
+      "test": 100
+    },
+    "Russian_Blue": {
+      "val": 20,
+      "train": 80,
+      "test": 100
+    },
+    "Siamese": {
+      "train": 79,
+      "val": 20,
+      "test": 100
+    },
+    "Sphynx": {
+      "train": 80,
+      "val": 20,
+      "test": 100
+    }
+  }
+}

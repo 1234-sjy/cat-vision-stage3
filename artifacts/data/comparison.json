@@ -1,0 +1,1202 @@
+[
+  {
+    "image_id": "Abyssinian_96",
+    "relative_path": "images/Abyssinian_96.jpg",
+    "breed": "Abyssinian",
+    "breed_zh": "阿比西尼亚猫",
+    "split": "test",
+    "width": 375,
+    "height": 500,
+    "sha256": "ce08064472b9ebf54c7b3a3adca19b0e0b1f0f874c407ec09d82ad58641bee60"
+  },
+  {
+    "image_id": "Abyssinian_213",
+    "relative_path": "images/Abyssinian_213.jpg",
+    "breed": "Abyssinian",
+    "breed_zh": "阿比西尼亚猫",
+    "split": "test",
+    "width": 224,
+    "height": 300,
+    "sha256": "616aa752bc00c9c9c7ad5ffc38cf31d8bea4536a3d3602d42d731825b92e9a28"
+  },
+  {
+    "image_id": "Abyssinian_217",
+    "relative_path": "images/Abyssinian_217.jpg",
+    "breed": "Abyssinian",
+    "breed_zh": "阿比西尼亚猫",
+    "split": "test",
+    "width": 241,
+    "height": 244,
+    "sha256": "d65c558e8358b2b8c6072d312c301b2dbda1465e4f12169c45a2662421824c7c"
+  },
+  {
+    "image_id": "Abyssinian_52",
+    "relative_path": "images/Abyssinian_52.jpg",
+    "breed": "Abyssinian",
+    "breed_zh": "阿比西尼亚猫",
+    "split": "test",
+    "width": 500,
+    "height": 335,
+    "sha256": "cb4c7156045330ebbf4f9968a54d519012c7448e1a92ef57509d23383810b22e"
+  },
+  {
+    "image_id": "Abyssinian_207",
+    "relative_path": "images/Abyssinian_207.jpg",
+    "breed": "Abyssinian",
+    "breed_zh": "阿比西尼亚猫",
+    "split": "test",
+    "width": 208,
+    "height": 278,
+    "sha256": "0de9ecc9b843c0a7938794d424fc7dd5f9007714309ffae890c59ebc90c0cc6b"
+  },
+  {
+    "image_id": "Abyssinian_90",
+    "relative_path": "images/Abyssinian_90.jpg",
+    "breed": "Abyssinian",
+    "breed_zh": "阿比西尼亚猫",
+    "split": "test",
+    "width": 401,
+    "height": 500,
+    "sha256": "3ba30261c6f52e3226750067d97347dcfa732be2e357ebbcc7648a92e5d71c0c"
+  },
+  {
+    "image_id": "Abyssinian_205",
+    "relative_path": "images/Abyssinian_205.jpg",
+    "breed": "Abyssinian",
+    "breed_zh": "阿比西尼亚猫",
+    "split": "test",
+    "width": 240,
+    "height": 300,
+    "sha256": "f68008de593f7d8f627ab311cba2edcf1043d2c82c90305f549aa6f1866fd2c7"
+  },
+  {
+    "image_id": "Abyssinian_206",
+    "relative_path": "images/Abyssinian_206.jpg",
+    "breed": "Abyssinian",
+    "breed_zh": "阿比西尼亚猫",
+    "split": "test",
+    "width": 300,
+    "height": 279,
+    "sha256": "3f3149fb86ddd74cfd430c864b008ba9fc2263c59969590f8004580c7b1a0aee"
+  },
+  {
+    "image_id": "Abyssinian_86",
+    "relative_path": "images/Abyssinian_86.jpg",
+    "breed": "Abyssinian",
+    "breed_zh": "阿比西尼亚猫",
+    "split": "test",
+    "width": 333,
+    "height": 500,
+    "sha256": "dfe78e6ec4e8b898e524f575b478bf0d14a76deb8a748b68b013b3379bae52bf"
+  },
+  {
+    "image_id": "Abyssinian_26",
+    "relative_path": "images/Abyssinian_26.jpg",
+    "breed": "Abyssinian",
+    "breed_zh": "阿比西尼亚猫",
+    "split": "test",
+    "width": 500,
+    "height": 369,
+    "sha256": "9b8406aae4012cff8d51ec32813460a2e1238fc6cd3e337601e9239f18d1be23"
+  },
+  {
+    "image_id": "Bengal_40",
+    "relative_path": "images/Bengal_40.jpg",
+    "breed": "Bengal",
+    "breed_zh": "孟加拉猫",
+    "split": "test",
+    "width": 500,
+    "height": 500,
+    "sha256": "f47076a7cb1b39d4a82aaadff0848632a768fc7c6821d494a365f94944026733"
+  },
+  {
+    "image_id": "Bengal_47",
+    "relative_path": "images/Bengal_47.jpg",
+    "breed": "Bengal",
+    "breed_zh": "孟加拉猫",
+    "split": "test",
+    "width": 500,
+    "height": 375,
+    "sha256": "c9d43917dbdb245a001e58ee964ee2236b0c8bf4b1ceb58e4f89af5541e993ff"
+  },
+  {
+    "image_id": "Bengal_23",
+    "relative_path": "images/Bengal_23.jpg",
+    "breed": "Bengal",
+    "breed_zh": "孟加拉猫",
+    "split": "test",
+    "width": 500,
+    "height": 290,
+    "sha256": "7e7dd000d31022a7ca9d6816910421eaf68ad0685694b421046a9d8298b1afcd"
+  },
+  {
+    "image_id": "Bengal_25",
+    "relative_path": "images/Bengal_25.jpg",
+    "breed": "Bengal",
+    "breed_zh": "孟加拉猫",
+    "split": "test",
+    "width": 500,
+    "height": 364,
+    "sha256": "f4c827e926f2888cf78e6eadc097d4245713bb246efb22e31836c94629f87f2b"
+  },
+  {
+    "image_id": "Bengal_60",
+    "relative_path": "images/Bengal_60.jpg",
+    "breed": "Bengal",
+    "breed_zh": "孟加拉猫",
+    "split": "test",
+    "width": 500,
+    "height": 333,
+    "sha256": "0aec49e8336d43e1d38485b9d255f2db486714015f742e009bad972f01237220"
+  },
+  {
+    "image_id": "Bengal_73",
+    "relative_path": "images/Bengal_73.jpg",
+    "breed": "Bengal",
+    "breed_zh": "孟加拉猫",
+    "split": "test",
+    "width": 500,
+    "height": 375,
+    "sha256": "d182c26dc2456acbb964c96dce4753f95b59e12e8da2895ae8b5dc1c902e33b8"
+  },
+  {
+    "image_id": "Bengal_65",
+    "relative_path": "images/Bengal_65.jpg",
+    "breed": "Bengal",
+    "breed_zh": "孟加拉猫",
+    "split": "test",
+    "width": 500,
+    "height": 333,
+    "sha256": "b91ef79bc40f408d63002c491cfdfa2c40a63ec3d0e8130627ac7a1c9b5f8284"
+  },
+  {
+    "image_id": "Bengal_20",
+    "relative_path": "images/Bengal_20.jpg",
+    "breed": "Bengal",
+    "breed_zh": "孟加拉猫",
+    "split": "test",
+    "width": 458,
+    "height": 500,
+    "sha256": "32aacdce170d4a60e707a754683f80b295011f29365467cc238d1e268ea4f345"
+  },
+  {
+    "image_id": "Bengal_24",
+    "relative_path": "images/Bengal_24.jpg",
+    "breed": "Bengal",
+    "breed_zh": "孟加拉猫",
+    "split": "test",
+    "width": 500,
+    "height": 375,
+    "sha256": "d6c98fdb7410b35e9e20b7a6239f25f8303873b380f2cb1b79f60ec2bbbddc66"
+  },
+  {
+    "image_id": "Bengal_80",
+    "relative_path": "images/Bengal_80.jpg",
+    "breed": "Bengal",
+    "breed_zh": "孟加拉猫",
+    "split": "test",
+    "width": 500,
+    "height": 500,
+    "sha256": "ce28eff3a92a644ee971568e5d6ba95c7e50e81090a00530a705d2f9d6bbb9ca"
+  },
+  {
+    "image_id": "Birman_1",
+    "relative_path": "images/Birman_1.jpg",
+    "breed": "Birman",
+    "breed_zh": "伯曼猫",
+    "split": "test",
+    "width": 375,
+    "height": 500,
+    "sha256": "c314af60fcc1652e95404e413e45185b8146e1f5272b89c41ff6cad7827f82a0"
+  },
+  {
+    "image_id": "Birman_5",
+    "relative_path": "images/Birman_5.jpg",
+    "breed": "Birman",
+    "breed_zh": "伯曼猫",
+    "split": "test",
+    "width": 500,
+    "height": 335,
+    "sha256": "248f9391d5462f3231d5e349736012c28b73a6bda1a859b984f1e1dda15edbda"
+  },
+  {
+    "image_id": "Birman_192",
+    "relative_path": "images/Birman_192.jpg",
+    "breed": "Birman",
+    "breed_zh": "伯曼猫",
+    "split": "test",
+    "width": 500,
+    "height": 334,
+    "sha256": "008ab3d9e8f8d0d8296c381e9e9b8b01671ed092271bbe79a6bb89d91012c42c"
+  },
+  {
+    "image_id": "Birman_65",
+    "relative_path": "images/Birman_65.jpg",
+    "breed": "Birman",
+    "breed_zh": "伯曼猫",
+    "split": "test",
+    "width": 500,
+    "height": 333,
+    "sha256": "bce13f7d7bfab8a4a63894d9bb199eb80b60859b47090a5484498c5b2ae279b6"
+  },
+  {
+    "image_id": "Birman_53",
+    "relative_path": "images/Birman_53.jpg",
+    "breed": "Birman",
+    "breed_zh": "伯曼猫",
+    "split": "test",
+    "width": 431,
+    "height": 500,
+    "sha256": "bc097c76e924350ebafce412b6ecf5850a8a1b406a0a065ef49f8b30f9544bee"
+  },
+  {
+    "image_id": "Birman_201",
+    "relative_path": "images/Birman_201.jpg",
+    "breed": "Birman",
+    "breed_zh": "伯曼猫",
+    "split": "test",
+    "width": 600,
+    "height": 400,
+    "sha256": "e12a9fd5b5936370f6f7227225780ce3cfa9ebd82b5890622ec5b4de6a6e33eb"
+  },
+  {
+    "image_id": "Birman_66",
+    "relative_path": "images/Birman_66.jpg",
+    "breed": "Birman",
+    "breed_zh": "伯曼猫",
+    "split": "test",
+    "width": 500,
+    "height": 375,
+    "sha256": "35ee48a24dd610f6584a9bda4f9571f32ed5550b59886a82a3785440784a5880"
+  },
+  {
+    "image_id": "Birman_3",
+    "relative_path": "images/Birman_3.jpg",
+    "breed": "Birman",
+    "breed_zh": "伯曼猫",
+    "split": "test",
+    "width": 500,
+    "height": 375,
+    "sha256": "32443a89ce29d0d31234b8435d904160a90ef94885504831e9b55874700851a3"
+  },
+  {
+    "image_id": "Birman_88",
+    "relative_path": "images/Birman_88.jpg",
+    "breed": "Birman",
+    "breed_zh": "伯曼猫",
+    "split": "test",
+    "width": 500,
+    "height": 375,
+    "sha256": "3952f9528c56c11033e3d1ee98d9daf418d0d5a958b5d6cf4cc55579b7bedaae"
+  },
+  {
+    "image_id": "Birman_81",
+    "relative_path": "images/Birman_81.jpg",
+    "breed": "Birman",
+    "breed_zh": "伯曼猫",
+    "split": "test",
+    "width": 448,
+    "height": 324,
+    "sha256": "39e82e0322b63a85fbc87a6ce386744baac5b066891c783690c4bc63189d7fbe"
+  },
+  {
+    "image_id": "Bombay_54",
+    "relative_path": "images/Bombay_54.jpg",
+    "breed": "Bombay",
+    "breed_zh": "孟买猫",
+    "split": "test",
+    "width": 375,
+    "height": 500,
+    "sha256": "f466a41d7d452fa44f73b2ef2e5da9182ef12e2bb958849e0f6c15f3d6adf205"
+  },
+  {
+    "image_id": "Bombay_42",
+    "relative_path": "images/Bombay_42.jpg",
+    "breed": "Bombay",
+    "breed_zh": "孟买猫",
+    "split": "test",
+    "width": 500,
+    "height": 375,
+    "sha256": "7062336b1a0d58d58c37e293cc7307dc14a44ea71de2e8894b30d9c832b9a778"
+  },
+  {
+    "image_id": "Bombay_34",
+    "relative_path": "images/Bombay_34.jpg",
+    "breed": "Bombay",
+    "breed_zh": "孟买猫",
+    "split": "test",
+    "width": 500,
+    "height": 367,
+    "sha256": "80052de2c4aa775769f3e150e617c48fbe60b82186ab7598b9752ef30e9c3daa"
+  },
+  {
+    "image_id": "Bombay_50",
+    "relative_path": "images/Bombay_50.jpg",
+    "breed": "Bombay",
+    "breed_zh": "孟买猫",
+    "split": "test",
+    "width": 400,
+    "height": 382,
+    "sha256": "b67ffa06cb9d47df9b9929cdbf32b8211e992a5f1bc365723a4eb8ddd48dee65"
+  },
+  {
+    "image_id": "Bombay_53",
+    "relative_path": "images/Bombay_53.jpg",
+    "breed": "Bombay",
+    "breed_zh": "孟买猫",
+    "split": "test",
+    "width": 220,
+    "height": 220,
+    "sha256": "76e3e62e7def459bfcbda60323a153c055e7410252ee2766ddc4924a22d49355"
+  },
+  {
+    "image_id": "Bombay_201",
+    "relative_path": "images/Bombay_201.jpg",
+    "breed": "Bombay",
+    "breed_zh": "孟买猫",
+    "split": "test",
+    "width": 200,
+    "height": 300,
+    "sha256": "4d140eb6b94cf6552b8957669d638303643c83f2fd1cfe8a2c9188159fc4ffa2"
+  },
+  {
+    "image_id": "Bombay_30",
+    "relative_path": "images/Bombay_30.jpg",
+    "breed": "Bombay",
+    "breed_zh": "孟买猫",
+    "split": "test",
+    "width": 500,
+    "height": 375,
+    "sha256": "c1b1a1be64f2576fd7e88a8fd6d8aa3730f3d92bdf0aed4d39dcf0853005f7c5"
+  },
+  {
+    "image_id": "Bombay_41",
+    "relative_path": "images/Bombay_41.jpg",
+    "breed": "Bombay",
+    "breed_zh": "孟买猫",
+    "split": "test",
+    "width": 1024,
+    "height": 768,
+    "sha256": "810f9fdbed94223b4f8c8afc74ab60e31c8006b0e5306b0404d317d4025c74e2"
+  },
+  {
+    "image_id": "Bombay_63",
+    "relative_path": "images/Bombay_63.jpg",
+    "breed": "Bombay",
+    "breed_zh": "孟买猫",
+    "split": "test",
+    "width": 500,
+    "height": 375,
+    "sha256": "4c6ec9df3dd8766cf12f8f66691c4847e7cc7bba19905f9ff44ac47058fbd111"
+  },
+  {
+    "image_id": "Bombay_5",
+    "relative_path": "images/Bombay_5.jpg",
+    "breed": "Bombay",
+    "breed_zh": "孟买猫",
+    "split": "test",
+    "width": 600,
+    "height": 853,
+    "sha256": "96b619bdc6376251d8f07cde625a861c7a8b16d6c9444cb9c564915da70d4c3f"
+  },
+  {
+    "image_id": "British_Shorthair_41",
+    "relative_path": "images/British_Shorthair_41.jpg",
+    "breed": "British_Shorthair",
+    "breed_zh": "英国短毛猫",
+    "split": "test",
+    "width": 333,
+    "height": 500,
+    "sha256": "6bc5443ad037ee11176c2cd7377b3663ad14d0704246bf1f28a68fa9cec2324a"
+  },
+  {
+    "image_id": "British_Shorthair_29",
+    "relative_path": "images/British_Shorthair_29.jpg",
+    "breed": "British_Shorthair",
+    "breed_zh": "英国短毛猫",
+    "split": "test",
+    "width": 500,
+    "height": 334,
+    "sha256": "a052fb442f0fdff2003eab9770a8edc278f2987ff945be60977370e7ab7e5fc5"
+  },
+  {
+    "image_id": "British_Shorthair_56",
+    "relative_path": "images/British_Shorthair_56.jpg",
+    "breed": "British_Shorthair",
+    "breed_zh": "英国短毛猫",
+    "split": "test",
+    "width": 500,
+    "height": 375,
+    "sha256": "a0eeb70d54338471b349cd4096c391d60e6b641289ad8f08deab00e02ef22b48"
+  },
+  {
+    "image_id": "British_Shorthair_50",
+    "relative_path": "images/British_Shorthair_50.jpg",
+    "breed": "British_Shorthair",
+    "breed_zh": "英国短毛猫",
+    "split": "test",
+    "width": 500,
+    "height": 333,
+    "sha256": "11958d0146f413cc351e731e01ea45cb64cf19d5eeae1bee2c5648b3b1fd783d"
+  },
+  {
+    "image_id": "British_Shorthair_63",
+    "relative_path": "images/British_Shorthair_63.jpg",
+    "breed": "British_Shorthair",
+    "breed_zh": "英国短毛猫",
+    "split": "test",
+    "width": 500,
+    "height": 333,
+    "sha256": "31344bcee600a5ebfece72c80e26b80b1d60c9b188f0c204dd26e54255d35a3c"
+  },
+  {
+    "image_id": "British_Shorthair_223",
+    "relative_path": "images/British_Shorthair_223.jpg",
+    "breed": "British_Shorthair",
+    "breed_zh": "英国短毛猫",
+    "split": "test",
+    "width": 300,
+    "height": 225,
+    "sha256": "f952cdf86ae4d4d9c7f349e8344898818a76651cfae713249801e406ca5e6986"
+  },
+  {
+    "image_id": "British_Shorthair_75",
+    "relative_path": "images/British_Shorthair_75.jpg",
+    "breed": "British_Shorthair",
+    "breed_zh": "英国短毛猫",
+    "split": "test",
+    "width": 500,
+    "height": 335,
+    "sha256": "295a5260f8a0193a1873a12d314ef2966a9b6bf8fd489be19e815903a5c2d296"
+  },
+  {
+    "image_id": "British_Shorthair_230",
+    "relative_path": "images/British_Shorthair_230.jpg",
+    "breed": "British_Shorthair",
+    "breed_zh": "英国短毛猫",
+    "split": "test",
+    "width": 300,
+    "height": 226,
+    "sha256": "7c462fb330a5b353483037c11f4968ea78f0c46658c27566d5710e17bc52eae2"
+  },
+  {
+    "image_id": "British_Shorthair_55",
+    "relative_path": "images/British_Shorthair_55.jpg",
+    "breed": "British_Shorthair",
+    "breed_zh": "英国短毛猫",
+    "split": "test",
+    "width": 500,
+    "height": 334,
+    "sha256": "44e1d7cd4539f9097b46a79715dfd7a5368d6d507dc8b5470eda94ce8d56124d"
+  },
+  {
+    "image_id": "British_Shorthair_54",
+    "relative_path": "images/British_Shorthair_54.jpg",
+    "breed": "British_Shorthair",
+    "breed_zh": "英国短毛猫",
+    "split": "test",
+    "width": 405,
+    "height": 500,
+    "sha256": "1ffe15ac447c3926372a6dc7155ae52b7068153d5773cbfd67b2667dfde35ee7"
+  },
+  {
+    "image_id": "Egyptian_Mau_221",
+    "relative_path": "images/Egyptian_Mau_221.jpg",
+    "breed": "Egyptian_Mau",
+    "breed_zh": "埃及猫",
+    "split": "test",
+    "width": 500,
+    "height": 332,
+    "sha256": "480d27b3292b160dee72cb1f223078755c044d0773373c53a191eb5404d26b86"
+  },
+  {
+    "image_id": "Egyptian_Mau_44",
+    "relative_path": "images/Egyptian_Mau_44.jpg",
+    "breed": "Egyptian_Mau",
+    "breed_zh": "埃及猫",
+    "split": "test",
+    "width": 250,
+    "height": 125,
+    "sha256": "519893ceb79307362905c1dfb829847756de1f5af48f18d3e42d9a69e2f05ddd"
+  },
+  {
+    "image_id": "Egyptian_Mau_87",
+    "relative_path": "images/Egyptian_Mau_87.jpg",
+    "breed": "Egyptian_Mau",
+    "breed_zh": "埃及猫",
+    "split": "test",
+    "width": 600,
+    "height": 393,
+    "sha256": "0c468c5026e8ffb1a3df76f98665e05d8e59758d9bd1bba9fa87cb4e321bcc09"
+  },
+  {
+    "image_id": "Egyptian_Mau_63",
+    "relative_path": "images/Egyptian_Mau_63.jpg",
+    "breed": "Egyptian_Mau",
+    "breed_zh": "埃及猫",
+    "split": "test",
+    "width": 500,
+    "height": 375,
+    "sha256": "41af2f3b63f5656eaf2581870458c9634805c88a7173f467cc237514c6e27649"
+  },
+  {
+    "image_id": "Egyptian_Mau_224",
+    "relative_path": "images/Egyptian_Mau_224.jpg",
+    "breed": "Egyptian_Mau",
+    "breed_zh": "埃及猫",
+    "split": "test",
+    "width": 360,
+    "height": 286,
+    "sha256": "c2fcb2a7c7a8113ab9fb1759d4c05e6093ae77b3a6b7f6974e686de745ecaff1"
+  },
+  {
+    "image_id": "Egyptian_Mau_67",
+    "relative_path": "images/Egyptian_Mau_67.jpg",
+    "breed": "Egyptian_Mau",
+    "breed_zh": "埃及猫",
+    "split": "test",
+    "width": 500,
+    "height": 333,
+    "sha256": "9cc820eca2e58dd9618284d0671f7b6e5fbce9eef100e102c9ff705fd7e56c79"
+  },
+  {
+    "image_id": "Egyptian_Mau_94",
+    "relative_path": "images/Egyptian_Mau_94.jpg",
+    "breed": "Egyptian_Mau",
+    "breed_zh": "埃及猫",
+    "split": "test",
+    "width": 189,
+    "height": 135,
+    "sha256": "109d8f6711ee75638fac9f245f72eb5e87b0b9609b4b73b67b70b268216e5469"
+  },
+  {
+    "image_id": "Egyptian_Mau_6",
+    "relative_path": "images/Egyptian_Mau_6.jpg",
+    "breed": "Egyptian_Mau",
+    "breed_zh": "埃及猫",
+    "split": "test",
+    "width": 183,
+    "height": 275,
+    "sha256": "564bc9c9bfcb417009b26fd87efcab6a1c7635c46646f1fb57ea387679161359"
+  },
+  {
+    "image_id": "Egyptian_Mau_213",
+    "relative_path": "images/Egyptian_Mau_213.jpg",
+    "breed": "Egyptian_Mau",
+    "breed_zh": "埃及猫",
+    "split": "test",
+    "width": 225,
+    "height": 300,
+    "sha256": "c3f1515e3455f4b5eccb03271f395bbf72931a7f070ffcdc36a356efbdd94125"
+  },
+  {
+    "image_id": "Egyptian_Mau_5",
+    "relative_path": "images/Egyptian_Mau_5.jpg",
+    "breed": "Egyptian_Mau",
+    "breed_zh": "埃及猫",
+    "split": "test",
+    "width": 225,
+    "height": 184,
+    "sha256": "d18892e011ee31f588a1b7ffb9c08d82c2e415f52469ded903a910b53b9db55c"
+  },
+  {
+    "image_id": "Maine_Coon_254",
+    "relative_path": "images/Maine_Coon_254.jpg",
+    "breed": "Maine_Coon",
+    "breed_zh": "缅因猫",
+    "split": "test",
+    "width": 300,
+    "height": 225,
+    "sha256": "d11ae93dc76a31f4a5d66f3b0ffd706501c3cf04cbd853dea89ed7d28be0fcd7"
+  },
+  {
+    "image_id": "Maine_Coon_83",
+    "relative_path": "images/Maine_Coon_83.jpg",
+    "breed": "Maine_Coon",
+    "breed_zh": "缅因猫",
+    "split": "test",
+    "width": 335,
+    "height": 500,
+    "sha256": "91f552b31b90729b380d3b4836c1494447e15be640314f271f16512a0c0cc86c"
+  },
+  {
+    "image_id": "Maine_Coon_68",
+    "relative_path": "images/Maine_Coon_68.jpg",
+    "breed": "Maine_Coon",
+    "breed_zh": "缅因猫",
+    "split": "test",
+    "width": 335,
+    "height": 500,
+    "sha256": "46adbc7b8bed2debcbc66be6083536d972716945f51ab55ba851b6555e3027bd"
+  },
+  {
+    "image_id": "Maine_Coon_58",
+    "relative_path": "images/Maine_Coon_58.jpg",
+    "breed": "Maine_Coon",
+    "breed_zh": "缅因猫",
+    "split": "test",
+    "width": 333,
+    "height": 500,
+    "sha256": "8c3595c73c1613eefe66a2f45cdcc320613e21cc35b5421b8c81115c01b37bf7"
+  },
+  {
+    "image_id": "Maine_Coon_71",
+    "relative_path": "images/Maine_Coon_71.jpg",
+    "breed": "Maine_Coon",
+    "breed_zh": "缅因猫",
+    "split": "test",
+    "width": 500,
+    "height": 333,
+    "sha256": "a7a3bdd4093841460f9fe56919987650312424f8736771a589b2da9783be31ec"
+  },
+  {
+    "image_id": "Maine_Coon_8",
+    "relative_path": "images/Maine_Coon_8.jpg",
+    "breed": "Maine_Coon",
+    "breed_zh": "缅因猫",
+    "split": "test",
+    "width": 350,
+    "height": 250,
+    "sha256": "9f7c6c15d4d7963f62138a91b06b0ea842de48b0b6d1b388e1838bc6e5e122ed"
+  },
+  {
+    "image_id": "Maine_Coon_92",
+    "relative_path": "images/Maine_Coon_92.jpg",
+    "breed": "Maine_Coon",
+    "breed_zh": "缅因猫",
+    "split": "test",
+    "width": 500,
+    "height": 333,
+    "sha256": "5e7a69e7d72558d21c8a863d3dfc42fee7e25011c402de37778ecf32013f1feb"
+  },
+  {
+    "image_id": "Maine_Coon_9",
+    "relative_path": "images/Maine_Coon_9.jpg",
+    "breed": "Maine_Coon",
+    "breed_zh": "缅因猫",
+    "split": "test",
+    "width": 600,
+    "height": 400,
+    "sha256": "8e02bc8b875ccbcec67c997a5dc7523db406d96a5dc74b6de3c47156a58aa285"
+  },
+  {
+    "image_id": "Maine_Coon_2",
+    "relative_path": "images/Maine_Coon_2.jpg",
+    "breed": "Maine_Coon",
+    "breed_zh": "缅因猫",
+    "split": "test",
+    "width": 245,
+    "height": 300,
+    "sha256": "6bb22b5b6b1e3d1abc65b25b43302d8fe91b2ed41d2dbd2156556f517fdf8043"
+  },
+  {
+    "image_id": "Maine_Coon_87",
+    "relative_path": "images/Maine_Coon_87.jpg",
+    "breed": "Maine_Coon",
+    "breed_zh": "缅因猫",
+    "split": "test",
+    "width": 500,
+    "height": 332,
+    "sha256": "6adb942f899926eeef209d1d1f42d3d217777ee19b210a0064c680c05abb07fb"
+  },
+  {
+    "image_id": "Persian_26",
+    "relative_path": "images/Persian_26.jpg",
+    "breed": "Persian",
+    "breed_zh": "波斯猫",
+    "split": "test",
+    "width": 500,
+    "height": 333,
+    "sha256": "bd69545c0e1d4a2510b71bd3e28cd36649fe57f554b4d0aa7422c7a0fbce1676"
+  },
+  {
+    "image_id": "Persian_85",
+    "relative_path": "images/Persian_85.jpg",
+    "breed": "Persian",
+    "breed_zh": "波斯猫",
+    "split": "test",
+    "width": 500,
+    "height": 375,
+    "sha256": "3deba35a24517ce4dc31020ed7f27a6424d887e4f7afb6094997bcdb3ffeab3e"
+  },
+  {
+    "image_id": "Persian_264",
+    "relative_path": "images/Persian_264.jpg",
+    "breed": "Persian",
+    "breed_zh": "波斯猫",
+    "split": "test",
+    "width": 396,
+    "height": 307,
+    "sha256": "3fa1e77c197aebc377bc690b9cd3d810adc2e1d32c496ee789f269ff77338b83"
+  },
+  {
+    "image_id": "Persian_95",
+    "relative_path": "images/Persian_95.jpg",
+    "breed": "Persian",
+    "breed_zh": "波斯猫",
+    "split": "test",
+    "width": 500,
+    "height": 380,
+    "sha256": "6c0c90ac03edf011872f3c68e7b137c42418e3ad69453b950b1212378fef5e8a"
+  },
+  {
+    "image_id": "Persian_67",
+    "relative_path": "images/Persian_67.jpg",
+    "breed": "Persian",
+    "breed_zh": "波斯猫",
+    "split": "test",
+    "width": 500,
+    "height": 456,
+    "sha256": "38f0a76c9bfcad1d40b9e539fb204dcdc40cc305323edf3b702c23368c813976"
+  },
+  {
+    "image_id": "Persian_74",
+    "relative_path": "images/Persian_74.jpg",
+    "breed": "Persian",
+    "breed_zh": "波斯猫",
+    "split": "test",
+    "width": 372,
+    "height": 500,
+    "sha256": "070e00d7fb1df1042a5b78c0f51a8ab8958b9a49f65715cd5cadfc3df41ded50"
+  },
+  {
+    "image_id": "Persian_6",
+    "relative_path": "images/Persian_6.jpg",
+    "breed": "Persian",
+    "breed_zh": "波斯猫",
+    "split": "test",
+    "width": 334,
+    "height": 500,
+    "sha256": "3eea1c479cc87406c4a2a6078f1133a7e6959de5c78bb140887715fcb9d44a68"
+  },
+  {
+    "image_id": "Persian_270",
+    "relative_path": "images/Persian_270.jpg",
+    "breed": "Persian",
+    "breed_zh": "波斯猫",
+    "split": "test",
+    "width": 300,
+    "height": 275,
+    "sha256": "7a893062f632c49f3bfa4c2e92b4f11b1b5ddab56d6449176be2875bc770ffbf"
+  },
+  {
+    "image_id": "Persian_60",
+    "relative_path": "images/Persian_60.jpg",
+    "breed": "Persian",
+    "breed_zh": "波斯猫",
+    "split": "test",
+    "width": 500,
+    "height": 333,
+    "sha256": "54b89c8ef509fe2869122c0781510341b9d21873134ec679f6c6f25b2299cdc5"
+  },
+  {
+    "image_id": "Persian_59",
+    "relative_path": "images/Persian_59.jpg",
+    "breed": "Persian",
+    "breed_zh": "波斯猫",
+    "split": "test",
+    "width": 500,
+    "height": 480,
+    "sha256": "4c52fe0fb62c89a99a62d64a94ba143d330aeacceb86d454709504994346d346"
+  },
+  {
+    "image_id": "Ragdoll_259",
+    "relative_path": "images/Ragdoll_259.jpg",
+    "breed": "Ragdoll",
+    "breed_zh": "布偶猫",
+    "split": "test",
+    "width": 500,
+    "height": 456,
+    "sha256": "0638448e4af57ec4b9af830d08834a09ecf3df03041e9c08bd13566b4ce308e1"
+  },
+  {
+    "image_id": "Ragdoll_263",
+    "relative_path": "images/Ragdoll_263.jpg",
+    "breed": "Ragdoll",
+    "breed_zh": "布偶猫",
+    "split": "test",
+    "width": 550,
+    "height": 491,
+    "sha256": "73ed6039b76f55a665cc86e6a62391a8450dace9a8f183070328bd7d486a5227"
+  },
+  {
+    "image_id": "Ragdoll_69",
+    "relative_path": "images/Ragdoll_69.jpg",
+    "breed": "Ragdoll",
+    "breed_zh": "布偶猫",
+    "split": "test",
+    "width": 500,
+    "height": 375,
+    "sha256": "e6380e9f2427518e6da1fdee57067188456068d86ab7d41c039db45f5762e354"
+  },
+  {
+    "image_id": "Ragdoll_205",
+    "relative_path": "images/Ragdoll_205.jpg",
+    "breed": "Ragdoll",
+    "breed_zh": "布偶猫",
+    "split": "test",
+    "width": 500,
+    "height": 426,
+    "sha256": "67a14bea0208b798231d29e4d466af5ef30a32d9e1df34b4d24eeafb990172f0"
+  },
+  {
+    "image_id": "Ragdoll_258",
+    "relative_path": "images/Ragdoll_258.jpg",
+    "breed": "Ragdoll",
+    "breed_zh": "布偶猫",
+    "split": "test",
+    "width": 400,
+    "height": 282,
+    "sha256": "78c51ae79f73bec5304809049205c82955b553f33badf997e48ae97aa1634745"
+  },
+  {
+    "image_id": "Ragdoll_84",
+    "relative_path": "images/Ragdoll_84.jpg",
+    "breed": "Ragdoll",
+    "breed_zh": "布偶猫",
+    "split": "test",
+    "width": 333,
+    "height": 500,
+    "sha256": "b1a9215bb9814533d7eb0f2421fb652894428e1d8187e5799ad7b8b244f7f9af"
+  },
+  {
+    "image_id": "Ragdoll_33",
+    "relative_path": "images/Ragdoll_33.jpg",
+    "breed": "Ragdoll",
+    "breed_zh": "布偶猫",
+    "split": "test",
+    "width": 500,
+    "height": 333,
+    "sha256": "b26a543edbc5a8e9f7c25cf2494dae51d5a8e2152fa3bbd10bd081ddf065e970"
+  },
+  {
+    "image_id": "Ragdoll_49",
+    "relative_path": "images/Ragdoll_49.jpg",
+    "breed": "Ragdoll",
+    "breed_zh": "布偶猫",
+    "split": "test",
+    "width": 333,
+    "height": 500,
+    "sha256": "f9d84c85a5d0262fd5d9150680307c5058ea76b2a8f5569504d80e4ec145f5fe"
+  },
+  {
+    "image_id": "Ragdoll_91",
+    "relative_path": "images/Ragdoll_91.jpg",
+    "breed": "Ragdoll",
+    "breed_zh": "布偶猫",
+    "split": "test",
+    "width": 500,
+    "height": 334,
+    "sha256": "4de8214668ef14a4f7b5cf0c203fddef58b04a46753fea5c5808935371065c37"
+  },
+  {
+    "image_id": "Ragdoll_52",
+    "relative_path": "images/Ragdoll_52.jpg",
+    "breed": "Ragdoll",
+    "breed_zh": "布偶猫",
+    "split": "test",
+    "width": 500,
+    "height": 500,
+    "sha256": "fde7690be09604b74514ef25635cabfa4b189aec686cd6b966229e75a7a8019a"
+  },
+  {
+    "image_id": "Russian_Blue_9",
+    "relative_path": "images/Russian_Blue_9.jpg",
+    "breed": "Russian_Blue",
+    "breed_zh": "俄罗斯蓝猫",
+    "split": "test",
+    "width": 275,
+    "height": 196,
+    "sha256": "9599ff5bb195aacb3716cb3a36450e810fa47a5ed5b7050be894bea257d0231a"
+  },
+  {
+    "image_id": "Russian_Blue_99",
+    "relative_path": "images/Russian_Blue_99.jpg",
+    "breed": "Russian_Blue",
+    "breed_zh": "俄罗斯蓝猫",
+    "split": "test",
+    "width": 333,
+    "height": 500,
+    "sha256": "d0eeca505f55c34baa01bb8b614d33c16f222a163df76780846bca2f787a79aa"
+  },
+  {
+    "image_id": "Russian_Blue_83",
+    "relative_path": "images/Russian_Blue_83.jpg",
+    "breed": "Russian_Blue",
+    "breed_zh": "俄罗斯蓝猫",
+    "split": "test",
+    "width": 500,
+    "height": 333,
+    "sha256": "1421f3e5c07e6d911a36ddb8540132cfd3de9ed24f6cfd645857e762244d5ac8"
+  },
+  {
+    "image_id": "Russian_Blue_38",
+    "relative_path": "images/Russian_Blue_38.jpg",
+    "breed": "Russian_Blue",
+    "breed_zh": "俄罗斯蓝猫",
+    "split": "test",
+    "width": 500,
+    "height": 375,
+    "sha256": "5eeff0f5ea2a1c57228d8142de93ff5648d5ee272954101ca4c0961652a4cd2b"
+  },
+  {
+    "image_id": "Russian_Blue_207",
+    "relative_path": "images/Russian_Blue_207.jpg",
+    "breed": "Russian_Blue",
+    "breed_zh": "俄罗斯蓝猫",
+    "split": "test",
+    "width": 500,
+    "height": 375,
+    "sha256": "a926bc15835a58f4a3dc6a038299228fe5238af6066a2487f92720ae6071fa2a"
+  },
+  {
+    "image_id": "Russian_Blue_220",
+    "relative_path": "images/Russian_Blue_220.jpg",
+    "breed": "Russian_Blue",
+    "breed_zh": "俄罗斯蓝猫",
+    "split": "test",
+    "width": 300,
+    "height": 200,
+    "sha256": "215b909f88d3b77e3bc9cad95c20b24f48e2f746a2f036543a39dcac64e53c33"
+  },
+  {
+    "image_id": "Russian_Blue_239",
+    "relative_path": "images/Russian_Blue_239.jpg",
+    "breed": "Russian_Blue",
+    "breed_zh": "俄罗斯蓝猫",
+    "split": "test",
+    "width": 200,
+    "height": 300,
+    "sha256": "83374ea1a4768d74491d378220dd33cf2c40fb706aa7678d0010b8436fe4a6de"
+  },
+  {
+    "image_id": "Russian_Blue_264",
+    "relative_path": "images/Russian_Blue_264.jpg",
+    "breed": "Russian_Blue",
+    "breed_zh": "俄罗斯蓝猫",
+    "split": "test",
+    "width": 400,
+    "height": 361,
+    "sha256": "cbcb4e266831a08ca77193450cf53786066ecd4fe020c11e4a75d8349cf33605"
+  },
+  {
+    "image_id": "Russian_Blue_32",
+    "relative_path": "images/Russian_Blue_32.jpg",
+    "breed": "Russian_Blue",
+    "breed_zh": "俄罗斯蓝猫",
+    "split": "test",
+    "width": 500,
+    "height": 334,
+    "sha256": "f0cdc066cc33f64560f7edcf3f8e669ff7fa5b3cf3e0fdd147c8d0b0872194ff"
+  },
+  {
+    "image_id": "Russian_Blue_35",
+    "relative_path": "images/Russian_Blue_35.jpg",
+    "breed": "Russian_Blue",
+    "breed_zh": "俄罗斯蓝猫",
+    "split": "test",
+    "width": 500,
+    "height": 333,
+    "sha256": "ae2362f5095edd318f9dc89bdf0c4fd149a1f5e060ce0f0bd920c3d507a60ae9"
+  },
+  {
+    "image_id": "Siamese_209",
+    "relative_path": "images/Siamese_209.jpg",
+    "breed": "Siamese",
+    "breed_zh": "暹罗猫",
+    "split": "test",
+    "width": 500,
+    "height": 334,
+    "sha256": "2969aeb9f171a02cb207c29d4e453f0719418bfde638063ef9d40ff9019a2768"
+  },
+  {
+    "image_id": "Siamese_73",
+    "relative_path": "images/Siamese_73.jpg",
+    "breed": "Siamese",
+    "breed_zh": "暹罗猫",
+    "split": "test",
+    "width": 333,
+    "height": 500,
+    "sha256": "96443d1631539c3e69ae29c81cc60a68f10157452e1c15828b6225dc632c6016"
+  },
+  {
+    "image_id": "Siamese_37",
+    "relative_path": "images/Siamese_37.jpg",
+    "breed": "Siamese",
+    "breed_zh": "暹罗猫",
+    "split": "test",
+    "width": 500,
+    "height": 333,
+    "sha256": "b3d314a5a4fb83b5cbbe0c9957ea1ceecc37c2d4ae2f6b3de45ceb75e3f6a3d2"
+  },
+  {
+    "image_id": "Siamese_44",
+    "relative_path": "images/Siamese_44.jpg",
+    "breed": "Siamese",
+    "breed_zh": "暹罗猫",
+    "split": "test",
+    "width": 375,
+    "height": 500,
+    "sha256": "0e459d8dbff5157e65d68dcb3b359e161bd7167959ee209fd1403cd8882100a0"
+  },
+  {
+    "image_id": "Siamese_6",
+    "relative_path": "images/Siamese_6.jpg",
+    "breed": "Siamese",
+    "breed_zh": "暹罗猫",
+    "split": "test",
+    "width": 183,
+    "height": 275,
+    "sha256": "9faca29d518aab29f2c43a7e812a0bff2a71ff419bc6f22637315586e8408dae"
+  },
+  {
+    "image_id": "Siamese_55",
+    "relative_path": "images/Siamese_55.jpg",
+    "breed": "Siamese",
+    "breed_zh": "暹罗猫",
+    "split": "test",
+    "width": 500,
+    "height": 375,
+    "sha256": "42c0b106dffd5a8227f2f2cde7235b8ef78cc9927aa2a1767515c9ffcb1cc1e7"
+  },
+  {
+    "image_id": "Siamese_247",
+    "relative_path": "images/Siamese_247.jpg",
+    "breed": "Siamese",
+    "breed_zh": "暹罗猫",
+    "split": "test",
+    "width": 300,
+    "height": 262,
+    "sha256": "aa14e79dd224142f12f8826f361ca9a1e70340c728f689d35d93e80bcd0826be"
+  },
+  {
+    "image_id": "Siamese_216",
+    "relative_path": "images/Siamese_216.jpg",
+    "breed": "Siamese",
+    "breed_zh": "暹罗猫",
+    "split": "test",
+    "width": 300,
+    "height": 225,
+    "sha256": "6eb44d5fdc77908d7104ecaf21bd961cbd14dc1c65068dc98969490631b2c937"
+  },
+  {
+    "image_id": "Siamese_5",
+    "relative_path": "images/Siamese_5.jpg",
+    "breed": "Siamese",
+    "breed_zh": "暹罗猫",
+    "split": "test",
+    "width": 183,
+    "height": 275,
+    "sha256": "ea6f13fa04aedfc512f9fcce5c21c8759dbbb7d1e8e92c354b5c25b2b653cdc9"
+  },
+  {
+    "image_id": "Siamese_88",
+    "relative_path": "images/Siamese_88.jpg",
+    "breed": "Siamese",
+    "breed_zh": "暹罗猫",
+    "split": "test",
+    "width": 375,
+    "height": 500,
+    "sha256": "8a56f2e7d8f78f1099aefd8a34276ba95e03c02a62b20ad74750168494b95c50"
+  },
+  {
+    "image_id": "Sphynx_37",
+    "relative_path": "images/Sphynx_37.jpg",
+    "breed": "Sphynx",
+    "breed_zh": "斯芬克斯猫",
+    "split": "test",
+    "width": 333,
+    "height": 500,
+    "sha256": "4fcc56da883456bdaf8faa7b2561fe0cec77b46e6cc8ffd11864f13192fd6dfe"
+  },
+  {
+    "image_id": "Sphynx_243",
+    "relative_path": "images/Sphynx_243.jpg",
+    "breed": "Sphynx",
+    "breed_zh": "斯芬克斯猫",
+    "split": "test",
+    "width": 450,
+    "height": 358,
+    "sha256": "e21c33e6630543d5e9089557bbe22d804dc2a0d7c35b66fc73b99e498074ca07"
+  },
+  {
+    "image_id": "Sphynx_95",
+    "relative_path": "images/Sphynx_95.jpg",
+    "breed": "Sphynx",
+    "breed_zh": "斯芬克斯猫",
+    "split": "test",
+    "width": 374,
+    "height": 500,
+    "sha256": "9bf367b46fe1a4a7820d587b0c836b4e7c879c46eddc16e48ef4a0a9cb3d53b5"
+  },
+  {
+    "image_id": "Sphynx_96",
+    "relative_path": "images/Sphynx_96.jpg",
+    "breed": "Sphynx",
+    "breed_zh": "斯芬克斯猫",
+    "split": "test",
+    "width": 333,
+    "height": 500,
+    "sha256": "5a60b378980f386aefb0bfac988d89b08bc0dd46b23397a16083abe76d3b39cb"
+  },
+  {
+    "image_id": "Sphynx_65",
+    "relative_path": "images/Sphynx_65.jpg",
+    "breed": "Sphynx",
+    "breed_zh": "斯芬克斯猫",
+    "split": "test",
+    "width": 500,
+    "height": 375,
+    "sha256": "858bbd8bc5347e1ee416467e4345f35163ec0235637d833692ead4d7bf6b03cf"
+  },
+  {
+    "image_id": "Sphynx_46",
+    "relative_path": "images/Sphynx_46.jpg",
+    "breed": "Sphynx",
+    "breed_zh": "斯芬克斯猫",
+    "split": "test",
+    "width": 500,
+    "height": 500,
+    "sha256": "0fb969efb99b4ff1d2797a61fd7892dfc8f6bf80a988f2292f3004b27205cbca"
+  },
+  {
+    "image_id": "Sphynx_235",
+    "relative_path": "images/Sphynx_235.jpg",
+    "breed": "Sphynx",
+    "breed_zh": "斯芬克斯猫",
+    "split": "test",
+    "width": 450,
+    "height": 600,
+    "sha256": "f58ea342e0c5ba16741e03eca52a2f559efa6e0fb325420b0d66d36ff86435a6"
+  },
+  {
+    "image_id": "Sphynx_47",
+    "relative_path": "images/Sphynx_47.jpg",
+    "breed": "Sphynx",
+    "breed_zh": "斯芬克斯猫",
+    "split": "test",
+    "width": 375,
+    "height": 500,
+    "sha256": "7192ca3b519d9292b416a148e7def22643af9f5d157b660159ef3d40de511a45"
+  },
+  {
+    "image_id": "Sphynx_82",
+    "relative_path": "images/Sphynx_82.jpg",
+    "breed": "Sphynx",
+    "breed_zh": "斯芬克斯猫",
+    "split": "test",
+    "width": 457,
+    "height": 500,
+    "sha256": "614d47a6930689b2db40d2ecc6d36bd24050981aeefed82de25ade32281d1787"
+  },
+  {
+    "image_id": "Sphynx_233",
+    "relative_path": "images/Sphynx_233.jpg",
+    "breed": "Sphynx",
+    "breed_zh": "斯芬克斯猫",
+    "split": "test",
+    "width": 625,
+    "height": 414,
+    "sha256": "16637e8ebfa5285eeba60b21bac83fe8869509fd0105d1ddf1cf45894fe6e701"
+  }
+]

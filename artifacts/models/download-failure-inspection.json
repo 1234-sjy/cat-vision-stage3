@@ -1,0 +1,12 @@
+{
+  "task": "read-only local download inspection",
+  "no_network_requests": true,
+  "gpu_used": false,
+  "file": "model-00001-of-00002.safetensors",
+  "expected_bytes": 4967229296,
+  "expected_sha256": "30a01a0556622645a3cce87b655bbbbbc1f170c196099f1b666c93202c3339a9",
+  "assembled_bytes": 4967229296,
+  "chunk_count": 297,
+  "repeated_64KiB_prefix_groups": [],
+  "next_action": "Stopped. No automatic retry/restart. Retain all files and full traceback."
+}

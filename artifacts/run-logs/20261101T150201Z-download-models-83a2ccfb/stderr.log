@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "C:\Users\sjysj\Documents\Codex\2026-10-31\new-chat\outputs\cat-vision-stage2\scripts\download_models.py", line 145, in <module>
+    main()
+  File "C:\Users\sjysj\Documents\Codex\2026-10-31\new-chat\outputs\cat-vision-stage2\scripts\download_models.py", line 139, in main
+    records = [fetch(item) for item in files]
+               ^^^^^^^^^^^
+  File "C:\Users\sjysj\Documents\Codex\2026-10-31\new-chat\outputs\cat-vision-stage2\scripts\download_models.py", line 138, in fetch
+    return download(url, ROOT / "weights/qwen3-vl-4b" / name, item["Size"], item["Sha256"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sjysj\Documents\Codex\2026-10-31\new-chat\outputs\cat-vision-stage2\scripts\download_models.py", line 77, in download
+    download_ranges(url, path, size, sha256)
+  File "C:\Users\sjysj\Documents\Codex\2026-10-31\new-chat\outputs\cat-vision-stage2\scripts\download_models.py", line 63, in download_ranges
+    raise RuntimeError(f"Assembled model checksum mismatch: {path.name}")
+RuntimeError: Assembled model checksum mismatch: model-00001-of-00002.safetensors

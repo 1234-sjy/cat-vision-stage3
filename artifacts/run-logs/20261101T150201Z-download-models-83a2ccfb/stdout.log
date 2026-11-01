@@ -1,0 +1,53 @@
+TASK START download-models; logs=artifacts/run-logs/20261101T150201Z-download-models-83a2ccfb
+CACHED modelscope-files.json
+CACHED chat_template.json
+CACHED config.json
+CACHED configuration.json
+CACHED generation_config.json
+CACHED merges.txt
+RANGE model-00001-of-00002.safetensors 253/297
+RANGE model-00001-of-00002.safetensors 254/297
+RANGE model-00001-of-00002.safetensors 255/297
+RANGE model-00001-of-00002.safetensors 256/297
+RANGE model-00001-of-00002.safetensors 257/297
+RANGE model-00001-of-00002.safetensors 258/297
+RANGE model-00001-of-00002.safetensors 259/297
+RANGE model-00001-of-00002.safetensors 260/297
+RANGE model-00001-of-00002.safetensors 261/297
+RANGE model-00001-of-00002.safetensors 262/297
+RANGE model-00001-of-00002.safetensors 263/297
+RANGE model-00001-of-00002.safetensors 264/297
+RANGE model-00001-of-00002.safetensors 265/297
+RANGE model-00001-of-00002.safetensors 266/297
+RANGE model-00001-of-00002.safetensors 267/297
+RANGE model-00001-of-00002.safetensors 268/297
+RANGE model-00001-of-00002.safetensors 269/297
+RANGE model-00001-of-00002.safetensors 270/297
+RANGE model-00001-of-00002.safetensors 271/297
+RANGE model-00001-of-00002.safetensors 272/297
+RANGE model-00001-of-00002.safetensors 273/297
+RANGE model-00001-of-00002.safetensors 274/297
+RANGE model-00001-of-00002.safetensors 275/297
+RANGE model-00001-of-00002.safetensors 276/297
+RANGE model-00001-of-00002.safetensors 277/297
+RANGE model-00001-of-00002.safetensors 278/297
+RANGE model-00001-of-00002.safetensors 279/297
+RANGE model-00001-of-00002.safetensors 280/297
+RANGE model-00001-of-00002.safetensors 281/297
+RANGE model-00001-of-00002.safetensors 282/297
+RANGE model-00001-of-00002.safetensors 283/297
+RANGE model-00001-of-00002.safetensors 284/297
+RANGE model-00001-of-00002.safetensors 285/297
+RANGE model-00001-of-00002.safetensors 286/297
+RANGE model-00001-of-00002.safetensors 287/297
+RANGE model-00001-of-00002.safetensors 288/297
+RANGE model-00001-of-00002.safetensors 289/297
+RANGE model-00001-of-00002.safetensors 290/297
+RANGE model-00001-of-00002.safetensors 291/297
+RANGE model-00001-of-00002.safetensors 292/297
+RANGE model-00001-of-00002.safetensors 293/297
+RANGE model-00001-of-00002.safetensors 294/297
+RANGE model-00001-of-00002.safetensors 295/297
+RANGE model-00001-of-00002.safetensors 296/297
+RANGE model-00001-of-00002.safetensors 297/297
+TASK END download-models; state=failed

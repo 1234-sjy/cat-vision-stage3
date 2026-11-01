@@ -27,8 +27,8 @@ def main():
                (args.requirements_root.resolve(), "要求依据"), (args.videos_root.resolve(), "课程视频")]
     output = args.output.resolve()
     # Never include the output in itself; never silently overwrite an earlier handover.
-    if output.is_relative_to(ROOT) or output.exists():
-        raise ValueError("成果包须放在项目目录之外，并使用新的文件名")
+    if any(output.is_relative_to(source) for source, _ in sources) or output.exists():
+        raise ValueError("成果包须放在所有来源目录之外，并使用新的文件名")
     required = [ROOT / "artifacts/data/manifest.json", ROOT / "artifacts/data/comparison.json",
                 ROOT / "data/classification", ROOT / "weights", ROOT / "artifacts/views/records.jsonl"]
     for path in required + [p for p, _ in sources]:

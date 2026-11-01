@@ -1,0 +1,20 @@
+{
+  "model-00001-of-00002.safetensors.assembled": {
+    "bytes": 4967229296,
+    "header_length": 30056,
+    "header_valid": true,
+    "tensor_count": 231,
+    "expected_end_from_header": 4967229296,
+    "actual_sha256": "623fd6c4f0dd6fa22907deee207971e84b6de6fc266aefe0aff77f00ef54d3a6",
+    "read_seconds": 2.511554200000319
+  },
+  "model-00002-of-00002.safetensors": {
+    "bytes": 3908490048,
+    "header_length": 57656,
+    "header_valid": true,
+    "tensor_count": 482,
+    "expected_end_from_header": 3908490048,
+    "actual_sha256": "277738ecd9bed5e733d23a7e5de6655091297fd9564659e5e6beebfc6e45288f",
+    "read_seconds": 1.9609000999998898
+  }
+}

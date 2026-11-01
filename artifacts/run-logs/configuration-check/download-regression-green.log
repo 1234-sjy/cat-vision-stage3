@@ -1,0 +1,13 @@
+RANGE test-model.bin 1/6
+RANGE test-model.bin 2/6
+RANGE test-model.bin 3/6
+RANGE test-model.bin 4/6
+RANGE test-model.bin 5/6
+RANGE test-model.bin 6/6
+test_bounded_ranges_reassemble_exact_file (test_download.DownloadTests.test_bounded_ranges_reassemble_exact_file) ... ok
+test_wrong_content_range_stops_after_one_request (test_download.DownloadTests.test_wrong_content_range_stops_after_one_request) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 1.428s
+
+OK

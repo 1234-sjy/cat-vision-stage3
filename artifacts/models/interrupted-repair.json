@@ -1,0 +1,78 @@
+[
+  {
+    "file": "model-00001-of-00002.safetensors",
+    "expected_sha256": "30a01a0556622645a3cce87b655bbbbbc1f170c196099f1b666c93202c3339a9",
+    "actual_sha256": "30a01a0556622645a3cce87b655bbbbbc1f170c196099f1b666c93202c3339a9",
+    "corrections": [
+      {
+        "block": 221,
+        "bytes": 16777216,
+        "first_difference": 14741504,
+        "download_sha256": "6345c098b4c33bc9188acb580e6e1be1a5ab251650cef158c11af827e8f34d67"
+      },
+      {
+        "block": 227,
+        "bytes": 16777216,
+        "first_difference": 14856192,
+        "download_sha256": "87350b83450e2c8bd643630b46a6227600d85e2c276b903f25d335904dc3e792"
+      },
+      {
+        "block": 228,
+        "bytes": 16777216,
+        "first_difference": 8941568,
+        "download_sha256": "71426dfb12c26a5f7093c940e7c4c57f7ef28abb82a5ba594ec57bcb498fd91e"
+      },
+      {
+        "block": 229,
+        "bytes": 16777216,
+        "first_difference": 3698688,
+        "download_sha256": "ba8a45da8aeddc46f27a3f0303b7bd228ea7244215fc42a71d4874fdd8a7a285"
+      }
+    ],
+    "verified": true
+  },
+  {
+    "file": "model-00002-of-00002.safetensors",
+    "expected_sha256": "046296a2a387efb43b0c997d5833c789604d168834f6e0d3064bf7bb13d002a6",
+    "actual_sha256": "046296a2a387efb43b0c997d5833c789604d168834f6e0d3064bf7bb13d002a6",
+    "corrections": [
+      {
+        "block": 227,
+        "bytes": 16777216,
+        "first_difference": 8388608,
+        "download_sha256": "b3f2e8c799cfb4a5437025ade1927b9580e8fe0b9ca47994ff5c9183a067dbf5"
+      },
+      {
+        "block": 228,
+        "bytes": 16777216,
+        "first_difference": 0,
+        "download_sha256": "d03b19255056b01de41fdc24e6313f402abe3a508d56f1fce7d11f3e1c9cb84e"
+      },
+      {
+        "block": 229,
+        "bytes": 16777216,
+        "first_difference": 0,
+        "download_sha256": "26a5a951fe1668da6c3d8c8bdaee06ecdabd35e770f08a59195b72d647daa97e"
+      },
+      {
+        "block": 230,
+        "bytes": 16777216,
+        "first_difference": 0,
+        "download_sha256": "e85048ad875857e37007fada502887ae9b6dbb79509735877128bb821085a1e0"
+      },
+      {
+        "block": 231,
+        "bytes": 16777216,
+        "first_difference": 0,
+        "download_sha256": "18c32f42bf5da341683b927b311b8990f9be338b2ca57e44ca4719c81fc0eeab"
+      },
+      {
+        "block": 232,
+        "bytes": 16175936,
+        "first_difference": 0,
+        "download_sha256": "adb2029d48f6f1e285f8318d4c8e3a5756c52c6e6b4500d47a5a38598dfdcea8"
+      }
+    ],
+    "verified": true
+  }
+]

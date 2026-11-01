@@ -4,7 +4,9 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 from pathlib import Path
+import re
 import subprocess
 import sys
 from urllib.parse import quote
@@ -22,6 +24,31 @@ def checksum(path: Path) -> str:
     return digest.hexdigest()
 
 
+def fetch_range_once(url: str, path: Path, first: int, last: int, total_size: int):
+    """Download exactly one range, validate its coordinates and flush it to disk."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    headers = path.with_name(path.name + ".headers")
+    result = subprocess.run([
+        "curl.exe" if sys.platform == "win32" else "curl", "-sS", "--fail", "-L",
+        "--connect-timeout", "10", "--max-time", "180", "-r", f"{first}-{last}",
+        "-D", str(headers), "-o", str(path), "-w", "%{http_code}", url],
+        capture_output=True, text=True)
+    if result.stderr:
+        print(result.stderr, file=sys.stderr, flush=True)
+    wanted = last - first + 1
+    if result.returncode != 0 or not path.exists() or path.stat().st_size != wanted:
+        raise RuntimeError(f"Range download failed, no retry: {path.name}; exit={result.returncode}, "
+                           f"HTTP={result.stdout}, bytes={path.stat().st_size if path.exists() else 0}/{wanted}")
+    ranges = re.findall(r"^Content-Range:\s*bytes\s+(\d+)-(\d+)/(\d+)\s*$",
+                        headers.read_text(encoding="utf-8", errors="replace"), re.I | re.M)
+    if result.stdout.strip() != "206" or not ranges or tuple(map(int, ranges[-1])) != (first, last, total_size):
+        raise RuntimeError(f"Content-Range mismatch for {path.name}; expected {first}-{last}/{total_size}")
+    # A correct length can survive a crash while dirty cached data does not.
+    with path.open("r+b") as stream:
+        stream.flush()
+        os.fsync(stream.fileno())
+
+
 def download_ranges(url: str, path: Path, size: int, sha256: str,
                     chunk_size: int = 16 * 1024 * 1024) -> None:
     chunks_dir = path.with_name(path.name + ".chunks")
@@ -35,18 +62,7 @@ def download_ranges(url: str, path: Path, size: int, sha256: str,
         if chunk.exists() and chunk.stat().st_size == wanted:
             return chunk
         part = chunk.with_suffix(".part")
-        result = subprocess.run([
-            "curl.exe" if sys.platform == "win32" else "curl", "-sS", "--fail", "-L",
-            "--connect-timeout", "10", "--max-time", "180", "-r", f"{first}-{last}",
-            "-o", str(part), "-w", "%{http_code}", url], capture_output=True, text=True)
-        if result.stderr:
-            print(result.stderr, file=sys.stderr, flush=True)
-        if result.returncode != 0 or not part.exists() or part.stat().st_size != wanted:
-            raise RuntimeError(f"Range download failed, no retry: {path.name} chunk {index}; "
-                               f"exit={result.returncode}, HTTP={result.stdout}, "
-                               f"bytes={part.stat().st_size if part.exists() else 0}/{wanted}")
-        if result.stdout.strip() != "206" and not (first == 0 and last == size - 1):
-            raise RuntimeError("Server did not honor bounded Range request")
+        fetch_range_once(url, part, first, last, size)
         part.replace(chunk)
         print("RANGE", path.name, f"{index+1}/{count}", flush=True)
         return chunk
@@ -59,6 +75,8 @@ def download_ranges(url: str, path: Path, size: int, sha256: str,
             with chunk.open("rb") as source:
                 for block in iter(lambda: source.read(8 * 1024 * 1024), b""):
                     target.write(block)
+        target.flush()
+        os.fsync(target.fileno())
     if assembled.stat().st_size != size or checksum(assembled) != sha256:
         raise RuntimeError(f"Assembled model checksum mismatch: {path.name}")
     assembled.replace(path)

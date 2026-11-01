@@ -1,0 +1,38 @@
+[
+  {
+    "file": "weights\\qwen3-vl-4b\\interrupted-repair\\configs-20261101T155433Z\\model.safetensors.index.json.verified",
+    "bytes": 64742,
+    "sha256": "58a7841d7bff2548dd91577d216274a83cf1b500bc6a534b809d6c1b1707cf2b",
+    "source": "https://modelscope.cn/api/v1/models/Qwen/Qwen3-VL-4B-Instruct/repo?Revision=302de2efb1dd6de1ee943eb1277dc6875550563d&FilePath=model.safetensors.index.json"
+  },
+  {
+    "file": "weights\\qwen3-vl-4b\\interrupted-repair\\configs-20261101T155433Z\\preprocessor_config.json.verified",
+    "bytes": 390,
+    "sha256": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516",
+    "source": "https://modelscope.cn/api/v1/models/Qwen/Qwen3-VL-4B-Instruct/repo?Revision=302de2efb1dd6de1ee943eb1277dc6875550563d&FilePath=preprocessor_config.json"
+  },
+  {
+    "file": "weights\\qwen3-vl-4b\\interrupted-repair\\configs-20261101T155433Z\\tokenizer.json.verified",
+    "bytes": 7032403,
+    "sha256": "a5d85b6dcc535e6b93115a9ef287e6132fdbf30270da6218194ba742261173c7",
+    "source": "https://modelscope.cn/api/v1/models/Qwen/Qwen3-VL-4B-Instruct/repo?Revision=302de2efb1dd6de1ee943eb1277dc6875550563d&FilePath=tokenizer.json"
+  },
+  {
+    "file": "weights\\qwen3-vl-4b\\interrupted-repair\\configs-20261101T155433Z\\tokenizer_config.json.verified",
+    "bytes": 10868,
+    "sha256": "c2da771801886ad9ae98181793ffd3dfb7f1af30f6f7c6a4e15d7dbba52e2399",
+    "source": "https://modelscope.cn/api/v1/models/Qwen/Qwen3-VL-4B-Instruct/repo?Revision=302de2efb1dd6de1ee943eb1277dc6875550563d&FilePath=tokenizer_config.json"
+  },
+  {
+    "file": "weights\\qwen3-vl-4b\\interrupted-repair\\configs-20261101T155433Z\\video_preprocessor_config.json.verified",
+    "bytes": 385,
+    "sha256": "7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13",
+    "source": "https://modelscope.cn/api/v1/models/Qwen/Qwen3-VL-4B-Instruct/repo?Revision=302de2efb1dd6de1ee943eb1277dc6875550563d&FilePath=video_preprocessor_config.json"
+  },
+  {
+    "file": "weights\\qwen3-vl-4b\\interrupted-repair\\configs-20261101T155433Z\\vocab.json.verified",
+    "bytes": 2776833,
+    "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+    "source": "https://modelscope.cn/api/v1/models/Qwen/Qwen3-VL-4B-Instruct/repo?Revision=302de2efb1dd6de1ee943eb1277dc6875550563d&FilePath=vocab.json"
+  }
+]

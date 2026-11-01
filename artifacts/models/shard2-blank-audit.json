@@ -1,0 +1,48 @@
+{
+  "file": "model-00002-of-00002.safetensors",
+  "suspect_blocks": [
+    {
+      "index": 227,
+      "offset": 3808428032,
+      "bytes": 16777216,
+      "first_64KiB_zero_run": 8388608,
+      "zero_fraction": 0.500988245010376
+    },
+    {
+      "index": 228,
+      "offset": 3825205248,
+      "bytes": 16777216,
+      "first_64KiB_zero_run": 0,
+      "zero_fraction": 1.0
+    },
+    {
+      "index": 229,
+      "offset": 3841982464,
+      "bytes": 16777216,
+      "first_64KiB_zero_run": 0,
+      "zero_fraction": 1.0
+    },
+    {
+      "index": 230,
+      "offset": 3858759680,
+      "bytes": 16777216,
+      "first_64KiB_zero_run": 0,
+      "zero_fraction": 1.0
+    },
+    {
+      "index": 231,
+      "offset": 3875536896,
+      "bytes": 16777216,
+      "first_64KiB_zero_run": 0,
+      "zero_fraction": 1.0
+    },
+    {
+      "index": 232,
+      "offset": 3892314112,
+      "bytes": 16175936,
+      "first_64KiB_zero_run": 0,
+      "zero_fraction": 1.0
+    }
+  ],
+  "disk_free_bytes": 242405249024
+}

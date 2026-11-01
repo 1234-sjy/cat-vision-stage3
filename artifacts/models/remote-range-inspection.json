@@ -1,0 +1,52 @@
+[
+  {
+    "index": 64,
+    "range_first": 1073741824,
+    "matches": true,
+    "remote_length": 65536,
+    "content_range": [
+      "Content-Range: bytes 1073741824-1073807359/4967229296"
+    ],
+    "first_difference": null
+  },
+  {
+    "index": 128,
+    "range_first": 2147483648,
+    "matches": true,
+    "remote_length": 65536,
+    "content_range": [
+      "Content-Range: bytes 2147483648-2147549183/4967229296"
+    ],
+    "first_difference": null
+  },
+  {
+    "index": 224,
+    "range_first": 3758096384,
+    "matches": true,
+    "remote_length": 65536,
+    "content_range": [
+      "Content-Range: bytes 3758096384-3758161919/4967229296"
+    ],
+    "first_difference": null
+  },
+  {
+    "index": 256,
+    "range_first": 4294967296,
+    "matches": true,
+    "remote_length": 65536,
+    "content_range": [
+      "Content-Range: bytes 4294967296-4295032831/4967229296"
+    ],
+    "first_difference": null
+  },
+  {
+    "index": 296,
+    "range_first": 4966055936,
+    "matches": true,
+    "remote_length": 65536,
+    "content_range": [
+      "Content-Range: bytes 4966055936-4966121471/4967229296"
+    ],
+    "first_difference": null
+  }
+]

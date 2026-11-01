@@ -1,0 +1,49 @@
+test_corrupt_upload_is_rejected_before_model_execution (test_api.ApiTests.test_corrupt_upload_is_rejected_before_model_execution) ... ok
+test_real_upload_pixels_are_delivered_and_job_result_can_be_read (test_api.ApiTests.test_real_upload_pixels_are_delivered_and_job_result_can_be_read) ... ok
+test_alpha_image_is_composited_on_white (test_contracts.ContractTests.test_alpha_image_is_composited_on_white) ... ok
+test_invalid_model_response_is_a_parse_failure (test_contracts.ContractTests.test_invalid_model_response_is_a_parse_failure) ... ok
+test_no_cat_cannot_keep_a_breed (test_contracts.ContractTests.test_no_cat_cannot_keep_a_breed) ... ok
+test_nonimage_upload_is_rejected (test_contracts.ContractTests.test_nonimage_upload_is_rejected) ... ok
+test_single_breed_is_normalized_from_json_fence (test_contracts.ContractTests.test_single_breed_is_normalized_from_json_fence) ... ok
+test_comparison_is_balanced_and_only_from_test (test_data.DataTests.test_comparison_is_balanced_and_only_from_test) ... ok
+test_detection_failure_cannot_overwrite_source_label_or_split (test_data.DataTests.test_detection_failure_cannot_overwrite_source_label_or_split) ... ok
+test_same_photo_in_train_and_test_is_rejected (test_data.DataTests.test_same_photo_in_train_and_test_is_rejected) ... ok
+test_too_few_test_images_does_not_silently_make_unbalanced_subset (test_data.DataTests.test_too_few_test_images_does_not_silently_make_unbalanced_subset) ... ok
+RANGE test-model.bin 1/6
+RANGE test-model.bin 2/6
+RANGE test-model.bin 3/6
+RANGE test-model.bin 4/6
+RANGE test-model.bin 5/6
+RANGE test-model.bin 6/6
+test_bounded_ranges_reassemble_exact_file (test_download.DownloadTests.test_bounded_ranges_reassemble_exact_file) ... ok
+test_wrong_content_range_stops_after_one_request (test_download.DownloadTests.test_wrong_content_range_stops_after_one_request) ... ok
+test_duplicate_prediction_is_rejected (test_evaluation.EvaluationTests.test_duplicate_prediction_is_rejected) ... ok
+test_failed_response_cannot_get_credit_for_a_stale_label (test_evaluation.EvaluationTests.test_failed_response_cannot_get_credit_for_a_stale_label) ... ok
+test_missing_prediction_counts_as_failure_and_stays_in_confusion_matrix (test_evaluation.EvaluationTests.test_missing_prediction_counts_as_failure_and_stays_in_confusion_matrix) ... ok
+test_box_is_clipped_and_not_empty (test_geometry.GeometryTests.test_box_is_clipped_and_not_empty) ... ok
+test_mask_uses_exclusive_bottom_and_right_edges (test_geometry.GeometryTests.test_mask_uses_exclusive_bottom_and_right_edges) ... ok
+test_primary_subject_is_largest_cat_not_highest_score_or_dog (test_geometry.GeometryTests.test_primary_subject_is_largest_cat_not_highest_score_or_dog) ... ok
+test_checkpoint_synchronizes_before_short_wait (test_run_control.RunControlTests.test_checkpoint_synchronizes_before_short_wait) ... ok
+TASK START validation; logs=artifacts/run-logs/20261101T160301Z-validation-af1a5526
+test_failure_is_logged_and_next_run_requires_manual_handling (test_run_control.RunControlTests.test_failure_is_logged_and_next_run_requires_manual_handling) ... Traceback (most recent call last):
+  File "C:\Users\sjysj\Documents\Codex\2026-10-31\new-chat\outputs\cat-vision-stage2\tests\test_run_control.py", line 23, in test_failure_is_logged_and_next_run_requires_manual_handling
+    raise ValueError("original diagnostic")
+ValueError: original diagnostic
+before failure
+TASK END validation; state=failed
+ok
+TASK START download; logs=artifacts/run-logs/20261101T160301Z-download-92d163dc
+TASK END download; state=completed
+test_second_task_is_rejected_while_first_is_active (test_run_control.RunControlTests.test_second_task_is_rejected_while_first_is_active) ... ok
+TASK START download; logs=artifacts/run-logs/20261101T160301Z-download-faa724f1
+download finished
+TASK END download; state=completed
+TASK START validate; logs=artifacts/run-logs/20261101T160301Z-validate-bee9d99c
+next task
+TASK END validate; state=completed
+test_success_allows_next_sequential_task (test_run_control.RunControlTests.test_success_allows_next_sequential_task) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 1.603s
+
+OK

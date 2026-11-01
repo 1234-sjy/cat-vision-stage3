@@ -1,0 +1,89 @@
+[
+  {
+    "file": "chat_template.json",
+    "bytes": 5502,
+    "expected_bytes": 5502,
+    "sha_matches": true,
+    "zero_bytes": 0,
+    "json_valid": true
+  },
+  {
+    "file": "config.json",
+    "bytes": 1505,
+    "expected_bytes": 1505,
+    "sha_matches": true,
+    "zero_bytes": 0,
+    "json_valid": true
+  },
+  {
+    "file": "configuration.json",
+    "bytes": 73,
+    "expected_bytes": 73,
+    "sha_matches": true,
+    "zero_bytes": 0,
+    "json_valid": true
+  },
+  {
+    "file": "generation_config.json",
+    "bytes": 269,
+    "expected_bytes": 269,
+    "sha_matches": true,
+    "zero_bytes": 0,
+    "json_valid": true
+  },
+  {
+    "file": "merges.txt",
+    "bytes": 1671839,
+    "expected_bytes": 1671839,
+    "sha_matches": true,
+    "zero_bytes": 0
+  },
+  {
+    "file": "model.safetensors.index.json",
+    "bytes": 64742,
+    "expected_bytes": 64742,
+    "sha_matches": false,
+    "zero_bytes": 64742,
+    "json_error": "'utf-32-be' codec can't decode bytes in position 64740-64741: truncated data"
+  },
+  {
+    "file": "preprocessor_config.json",
+    "bytes": 390,
+    "expected_bytes": 390,
+    "sha_matches": false,
+    "zero_bytes": 390,
+    "json_error": "'utf-32-be' codec can't decode bytes in position 388-389: truncated data"
+  },
+  {
+    "file": "tokenizer.json",
+    "bytes": 7032403,
+    "expected_bytes": 7032403,
+    "sha_matches": false,
+    "zero_bytes": 7032403,
+    "json_error": "'utf-32-be' codec can't decode bytes in position 7032400-7032402: truncated data"
+  },
+  {
+    "file": "tokenizer_config.json",
+    "bytes": 10868,
+    "expected_bytes": 10868,
+    "sha_matches": false,
+    "zero_bytes": 10868,
+    "json_error": "Expecting value: line 1 column 1 (char 0)"
+  },
+  {
+    "file": "video_preprocessor_config.json",
+    "bytes": 385,
+    "expected_bytes": 385,
+    "sha_matches": false,
+    "zero_bytes": 385,
+    "json_error": "'utf-32-be' codec can't decode byte 0x00 in position 384: truncated data"
+  },
+  {
+    "file": "vocab.json",
+    "bytes": 2776833,
+    "expected_bytes": 2776833,
+    "sha_matches": false,
+    "zero_bytes": 2776833,
+    "json_error": "'utf-32-be' codec can't decode byte 0x00 in position 2776832: truncated data"
+  }
+]

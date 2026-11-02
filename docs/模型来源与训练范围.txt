@@ -10,7 +10,9 @@ YOLO26检测器：从原图找到猫的位置。它已经认识“猫”这个�
 
 SAM2.1：根据检测框取得猫的轮廓。项目组合它的分割能力，提取主体区域。
 
-YOLO26s-cls分类器：以通用图像分类预训练权重开始，改成12个猫品种类别，再用本项目的训练图片微调。训练已完成，最终使用验证集选出的breed-best.pt，约11MB，随源码保留。
+当前Swin-Tiny分类器：从官方ImageNet通用预训练参数独立微调，骨干和两个输出头参与训练。品种头给出12种猫的一个结果，物种头用猫和狗负例学习猫/狗判断。原图始终参与，检测与分割提供主体信息；定位失败时仍会识别原图。当前权重由configs/active-classifier.json指定。
+
+旧YOLO26s-cls分类器与breed-best.pt（约11MB）保留为V1历史，不作为新版默认。
 
 Qwen3-VL-4B-Instruct：直接读取同一张原图和固定任务说明，独立判断品种，并写出简短可见特征。项目在本机运行，不调用收费云端接口；本项目没有训练这个4B基础大模型。
 
@@ -40,4 +42,7 @@ https://github.com/ultralytics/assets/releases/tag/v8.4.0
 
 经用户授权，检查本地内容后，只重新获取了10个受影响的权重分段和6个全零配置文件，旧文件和错误日志保留。两份大权重文件、其余Qwen配置和YOLO/SAM权重已逐个通过官方摘要核对。下载与后续GPU验证分别执行。
 
-修复后已完成本机分类训练和共同测试。分类器最佳验证Top-1约87.0%；同一组120张测试图上传统路线正确88张，Qwen正确80张。详细方法、指标和案例见《项目说明与实现感悟》。
+V1曾完成分类训练和旧共同测试，成绩为传统88/120、Qwen80/120。新版的训练、验证消融与独立测试另存artifacts/optimization-v2与artifacts/evaluation/comparison-v2；当前实际成绩见《项目说明与实现感悟》。
+
+Swin通用初始化来源：https://download.pytorch.org/models/swin_t-704ceda3.pth
+已核对官方文件名公布的SHA256前缀704ceda3，完整实测SHA256为704ceda373461b0a224fcdddd75cd2a5e9f8064512ed47adbddef7f343fd147b。下载日志和元数据见artifacts/optimization-v2/swin-download.json。它是通用预训练初始化；项目猫分类权重由本机正式训练产生。

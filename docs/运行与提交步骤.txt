@@ -19,7 +19,7 @@ Python解释器由运行环境指定。项目不需要开发者的用户名目�
 
 完整保留包内已经有模型权重和数据，通常不用重新下载或训练。只有源码时，先恢复依赖，再运行：
 .venv/Scripts/python.exe scripts/download_models.py --only all
-其中自训练的weights/breed-best.pt约11MB，已随源码保留；该命令用于获取官方通用模型。下载中断或校验失败时保留日志，先检查原因，不要设置自动重启循环。
+新版自训练权重是weights/breed-swin-v2-fp16.pt，约55MB，已随源码保留；configs/active-classifier.json指定它。旧版breed-best.pt仍保留作历史。该下载命令用于获取官方通用检测、分割与视觉大模型。下载中断或校验失败时保留日志，先检查原因，不要设置自动重启循环。
 
 需要精确恢复开发版本时，在已选定的环境内执行：
 .venv/Scripts/python.exe -m pip install -r requirements-lock.txt
@@ -40,7 +40,7 @@ git branch -M main
 git remote set-url origin REPOSITORY_URL
 git push -u origin main
 
-clone bundle后已有origin，所以这里用set-url。登录由上传者在自己的电脑完成。上传后打开仓库网页，确认有README、catvision、scripts、docs、artifacts，以及weights/breed-best.pt，再把新仓库链接发回。
+clone bundle后已有origin，所以这里用set-url。登录由上传者在自己的电脑完成。上传后打开仓库网页，确认有README、catvision、scripts、docs、artifacts，以及configs/active-classifier.json和weights/breed-swin-v2-fp16.pt，再把新仓库链接发回。
 
 第二阶段是独立项目，使用第二阶段的新仓库链接。第一阶段的旧链接继续对应第一阶段。
 
@@ -56,6 +56,6 @@ clone bundle后已有origin，所以这里用set-url。登录由上传者在自�
 项目说明与实现感悟.pdf：交给验收者阅读，包含方法、真实指标、案例与实现感悟。
 实际运行演示.mp4：交给验收者看运行过程。
 cat-vision-stage2-source.bundle：给帮忙上传代码的人，保留Git历史，不直接当作仓库链接。
-完整成果与保留数据.zip：自己留存或交接。它保留PDF、完整课程提要、原始视频、数据、所有模型与下载历史、训练记录和源码。
+完整成果与保留数据_改进版.zip：自己留存或交接。它保留PDF、完整课程提要、原始视频、数据、所有模型与下载历史、训练记录和源码。
 
 完整保留包体积较大。验收者需要全部模型和数据时，可以把它存到网盘后发送下载链接。按PDF先交仓库链接、文档和运行视频；不要把整个保留包的几十GB文件直接上传代码仓库。

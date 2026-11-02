@@ -1,0 +1,120 @@
+TASK START train-swin-v2; logs=artifacts/run-logs/20261102T043210Z-train-swin-v2-e6ab690b
+CONFIG {"architecture": "torchvision.swin_t", "initialization_sha256": "704ceda373461b0a224fcdddd75cd2a5e9f8064512ed47adbddef7f343fd147b", "seed": 20261102, "epochs_max": 30, "warmup_frozen_epochs": 2, "patience": 8, "batch": 8, "validation_batch": 8, "workers": 0, "cpu_threads": 2, "image_size": 224, "backbone_lr": 1.5e-05, "heads_lr": 0.0005, "optimizer": "AdamW", "weight_decay": 0.0001, "breed_label_smoothing": 0.05, "species_loss_weight": 0.5, "precision": "FP32, TF32 matmul allowed", "pause_after_sync_seconds": 0.05, "train_source_count": 1950, "val_source_count": 738, "manifest_sha256": "5aa67124d722ed0e1ee62d6947824040baefbfb2056198d1138955dc45d5b357", "selection": "validation original-image breed correct, then fewer false-cat dogs", "no_test_input": true, "automatic_retry": false, "automatic_resume": false}
+TRAIN epoch=1 batch=60/244 loss=2.26495 allocatedMB=128
+TRAIN epoch=1 batch=120/244 loss=1.88282 allocatedMB=128
+TRAIN epoch=1 batch=180/244 loss=1.67288 allocatedMB=128
+TRAIN epoch=1 batch=240/244 loss=1.50333 allocatedMB=128
+EPOCH {"epoch": 1, "train_loss": 1.4942059999245865, "val_breed_correct": 207, "val_cats": 238, "val_accuracy": 0.8697478991596639, "val_cats_accepted": 235, "val_false_cat_dogs": 1, "val_dogs": 500, "seconds": 30.9396224000011, "elapsed_seconds": 30.940050999997766} BEST (207, -1) patience 0
+TRAIN epoch=2 batch=60/244 loss=0.83617 allocatedMB=128
+TRAIN epoch=2 batch=120/244 loss=0.80515 allocatedMB=128
+TRAIN epoch=2 batch=180/244 loss=0.78726 allocatedMB=128
+TRAIN epoch=2 batch=240/244 loss=0.76401 allocatedMB=128
+EPOCH {"epoch": 2, "train_loss": 0.7600461198809819, "val_breed_correct": 215, "val_cats": 238, "val_accuracy": 0.9033613445378151, "val_cats_accepted": 238, "val_false_cat_dogs": 1, "val_dogs": 500, "seconds": 30.4593160000004, "elapsed_seconds": 61.60200630000327} BEST (215, -1) patience 0
+TRAIN epoch=3 batch=60/244 loss=0.59093 allocatedMB=451
+TRAIN epoch=3 batch=120/244 loss=0.58100 allocatedMB=451
+TRAIN epoch=3 batch=180/244 loss=0.58855 allocatedMB=451
+TRAIN epoch=3 batch=240/244 loss=0.58393 allocatedMB=451
+EPOCH {"epoch": 3, "train_loss": 0.586833095795069, "val_breed_correct": 220, "val_cats": 238, "val_accuracy": 0.9243697478991597, "val_cats_accepted": 238, "val_false_cat_dogs": 0, "val_dogs": 500, "seconds": 35.95356310000352, "elapsed_seconds": 97.76248720000149} BEST (220, 0) patience 0
+TRAIN epoch=4 batch=60/244 loss=0.48855 allocatedMB=451
+TRAIN epoch=4 batch=120/244 loss=0.49703 allocatedMB=451
+TRAIN epoch=4 batch=180/244 loss=0.48874 allocatedMB=451
+TRAIN epoch=4 batch=240/244 loss=0.47714 allocatedMB=451
+EPOCH {"epoch": 4, "train_loss": 0.4757453328829545, "val_breed_correct": 223, "val_cats": 238, "val_accuracy": 0.9369747899159664, "val_cats_accepted": 238, "val_false_cat_dogs": 0, "val_dogs": 500, "seconds": 35.71560589999717, "elapsed_seconds": 133.69126590000087} BEST (223, 0) patience 0
+TRAIN epoch=5 batch=60/244 loss=0.44389 allocatedMB=451
+TRAIN epoch=5 batch=120/244 loss=0.42832 allocatedMB=451
+TRAIN epoch=5 batch=180/244 loss=0.42406 allocatedMB=451
+TRAIN epoch=5 batch=240/244 loss=0.42899 allocatedMB=451
+EPOCH {"epoch": 5, "train_loss": 0.4305941400772486, "val_breed_correct": 226, "val_cats": 238, "val_accuracy": 0.9495798319327731, "val_cats_accepted": 238, "val_false_cat_dogs": 1, "val_dogs": 500, "seconds": 35.60825069999555, "elapsed_seconds": 169.513420700001} BEST (226, -1) patience 0
+TRAIN epoch=6 batch=60/244 loss=0.38685 allocatedMB=451
+TRAIN epoch=6 batch=120/244 loss=0.38743 allocatedMB=451
+TRAIN epoch=6 batch=180/244 loss=0.39182 allocatedMB=451
+TRAIN epoch=6 batch=240/244 loss=0.39687 allocatedMB=451
+EPOCH {"epoch": 6, "train_loss": 0.40032769639045, "val_breed_correct": 226, "val_cats": 238, "val_accuracy": 0.9495798319327731, "val_cats_accepted": 238, "val_false_cat_dogs": 1, "val_dogs": 500, "seconds": 35.509173700003885, "elapsed_seconds": 205.23062490000302} BEST (226, -1) patience 1
+TRAIN epoch=7 batch=60/244 loss=0.38582 allocatedMB=451
+TRAIN epoch=7 batch=120/244 loss=0.38924 allocatedMB=451
+TRAIN epoch=7 batch=180/244 loss=0.39050 allocatedMB=451
+TRAIN epoch=7 batch=240/244 loss=0.38682 allocatedMB=451
+EPOCH {"epoch": 7, "train_loss": 0.3867679887627944, "val_breed_correct": 226, "val_cats": 238, "val_accuracy": 0.9495798319327731, "val_cats_accepted": 238, "val_false_cat_dogs": 1, "val_dogs": 500, "seconds": 35.65227539999614, "elapsed_seconds": 241.01833040000201} BEST (226, -1) patience 2
+TRAIN epoch=8 batch=60/244 loss=0.37284 allocatedMB=451
+TRAIN epoch=8 batch=120/244 loss=0.35891 allocatedMB=451
+TRAIN epoch=8 batch=180/244 loss=0.36220 allocatedMB=451
+TRAIN epoch=8 batch=240/244 loss=0.35927 allocatedMB=451
+EPOCH {"epoch": 8, "train_loss": 0.357480488783465, "val_breed_correct": 228, "val_cats": 238, "val_accuracy": 0.957983193277311, "val_cats_accepted": 238, "val_false_cat_dogs": 1, "val_dogs": 500, "seconds": 35.584528799998225, "elapsed_seconds": 276.7300604999982} BEST (228, -1) patience 0
+TRAIN epoch=9 batch=60/244 loss=0.35018 allocatedMB=451
+TRAIN epoch=9 batch=120/244 loss=0.34788 allocatedMB=451
+TRAIN epoch=9 batch=180/244 loss=0.34714 allocatedMB=451
+TRAIN epoch=9 batch=240/244 loss=0.34722 allocatedMB=451
+EPOCH {"epoch": 9, "train_loss": 0.34752577249820416, "val_breed_correct": 229, "val_cats": 238, "val_accuracy": 0.9621848739495799, "val_cats_accepted": 238, "val_false_cat_dogs": 1, "val_dogs": 500, "seconds": 35.52427429999807, "elapsed_seconds": 312.46785269999964} BEST (229, -1) patience 0
+TRAIN epoch=10 batch=60/244 loss=0.33379 allocatedMB=451
+TRAIN epoch=10 batch=120/244 loss=0.33973 allocatedMB=451
+TRAIN epoch=10 batch=180/244 loss=0.34206 allocatedMB=451
+TRAIN epoch=10 batch=240/244 loss=0.33883 allocatedMB=451
+EPOCH {"epoch": 10, "train_loss": 0.33853867925130404, "val_breed_correct": 228, "val_cats": 238, "val_accuracy": 0.957983193277311, "val_cats_accepted": 238, "val_false_cat_dogs": 1, "val_dogs": 500, "seconds": 35.53881349999574, "elapsed_seconds": 348.2214252999984} BEST (229, -1) patience 1
+TRAIN epoch=11 batch=60/244 loss=0.35251 allocatedMB=451
+TRAIN epoch=11 batch=120/244 loss=0.34437 allocatedMB=451
+TRAIN epoch=11 batch=180/244 loss=0.33981 allocatedMB=451
+TRAIN epoch=11 batch=240/244 loss=0.33708 allocatedMB=451
+EPOCH {"epoch": 11, "train_loss": 0.3375447968336252, "val_breed_correct": 224, "val_cats": 238, "val_accuracy": 0.9411764705882353, "val_cats_accepted": 238, "val_false_cat_dogs": 1, "val_dogs": 500, "seconds": 35.51018959999783, "elapsed_seconds": 383.87119299999904} BEST (229, -1) patience 2
+TRAIN epoch=12 batch=60/244 loss=0.33563 allocatedMB=451
+TRAIN epoch=12 batch=120/244 loss=0.33096 allocatedMB=451
+TRAIN epoch=12 batch=180/244 loss=0.33323 allocatedMB=451
+TRAIN epoch=12 batch=240/244 loss=0.33194 allocatedMB=451
+EPOCH {"epoch": 12, "train_loss": 0.33174125191492915, "val_breed_correct": 226, "val_cats": 238, "val_accuracy": 0.9495798319327731, "val_cats_accepted": 238, "val_false_cat_dogs": 1, "val_dogs": 500, "seconds": 35.48875470000348, "elapsed_seconds": 419.46815790000255} BEST (229, -1) patience 3
+TRAIN epoch=13 batch=60/244 loss=0.32408 allocatedMB=451
+TRAIN epoch=13 batch=120/244 loss=0.31953 allocatedMB=451
+TRAIN epoch=13 batch=180/244 loss=0.31952 allocatedMB=451
+TRAIN epoch=13 batch=240/244 loss=0.32477 allocatedMB=451
+EPOCH {"epoch": 13, "train_loss": 0.32453312528439054, "val_breed_correct": 228, "val_cats": 238, "val_accuracy": 0.957983193277311, "val_cats_accepted": 238, "val_false_cat_dogs": 1, "val_dogs": 500, "seconds": 35.56934270000056, "elapsed_seconds": 455.14741839999624} BEST (229, -1) patience 4
+TRAIN epoch=14 batch=60/244 loss=0.31165 allocatedMB=451
+TRAIN epoch=14 batch=120/244 loss=0.31935 allocatedMB=451
+TRAIN epoch=14 batch=180/244 loss=0.31734 allocatedMB=451
+TRAIN epoch=14 batch=240/244 loss=0.31820 allocatedMB=451
+EPOCH {"epoch": 14, "train_loss": 0.31802608407460725, "val_breed_correct": 228, "val_cats": 238, "val_accuracy": 0.957983193277311, "val_cats_accepted": 238, "val_false_cat_dogs": 1, "val_dogs": 500, "seconds": 35.837175799999386, "elapsed_seconds": 491.09767439999996} BEST (229, -1) patience 5
+TRAIN epoch=15 batch=60/244 loss=0.31636 allocatedMB=451
+TRAIN epoch=15 batch=120/244 loss=0.31544 allocatedMB=451
+TRAIN epoch=15 batch=180/244 loss=0.31844 allocatedMB=451
+TRAIN epoch=15 batch=240/244 loss=0.31792 allocatedMB=451
+EPOCH {"epoch": 15, "train_loss": 0.31777018739626955, "val_breed_correct": 231, "val_cats": 238, "val_accuracy": 0.9705882352941176, "val_cats_accepted": 238, "val_false_cat_dogs": 1, "val_dogs": 500, "seconds": 35.47604760000104, "elapsed_seconds": 526.6966707999964} BEST (231, -1) patience 0
+TRAIN epoch=16 batch=60/244 loss=0.31972 allocatedMB=451
+TRAIN epoch=16 batch=120/244 loss=0.32158 allocatedMB=451
+TRAIN epoch=16 batch=180/244 loss=0.32069 allocatedMB=451
+TRAIN epoch=16 batch=240/244 loss=0.32000 allocatedMB=451
+EPOCH {"epoch": 16, "train_loss": 0.31979038703135954, "val_breed_correct": 228, "val_cats": 238, "val_accuracy": 0.957983193277311, "val_cats_accepted": 238, "val_false_cat_dogs": 1, "val_dogs": 500, "seconds": 35.49209659999906, "elapsed_seconds": 562.3957028000004} BEST (231, -1) patience 1
+TRAIN epoch=17 batch=60/244 loss=0.31449 allocatedMB=451
+TRAIN epoch=17 batch=120/244 loss=0.31469 allocatedMB=451
+TRAIN epoch=17 batch=180/244 loss=0.31443 allocatedMB=451
+TRAIN epoch=17 batch=240/244 loss=0.31414 allocatedMB=451
+EPOCH {"epoch": 17, "train_loss": 0.3142189903041491, "val_breed_correct": 228, "val_cats": 238, "val_accuracy": 0.957983193277311, "val_cats_accepted": 238, "val_false_cat_dogs": 1, "val_dogs": 500, "seconds": 35.56912070000544, "elapsed_seconds": 598.0899426000033} BEST (231, -1) patience 2
+TRAIN epoch=18 batch=60/244 loss=0.31193 allocatedMB=451
+TRAIN epoch=18 batch=120/244 loss=0.31429 allocatedMB=451
+TRAIN epoch=18 batch=180/244 loss=0.31111 allocatedMB=451
+TRAIN epoch=18 batch=240/244 loss=0.31003 allocatedMB=451
+EPOCH {"epoch": 18, "train_loss": 0.3101188793544544, "val_breed_correct": 228, "val_cats": 238, "val_accuracy": 0.957983193277311, "val_cats_accepted": 238, "val_false_cat_dogs": 1, "val_dogs": 500, "seconds": 35.42605909999838, "elapsed_seconds": 633.6487923000022} BEST (231, -1) patience 3
+TRAIN epoch=19 batch=60/244 loss=0.30949 allocatedMB=451
+TRAIN epoch=19 batch=120/244 loss=0.31187 allocatedMB=451
+TRAIN epoch=19 batch=180/244 loss=0.31097 allocatedMB=451
+TRAIN epoch=19 batch=240/244 loss=0.31060 allocatedMB=451
+EPOCH {"epoch": 19, "train_loss": 0.31075034422752185, "val_breed_correct": 227, "val_cats": 238, "val_accuracy": 0.9537815126050421, "val_cats_accepted": 238, "val_false_cat_dogs": 1, "val_dogs": 500, "seconds": 35.51420369999687, "elapsed_seconds": 669.2843534999993} BEST (231, -1) patience 4
+TRAIN epoch=20 batch=60/244 loss=0.31251 allocatedMB=451
+TRAIN epoch=20 batch=120/244 loss=0.30913 allocatedMB=451
+TRAIN epoch=20 batch=180/244 loss=0.31089 allocatedMB=451
+TRAIN epoch=20 batch=240/244 loss=0.31108 allocatedMB=451
+EPOCH {"epoch": 20, "train_loss": 0.31113028993973363, "val_breed_correct": 228, "val_cats": 238, "val_accuracy": 0.957983193277311, "val_cats_accepted": 238, "val_false_cat_dogs": 1, "val_dogs": 500, "seconds": 35.5312116999994, "elapsed_seconds": 704.9290827000004} BEST (231, -1) patience 5
+TRAIN epoch=21 batch=60/244 loss=0.31061 allocatedMB=451
+TRAIN epoch=21 batch=120/244 loss=0.30922 allocatedMB=451
+TRAIN epoch=21 batch=180/244 loss=0.31069 allocatedMB=451
+TRAIN epoch=21 batch=240/244 loss=0.31015 allocatedMB=451
+EPOCH {"epoch": 21, "train_loss": 0.31005218857373945, "val_breed_correct": 229, "val_cats": 238, "val_accuracy": 0.9621848739495799, "val_cats_accepted": 238, "val_false_cat_dogs": 1, "val_dogs": 500, "seconds": 35.75779209999746, "elapsed_seconds": 740.8105843000012} BEST (231, -1) patience 6
+TRAIN epoch=22 batch=60/244 loss=0.30755 allocatedMB=451
+TRAIN epoch=22 batch=120/244 loss=0.30815 allocatedMB=451
+TRAIN epoch=22 batch=180/244 loss=0.30727 allocatedMB=451
+TRAIN epoch=22 batch=240/244 loss=0.30926 allocatedMB=451
+EPOCH {"epoch": 22, "train_loss": 0.30973235631600404, "val_breed_correct": 227, "val_cats": 238, "val_accuracy": 0.9537815126050421, "val_cats_accepted": 238, "val_false_cat_dogs": 1, "val_dogs": 500, "seconds": 35.507421199996315, "elapsed_seconds": 776.4384274999975} BEST (231, -1) patience 7
+TRAIN epoch=23 batch=60/244 loss=0.30625 allocatedMB=451
+TRAIN epoch=23 batch=120/244 loss=0.30943 allocatedMB=451
+TRAIN epoch=23 batch=180/244 loss=0.30862 allocatedMB=451
+TRAIN epoch=23 batch=240/244 loss=0.30803 allocatedMB=451
+EPOCH {"epoch": 23, "train_loss": 0.30792891611372725, "val_breed_correct": 227, "val_cats": 238, "val_accuracy": 0.9537815126050421, "val_cats_accepted": 238, "val_false_cat_dogs": 1, "val_dogs": 500, "seconds": 35.538446600003226, "elapsed_seconds": 812.0975586999994} BEST (231, -1) patience 8
+EARLY STOP validation only
+TRAINING COMPLETED
+TASK END train-swin-v2; state=completed

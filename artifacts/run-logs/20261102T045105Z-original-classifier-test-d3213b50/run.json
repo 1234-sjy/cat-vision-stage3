@@ -1,0 +1,15 @@
+{
+  "task": "original-classifier-test",
+  "state": "completed",
+  "pid": 13856,
+  "created_utc": "2026-11-02T04:51:05.284159+00:00",
+  "logs": "artifacts/run-logs/20261102T045105Z-original-classifier-test-d3213b50",
+  "automatic_retry": false,
+  "automatic_restart": false,
+  "argv": [
+    "scripts/evaluate_original_classifier.py",
+    "--data-root",
+    "../../work/cat-data/oxford-iiit-pet"
+  ],
+  "finished_utc": "2026-11-02T04:53:32.800703+00:00"
+}

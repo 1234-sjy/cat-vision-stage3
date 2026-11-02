@@ -1,0 +1,6 @@
+{
+  "version": "cat-breed-v1",
+  "text": "观察图片中的猫。若有多只猫，只判断画面中面积最大的猫。\n任务是根据可见外观识别一个猫品种。候选代码与中文名如下：\nAbyssinian: 阿比西尼亚猫\nBengal: 孟加拉猫\nBirman: 伯曼猫\nBombay: 孟买猫\nBritish_Shorthair: 英国短毛猫\nEgyptian_Mau: 埃及猫\nMaine_Coon: 缅因猫\nPersian: 波斯猫\nRagdoll: 布偶猫\nRussian_Blue: 俄罗斯蓝猫\nSiamese: 暹罗猫\nSphynx: 斯芬克斯猫\n只返回一个JSON对象，不要Markdown。字段如下：\nhas_cat: 布尔值，图片里是否有真实的猫；\nbreed: 上述候选代码中的一个。没有猫时用null，明确属于其他品种时用\"other\"；\nfeatures: 最多3条简短中文可见外观特征，如耳朵、脸型、毛长、花纹或眼睛。\n不要给多个候选，不要编造百分比，不要根据图片文件名判断。\n示例结构：{\"has_cat\":true,\"breed\":\"候选代码\",\"features\":[\"可见特征\"]}。\n",
+  "do_sample": false,
+  "max_new_tokens": 192
+}

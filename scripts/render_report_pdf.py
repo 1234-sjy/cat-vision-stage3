@@ -34,7 +34,9 @@ def main():
     story = []
     for index, text in enumerate(paragraphs):
         if text == "实际案例":
-            chart = ROOT / "artifacts/comparison/comparison.png"
+            chart = ROOT / "artifacts/comparison-v2/comparison.png"
+            if not chart.exists():
+                chart = ROOT / "artifacts/comparison/comparison.png"
             story.append(Image(str(chart), width=455, height=455 * 4.5 / 11))
             story.append(Spacer(1, 10))
         style = title if index == 0 else heading if len(text) < 24 and "。" not in text else body

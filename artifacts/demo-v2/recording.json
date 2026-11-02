@@ -1,0 +1,67 @@
+{
+  "source": "Actual local browser upload and fresh model inference, no replay",
+  "started_utc": "2026-11-02T05:12:22.889Z",
+  "frames": [
+    {
+      "file": "00000.jpg",
+      "at_ms": 101
+    },
+    {
+      "file": "00001.jpg",
+      "at_ms": 487
+    },
+    {
+      "file": "00002.jpg",
+      "at_ms": 6663
+    },
+    {
+      "file": "00003.jpg",
+      "at_ms": 9233
+    },
+    {
+      "file": "00004.jpg",
+      "at_ms": 11812
+    },
+    {
+      "file": "00005.jpg",
+      "at_ms": 14389
+    },
+    {
+      "file": "00006.jpg",
+      "at_ms": 16992
+    },
+    {
+      "file": "00007.jpg",
+      "at_ms": 19572
+    },
+    {
+      "file": "00008.jpg",
+      "at_ms": 22151
+    },
+    {
+      "file": "00009.jpg",
+      "at_ms": 24770
+    },
+    {
+      "file": "00010.jpg",
+      "at_ms": 38913
+    },
+    {
+      "file": "00011.jpg",
+      "at_ms": 41004
+    },
+    {
+      "file": "00012.jpg",
+      "at_ms": 43089
+    },
+    {
+      "file": "00013.jpg",
+      "at_ms": 45176
+    },
+    {
+      "file": "00014.jpg",
+      "at_ms": 62107
+    }
+  ],
+  "encoding_note": "Original capture timing retained; final result held for reading."
+}

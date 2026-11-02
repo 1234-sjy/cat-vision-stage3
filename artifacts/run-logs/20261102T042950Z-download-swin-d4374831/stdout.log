@@ -1,0 +1,4 @@
+TASK START download-swin; logs=artifacts/run-logs/20261102T042950Z-download-swin-d4374831
+DOWNLOAD ONCE https://download.pytorch.org/models/swin_t-704ceda3.pth
+VERIFIED swin_t-704ceda3.pth 113445839 704ceda373461b0a224fcdddd75cd2a5e9f8064512ed47adbddef7f343fd147b
+TASK END download-swin; state=completed

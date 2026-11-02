@@ -1,0 +1,15 @@
+{
+  "task": "validation-ablation",
+  "state": "completed",
+  "pid": 8536,
+  "created_utc": "2026-11-02T04:27:37.592366+00:00",
+  "logs": "artifacts/run-logs/20261102T042737Z-validation-ablation-d4a4df9f",
+  "automatic_retry": false,
+  "automatic_restart": false,
+  "argv": [
+    "scripts/diagnose_classification.py",
+    "--data-root",
+    "../../work/cat-data/oxford-iiit-pet"
+  ],
+  "finished_utc": "2026-11-02T04:29:24.126424+00:00"
+}

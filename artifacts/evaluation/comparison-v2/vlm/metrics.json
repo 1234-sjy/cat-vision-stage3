@@ -1,0 +1,298 @@
+{
+  "count": 120,
+  "correct": 87,
+  "accuracy": 0.725,
+  "macro_f1": 0.7138629170134408,
+  "status_counts": {
+    "ok": 116,
+    "parse_error": 3,
+    "unsupported": 1
+  },
+  "per_class": {
+    "Abyssinian": {
+      "support": 10,
+      "precision": 1.0,
+      "recall": 0.7,
+      "f1": 0.8235294117647058
+    },
+    "Bengal": {
+      "support": 10,
+      "precision": 0.6923076923076923,
+      "recall": 0.9,
+      "f1": 0.7826086956521738
+    },
+    "Birman": {
+      "support": 10,
+      "precision": 0.7142857142857143,
+      "recall": 0.5,
+      "f1": 0.588235294117647
+    },
+    "Bombay": {
+      "support": 10,
+      "precision": 1.0,
+      "recall": 0.1,
+      "f1": 0.18181818181818182
+    },
+    "British_Shorthair": {
+      "support": 10,
+      "precision": 0.42857142857142855,
+      "recall": 0.9,
+      "f1": 0.5806451612903225
+    },
+    "Egyptian_Mau": {
+      "support": 10,
+      "precision": 1.0,
+      "recall": 0.3,
+      "f1": 0.4615384615384615
+    },
+    "Maine_Coon": {
+      "support": 10,
+      "precision": 0.9,
+      "recall": 0.9,
+      "f1": 0.9
+    },
+    "Persian": {
+      "support": 10,
+      "precision": 0.8333333333333334,
+      "recall": 1.0,
+      "f1": 0.9090909090909091
+    },
+    "Ragdoll": {
+      "support": 10,
+      "precision": 0.7,
+      "recall": 0.7,
+      "f1": 0.7
+    },
+    "Russian_Blue": {
+      "support": 10,
+      "precision": 0.6428571428571429,
+      "recall": 0.9,
+      "f1": 0.75
+    },
+    "Siamese": {
+      "support": 10,
+      "precision": 1.0,
+      "recall": 0.8,
+      "f1": 0.888888888888889
+    },
+    "Sphynx": {
+      "support": 10,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    }
+  },
+  "row_labels": [
+    "Abyssinian",
+    "Bengal",
+    "Birman",
+    "Bombay",
+    "British_Shorthair",
+    "Egyptian_Mau",
+    "Maine_Coon",
+    "Persian",
+    "Ragdoll",
+    "Russian_Blue",
+    "Siamese",
+    "Sphynx"
+  ],
+  "column_labels": [
+    "Abyssinian",
+    "Bengal",
+    "Birman",
+    "Bombay",
+    "British_Shorthair",
+    "Egyptian_Mau",
+    "Maine_Coon",
+    "Persian",
+    "Ragdoll",
+    "Russian_Blue",
+    "Siamese",
+    "Sphynx",
+    "no_result"
+  ],
+  "confusion_matrix": [
+    [
+      7,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      9,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      5,
+      0,
+      0,
+      0,
+      0,
+      1,
+      3,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1,
+      6,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      2
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      9,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      4,
+      0,
+      0,
+      2,
+      3,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      9,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      10,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      7,
+      2,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      9,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      8,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      10,
+      0
+    ]
+  ],
+  "mean_inference_seconds": 6.63652689916665,
+  "median_inference_seconds": 6.575657700002921
+}

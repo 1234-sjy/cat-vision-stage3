@@ -1,0 +1,15 @@
+{
+  "task": "train-swin-v2",
+  "state": "completed",
+  "pid": 24580,
+  "created_utc": "2026-11-02T04:32:10.748377+00:00",
+  "logs": "artifacts/run-logs/20261102T043210Z-train-swin-v2-e6ab690b",
+  "automatic_retry": false,
+  "automatic_restart": false,
+  "argv": [
+    "scripts/train_transformer.py",
+    "--data-root",
+    "../../work/cat-data/oxford-iiit-pet"
+  ],
+  "finished_utc": "2026-11-02T04:45:49.191117+00:00"
+}

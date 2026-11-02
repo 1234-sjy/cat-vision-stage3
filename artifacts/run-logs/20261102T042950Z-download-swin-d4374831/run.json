@@ -1,0 +1,13 @@
+{
+  "task": "download-swin",
+  "state": "completed",
+  "pid": 9804,
+  "created_utc": "2026-11-02T04:29:50.070721+00:00",
+  "logs": "artifacts/run-logs/20261102T042950Z-download-swin-d4374831",
+  "automatic_retry": false,
+  "automatic_restart": false,
+  "argv": [
+    "scripts/download_swin.py"
+  ],
+  "finished_utc": "2026-11-02T04:30:05.951858+00:00"
+}

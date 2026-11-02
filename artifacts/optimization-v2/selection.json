@@ -1,0 +1,125 @@
+{
+  "selected": {
+    "tta": false,
+    "subject_weight": 0.0,
+    "cat_threshold": 0.5,
+    "correct": 231,
+    "cats": 238,
+    "accepted_cats": 238,
+    "false_cat_dogs": 1,
+    "dogs": 500
+  },
+  "trials": [
+    {
+      "tta": false,
+      "subject_weight": 0.0,
+      "cat_threshold": 0.5,
+      "correct": 231,
+      "cats": 238,
+      "accepted_cats": 238,
+      "false_cat_dogs": 1,
+      "dogs": 500
+    },
+    {
+      "tta": false,
+      "subject_weight": 0.25,
+      "cat_threshold": 0.5,
+      "correct": 231,
+      "cats": 238,
+      "accepted_cats": 238,
+      "false_cat_dogs": 1,
+      "dogs": 500
+    },
+    {
+      "tta": false,
+      "subject_weight": 0.5,
+      "cat_threshold": 0.5,
+      "correct": 228,
+      "cats": 238,
+      "accepted_cats": 238,
+      "false_cat_dogs": 1,
+      "dogs": 500
+    },
+    {
+      "tta": false,
+      "subject_weight": 0.75,
+      "cat_threshold": 0.5,
+      "correct": 226,
+      "cats": 238,
+      "accepted_cats": 238,
+      "false_cat_dogs": 1,
+      "dogs": 500
+    },
+    {
+      "tta": false,
+      "subject_weight": 1.0,
+      "cat_threshold": 0.5,
+      "correct": 224,
+      "cats": 238,
+      "accepted_cats": 238,
+      "false_cat_dogs": 1,
+      "dogs": 500
+    },
+    {
+      "tta": true,
+      "subject_weight": 0.0,
+      "cat_threshold": 0.5,
+      "correct": 230,
+      "cats": 238,
+      "accepted_cats": 238,
+      "false_cat_dogs": 1,
+      "dogs": 500
+    },
+    {
+      "tta": true,
+      "subject_weight": 0.25,
+      "cat_threshold": 0.5,
+      "correct": 230,
+      "cats": 238,
+      "accepted_cats": 238,
+      "false_cat_dogs": 1,
+      "dogs": 500
+    },
+    {
+      "tta": true,
+      "subject_weight": 0.5,
+      "cat_threshold": 0.5,
+      "correct": 228,
+      "cats": 238,
+      "accepted_cats": 238,
+      "false_cat_dogs": 1,
+      "dogs": 500
+    },
+    {
+      "tta": true,
+      "subject_weight": 0.75,
+      "cat_threshold": 0.5,
+      "correct": 227,
+      "cats": 238,
+      "accepted_cats": 238,
+      "false_cat_dogs": 1,
+      "dogs": 500
+    },
+    {
+      "tta": true,
+      "subject_weight": 1.0,
+      "cat_threshold": 0.5,
+      "correct": 224,
+      "cats": 238,
+      "accepted_cats": 238,
+      "false_cat_dogs": 1,
+      "dogs": 500
+    }
+  ],
+  "config": {
+    "architecture": "swin_t",
+    "checkpoint": "breed-swin-v2-fp16.pt",
+    "tta": false,
+    "subject_weight": 0.0,
+    "cat_threshold": 0.5,
+    "checkpoint_sha256": "4b049fff1437bfdf46b4f4d05e0c57b711be0366291e0c700397fdc445d121c1",
+    "selected_on": "validation only:238 cats and500 dogs",
+    "species_negative_scope": "dogs",
+    "selection_constraint": "at most2% false-cat among validation dogs; threshold>=0.5"
+  }
+}

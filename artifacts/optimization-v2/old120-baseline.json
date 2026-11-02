@@ -1,0 +1,600 @@
+{
+  "set": "original120 before V2",
+  "traditional": {
+    "count": 120,
+    "correct": 88,
+    "accuracy": 0.7333333333333333,
+    "macro_f1": 0.7781915238184588,
+    "status_counts": {
+      "ok": 105,
+      "no_cat": 15
+    },
+    "per_class": {
+      "Abyssinian": {
+        "support": 10,
+        "precision": 0.7272727272727273,
+        "recall": 0.8,
+        "f1": 0.761904761904762
+      },
+      "Bengal": {
+        "support": 10,
+        "precision": 0.8181818181818182,
+        "recall": 0.9,
+        "f1": 0.8571428571428572
+      },
+      "Birman": {
+        "support": 10,
+        "precision": 0.7272727272727273,
+        "recall": 0.8,
+        "f1": 0.761904761904762
+      },
+      "Bombay": {
+        "support": 10,
+        "precision": 0.75,
+        "recall": 0.9,
+        "f1": 0.8181818181818182
+      },
+      "British_Shorthair": {
+        "support": 10,
+        "precision": 1.0,
+        "recall": 0.6,
+        "f1": 0.7499999999999999
+      },
+      "Egyptian_Mau": {
+        "support": 10,
+        "precision": 1.0,
+        "recall": 0.7,
+        "f1": 0.8235294117647058
+      },
+      "Maine_Coon": {
+        "support": 10,
+        "precision": 0.9,
+        "recall": 0.9,
+        "f1": 0.9
+      },
+      "Persian": {
+        "support": 10,
+        "precision": 0.8888888888888888,
+        "recall": 0.8,
+        "f1": 0.8421052631578948
+      },
+      "Ragdoll": {
+        "support": 10,
+        "precision": 0.75,
+        "recall": 0.6,
+        "f1": 0.6666666666666665
+      },
+      "Russian_Blue": {
+        "support": 10,
+        "precision": 0.75,
+        "recall": 0.6,
+        "f1": 0.6666666666666665
+      },
+      "Siamese": {
+        "support": 10,
+        "precision": 1.0,
+        "recall": 0.7,
+        "f1": 0.8235294117647058
+      },
+      "Sphynx": {
+        "support": 10,
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666
+      }
+    },
+    "row_labels": [
+      "Abyssinian",
+      "Bengal",
+      "Birman",
+      "Bombay",
+      "British_Shorthair",
+      "Egyptian_Mau",
+      "Maine_Coon",
+      "Persian",
+      "Ragdoll",
+      "Russian_Blue",
+      "Siamese",
+      "Sphynx"
+    ],
+    "column_labels": [
+      "Abyssinian",
+      "Bengal",
+      "Birman",
+      "Bombay",
+      "British_Shorthair",
+      "Egyptian_Mau",
+      "Maine_Coon",
+      "Persian",
+      "Ragdoll",
+      "Russian_Blue",
+      "Siamese",
+      "Sphynx",
+      "no_result"
+    ],
+    "confusion_matrix": [
+      [
+        8,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        9,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        8,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        9,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        7,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        9,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        8,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        3,
+        0,
+        0,
+        0,
+        0,
+        1,
+        6,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        6,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        7,
+        0,
+        3
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        5,
+        5
+      ]
+    ],
+    "mean_inference_seconds": 0.09008656666707492,
+    "median_inference_seconds": 0.0639333999992232
+  },
+  "vlm": {
+    "count": 120,
+    "correct": 80,
+    "accuracy": 0.6666666666666666,
+    "macro_f1": 0.6427894360959465,
+    "status_counts": {
+      "ok": 113,
+      "parse_error": 5,
+      "unsupported": 2
+    },
+    "per_class": {
+      "Abyssinian": {
+        "support": 10,
+        "precision": 1.0,
+        "recall": 0.7,
+        "f1": 0.8235294117647058
+      },
+      "Bengal": {
+        "support": 10,
+        "precision": 0.5882352941176471,
+        "recall": 1.0,
+        "f1": 0.7407407407407407
+      },
+      "Birman": {
+        "support": 10,
+        "precision": 0.7,
+        "recall": 0.7,
+        "f1": 0.7
+      },
+      "Bombay": {
+        "support": 10,
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0
+      },
+      "British_Shorthair": {
+        "support": 10,
+        "precision": 0.45454545454545453,
+        "recall": 0.5,
+        "f1": 0.47619047619047616
+      },
+      "Egyptian_Mau": {
+        "support": 10,
+        "precision": 0.3333333333333333,
+        "recall": 0.1,
+        "f1": 0.15384615384615383
+      },
+      "Maine_Coon": {
+        "support": 10,
+        "precision": 0.8181818181818182,
+        "recall": 0.9,
+        "f1": 0.8571428571428572
+      },
+      "Persian": {
+        "support": 10,
+        "precision": 0.7,
+        "recall": 0.7,
+        "f1": 0.7
+      },
+      "Ragdoll": {
+        "support": 10,
+        "precision": 0.8333333333333334,
+        "recall": 0.5,
+        "f1": 0.625
+      },
+      "Russian_Blue": {
+        "support": 10,
+        "precision": 0.5263157894736842,
+        "recall": 1.0,
+        "f1": 0.6896551724137931
+      },
+      "Siamese": {
+        "support": 10,
+        "precision": 1.0,
+        "recall": 0.9,
+        "f1": 0.9473684210526316
+      },
+      "Sphynx": {
+        "support": 10,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    "row_labels": [
+      "Abyssinian",
+      "Bengal",
+      "Birman",
+      "Bombay",
+      "British_Shorthair",
+      "Egyptian_Mau",
+      "Maine_Coon",
+      "Persian",
+      "Ragdoll",
+      "Russian_Blue",
+      "Siamese",
+      "Sphynx"
+    ],
+    "column_labels": [
+      "Abyssinian",
+      "Bengal",
+      "Birman",
+      "Bombay",
+      "British_Shorthair",
+      "Egyptian_Mau",
+      "Maine_Coon",
+      "Persian",
+      "Ragdoll",
+      "Russian_Blue",
+      "Siamese",
+      "Sphynx",
+      "no_result"
+    ],
+    "confusion_matrix": [
+      [
+        7,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        10,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        7,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        5,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        3
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        5,
+        0,
+        0,
+        0,
+        0,
+        3,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        7,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        9,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        7,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        1,
+        5,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        10,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        9,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        10,
+        0
+      ]
+    ],
+    "mean_inference_seconds": 6.367768923333278,
+    "median_inference_seconds": 6.282523999998375
+  },
+  "stage1_saved_correct": 97,
+  "stage1_count": 120
+}

@@ -1,0 +1,311 @@
+{
+  "count": 1183,
+  "correct": 1067,
+  "accuracy": 0.9019442096365173,
+  "macro_f1": 0.9035561802899887,
+  "status_counts": {
+    "ok": 1181,
+    "no_cat": 2
+  },
+  "per_class": {
+    "Abyssinian": {
+      "support": 98,
+      "precision": 0.9381443298969072,
+      "recall": 0.9285714285714286,
+      "f1": 0.9333333333333333
+    },
+    "Bengal": {
+      "support": 100,
+      "precision": 0.7815126050420168,
+      "recall": 0.93,
+      "f1": 0.8493150684931506
+    },
+    "Birman": {
+      "support": 100,
+      "precision": 0.826530612244898,
+      "recall": 0.81,
+      "f1": 0.8181818181818183
+    },
+    "Bombay": {
+      "support": 88,
+      "precision": 0.9166666666666666,
+      "recall": 1.0,
+      "f1": 0.9565217391304348
+    },
+    "British_Shorthair": {
+      "support": 100,
+      "precision": 0.9659090909090909,
+      "recall": 0.85,
+      "f1": 0.9042553191489362
+    },
+    "Egyptian_Mau": {
+      "support": 97,
+      "precision": 0.9347826086956522,
+      "recall": 0.8865979381443299,
+      "f1": 0.91005291005291
+    },
+    "Maine_Coon": {
+      "support": 100,
+      "precision": 0.8936170212765957,
+      "recall": 0.84,
+      "f1": 0.8659793814432989
+    },
+    "Persian": {
+      "support": 100,
+      "precision": 0.9587628865979382,
+      "recall": 0.93,
+      "f1": 0.9441624365482233
+    },
+    "Ragdoll": {
+      "support": 100,
+      "precision": 0.7722772277227723,
+      "recall": 0.78,
+      "f1": 0.7761194029850748
+    },
+    "Russian_Blue": {
+      "support": 100,
+      "precision": 0.978494623655914,
+      "recall": 0.91,
+      "f1": 0.9430051813471503
+    },
+    "Siamese": {
+      "support": 100,
+      "precision": 0.9150943396226415,
+      "recall": 0.97,
+      "f1": 0.9417475728155339
+    },
+    "Sphynx": {
+      "support": 100,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    }
+  },
+  "row_labels": [
+    "Abyssinian",
+    "Bengal",
+    "Birman",
+    "Bombay",
+    "British_Shorthair",
+    "Egyptian_Mau",
+    "Maine_Coon",
+    "Persian",
+    "Ragdoll",
+    "Russian_Blue",
+    "Siamese",
+    "Sphynx"
+  ],
+  "column_labels": [
+    "Abyssinian",
+    "Bengal",
+    "Birman",
+    "Bombay",
+    "British_Shorthair",
+    "Egyptian_Mau",
+    "Maine_Coon",
+    "Persian",
+    "Ragdoll",
+    "Russian_Blue",
+    "Siamese",
+    "Sphynx",
+    "no_result"
+  ],
+  "confusion_matrix": [
+    [
+      91,
+      4,
+      0,
+      0,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      2,
+      93,
+      0,
+      0,
+      0,
+      4,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      81,
+      0,
+      0,
+      0,
+      0,
+      0,
+      11,
+      0,
+      7,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      88,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      2,
+      3,
+      0,
+      2,
+      85,
+      0,
+      2,
+      2,
+      2,
+      2,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      11,
+      0,
+      0,
+      0,
+      86,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      7,
+      0,
+      1,
+      0,
+      0,
+      84,
+      0,
+      8,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      2,
+      1,
+      0,
+      0,
+      2,
+      93,
+      2,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      12,
+      0,
+      0,
+      0,
+      4,
+      2,
+      78,
+      0,
+      2,
+      0,
+      1
+    ],
+    [
+      2,
+      0,
+      0,
+      4,
+      2,
+      1,
+      0,
+      0,
+      0,
+      91,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      3,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      97,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      100,
+      0
+    ]
+  ],
+  "mean_inference_seconds": null,
+  "median_inference_seconds": null,
+  "scope": "classifier original-image branch only; excludes detector/SAM/fusion",
+  "dog_test_count": 100,
+  "dog_false_cat": 0,
+  "model_config": {
+    "architecture": "swin_t",
+    "checkpoint": "breed-swin-v2-fp16.pt",
+    "tta": false,
+    "subject_weight": 0.0,
+    "cat_threshold": 0.5,
+    "checkpoint_sha256": "4b049fff1437bfdf46b4f4d05e0c57b711be0366291e0c700397fdc445d121c1",
+    "selected_on": "validation only:238 cats and500 dogs",
+    "species_negative_scope": "dogs",
+    "selection_constraint": "at most2% false-cat among validation dogs; threshold>=0.5"
+  }
+}

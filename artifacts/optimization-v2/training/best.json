@@ -1,0 +1,12 @@
+{
+  "epoch": 15,
+  "train_loss": 0.31777018739626955,
+  "val_breed_correct": 231,
+  "val_cats": 238,
+  "val_accuracy": 0.9705882352941176,
+  "val_cats_accepted": 238,
+  "val_false_cat_dogs": 1,
+  "val_dogs": 500,
+  "seconds": 35.47604760000104,
+  "elapsed_seconds": 526.6966707999964
+}

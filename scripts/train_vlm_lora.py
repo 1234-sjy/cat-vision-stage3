@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import argparse
 from datetime import datetime, timezone
+from contextlib import nullcontext
 import hashlib
 from importlib.metadata import version
 import json
@@ -38,6 +39,11 @@ from catvision.vlm_training import (BASE_MODEL_ID, GIB, LORA_TARGETS, VlmDataset
 
 SEED = 20261103
 DATA_DIR = ROOT / 'artifacts/optimization-v4/data'
+
+
+class QuietTelemetry:
+    def set_context(self, *args, **kwargs):
+        pass
 
 
 def source_fingerprints(model_dir):
@@ -332,11 +338,15 @@ def run(args):
         'precision': 'BF16 AMP; FP32 LoRA master weights and AdamW states',
         'max_new_tokens': 24, 'no_test_input': True, 'no_classifier_answers': True,
         'automatic_retry': False, 'automatic_resume': False, 'automatic_restart': False,
-        'optimizer': 'AdamW foreach=False', 'save_steps': args.save_steps}
+        'optimizer': 'AdamW foreach=False', 'save_steps': args.save_steps,
+        'gpu_telemetry_enabled': not args.no_gpu_telemetry,
+        'stop_file': str(args.stop_file) if args.stop_file else None}
     durable_json(args.output / 'config.json', config, immutable=True)
 
     engine = None
-    with VlmGpuTelemetry(args.output / 'gpu-telemetry.jsonl', interval=1.) as telemetry:
+    monitor = (nullcontext(QuietTelemetry()) if args.no_gpu_telemetry
+               else VlmGpuTelemetry(args.output / 'gpu-telemetry.jsonl', interval=1.))
+    with monitor as telemetry:
         try:
             telemetry.set_context('base_model_loading')
             engine = LocalVLM(args.model_dir, max_pixels=args.max_pixels,
@@ -346,7 +356,21 @@ def run(args):
             config['lora'] = attach_lora(engine)
             parameters = [parameter for parameter in engine.model.parameters() if parameter.requires_grad]
             optimizer = torch.optim.AdamW(parameters, lr=args.lr, weight_decay=.01, foreach=False)
-            rows = probe_throughput(engine, train_data, optimizer, telemetry, args.output, VLM_CLASS_PROMPT)
+            if args.reuse_probe is None:
+                rows = probe_throughput(engine, train_data, optimizer, telemetry, args.output, VLM_CLASS_PROMPT)
+            else:
+                prior = json.loads((args.reuse_probe/'probe-complete.json').read_text(encoding='utf-8'))
+                previous_config = prior['config']
+                if (previous_config['source']['aggregate_sha256'] != source['aggregate_sha256']
+                        or previous_config['prompt'] != VLM_CLASS_PROMPT
+                        or previous_config['input_image_pixels_max'] != args.max_pixels
+                        or previous_config['lora']['r'] != config['lora']['r']):
+                    raise ValueError('Reused probe does not match the base, prompt, image size or adapter rank')
+                rows = previous_config['throughput_probe']
+                config['reused_probe'] = {'directory': str(args.reuse_probe.resolve()),
+                    'probe_complete_sha256': file_sha256(args.reuse_probe/'probe-complete.json'),
+                    'reason': 'Already measured on this GPU; avoid repeating work during battery operation'}
+                durable_json(args.output/'reused-probe.json', config['reused_probe'], immutable=True)
             measured_batch = choose_batch(rows)
             if args.microbatch != 'auto':
                 measured_batch = int(args.microbatch)
@@ -424,6 +448,23 @@ def run(args):
                                         'loader_generator': loader_generator.get_state(),
                                         'epoch_sampler_start': epoch_sampler_start,
                                         'epoch_batches_completed': batch_index + 1, 'microstep': microstep})
+                            if args.stop_file is not None and args.stop_file.exists():
+                                checkpoint = args.output / f'stop-step{global_step:06d}'
+                                save_adapter_snapshot(engine.model, checkpoint,
+                                    optimizer, scheduler, epoch=epoch, global_step=global_step, config=config,
+                                    data_rng_state={'sampler_generator': sampler_generator.get_state(),
+                                        'loader_generator': loader_generator.get_state(),
+                                        'epoch_sampler_start': epoch_sampler_start,
+                                        'epoch_batches_completed': batch_index + 1, 'microstep': microstep})
+                                durable_json(args.output / 'stopped.json', {
+                                    'state': 'stopped_for_requested_shutdown', 'epoch': epoch,
+                                    'global_step': global_step, 'microstep': microstep,
+                                    'checkpoint': str(checkpoint.resolve()),
+                                    'trigger': args.stop_file.read_text(encoding='utf-8'),
+                                    'validation_selected_adapter_published': False,
+                                    'automatic_resume': False}, immutable=True)
+                                print(f'TRAINING STOPPED AT CHECKPOINT {checkpoint}', flush=True)
+                                return
                         if microstep % 20 == 0 or batch_index + 1 == len(train_loader):
                             torch.cuda.synchronize(engine.model.device)
                             elapsed = time.perf_counter() - window_started
@@ -497,6 +538,12 @@ def parse_args(argv=None):
     parser.add_argument('--save-steps', type=int, default=200,
                         help='Immutable adapter/optimizer snapshot interval; 0 disables step snapshots')
     parser.add_argument('--probe-only', action='store_true', help='Forward/backward only; no optimizer step')
+    parser.set_defaults(no_gpu_telemetry=True)
+    parser.add_argument('--no-gpu-telemetry', action='store_true')
+    parser.add_argument('--gpu-telemetry', dest='no_gpu_telemetry', action='store_false',
+                        help='Explicit opt-in only; latest user preference is no GPU monitoring')
+    parser.add_argument('--stop-file', type=Path, help='Save a checkpoint and exit at next optimizer boundary')
+    parser.add_argument('--reuse-probe', type=Path, help='Explicitly reuse a matching completed local throughput probe')
     args = parser.parse_args(argv)
     if args.validation_manifest is None:
         args.validation_manifest = args.manifest_dir / 'val-selection.json'

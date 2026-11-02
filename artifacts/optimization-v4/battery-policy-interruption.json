@@ -1,0 +1,10 @@
+{
+  "created_utc": "2026-11-02T15:54:44.1600222Z",
+  "reason": "User requested continued battery operation and shutdown at 10%; switch to frequent checkpoints and explicit stop-file support",
+  "state": "intentional_configuration_change",
+  "interrupted_pid": 25832,
+  "retained_output": "artifacts/optimization-v4/training",
+  "completed_optimizer_steps_at_last_log": 5,
+  "no_checkpoint_available_yet": true,
+  "automatic_retry": false
+}

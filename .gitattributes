@@ -1,8 +1,9 @@
 * text=auto
-*.py text eol=lf
-*.json text eol=lf
-*.jsonl text eol=lf
-*.csv text eol=lf
+# These files have recorded SHA256 identities. Preserve their exact bytes.
+*.py -text
+*.json -text
+*.jsonl -text
+*.csv -text
 *.md text eol=lf
 *.pt binary
 *.pth binary

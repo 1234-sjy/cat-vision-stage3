@@ -1,0 +1,336 @@
+{
+  "schema_version": "vlm-source-label-adaptation-v4",
+  "created_utc": "2026-11-02T15:42:59.426929+00:00",
+  "data_root": "C:\\Users\\sjysj\\Documents\\Codex\\2026-10-31\\new-chat\\work\\cat-data",
+  "seed": 20261103,
+  "preparation_script": {
+    "path": "scripts/prepare_vlm_adaptation.py",
+    "sha256": "d4428bf6db9b63923e48560b41fbb70435eda3c4f0f47e87b9704b904253ac2f"
+  },
+  "source_files": [
+    {
+      "path": "artifacts/optimization-v3/data/train-manifest.json",
+      "sha256": "e7e638526747e90692d53ea1959414f9d09ec78a4600c814a31de4d863d99ac4"
+    },
+    {
+      "path": "artifacts/optimization-v3/data/test-manifest.json",
+      "sha256": "6956e25ba7cf0e7ee497cc2068eb46ee827c0523e7129be1afd5c1f9ac5ee226"
+    },
+    {
+      "path": "artifacts/optimization-v3/data/classes.json",
+      "sha256": "8fb44de15a56dc69e89a254a87673113891d6d1aa0691b34477b91ce0e019f20"
+    },
+    {
+      "path": "artifacts/optimization-v3/data/decoded-candidates.json",
+      "sha256": "b4bd72e1e1a7148ce9156a22a14c1ebebb49c991d10b2f61241a5b85c14ea1a2"
+    },
+    {
+      "path": "artifacts/optimization-v3/data/identity-references.json",
+      "sha256": "ebb5c5b2e8f7b4e49d5b3f116eb57ac69268b0bfab15e12a4ce3d05844108168"
+    },
+    {
+      "path": "artifacts/optimization-v3/data/duplicate-edges.json",
+      "sha256": "c3897aae5b0cd873d4d7531da52ddc85ff360ab9f4a991deae50e3549f267399"
+    },
+    {
+      "path": "artifacts/optimization-v3/data/photographic-sessions.json",
+      "sha256": "2943075aa2755b9b6307552e90fe458de3b8873995988301b9230c687d8fe56e"
+    },
+    {
+      "path": "artifacts/optimization-v3/data/freeze.json",
+      "sha256": "c5de681375099865066e45f3086f35600c4691e4e3ed80a00661cbc230840961"
+    },
+    {
+      "path": "artifacts/optimization-v3/shared-test/manifest.json",
+      "sha256": "4dc73c94a318d419ede5cf0c837c45cc0303775f25ffe2987339717d74070461"
+    }
+  ],
+  "historical_vlm_files": [
+    {
+      "path": "artifacts/evaluation/comparison/vlm/history/20261102T030829Z-b0689eb2/predictions.json",
+      "sha256": "a112e52c324d82f8b1dc421ea12c307d3baec767d44561d6f88f2177476debbe",
+      "observation_count": 120,
+      "unique_image_count": 120
+    },
+    {
+      "path": "artifacts/evaluation/comparison/vlm/pre-provenance/predictions.json",
+      "sha256": "2fb37afaf46967b8637650a7419720e73c676e84732a16cda67ac05d7ab75fb9",
+      "observation_count": 120,
+      "unique_image_count": 120
+    },
+    {
+      "path": "artifacts/evaluation/comparison/vlm/predictions.json",
+      "sha256": "1f740621ed9d897130d4052d419c08182fdd5a015a25343875e7d7ac05d4db21",
+      "observation_count": 120,
+      "unique_image_count": 120
+    },
+    {
+      "path": "artifacts/evaluation/comparison-v2/vlm/predictions.json",
+      "sha256": "6c315ab7fd7c072cff1404424d2a088678d11b76456709b1ee5b2ae10a02d525",
+      "observation_count": 120,
+      "unique_image_count": 120
+    },
+    {
+      "path": "artifacts/evaluation/val/vlm/predictions.json",
+      "sha256": "2d6d8b1216ad8e2a087e5d691938bab4f04582cb1e3b50e724b30de8904ba888",
+      "observation_count": 1,
+      "unique_image_count": 1
+    },
+    {
+      "path": "artifacts/optimization-v3/parallel-diagnostic.json",
+      "sha256": "d13e59c9ded557d0ef6f3e14430bfe0ff8aa2fcaaaf22cd7e944e26f9758e1ca",
+      "observation_count": 6,
+      "unique_image_count": 3
+    },
+    {
+      "path": "artifacts/optimization-v3/shared-test/history/stream-cache-before-fix/vlm-predictions.json",
+      "sha256": "d852fc7e16a21c3285d65c5087ab08f584b0174500421cefa9a45c03f115ba56",
+      "observation_count": 11,
+      "unique_image_count": 11
+    },
+    {
+      "path": "artifacts/optimization-v3/shared-test/vlm-predictions.json",
+      "sha256": "19c3d24d4dbd2edcd05bd856cd8742bdf21d0843dd8d7bbf02dc800e9b50ecb3",
+      "observation_count": 120,
+      "unique_image_count": 120
+    },
+    {
+      "path": "artifacts/optimization-v3/vlm-line-selection/morphology-lines-v3-predictions.json",
+      "sha256": "fe222c23c380aa9dcf4a156623179a5e23acbcc41297596a0a5bd51ebb19737e",
+      "observation_count": 100,
+      "unique_image_count": 100
+    },
+    {
+      "path": "artifacts/optimization-v3/vlm-oldset-control/predictions.json",
+      "sha256": "a93e8311154c38bf873c3fa2278f3aa4aed0fe75400c79e68e97cc5eae33f917",
+      "observation_count": 120,
+      "unique_image_count": 120
+    },
+    {
+      "path": "artifacts/optimization-v3/vlm-profile-before.json",
+      "sha256": "b95dff37f4d83f195d3ccd73fad5bc8983812c0b4b4e5f4e0fab9019aa9482fb",
+      "observation_count": 3,
+      "unique_image_count": 3
+    },
+    {
+      "path": "artifacts/optimization-v3/vlm-profile-detail.json",
+      "sha256": "e95240ce971a40abfcbfb33b1672ddc685bf6f5df09810978c7a5ab1cae4b1a3",
+      "observation_count": 3,
+      "unique_image_count": 3
+    },
+    {
+      "path": "artifacts/optimization-v3/vlm-profile-linear.json",
+      "sha256": "7fda981fa9619ebbe21e5c61e8f45de159ff186e40f6beecbe5103c99cde5873",
+      "observation_count": 3,
+      "unique_image_count": 3
+    },
+    {
+      "path": "artifacts/optimization-v3/vlm-selection/expanded-baseline-v3-predictions.json",
+      "sha256": "4bead67e2506fb49506ad6c879061e9deb142870122bb88d655d7e7cfbee3aa3",
+      "observation_count": 100,
+      "unique_image_count": 100
+    },
+    {
+      "path": "artifacts/optimization-v3/vlm-selection/morphology-v3-predictions.json",
+      "sha256": "9276149d49133d9a950135ec843a07a641e24c0500335c85664aa37416379da4",
+      "observation_count": 100,
+      "unique_image_count": 100
+    }
+  ],
+  "manifests": {
+    "train.json": {
+      "count": 5156,
+      "cat_count": 4157,
+      "dog_count": 999,
+      "per_class": {
+        "Abyssinian": 194,
+        "Bengal": 186,
+        "Birman": 186,
+        "Bombay": 185,
+        "British_Shorthair": 183,
+        "Egyptian_Mau": 179,
+        "Maine_Coon": 186,
+        "Persian": 184,
+        "Ragdoll": 185,
+        "Russian_Blue": 186,
+        "Siamese": 188,
+        "Sphynx": 186,
+        "American_Bobtail": 246,
+        "American_Curl": 239,
+        "American_Shorthair": 246,
+        "Exotic_Shorthair": 240,
+        "Manx": 236,
+        "Norwegian_Forest": 238,
+        "Scottish_Fold": 238,
+        "Turkish_Angora": 246
+      },
+      "sha256": "5cd56007995466b3fbee56df626fc49068dc9e02917ac303769dfca62794a6fe"
+    },
+    "val-full.json": {
+      "count": 1425,
+      "cat_count": 925,
+      "dog_count": 500,
+      "per_class": {
+        "Abyssinian": 46,
+        "Bengal": 42,
+        "Birman": 42,
+        "Bombay": 46,
+        "British_Shorthair": 43,
+        "Egyptian_Mau": 41,
+        "Maine_Coon": 42,
+        "Persian": 42,
+        "Ragdoll": 42,
+        "Russian_Blue": 42,
+        "Siamese": 43,
+        "Sphynx": 43,
+        "American_Bobtail": 52,
+        "American_Curl": 51,
+        "American_Shorthair": 52,
+        "Exotic_Shorthair": 51,
+        "Manx": 51,
+        "Norwegian_Forest": 51,
+        "Scottish_Fold": 51,
+        "Turkish_Angora": 52
+      },
+      "sha256": "6067b26f09fa8fac4d36d30f29c4b713c86038b13f0d71aeb67e8422b2f31271"
+    },
+    "val-selection.json": {
+      "count": 250,
+      "cat_count": 200,
+      "dog_count": 50,
+      "per_class": {
+        "Abyssinian": 10,
+        "Bengal": 10,
+        "Birman": 10,
+        "Bombay": 10,
+        "British_Shorthair": 10,
+        "Egyptian_Mau": 10,
+        "Maine_Coon": 10,
+        "Persian": 10,
+        "Ragdoll": 10,
+        "Russian_Blue": 10,
+        "Siamese": 10,
+        "Sphynx": 10,
+        "American_Bobtail": 10,
+        "American_Curl": 10,
+        "American_Shorthair": 10,
+        "Exotic_Shorthair": 10,
+        "Manx": 10,
+        "Norwegian_Forest": 10,
+        "Scottish_Fold": 10,
+        "Turkish_Angora": 10
+      },
+      "sha256": "59dd129394dd76fbbcc39209de7a12f221d415765e20fadac79da6835c1532e6"
+    },
+    "fresh-test.json": {
+      "count": 1514,
+      "cat_count": 1514,
+      "dog_count": 0,
+      "per_class": {
+        "Abyssinian": 98,
+        "Bengal": 96,
+        "Birman": 95,
+        "Bombay": 85,
+        "British_Shorthair": 96,
+        "Egyptian_Mau": 99,
+        "Maine_Coon": 97,
+        "Persian": 97,
+        "Ragdoll": 96,
+        "Russian_Blue": 97,
+        "Siamese": 98,
+        "Sphynx": 98,
+        "American_Bobtail": 46,
+        "American_Curl": 45,
+        "American_Shorthair": 46,
+        "Exotic_Shorthair": 43,
+        "Manx": 45,
+        "Norwegian_Forest": 46,
+        "Scottish_Fold": 45,
+        "Turkish_Angora": 46
+      },
+      "sha256": "20be536add96c26c885443c2fdcecc1682da961b3f02ffb6aac7bba92415faf5"
+    },
+    "shared-regression.json": {
+      "count": 120,
+      "cat_count": 120,
+      "dog_count": 0,
+      "per_class": {
+        "Abyssinian": 6,
+        "Bengal": 6,
+        "Birman": 6,
+        "Bombay": 6,
+        "British_Shorthair": 6,
+        "Egyptian_Mau": 6,
+        "Maine_Coon": 6,
+        "Persian": 6,
+        "Ragdoll": 6,
+        "Russian_Blue": 6,
+        "Siamese": 6,
+        "Sphynx": 6,
+        "American_Bobtail": 6,
+        "American_Curl": 6,
+        "American_Shorthair": 6,
+        "Exotic_Shorthair": 6,
+        "Manx": 6,
+        "Norwegian_Forest": 6,
+        "Scottish_Fold": 6,
+        "Turkish_Angora": 6
+      },
+      "sha256": "98e035e33d73b2110a6255ab60ef5fc7166e6197e4ed3e86892d0a01a5cedc40"
+    },
+    "classes.json": {
+      "count": 20,
+      "sha256": "8fb44de15a56dc69e89a254a87673113891d6d1aa0691b34477b91ce0e019f20"
+    }
+  },
+  "files": {
+    "train.json": "5cd56007995466b3fbee56df626fc49068dc9e02917ac303769dfca62794a6fe",
+    "val-full.json": "6067b26f09fa8fac4d36d30f29c4b713c86038b13f0d71aeb67e8422b2f31271",
+    "val-selection.json": "59dd129394dd76fbbcc39209de7a12f221d415765e20fadac79da6835c1532e6",
+    "fresh-test.json": "20be536add96c26c885443c2fdcecc1682da961b3f02ffb6aac7bba92415faf5",
+    "shared-regression.json": "98e035e33d73b2110a6255ab60ef5fc7166e6197e4ed3e86892d0a01a5cedc40",
+    "classes.json": "8fb44de15a56dc69e89a254a87673113891d6d1aa0691b34477b91ce0e019f20",
+    "historical-exposure.json": "ea6e194b0ad6e5d21b278d1aa733d9662eb5f56aacc0d92d3d1329d9d058cf19",
+    "excluded-previous-test.json": "a9b7e2172f42195a61e018ef748cc9bfeed46f93607d28816ec0c825ef23fb28"
+  },
+  "fresh_test_audit": {
+    "original_test_count": 1872,
+    "excluded_count": 358,
+    "fresh_test_count": 1514,
+    "unresolved_historical_inputs": 0,
+    "excluded_per_class": {
+      "Abyssinian": 25,
+      "Bengal": 26,
+      "Birman": 26,
+      "Bombay": 26,
+      "British_Shorthair": 26,
+      "Egyptian_Mau": 26,
+      "Maine_Coon": 25,
+      "Persian": 27,
+      "Ragdoll": 26,
+      "Russian_Blue": 25,
+      "Siamese": 25,
+      "Sphynx": 25,
+      "American_Bobtail": 6,
+      "American_Curl": 6,
+      "American_Shorthair": 6,
+      "Exotic_Shorthair": 8,
+      "Manx": 6,
+      "Norwegian_Forest": 6,
+      "Scottish_Fold": 6,
+      "Turkish_Angora": 6
+    }
+  },
+  "policy": {
+    "targets": "Original source breed for cats; no_cat for dogs",
+    "teacher_predictions_used": false,
+    "test_labels_used_for_training_or_selection": false,
+    "existing_splits_unchanged": true,
+    "train_split": "train only",
+    "validation_selection": "10 cats per class plus 50 dogs from fixed validation, seeded sampling",
+    "fresh_test_selection": "Remove all previously exposed VLM identity components, without using prediction outcomes",
+    "shared_regression": "Previously evaluated 120 images, never a new blind test",
+    "manifest_schema": "Plain JSON lists; source fields retained; train/val have target_text",
+    "historical_scope_limit": "Freshness is certified against retained local VLM inference artifacts and frozen identity graph; upstream pretrained-model exposure is unknowable"
+  }
+}

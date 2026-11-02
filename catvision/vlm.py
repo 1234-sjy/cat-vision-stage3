@@ -34,7 +34,7 @@ if SETTINGS:
 class LocalVLM:
     def __init__(self, model_dir: Path | None = None, *, accelerate_patch=True,
                  prompt=None, prompt_version=None, max_pixels=None, max_new_tokens=None,
-                 output_format=None):
+                 output_format=None, adapter_dir=None):
         set_low_load_threads()
         from transformers import AutoProcessor, Qwen3VLForConditionalGeneration
         if not torch.cuda.is_available():
@@ -52,6 +52,14 @@ class LocalVLM:
         if accelerate_patch:
             from .vlm_acceleration import LinearPatchProjection
             self.model.model.visual.patch_embed = LinearPatchProjection(self.model.model.visual.patch_embed.proj)
+        from .vlm_adapter import resolve_adapter
+        adapter = (resolve_adapter(ROOT, SETTINGS) if adapter_dir is None
+                   else None if adapter_dir is False else Path(adapter_dir))
+        if adapter is not None:
+            from peft import PeftModel
+            self.model = PeftModel.from_pretrained(self.model, adapter, is_trainable=False)
+            self.model.eval()
+        self.adapter = adapter.relative_to(ROOT).as_posix() if adapter is not None else None
         self.prompt = PROMPT if prompt is None else prompt
         self.prompt_version = PROMPT_VERSION if prompt_version is None else prompt_version
         self.max_new_tokens = SETTINGS.get('max_new_tokens',192) if max_new_tokens is None else max_new_tokens
@@ -86,6 +94,7 @@ class LocalVLM:
         else:
             result = parse_vlm_output(text)
         result.update(route="qwen3_vl_4b", model="Qwen/Qwen3-VL-4B-Instruct",
+                      adapter=self.adapter,
                       prompt_version=self.prompt_version, inference_seconds=inference_seconds,
                       patch_projection='equivalent_linear' if self.accelerate_patch else 'original_conv3d',
                       output_format=self.output_format,

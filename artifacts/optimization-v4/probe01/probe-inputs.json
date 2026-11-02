@@ -1,0 +1,28 @@
+{
+  "candidate_count": 32,
+  "selection": "longest processed inputs among first 32 train images",
+  "records": [
+    {
+      "relative_path": "oxford-iiit-pet/images/american_bulldog_110.jpg",
+      "sha256": "f36b5c4ef2fb064ad4aa5e873ec91e2d4500c163e4ae85f916ca49ca81fd36eb"
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/american_bulldog_114.jpg",
+      "sha256": "362326f79c4d00507602b9fca6bc91f25176eb03ccf2b5d446638a4c6baef7ee"
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/american_bulldog_116.jpg",
+      "sha256": "ed7d79074720f39b934eb9b200122165a6e04415975c822c6e8cf127075db06e"
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/american_bulldog_129.jpg",
+      "sha256": "b5460fc965ff04ef7ecbc8cb66c1d7260069ba2b2e751308d04ecfe84927faa2"
+    }
+  ],
+  "baseline_allocated_bytes": 8941711360,
+  "optimizer_future_state_bytes": 132120576,
+  "device_total_bytes": 17094475776,
+  "external_gpu_bytes": 1358495744,
+  "training_budget_bytes": 14662238208,
+  "physical_headroom_bytes": 1073741824
+}

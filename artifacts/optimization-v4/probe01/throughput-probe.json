@@ -1,0 +1,59 @@
+[
+  {
+    "batch": 1,
+    "status": "measured",
+    "iterations": 2,
+    "seconds": 0.9923650999990059,
+    "images_per_second": 2.015387280348738,
+    "peak_allocated_bytes": 9291750912,
+    "peak_reserved_bytes": 9466544128,
+    "projected_peak_with_optimizer_bytes": 9598664704,
+    "budget_bytes": 14662238208,
+    "fits_training_memory_budget": true,
+    "input_tokens": 520,
+    "supervised_tokens": 3,
+    "losses": [
+      0.08398062735795975,
+      0.08398062735795975
+    ],
+    "optimizer_steps": 0
+  },
+  {
+    "batch": 2,
+    "status": "measured",
+    "iterations": 2,
+    "seconds": 1.369027200009441,
+    "images_per_second": 2.921782708168556,
+    "peak_allocated_bytes": 9522402816,
+    "peak_reserved_bytes": 9693036544,
+    "projected_peak_with_optimizer_bytes": 9825157120,
+    "budget_bytes": 14662238208,
+    "fits_training_memory_budget": true,
+    "input_tokens": 520,
+    "supervised_tokens": 6,
+    "losses": [
+      0.5106540322303772,
+      0.5106540322303772
+    ],
+    "optimizer_steps": 0
+  },
+  {
+    "batch": 4,
+    "status": "measured",
+    "iterations": 2,
+    "seconds": 2.631632000004174,
+    "images_per_second": 3.039938714830687,
+    "peak_allocated_bytes": 10083591168,
+    "peak_reserved_bytes": 10292822016,
+    "projected_peak_with_optimizer_bytes": 10424942592,
+    "budget_bytes": 14662238208,
+    "fits_training_memory_budget": true,
+    "input_tokens": 520,
+    "supervised_tokens": 12,
+    "losses": [
+      0.36941683292388916,
+      0.36941683292388916
+    ],
+    "optimizer_steps": 0
+  }
+]

@@ -28,3 +28,7 @@ runtime-*.log
 /artifacts/demo-v3/frames/
 
 !/weights/breed-swin-v3-detail20-fp16.pt
+!/weights/qwen-cat-lora-v4/
+/weights/qwen-cat-lora-v4/*
+!/weights/qwen-cat-lora-v4/adapter_config.json
+!/weights/qwen-cat-lora-v4/adapter_model.safetensors

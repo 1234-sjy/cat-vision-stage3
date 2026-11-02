@@ -1,8 +1,18 @@
 """Versioned visual-only instructions; never consume classifier predictions."""
 from .common import BREEDS
 
+VLM_CLASS_PROMPT_VERSION = 'cat20-lora-v1'
+VLM_CLASS_PROMPT = (
+    '观察照片中的主体动物，根据耳朵、脸型、毛长、花纹和身体外形识别猫的品种。'
+    '只输出以下候选中的一个英文代码，不要解释、标点或多个候选。\n'
+    + '\n'.join(f'{code}: {name}' for code, name in BREEDS.items())
+    + '\n图片中没有真实猫时输出no_cat；明确属于其他品种或混种时输出other。'
+)
+
 
 def breed_prompt(version: str) -> str:
+    if version == VLM_CLASS_PROMPT_VERSION:
+        return VLM_CLASS_PROMPT
     candidates = '\n'.join(f'{code}: {name}' for code,name in BREEDS.items())
     if version == 'expanded-baseline-v3':
         return ('观察图片中面积最大的真实猫，根据可见外观识别一个品种。候选代码：\n'+candidates+

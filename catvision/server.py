@@ -36,6 +36,12 @@ def model_files_ready(base_dir: Path) -> bool:
         required = [weights / name for name in ["yolo26n.pt", "sam2.1_t.pt", *checkpoints]]
         required += [vlm / name for name in names | {"config.json", "preprocessor_config.json",
                                                     "tokenizer.json", "tokenizer_config.json"}]
+        from .vlm_adapter import resolve_adapter, adapter_files
+        vlm_settings = base_dir/'configs/active-vlm.json'
+        settings = json.loads(vlm_settings.read_text(encoding='utf-8')) if vlm_settings.exists() else {}
+        adapter = resolve_adapter(base_dir, settings)
+        if adapter is not None:
+            required += adapter_files(adapter)
         return all(path.is_file() and path.stat().st_size > 0 for path in required)
     except (OSError, ValueError, KeyError, TypeError):
         return False

@@ -1,5 +1,9 @@
 {
-  "allow_formal_training": false,
+  "allow_formal_training": true,
+  "training_batch": 8,
+  "training_validation_batch_max": 8,
+  "training_pause_seconds_after_sync": 0.05,
+  "training_cpu_threads": 2,
   "max_model_tasks": 1,
   "download_parallelism": 1,
   "download_attempts": 1,

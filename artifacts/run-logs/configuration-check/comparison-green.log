@@ -1,0 +1,8 @@
+test_changed_image_is_rejected_before_comparison (test_comparison.ComparisonInputTests.test_changed_image_is_rejected_before_comparison) ... ok
+test_partial_route_cannot_be_presented_as_complete_comparison (test_comparison.ComparisonInputTests.test_partial_route_cannot_be_presented_as_complete_comparison) ... ok
+test_two_complete_routes_for_identical_source_are_accepted (test_comparison.ComparisonInputTests.test_two_complete_routes_for_identical_source_are_accepted) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+OK

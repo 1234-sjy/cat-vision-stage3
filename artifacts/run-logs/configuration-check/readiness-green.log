@@ -1,0 +1,8 @@
+test_corrupt_upload_is_rejected_before_model_execution (test_api.ApiTests.test_corrupt_upload_is_rejected_before_model_execution) ... ok
+test_model_index_without_weight_shards_is_not_ready (test_api.ApiTests.test_model_index_without_weight_shards_is_not_ready) ... ok
+test_real_upload_pixels_are_delivered_and_job_result_can_be_read (test_api.ApiTests.test_real_upload_pixels_are_delivered_and_job_result_can_be_read) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.117s
+
+OK

@@ -1,4 +1,5 @@
 import io
+import json
 from pathlib import Path
 import tempfile
 import time
@@ -11,6 +12,19 @@ from catvision.server import create_app
 
 
 class ApiTests(unittest.TestCase):
+    def test_model_index_without_weight_shards_is_not_ready(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            for name in ["yolo26n.pt", "sam2.1_t.pt", "breed-best.pt"]:
+                path = root / "weights" / name
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_bytes(b"not empty")
+            index = root / "weights/qwen3-vl-4b/model.safetensors.index.json"
+            index.parent.mkdir(parents=True)
+            index.write_text(json.dumps({"weight_map": {"tensor": "missing-shard.safetensors"}}))
+            with TestClient(create_app(root, lambda *args: {})) as client:
+                self.assertFalse(client.get("/api/info").json()["models_ready"])
+
     def test_corrupt_upload_is_rejected_before_model_execution(self):
         def should_not_run(image, folder, progress):
             raise AssertionError("Corrupt input reached model")

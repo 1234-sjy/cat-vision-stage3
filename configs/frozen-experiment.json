@@ -1,0 +1,19 @@
+{
+  "detector": "yolo26n.pt",
+  "detector_confidence": 0.15,
+  "segmenter": "sam2.1_t.pt",
+  "crop_margin": 0.06,
+  "classifier": "weights/breed-best.pt",
+  "classifier_sha256": "ca4f8fb16ed5f47c13ac4935e1d61246a6bb61db2835873ca2708185ff7c0711",
+  "classification_imgsz": 320,
+  "vlm": "Qwen/Qwen3-VL-4B-Instruct",
+  "vlm_dtype": "bfloat16",
+  "vlm_attention": "sdpa",
+  "vlm_max_pixels": 589824,
+  "vlm_prompt_version": "cat-breed-v1",
+  "vlm_do_sample": false,
+  "max_new_tokens": 192,
+  "comparison_manifest_sha256": "d02aa6de3426635fd3040cf21c7f7877fae7fc14b569cd7206e48962a6a64237",
+  "comparison_images": 120,
+  "note": "Frozen after training and one validation-image SDK check, before any comparison-set prediction."
+}

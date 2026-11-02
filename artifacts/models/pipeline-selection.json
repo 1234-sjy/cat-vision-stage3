@@ -1,0 +1,14 @@
+{
+  "detector": "yolo26n.pt",
+  "confidence": 0.15,
+  "segmenter": "sam2.1_t.pt",
+  "crop_margin": 0.06,
+  "classifier": "YOLO26s-cls",
+  "decision": "Retain original nano detector and exact prepared-view configuration. Larger candidate did not improve observed cat recall, especially Sphynx; small model reduces runtime.",
+  "candidate_evidence": "artifacts/detector-validation.json",
+  "comparison_limit": "Earlier nano validation used a different batch setting; no controlled superiority claim.",
+  "prepared_views": 2138,
+  "training_source_count": 950,
+  "validation_source_count": 238,
+  "test_used_for_selection": false
+}

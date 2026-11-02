@@ -1,0 +1,16 @@
+test_corrupt_upload_is_rejected_before_model_execution (test_api.ApiTests.test_corrupt_upload_is_rejected_before_model_execution) ... ok
+test_model_index_without_weight_shards_is_not_ready (test_api.ApiTests.test_model_index_without_weight_shards_is_not_ready) ... FAIL
+test_real_upload_pixels_are_delivered_and_job_result_can_be_read (test_api.ApiTests.test_real_upload_pixels_are_delivered_and_job_result_can_be_read) ... ok
+
+======================================================================
+FAIL: test_model_index_without_weight_shards_is_not_ready (test_api.ApiTests.test_model_index_without_weight_shards_is_not_ready)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\sjysj\Documents\Codex\2026-10-31\new-chat\outputs\cat-vision-stage2\tests\test_api.py", line 26, in test_model_index_without_weight_shards_is_not_ready
+    self.assertFalse(client.get("/api/info").json()["models_ready"])
+AssertionError: True is not false
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.143s
+
+FAILED (failures=1)

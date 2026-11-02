@@ -16,6 +16,22 @@ from .common import BREEDS, ROOT, image_hash, load_image, save_json
 from .run_control import ModelTask
 
 
+def model_files_ready(base_dir: Path) -> bool:
+    try:
+        weights = base_dir / "weights"
+        vlm = weights / "qwen3-vl-4b"
+        index = json.loads((vlm / "model.safetensors.index.json").read_text(encoding="utf-8"))
+        names = set(index["weight_map"].values())
+        if not names or any(Path(name).name != name for name in names):
+            return False
+        required = [weights / name for name in ["yolo26n.pt", "sam2.1_t.pt", "breed-best.pt"]]
+        required += [vlm / name for name in names | {"config.json", "preprocessor_config.json",
+                                                    "tokenizer.json", "tokenizer_config.json"}]
+        return all(path.is_file() and path.stat().st_size > 0 for path in required)
+    except (OSError, ValueError, KeyError, TypeError):
+        return False
+
+
 class LocalComparison:
     def __init__(self):
         self.engine = None
@@ -93,9 +109,7 @@ def create_app(base_dir: Path = ROOT, runner=None) -> FastAPI:
     @app.get("/api/info")
     def info():
         return {"breeds": list(BREEDS.values()), "mode": "local_gpu",
-                "models_ready": all((base_dir / p).exists() for p in [
-                    "weights/yolo26n.pt", "weights/sam2.1_t.pt", "weights/breed-best.pt",
-                    "weights/qwen3-vl-4b/model.safetensors.index.json"])}
+                "models_ready": model_files_ready(base_dir)}
 
     @app.get("/api/examples")
     def examples():

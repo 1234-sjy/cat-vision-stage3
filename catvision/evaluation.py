@@ -4,6 +4,17 @@ from collections import Counter
 import statistics
 
 
+def validate_comparison(truth: list[dict], *routes: list[dict]) -> None:
+    expected = {r["image_id"]: r["sha256"] for r in truth}
+    for predictions in routes:
+        ids = [p["image_id"] for p in predictions]
+        if len(ids) != len(set(ids)) or set(ids) != set(expected):
+            raise ValueError("两条路线必须提供固定清单的完整逐图结果")
+        for prediction in predictions:
+            if prediction.get("input_sha256") != expected[prediction["image_id"]]:
+                raise ValueError("两条路线的原始输入SHA256与固定清单不一致")
+
+
 def score_predictions(truth: list[dict], predictions: list[dict]) -> dict:
     lookup = {p["image_id"]: p for p in predictions}
     if len(lookup) != len(predictions):

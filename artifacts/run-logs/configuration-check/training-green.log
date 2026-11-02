@@ -1,0 +1,8 @@
+test_finite_training_does_not_request_recovery (test_training.TrainingFailureTests.test_finite_training_does_not_request_recovery) ... ok
+test_nan_loss_aborts_without_checkpoint_recovery (test_training.TrainingFailureTests.test_nan_loss_aborts_without_checkpoint_recovery) ... ok
+test_nan_validation_fitness_aborts_without_recovery (test_training.TrainingFailureTests.test_nan_validation_fitness_aborts_without_recovery) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.008s
+
+OK

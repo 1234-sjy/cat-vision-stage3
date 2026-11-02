@@ -1,0 +1,10 @@
+{
+  "python": "3.12.14",
+  "torch": "2.9.1+cu128",
+  "torchvision": "0.24.1+cu128",
+  "ultralytics": "8.4.118",
+  "transformers": "4.57.6",
+  "original_freeze_retained": true,
+  "portable_lock": "requirements-lock.txt",
+  "cuda_wheel_source": "https://download.pytorch.org/whl/cu128"
+}

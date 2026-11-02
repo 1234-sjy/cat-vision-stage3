@@ -1,0 +1,14 @@
+[
+  {
+    "file": "artifacts/training/yolo26s_breeds_lowload/weights/last.pt",
+    "bytes": 43918167,
+    "zip_crc": "passed",
+    "sha256": "f076d0560954e9c178f5a125a6b342e6965edb2f76487692d7fa23292fe9ec9b"
+  },
+  {
+    "file": "artifacts/training/yolo26s_breeds_lowload/weights/best.pt",
+    "bytes": 43917911,
+    "zip_crc": "passed",
+    "sha256": "cfa6608cae234a9cca86cdc2ffab22e89f0852b552935c0510ee4b7e530e4dc6"
+  }
+]

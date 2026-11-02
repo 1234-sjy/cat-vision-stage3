@@ -8,7 +8,7 @@ from PIL import Image
 import torch
 
 from .common import BREEDS, ROOT, parse_vlm_output
-from .run_control import gpu_checkpoint, set_low_load_threads
+from .run_control import gpu_checkpoint, set_low_load_threads, synchronize_current_stream
 
 PROMPT_VERSION = "cat-breed-v1"
 PROMPT = """观察图片中的猫。若有多只猫，只判断画面中面积最大的猫。
@@ -24,7 +24,8 @@ features: 最多3条简短中文可见外观特征，如耳朵、脸型、毛长
 
 
 class LocalVLM:
-    def __init__(self, model_dir: Path | None = None):
+    def __init__(self, model_dir: Path | None = None, *, accelerate_patch=True,
+                 prompt=None, prompt_version=None, max_pixels=768*768, max_new_tokens=192):
         set_low_load_threads()
         from transformers import AutoProcessor, Qwen3VLForConditionalGeneration
         if not torch.cuda.is_available():
@@ -32,11 +33,18 @@ class LocalVLM:
         location = model_dir or ROOT / "weights/qwen3-vl-4b"
         started = time.perf_counter()
         self.processor = AutoProcessor.from_pretrained(
-            location, local_files_only=True, min_pixels=128 * 128, max_pixels=768 * 768)
+            location, local_files_only=True, min_pixels=128 * 128, max_pixels=max_pixels)
         self.model = Qwen3VLForConditionalGeneration.from_pretrained(
             location, local_files_only=True, dtype=torch.bfloat16,
             device_map={"": 0}, attn_implementation="sdpa")
         self.model.eval()
+        self.accelerate_patch = accelerate_patch
+        if accelerate_patch:
+            from .vlm_acceleration import LinearPatchProjection
+            self.model.model.visual.patch_embed = LinearPatchProjection(self.model.model.visual.patch_embed.proj)
+        self.prompt = PROMPT if prompt is None else prompt
+        self.prompt_version = PROMPT_VERSION if prompt_version is None else prompt_version
+        self.max_new_tokens = max_new_tokens
         self.model.generation_config.do_sample = False
         self.model.generation_config.temperature = 1.0
         self.model.generation_config.top_p = 1.0
@@ -44,24 +52,25 @@ class LocalVLM:
         self.load_seconds = time.perf_counter() - started
 
     def predict(self, image: Image.Image) -> dict:
-        torch.cuda.synchronize()
+        synchronize_current_stream()
         started = time.perf_counter()
         messages = [{"role": "user", "content": [
-            {"type": "image", "image": image}, {"type": "text", "text": PROMPT}]}]
+            {"type": "image", "image": image}, {"type": "text", "text": self.prompt}]}]
         inputs = self.processor.apply_chat_template(
             messages, tokenize=True, add_generation_prompt=True,
             return_dict=True, return_tensors="pt").to(self.model.device)
         with torch.inference_mode():
-            generated = self.model.generate(**inputs, max_new_tokens=192, do_sample=False)
+            generated = self.model.generate(**inputs, max_new_tokens=self.max_new_tokens, do_sample=False)
         answer = generated[:, inputs["input_ids"].shape[1]:]
         text = self.processor.batch_decode(answer, skip_special_tokens=True,
                                            clean_up_tokenization_spaces=False)[0]
-        torch.cuda.synchronize()
+        synchronize_current_stream()
         inference_seconds = time.perf_counter() - started
         pause_seconds = gpu_checkpoint()
         result = parse_vlm_output(text)
         result.update(route="qwen3_vl_4b", model="Qwen/Qwen3-VL-4B-Instruct",
-                      prompt_version=PROMPT_VERSION, inference_seconds=inference_seconds,
+                      prompt_version=self.prompt_version, inference_seconds=inference_seconds,
+                      patch_projection='equivalent_linear' if self.accelerate_patch else 'original_conv3d',
                       throttle_seconds=pause_seconds,
                       input_tokens=int(inputs["input_ids"].shape[1]), output_tokens=int(answer.shape[1]))
         return result

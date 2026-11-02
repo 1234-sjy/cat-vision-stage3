@@ -4,7 +4,6 @@
   "training_validation_batch_max": 8,
   "training_pause_seconds_after_sync": 0.05,
   "training_cpu_threads": 2,
-  "max_model_tasks": 1,
   "download_parallelism": 1,
   "download_attempts": 1,
   "gpu_validation_batch": 2,
@@ -15,5 +14,10 @@
   "automatic_retry": false,
   "automatic_restart": false,
   "failure_requires_manual_handling": true,
-  "preserve_requirements_and_stage2_data": true
+  "preserve_requirements_and_stage2_data": true,
+  "inference_route_workers": 2,
+  "max_concurrent_requests": 1,
+  "inference_pause_seconds": 0,
+  "inference_keep_models_loaded": true,
+  "training_exclusive_gpu": true
 }

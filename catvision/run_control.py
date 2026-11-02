@@ -1,6 +1,7 @@
-"""One model task at a time, full logs, and no automatic recovery."""
+"""Logged activities with parallel inference workers and no automatic recovery."""
 from __future__ import annotations
 
+from contextlib import contextmanager
 from datetime import datetime, timezone
 import json
 import os
@@ -31,7 +32,7 @@ class _Tee:
 
 
 class ModelTask:
-    """An OS lock prevents overlap; a failed/interrupted run blocks later tasks.
+    """An OS lock isolates activities; one inference activity runs both routes.
 
     The state file is intentionally not cleared automatically after a failure.
     Human-directed recovery must inspect the logs before changing its state.
@@ -63,7 +64,7 @@ class ModelTask:
                 fcntl.flock(self.lock.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
         except OSError as exc:
             self._release_lock()
-            raise RuntimeError("已有模型任务运行，下载与GPU任务不得同时执行") from exc
+            raise RuntimeError("已有模型任务运行；请等待当前训练、下载或双路线识别活动完成") from exc
         try:
             if self.state_path.exists():
                 previous = json.loads(self.state_path.read_text(encoding="utf-8"))
@@ -109,13 +110,39 @@ class ModelTask:
         return False
 
 
+@contextmanager
+def inference_stream():
+    """Give each inference worker its own CUDA stream."""
+    import torch
+    if not torch.cuda.is_available():
+        yield
+        return
+    stream = torch.cuda.Stream()
+    stream.wait_stream(torch.cuda.default_stream())
+    with torch.cuda.stream(stream):
+        try:
+            yield
+        finally:
+            stream.synchronize()
+
+
+def synchronize_current_stream(cuda=None):
+    if cuda is None:
+        import torch
+        cuda = torch.cuda
+    if cuda.is_available():
+        if hasattr(cuda, 'current_stream'):
+            cuda.current_stream().synchronize()
+        else:
+            cuda.synchronize()
+
+
 def gpu_checkpoint(*, cuda=None, sleep=time.sleep, pause_seconds=0.2):
     """Synchronize a finished GPU batch, then briefly yield the machine."""
     if cuda is None:
         import torch
         cuda = torch.cuda
-    if cuda.is_available():
-        cuda.synchronize()
+    synchronize_current_stream(cuda)
     # Fast mode is selected only by the web inference CLI. Training's0.05s stays intact.
     actual_pause = 0.0 if os.environ.get('CATVISION_FAST_INFERENCE') == '1' and pause_seconds == 0.2 else pause_seconds
     if actual_pause:

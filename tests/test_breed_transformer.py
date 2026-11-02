@@ -1,11 +1,21 @@
 import unittest
 from PIL import Image
 
-from catvision.breed_transformer import combine_views, decision
+from catvision.breed_transformer import combine_views, decision, checkpoint_classes
 from catvision.traditional import TraditionalVision
 
 
 class BreedDecisionTests(unittest.TestCase):
+    def test_checkpoint_retains_its_own_class_order_after_expanding_registry(self):
+        names = ['Siamese', 'American_Curl', 'Bengal']
+        self.assertEqual(checkpoint_classes({'classes': names}), names)
+        result = decision({'breed_probs':[0.1,0.8,0.1], 'cat_probability':0.99}, names, 0.5)
+        self.assertEqual(result['breed_zh'], '美国卷耳猫')
+
+    def test_ambiguous_checkpoint_labels_are_rejected(self):
+        for names in [[], ['Bengal','Bengal'], ['Unicorn']]:
+            with self.assertRaises(ValueError): checkpoint_classes({'classes':names})
+
     def test_missing_detection_keeps_original_classification(self):
         original={'breed_probs':[0.8,0.2], 'cat_probability':0.95}
         p=combine_views(original,None,0.5)

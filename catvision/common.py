@@ -14,6 +14,10 @@ BREEDS = {
     "British_Shorthair": "英国短毛猫", "Egyptian_Mau": "埃及猫",
     "Maine_Coon": "缅因猫", "Persian": "波斯猫", "Ragdoll": "布偶猫",
     "Russian_Blue": "俄罗斯蓝猫", "Siamese": "暹罗猫", "Sphynx": "斯芬克斯猫",
+    "American_Bobtail": "美国短尾猫", "American_Curl": "美国卷耳猫",
+    "American_Shorthair": "美国短毛猫", "Exotic_Shorthair": "异国短毛猫",
+    "Manx": "曼岛猫", "Norwegian_Forest": "挪威森林猫",
+    "Scottish_Fold": "苏格兰折耳猫", "Turkish_Angora": "土耳其安哥拉猫",
 }
 
 

@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from contextlib import asynccontextmanager
 from datetime import datetime, timezone
 import json
@@ -14,7 +14,7 @@ from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 
 from .common import BREEDS, ROOT, image_hash, load_image, save_json
-from .run_control import ModelTask
+from .run_control import ModelTask, inference_stream
 
 
 def model_files_ready(base_dir: Path) -> bool:
@@ -53,16 +53,12 @@ class LocalComparison:
         return LocalVLM()
 
     def _engine_for(self, route):
-        if self.keep_loaded and route in self.engines:
-            self.engine, self.engine_route = self.engines[route], route
-            return self.engine, True
-        if not self.keep_loaded:
-            self.close()
-        self.engine = self._make_engine(route)
-        self.engine_route = route
-        if self.keep_loaded:
-            self.engines[route] = self.engine
-        return self.engine, False
+        # Load before dispatch; each worker retains its own model reference.
+        if route in self.engines:
+            return self.engines[route], True
+        engine = self._make_engine(route)
+        self.engines[route] = engine
+        return engine, False
 
     def preload(self):
         if not self.keep_loaded:
@@ -93,23 +89,24 @@ class LocalComparison:
                 self.close()
                 raise
             finally:
-                # Every request starts with the traditional route, so keeping the
-                # final VLM loaded cannot serve the next request and wastes VRAM.
                 if not self.keep_loaded:
                     self.close()
 
     def _run(self, image, directory, progress):
         result = {"input_sha256": image_hash(image), "fresh_run": True}
         started = time.perf_counter()
-        for route, title in [("traditional", "传统视觉模型"), ("vlm", "本地视觉大模型")]:
-            try:
-                progress(f"正在准备{title}")
-                self.engine, reused = self._engine_for(route)
-                progress(f"{title}正在识别")
-                prediction = self.engine.predict(image.copy())
-                prediction["load_seconds"] = 0.0 if reused else self.engine.load_seconds
+        engines = {}
+        for route in ['traditional', 'vlm']:
+            progress('正在准备识别模型')
+            engines[route] = self._engine_for(route)
+
+        def run_route(route):
+            engine, reused = engines[route]
+            with inference_stream():
+                prediction = engine.predict(image.copy())
+                prediction['load_seconds'] = 0.0 if reused else engine.load_seconds
                 prediction['model_reused'] = reused
-                prediction['initial_load_seconds'] = self.engine.load_seconds
+                prediction['initial_load_seconds'] = engine.load_seconds
                 if route == "traditional":
                     from .traditional import visualization
                     visualization(image, prediction).save(directory / "traditional.png")
@@ -117,13 +114,25 @@ class LocalComparison:
                     if crop is not None:
                         crop.save(directory / "subject.png")
                     prediction.pop("mask", None)
-                result[route] = prediction
-            except Exception as exc:
-                result[route] = {"status": "error", "breed": None,
-                                 "error": f"{type(exc).__name__}: {exc}"}
-                self.close()
-                save_json(directory / "partial-result.json", result)
-                raise  # Do not load the next model after a runtime failure.
+                return prediction
+
+        progress('两条路线正在同时识别')
+        failure = None
+        # Executor shutdown waits for the sibling before models can be closed.
+        with ThreadPoolExecutor(max_workers=2, thread_name_prefix='cat-route') as routes:
+            futures = {routes.submit(run_route, route): route for route in engines}
+            for future in as_completed(futures):
+                route = futures[future]
+                try:
+                    result[route] = future.result()
+                except Exception as exc:
+                    result[route] = {'status':'error','breed':None,'error':f'{type(exc).__name__}: {exc}'}
+                    if failure is None:
+                        failure = exc
+        if failure is not None:
+            save_json(directory / 'partial-result.json', result)
+            raise failure
+        result['execution_mode'] = 'parallel_routes'
         result["total_seconds"] = time.perf_counter() - started
         return result
 
@@ -133,7 +142,7 @@ def create_app(base_dir: Path = ROOT, runner=None) -> FastAPI:
     results_dir.mkdir(parents=True, exist_ok=True)
     examples_dir = base_dir / "examples"
     examples_dir.mkdir(parents=True, exist_ok=True)
-    pipeline = runner if runner is not None else LocalComparison()
+    pipeline = runner if runner is not None else LocalComparison(keep_loaded=True)
     executor = ThreadPoolExecutor(max_workers=1, thread_name_prefix="cat-gpu")
     jobs = {}
 
@@ -227,13 +236,16 @@ if __name__ == "__main__":
     import argparse
     import uvicorn
     parser=argparse.ArgumentParser()
-    parser.add_argument('--fast-demo',action='store_true',help='Preload models; remove inference pauses; fresh predictions remain serial')
+    parser.add_argument('--fast-demo',action='store_true',help='Compatibility alias: full-speed serving is now the default')
+    parser.add_argument('--low-load',action='store_true',help='Opt in to inference pauses; training has separate settings')
     args=parser.parse_args()
-    if args.fast_demo:
+    if not args.low_load:
         os.environ['CATVISION_FAST_INFERENCE']='1'
         runner=LocalComparison(keep_loaded=True)
         runner.preload()
         application=create_app(runner=runner)
     else:
-        application=create_app()
+        runner=LocalComparison(keep_loaded=True)
+        runner.preload()
+        application=create_app(runner=runner)
     uvicorn.run(application, host="127.0.0.1", port=8765)

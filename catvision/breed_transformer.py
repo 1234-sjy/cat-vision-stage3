@@ -16,6 +16,14 @@ MEAN = (0.485, 0.456, 0.406)
 STD = (0.229, 0.224, 0.225)
 
 
+def checkpoint_classes(payload: dict) -> list[str]:
+    names = payload.get('classes')
+    if (not isinstance(names,list) or not names or any(not isinstance(n,str) for n in names)
+            or len(set(names)) != len(names) or any(n not in BREEDS for n in names)):
+        raise ValueError('Invalid checkpoint class mapping')
+    return names.copy()
+
+
 def combine_views(original: dict, subject: dict | None, subject_weight: float) -> dict:
     if not 0 <= subject_weight <= 1:
         raise ValueError('Subject weight must be between zero and one')
@@ -52,14 +60,15 @@ def train_transform():
 
 
 class BreedSwin(nn.Module):
-    def __init__(self, pretrained_path: Path | None = None):
+    def __init__(self, pretrained_path: Path | None = None, classes: list[str] | None = None):
         super().__init__()
         self.backbone=models.swin_t(weights=None)
         if pretrained_path is not None:
             self.backbone.load_state_dict(torch.load(pretrained_path,map_location='cpu',weights_only=True))
         features=self.backbone.head.in_features
         self.backbone.head=nn.Identity()
-        self.breed_head=nn.Linear(features,len(CLASSES))
+        self.classes=checkpoint_classes({'classes':CLASSES if classes is None else classes})
+        self.breed_head=nn.Linear(features,len(self.classes))
         self.species_head=nn.Linear(features,2)  # 0 dog, 1 cat
 
     def forward(self, x):
@@ -72,9 +81,8 @@ class BreedTransformer:
         set_low_load_threads()
         self.device=torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         payload=torch.load(weights or ROOT/'weights/breed-swin-v2.pt',map_location='cpu',weights_only=True)
-        if payload['classes'] != CLASSES:
-            raise ValueError('Unexpected checkpoint class mapping')
-        self.model=BreedSwin()
+        self.classes=checkpoint_classes(payload)
+        self.model=BreedSwin(classes=self.classes)
         self.model.load_state_dict(payload['state_dict'])
         self.model.to(self.device).eval()
         self.transform=eval_transform()
@@ -101,4 +109,4 @@ class BreedTransformer:
         original=self.probabilities(image)
         subject_p=self.probabilities(subject) if subject is not None and self.config['subject_weight']>0 else None
         return decision(combine_views(original,subject_p,self.config['subject_weight']),
-                        CLASSES,self.config['cat_threshold'])
+                        self.classes,self.config['cat_threshold'])

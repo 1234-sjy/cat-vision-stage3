@@ -1,7 +1,9 @@
 第二阶段接续说明
 更新日期：2026年11月2日
 
-以本文件和configs/runtime-policy.json中的最新约定继续开发。
+以AGENTS.md和configs/runtime-policy.json中的最新约定继续开发。
+
+本轮更新：用户已明确要求双路线多线程同时识别，准确率优先、速度其次。正常运行常驻模型、独立CUDA stream、取消人为推理休息；下面旧版运行参数只记录历史。训练仍采用batch8、workers0、CPU2线程和每批0.05秒暂停，与网页推理、下载分开执行。失败不自动重试。新增类别与成绩以optimization-v3实际记录为准。
 
 一、运行负载
 

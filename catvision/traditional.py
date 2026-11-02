@@ -12,12 +12,11 @@ import torch
 
 from .common import BREEDS, ROOT
 from .geometry import crop_box, main_cat_index, mask_to_box
-from .run_control import gpu_checkpoint, set_low_load_threads
+from .run_control import gpu_checkpoint, set_low_load_threads, synchronize_current_stream
 
 
 def synchronize():
-    if torch.cuda.is_available():
-        torch.cuda.synchronize()
+    synchronize_current_stream()
 
 
 class TraditionalVision:

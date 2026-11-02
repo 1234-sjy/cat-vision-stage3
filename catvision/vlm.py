@@ -58,11 +58,11 @@ class LocalVLM:
                                            clean_up_tokenization_spaces=False)[0]
         torch.cuda.synchronize()
         inference_seconds = time.perf_counter() - started
-        gpu_checkpoint()
+        pause_seconds = gpu_checkpoint()
         result = parse_vlm_output(text)
         result.update(route="qwen3_vl_4b", model="Qwen/Qwen3-VL-4B-Instruct",
                       prompt_version=PROMPT_VERSION, inference_seconds=inference_seconds,
-                      throttle_seconds=0.2,
+                      throttle_seconds=pause_seconds,
                       input_tokens=int(inputs["input_ids"].shape[1]), output_tokens=int(answer.shape[1]))
         return result
 

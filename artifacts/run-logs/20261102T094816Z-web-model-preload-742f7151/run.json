@@ -1,0 +1,14 @@
+{
+  "task": "web-model-preload",
+  "state": "completed",
+  "pid": 28968,
+  "created_utc": "2026-11-02T09:48:16.425580+00:00",
+  "logs": "artifacts/run-logs/20261102T094816Z-web-model-preload-742f7151",
+  "automatic_retry": false,
+  "automatic_restart": false,
+  "argv": [
+    "C:\\Users\\sjysj\\Documents\\Codex\\2026-10-31\\new-chat\\outputs\\cat-vision-stage2\\catvision\\server.py",
+    "--fast-demo"
+  ],
+  "finished_utc": "2026-11-02T09:48:41.477659+00:00"
+}

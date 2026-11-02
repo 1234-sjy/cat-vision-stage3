@@ -1,0 +1,83 @@
+{
+  "source": "Actual browser upload and fresh sequential inference; model engines preloaded; artificial inference pauses disabled",
+  "started_utc": "2026-11-02T09:51:37.572Z",
+  "frames": [
+    {
+      "file": "00000.jpg",
+      "at_ms": 1137
+    },
+    {
+      "file": "00001.jpg",
+      "at_ms": 2559
+    },
+    {
+      "file": "00002.jpg",
+      "at_ms": 3938
+    },
+    {
+      "file": "00003.jpg",
+      "at_ms": 5002
+    },
+    {
+      "file": "00004.jpg",
+      "at_ms": 6090
+    },
+    {
+      "file": "00005.jpg",
+      "at_ms": 7174
+    },
+    {
+      "file": "00006.jpg",
+      "at_ms": 8261
+    },
+    {
+      "file": "00007.jpg",
+      "at_ms": 9346
+    },
+    {
+      "file": "00008.jpg",
+      "at_ms": 10432
+    },
+    {
+      "file": "00009.jpg",
+      "at_ms": 11530
+    },
+    {
+      "file": "00010.jpg",
+      "at_ms": 12588
+    },
+    {
+      "file": "00011.jpg",
+      "at_ms": 13690
+    },
+    {
+      "file": "00012.jpg",
+      "at_ms": 14791
+    },
+    {
+      "file": "00013.jpg",
+      "at_ms": 15893
+    },
+    {
+      "file": "00014.jpg",
+      "at_ms": 16956
+    },
+    {
+      "file": "00015.jpg",
+      "at_ms": 18042
+    },
+    {
+      "file": "00016.jpg",
+      "at_ms": 19153
+    },
+    {
+      "file": "00017.jpg",
+      "at_ms": 20260
+    },
+    {
+      "file": "00018.jpg",
+      "at_ms": 21338
+    }
+  ],
+  "encoding_note": "Original capture timing retained; no speed-up of inference or changes to results"
+}

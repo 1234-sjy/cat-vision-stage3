@@ -92,8 +92,7 @@ class BreedTransformer:
             breed,cat=self.model(tensor)
             breeds.append(breed.softmax(-1).float().cpu())
             species.append(cat.softmax(-1).float().cpu())
-            gpu_checkpoint(pause_seconds=0.2)
-            self.last_throttle_seconds+=0.2
+            self.last_throttle_seconds+=gpu_checkpoint(pause_seconds=0.2)
         return {'breed_probs':torch.cat(breeds).mean(0).tolist(),
                 'cat_probability':float(torch.cat(species).mean(0)[1])}
 

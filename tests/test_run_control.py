@@ -1,11 +1,27 @@
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
 
 from catvision.run_control import ModelTask, gpu_checkpoint
 
 
 class RunControlTests(unittest.TestCase):
+    def test_fast_inference_keeps_gpu_sync_and_removes_only_inference_pause(self):
+        events=[]
+        class FakeCuda:
+            @staticmethod
+            def is_available(): return True
+            @staticmethod
+            def synchronize(): events.append('sync')
+        with patch.dict('os.environ',{'CATVISION_FAST_INFERENCE':'1'}):
+            actual=gpu_checkpoint(cuda=FakeCuda,sleep=lambda seconds:events.append(seconds))
+            self.assertEqual(actual,0)
+            self.assertEqual(events,['sync'])
+            actual=gpu_checkpoint(cuda=FakeCuda,sleep=lambda seconds:events.append(seconds),pause_seconds=0.05)
+            self.assertEqual(actual,0.05)
+            self.assertEqual(events[-2:],['sync',0.05])
+
     def test_second_task_is_rejected_while_first_is_active(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)

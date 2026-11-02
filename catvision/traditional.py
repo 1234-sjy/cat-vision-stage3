@@ -47,7 +47,7 @@ class TraditionalVision:
                                           batch=1, workers=0, verbose=False)[0]
         synchronize()
         detection_seconds = time.perf_counter() - started
-        gpu_checkpoint()
+        pause_seconds = gpu_checkpoint()
         boxes = detection.boxes.xyxy.cpu().numpy()
         classes = detection.boxes.cls.cpu().numpy()
         cat_id = next(k for k, v in detection.names.items() if v == "cat")
@@ -55,7 +55,7 @@ class TraditionalVision:
         if selected is None:
             return {"status": "no_cat", "has_cat": False, "breed": None, "breed_zh": None,
                     "cat_count": 0, "detection_seconds": detection_seconds,
-                    "inference_seconds": detection_seconds, "throttle_seconds": 0.2}
+                    "inference_seconds": detection_seconds, "throttle_seconds": pause_seconds}
         box = boxes[selected].tolist()
         mask = None
         segment_error = None
@@ -65,7 +65,7 @@ class TraditionalVision:
                                                imgsz=1024, batch=1, workers=0, verbose=False)[0]
             synchronize()
             segment_seconds = time.perf_counter() - segment_started
-            gpu_checkpoint()
+            pause_seconds += gpu_checkpoint()
             if segmented.masks is not None and len(segmented.masks.data):
                 mask = segmented.masks.data[0].cpu().numpy() > 0.5
                 if mask.shape != (image.height, image.width):
@@ -88,14 +88,15 @@ class TraditionalVision:
                 "crop_source": "sam_mask" if subject_box else "detection_box",
                 "segmentation_error": segment_error, "detection_seconds": detection_seconds,
                 "segmentation_seconds": segment_seconds,
-                "inference_seconds": time.perf_counter() - started}
+                "inference_seconds": max(0.0,time.perf_counter() - started - pause_seconds),
+                "throttle_seconds": pause_seconds}
 
     def predict(self, image: Image.Image) -> dict:
         started = time.perf_counter()
         result = self.extract_subject(image)
         if self.classifier_type == 'swin_t':
             localization_status = result['status']
-            extract_pause = 0.4 if localization_status == 'ok' else 0.2
+            extract_pause = result['throttle_seconds']
             prediction = self.classifier.predict(image,result.get('crop'))
             result.update(prediction)
             pause = extract_pause + self.classifier.last_throttle_seconds
@@ -110,16 +111,16 @@ class TraditionalVision:
             raise RuntimeError("Breed classifier has not been loaded")
         classification = self.classifier.predict(result["crop"], imgsz=320,
                                                   device=self.device, batch=1, workers=0, verbose=False)[0]
-        gpu_checkpoint()
+        classification_pause = gpu_checkpoint()
         breed = classification.names[classification.probs.top1]
         if breed not in BREEDS:
             raise ValueError(f"Unexpected classifier class: {breed}")
         synchronize()
         result.update(breed=breed, breed_zh=BREEDS[breed],
                       breed_score=float(classification.probs.top1conf),
-                      inference_seconds=max(0.0, time.perf_counter() - started - 0.6),
+                      inference_seconds=max(0.0, time.perf_counter() - started - result['throttle_seconds'] - classification_pause),
                       route="yolo26_sam2_classifier")
-        result["throttle_seconds"] = 0.6
+        result["throttle_seconds"] += classification_pause
         return result
 
     def close(self):

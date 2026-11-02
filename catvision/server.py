@@ -4,6 +4,7 @@ from concurrent.futures import ThreadPoolExecutor
 from contextlib import asynccontextmanager
 from datetime import datetime, timezone
 import json
+import os
 from pathlib import Path
 import time
 from uuid import uuid4
@@ -37,42 +38,78 @@ def model_files_ready(base_dir: Path) -> bool:
 
 
 class LocalComparison:
-    def __init__(self):
+    def __init__(self, keep_loaded=False):
         self.engine = None
         self.engine_route = None
+        self.keep_loaded = keep_loaded
+        self.engines = {}
+
+    @staticmethod
+    def _make_engine(route):
+        if route == 'traditional':
+            from .traditional import TraditionalVision
+            return TraditionalVision()
+        from .vlm import LocalVLM
+        return LocalVLM()
+
+    def _engine_for(self, route):
+        if self.keep_loaded and route in self.engines:
+            self.engine, self.engine_route = self.engines[route], route
+            return self.engine, True
+        if not self.keep_loaded:
+            self.close()
+        self.engine = self._make_engine(route)
+        self.engine_route = route
+        if self.keep_loaded:
+            self.engines[route] = self.engine
+        return self.engine, False
+
+    def preload(self):
+        if not self.keep_loaded:
+            raise ValueError('Preloading requires keep_loaded mode')
+        with ModelTask('web-model-preload'):
+            try:
+                for route in ['traditional','vlm']:
+                    self._engine_for(route)
+                    print(f'MODEL READY {route}',flush=True)
+            except BaseException:
+                self.close()
+                raise
 
     def close(self):
+        unique = {id(engine):engine for engine in self.engines.values()}
         if self.engine:
-            self.engine.close()
+            unique[id(self.engine)] = self.engine
+        for engine in unique.values():
+            engine.close()
         self.engine = self.engine_route = None
+        self.engines = {}
 
     def __call__(self, image, directory, progress):
         with ModelTask("web-comparison"):
             try:
                 return self._run(image, directory, progress)
+            except BaseException:
+                self.close()
+                raise
             finally:
                 # Every request starts with the traditional route, so keeping the
                 # final VLM loaded cannot serve the next request and wastes VRAM.
-                self.close()
+                if not self.keep_loaded:
+                    self.close()
 
     def _run(self, image, directory, progress):
         result = {"input_sha256": image_hash(image), "fresh_run": True}
         started = time.perf_counter()
         for route, title in [("traditional", "传统视觉模型"), ("vlm", "本地视觉大模型")]:
             try:
-                progress(f"正在加载{title}")
-                if self.engine_route != route:
-                    self.close()
-                    if route == "traditional":
-                        from .traditional import TraditionalVision
-                        self.engine = TraditionalVision()
-                    else:
-                        from .vlm import LocalVLM
-                        self.engine = LocalVLM()
-                    self.engine_route = route
+                progress(f"正在准备{title}")
+                self.engine, reused = self._engine_for(route)
                 progress(f"{title}正在识别")
                 prediction = self.engine.predict(image.copy())
-                prediction["load_seconds"] = self.engine.load_seconds
+                prediction["load_seconds"] = 0.0 if reused else self.engine.load_seconds
+                prediction['model_reused'] = reused
+                prediction['initial_load_seconds'] = self.engine.load_seconds
                 if route == "traditional":
                     from .traditional import visualization
                     visualization(image, prediction).save(directory / "traditional.png")
@@ -118,6 +155,7 @@ def create_app(base_dir: Path = ROOT, runner=None) -> FastAPI:
     @app.get("/api/info")
     def info():
         return {"breeds": list(BREEDS.values()), "mode": "local_gpu",
+                "models_preloaded": bool(getattr(pipeline,'engines',{})),
                 "models_ready": model_files_ready(base_dir)}
 
     @app.get("/api/examples")
@@ -134,6 +172,8 @@ def create_app(base_dir: Path = ROOT, runner=None) -> FastAPI:
             path = base_dir / f"artifacts/evaluation/{experiment}/{route}/metrics.json"
             result[route] = json.loads(path.read_text(encoding="utf-8")) if path.exists() else None
         result['experiment'] = experiment
+        full = base_dir/'artifacts/optimization-v2/full-original-test/metrics.json'
+        result['full_classifier'] = json.loads(full.read_text(encoding='utf-8')) if full.exists() else None
         return result
 
     def execute(job_id, image, directory):
@@ -184,5 +224,16 @@ def create_app(base_dir: Path = ROOT, runner=None) -> FastAPI:
 
 
 if __name__ == "__main__":
+    import argparse
     import uvicorn
-    uvicorn.run(create_app(), host="127.0.0.1", port=8765)
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--fast-demo',action='store_true',help='Preload models; remove inference pauses; fresh predictions remain serial')
+    args=parser.parse_args()
+    if args.fast_demo:
+        os.environ['CATVISION_FAST_INFERENCE']='1'
+        runner=LocalComparison(keep_loaded=True)
+        runner.preload()
+        application=create_app(runner=runner)
+    else:
+        application=create_app()
+    uvicorn.run(application, host="127.0.0.1", port=8765)

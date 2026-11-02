@@ -116,15 +116,20 @@ def gpu_checkpoint(*, cuda=None, sleep=time.sleep, pause_seconds=0.2):
         cuda = torch.cuda
     if cuda.is_available():
         cuda.synchronize()
-    sleep(pause_seconds)
+    # Fast mode is selected only by the web inference CLI. Training's0.05s stays intact.
+    actual_pause = 0.0 if os.environ.get('CATVISION_FAST_INFERENCE') == '1' and pause_seconds == 0.2 else pause_seconds
+    if actual_pause:
+        sleep(actual_pause)
+    return actual_pause
 
 
 def set_low_load_threads():
-    os.environ["OMP_NUM_THREADS"] = "2"
-    os.environ["MKL_NUM_THREADS"] = "2"
+    threads = 8 if os.environ.get('CATVISION_FAST_INFERENCE') == '1' else 2
+    os.environ["OMP_NUM_THREADS"] = str(threads)
+    os.environ["MKL_NUM_THREADS"] = str(threads)
     os.environ["TOKENIZERS_PARALLELISM"] = "false"
     import torch
-    torch.set_num_threads(2)
+    torch.set_num_threads(threads)
 
 
 def require_training_enabled():

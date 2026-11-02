@@ -14,6 +14,51 @@ from catvision.server import LocalComparison, create_app, model_files_ready
 
 
 class ApiTests(unittest.TestCase):
+    def test_preloaded_models_are_reused_without_reusing_predictions(self):
+        created=[];closed=[]
+        class Engine:
+            def close(self):closed.append(self)
+        pipeline=LocalComparison(keep_loaded=True)
+        def factory(route):
+            created.append(route);return Engine()
+        with patch.object(pipeline,'_make_engine',side_effect=factory),patch('catvision.server.ModelTask',return_value=nullcontext()):
+            pipeline.preload()
+            for _ in range(2):
+                a,reused=pipeline._engine_for('traditional');self.assertTrue(reused)
+                b,reused=pipeline._engine_for('vlm');self.assertTrue(reused)
+            self.assertEqual(created,['traditional','vlm'])
+            pipeline._run=lambda *args:{'fresh_run':True}
+            self.assertTrue(pipeline(None,None,None)['fresh_run'])
+            self.assertEqual(closed,[])
+            pipeline.close()
+            self.assertEqual(len(closed),2)
+
+    def test_preloaded_models_are_released_after_failure(self):
+        closed=[]
+        class Engine:
+            def close(self):closed.append(True)
+        pipeline=LocalComparison(keep_loaded=True)
+        with patch.object(pipeline,'_make_engine',side_effect=lambda route:Engine()),patch('catvision.server.ModelTask',return_value=nullcontext()):
+            pipeline.preload()
+            def fail(*args):raise RuntimeError('stop now')
+            pipeline._run=fail
+            with self.assertRaisesRegex(RuntimeError,'stop now'):pipeline(None,None,None)
+        self.assertEqual(len(closed),2)
+        self.assertEqual(pipeline.engines,{})
+
+    def test_report_keeps_full_classifier_and_common_test_separate(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder)
+            for route in ['traditional','vlm']:
+                p=root/f'artifacts/evaluation/comparison-v2/{route}/metrics.json';p.parent.mkdir(parents=True)
+                p.write_text(json.dumps({'count':120,'correct':106 if route=='traditional' else 87}))
+            p=root/'artifacts/optimization-v2/full-original-test/metrics.json';p.parent.mkdir(parents=True)
+            p.write_text(json.dumps({'count':1183,'correct':1067,'scope':'original classifier only'}))
+            with TestClient(create_app(root,lambda *args:{})) as client:
+                report=client.get('/api/report').json()
+            self.assertEqual(report['traditional']['count'],120)
+            self.assertEqual(report['full_classifier']['count'],1183)
+
     def test_ready_checks_active_classifier_instead_of_legacy(self):
         with tempfile.TemporaryDirectory() as folder:
             root=Path(folder)

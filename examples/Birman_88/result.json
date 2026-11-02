@@ -1,0 +1,66 @@
+{
+  "image_id": "Birman_88",
+  "label": "传统正确",
+  "truth": "伯曼猫",
+  "input_url": "/examples/Birman_88/input.png",
+  "visualization_url": "/examples/Birman_88/traditional.jpg",
+  "result": {
+    "traditional": {
+      "status": "ok",
+      "has_cat": true,
+      "box": [
+        24.62630271911621,
+        0.0,
+        497.5211181640625,
+        354.3843688964844
+      ],
+      "detection_score": 0.9263939261436462,
+      "cat_count": 1,
+      "crop_box": [
+        0,
+        0,
+        500,
+        375
+      ],
+      "crop_source": "sam_mask",
+      "segmentation_error": null,
+      "detection_seconds": 0.00890600000275299,
+      "segmentation_seconds": 0.043711199999961536,
+      "inference_seconds": 0.06432050000003076,
+      "breed": "Birman",
+      "breed_zh": "伯曼猫",
+      "breed_score": 0.9992881417274475,
+      "route": "yolo26_sam2_classifier",
+      "throttle_seconds": 0.6,
+      "image_id": "Birman_88",
+      "input_sha256": "3952f9528c56c11033e3d1ee98d9daf418d0d5a958b5d6cf4cc55579b7bedaae",
+      "true_breed": "Birman",
+      "created_utc": "2026-11-02T02:34:58.422042+00:00"
+    },
+    "vlm": {
+      "status": "ok",
+      "has_cat": true,
+      "breed": "Ragdoll",
+      "breed_zh": "布偶猫",
+      "features": [
+        "蓝眼睛",
+        "长毛",
+        "身体呈浅色带深色四肢和面部"
+      ],
+      "raw_text": "{\"has_cat\":true,\"breed\":\"Ragdoll\",\"features\":[\"蓝眼睛\",\"长毛\",\"身体呈浅色带深色四肢和面部\"]}",
+      "route": "qwen3_vl_4b",
+      "model": "Qwen/Qwen3-VL-4B-Instruct",
+      "prompt_version": "cat-breed-v1",
+      "inference_seconds": 7.402478500000143,
+      "throttle_seconds": 0.2,
+      "input_tokens": 476,
+      "output_tokens": 33,
+      "image_id": "Birman_88",
+      "input_sha256": "3952f9528c56c11033e3d1ee98d9daf418d0d5a958b5d6cf4cc55579b7bedaae",
+      "true_breed": "Birman",
+      "created_utc": "2026-11-02T02:23:40.703558+00:00"
+    },
+    "fresh_run": false,
+    "total_seconds": 7.466799000000174
+  }
+}

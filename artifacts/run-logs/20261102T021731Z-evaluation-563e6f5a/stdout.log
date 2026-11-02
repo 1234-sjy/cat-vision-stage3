@@ -1,0 +1,35 @@
+TASK START evaluation; logs=artifacts/run-logs/20261102T021731Z-evaluation-563e6f5a
+PREDICT 1/1 Abyssinian_111 ok Abyssinian elapsed=9.0s
+{
+  "count": 1,
+  "correct": 1,
+  "accuracy": 1.0,
+  "macro_f1": 1.0,
+  "status_counts": {
+    "ok": 1
+  },
+  "per_class": {
+    "Abyssinian": {
+      "support": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    }
+  },
+  "row_labels": [
+    "Abyssinian"
+  ],
+  "column_labels": [
+    "Abyssinian",
+    "no_result"
+  ],
+  "confusion_matrix": [
+    [
+      1,
+      0
+    ]
+  ],
+  "mean_inference_seconds": 8.827821699997003,
+  "median_inference_seconds": 8.827821699997003
+}
+TASK END evaluation; state=completed

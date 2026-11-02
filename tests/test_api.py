@@ -1,17 +1,35 @@
 import io
 import json
+from contextlib import nullcontext
 from pathlib import Path
 import tempfile
 import time
 import unittest
+from unittest.mock import patch
 
 from fastapi.testclient import TestClient
 from PIL import Image
 
-from catvision.server import create_app
+from catvision.server import LocalComparison, create_app
 
 
 class ApiTests(unittest.TestCase):
+    def test_completed_request_releases_last_model_from_gpu(self):
+        closed = []
+
+        class Engine:
+            def close(self):
+                closed.append(True)
+
+        pipeline = LocalComparison()
+        pipeline.engine = Engine()
+        pipeline.engine_route = "vlm"
+        pipeline._run = lambda *args: {"result": "saved"}
+        with patch("catvision.server.ModelTask", return_value=nullcontext()):
+            self.assertEqual(pipeline(None, None, None), {"result": "saved"})
+        self.assertEqual(closed, [True])
+        self.assertIsNone(pipeline.engine)
+
     def test_model_index_without_weight_shards_is_not_ready(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)

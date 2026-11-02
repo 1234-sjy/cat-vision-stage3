@@ -1,0 +1,16 @@
+{
+  "task": "formal-training",
+  "state": "running",
+  "pid": 32092,
+  "created_utc": "2026-11-01T16:34:53.166496+00:00",
+  "logs": "artifacts/run-logs/20261101T163453Z-formal-training-95579e19",
+  "automatic_retry": false,
+  "automatic_restart": false,
+  "argv": [
+    "scripts/train_breed.py",
+    "--epochs",
+    "40",
+    "--name",
+    "yolo26s_breeds_lowload"
+  ]
+}

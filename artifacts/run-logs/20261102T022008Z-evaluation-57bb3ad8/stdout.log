@@ -1,0 +1,420 @@
+TASK START evaluation; logs=artifacts/run-logs/20261102T022008Z-evaluation-57bb3ad8
+PREDICT 1/120 Abyssinian_96 ok British_Shorthair elapsed=8.3s
+PREDICT 2/120 Abyssinian_213 ok Abyssinian elapsed=12.0s
+PREDICT 3/120 Abyssinian_217 ok Abyssinian elapsed=15.6s
+PREDICT 4/120 Abyssinian_52 ok Abyssinian elapsed=22.5s
+PREDICT 5/120 Abyssinian_207 ok Abyssinian elapsed=25.9s
+PREDICT 6/120 Abyssinian_90 ok Egyptian_Mau elapsed=34.5s
+PREDICT 7/120 Abyssinian_205 ok Abyssinian elapsed=38.4s
+PREDICT 8/120 Abyssinian_206 ok Russian_Blue elapsed=42.6s
+PREDICT 9/120 Abyssinian_86 ok Abyssinian elapsed=49.5s
+PREDICT 10/120 Abyssinian_26 ok Abyssinian elapsed=57.4s
+PREDICT 11/120 Bengal_40 ok Bengal elapsed=66.9s
+PREDICT 12/120 Bengal_47 ok Bengal elapsed=74.1s
+PREDICT 13/120 Bengal_23 ok Bengal elapsed=79.9s
+PREDICT 14/120 Bengal_25 ok Bengal elapsed=86.9s
+PREDICT 15/120 Bengal_60 ok Bengal elapsed=93.3s
+PREDICT 16/120 Bengal_73 ok Bengal elapsed=100.6s
+PREDICT 17/120 Bengal_65 ok Bengal elapsed=107.1s
+PREDICT 18/120 Bengal_20 ok Bengal elapsed=115.7s
+PREDICT 19/120 Bengal_24 ok Bengal elapsed=123.1s
+PREDICT 20/120 Bengal_80 ok Bengal elapsed=132.7s
+PREDICT 21/120 Birman_1 ok Birman elapsed=140.2s
+PREDICT 22/120 Birman_5 ok Birman elapsed=147.2s
+PREDICT 23/120 Birman_192 ok Birman elapsed=153.7s
+PREDICT 24/120 Birman_65 ok Birman elapsed=159.8s
+PREDICT 25/120 Birman_53 ok Birman elapsed=168.1s
+PREDICT 26/120 Birman_201 ok Birman elapsed=176.9s
+PREDICT 27/120 Birman_66 ok Persian elapsed=184.7s
+PREDICT 28/120 Birman_3 ok Birman elapsed=192.2s
+PREDICT 29/120 Birman_88 ok Ragdoll elapsed=199.8s
+PREDICT 30/120 Birman_81 ok Russian_Blue elapsed=205.5s
+PREDICT 31/120 Bombay_54 parse_error None elapsed=212.9s
+PREDICT 32/120 Bombay_42 ok British_Shorthair elapsed=220.3s
+PREDICT 33/120 Bombay_34 parse_error None elapsed=227.2s
+PREDICT 34/120 Bombay_50 ok Russian_Blue elapsed=233.0s
+PREDICT 35/120 Bombay_53 ok British_Shorthair elapsed=236.0s
+PREDICT 36/120 Bombay_201 ok British_Shorthair elapsed=238.9s
+PREDICT 37/120 Bombay_30 ok British_Shorthair elapsed=246.5s
+PREDICT 38/120 Bombay_41 unsupported None elapsed=265.3s
+PREDICT 39/120 Bombay_63 ok British_Shorthair elapsed=272.7s
+PREDICT 40/120 Bombay_5 ok Egyptian_Mau elapsed=290.8s
+PREDICT 41/120 British_Shorthair_41 ok British_Shorthair elapsed=297.2s
+PREDICT 42/120 British_Shorthair_29 ok Russian_Blue elapsed=303.6s
+PREDICT 43/120 British_Shorthair_56 ok British_Shorthair elapsed=311.0s
+PREDICT 44/120 British_Shorthair_50 ok British_Shorthair elapsed=317.4s
+PREDICT 45/120 British_Shorthair_63 ok British_Shorthair elapsed=323.7s
+PREDICT 46/120 British_Shorthair_223 parse_error None elapsed=326.9s
+PREDICT 47/120 British_Shorthair_75 ok Russian_Blue elapsed=333.1s
+PREDICT 48/120 British_Shorthair_230 ok Russian_Blue elapsed=336.4s
+PREDICT 49/120 British_Shorthair_55 ok British_Shorthair elapsed=342.7s
+PREDICT 50/120 British_Shorthair_54 parse_error None elapsed=350.9s
+PREDICT 51/120 Egyptian_Mau_221 ok Egyptian_Mau elapsed=357.4s
+PREDICT 52/120 Egyptian_Mau_44 ok Bengal elapsed=359.7s
+PREDICT 53/120 Egyptian_Mau_87 ok Bengal elapsed=368.5s
+PREDICT 54/120 Egyptian_Mau_63 ok Bengal elapsed=375.9s
+PREDICT 55/120 Egyptian_Mau_224 ok Bengal elapsed=380.3s
+PREDICT 56/120 Egyptian_Mau_67 unsupported None elapsed=386.7s
+PREDICT 57/120 Egyptian_Mau_94 ok Bengal elapsed=388.7s
+PREDICT 58/120 Egyptian_Mau_6 ok Bengal elapsed=391.8s
+PREDICT 59/120 Egyptian_Mau_213 ok Russian_Blue elapsed=394.9s
+PREDICT 60/120 Egyptian_Mau_5 ok Bengal elapsed=397.4s
+PREDICT 61/120 Maine_Coon_254 ok Maine_Coon elapsed=400.8s
+PREDICT 62/120 Maine_Coon_83 ok Maine_Coon elapsed=407.1s
+PREDICT 63/120 Maine_Coon_68 ok Maine_Coon elapsed=413.5s
+PREDICT 64/120 Maine_Coon_58 ok Maine_Coon elapsed=419.9s
+PREDICT 65/120 Maine_Coon_71 ok Maine_Coon elapsed=426.3s
+PREDICT 66/120 Maine_Coon_8 ok Persian elapsed=430.4s
+PREDICT 67/120 Maine_Coon_92 ok Maine_Coon elapsed=437.0s
+PREDICT 68/120 Maine_Coon_9 ok Maine_Coon elapsed=445.9s
+PREDICT 69/120 Maine_Coon_2 ok Maine_Coon elapsed=449.4s
+PREDICT 70/120 Maine_Coon_87 ok Maine_Coon elapsed=455.8s
+PREDICT 71/120 Persian_26 ok Persian elapsed=462.1s
+PREDICT 72/120 Persian_85 ok Persian elapsed=469.4s
+PREDICT 73/120 Persian_264 ok Persian elapsed=474.3s
+PREDICT 74/120 Persian_95 ok Persian elapsed=481.7s
+PREDICT 75/120 Persian_67 ok Persian elapsed=490.4s
+PREDICT 76/120 Persian_74 parse_error None elapsed=498.0s
+PREDICT 77/120 Persian_6 ok Maine_Coon elapsed=504.5s
+PREDICT 78/120 Persian_270 ok Maine_Coon elapsed=508.4s
+PREDICT 79/120 Persian_60 ok Persian elapsed=514.7s
+PREDICT 80/120 Persian_59 ok Persian elapsed=523.7s
+PREDICT 81/120 Ragdoll_259 ok Russian_Blue elapsed=532.1s
+PREDICT 82/120 Ragdoll_263 ok Ragdoll elapsed=542.1s
+PREDICT 83/120 Ragdoll_69 ok Russian_Blue elapsed=549.5s
+PREDICT 84/120 Ragdoll_205 ok Ragdoll elapsed=557.8s
+PREDICT 85/120 Ragdoll_258 ok Birman elapsed=562.5s
+PREDICT 86/120 Ragdoll_84 ok Persian elapsed=568.8s
+PREDICT 87/120 Ragdoll_33 ok Ragdoll elapsed=575.4s
+PREDICT 88/120 Ragdoll_49 ok Ragdoll elapsed=582.4s
+PREDICT 89/120 Ragdoll_91 ok Ragdoll elapsed=588.9s
+PREDICT 90/120 Ragdoll_52 ok Birman elapsed=599.0s
+PREDICT 91/120 Russian_Blue_9 ok Russian_Blue elapsed=602.0s
+PREDICT 92/120 Russian_Blue_99 ok Russian_Blue elapsed=608.4s
+PREDICT 93/120 Russian_Blue_83 ok Russian_Blue elapsed=614.8s
+PREDICT 94/120 Russian_Blue_38 ok Russian_Blue elapsed=622.2s
+PREDICT 95/120 Russian_Blue_207 ok Russian_Blue elapsed=629.7s
+PREDICT 96/120 Russian_Blue_220 ok Russian_Blue elapsed=632.5s
+PREDICT 97/120 Russian_Blue_239 ok Russian_Blue elapsed=635.4s
+PREDICT 98/120 Russian_Blue_264 ok Russian_Blue elapsed=640.9s
+PREDICT 99/120 Russian_Blue_32 ok Russian_Blue elapsed=647.2s
+PREDICT 100/120 Russian_Blue_35 ok Russian_Blue elapsed=653.6s
+PREDICT 101/120 Siamese_209 ok Siamese elapsed=660.3s
+PREDICT 102/120 Siamese_73 ok Siamese elapsed=666.7s
+PREDICT 103/120 Siamese_37 ok Siamese elapsed=673.2s
+PREDICT 104/120 Siamese_44 ok Siamese elapsed=680.7s
+PREDICT 105/120 Siamese_6 ok Siamese elapsed=683.7s
+PREDICT 106/120 Siamese_55 ok Birman elapsed=691.4s
+PREDICT 107/120 Siamese_247 ok Siamese elapsed=695.0s
+PREDICT 108/120 Siamese_216 ok Siamese elapsed=698.2s
+PREDICT 109/120 Siamese_5 ok Siamese elapsed=701.2s
+PREDICT 110/120 Siamese_88 ok Siamese elapsed=708.6s
+PREDICT 111/120 Sphynx_37 ok Sphynx elapsed=714.9s
+PREDICT 112/120 Sphynx_243 ok Sphynx elapsed=721.0s
+PREDICT 113/120 Sphynx_95 ok Sphynx elapsed=728.3s
+PREDICT 114/120 Sphynx_96 ok Sphynx elapsed=734.7s
+PREDICT 115/120 Sphynx_65 ok Sphynx elapsed=742.1s
+PREDICT 116/120 Sphynx_46 ok Sphynx elapsed=752.1s
+PREDICT 117/120 Sphynx_235 ok Sphynx elapsed=762.4s
+PREDICT 118/120 Sphynx_47 ok Sphynx elapsed=769.9s
+PREDICT 119/120 Sphynx_82 ok Sphynx elapsed=778.7s
+PREDICT 120/120 Sphynx_233 ok Sphynx elapsed=788.8s
+{
+  "count": 120,
+  "correct": 80,
+  "accuracy": 0.6666666666666666,
+  "macro_f1": 0.6427894360959465,
+  "status_counts": {
+    "ok": 113,
+    "parse_error": 5,
+    "unsupported": 2
+  },
+  "per_class": {
+    "Abyssinian": {
+      "support": 10,
+      "precision": 1.0,
+      "recall": 0.7,
+      "f1": 0.8235294117647058
+    },
+    "Bengal": {
+      "support": 10,
+      "precision": 0.5882352941176471,
+      "recall": 1.0,
+      "f1": 0.7407407407407407
+    },
+    "Birman": {
+      "support": 10,
+      "precision": 0.7,
+      "recall": 0.7,
+      "f1": 0.7
+    },
+    "Bombay": {
+      "support": 10,
+      "precision": 0,
+      "recall": 0.0,
+      "f1": 0
+    },
+    "British_Shorthair": {
+      "support": 10,
+      "precision": 0.45454545454545453,
+      "recall": 0.5,
+      "f1": 0.47619047619047616
+    },
+    "Egyptian_Mau": {
+      "support": 10,
+      "precision": 0.3333333333333333,
+      "recall": 0.1,
+      "f1": 0.15384615384615383
+    },
+    "Maine_Coon": {
+      "support": 10,
+      "precision": 0.8181818181818182,
+      "recall": 0.9,
+      "f1": 0.8571428571428572
+    },
+    "Persian": {
+      "support": 10,
+      "precision": 0.7,
+      "recall": 0.7,
+      "f1": 0.7
+    },
+    "Ragdoll": {
+      "support": 10,
+      "precision": 0.8333333333333334,
+      "recall": 0.5,
+      "f1": 0.625
+    },
+    "Russian_Blue": {
+      "support": 10,
+      "precision": 0.5263157894736842,
+      "recall": 1.0,
+      "f1": 0.6896551724137931
+    },
+    "Siamese": {
+      "support": 10,
+      "precision": 1.0,
+      "recall": 0.9,
+      "f1": 0.9473684210526316
+    },
+    "Sphynx": {
+      "support": 10,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    }
+  },
+  "row_labels": [
+    "Abyssinian",
+    "Bengal",
+    "Birman",
+    "Bombay",
+    "British_Shorthair",
+    "Egyptian_Mau",
+    "Maine_Coon",
+    "Persian",
+    "Ragdoll",
+    "Russian_Blue",
+    "Siamese",
+    "Sphynx"
+  ],
+  "column_labels": [
+    "Abyssinian",
+    "Bengal",
+    "Birman",
+    "Bombay",
+    "British_Shorthair",
+    "Egyptian_Mau",
+    "Maine_Coon",
+    "Persian",
+    "Ragdoll",
+    "Russian_Blue",
+    "Siamese",
+    "Sphynx",
+    "no_result"
+  ],
+  "confusion_matrix": [
+    [
+      7,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      10,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      7,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      5,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      3
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      5,
+      0,
+      0,
+      0,
+      0,
+      3,
+      0,
+      0,
+      2
+    ],
+    [
+      0,
+      7,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      9,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      7,
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      1,
+      5,
+      2,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      10,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      9,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      10,
+      0
+    ]
+  ],
+  "mean_inference_seconds": 6.367768923333278,
+  "median_inference_seconds": 6.282523999998375
+}
+TASK END evaluation; state=completed

@@ -1,0 +1,24 @@
+test_completed_request_releases_last_model_from_gpu (test_api.ApiTests.test_completed_request_releases_last_model_from_gpu) ... FAIL
+test_corrupt_upload_is_rejected_before_model_execution (test_api.ApiTests.test_corrupt_upload_is_rejected_before_model_execution) ... ok
+test_model_index_without_weight_shards_is_not_ready (test_api.ApiTests.test_model_index_without_weight_shards_is_not_ready) ... ok
+test_real_upload_pixels_are_delivered_and_job_result_can_be_read (test_api.ApiTests.test_real_upload_pixels_are_delivered_and_job_result_can_be_read) ... ok
+
+======================================================================
+FAIL: test_completed_request_releases_last_model_from_gpu (test_api.ApiTests.test_completed_request_releases_last_model_from_gpu)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\sjysj\Documents\Codex\2026-10-31\new-chat\outputs\cat-vision-stage2\tests\test_api.py", line 30, in test_completed_request_releases_last_model_from_gpu
+    self.assertEqual(closed, [True])
+AssertionError: Lists differ: [] != [True]
+
+Second list contains 1 additional elements.
+First extra element 0:
+True
+
+- []
++ [True]
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.163s
+
+FAILED (failures=1)

@@ -44,7 +44,12 @@ class LocalComparison:
 
     def __call__(self, image, directory, progress):
         with ModelTask("web-comparison"):
-            return self._run(image, directory, progress)
+            try:
+                return self._run(image, directory, progress)
+            finally:
+                # Every request starts with the traditional route, so keeping the
+                # final VLM loaded cannot serve the next request and wastes VRAM.
+                self.close()
 
     def _run(self, image, directory, progress):
         result = {"input_sha256": image_hash(image), "fresh_run": True}

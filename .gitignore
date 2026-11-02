@@ -14,3 +14,4 @@ __pycache__/
 .env
 runtime-*.log
 !/weights/breed-best.pt
+/artifacts/environment/pip-freeze-original.txt

@@ -25,17 +25,17 @@ def main():
         pdfmetrics.registerFont(UnicodeCIDFont("STSong-Light"))
         font = None
     face = "ReportChinese" if font else "STSong-Light"
-    body = ParagraphStyle("Body", fontName=face, fontSize=10, leading=17,
-                          spaceAfter=9, wordWrap="CJK", alignment=TA_LEFT, textColor=colors.HexColor("#26342f"))
-    heading = ParagraphStyle("Heading", parent=body, fontSize=13, leading=20,
-                             spaceBefore=14, spaceAfter=8, keepWithNext=True, textColor=colors.HexColor("#287764"))
+    body = ParagraphStyle("Body", fontName=face, fontSize=9.7, leading=15.5,
+                          spaceAfter=7, wordWrap="CJK", alignment=TA_LEFT, textColor=colors.HexColor("#26342f"))
+    heading = ParagraphStyle("Heading", parent=body, fontSize=12, leading=18,
+                             spaceBefore=11, spaceAfter=7, keepWithNext=True, textColor=colors.HexColor("#287764"))
     title = ParagraphStyle("Title", parent=heading, fontSize=19, leading=29, spaceAfter=18)
     paragraphs = (ROOT / "docs/项目说明与实现感悟.txt").read_text(encoding="utf-8").strip().split("\n\n")
     story = []
     for index, text in enumerate(paragraphs):
         if text == "实际案例":
             chart = ROOT / "artifacts/comparison/comparison.png"
-            story.append(Image(str(chart), width=480, height=480 * 4.5 / 11))
+            story.append(Image(str(chart), width=455, height=455 * 4.5 / 11))
             story.append(Spacer(1, 10))
         style = title if index == 0 else heading if len(text) < 24 and "。" not in text else body
         story.append(Paragraph(escape(text).replace("\n", "<br/>"), style))

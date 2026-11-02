@@ -1,0 +1,19 @@
+{
+  "task": "formal-training",
+  "state": "completed",
+  "pid": 16916,
+  "created_utc": "2026-11-02T02:10:24.015975+00:00",
+  "logs": "artifacts/run-logs/20261102T021024Z-formal-training-72df92fb",
+  "automatic_retry": false,
+  "automatic_restart": false,
+  "argv": [
+    "scripts/train_breed.py",
+    "--epochs",
+    "40",
+    "--name",
+    "yolo26s_breeds_lowload",
+    "--resume",
+    "artifacts/training/yolo26s_breeds_lowload/weights/last.pt"
+  ],
+  "finished_utc": "2026-11-02T02:16:32.000408+00:00"
+}

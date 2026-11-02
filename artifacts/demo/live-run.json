@@ -1,0 +1,62 @@
+{
+  "id": "0752a72b01414b57a79afc3efe9cf88e",
+  "state": "completed",
+  "message": "识别完成",
+  "input_url": "/files/0752a72b01414b57a79afc3efe9cf88e/input.png",
+  "visualization_url": "/files/0752a72b01414b57a79afc3efe9cf88e/traditional.png",
+  "created_utc": "2026-11-02T02:40:42.705709+00:00",
+  "result": {
+    "input_sha256": "f54834ae5df9ab6f4267950786a9de1fc4200ea0ffbefa0fb4b6fde2bc492c53",
+    "fresh_run": true,
+    "traditional": {
+      "status": "ok",
+      "has_cat": true,
+      "box": [
+        25.886863708496094,
+        8.558685302734375,
+        172.58827209472656,
+        265.878662109375
+      ],
+      "detection_score": 0.5371119976043701,
+      "cat_count": 1,
+      "crop_box": [
+        20,
+        0,
+        180,
+        279
+      ],
+      "crop_source": "sam_mask",
+      "segmentation_error": null,
+      "detection_seconds": 0.44824209999933373,
+      "segmentation_seconds": 0.21855330000107642,
+      "inference_seconds": 1.6274704000010387,
+      "breed": "Abyssinian",
+      "breed_zh": "阿比西尼亚猫",
+      "breed_score": 0.9998471736907959,
+      "route": "yolo26_sam2_classifier",
+      "throttle_seconds": 0.6,
+      "load_seconds": 1.1859315000037896
+    },
+    "vlm": {
+      "status": "ok",
+      "has_cat": true,
+      "breed": "Abyssinian",
+      "breed_zh": "阿比西尼亚猫",
+      "features": [
+        "耳朵尖且直立",
+        "眼睛呈金色",
+        "毛色为红棕色带浅色斑纹"
+      ],
+      "raw_text": "{\"has_cat\":true,\"breed\":\"Abyssinian\",\"features\":[\"耳朵尖且直立\",\"眼睛呈金色\",\"毛色为红棕色带浅色斑纹\"]}",
+      "route": "qwen3_vl_4b",
+      "model": "Qwen/Qwen3-VL-4B-Instruct",
+      "prompt_version": "cat-breed-v1",
+      "inference_seconds": 3.888038199998846,
+      "throttle_seconds": 0.2,
+      "input_tokens": 347,
+      "output_tokens": 38,
+      "load_seconds": 4.809062399996037
+    },
+    "total_seconds": 32.94321050000144
+  }
+}

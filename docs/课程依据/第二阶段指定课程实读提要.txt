@@ -1,0 +1,442 @@
+﻿第二阶段指定课程实读提要——给 Dot
+整理日期：2026年11月1日
+
+这份资料供第二阶段独立项目使用。它把指定课程中的方法、代码接口、环境做法和容易误用的内容整理在一起，可以直接交给接手开发者。第二阶段的选题、代码和实验按新项目组织。
+
+读取范围与定位方法
+
+已下载第二阶段PDF中四个视频链接当前包含的全部68集，共10小时37分32秒；逐集取得完整音频转写并阅读，对关键安装命令、模型调用和有疑问的代码抽帧核对。下载的视频约804 MiB，清晰度为480p。本文是重新组织的学习提要，未附课程逐字稿。静音段的重复识别、宣传话术和画面中出现的真实密钥均未收入本文。
+
+四组视频分别为：
+Transformer：BV1fj6vBfEnu，9集，1小时23分53秒。
+OpenCV：BV1hM4y1M7vQ，30集，4小时38分48秒。
+YOLO：BV1N8hg6HECu，13集，1小时35分23秒。
+大模型应用：BV1nXGy6fERZ，16集，2小时59分28秒。
+
+SAM的两份链接是GitHub仓库，另行阅读了README和核心演示代码，不计入68集视频。本文记录的是课程和仓库内容，没有运行第二阶段项目，也没有把课堂结果算作自己的实验成绩。
+
+“P4 05:45”表示该视频第4集的5分45秒。打开对应课程链接，将网址中的p改成分集编号即可。全部标题、时长、来源及本地视频文件名见《课程来源与本地视频索引.csv》。本地视频按四个主题存放在“视频”文件夹，Dot只读取本文也能取得下面的方法信息。
+
+一、开发范围先按PDF确定【考核原文】
+
+第二阶段的核心是自主选择一个视觉问题，让两条路线处理同一组图片，再并排展示与比较。
+传统深度学习路线：用YOLO、SAM等模型完成所选视觉任务。
+视觉／多模态大模型路线：真正把相同图片传给支持图像输入的大模型，取得识别、描述或问答结果。
+比较内容：两种方案的表现、使用体验和适用场景。
+
+PDF列出的学习内容包括：token、embedding、attention、位置编码、自注意力、编码器／解码器、多模态输入；OpenCV读取、缩放、裁剪与展示；检测类别、置信度和边界框；点／框提示分割、掩膜及检测分割组合；API／SDK中的文本和图片输入、提示词、上下文与结构化结果。SAM的输入输出和组合流程也应学清楚，项目中的具体模型组合按所选问题安排。
+
+验收还要求GitHub／Gitee持续提交并保留真实开发历史，代码和依赖说明统一入库；一份项目介绍与个人感悟；一个实际运行视频。文档、视频均未限定长度。参考教程和参考项目可供学习，不能直接提交参考项目。允许AI辅助，同时要求本人理解代码，能够修改和排查问题。
+
+PDF没有指定必须手写Transformer、重新手写ResNet、从零训练大模型、实现全部YOLO任务，或把Agent、RAG、思维树、数字人一并做进项目。没有规定统一准确率门槛、数据集规模、IDE、Docker或ONNX格式。学习这些扩展时，应看它们是否帮助完成同题双方案的比较。
+
+二、环境、路径与“打包”要怎样理解
+
+1. 第一阶段可继续采用的环境复现方法【第一阶段视频】
+
+Conda课程：https://www.bilibili.com/video/BV1bqKE6pEmD/?p=4
+第4集07:09起讨论“别人复现你的项目”；08:24附近导出、08:30附近恢复环境；11:03起解释--from-history；13:21起展示pip导出；13:57附近说明交付两份配置。
+
+课堂命令为：
+  conda env export --from-history > environment.yml
+  conda env create -f environment.yml
+  pip freeze > requirements.txt
+
+恢复pip依赖可在已选定的环境内执行：
+  python -m pip install -r requirements.txt
+
+Conda直接安装的包与pip安装的包是否都被记录，需要留意。第一阶段PDF允许Conda、uv、venv和独立环境；项目按实际选用的工具提供恢复步骤即可。
+
+2. 第二阶段视频里的环境建议【视频事实与考核条款分开】
+
+OpenCV P1约19:10—22:28，为方便初学者统一操作，讲师建议PyCharm和系统解释器，并演示去掉项目虚拟环境。YOLO P2则创建项目虚拟环境；大模型P10 07:19—07:47谈到自己的Conda环境、LangChain版本和requirements文件。这些是各自课程的演示安排。考核没有要求所有课程共用一个解释器，项目应使用自己能复现的独立环境。
+
+OpenCV介绍集示例为Python 3.10.5、opencv-python 4.10.0.82，后续旧片段又有更早的环境。YOLO画面示例为Python 3.11、torch 2.13.0+cpu、ultralytics 8.4.118。SAM2仓库列出另一套环境。它们对应不同时间和模型，不必为了凑齐课程版本而强装到同一个环境中。
+
+3. “环境依赖”和“本地路径依赖”的具体区别【开发经验】
+
+代码应能在接收者的项目目录和运行环境中找到资源。项目内的配置、样例图、权重位置尽量相对项目根目录组织；外部权重和数据目录通过参数、配置或环境变量指定。
+
+例如weights/model.pt可以作为约定的位置，MODEL_PATH可以由接收者配置。C:/Users/开发者名字/Downloads/某个文件.pt不宜直接写死进程序。依赖文件中的torch @ file:///C:/某个私人目录/torch.whl也会让换电脑安装失败，应写可获取的包版本与适用的安装来源。Conda导出文件若附带本机prefix，应整理后交付。
+
+这不是把所有文件改成某一种“环境路径”。Python包、模型权重、输入数据分别说明来源和位置，程序允许接收者按自己的机器配置，才方便复现。依赖安装成功之后，还应有获取权重、设置API和运行项目的步骤。
+
+4. 指定视频中讲到的“导出／打包”【视频事实】
+
+YOLO P13讲把.pt导出为ONNX等部署格式。大模型P15约04:59—06:35讲数字人示例的Docker镜像构建、创建容器和服务端口；05:15画面可见docker run及端口映射。它们分别解决模型部署与服务运行问题，不能合并成“考核必须交Docker镜像或ONNX文件”的规定。
+
+这四组第二阶段视频没有给出一套统一的考核压缩包目录模板。成果提交按PDF组织项目结果、仓库、说明和运行视频；运行环境用配置文件复现。Docker有实际部署需要时再采用，压缩一个虚拟环境文件夹也不会自动消除路径、驱动或系统差异。
+
+三、Transformer课程：需要理解到哪一步
+
+来源：https://www.bilibili.com/video/BV1fj6vBfEnu/
+
+逐集内容：
+P1 从函数到神经网络：线性变换、激活函数、隐藏层和前向传播。
+P2 计算参数：损失函数、均方误差、梯度下降、链式法则和反向传播。
+P3 训练方法：过拟合、泛化、正则化、Dropout、梯度与优化方法。
+P4 从矩阵到CNN：矩阵运算、全连接、卷积核、卷积层和池化。
+P5 从词嵌入到RNN：one-hot、词向量、相似度、隐藏状态和顺序计算。
+P6 Transformer主体：位置编码、Q/K/V、自注意力、多头、编码器／解码器、掩码。
+P7 术语速览：预训练、微调、推理、上下文、采样、RAG、多模态与部署等。
+P8 总体流程：embedding → Transformer blocks → 词表分数和下一token。
+P9 嵌入矩阵：Word2Vec与端到端学习，演示nn.Embedding的小段代码。
+
+实际方法与定位：
+
+【P2 01:25—02:25、05:49—06:47、08:12—09:38】损失衡量预测和目标的差别；梯度描述各参数怎样变化会影响损失；反向传播利用复合函数求导计算梯度。可以把训练理解为：先算答案，再算误差，沿减小误差的方向改参数。
+
+【P5 00:00—03:33；P9 01:51—04:12】token是分词器划分出的单位，不一定恰好是一个汉字或一个完整单词。先得到token ID，再用embedding把ID查成一行数字。ID只是编号；训练得到的向量才可能承载有用的关系。向量的各个坐标通常没有人工指定的固定含义。
+
+【P6 00:21—00:46】位置编码给模型顺序信息。只有词向量时，相同词出现在不同位置的差别没有充分表达；加入位置后，模型才能利用顺序。
+
+【P6 00:46—03:06、05:25—06:12；06:05公式画面】Q可理解为当前项拿来寻找相关信息的“查询”，K供匹配，V是要汇入的内容。公式为：
+  Attention(Q,K,V) = softmax(QK^T / sqrt(d_k)) V
+先计算关联分数，再缩放并归一化成权重，最后把内容按权重相加。自注意力的Q/K/V来自同一组输入。多头用多组可学习的投影并行计算，合并后再做输出线性变换；各个头学什么，由训练决定。
+
+【P6 06:12—08:23】原始Transformer含编码器和解码器。编码器处理输入；解码器利用已有输出继续生成。交叉注意力中的Q来自解码器，K/V来自编码器输出。解码器的因果掩码遮住未来位置，使生成时只使用此前的内容。残差、层归一化、前馈层等也是结构的一部分。
+
+【P9 06:25—08:47；07:31代码画面】视频实际代码是在nn.Module里创建nn.Embedding，forward直接查询嵌入；输入[1,3,5]，打印三个向量。按画面接口简化，可写成：
+  import torch
+  from torch import nn
+  layer = nn.Embedding(num_embeddings=50275, embedding_dim=768)
+  vectors = layer(torch.tensor([1, 3, 5]))
+  # 形状为[3, 768]
+这里的数字是演示设置。随机初始化的向量尚未学到词义，这一集也没有训练出完整的Transformer。
+
+【技术补充】课程主要用文字举例。多模态模型还要把图像转成可供模型处理的特征或token，具体结构取决于模型。API使用者应确认接口确实接收图片。分词、嵌入、注意力是不同步骤；温度和采样设置会影响生成，输出不总是选概率最高的一项。RAG或长上下文可以帮助处理资料，但幻觉、遗漏和上下文限制仍需结合实际返回分析。
+
+在本次考核中，重点是能结合所用模型解释这些概念、输入输出和推理过程。课程P9的小例子可帮助理解，不必另造一套大模型训练任务。
+
+四、OpenCV课程：把图片读对、处理对、画出来
+
+来源：https://www.bilibili.com/video/BV1hM4y1M7vQ/
+
+30集实际内容与常用接口：
+P1 课程与环境：安装OpenCV、测试导入、IDE和解释器建议。
+P2 图像色彩：imread、imshow、waitKey，BGR／灰度／HSV。
+P3 图像对象：NumPy数组、shape、zeros／ones、赋值、copy和ROI切片。
+P4 像素读写：按行、列和通道索引，理解逐像素循环与数组操作。
+P5 像素算术：add、subtract、multiply、divide及像素范围。
+P6 滚动条：createTrackbar，以回调调整亮度。
+P7 亮度对比度：回调参数、乘系数加偏移、addWeighted。
+P8 键盘响应：waitKey判断按键，触发处理或退出。
+P9 颜色表：applyColorMap，把数值映射为伪彩色。
+P10 逻辑运算：bitwise_and／or／xor／not与mask。
+P11 通道：split、merge及通道重新组织。
+P12 色彩空间：cvtColor，HSV阈值和inRange。
+P13 像素统计：minMaxLoc、mean、meanStdDev。
+P14 几何图形：line、rectangle、circle、ellipse、putText等。
+P15 随机颜色：NumPy随机数和循环绘制。
+P16 多边形：polylines、fillPoly、fillConvexPoly。
+P17 鼠标：setMouseCallback，按下、拖动、抬起绘制矩形。
+P18 数据类型和归一化：uint8、浮点、除以255、normalize。
+P19 缩放：resize、目标尺寸／缩放系数和插值方式。
+P20 翻转：flip的0、1、-1。
+P21 旋转：rotate、getRotationMatrix2D、warpAffine和扩大画布。
+P22 视频／摄像头：VideoCapture、read、属性、释放资源。
+P23 视频保存：VideoWriter、FourCC、逐帧处理与编码问题。
+P24 一维直方图：calcHist、各通道的像素分布和绘图。
+P25 二维直方图：HSV中H与S的联合分布、归一化与显示。
+P26 直方图均衡：equalizeHist及对比度变化。
+P27 卷积：卷积核、邻域加权求和、均值平滑与filter2D。
+P28 高斯模糊：GaussianBlur、核大小和sigma。
+P29 双边滤波：bilateralFilter，结合位置和颜色差异保留边缘。
+P30 人脸案例：OpenCV DNN载入TensorFlow模型、预处理、推理、取框和显示。
+
+对第二阶段最有用的操作：
+
+1. 统一图片和坐标【P2、P3、P19】
+
+默认imread读取彩色图得到BGR数组。数组shape是(H,W,C)，用image[y1:y2, x1:x2]裁剪；resize的目标尺寸却是(width,height)。传给需要RGB的库或SAM前，要明确转换通道顺序，展示时也按对应格式处理。默认彩色读取不会保留透明通道，需要透明通道时另选读取模式。
+
+P3的赋值示例说明image2=image仍指向原数组，image.copy()才创建独立数据。两条路线共用同一原图时，绘框、裁剪展示、改像素应在副本上做，避免传统模型画出的框成为大模型路线的额外输入。后一句是本项目的使用建议。
+
+P19约01:06—01:35讲dsize、fx／fy和插值；约03:53—04:28比较边缘效果。缩放后的框坐标必须与展示图对应。需要对mask缩放时，最近邻可保留离散类别值；这是实现建议，不能把展示用的平滑插值直接用于所有数据。
+
+2. 数值范围和颜色阈值【P5、P7、P10—P13、P18】
+
+uint8像素范围为0—255。NumPy直接在uint8上相加可能回绕；OpenCV的饱和加法会截到范围内。P5、P7的亮度／对比度演示应连同类型和截断一起理解，不能只照抄一个乘加公式。
+
+P12约06:45的代码使用HSV和inRange提取指定颜色区域，再用掩膜保留或替换像素。8位HSV中H通常为0—179，S/V为0—255；阈值应按所用色彩空间确定。这种方法适合颜色条件明确的问题，光照和背景改变时要重新观察效果。
+
+P13讲minMaxLoc、均值和meanStdDev。技术更正：meanStdDev第二项是标准差，讲解中把它称作方差时不要沿用到报告中。
+
+P18介绍把0—255转为0—1浮点与normalize。展示用归一化和模型训练时规定的预处理需要区分；不同模型的均值、通道顺序、尺寸和尺度以该模型要求为准。
+
+3. 展示与交互【P14—P17】
+
+用rectangle、polylines、透明掩膜叠加和文字展示结果。P17约06:49起围绕左键按下、移动、抬起保存起终点并画框；约11:09起修正拖动中不断留下旧矩形的问题。手动画框可供SAM提示使用，但它包含人工帮助；与自动路线比较时应写明交互条件。
+
+4. 几何变换【P20、P21】
+
+P20约01:35依次演示三种flip。技术更正：0是上下翻转，1是左右翻转，-1是两个方向一起翻转，等价于180度转向；讲解中的“对角线翻转”不准确。
+
+P21约04:33—05:31介绍固定角度rotate与任意角度warpAffine；约07:39—09:26发现原尺寸画布裁掉旋转后的四角，再计算新宽高并修正平移。若对比模型定位，图片变换、框和mask必须使用同一套坐标变换。
+
+5. 视频读取、写出和课堂中的失败【P22、P23】
+
+读取路线是创建VideoCapture，检查是否打开，循环read，根据返回状态退出，最后release与destroyAllWindows。帧的shape是高、宽；VideoWriter的frameSize是宽、高。实际保存还需合适的编码器、帧率和帧格式。
+
+P23先遇到FourCC类型问题，随后把值转为整数。08:30附近仍出现libopenh264版本／编码器错误；08:54附近转去说明课程资源，片内没有展示解决该错误后的成功保存。代码中还出现把HSV帧直接写入普通彩色视频的做法。实现时应确认输出帧颜色与写出设置相符；仅看到程序exit code 0，不代表成片可用。
+
+当前考核按同一组图片比较即可。没有视频场景时，无须把摄像头与实时视频处理都加进项目。
+
+6. 对比度、滤波和人脸示例【P24—P30】
+
+P26约01:27—03:48先展示均衡后变差的图片，再换低对比图。这段本身就说明预处理有适用条件：equalizeHist处理单通道8位图，不能把彩色数组直接当灰度数组调用；图像已经清楚时，强行均衡可能破坏效果。
+
+P27讲用核对邻域像素加权；P28讲高斯权重；P29约01:16—03:21解释双边滤波同时看空间距离与颜色差异，以保留较强边缘。技术更正：P28约03:20—04:01称“ksize设定后sigma无用”，这条不应照搬。固定核大小时sigma仍影响核权重；sigma为0或核尺寸为0时才涉及参数推算规则。具体合法参数按所装OpenCV版本的接口说明设置。
+
+P30约02:14—03:22的模型载入是：
+  cv.dnn.readNetFromTensorflow(model=model_bin, config=config_text)
+画面中的模型文件位于models/face_detector，使用opencv_face_detector_uint8.pb和对应.pbtxt。约04:28起构建blob、setInput、forward；约07:18起按分数取框并绘制。关键预处理画面为：
+  cv.dnn.blobFromImage(frame, 1.0, (300, 300),
+                       (104.0, 177.0, 123.0), False, False)
+这里1.0是缩放系数，并不自动把像素除以255。它是该人脸模型的预处理示例，不应套给所有模型。开头推荐过OpenVINO，但本集核心代码没有设置OpenVINO推理后端；实际演示是OpenCV DNN载入TensorFlow格式模型。
+
+本项目可直接借用的是读取、尺寸／颜色处理、坐标对应和可视化的做法。色彩分割、滤波、人脸检测与鼠标交互按所选问题使用。
+
+五、YOLO课程：从推理到自定义数据
+
+来源：https://www.bilibili.com/video/BV1N8hg6HECu/
+BV1N8hg6HECu，P1—P13，共约95分钟。已逐集完整阅读机器转写；对核心代码抽取视频画面核对。以下是原创归纳，不是逐字稿。时间码均从该集开头计时；口误、静音段重复英文和宣传性速度数字未作为实现依据。本文只记录课程阅读和据此提出的实现建议，没有在本任务中运行模型。
+
+5.1 先把环境与一次图片推理接通
+
+【课程：P2 00:25—02:25、02:40—04:53】讲师创建独立Python项目和虚拟环境，安装的是pip install ultralytics，而不是名为yolo26的包。随后导入torch、ultralytics和YOLO查看安装情况。画面显示Python 3.11、PyTorch 2.13.0+cpu、Ultralytics 8.4.118，这是演示环境，不是第二阶段考核规定。CPU可完成入门推理；若使用GPU，课程提醒要安装相应GPU版PyTorch。
+
+画面中最小流程为：
+from ultralytics import YOLO
+model = YOLO('yolo26n.pt')
+results = model('https://ultralytics.com/images/bus.jpg')
+results[0].show()
+
+首次加载会下载权重，URL图片也会下载到本地。项目运行依赖所用权重与输入路径，不应把IDE项目名误当成库名。
+
+【课程：P1 05:20—06:24；P2 03:25—04:25、09:40—10:44】该检测预训练权重对应COCO的80类日常物体，不包含任意自定义概念。课程列出n、s、m、l、x五种规模，并用n与s展示同图检测结果和耗时差异。选择时需要同时看机器能否运行、结果是否够用；视频中的单次毫秒数不能替代本机实测。
+
+【课程：P3 00:00—01:50、04:08—06:28】理解架构先抓住三步：Backbone从图片提取特征，Neck融合不同尺度的信息，Head输出框、类别和置信度。对当前作业，能解释这三步比背全部模块缩写更实用。P1 03:00—04:25和P3 06:28—08:16介绍默认端到端检测头与NMS的区别；这是该版本的架构说明，不宜推成所有YOLO版本、所有任务都具有完全相同的后处理。
+
+5.2 predict怎样用，结果怎样拿
+
+【课程：P4 00:00—02:15、08:55—11:40】source可传单张图片、图片目录或视频；P5 00:00—03:53另展示摄像头编号0，并介绍RTSP地址。当前作业用固定图片组就能开展比较，不必增加摄像头依赖。
+
+【课程：P4 00:00—02:15、03:48—05:09】常用参数：conf过滤低分检测；imgsz控制推理输入尺寸；device选择cpu或GPU；save保存带框结果；show显示窗口；project和name控制输出目录；exist_ok允许重用已有目录；verbose控制终端过程信息。P4画面以脚本所在目录下的runs保存结果，因此不要假定输出必在某个全局固定目录。对输入和输出使用清楚的路径，可避免运行了却找不到文件。
+
+【课程：P4 06:19—06:49】同一公交车图片分别用conf=0.25和0.6，高阈值过滤掉了一个低分人物框。这个例子说明阈值改变保留结果，不说明提高阈值就能保证正确。P2 08:41—09:40把置信度解释为模型的把握程度；实际报告建议称“模型分数”，不要直接宣称0.9等于真实世界中90%的正确率。
+
+【课程：P4 05:09—06:18；代码画面05:45】results按输入图片或视频帧返回结果。单张图片取results[0]；其boxes表示该图检测到的目标。示例先判断boxes是否为None或长度为0，再逐框读取box.cls[0]、box.conf[0]、box.xyxy[0].tolist()；用model.names按类别ID找到名称。xyxy表示框的左上、右下坐标。不要把框数量误当图片数量，也不要默认每张图一定检测成功。
+
+【课程：P4 07:16—08:54】额外比较end2end=True和False：前者直接输出最终框，后者使用传统候选框加NMS的路线。作业可以保留默认设置；除非研究问题与这一区别有关，无需把双头对比变成额外实验。
+
+5.3 视频与流式推理的实际易错点
+
+【课程：P5 01:01—02:05；代码画面01:25】model.predict(source=0, show=True, stream=True)返回生成器，需要继续for循环消费，例如for _ in results: pass。只创建生成器而不遍历，演示中的摄像头不会真正开始推理。处理长视频时可据此逐帧取结果，不必先收集全部帧结果。
+
+【课程：P5 07:39—11:43；代码画面10:25】另一条路线是cv2.VideoCapture(source)，检查isOpened，在循环中cap.read()，读不到则退出；把frame交给model.predict(frame, conf=0.45, imgsz=640, verbose=False)，用results[0].plot()得到画好的BGR图片，再叠加文字并显示。按q退出，末尾释放视频流、关闭窗口。该流程适合需要自行控制读帧、绘制和业务逻辑的项目。
+
+【课程：P5 08:09—10:09】FPS统计覆盖读取、推理与绘制；示例保存最近约30次时间戳，用“时间间隔数量÷总时间跨度”估计平均FPS。它与日志里的单独inference耗时不同。P2 05:28—08:13也区分预处理、推理、后处理，所以报告运行速度时要说明计时覆盖哪部分。
+
+【课程：P5 03:53—07:39】ROI是关心的区域；当前区域有多少目标，与累计有多少目标越过一条线，是两种问题。视频解释后者需要跟踪ID和轨迹，单帧检测框不能直接充当累计客流。课程这一段主要讲思路，后面的演示代码展示读帧、推理和FPS，没有完整实现所讲的ROI越线计数系统。不要把概念介绍写成已实现功能。
+
+5.4 自定义数据怎样组织与训练
+
+【课程：P6 01:18—04:47、05:15—06:44】演示先读COCO8的4张训练图、4张验证图，组织为images/train、images/val以及对应的labels/train、labels/val。图片和标签文件的基本名须一一对应。检测标签每行是：class_id x_center y_center width height；一个目标一行，坐标和宽高归一化到图片尺寸，不是直接填写像素值。class_id从0开始，必须与配置中的类别顺序一致。
+
+【课程：P6 06:15—06:44；画面06:30】data.yaml声明path数据集根目录、train与val图像相对目录、可选test、类别数nc和names映射。标签目录按images/labels的对应关系组织，课程没有在yaml中逐一列出标签文件。可以从这个骨架改自己的目录，但要同时修改根目录、类别名称与标签ID。
+
+【课程：P7 02:14—03:18、05:00—10:42】标注演示用pip install label-studio安装，label-studio start启动；创建项目、导入图片，选择边界框目标检测模板，删除示例标签、添加helmet，再逐图框选并提交，最后按YOLO格式导出。导出文件整理到训练/验证标签目录，文件名要对应原图片。课堂快捷键1是选择界面中的标签，不表示导出的类别ID从1开始：只有一个类别时文件中仍为0。
+
+【课程：P7 01:13—02:14、10:43—11:13；代码画面10:50】课程从预训练权重微调，避免从零训练。具体调用是YOLO('yolo26n.pt')后model.train(data='helmet.yaml', epochs=100, imgsz=640)。P7 12:43—14:14再介绍batch、device、workers、patience等参数：批量受机器内存限制，workers负责数据加载，patience用于验证表现长期不提升时早停。视频给的轮数与默认值只是演示设置，不应当作所有数据集都有效的配方。
+
+【课程：P6 09:19—13:03；P7 11:13—12:42、14:52—15:55】训练过程中查看损失、验证结果，输出包含best.pt最佳权重与last.pt最后权重。预测自己的类别时加载训练产生的best.pt。课程讲了精确率、召回率、mAP50、mAP50-95，以及P/R/F1/PR曲线、混淆矩阵。可将精确率理解为“报出来的有多少是真的”，召回率理解为“真正存在的找到了多少”；mAP50-95比单一重合门槛更关注框的位置质量。课程展示训练过程中的验证，没有详细演示单独调用model.val()的完整代码，不能说这部分已由视频跑通。
+
+【重要局限：P7 02:47—03:18、15:55—17:16】安全帽例子只有8张图片，4张训练、4张验证，最后因默认阈值检测不出，把conf降到0.045才出现结果。这能帮助认识标注到训练的流程，不能证明可用的泛化能力，也不能把降低阈值当作解决训练不足的方法。P6 14:05—15:00提出类别数量尽量平衡、纳入难例和小目标，并介绍通常8:2划分；比例需要结合实际数据，不能把同源重复图片分开就当作独立验证。
+
+5.5 其他任务与导出，应按问题选用
+
+【课程：P8 00:00—04:24；P9 00:34—01:27】实例分割用yolo26n-seg.pt，结果既有res.boxes，也有res.masks.data，形状为[N,H,W]，以及res.masks.xy轮廓点。检测回答“在哪里”，分割还提供物体像素区域；需要轮廓或面积时再考虑后者。课程使用同一套API切换任务权重，不能理解为一个检测权重自动同时输出全部任务。
+
+【课程及代码画面：P10 00:00—01:08；P11 00:00—00:42；P12 00:00—01:16】姿态用yolo26n-pose.pt，res.keypoints.data展示每人的17个关键点，每点有x、y和可见性/置信信息。分类用yolo26n-cls.pt，读取res.probs.top1与top1conf，输出整张图的类别而不是目标位置；公交图示例得到minibus。旋转框用yolo26n-obb.pt，res.obb.xywhr是中心、宽高和弧度角，res.obb.xyxyxyxy给四角坐标，示例为船舶。它们是按任务准备的权重，不宜把检测80类的说明照搬给每种任务。
+
+【课程：P13 01:28—02:57、02:57—04:35】导出用于后续部署。Python方式是加载所需.pt权重后model.export(format='onnx')；命令行示例为yolo export model=yolo26n.pt format=onnx。演示也展示加载自己的best.pt，首次导出会安装ONNX相关依赖。format、imgsz、batch、device以及half、dynamic、opset、simplify等选项在后段介绍。目标硬件与运行端需要时再选择TensorRT、OpenVINO、TFLite等；当前图片对比作业不必先做多格式部署，也不要照搬课堂的通用加速倍数。
+
+5.6 给Dot的实现建议（以下是据考核约束提出的建议，不是视频原话）
+
+先选一个范围明确、能够逐图判断对错的视觉问题。如果现成检测类别覆盖目标，直接用轻量检测权重跑固定图片组，保存带框图和逐目标类别、分数、坐标；若必须得到边缘形状，再选分割路线；类别不覆盖时先评估数据标注成本，不要为了体现训练而仓促复制8图安全帽例子。
+
+对同一组图片再实际运行视觉/多模态大模型路线，保留模型名称、提示词、原始返回和整理后的结论。并排呈现识别结果、漏检误检、定位是否够用、复杂关系理解、耗时及调用成本。阈值、模型与提示词调整过程可以如实记录，最终比较用固定设置。摄像头、越线计数、姿态、OBB和导出都可作为了解内容，不必全部塞入第二阶段项目。课程为传统视觉路线提供了具体入口；它没有完成这份作业要求的双路线运行与对比，后续仍需要实际执行，不能以课程截图代替自己的结果。
+
+六、SAM参考仓库：检测与分割怎样连接
+
+资料范围：完整阅读 Grounded-Segment-Anything 与 Grounded-SAM-2 两份 README，并通过 GitHub 公开接口阅读文末所列核心 demo。以下把仓库已有行为与本次实现建议分开说明；本笔记没有运行模型。
+
+6.1 先理解这条流水线
+
+提示式分割中的点，需要同时说明坐标和前景／背景标签；框提供目标的大致范围，模型据此产生像素掩膜。点和框可以由人提供，检测器产生的框也可以自动传给SAM。下文重点是参考仓库实际组合的文本检测→框→掩膜流程。
+
+Grounded-SAM 把“找目标”和“沿轮廓分割”分成两步。输入是一张图片和文本，例如 car. tire.；Grounding DINO 根据文本给出检测框、短语标签与检测分数，再把框交给 SAM，得到每个目标的像素掩膜。掩膜可理解为与图片同样大小的黑白图，白色部分表示这个目标。这里不是直接把一句话交给原始 SAM，文字首先经过检测器。README 的核心想法是组合可替换的专家模型，并不要求把所有列出的模型一起运行。[1][2]
+
+坐标要连得上。原生 Grounding DINO 输出归一化的 cxcywh，即中心横坐标、中心纵坐标、宽、高；demo 先乘图片的 [W,H,W,H]，再转成像素 xyxy，即左上角和右下角。SAM1 还调用 predictor.transform.apply_boxes_torch 后再 predict_torch；SAM2ImagePredictor.predict 接收转换后的像素框。Hugging Face 分支的后处理已按原图尺寸给出 xyxy，不能再乘一次宽高。图片传给预测器时使用 RGB。[3][5]
+
+6.2 SAM1 的最小图像路线
+
+README“Installation”写明 Python>=3.8、PyTorch>=1.7、torchvision>=0.8，推荐 CUDA 版本。基本组合安装 segment_anything 和 GroundingDINO；原始 demo 还直接导入 OpenCV、Matplotlib、NumPy 等。README 将一组图像处理、COCO、Notebook、ONNX 包统称为 optional，但实际选定脚本直接导入的包仍需具备。diffusers 对应图像重绘，OSX 对应人体三维恢复，RAM/Tag2Text 对应自动生成标签，都不是“文本检测+分割”的必装模型。[1][3]
+
+原始示例的三个关键路径是：
+  配置：GroundingDINO/groundingdino/config/GroundingDINO_SwinT_OGC.py
+  检测权重：groundingdino_swint_ogc.pth
+  分割权重：sam_vit_h_4b8939.pth
+脚本 grounded_sam_demo.py 的参数还包括 --input_image、--output_dir、--text_prompt、--box_threshold、--text_threshold、--device。README 示例阈值为 0.3 和 0.25；代码的 --sam_version 默认为 vit_h，换模型时应与权重对应。CPU 参数也存在，默认是 cpu；README 示例显式使用 cuda。[2][3]
+
+box_threshold 用来筛掉最高文本匹配分数不足的候选框；text_threshold 用来决定哪些文本 token 组成输出短语，两者不是同一项“分割精度”。多类别提示按 README 建议用句点分隔，如 cat. dog. chair.。原始脚本会转小写、补末尾句点。输出目录含原图 raw_image.jpg、叠加图 grounded_sam_output.jpg、mask.jpg 和 mask.json。这里的 mask.jpg 是绘图保存结果；需要逐像素计算时，应保留模型返回的布尔掩膜，不能只拿展示图当原始数组。[2][3]
+
+6.3 SAM2 的图像路线与环境
+
+README 给出的运行环境是 Python=3.10、torch>=2.3.1、torchvision>=0.18.1、CUDA 12.1，这是作者的环境说明，不宜改写成所有机器必须安装完全同样版本。仓库安装命令为 pip install -e .；原生 Grounding DINO 分支另用 pip install --no-build-isolation -e grounding_dino。README 指出其 Deformable Attention 算子需要 CUDA 编译环境，CUDA_HOME 要指向本机实际工具包路径；有显卡驱动不等于已经具备编译工具包。旧仓库的 CUDA 11.3、新仓库的 CUDA 12.1 路径都是示例。[1][4]
+
+grounded_sam2_local_demo.py 当前使用：
+  SAM2 权重：./checkpoints/sam2.1_hiera_large.pt
+  SAM2 配置：configs/sam2.1/sam2.1_hiera_l.yaml
+  DINO 配置：grounding_dino/groundingdino/config/GroundingDINO_SwinT_OGC.py
+  DINO 权重：gdino_checkpoints/groundingdino_swint_ogc.pth
+README 分别提供 checkpoints/download_ckpts.sh 与 gdino_checkpoints/download_ckpts.sh 下载入口。local demo 顶部修改图片、文本、阈值和输出目录；默认阈值 0.35/0.25。SAM2 接口依次为 build_sam2、SAM2ImagePredictor、set_image、predict(box=..., multimask_output=False)，返回 masks、scores、logits。[4][5]
+
+grounded_sam2_hf_model_demo.py 用 Transformers 的 from_pretrained 加载 IDEA-Research/grounding-dino-tiny，在本机推理；README 所称“Huggingface API”在这里不是必须申请 token 的云端调用。此分支使用 Transformers，不直接导入仓库原生检测算子，部署条件应与 local 分支分开写。图像代码自动选择 CPU/GPU，HF 脚本还提供 --force-cpu；不能据此声称全部视频 demo 都能直接在 CPU 运行：基础跟踪脚本显式启用 CUDA autocast 并读取显卡属性。SAM2 示例另使用 supervision、pycocotools、OpenCV 等库。[5][7]
+
+保存结果时启用 DUMP_JSON_RESULTS，JSON 包括图片路径、原图尺寸、class_name、像素 bbox、RLE 编码掩膜与 score。特别注意：当前 local/HF 脚本实际写入 JSON 的 score 来自 SAM2 返回值；检测 confidences 用于图上标签。实现时建议分别保存 detection_score 与 mask_score，避免把两种分数混为一谈。[5][6]
+
+6.4 视频接口与可选扩展
+
+基础 tracking demo 输入按数字命名的 JPEG 帧目录；custom_video_input 脚本接受 MP4 并拆帧。先对第 0 帧检测，再用 build_sam2_video_predictor 和 init_state 建立状态；每个目标设置独立 obj_id，通过 add_new_points_or_box 或 add_new_mask 注册提示，随后 propagate_in_video 逐帧返回帧号、对象 ID 和掩膜 logits，demo 用 >0 得到布尔掩膜。点提示从图像掩膜内采样，框提示直接取检测框，掩膜提示取 SAM2 图像结果。默认流程只初始化首帧，不能据此宣称会持续发现后来进入画面的目标。[7]
+
+README 指定逐帧可视化保存到 tracking_results，基础脚本视频名为 children_tracking_demo_video.mp4；自定义视频可修改 VIDEO_PATH、TEXT_PROMPT、OUTPUT_VIDEO_PATH、PROMPT_TYPE_FOR_VIDEO。内存中的 video_segments 按“帧→对象 ID→掩膜”保存，基础 demo 没有把它完整导出成结构化跟踪文件；若比较轨迹，应另存这份记录。[7]
+
+Grounding DINO 1.5/1.6、DINO-X 分支需要 DDS API token 和 dds-cloudapi-sdk，区别于上述开放权重本地路线。README 最新更新要求 SDK 使用 API V2，不能直接照抄旧更新里的固定版本。SAHI 用于高分辨率密集小目标，README 只在 1.5 分支支持；连续 ID 新目标发现仍被标为开发中、尚不稳定。Florence-2 提供检测、区域描述、短语定位、自动标注等组合，开放词汇多类别示例用 <and>，不要与 DINO 的句点规则混用。[8]
+
+6.5 放进本次第二阶段的方式（实现建议）
+
+按已确认的考核要求，选定同一个视觉问题、固定同一组输入，把传统视觉模型路线与视觉/多模态大模型路线实际运行后并排比较。若任务需要精细轮廓，可把检测器→SAM 作为一条路线；若只要求框、数量或类别，不必为展示仓库而额外加分割。保存提示、阈值、模型与配置、原始输出和可视化，比较漏检、误检、轮廓、耗时与适用场景。耗时记录和分数分开保存是工程建议，不是 README 替课程新增的要求。图像重绘、语音、三维人体、ONNX、多卡、连续跟踪和全部 Florence-2 组合均按所选问题取舍，无需一次实现所有扩展。
+
+来源与定位
+[1] Grounded-Segment-Anything README：“Why Building this Project?”、“Installation”
+https://github.com/IDEA-Research/Grounded-Segment-Anything#installation
+[2] 同 README：“GroundingDINO: Detect Everything with Text Prompt”、“Grounded-SAM: Detect and Segment Everything with Text Prompt”
+https://github.com/IDEA-Research/Grounded-Segment-Anything#running_man-grounded-sam-detect-and-segment-everything-with-text-prompt
+[3] SAM1 原始 demo（坐标、阈值、CPU 参数和输出）
+https://github.com/IDEA-Research/Grounded-Segment-Anything/blob/main/grounded_sam_demo.py
+[4] Grounded-SAM-2 README：“Installation”
+https://github.com/IDEA-Research/Grounded-SAM-2#installation
+[5] SAM2 图像代码（本地与 HF）
+https://github.com/IDEA-Research/Grounded-SAM-2/blob/main/grounded_sam2_local_demo.py
+https://github.com/IDEA-Research/Grounded-SAM-2/blob/main/grounded_sam2_hf_model_demo.py
+[6] SAM2 README：“Automatically Saving Grounding Results (Image Demo)”
+https://github.com/IDEA-Research/Grounded-SAM-2#automatically-saving-grounding-results-image-demo
+[7] SAM2 README：“Grounded SAM 2 Video Object Tracking Demo”及自定义输入章节；对应核心代码
+https://github.com/IDEA-Research/Grounded-SAM-2#grounded-sam-2-video-object-tracking-demo
+https://github.com/IDEA-Research/Grounded-SAM-2/blob/main/grounded_sam2_tracking_demo.py
+https://github.com/IDEA-Research/Grounded-SAM-2/blob/main/grounded_sam2_tracking_demo_custom_video_input_gd1.0_local_model.py
+[8] SAM2 README：“Latest updates”、1.5/1.6、DINO-X、SAHI、Continuous ID、Florence-2 章节
+https://github.com/IDEA-Research/Grounded-SAM-2#latest-updates
+https://github.com/IDEA-Research/Grounded-SAM-2#grounded-sam-2-florence-2-demos
+
+七、大模型应用课程：实际教了什么，图片调用还要补什么
+
+来源：https://www.bilibili.com/video/BV1nXGy6fERZ/
+
+网页标题是“手把手教你用30分钟学会Python调用大模型API”，当前链接共有16集、接近3小时。P编号与标题里的章号不同：P1的标题从“3-【基础认知】02”开始。下面统一使用播放器P编号。
+
+逐集实际内容：
+P1 工作原理：下一token预测、自回归、词向量和注意力的概念。
+P2 模型创造流程、监督微调：数据、预训练、SFT、对齐、部署与LoRA等概念。
+P3 大模型、机器学习和AI的关系及发展历史。
+P4 提示词：角色／目标／输入／过程／输出，少样本、采样参数、结构化输出、迭代。
+P5 Agent的概念、组成、规划、记忆、行动、工具和任务循环。
+P6 子任务拆解、CoT与ToT；用24点说明分支搜索和评分。
+P7 展示24点脚本和提示文件，扩展ToT，并介绍ReAct。
+P8 短期／长期记忆、上下文、存储和摘要，主要讲概念。
+P9 工具与工具集、外部API和函数调用，主要讲概念。
+P10 LangChain的Plan-and-Execute及搜索／计算示例。
+P11 Self-Ask with Search，自问、检索、校验的框架示例。
+P12 Thinking and Self-Reflection，讲流程与原理，没有展开完整源码。
+P13 LangChain ReAct，用搜索与计算工具回答玫瑰价格问题。
+P14 LlamaIndex ReAct RAG，读取两份公司财报、建索引、配置查询工具后比较。
+P15 数字人项目预览：RAG、FastAPI／Uvicorn、Docker、语音／数字人服务与环境配置。
+P16 接着展示数字人对产品经理问题的回答、语音视频和历史摘要功能。
+
+1. 可直接采用的提示组织方法【P4】
+
+03:23—04:46把指令、上下文、输出格式展开成角色、目标、输入、过程、输出。08:07—08:40讲少量输入输出示例。11:28—11:58提到数据分析配合JSON格式；12:27—13:54讲temperature、top_p、top_k；13:54—14:52讲先得到初稿，再针对具体差距修改提示并重复。
+
+在视觉项目中可以沿用“任务讲清楚、提供图片、给出类别与计数口径、约定输出字段”的结构。提示中的示例用来说明格式，不能暗含当前测试图的答案。提示词调整完成后固定最终版本，两条路线在共同图片组上运行。
+
+【实现建议】字段可以包含image_id、objects、counts和description，再按所选任务精简；先保存模型原始返回，再解析成展示数据。程序检查JSON能否解析、字段类型是否正确、计数是否与对象列表一致。课程提出了JSON格式，但没有在这16集中给出完整的视觉API结构化解析方案。
+
+2. Agent与RAG示例教的是怎样组织调用【P7、P10—P14】
+
+P7 02:08起分出主程序和prompt文件；10:29起展示24点结果；11:23—14:57把“四个数变三个、三个变两个、两个变一个”组织为候选步骤和评分。它说明复杂任务可以分阶段处理，属于额外的推理应用示例。
+
+P10 07:19—07:47明确用LangChain 0.2，并提醒版本不匹配会使示例无法运行。P11 04:42—05:12继续谈0.2与0.3的兼容问题。因此不要直接把旧导入路径和新版本依赖拼在一起。若本项目只需要一次图片调用，采用所选模型官方SDK即可，无须先引入整个Agent框架。
+
+P10约08:47的玫瑰数量回答出现明显计算问题；P13约03:09—07:47又讨论搜索价格的不确定性和加价计算。课堂展示了工具调用流程，也展示了错误。工具执行过、回答形式完整，与答案正确是两回事。视觉项目也要逐图核对识别、数量和描述。
+
+P14 03:44—06:46的流程是读取A／B两份PDF，分别向量化并建立索引，保存到本地，再建立查询引擎和两份财报的查询工具。06:45代码画面可见：
+  from llama_index.llms.openai import OpenAI
+  llm = OpenAI(model="gpt-4")
+  from llama_index.core.agent import ReActAgent
+  agent = ReActAgent.from_tools(query_engine_tools, llm=llm, verbose=True)
+  print(agent.chat("Compare the sales of the two companies"))
+这是视频当时的文本财报示例接口，不是本项目推荐的当前模型或安装配方。08:09—09:23讨论了结果差异、切分不足和幻觉。此处处理的是文档检索，不能拿它替代图片视觉输入。
+
+3. 数字人里的Docker、密钥和输出视频【P15—P16】
+
+P15 04:59—06:35展示先构建镜像，再运行容器，并由Uvicorn启动服务；05:15画面的docker run有服务端口与数字人相关端口映射。这些端口为该示例服务设计，不是第二阶段通用端口。
+
+P15 08:36—11:40讲领域文档、检索、混合检索和重排；12:52—13:48提醒部分API服务有费用，展示.env配置并提及共享额度。本文不转录这些凭据。新项目用自己的合法调用配置，密钥放环境变量或未入库的本地配置，只提交占位示例。
+
+P16是数字人的问答、语音视频与项目效果预览。生成会说话的人物视频，是输出端的合成；第二阶段要求视觉模型读取输入图片。它们在项目中的作用不同。
+
+4. 这套课缺少的实际环节【课程覆盖范围与补充任务】
+
+完整读取16集后，未找到“将一张任务图片连同文字发送给视觉模型，并处理其视觉返回”的完整SDK调用示例。它有文本模型、搜索、计算、财报检索和数字人服务调用，也谈多模态概念，但没有完成PDF要求的图片输入路线。接手者需要为自己选定的支持图像输入的模型，另查该模型的官方API／SDK文档。
+
+补齐时依次做：
+（1）确认具体模型与具体接口支持图片，不只看平台宣传的模型家族名。
+（2）按官方文档发送实际图像内容：公开图片URL、上传文件或带正确MIME类型的编码数据，选接口支持的方式。云端服务无法直接读取开发者的C盘路径。
+（3）加入任务文字和输出约定，运行与传统路线相同的图片清单。
+（4）保存模型标识、提示、主要参数、原始返回和请求状态，再整理为对比展示。
+（5）明确超时、鉴权、配额和解析失败；若用历史调用结果重放，界面和录像写明是已保存结果。
+
+以上五步是根据考核要求整理的实现建议，不是声称视频已经演示了这段代码。temperature、top_p、top_k并非每个接口都支持；视频中的通用数值不要直接设成所有模型的“最佳参数”。低温度、少样本、RAG或自我反思均需看实际效果，不能写成保证答案正确的开关。
+
+八、从第一次开发带来的经验【实际经验与本次建议】
+
+1. 先选传统模型能处理的问题，再安排扩展。固定类别检测权重只覆盖自己的类别表；SAM提供轮廓，名称要由检测器或其他识别环节提供。项目若需要现有类别以外的概念，先评估开放词汇检测或标注成本。
+
+2. 单张分数与整体效果分开。第一次猫分类演示中的98.8%是那一张图片的模型分数，测试集准确率是对整批图片算的另一项指标。第二阶段同样区分检测分数、掩膜质量分数、计数是否正确、文字描述是否符合图像。不能直接用两个模型各自的“confidence”比较谁更准。
+
+3. 训练／验证／测试按数据来源分开。同一照片的翻转版、压缩版或近重复图分到不同集合，会使评价偏高。第一次增加训练样本后，扩充实验没有超过原优化模型，最终保留了原模型。加数据之前先看错在哪里，数据数量本身不代表改进。
+
+4. 源码、权重和API配置共同决定能否运行。第一次源码仓库没有包含训练好的权重，接收者只拿源码就不能立即识别。新项目从一开始写清权重来源、版本、下载办法和目标位置；大模型路线写清配置办法、调用条件和实际运行命令。
+
+5. 先完成同题、同输入的两条实际运行路线，再决定是否训练和加功能。每张原图给一个编号，保留原图、各自的原始输出、展示图、配置和错误状态。绘图用副本，避免一个模型的标注图变成另一模型的输入。
+
+6. 比较围绕可观察的差异。可以看漏检、多检、类别、计数、轮廓、复杂关系理解，以及耗时、费用、配置难度。使用mAP或IoU时需要相应标注与计算；PDF未要求每个项目都做一套大型评测。计时要说清是否包含加载、联网和重试。
+
+7. 选几张成功、失败和两边意见不同的图片解释原因。调整阈值改变的是保留哪些框；降低到极小值让框出现，不等于解决了数据不足。课程的8图安全帽训练与课堂成功截图都只能作为学习案例，项目结论来自自己的运行。
+
+8. 文档按实际完成的工作写。记录选择原因、调过什么、哪里出错、怎么解决，以及两种路线各适合什么场景。个人感悟由学生结合真实经历表达。中文整理沿用humanizer-zh：保留事实、条件与程度，删去空话和重复辩护，不虚构学习或实验经历。
+
+资料来源
+
+考核依据：《灵境后端二阶段考核任务.pdf》第1页；第一阶段PDF中的环境、仓库与交付相关条款。
+Transformer：https://www.bilibili.com/video/BV1fj6vBfEnu/
+OpenCV：https://www.bilibili.com/video/BV1hM4y1M7vQ/
+YOLO：https://www.bilibili.com/video/BV1N8hg6HECu/
+大模型应用：https://www.bilibili.com/video/BV1nXGy6fERZ/
+SAM：https://github.com/IDEA-Research/Grounded-Segment-Anything
+SAM2：https://github.com/IDEA-Research/Grounded-SAM-2
+第一阶段环境复现：https://www.bilibili.com/video/BV1bqKE6pEmD/?p=4
+
+本文将考核原文、课程实际内容、技术更正和开发建议分别标明。接手开发时，具体API参数、依赖兼容与模型许可按最终选用版本的官方说明安排。

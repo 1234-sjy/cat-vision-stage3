@@ -1,0 +1,66 @@
+{
+  "image_id": "Abyssinian_96",
+  "label": "传统正确",
+  "truth": "阿比西尼亚猫",
+  "input_url": "/examples/Abyssinian_96/input.png",
+  "visualization_url": "/examples/Abyssinian_96/traditional.jpg",
+  "result": {
+    "traditional": {
+      "status": "ok",
+      "has_cat": true,
+      "box": [
+        131.96450805664062,
+        121.24223327636719,
+        293.062255859375,
+        475.0409240722656
+      ],
+      "detection_score": 0.939631998538971,
+      "cat_count": 1,
+      "crop_box": [
+        123,
+        101,
+        302,
+        493
+      ],
+      "crop_source": "sam_mask",
+      "segmentation_error": null,
+      "detection_seconds": 0.4606712000022526,
+      "segmentation_seconds": 0.24038850000215461,
+      "inference_seconds": 1.6750926000007893,
+      "breed": "Abyssinian",
+      "breed_zh": "阿比西尼亚猫",
+      "breed_score": 0.6424682140350342,
+      "route": "yolo26_sam2_classifier",
+      "throttle_seconds": 0.6,
+      "image_id": "Abyssinian_96",
+      "input_sha256": "ce08064472b9ebf54c7b3a3adca19b0e0b1f0f874c407ec09d82ad58641bee60",
+      "true_breed": "Abyssinian",
+      "created_utc": "2026-11-02T02:34:40.684175+00:00"
+    },
+    "vlm": {
+      "status": "ok",
+      "has_cat": true,
+      "breed": "British_Shorthair",
+      "breed_zh": "英国短毛猫",
+      "features": [
+        "橘色短毛",
+        "圆脸",
+        "大耳朵"
+      ],
+      "raw_text": "{\"has_cat\":true,\"breed\":\"British_Shorthair\",\"features\":[\"橘色短毛\",\"圆脸\",\"大耳朵\"]}",
+      "route": "qwen3_vl_4b",
+      "model": "Qwen/Qwen3-VL-4B-Instruct",
+      "prompt_version": "cat-breed-v1",
+      "inference_seconds": 8.060283999999228,
+      "throttle_seconds": 0.2,
+      "input_tokens": 476,
+      "output_tokens": 28,
+      "image_id": "Abyssinian_96",
+      "input_sha256": "ce08064472b9ebf54c7b3a3adca19b0e0b1f0f874c407ec09d82ad58641bee60",
+      "true_breed": "Abyssinian",
+      "created_utc": "2026-11-02T02:20:29.207375+00:00"
+    },
+    "fresh_run": false,
+    "total_seconds": 9.735376600000018
+  }
+}

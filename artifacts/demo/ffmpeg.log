@@ -1,0 +1,38 @@
+Input #0, concat, from 'C:\Users\sjysj\Documents\Codex\2026-10-31\new-chat\outputs\cat-vision-stage2\runtime\ui-video\frames.ffconcat':
+  Duration: N/A, start: 0.000000, bitrate: N/A
+  Stream #0:0: Video: mjpeg (Baseline), yuvj420p(pc, bt470bg/unknown/unknown), 1180x1208 [SAR 1:1 DAR 295:302], 25 fps, 25 tbr, 25 tbn
+Stream mapping:
+  Stream #0:0 -> #0:0 (mjpeg (native) -> h264 (libx264))
+Press [q] to stop, [?] for help
+[swscaler @ 0000025e928df800] deprecated pixel format used, make sure you did set range correctly
+[libx264 @ 0000025e90a44fc0] using SAR=1/1
+[libx264 @ 0000025e90a44fc0] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 0000025e90a44fc0] profile High, level 4.0, 4:2:0, 8-bit
+[libx264 @ 0000025e90a44fc0] 264 - core 164 r3192 c24e06c - H.264/MPEG-4 AVC codec - Copyleft 2003-2024 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=2 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=2 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=250 keyint_min=15 scenecut=40 intra_refresh=0 rc_lookahead=10 rc=crf mbtree=1 crf=20.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to 'C:\Users\sjysj\Documents\Codex\2026-10-31\new-chat\outputs\cat-vision-stage2\artifacts\demo\实际运行演示.mp4':
+  Metadata:
+    comment         : Actual local UI execution; idle waits shortened; displayed model times unchanged.
+    encoder         : Lavf61.7.100
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(pc, bt470bg/unknown/unknown, progressive), 1180x1208 [SAR 1:1 DAR 295:302], q=2-31, 15 fps, 15360 tbn
+      Metadata:
+        encoder         : Lavc61.19.100 libx264
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+frame=  292 fps=0.0 q=24.0 size=       0KiB time=00:00:19.33 bitrate=   0.0kbits/s speed=37.1x    [mp4 @ 0000025e90a89540] Starting second pass: moving the moov atom to the beginning of the file
+[out#0/mp4 @ 0000025e90a3f900] video:389KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 2.003075%
+frame=  583 fps=569 q=-1.0 Lsize=     397KiB time=00:00:38.73 bitrate=  83.9kbits/s speed=37.8x    
+[libx264 @ 0000025e90a44fc0] frame I:3     Avg QP: 7.30  size: 91648
+[libx264 @ 0000025e90a44fc0] frame P:147   Avg QP:13.87  size:   649
+[libx264 @ 0000025e90a44fc0] frame B:433   Avg QP:10.40  size:    62
+[libx264 @ 0000025e90a44fc0] consecutive B-frames:  0.9%  0.3%  0.0% 98.8%
+[libx264 @ 0000025e90a44fc0] mb I  I16..4: 80.3%  1.5% 18.1%
+[libx264 @ 0000025e90a44fc0] mb P  I16..4:  0.2%  0.0%  0.1%  P16..4:  0.6%  0.0%  0.0%  0.0%  0.0%    skip:99.1%
+[libx264 @ 0000025e90a44fc0] mb B  I16..4:  0.0%  0.0%  0.0%  B16..8:  0.1%  0.0%  0.0%  direct: 0.0%  skip:99.9%  L0:59.2% L1:38.7% BI: 2.0%
+[libx264 @ 0000025e90a44fc0] 8x8 transform intra:2.2% inter:40.9%
+[libx264 @ 0000025e90a44fc0] coded y,uvDC,uvAC intra: 18.8% 20.0% 14.7% inter: 0.0% 0.2% 0.0%
+[libx264 @ 0000025e90a44fc0] i16 v,h,dc,p: 70% 28%  2%  0%
+[libx264 @ 0000025e90a44fc0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 21% 27% 31%  3%  3%  4%  3%  3%  5%
+[libx264 @ 0000025e90a44fc0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 22% 24% 18%  5%  6%  6%  7%  6%  7%
+[libx264 @ 0000025e90a44fc0] i8c dc,h,v,p: 62% 21% 16%  2%
+[libx264 @ 0000025e90a44fc0] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0000025e90a44fc0] kb/s:81.80

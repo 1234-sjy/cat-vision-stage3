@@ -1,0 +1,11 @@
+{
+  "route": "vlm",
+  "set": "val",
+  "image_ids": [
+    "Abyssinian_111"
+  ],
+  "count": 1,
+  "load_seconds": 7.831347599996661,
+  "created_utc": "2026-11-02T02:18:02.722786+00:00",
+  "timing": "inference_seconds includes preprocessing, forward/generation, postprocessing; excludes weight loading"
+}

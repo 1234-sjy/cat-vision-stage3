@@ -1,0 +1,66 @@
+{
+  "image_id": "Abyssinian_206",
+  "label": "两边误判",
+  "truth": "阿比西尼亚猫",
+  "input_url": "/examples/Abyssinian_206/input.png",
+  "visualization_url": "/examples/Abyssinian_206/traditional.jpg",
+  "result": {
+    "traditional": {
+      "status": "ok",
+      "has_cat": true,
+      "box": [
+        17.04036521911621,
+        8.701213836669922,
+        291.110595703125,
+        275.0554504394531
+      ],
+      "detection_score": 0.8646671175956726,
+      "cat_count": 1,
+      "crop_box": [
+        6,
+        0,
+        300,
+        279
+      ],
+      "crop_source": "sam_mask",
+      "segmentation_error": null,
+      "detection_seconds": 0.026867799999308772,
+      "segmentation_seconds": 0.04459350000252016,
+      "inference_seconds": 0.08042699999932668,
+      "breed": "Bengal",
+      "breed_zh": "孟加拉猫",
+      "breed_score": 0.5653204321861267,
+      "route": "yolo26_sam2_classifier",
+      "throttle_seconds": 0.6,
+      "image_id": "Abyssinian_206",
+      "input_sha256": "3f3149fb86ddd74cfd430c864b008ba9fc2263c59969590f8004580c7b1a0aee",
+      "true_breed": "Abyssinian",
+      "created_utc": "2026-11-02T02:34:44.998077+00:00"
+    },
+    "vlm": {
+      "status": "ok",
+      "has_cat": true,
+      "breed": "Russian_Blue",
+      "breed_zh": "俄罗斯蓝猫",
+      "features": [
+        "耳朵大而直立",
+        "眼睛呈绿色",
+        "毛色为灰蓝色带斑点"
+      ],
+      "raw_text": "{\"has_cat\":true,\"breed\":\"Russian_Blue\",\"features\":[\"耳朵大而直立\",\"眼睛呈绿色\",\"毛色为灰蓝色带斑点\"]}",
+      "route": "qwen3_vl_4b",
+      "model": "Qwen/Qwen3-VL-4B-Instruct",
+      "prompt_version": "cat-breed-v1",
+      "inference_seconds": 3.9796507000064594,
+      "throttle_seconds": 0.2,
+      "input_tokens": 365,
+      "output_tokens": 34,
+      "image_id": "Abyssinian_206",
+      "input_sha256": "3f3149fb86ddd74cfd430c864b008ba9fc2263c59969590f8004580c7b1a0aee",
+      "true_breed": "Abyssinian",
+      "created_utc": "2026-11-02T02:21:03.569571+00:00"
+    },
+    "fresh_run": false,
+    "total_seconds": 4.060077700005786
+  }
+}

@@ -77,8 +77,16 @@ def make_examples(truth, lookups, data_root):
         good_a = a.get("status") == "ok" and a.get("breed") == record["breed"]
         good_b = b.get("status") == "ok" and b.get("breed") == record["breed"]
         groups[0 if good_a and good_b else 1 if good_a else 2 if good_b else 3].append(record)
-    selected = [(group[0], label) for group, label in zip(groups,
-        ["两边正确", "传统正确", "大模型正确", "两边误判"]) if group]
+    selected = []
+    used_breeds = set()
+    for index, (group, label) in enumerate(zip(groups,
+            ["两边正确", "传统正确", "大模型正确", "两边误判"])):
+        if not group:
+            continue
+        options = [r for r in group if r["breed"] not in used_breeds] or group
+        record = next((r for r in options if index == 2 and r["breed"] == "Sphynx"), options[0])
+        selected.append((record, label))
+        used_breeds.add(record["breed"])
     picked = {r["image_id"] for r, _ in selected}
     for record in truth:
         if len(selected) >= 4:
@@ -143,8 +151,8 @@ def documentation(metrics, examples, lookups, training):
 
 传统视觉：正确{a['correct']}/120，Top-1正确率{a['accuracy']:.2%}，宏平均F1为{a['macro_f1']:.4f}。
 视觉大模型：正确{b['correct']}/120，Top-1正确率{b['accuracy']:.2%}，宏平均F1为{b['macro_f1']:.4f}。
-传统视觉状态统计：{json.dumps(a['status_counts'], ensure_ascii=False)}。
-视觉大模型状态统计：{json.dumps(b['status_counts'], ensure_ascii=False)}。
+传统视觉：{a['status_counts'].get('ok', 0)}张输出品种，{a['status_counts'].get('no_cat', 0)}张未检测到猫。
+视觉大模型：{b['status_counts'].get('ok', 0)}张返回有效结构，{b['status_counts'].get('parse_error', 0)}次格式错误，{b['status_counts'].get('unsupported', 0)}次返回其他品种。
 
 每张图都计入总数，漏检、其他品种、格式错误和运行失败均不当成正确答案。宏平均F1先给每个品种计算一个综合分，再对12个品种取平均。
 

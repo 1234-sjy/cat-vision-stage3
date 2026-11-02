@@ -19,7 +19,7 @@
 
 两路线在新共同120张上的完整对照、原始输出和耗时见`artifacts/evaluation/comparison-v2`及`artifacts/comparison-v2`。第一阶段对照只读取之前保存的预测，没有载入其训练权重。新版权重与第一阶段独立训练。
 
-[项目说明PDF](docs/项目说明与实现感悟.pdf) · [课程提要](docs/课程依据/第二阶段指定课程实读提要.txt) · [改进记录](docs/改进说明.txt)
+[项目介绍与个人感悟 Word文档](docs/项目介绍与个人感悟.docx) · [课程提要](docs/课程依据/第二阶段指定课程实读提要.txt) · [改进记录](docs/改进说明.txt)
 
 ## 环境与启动
 
@@ -66,3 +66,9 @@ python -m venv .venv
 - Oxford数据与许可：https://www.robots.ox.ac.uk/~vgg/data/pets/
 
 Ultralytics、SAM、Qwen与Swin遵循各自上游许可。
+
+## GitHub提交与开发历史
+
+开发中的真实Git提交随源码一并保留。交接时通过Git bundle恢复仓库，再将原有提交整体推送到GitHub；不要只用网页上传最终文件，也不要重新git init、压成单个提交或改写提交日期。代码、requirements.txt、requirements-lock.txt、安装启动脚本和运行说明都在同一仓库。
+
+本地提交记录与GitHub推送时间分别保留；仓库恢复方式见docs/提交与复现要求.md。

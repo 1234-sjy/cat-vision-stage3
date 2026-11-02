@@ -1,0 +1,27 @@
+{
+  "created_utc": "2026-11-02T23:47:09.613788+00:00",
+  "reason": "Windows fsync used a read-only descriptor; both adapter and atomic training state were already complete",
+  "source": "artifacts/optimization-v4/training-battery/.step000010.2aebc33d49d94b43bf656f7166bf3cf8.tmp",
+  "destination": "artifacts/optimization-v4/recovered-step000010",
+  "original_retained": true,
+  "global_step": 10,
+  "metadata_conversion": "TorchVersion subclass converted to plain string; tensor and optimizer state retained",
+  "epoch": 1,
+  "data_rng_state_keys": [
+    "sampler_generator",
+    "loader_generator",
+    "epoch_sampler_start",
+    "epoch_batches_completed",
+    "microstep"
+  ],
+  "file_sha256": {
+    "adapter_config.json": "68c043e7b2091a740f3f7a2bdc6dfe3174b4bedb0bb95c26da51f3ad0817ca62",
+    "adapter_model.safetensors": "f36a8ab5c575bd02a14fd91aee694a66881bb4b7f1ef002c84dfb5c9cf038000",
+    "README.md": "9cd143c7bc97b000a20c673fafb0e933aacd3c8561c064e668952aee5a933dc8",
+    "training-state.pt": "77c20cf5b996da2563384d2d1a5cae2fccc7c37098ddbaa8563aae717cf0977f"
+  },
+  "finite_adapter": true,
+  "optimizer_restored_on_explicit_resume": true,
+  "automatic_retry": false,
+  "cuda_initialized": false
+}

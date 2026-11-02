@@ -346,6 +346,14 @@ def atomic_checkpoint(path: Path, payload):
     temporary.replace(path)
 
 
+def sync_existing_file(path: Path):
+    # Windows FlushFileBuffers requires a writable handle; rb raises EBADF.
+    # The producer already closed the file. Opening r+b changes no contents.
+    with Path(path).open('r+b') as stream:
+        stream.flush()
+        os.fsync(stream.fileno())
+
+
 def save_adapter_snapshot(model, destination, optimizer, scheduler, *, epoch, global_step, config,
                           data_rng_state=None):
     """Adapter-only immutable directory; never copy the frozen 4B model tensors."""
@@ -360,7 +368,8 @@ def save_adapter_snapshot(model, destination, optimizer, scheduler, *, epoch, gl
     adapter_config['base_model_name_or_path'] = BASE_MODEL_ID
     durable_json(adapter_config_path, adapter_config)
     atomic_checkpoint(temporary / 'training-state.pt', {
-        'epoch': epoch, 'global_step': global_step, 'config': config,
+        'epoch': epoch, 'global_step': global_step,
+        'config': json.loads(json.dumps(config, ensure_ascii=False, allow_nan=False)),
         'optimizer_state_dict': cpu_tree(optimizer.state_dict()),
         'scheduler_state_dict': scheduler.state_dict(), 'rng_state': rng_state(),
         'data_rng_state': cpu_tree(data_rng_state),
@@ -368,8 +377,7 @@ def save_adapter_snapshot(model, destination, optimizer, scheduler, *, epoch, gl
     # save_pretrained closes files; explicitly make its retained artifacts durable.
     for path in temporary.rglob('*'):
         if path.is_file():
-            with path.open('rb') as stream:
-                os.fsync(stream.fileno())
+            sync_existing_file(path)
     if destination.exists():
         raise FileExistsError(destination)
     temporary.rename(destination)

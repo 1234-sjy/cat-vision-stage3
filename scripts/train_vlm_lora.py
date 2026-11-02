@@ -35,6 +35,7 @@ from catvision.vlm_training import (BASE_MODEL_ID, GIB, LORA_TARGETS, VlmDataset
     choose_batch, collate_processor, durable_json, file_sha256, forecast_peak,
     identity_collate, load_classes, preserve_rng, save_adapter_snapshot,
     restore_rng_state, validate_resume_config,
+    sync_existing_file,
     seed_worker, validate_disjoint, validate_records, verified_image_paths,
     verify_frozen_manifest)
 
@@ -275,8 +276,7 @@ def publish_selected_adapter(source, destination, metadata):
         raise ValueError('Selected epoch has no adapter safetensors')
     durable_json(temporary / 'training-provenance.json', metadata, immutable=True)
     for path in temporary.iterdir():
-        with path.open('rb') as stream:
-            os.fsync(stream.fileno())
+        sync_existing_file(path)
     if destination.exists():
         raise FileExistsError(destination)
     temporary.rename(destination)

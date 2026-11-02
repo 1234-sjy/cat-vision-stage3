@@ -52,6 +52,6 @@ if __name__=='__main__':
     save_json(directory/'video-info.json',metadata)
     note='本视频来自网页真实上传和重新推理。快速模式在录制前预加载模型，取消人为推理暂停；计算仍依次执行，不复用答案。连续采集画面，输出30fps；识别等待保留真实速度，结果完成后的多余静止间隔适当压缩。模型输出、分数和界面耗时均未修改。recording.json保留原始帧时间，live-run.json保留服务返回。'
     if not args.trim_finished_idle:
-        note='本视频来自网页真实上传和推理，按原始截图时间编码，没有更改模型输出、分数或耗时。原始帧时间在recording.json，服务返回在live-run.json。'
+        note='本视频连续采集实际网页的选图、点击识别和两路输出，按原始画面时间编码。识别过程完整保留，没有剪掉等待、加速推理或修改分数及耗时。原始帧时间在recording.json，服务返回在live-run.json。'
     (directory/'录像说明.txt').write_text(note,encoding='utf-8')
     print('DEMO SAVED',target,metadata,flush=True)

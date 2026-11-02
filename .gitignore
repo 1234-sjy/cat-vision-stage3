@@ -17,6 +17,7 @@ runtime-*.log
 !/weights/breed-swin-v2-fp16.pt
 /artifacts/demo-fast/frames/
 /artifacts/demo-fast-smooth/frames/
+/artifacts/demo-single-image/frames/
 /artifacts/environment/pip-freeze-original.txt
 /artifacts/training/*/args.yaml
 /artifacts/training/*/train_batch*.jpg

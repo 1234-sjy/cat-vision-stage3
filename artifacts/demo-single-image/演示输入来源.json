@@ -1,0 +1,14 @@
+{
+  "dataset": "Oxford-IIIT Pet",
+  "image_id": "British_Shorthair_60",
+  "demo_file": "examples/demo-input.jpg",
+  "sha256": "dfac7d16254321042caa747ed6773fbdb1d9366207d7276b37deac2cc92de7d3",
+  "fresh_job_id": "43e427d1cf374356b8e4130b62f60b32",
+  "result_keys": [
+    "input_sha256",
+    "fresh_run",
+    "traditional",
+    "vlm",
+    "total_seconds"
+  ]
+}

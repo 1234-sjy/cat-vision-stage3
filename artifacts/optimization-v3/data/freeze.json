@@ -1,0 +1,17 @@
+{
+  "revision": "v2-photographic-session-groups",
+  "seed": 20261102,
+  "frozen_utc": "2026-11-02T12:50:01.112175+00:00",
+  "files": {
+    "manifest.json": "68b12c32330c4248886749b67b2de29ca98684c61349430a7f69435013a9e5d4",
+    "train-manifest.json": "e7e638526747e90692d53ea1959414f9d09ec78a4600c814a31de4d863d99ac4",
+    "test-manifest.json": "6956e25ba7cf0e7ee497cc2068eb46ee827c0523e7129be1afd5c1f9ac5ee226",
+    "classes.json": "8fb44de15a56dc69e89a254a87673113891d6d1aa0691b34477b91ce0e019f20"
+  },
+  "previous_revision": "history/v1-phash-only",
+  "training_started": false,
+  "manual_pair": [
+    "refined_Scottish Fold_119",
+    "refined_Scottish Fold_92"
+  ]
+}

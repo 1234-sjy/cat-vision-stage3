@@ -23,3 +23,6 @@ runtime-*.log
 /artifacts/training/*/train_batch*.jpg
 /artifacts/training/*/val_batch*.jpg
 /artifacts/training/*/confusion_matrix*.png
+
+!/weights/breed-swin-v3-20-fp16.pt
+/artifacts/demo-v3/frames/

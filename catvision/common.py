@@ -19,6 +19,7 @@ BREEDS = {
     "Manx": "曼岛猫", "Norwegian_Forest": "挪威森林猫",
     "Scottish_Fold": "苏格兰折耳猫", "Turkish_Angora": "土耳其安哥拉猫",
 }
+OXFORD_BREEDS = {name: BREEDS[name] for name in list(BREEDS)[:12]}
 
 
 def save_json(path: Path, value) -> None:

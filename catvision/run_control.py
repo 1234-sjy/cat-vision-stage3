@@ -8,10 +8,56 @@ import os
 from pathlib import Path
 import sys
 import time
+import threading
 import traceback
 from uuid import uuid4
 
 from .common import ROOT, save_json
+
+_RESERVATIONS = {}
+_RESERVATION_LOCK = threading.RLock()
+
+
+class GpuReservation:
+    """Process-reentrant OS lease, held while a service retains GPU parameters."""
+    def __init__(self, root: Path = ROOT):
+        self.root = root.resolve()
+        self.key = str(self.root)
+        self.entered = False
+
+    def __enter__(self):
+        with _RESERVATION_LOCK:
+            if self.entered:
+                raise RuntimeError('Reservation instance already entered')
+            if self.key in _RESERVATIONS:
+                _RESERVATIONS[self.key][1] += 1
+            else:
+                runtime=self.root/'runtime'; runtime.mkdir(parents=True,exist_ok=True)
+                lock=(runtime/'gpu-reservation.lock').open('a+b')
+                if lock.tell()==0: lock.write(b'\0'); lock.flush()
+                lock.seek(0)
+                try:
+                    if sys.platform=='win32':
+                        import msvcrt
+                        msvcrt.locking(lock.fileno(),msvcrt.LK_NBLCK,1)
+                    else:
+                        import fcntl
+                        fcntl.flock(lock.fileno(),fcntl.LOCK_EX|fcntl.LOCK_NB)
+                except OSError as exc:
+                    lock.close()
+                    raise RuntimeError('其他进程的模型仍驻留显存；请先关闭网页服务或等待模型活动结束') from exc
+                _RESERVATIONS[self.key]=[lock,1]
+            self.entered=True
+        return self
+
+    def __exit__(self,*exc):
+        with _RESERVATION_LOCK:
+            if self.entered:
+                record=_RESERVATIONS[self.key];record[1]-=1
+                if record[1]==0:
+                    record[0].close();del _RESERVATIONS[self.key]
+                self.entered=False
+        return False
 
 
 class _Tee:
@@ -40,13 +86,19 @@ class ModelTask:
     def __init__(self, name: str, root: Path = ROOT):
         self.name, self.root = name, root
         self.lock = None
+        self.reservation = None
 
     def _release_lock(self):
         if self.lock is not None:
             self.lock.close()  # OS releases the byte/flock lock, including on process death.
             self.lock = None
+        if self.reservation is not None:
+            self.reservation.__exit__(None,None,None)
+            self.reservation = None
 
     def __enter__(self):
+        self.reservation=GpuReservation(self.root)
+        self.reservation.__enter__()
         runtime = self.root / "runtime"
         runtime.mkdir(parents=True, exist_ok=True)
         self.state_path = runtime / "model-task-state.json"

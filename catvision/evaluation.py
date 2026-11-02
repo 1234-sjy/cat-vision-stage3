@@ -46,6 +46,8 @@ def inference_fingerprint(root: Path, route: str) -> str:
             files += [root/'weights/breed-best.pt']
     else:
         files += [root / "catvision/vlm.py"]
+        files += [root/name for name in ['catvision/vlm_prompts.py','catvision/vlm_format.py',
+                  'catvision/vlm_acceleration.py','configs/active-vlm.json'] if (root/name).exists()]
         base = root / "weights/qwen3-vl-4b"
         index = json.loads((base / "model.safetensors.index.json").read_text(encoding="utf-8"))
         shards = set(index["weight_map"].values())

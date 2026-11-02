@@ -8,10 +8,10 @@ from torch import nn
 from torchvision import models, transforms
 from torchvision.transforms import InterpolationMode
 
-from .common import BREEDS, ROOT
+from .common import BREEDS, OXFORD_BREEDS, ROOT
 from .run_control import gpu_checkpoint, set_low_load_threads
 
-CLASSES = list(BREEDS)
+CLASSES = list(OXFORD_BREEDS)  # Original-v2 scripts retain their historical 12-class order.
 MEAN = (0.485, 0.456, 0.406)
 STD = (0.229, 0.224, 0.225)
 

@@ -8,6 +8,25 @@ from catvision.evaluation import prediction_cache_matches, read_verified_input, 
 
 
 class InputProvenanceTests(unittest.TestCase):
+    def test_vlm_prompt_and_response_schema_invalidate_saved_results(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder)
+            files=['catvision/common.py','catvision/vlm.py','catvision/vlm_prompts.py',
+                   'catvision/vlm_format.py','catvision/vlm_acceleration.py',
+                   'weights/qwen3-vl-4b/model.safetensors']
+            for name in files:
+                path=root/name;path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(b'original')
+            base=root/'weights/qwen3-vl-4b'
+            (base/'model.safetensors.index.json').write_text(json.dumps({'weight_map':{'tensor':'model.safetensors'}}))
+            active=root/'configs/active-vlm.json';active.parent.mkdir()
+            active.write_text('{"output_format":"json"}')
+            first=inference_fingerprint(root,'vlm')
+            active.write_text('{"output_format":"lines"}')
+            second=inference_fingerprint(root,'vlm')
+            self.assertNotEqual(first,second)
+            (root/'catvision/vlm_format.py').write_bytes(b'changed parser')
+            self.assertNotEqual(second,inference_fingerprint(root,'vlm'))
+
     def test_input_hash_is_measured_from_actual_file_bytes(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)

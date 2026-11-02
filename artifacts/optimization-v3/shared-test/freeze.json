@@ -1,0 +1,31 @@
+{
+  "seed": 20261102,
+  "count": 120,
+  "classes": [
+    "Abyssinian",
+    "Bengal",
+    "Birman",
+    "Bombay",
+    "British_Shorthair",
+    "Egyptian_Mau",
+    "Maine_Coon",
+    "Persian",
+    "Ragdoll",
+    "Russian_Blue",
+    "Siamese",
+    "Sphynx",
+    "American_Bobtail",
+    "American_Curl",
+    "American_Shorthair",
+    "Exotic_Shorthair",
+    "Manx",
+    "Norwegian_Forest",
+    "Scottish_Fold",
+    "Turkish_Angora"
+  ],
+  "per_class": 6,
+  "selection": "old12:3Oxford+3expanded/class; new8:6expanded/class; no performance-based selection",
+  "source_manifest_sha256": "6956e25ba7cf0e7ee497cc2068eb46ee827c0523e7129be1afd5c1f9ac5ee226",
+  "manifest_sha256": "4dc73c94a318d419ede5cf0c837c45cc0303775f25ffe2987339717d74070461",
+  "frozen_before_test": true
+}

@@ -8,7 +8,7 @@ import json
 from pathlib import Path
 import random
 
-from .common import BREEDS, load_image, save_json
+from .common import OXFORD_BREEDS as BREEDS, load_image, save_json
 
 
 def make_view_record(source: dict, prediction: dict) -> dict:

@@ -1,12 +1,28 @@
 from pathlib import Path
 import tempfile
+import subprocess
+import sys
+import os
 import unittest
 from unittest.mock import patch
 
-from catvision.run_control import ModelTask, gpu_checkpoint
+from catvision.run_control import ModelTask, gpu_checkpoint, GpuReservation
 
 
 class RunControlTests(unittest.TestCase):
+    def test_resident_server_reserves_gpu_between_requests(self):
+        with tempfile.TemporaryDirectory() as folder:
+            code = 'from catvision.run_control import GpuReservation; from pathlib import Path; import sys; lease=GpuReservation(Path(sys.argv[1])); lease.__enter__(); print("READY",flush=True); sys.stdin.readline(); lease.__exit__(None,None,None)'
+            child=subprocess.Popen([sys.executable,'-c',code,folder],stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True)
+            try:
+                self.assertEqual(child.stdout.readline().strip(),'READY')
+                with self.assertRaisesRegex(RuntimeError,'驻留'):
+                    with ModelTask('train',Path(folder)): self.fail('Training entered a resident service')
+            finally:
+                child.communicate('\n',timeout=10)
+            with GpuReservation(Path(folder)):
+                with ModelTask('web-request',Path(folder)): pass
+
     def test_fast_inference_keeps_gpu_sync_and_removes_only_inference_pause(self):
         events=[]
         class FakeCuda:

@@ -1,0 +1,12 @@
+{
+  "model": "Qwen/Qwen3-VL-4B-Instruct",
+  "prompt_version": "morphology-lines-v3",
+  "output_format": "lines",
+  "max_pixels": 589824,
+  "max_new_tokens": 192,
+  "accelerate_patch": true,
+  "validation_count": 100,
+  "validation_correct": 56,
+  "selection_source": "artifacts/optimization-v3/vlm-selection/selection.json",
+  "test_used": false
+}

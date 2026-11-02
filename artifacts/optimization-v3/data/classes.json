@@ -1,0 +1,102 @@
+[
+  {
+    "class_index": 0,
+    "breed": "Abyssinian",
+    "breed_zh": "阿比西尼亚猫"
+  },
+  {
+    "class_index": 1,
+    "breed": "Bengal",
+    "breed_zh": "孟加拉猫"
+  },
+  {
+    "class_index": 2,
+    "breed": "Birman",
+    "breed_zh": "伯曼猫"
+  },
+  {
+    "class_index": 3,
+    "breed": "Bombay",
+    "breed_zh": "孟买猫"
+  },
+  {
+    "class_index": 4,
+    "breed": "British_Shorthair",
+    "breed_zh": "英国短毛猫"
+  },
+  {
+    "class_index": 5,
+    "breed": "Egyptian_Mau",
+    "breed_zh": "埃及猫"
+  },
+  {
+    "class_index": 6,
+    "breed": "Maine_Coon",
+    "breed_zh": "缅因猫"
+  },
+  {
+    "class_index": 7,
+    "breed": "Persian",
+    "breed_zh": "波斯猫"
+  },
+  {
+    "class_index": 8,
+    "breed": "Ragdoll",
+    "breed_zh": "布偶猫"
+  },
+  {
+    "class_index": 9,
+    "breed": "Russian_Blue",
+    "breed_zh": "俄罗斯蓝猫"
+  },
+  {
+    "class_index": 10,
+    "breed": "Siamese",
+    "breed_zh": "暹罗猫"
+  },
+  {
+    "class_index": 11,
+    "breed": "Sphynx",
+    "breed_zh": "斯芬克斯猫"
+  },
+  {
+    "class_index": 12,
+    "breed": "American_Bobtail",
+    "breed_zh": "美国短尾猫"
+  },
+  {
+    "class_index": 13,
+    "breed": "American_Curl",
+    "breed_zh": "美国卷耳猫"
+  },
+  {
+    "class_index": 14,
+    "breed": "American_Shorthair",
+    "breed_zh": "美国短毛猫"
+  },
+  {
+    "class_index": 15,
+    "breed": "Exotic_Shorthair",
+    "breed_zh": "异国短毛猫"
+  },
+  {
+    "class_index": 16,
+    "breed": "Manx",
+    "breed_zh": "曼岛猫"
+  },
+  {
+    "class_index": 17,
+    "breed": "Norwegian_Forest",
+    "breed_zh": "挪威森林猫"
+  },
+  {
+    "class_index": 18,
+    "breed": "Scottish_Fold",
+    "breed_zh": "苏格兰折耳猫"
+  },
+  {
+    "class_index": 19,
+    "breed": "Turkish_Angora",
+    "breed_zh": "土耳其安哥拉猫"
+  }
+]

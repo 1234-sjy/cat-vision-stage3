@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from contextlib import asynccontextmanager
+from contextlib import asynccontextmanager, nullcontext
 from datetime import datetime, timezone
 import json
 import os
@@ -14,7 +14,7 @@ from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 
 from .common import BREEDS, ROOT, image_hash, load_image, save_json
-from .run_control import ModelTask, inference_stream
+from .run_control import ModelTask, inference_stream, GpuReservation
 
 
 def model_files_ready(base_dir: Path) -> bool:
@@ -148,10 +148,14 @@ def create_app(base_dir: Path = ROOT, runner=None) -> FastAPI:
 
     @asynccontextmanager
     async def lifespan(app):
-        yield
-        executor.shutdown(wait=True, cancel_futures=True)
-        if hasattr(pipeline, "close"):
-            pipeline.close()
+        reservation=GpuReservation(base_dir) if isinstance(pipeline,LocalComparison) else nullcontext()
+        with reservation:
+            try:
+                yield
+            finally:
+                executor.shutdown(wait=True, cancel_futures=True)
+                if hasattr(pipeline, "close"):
+                    pipeline.close()
 
     app = FastAPI(title="看图识猫 · 第二阶段", lifespan=lifespan)
     app.mount("/files", StaticFiles(directory=results_dir), name="results")
@@ -239,13 +243,10 @@ if __name__ == "__main__":
     parser.add_argument('--fast-demo',action='store_true',help='Compatibility alias: full-speed serving is now the default')
     parser.add_argument('--low-load',action='store_true',help='Opt in to inference pauses; training has separate settings')
     args=parser.parse_args()
-    if not args.low_load:
-        os.environ['CATVISION_FAST_INFERENCE']='1'
+    with GpuReservation():
+        if not args.low_load:
+            os.environ['CATVISION_FAST_INFERENCE']='1'
         runner=LocalComparison(keep_loaded=True)
         runner.preload()
         application=create_app(runner=runner)
-    else:
-        runner=LocalComparison(keep_loaded=True)
-        runner.preload()
-        application=create_app(runner=runner)
-    uvicorn.run(application, host="127.0.0.1", port=8765)
+        uvicorn.run(application, host="127.0.0.1", port=8765)

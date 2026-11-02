@@ -54,7 +54,7 @@ def main():
             bp=torch.stack(sums_b).mean(0);sp=torch.stack(sums_s).mean(0)
             for j,r in enumerate(group):
                 probs={'breed_probs':bp[j].tolist(),'cat_probability':float(sp[j,1])}
-                answer=decision(probs,CLASSES,config['cat_threshold'])
+                answer=decision(probs,model.classes,config['cat_threshold'])
                 predictions.append(dict(answer,image_id=r['image_id'],true_breed=r['breed'],input_sha256=r['sha256']))
             if first%40==0 or first+2>=len(records)+len(dogs):
                 save_json(out/'predictions.json',predictions)

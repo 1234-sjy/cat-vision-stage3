@@ -78,8 +78,8 @@ def main():
                 else:
                     from catvision.vlm import LocalVLM, PROMPT, PROMPT_VERSION
                     model = LocalVLM()
-                    save_json(directory / "prompt.json", {"version": PROMPT_VERSION, "text": PROMPT,
-                                                           "do_sample": False, "max_new_tokens": 192})
+                    save_json(directory / "prompt.json", {"version": model.prompt_version, "text": model.prompt,
+                        "output_format":model.output_format,"do_sample": False,"max_new_tokens":model.max_new_tokens})
                 run_config["load_seconds"] = model.load_seconds
             image = load_image(content)
             inference_attempted = True

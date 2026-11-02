@@ -15,3 +15,7 @@ __pycache__/
 runtime-*.log
 !/weights/breed-best.pt
 /artifacts/environment/pip-freeze-original.txt
+/artifacts/training/*/args.yaml
+/artifacts/training/*/train_batch*.jpg
+/artifacts/training/*/val_batch*.jpg
+/artifacts/training/*/confusion_matrix*.png

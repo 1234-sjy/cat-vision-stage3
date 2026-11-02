@@ -35,8 +35,8 @@ python -m venv .venv
 正式训练已获用户授权并完成。训练batch=8、验证batch上限8、workers=0、CPU线程2，每批同步GPU后等待0.05秒。不要使用旧计划中的batch64配置。发生失败或异常中断后，先阅读`runtime/model-task-state.json`指向的完整日志，再人工决定如何处理；程序不会自行清除失败状态继续运行。
 
 ```powershell
-python scripts/download_models.py --only vlm
-python scripts/validate_detector.py --data-root <原始Oxford数据目录>
+.venv/Scripts/python.exe scripts/download_models.py --only vlm
+.venv/Scripts/python.exe scripts/validate_detector.py --data-root <原始Oxford数据目录>
 ```
 
 以上命令应分别执行，前一个成功退出后再运行后一个。`artifacts/run-logs`保存每次模型任务的输出、错误、异常堆栈和运行配置。

@@ -18,11 +18,11 @@ Python解释器由运行环境指定。项目不需要开发者的用户名目�
 5. 在浏览器打开 http://127.0.0.1:8765 ，选图运行。
 
 完整保留包内已经有模型权重和数据，通常不用重新下载或训练。只有源码时，先恢复依赖，再运行：
-python scripts/download_models.py --only all
+.venv/Scripts/python.exe scripts/download_models.py --only all
 其中自训练的weights/breed-best.pt约11MB，已随源码保留；该命令用于获取官方通用模型。下载中断或校验失败时保留日志，先检查原因，不要设置自动重启循环。
 
 需要精确恢复开发版本时，在已选定的环境内执行：
-python -m pip install -r requirements-lock.txt
+.venv/Scripts/python.exe -m pip install -r requirements-lock.txt
 这份文件已把本机wheel路径改为版本号和官方CUDA安装来源；原始pip freeze另外保存在artifacts/environment供核对。
 
 三、代码仓库怎么上传

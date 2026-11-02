@@ -1,0 +1,78 @@
+{
+  "exports": [
+    {
+      "file": "breed-swin-v3-20-fp16.pt",
+      "sha256": "3656dce0703e6de57668e1b4d72fa4773b1727e461c9fd348daecd96687c170c",
+      "bytes": 55366793,
+      "source": "C:\\Users\\sjysj\\Documents\\Codex\\2026-10-31\\new-chat\\outputs\\cat-vision-stage2\\artifacts\\optimization-v3\\training-fullframe\\epoch21.pt",
+      "source_sha256": "7da73811368fb89d91a41ee4e9f323db87a53ff6395639629e70b3190d31cb40",
+      "source_epoch": 21,
+      "image_size": 320,
+      "preprocess": "letterbox"
+    },
+    {
+      "file": "breed-swin-v3-detail20-fp16.pt",
+      "sha256": "ad028c3ea460d72f33e504315a22a92a2a3bdd17a04f22c1d7915edde98312a8",
+      "bytes": 55365513,
+      "source": "C:\\Users\\sjysj\\Documents\\Codex\\2026-10-31\\new-chat\\outputs\\cat-vision-stage2\\weights\\breed-swin-v3-generic.pt",
+      "source_sha256": "9aa80029a3440248d2d8eedcae0d759d1ac0dcfea5af3c4b72cf641a9dc2ed88",
+      "source_epoch": 19,
+      "image_size": 224,
+      "preprocess": "center"
+    }
+  ],
+  "selection": {
+    "full": "full_flip",
+    "detail": "detail_flip",
+    "detail_weight": 0.25,
+    "correct": 780,
+    "count": 925,
+    "accuracy": 0.8432432432432433,
+    "macro_accuracy": 0.8449938010496731,
+    "dog_false_cat": 3
+  },
+  "active_classifier": {
+    "architecture": "swin_t",
+    "checkpoint": "breed-swin-v3-20-fp16.pt",
+    "classes": [
+      "Abyssinian",
+      "Bengal",
+      "Birman",
+      "Bombay",
+      "British_Shorthair",
+      "Egyptian_Mau",
+      "Maine_Coon",
+      "Persian",
+      "Ragdoll",
+      "Russian_Blue",
+      "Siamese",
+      "Sphynx",
+      "American_Bobtail",
+      "American_Curl",
+      "American_Shorthair",
+      "Exotic_Shorthair",
+      "Manx",
+      "Norwegian_Forest",
+      "Scottish_Fold",
+      "Turkish_Angora"
+    ],
+    "image_size": 320,
+    "preprocess": "letterbox",
+    "tta": true,
+    "cat_threshold": 0.5,
+    "subject_weight": 0.0,
+    "weight_sha256": "3656dce0703e6de57668e1b4d72fa4773b1727e461c9fd348daecd96687c170c",
+    "secondary_classifier": {
+      "checkpoint": "breed-swin-v3-detail20-fp16.pt",
+      "weight": 0.25,
+      "image_size": 224,
+      "preprocess": "center",
+      "tta": true,
+      "weight_sha256": "ad028c3ea460d72f33e504315a22a92a2a3bdd17a04f22c1d7915edde98312a8"
+    },
+    "selection": "same frozen20-class validation set only; overall accuracy, then macro; no test used"
+  },
+  "training_manifest_sha256": "e7e638526747e90692d53ea1959414f9d09ec78a4600c814a31de4d863d99ac4",
+  "final_test_used_for_selection": false,
+  "final_test_count": 1872
+}

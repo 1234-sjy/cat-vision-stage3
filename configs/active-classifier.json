@@ -1,11 +1,41 @@
 {
   "architecture": "swin_t",
-  "checkpoint": "breed-swin-v2-fp16.pt",
-  "tta": false,
-  "subject_weight": 0.0,
+  "checkpoint": "breed-swin-v3-20-fp16.pt",
+  "classes": [
+    "Abyssinian",
+    "Bengal",
+    "Birman",
+    "Bombay",
+    "British_Shorthair",
+    "Egyptian_Mau",
+    "Maine_Coon",
+    "Persian",
+    "Ragdoll",
+    "Russian_Blue",
+    "Siamese",
+    "Sphynx",
+    "American_Bobtail",
+    "American_Curl",
+    "American_Shorthair",
+    "Exotic_Shorthair",
+    "Manx",
+    "Norwegian_Forest",
+    "Scottish_Fold",
+    "Turkish_Angora"
+  ],
+  "image_size": 320,
+  "preprocess": "letterbox",
+  "tta": true,
   "cat_threshold": 0.5,
-  "checkpoint_sha256": "4b049fff1437bfdf46b4f4d05e0c57b711be0366291e0c700397fdc445d121c1",
-  "selected_on": "validation only:238 cats and500 dogs",
-  "species_negative_scope": "dogs",
-  "selection_constraint": "at most2% false-cat among validation dogs; threshold>=0.5"
+  "subject_weight": 0.0,
+  "weight_sha256": "3656dce0703e6de57668e1b4d72fa4773b1727e461c9fd348daecd96687c170c",
+  "secondary_classifier": {
+    "checkpoint": "breed-swin-v3-detail20-fp16.pt",
+    "weight": 0.25,
+    "image_size": 224,
+    "preprocess": "center",
+    "tta": true,
+    "weight_sha256": "ad028c3ea460d72f33e504315a22a92a2a3bdd17a04f22c1d7915edde98312a8"
+  },
+  "selection": "same frozen20-class validation set only; overall accuracy, then macro; no test used"
 }

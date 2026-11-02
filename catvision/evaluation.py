@@ -38,10 +38,14 @@ def inference_fingerprint(root: Path, route: str) -> str:
         active = root / 'configs/active-classifier.json'
         if active.exists():
             config = json.loads(active.read_text(encoding='utf-8'))
-            checkpoint = config['checkpoint']
-            if Path(checkpoint).name != checkpoint:
+            checkpoints = [config['checkpoint']]
+            if config.get('secondary_classifier') is not None:
+                checkpoints.append(config['secondary_classifier']['checkpoint'])
+            if any(not isinstance(name,str) or name in {'','.','..'} or Path(name).name != name
+                   or '/' in name or '\\' in name or ':' in name for name in checkpoints):
                 raise ValueError('Checkpoint must be a filename inside weights')
-            files += [active,root/'catvision/breed_transformer.py',root/'weights'/checkpoint]
+            files += [active,root/'catvision/breed_transformer.py']
+            files += [root/'weights'/name for name in checkpoints]
         else:
             files += [root/'weights/breed-best.pt']
     else:

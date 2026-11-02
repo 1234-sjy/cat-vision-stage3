@@ -9,9 +9,9 @@
     "classes.json": "8fb44de15a56dc69e89a254a87673113891d6d1aa0691b34477b91ce0e019f20"
   },
   "previous_revision": "history/v1-phash-only",
-  "training_started": false,
   "manual_pair": [
     "refined_Scottish Fold_119",
     "refined_Scottish Fold_92"
-  ]
+  ],
+  "training_started_at_freeze": false
 }

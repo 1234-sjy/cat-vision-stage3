@@ -16,6 +16,10 @@ class BreedDecisionTests(unittest.TestCase):
         for names in [[], ['Bengal','Bengal'], ['Unicorn']]:
             with self.assertRaises(ValueError): checkpoint_classes({'classes':names})
 
+    def test_active_configuration_cannot_claim_different_class_order(self):
+        with self.assertRaisesRegex(ValueError,'configuration'):
+            checkpoint_classes({'classes':['Siamese','Bengal']},expected=['Bengal','Siamese'])
+
     def test_missing_detection_keeps_original_classification(self):
         original={'breed_probs':[0.8,0.2], 'cat_probability':0.95}
         p=combine_views(original,None,0.5)

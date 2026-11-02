@@ -43,9 +43,7 @@ def classify_probabilities(probabilities: list[float], cat_probability: float,
             'raw_breed': classes[first], 'breed_score': probabilities[first],
             'cat_probability': cat_probability, 'normalized_entropy': entropy,
             'margin': probabilities[first] - probabilities[second],
-            'breed_probabilities': probabilities,
-            'top3': [{'breed': classes[index], 'probability': probabilities[index]}
-                     for index in order[:3]]}
+            'breed_probabilities': probabilities}
 
 
 def score_group(predictions: list[dict], classes: list[str],
@@ -133,9 +131,9 @@ def run(args) -> None:
     from PIL import ImageOps
     from catvision.breed_transformer import BreedSwin, eval_transform
 
-    os.environ['OMP_NUM_THREADS'] = os.environ['MKL_NUM_THREADS'] = '2'
+    os.environ['OMP_NUM_THREADS'] = os.environ['MKL_NUM_THREADS'] = str(args.cpu_threads)
     os.environ['TOKENIZERS_PARALLELISM'] = 'false'
-    torch.set_num_threads(2)
+    torch.set_num_threads(args.cpu_threads)
     # Explicit FP32 assessment: no BF16/autocast and no TF32 approximation.
     torch.set_float32_matmul_precision('highest')
     if args.device == 'cuda' and not torch.cuda.is_available():
@@ -173,7 +171,8 @@ def run(args) -> None:
               'count': len(records), 'source_counts': dict(Counter(row['source'] for row in records)),
               'evaluation_scope_counts': dict(Counter(row['evaluation_scope'] for row in records)),
               'precision': 'FP32; BF16/FP16/TF32 disabled', 'device': str(device),
-              'batch': 8, 'workers': 0, 'cpu_threads': 2, 'pause_after_sync_seconds': .05,
+              'batch': args.batch_size, 'workers': 0, 'cpu_threads': args.cpu_threads, 'pause_after_sync_seconds': 0,
+              'image_size':args.image_size,'preprocess':args.preprocess,
               'tta': args.tta, 'cat_threshold': .5, 'breed_ambiguity_rejection': False,
               'threshold_selected_on_test': False, 'fresh_inference': True,
               'automatic_retry': False, 'automatic_resume': False,
@@ -181,7 +180,7 @@ def run(args) -> None:
     save_json(args.output / 'config.json', config)
     save_json(args.output / f'{selected_set}-manifest.json', records)
     print('CONFIG', json.dumps(config), flush=True)
-    transform = eval_transform()
+    transform = eval_transform(args.image_size,args.preprocess)
 
     class FrozenDataset(Dataset):
         def __len__(self):
@@ -194,7 +193,7 @@ def run(args) -> None:
             flipped = transform(ImageOps.mirror(image)) if args.tta else original
             return original, flipped, index
 
-    loader = DataLoader(FrozenDataset(), batch_size=8, shuffle=False, num_workers=0, pin_memory=False)
+    loader = DataLoader(FrozenDataset(), batch_size=args.batch_size, shuffle=False, num_workers=0, pin_memory=True)
     model = BreedSwin(classes=classes)
     model.load_state_dict(payload['state_dict'], strict=True)
     model.float().to(device).eval()
@@ -207,7 +206,7 @@ def run(args) -> None:
             for images in ([original, flipped] if args.tta else [original]):
                 bp, sp = model(images.to(device))
                 bp, sp = bp.softmax(-1).cpu(), sp.softmax(-1).cpu()
-                gpu_checkpoint(pause_seconds=.05)
+                gpu_checkpoint(pause_seconds=0)
                 breed_sums = bp if breed_sums is None else breed_sums + bp
                 species_sums = sp if species_sums is None else species_sums + sp
             view_count = 2 if args.tta else 1
@@ -269,6 +268,10 @@ def main() -> None:
     parser.add_argument('--setval', action='store_true', help='Validation only, including confidence/coverage diagnostics')
     parser.add_argument('--tta', action='store_true', help='Average original and horizontal-flip probabilities')
     parser.add_argument('--device', choices=['auto', 'cpu', 'cuda'], default='auto')
+    parser.add_argument('--batch-size',type=int,default=64)
+    parser.add_argument('--cpu-threads',type=int,default=8)
+    parser.add_argument('--image-size',type=int,default=224)
+    parser.add_argument('--preprocess',choices=['center','letterbox'],default='center')
     args = parser.parse_args()
     with ModelTask('assess-expanded-v3-val' if args.setval else 'assess-expanded-v3-test'):
         run(args)

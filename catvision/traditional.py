@@ -31,6 +31,7 @@ class TraditionalVision:
         active = ROOT / 'configs/active-classifier.json'
         config = json.loads(active.read_text(encoding='utf-8')) if classifier and active.exists() else {}
         self.classifier_type = config.get('architecture','yolo26s-cls')
+        self.classifier_configuration=config
         if classifier and self.classifier_type == 'swin_t':
             from .breed_transformer import BreedTransformer
             self.classifier = BreedTransformer(self.weights/config['checkpoint'],config)
@@ -101,7 +102,10 @@ class TraditionalVision:
             pause = extract_pause + self.classifier.last_throttle_seconds
             result.update(localization_status=localization_status,
                           classification_source='original_and_subject' if result.get('crop') is not None and self.classifier.config['subject_weight']>0 else 'original',
-                          route='yolo26_sam2_swin_v2',throttle_seconds=pause,
+                          route='yolo26_sam2_swin',
+                          classifier_class_count=len(getattr(self.classifier,'classes',[])),
+                          classifier_checkpoint=getattr(self,'classifier_configuration',{}).get('checkpoint'),
+                          throttle_seconds=pause,
                           inference_seconds=max(0.0,time.perf_counter()-started-pause))
             return result
         if result["status"] != "ok":

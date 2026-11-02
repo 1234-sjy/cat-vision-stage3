@@ -15,7 +15,7 @@ import zipfile
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from catvision.common import ROOT, save_json
 
-SOURCE = "https://www.kaggle.com/api/v1/datasets/download/doctrinek/catbreedsrefined-7k"
+SOURCE = "https://www.kaggle.com/api/v1/datasets/download/doctrinek/catbreedsrefined-7k?datasetVersionNumber=2"
 
 
 def download(data_root: Path, out: Path) -> None:
@@ -58,6 +58,8 @@ def download(data_root: Path, out: Path) -> None:
             expected = attempt["headers"].get("Content-Length")
             if expected is not None and int(expected) != written:
                 raise IOError(f"Incomplete response: got {written}, expected {expected}")
+            if digest.hexdigest()!='4617dea457acc50daf78f1efeddd0551d05275735ed4c9af6472ed345a25e3e1':
+                raise IOError('The downloaded archive does not match the frozen version2 SHA256')
             with zipfile.ZipFile(archive) as source:
                 entries = source.infolist()
             attempt.update(state="completed", bytes=written, sha256=digest.hexdigest(),
@@ -79,9 +81,14 @@ def main() -> None:
     p.add_argument("--out-dir", type=Path, default=ROOT / "artifacts/optimization-v3/data")
     p.add_argument("--download", action="store_true")
     p.add_argument("--refine-sessions", action="store_true")
+    p.add_argument('--extract-only',action='store_true',help='Restore raw paths without rebuilding frozen splits')
     args = p.parse_args()
     if args.download:
         download(args.data_root.resolve(), args.out_dir.resolve())
+    elif args.extract_only:
+        from catvision.dataset_expanded import extract_archive
+        args.out_dir.mkdir(parents=True,exist_ok=True)
+        extract_archive(args.data_root.resolve(),args.out_dir.resolve())
     elif args.refine_sessions:
         from catvision.dataset_expanded import refine_sessions
         refine_sessions(args.data_root.resolve(), args.out_dir.resolve())

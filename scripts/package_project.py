@@ -22,8 +22,10 @@ def main():
     parser.add_argument("--requirements-root", type=Path, required=True)
     parser.add_argument("--videos-root", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument('--all-cat-data',type=Path,help='Preserve all new/old cat sources and download archives')
     args = parser.parse_args()
-    sources = [(ROOT, "项目"), (args.data_root.resolve(), "原始数据/oxford-iiit-pet"),
+    raw=(args.all_cat_data.resolve(),'原始数据/cat-data') if args.all_cat_data else (args.data_root.resolve(),'原始数据/oxford-iiit-pet')
+    sources = [(ROOT, "项目"), raw,
                (args.requirements_root.resolve(), "要求依据"), (args.videos_root.resolve(), "课程视频")]
     output = args.output.resolve()
     # Never include the output in itself; never silently overwrite an earlier handover.
@@ -45,7 +47,7 @@ def main():
                 if any(part in {".venv", "__pycache__", ".pytest_cache"} for part in relative.parts):
                     continue
                 # The OS lock itself is transient. Preserve its recorded state and logs.
-                if relative.as_posix() == "runtime/model-task.lock":
+                if relative.as_posix() in {"runtime/model-task.lock","runtime/gpu-reservation.lock"}:
                     continue
                 name = f"{prefix}/{relative.as_posix()}"
                 archive.write(path, name)

@@ -26,10 +26,14 @@ def model_files_ready(base_dir: Path) -> bool:
         if not names or any(Path(name).name != name for name in names):
             return False
         active = base_dir/'configs/active-classifier.json'
-        checkpoint = json.loads(active.read_text(encoding='utf-8'))['checkpoint'] if active.exists() else 'breed-best.pt'
-        if Path(checkpoint).name != checkpoint:
+        config = json.loads(active.read_text(encoding='utf-8')) if active.exists() else {'checkpoint':'breed-best.pt'}
+        checkpoints = [config['checkpoint']]
+        if config.get('secondary_classifier') is not None:
+            checkpoints.append(config['secondary_classifier']['checkpoint'])
+        if any(not isinstance(name,str) or name in {'','.','..'} or Path(name).name != name
+               or '/' in name or '\\' in name or ':' in name for name in checkpoints):
             return False
-        required = [weights / name for name in ["yolo26n.pt", "sam2.1_t.pt", checkpoint]]
+        required = [weights / name for name in ["yolo26n.pt", "sam2.1_t.pt", *checkpoints]]
         required += [vlm / name for name in names | {"config.json", "preprocessor_config.json",
                                                     "tokenizer.json", "tokenizer_config.json"}]
         return all(path.is_file() and path.stat().st_size > 0 for path in required)
@@ -179,6 +183,17 @@ def create_app(base_dir: Path = ROOT, runner=None) -> FastAPI:
     @app.get("/api/report")
     def report():
         result = {}
+        active_path=base_dir/'configs/active-classifier.json'
+        active=json.loads(active_path.read_text(encoding='utf-8')) if active_path.exists() else {}
+        expanded=base_dir/'artifacts/optimization-v3'
+        if (active.get('checkpoint','').startswith('breed-swin-v3')
+                and (expanded/'frozen-test/metrics.json').exists()
+                and all((expanded/f'shared-test/{route}-metrics.json').exists() for route in ['traditional','vlm'])):
+            full=json.loads((expanded/'frozen-test/metrics.json').read_text(encoding='utf-8'))
+            return {'experiment':'expanded-v3','class_count':len(active['classes']),
+                    'full_classifier':full['all'],'full_cohorts':full['groups'],
+                    **{route:json.loads((expanded/f'shared-test/{route}-metrics.json').read_text(encoding='utf-8'))
+                       for route in ['traditional','vlm']}}
         active_report = base_dir/'artifacts/evaluation/comparison-v2'
         experiment = 'comparison-v2' if all((active_report/route/'metrics.json').exists() for route in ['traditional','vlm']) else 'comparison'
         for route in ["traditional", "vlm"]:

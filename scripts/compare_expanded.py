@@ -61,7 +61,7 @@ def evaluate(data_root):
                     content,sha=read_verified_input(row,data_root)
                     folder=OUT/'images'/f'{i:03d}'
                     folder.mkdir(parents=True,exist_ok=False)
-                    result=engine._run(load_image(content),folder,lambda text:None)
+                    result=engine._run(load_image(content,max_side=1600),folder,lambda text:None)
                     for route in predictions:
                         prediction=result[route]
                         prediction.update(image_id=row['image_id'],true_breed=row['breed'],input_sha256=sha,

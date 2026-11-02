@@ -14,6 +14,23 @@ from catvision.server import LocalComparison, create_app, model_files_ready
 
 
 class ApiTests(unittest.TestCase):
+    def test_active_twenty_class_report_does_not_return_historical_twelve_class_scores(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder)
+            config=root/'configs/active-classifier.json';config.parent.mkdir()
+            config.write_text(json.dumps({'checkpoint':'breed-swin-v3-20-fp16.pt','classes':['Bengal']*20}))
+            base=root/'artifacts/optimization-v3'
+            for route in ['traditional','vlm']:
+                file=base/f'shared-test/{route}-metrics.json';file.parent.mkdir(parents=True,exist_ok=True)
+                file.write_text(json.dumps({'count':120,'correct':90 if route=='traditional' else 60}))
+            file=base/'frozen-test/metrics.json';file.parent.mkdir(parents=True)
+            file.write_text(json.dumps({'all':{'count':1872,'correct':1500},'groups':{'oxford_test':{'count':1177}}}))
+            with TestClient(create_app(root,lambda *args:{})) as client:
+                result=client.get('/api/report').json()
+            self.assertEqual(result['experiment'],'expanded-v3')
+            self.assertEqual(result['full_classifier']['count'],1872)
+            self.assertEqual(result['vlm']['correct'],60)
+
     def test_preloaded_models_are_reused_without_reusing_predictions(self):
         created=[];closed=[]
         class Engine:

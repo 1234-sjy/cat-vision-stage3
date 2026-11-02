@@ -194,8 +194,8 @@ def run(args) -> None:
     for split in ['train', 'val']:
         if set(row['breed'] for row in records if row['split'] == split and row['is_cat']) != set(classes):
             raise ValueError(f'Every breed must be represented in {split}')
-    out = ROOT / 'artifacts/optimization-v3/training-generic'
-    destination = ROOT / 'weights/breed-swin-v3-generic.pt'
+    out = args.output
+    destination = args.checkpoint
     if (out.exists() and any(out.iterdir())) or destination.exists():
         raise FileExistsError('Existing v3 training artifacts/weights retained; no overwrite/resume')
     source = ROOT / 'weights/swin_t-704ceda3.pth'
@@ -380,6 +380,8 @@ def main() -> None:
     parser.add_argument('--epochs', type=int, default=24)
     parser.add_argument('--patience', type=int, default=7)
     parser.add_argument('--device', choices=['auto', 'cpu', 'cuda'], default='auto')
+    parser.add_argument('--output',type=Path,default=ROOT/'artifacts/optimization-v3/training-generic')
+    parser.add_argument('--checkpoint',type=Path,default=ROOT/'weights/breed-swin-v3-generic.pt')
     args = parser.parse_args()
     if args.epochs < 3 or args.patience < 1:
         parser.error('--epochs must be >=3 and --patience must be >=1')

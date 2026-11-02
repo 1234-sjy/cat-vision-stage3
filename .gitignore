@@ -26,3 +26,5 @@ runtime-*.log
 
 !/weights/breed-swin-v3-20-fp16.pt
 /artifacts/demo-v3/frames/
+
+!/weights/breed-swin-v3-detail20-fp16.pt

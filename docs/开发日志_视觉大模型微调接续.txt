@@ -32,7 +32,12 @@ python scripts/train_vlm_lora.py --output artifacts/optimization-v4/training-bat
 
 下次接续时
 
-先看training-battery/stopped.json、complete.json和最后一个检查点，再判断训练到了哪里。原训练脚本保存了恢复需要的状态，但尚未提供--resume-from命令；从半轮检查点继续时，应实现显式恢复LoRA、优化器、学习率调度、随机状态和采样位置，不能直接把部分训练当作已完成一轮，也不要无说明重置优化器。
+先看training-battery/stopped.json、complete.json和最后一个检查点，再判断训练到了哪里。本轮随后补上了显式--resume-from命令，会恢复LoRA、优化器、学习率调度、随机状态和采样位置。续训必须指定新的输出目录；训练数据、提示、总轮数、学习率和原批量应一致。半轮接续的训练损失单独标为续训段，不冒充完整一轮。没有自动恢复或重试。
+
+接好电、确认原任务已经结束后，可按stopped.json中的实际检查点执行：
+python scripts/train_vlm_lora.py --resume-from <检查点目录> --output artifacts/optimization-v4/training-resumed01 --save-steps 10 --no-gpu-telemetry
+
+这段接续代码已完成CPU随机状态与配置隔离测试，尚未在GPU上执行续训。当前运行的电池训练保持原程序，不为这项接续代码再次中断。原程序及依赖源文件有精确快照。
 
 如果训练已正常结束，先根据固定验证集结果选择适配器。选定后再冻结configs/active-vlm.json并写final-selection.json，最后执行scripts/assess_vlm_adapted.py，在1514张固定图片上做新测试；原120张只做回归。不得用1514张测试结果来挑训练轮数或改提示。
 

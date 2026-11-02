@@ -34,6 +34,7 @@ from catvision.vlm_training import (BASE_MODEL_ID, GIB, LORA_TARGETS, VlmDataset
     VlmGpuTelemetry, append_json, assistant_only_loss, balanced_sample_weights,
     choose_batch, collate_processor, durable_json, file_sha256, forecast_peak,
     identity_collate, load_classes, preserve_rng, save_adapter_snapshot,
+    restore_rng_state, validate_resume_config,
     seed_worker, validate_disjoint, validate_records, verified_image_paths,
     verify_frozen_manifest)
 
@@ -318,6 +319,11 @@ def run(args):
     train_data = VlmDataset(train_rows, verified_image_paths(train_rows, args.data_root))
     validation_data = VlmDataset(validation_rows, verified_image_paths(validation_rows, args.data_root))
     source = source_fingerprints(args.model_dir)
+    resume_state = (torch.load(args.resume_from/'training-state.pt', map_location='cpu', weights_only=True)
+                    if args.resume_from is not None else None)
+    if resume_state is not None and (not resume_state.get('adapter_only')
+                                    or not resume_state.get('data_rng_state')):
+        raise ValueError('Explicit resume requires adapter, optimizer and sampling-position state')
     config = {'schema_version': 1, 'created_utc': datetime.now(timezone.utc).isoformat(),
         'seed': SEED, 'classes': classes, 'source': source, 'manifest_sha256': hashes,
         'code_sha256': {name: file_sha256(ROOT / name) for name in (
@@ -354,9 +360,24 @@ def run(args):
                 max_new_tokens=24, output_format='lines', adapter_dir=False)
             torch.set_num_threads(8)  # LocalVLM's inference policy may set a lower default.
             config['lora'] = attach_lora(engine)
+            if resume_state is not None:
+                from peft import set_peft_model_state_dict
+                from safetensors.torch import load_file
+                validate_resume_config(resume_state['config'], config)
+                adapter_path = args.resume_from/'adapter_model.safetensors'
+                incompatible = set_peft_model_state_dict(engine.model, load_file(adapter_path, device='cpu'))
+                if incompatible.unexpected_keys or any('lora_' in key for key in incompatible.missing_keys):
+                    raise ValueError('Adapter checkpoint keys do not match all expected LoRA tensors')
+                config['explicit_resume'] = {'checkpoint': str(args.resume_from.resolve()),
+                    'training_state_sha256': file_sha256(args.resume_from/'training-state.pt'),
+                    'adapter_sha256': file_sha256(adapter_path),
+                    'global_step': resume_state['global_step'],
+                    'optimizer_reset': False, 'automatic_resume': False}
             parameters = [parameter for parameter in engine.model.parameters() if parameter.requires_grad]
             optimizer = torch.optim.AdamW(parameters, lr=args.lr, weight_decay=.01, foreach=False)
-            if args.reuse_probe is None:
+            if resume_state is not None:
+                rows = resume_state['config']['throughput_probe']
+            elif args.reuse_probe is None:
                 rows = probe_throughput(engine, train_data, optimizer, telemetry, args.output, VLM_CLASS_PROMPT)
             else:
                 prior = json.loads((args.reuse_probe/'probe-complete.json').read_text(encoding='utf-8'))
@@ -372,6 +393,10 @@ def run(args):
                     'reason': 'Already measured on this GPU; avoid repeating work during battery operation'}
                 durable_json(args.output/'reused-probe.json', config['reused_probe'], immutable=True)
             measured_batch = choose_batch(rows)
+            if resume_state is not None:
+                measured_batch = resume_state['config']['microbatch']
+                if args.microbatch != 'auto' and int(args.microbatch) != measured_batch:
+                    raise ValueError('Exact continuation must retain the previous microbatch')
             if args.microbatch != 'auto':
                 measured_batch = int(args.microbatch)
                 if not any(row.get('batch') == measured_batch and row.get('status') == 'measured'
@@ -409,9 +434,32 @@ def run(args):
             durable_json(args.output / 'config.json', config)
             history, best_metrics, best_epoch = [], None, None
             global_step, microstep = 0, 0
+            first_epoch, skipped_batches = 1, 0
+            if resume_state is not None:
+                optimizer.load_state_dict(resume_state['optimizer_state_dict'])
+                scheduler.load_state_dict(resume_state['scheduler_state_dict'])
+                global_step = resume_state['global_step']
+                data_state = resume_state['data_rng_state']
+                microstep = data_state['microstep']
+                first_epoch = resume_state['epoch']
+                skipped_batches = data_state['epoch_batches_completed']
+                if skipped_batches > len(train_loader) or first_epoch > args.epochs:
+                    raise ValueError('Checkpoint sampling position exceeds the requested experiment')
+                sampler_generator.set_state(data_state['epoch_sampler_start'])
+                loader_generator.set_state(data_state['loader_generator'])
+                prior_history = args.resume_from.parent/'history.json'
+                if prior_history.exists():
+                    history = [row for row in json.loads(prior_history.read_text(encoding='utf-8'))
+                               if row['epoch'] < first_epoch]
+                    for row in history:
+                        if is_better(row['validation'], best_metrics):
+                            best_metrics, best_epoch = row['validation'], row['epoch']
+                restore_rng_state(resume_state['rng_state'])
+                print(f'EXPLICIT RESUME epoch={first_epoch} completed_batches={skipped_batches} '
+                      f'global_step={global_step}; optimizer/scheduler/RNG restored', flush=True)
             started = time.perf_counter()
             with (args.output / 'train-progress.jsonl').open('x', encoding='utf-8', buffering=1) as progress:
-                for epoch in range(1, args.epochs + 1):
+                for epoch in range(first_epoch, args.epochs + 1):
                     train_mode(engine.model)
                     optimizer.zero_grad(set_to_none=True)
                     torch.cuda.reset_peak_memory_stats(engine.model.device)
@@ -419,6 +467,8 @@ def run(args):
                     epoch_sampler_start = sampler_generator.get_state()
                     window_images, window_loss, epoch_loss, epoch_images = 0, 0., 0., 0
                     for batch_index, samples in enumerate(train_loader):
+                        if epoch == first_epoch and batch_index < skipped_batches:
+                            continue
                         telemetry.set_context('training', epoch, batch_index + 1)
                         inputs = move_inputs(collate_processor(engine.processor, samples, VLM_CLASS_PROMPT,
                                                               training=True), engine.model.device)
@@ -494,7 +544,11 @@ def run(args):
                     durable_json(checkpoint / 'validation.json', evaluated, immutable=True)
                     metrics = evaluated['metrics']
                     history.append({'epoch': epoch, 'global_step': global_step,
-                        'train_loss': epoch_loss / epoch_images, 'train_images': epoch_images,
+                        'train_loss': epoch_loss / epoch_images if epoch_images else None,
+                        'train_images': epoch_images,
+                        'train_loss_scope': ('remaining_segment_after_explicit_resume'
+                            if epoch == first_epoch and skipped_batches else 'full_epoch'),
+                        'previously_completed_batches': skipped_batches if epoch == first_epoch else 0,
                         'seconds': time.perf_counter() - epoch_started, 'validation': metrics,
                         'checkpoint': str(checkpoint.resolve()), 'adapter_sha256': adapter_hash})
                     if is_better(metrics, best_metrics):
@@ -503,7 +557,7 @@ def run(args):
                     durable_json(args.output / 'best.json', {'epoch': best_epoch,
                         'metrics': best_metrics, 'selection': 'validation cat accuracy, dog false-cat tie break'})
                     print('VLM EPOCH', json.dumps(history[-1]), flush=True)
-            best_checkpoint = args.output / f'epoch{best_epoch:02d}'
+            best_checkpoint = Path(next(row['checkpoint'] for row in history if row['epoch'] == best_epoch))
             complete = {'state': 'complete', 'epochs_completed': args.epochs, 'global_step': global_step,
                 'best_epoch': best_epoch, 'best_validation': best_metrics,
                 'best_adapter_sha256': file_sha256(best_checkpoint / 'adapter_model.safetensors'),
@@ -544,6 +598,8 @@ def parse_args(argv=None):
                         help='Explicit opt-in only; latest user preference is no GPU monitoring')
     parser.add_argument('--stop-file', type=Path, help='Save a checkpoint and exit at next optimizer boundary')
     parser.add_argument('--reuse-probe', type=Path, help='Explicitly reuse a matching completed local throughput probe')
+    parser.add_argument('--resume-from', type=Path,
+                        help='Explicit adapter/optimizer/RNG continuation into a new output directory; never automatic')
     args = parser.parse_args(argv)
     if args.validation_manifest is None:
         args.validation_manifest = args.manifest_dir / 'val-selection.json'

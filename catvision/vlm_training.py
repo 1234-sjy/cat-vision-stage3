@@ -305,6 +305,33 @@ def rng_state():
         'torch_cuda': torch.cuda.get_rng_state_all() if torch.cuda.is_available() else None}
 
 
+def restore_rng_state(state):
+    """Explicit checkpoint continuation, preserving the next dropout draws."""
+    import numpy as np
+    random.setstate(state['python'])
+    numpy = state['numpy']
+    np.random.set_state((numpy['algorithm'], numpy['keys'].cpu().numpy().astype(np.uint32),
+        numpy['position'], numpy['has_gauss'], numpy['cached_gaussian']))
+    torch.set_rng_state(state['torch_cpu'].cpu())
+    if state['torch_cuda'] is not None:
+        if not torch.cuda.is_available():
+            raise RuntimeError('CUDA checkpoint continuation requires a CUDA device')
+        torch.cuda.set_rng_state_all([value.cpu() for value in state['torch_cuda']])
+
+
+def validate_resume_config(previous, current):
+    """An optimizer continuation cannot silently become a different experiment."""
+    for key in ('manifest_sha256', 'classes', 'prompt', 'input_image_pixels_max',
+                'epochs_planned', 'effective_batch', 'learning_rate'):
+        if previous[key] != current[key]:
+            raise ValueError(f'Resume changed {key}; use a separately recorded new experiment')
+    if previous['source']['aggregate_sha256'] != current['source']['aggregate_sha256']:
+        raise ValueError('Resume changed source model')
+    for key in ('r', 'alpha', 'dropout', 'target_modules'):
+        if previous['lora'][key] != current['lora'][key]:
+            raise ValueError(f'Resume changed lora {key}')
+
+
 def atomic_checkpoint(path: Path, payload):
     path = Path(path)
     if path.exists():

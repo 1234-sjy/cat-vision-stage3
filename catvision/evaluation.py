@@ -32,6 +32,7 @@ def prediction_cache_matches(prediction: dict, image_id: str, measured_sha: str,
 def inference_fingerprint(root: Path, route: str) -> str:
     digest = hashlib.sha256(route.encode())
     files = [root / "catvision/common.py"]
+    files += [root/'catvision/run_control.py'] if (root/'catvision/run_control.py').exists() else []
     if route == "traditional":
         files += [root / "catvision" / name for name in ["traditional.py", "geometry.py"]]
         files += [root / "weights" / name for name in ["yolo26n.pt", "sam2.1_t.pt"]]

@@ -106,7 +106,7 @@ class LocalComparison:
 
         def run_route(route):
             engine, reused = engines[route]
-            with inference_stream():
+            with inference_stream(owner=engine):
                 prediction = engine.predict(image.copy())
                 prediction['load_seconds'] = 0.0 if reused else engine.load_seconds
                 prediction['model_reused'] = reused

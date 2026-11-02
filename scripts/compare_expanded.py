@@ -40,6 +40,7 @@ def freeze():
 
 
 def evaluate(data_root):
+    import torch
     os.environ['CATVISION_FAST_INFERENCE']='1'
     from catvision.server import LocalComparison
     records=json.loads((OUT/'manifest.json').read_text(encoding='utf-8'))
@@ -49,6 +50,7 @@ def evaluate(data_root):
         raise ValueError('Shared test manifest changed')
     engine=LocalComparison(keep_loaded=True)
     predictions={route:[] for route in ['traditional','vlm']}
+    timings=[]
     with GpuReservation():
         engine.preload()
         with ModelTask('shared20-test-v3'):
@@ -62,6 +64,12 @@ def evaluate(data_root):
                     folder=OUT/'images'/f'{i:03d}'
                     folder.mkdir(parents=True,exist_ok=False)
                     result=engine._run(load_image(content,max_side=1600),folder,lambda text:None)
+                    timings.append({'image_id':row['image_id'],'total_seconds':result['total_seconds'],
+                        'traditional_seconds':result['traditional']['inference_seconds'],
+                        'vlm_seconds':result['vlm']['inference_seconds'],
+                        'cuda_allocated_mib':torch.cuda.memory_allocated()/1024**2,
+                        'cuda_reserved_mib':torch.cuda.memory_reserved()/1024**2})
+                    save_json(OUT/'timings.json',timings)
                     for route in predictions:
                         prediction=result[route]
                         prediction.update(image_id=row['image_id'],true_breed=row['breed'],input_sha256=sha,

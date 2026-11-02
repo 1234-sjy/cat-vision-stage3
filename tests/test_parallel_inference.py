@@ -8,9 +8,22 @@ from unittest.mock import patch
 from PIL import Image
 
 from catvision.server import LocalComparison
+from catvision.run_control import inference_stream
 
 
 class ParallelInferenceTests(unittest.TestCase):
+    def test_resident_engine_reuses_stream_to_bound_allocator_caches(self):
+        class Engine: pass
+        class Stream:
+            def wait_stream(self,other): pass
+            def synchronize(self): pass
+        a,b=Engine(),Engine()
+        with patch('torch.cuda.is_available',return_value=True),patch('torch.cuda.Stream',side_effect=[Stream(),Stream()]) as factory,patch('torch.cuda.default_stream',return_value=None),patch('torch.cuda.stream',side_effect=lambda stream:nullcontext()):
+            for _ in range(5):
+                with inference_stream(owner=a): pass
+                with inference_stream(owner=b): pass
+            self.assertEqual(factory.call_count,2)
+
     def test_both_routes_run_together_with_independent_original_images(self):
         barrier = threading.Barrier(2, timeout=2)
         seen = []

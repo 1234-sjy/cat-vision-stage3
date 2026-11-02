@@ -163,13 +163,17 @@ class ModelTask:
 
 
 @contextmanager
-def inference_stream():
-    """Give each inference worker its own CUDA stream."""
+def inference_stream(owner=None):
+    """Reuse each resident engine's stream so allocator pools remain bounded."""
     import torch
     if not torch.cuda.is_available():
         yield
         return
-    stream = torch.cuda.Stream()
+    stream = getattr(owner,'_inference_cuda_stream',None) if owner is not None else None
+    if stream is None:
+        stream = torch.cuda.Stream()
+        if owner is not None:
+            owner._inference_cuda_stream = stream
     stream.wait_stream(torch.cuda.default_stream())
     with torch.cuda.stream(stream):
         try:

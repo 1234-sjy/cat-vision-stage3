@@ -34,7 +34,16 @@ def inference_fingerprint(root: Path, route: str) -> str:
     files = [root / "catvision/common.py"]
     if route == "traditional":
         files += [root / "catvision" / name for name in ["traditional.py", "geometry.py"]]
-        files += [root / "weights" / name for name in ["yolo26n.pt", "sam2.1_t.pt", "breed-best.pt"]]
+        files += [root / "weights" / name for name in ["yolo26n.pt", "sam2.1_t.pt"]]
+        active = root / 'configs/active-classifier.json'
+        if active.exists():
+            config = json.loads(active.read_text(encoding='utf-8'))
+            checkpoint = config['checkpoint']
+            if Path(checkpoint).name != checkpoint:
+                raise ValueError('Checkpoint must be a filename inside weights')
+            files += [active,root/'catvision/breed_transformer.py',root/'weights'/checkpoint]
+        else:
+            files += [root/'weights/breed-best.pt']
     else:
         files += [root / "catvision/vlm.py"]
         base = root / "weights/qwen3-vl-4b"

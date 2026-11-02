@@ -1,0 +1,16 @@
+{
+  "source": "Oxford-IIIT Pet official trainval/test",
+  "cats": {
+    "train": 950,
+    "val": 238
+  },
+  "dogs": {
+    "val": 500,
+    "train": 1000
+  },
+  "comparison_seed": 20261102,
+  "comparison_images": 120,
+  "overlap_with_old_comparison": 0,
+  "negative_scope": "dogs only; no claim of universal open-world rejection",
+  "dog_policy": "20 validation per breed including previous seed17 negatives;40 training per breed"
+}

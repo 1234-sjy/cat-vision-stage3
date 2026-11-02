@@ -1,0 +1,7 @@
+{
+  "source": "https://download.pytorch.org/models/swin_t-704ceda3.pth",
+  "bytes": 113445839,
+  "sha256": "704ceda373461b0a224fcdddd75cd2a5e9f8064512ed47adbddef7f343fd147b",
+  "official_published_hash_prefix": "704ceda3",
+  "scope": "ImageNet generic initialization, not cat-finetuned weights"
+}

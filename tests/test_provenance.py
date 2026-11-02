@@ -1,9 +1,10 @@
 import hashlib
+import json
 from pathlib import Path
 import tempfile
 import unittest
 
-from catvision.evaluation import prediction_cache_matches, read_verified_input
+from catvision.evaluation import prediction_cache_matches, read_verified_input, inference_fingerprint
 
 
 class InputProvenanceTests(unittest.TestCase):
@@ -33,6 +34,23 @@ class InputProvenanceTests(unittest.TestCase):
     def test_legacy_cache_without_model_identity_is_not_reused(self):
         self.assertFalse(prediction_cache_matches({"image_id": "a", "input_sha256": "image-one"},
                                                   "a", "image-one", "model-one"))
+
+    def test_selected_transformer_and_policy_change_cache_identity(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder)
+            names=['catvision/common.py','catvision/traditional.py','catvision/geometry.py',
+                   'catvision/breed_transformer.py','weights/yolo26n.pt','weights/sam2.1_t.pt',
+                   'weights/breed-best.pt','weights/custom.pt']
+            for name in names:
+                path=root/name; path.parent.mkdir(parents=True,exist_ok=True); path.write_bytes(b'old')
+            active=root/'configs/active-classifier.json';active.parent.mkdir()
+            active.write_text(json.dumps({'architecture':'swin_t','checkpoint':'custom.pt','cat_threshold':0.5}))
+            first=inference_fingerprint(root,'traditional')
+            (root/'weights/custom.pt').write_bytes(b'new')
+            second=inference_fingerprint(root,'traditional')
+            self.assertNotEqual(first,second)
+            active.write_text(json.dumps({'architecture':'swin_t','checkpoint':'custom.pt','cat_threshold':0.8}))
+            self.assertNotEqual(second,inference_fingerprint(root,'traditional'))
 
 
 if __name__ == "__main__":

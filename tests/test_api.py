@@ -10,10 +10,25 @@ from unittest.mock import patch
 from fastapi.testclient import TestClient
 from PIL import Image
 
-from catvision.server import LocalComparison, create_app
+from catvision.server import LocalComparison, create_app, model_files_ready
 
 
 class ApiTests(unittest.TestCase):
+    def test_ready_checks_active_classifier_instead_of_legacy(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder)
+            base=root/'weights/qwen3-vl-4b';base.mkdir(parents=True)
+            for name in ['model.safetensors','config.json','preprocessor_config.json','tokenizer.json','tokenizer_config.json']:
+                (base/name).write_bytes(b'x')
+            (base/'model.safetensors.index.json').write_text(json.dumps({'weight_map':{'tensor':'model.safetensors'}}))
+            for name in ['yolo26n.pt','sam2.1_t.pt','breed-best.pt']:
+                (root/'weights'/name).write_bytes(b'x')
+            active=root/'configs/active-classifier.json';active.parent.mkdir()
+            active.write_text(json.dumps({'checkpoint':'swin.pt','architecture':'swin_t'}))
+            self.assertFalse(model_files_ready(root))
+            (root/'weights/swin.pt').write_bytes(b'x')
+            self.assertTrue(model_files_ready(root))
+
     def test_completed_request_releases_last_model_from_gpu(self):
         closed = []
 

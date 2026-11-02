@@ -14,6 +14,7 @@ __pycache__/
 .env
 runtime-*.log
 !/weights/breed-best.pt
+!/weights/breed-swin-v2-fp16.pt
 /artifacts/environment/pip-freeze-original.txt
 /artifacts/training/*/args.yaml
 /artifacts/training/*/train_batch*.jpg

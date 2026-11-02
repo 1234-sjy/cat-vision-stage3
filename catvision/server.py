@@ -24,7 +24,11 @@ def model_files_ready(base_dir: Path) -> bool:
         names = set(index["weight_map"].values())
         if not names or any(Path(name).name != name for name in names):
             return False
-        required = [weights / name for name in ["yolo26n.pt", "sam2.1_t.pt", "breed-best.pt"]]
+        active = base_dir/'configs/active-classifier.json'
+        checkpoint = json.loads(active.read_text(encoding='utf-8'))['checkpoint'] if active.exists() else 'breed-best.pt'
+        if Path(checkpoint).name != checkpoint:
+            return False
+        required = [weights / name for name in ["yolo26n.pt", "sam2.1_t.pt", checkpoint]]
         required += [vlm / name for name in names | {"config.json", "preprocessor_config.json",
                                                     "tokenizer.json", "tokenizer_config.json"}]
         return all(path.is_file() and path.stat().st_size > 0 for path in required)
@@ -124,9 +128,12 @@ def create_app(base_dir: Path = ROOT, runner=None) -> FastAPI:
     @app.get("/api/report")
     def report():
         result = {}
+        active_report = base_dir/'artifacts/evaluation/comparison-v2'
+        experiment = 'comparison-v2' if all((active_report/route/'metrics.json').exists() for route in ['traditional','vlm']) else 'comparison'
         for route in ["traditional", "vlm"]:
-            path = base_dir / f"artifacts/evaluation/comparison/{route}/metrics.json"
+            path = base_dir / f"artifacts/evaluation/{experiment}/{route}/metrics.json"
             result[route] = json.loads(path.read_text(encoding="utf-8")) if path.exists() else None
+        result['experiment'] = experiment
         return result
 
     def execute(job_id, image, directory):

@@ -19,7 +19,7 @@ from catvision.run_control import ModelTask
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--route", required=True, choices=["traditional", "vlm"])
-    parser.add_argument("--set", default="comparison", choices=["comparison", "test", "val"])
+    parser.add_argument("--set", default="comparison", choices=["comparison", "comparison-v2", "test", "val"])
     parser.add_argument("--data-root", type=Path, required=True)
     parser.add_argument("--limit", type=int)
     parser.add_argument("--force", action="store_true")
@@ -27,6 +27,8 @@ def main():
     args = parser.parse_args()
     if args.set == "comparison":
         records = json.loads((ROOT / "artifacts/data/comparison.json").read_text(encoding="utf-8"))
+    elif args.set == 'comparison-v2':
+        records = json.loads((ROOT/'artifacts/optimization-v2/comparison-v2.json').read_text(encoding='utf-8'))
     else:
         records = [r for r in json.loads((ROOT / "artifacts/data/manifest.json").read_text(encoding="utf-8"))
                    if r["split"] == args.set]

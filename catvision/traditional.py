@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import gc
+import json
 from pathlib import Path
 import time
 
@@ -28,7 +29,14 @@ class TraditionalVision:
         started = time.perf_counter()
         self.detector = YOLO(str(self.weights / "yolo26n.pt"))
         self.segmenter = SAM(str(self.weights / "sam2.1_t.pt"))
-        self.classifier = YOLO(str(self.weights / "breed-best.pt")) if classifier else None
+        active = ROOT / 'configs/active-classifier.json'
+        config = json.loads(active.read_text(encoding='utf-8')) if classifier and active.exists() else {}
+        self.classifier_type = config.get('architecture','yolo26s-cls')
+        if classifier and self.classifier_type == 'swin_t':
+            from .breed_transformer import BreedTransformer
+            self.classifier = BreedTransformer(self.weights/config['checkpoint'],config)
+        else:
+            self.classifier = YOLO(str(self.weights / "breed-best.pt")) if classifier else None
         self.load_seconds = time.perf_counter() - started
 
     def extract_subject(self, image: Image.Image) -> dict:
@@ -85,6 +93,17 @@ class TraditionalVision:
     def predict(self, image: Image.Image) -> dict:
         started = time.perf_counter()
         result = self.extract_subject(image)
+        if self.classifier_type == 'swin_t':
+            localization_status = result['status']
+            extract_pause = 0.4 if localization_status == 'ok' else 0.2
+            prediction = self.classifier.predict(image,result.get('crop'))
+            result.update(prediction)
+            pause = extract_pause + self.classifier.last_throttle_seconds
+            result.update(localization_status=localization_status,
+                          classification_source='original_and_subject' if result.get('crop') is not None and self.classifier.config['subject_weight']>0 else 'original',
+                          route='yolo26_sam2_swin_v2',throttle_seconds=pause,
+                          inference_seconds=max(0.0,time.perf_counter()-started-pause))
+            return result
         if result["status"] != "ok":
             return result
         if self.classifier is None:

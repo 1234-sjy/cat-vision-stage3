@@ -41,6 +41,8 @@ python -m venv .venv
 
 以上命令应分别执行，前一个成功退出后再运行后一个。`artifacts/run-logs`保存每次模型任务的输出、错误、异常堆栈和运行配置。
 
+评价脚本会从实际图片字节计算SHA256，并核对固定清单；只有输入摘要、模型权重和预处理/提示代码身份一致的结果才会复用。复用记录明确标记，`--cache-only`只核对现有结果，不加载模型。原始GPU推理记录保存在各路线的`pre-provenance`及运行日志中；后续来源审计没有改变这次测试成绩。
+
 网页入口为`python -m catvision.server`，地址为`http://127.0.0.1:8765`。双击“安装环境.cmd”恢复独立环境，再双击“启动项目.cmd”；已有环境可通过`CATVISION_PYTHON`或`scripts/start.ps1 -PythonExe`指定解释器。自训练权重`weights/breed-best.pt`约11MB，随源码保留；较大的官方模型可从完整保留包恢复，或运行下载脚本获取。
 
 ## 数据与资料

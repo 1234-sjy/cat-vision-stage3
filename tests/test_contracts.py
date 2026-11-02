@@ -34,6 +34,12 @@ class ContractTests(unittest.TestCase):
             with self.subTest(text=text):
                 self.assertEqual(parse_vlm_output(text)["status"], "parse_error")
 
+    def test_missing_required_features_is_retained_as_parse_error(self):
+        text = '{"has_cat":true,"breed":"Ragdoll"}'
+        result = parse_vlm_output(text)
+        self.assertEqual(result["status"], "parse_error")
+        self.assertEqual(result["raw_text"], text)
+
 
 if __name__ == "__main__":
     unittest.main()

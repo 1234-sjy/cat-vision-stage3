@@ -60,7 +60,9 @@ def parse_vlm_output(text: str) -> dict:
                     break
             except json.JSONDecodeError:
                 continue
-    if not data or type(data.get("has_cat")) is not bool:
+    if not data or not {"has_cat", "breed", "features"}.issubset(data) or type(data.get("has_cat")) is not bool:
+        return error
+    if not isinstance(data["features"], list) or any(not isinstance(v, str) for v in data["features"]):
         return error
     if not data["has_cat"]:
         return {**error, "status": "no_cat", "has_cat": False}

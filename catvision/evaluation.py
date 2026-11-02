@@ -1,7 +1,55 @@
 from __future__ import annotations
 
 from collections import Counter
+import hashlib
+import json
+from pathlib import Path
 import statistics
+
+
+class InputIntegrityError(ValueError):
+    def __init__(self, image_id, expected, actual):
+        self.actual_sha256 = actual
+        super().__init__(f"Input SHA256 mismatch for {image_id}: expected {expected}, actual {actual}")
+
+
+def read_verified_input(record: dict, data_root: Path) -> tuple[bytes, str]:
+    path = (data_root / record["relative_path"]).resolve()
+    if not path.is_relative_to(data_root.resolve()):
+        raise ValueError("Input path leaves the selected data directory")
+    content = path.read_bytes()
+    actual = hashlib.sha256(content).hexdigest()
+    if actual != record["sha256"]:
+        raise InputIntegrityError(record["image_id"], record["sha256"], actual)
+    return content, actual
+
+
+def prediction_cache_matches(prediction: dict, image_id: str, measured_sha: str, fingerprint: str) -> bool:
+    return (prediction.get("image_id") == image_id and prediction.get("input_sha256") == measured_sha
+            and prediction.get("run_fingerprint") == fingerprint)
+
+
+def inference_fingerprint(root: Path, route: str) -> str:
+    digest = hashlib.sha256(route.encode())
+    files = [root / "catvision/common.py"]
+    if route == "traditional":
+        files += [root / "catvision" / name for name in ["traditional.py", "geometry.py"]]
+        files += [root / "weights" / name for name in ["yolo26n.pt", "sam2.1_t.pt", "breed-best.pt"]]
+    else:
+        files += [root / "catvision/vlm.py"]
+        base = root / "weights/qwen3-vl-4b"
+        index = json.loads((base / "model.safetensors.index.json").read_text(encoding="utf-8"))
+        shards = set(index["weight_map"].values())
+        if any(Path(name).name != name for name in shards):
+            raise ValueError("Unexpected model shard path")
+        files += [base / name for name in shards]
+        files += [p for p in base.iterdir() if p.is_file() and p.suffix in {".json", ".txt", ".jinja"}]
+    for path in sorted(set(files)):
+        digest.update(path.relative_to(root).as_posix().encode())
+        with path.open("rb") as stream:
+            for block in iter(lambda: stream.read(8 * 1024 * 1024), b""):
+                digest.update(block)
+    return digest.hexdigest()
 
 
 def validate_comparison(truth: list[dict], *routes: list[dict]) -> None:

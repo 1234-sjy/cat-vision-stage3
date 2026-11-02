@@ -124,7 +124,11 @@
     "Sphynx_233"
   ],
   "count": 120,
-  "load_seconds": 5.4504803999952856,
-  "created_utc": "2026-11-02T02:20:20.940331+00:00",
-  "timing": "inference_seconds includes preprocessing, forward/generation, postprocessing; excludes weight loading"
+  "load_seconds": 0,
+  "created_utc": "2026-11-02T03:08:34.013445+00:00",
+  "run_fingerprint": "f3a892688376a8376ca0f3e30cd7c6d3af04e6e3ea4e9409dfb6533c08dc883c",
+  "fresh_count": 0,
+  "reused_count": 120,
+  "timing": "original inference_seconds retained for reused results; excludes weight loading and requested pauses",
+  "model_loaded": false
 }

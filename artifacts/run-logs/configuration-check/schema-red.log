@@ -1,0 +1,22 @@
+test_alpha_image_is_composited_on_white (test_contracts.ContractTests.test_alpha_image_is_composited_on_white) ... ok
+test_invalid_model_response_is_a_parse_failure (test_contracts.ContractTests.test_invalid_model_response_is_a_parse_failure) ... ok
+test_missing_required_features_is_retained_as_parse_error (test_contracts.ContractTests.test_missing_required_features_is_retained_as_parse_error) ... FAIL
+test_no_cat_cannot_keep_a_breed (test_contracts.ContractTests.test_no_cat_cannot_keep_a_breed) ... ok
+test_nonimage_upload_is_rejected (test_contracts.ContractTests.test_nonimage_upload_is_rejected) ... ok
+test_single_breed_is_normalized_from_json_fence (test_contracts.ContractTests.test_single_breed_is_normalized_from_json_fence) ... ok
+
+======================================================================
+FAIL: test_missing_required_features_is_retained_as_parse_error (test_contracts.ContractTests.test_missing_required_features_is_retained_as_parse_error)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\sjysj\Documents\Codex\2026-10-31\new-chat\outputs\cat-vision-stage2\tests\test_contracts.py", line 40, in test_missing_required_features_is_retained_as_parse_error
+    self.assertEqual(result["status"], "parse_error")
+AssertionError: 'ok' != 'parse_error'
+- ok
++ parse_error
+
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.042s
+
+FAILED (failures=1)

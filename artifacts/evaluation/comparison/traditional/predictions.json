@@ -29,7 +29,12 @@
     "image_id": "Abyssinian_96",
     "input_sha256": "ce08064472b9ebf54c7b3a3adca19b0e0b1f0f874c407ec09d82ad58641bee60",
     "true_breed": "Abyssinian",
-    "created_utc": "2026-11-02T02:34:40.684175+00:00"
+    "created_utc": "2026-11-02T02:34:40.684175+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.083500+00:00"
   },
   {
     "status": "ok",
@@ -61,7 +66,12 @@
     "image_id": "Abyssinian_213",
     "input_sha256": "616aa752bc00c9c9c7ad5ffc38cf31d8bea4536a3d3602d42d731825b92e9a28",
     "true_breed": "Abyssinian",
-    "created_utc": "2026-11-02T02:34:41.348267+00:00"
+    "created_utc": "2026-11-02T02:34:41.348267+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.085499+00:00"
   },
   {
     "status": "ok",
@@ -93,7 +103,12 @@
     "image_id": "Abyssinian_217",
     "input_sha256": "d65c558e8358b2b8c6072d312c301b2dbda1465e4f12169c45a2662421824c7c",
     "true_breed": "Abyssinian",
-    "created_utc": "2026-11-02T02:34:42.027351+00:00"
+    "created_utc": "2026-11-02T02:34:42.027351+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.088499+00:00"
   },
   {
     "status": "ok",
@@ -125,7 +140,12 @@
     "image_id": "Abyssinian_52",
     "input_sha256": "cb4c7156045330ebbf4f9968a54d519012c7448e1a92ef57509d23383810b22e",
     "true_breed": "Abyssinian",
-    "created_utc": "2026-11-02T02:34:42.717522+00:00"
+    "created_utc": "2026-11-02T02:34:42.717522+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.090499+00:00"
   },
   {
     "status": "no_cat",
@@ -139,7 +159,12 @@
     "image_id": "Abyssinian_207",
     "input_sha256": "0de9ecc9b843c0a7938794d424fc7dd5f9007714309ffae890c59ebc90c0cc6b",
     "true_breed": "Abyssinian",
-    "created_utc": "2026-11-02T02:34:42.932410+00:00"
+    "created_utc": "2026-11-02T02:34:42.932410+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.093501+00:00"
   },
   {
     "status": "ok",
@@ -171,7 +196,12 @@
     "image_id": "Abyssinian_90",
     "input_sha256": "3ba30261c6f52e3226750067d97347dcfa732be2e357ebbcc7648a92e5d71c0c",
     "true_breed": "Abyssinian",
-    "created_utc": "2026-11-02T02:34:43.627245+00:00"
+    "created_utc": "2026-11-02T02:34:43.627245+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.095500+00:00"
   },
   {
     "status": "ok",
@@ -203,7 +233,12 @@
     "image_id": "Abyssinian_205",
     "input_sha256": "f68008de593f7d8f627ab311cba2edcf1043d2c82c90305f549aa6f1866fd2c7",
     "true_breed": "Abyssinian",
-    "created_utc": "2026-11-02T02:34:44.310007+00:00"
+    "created_utc": "2026-11-02T02:34:44.310007+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.097500+00:00"
   },
   {
     "status": "ok",
@@ -235,7 +270,12 @@
     "image_id": "Abyssinian_206",
     "input_sha256": "3f3149fb86ddd74cfd430c864b008ba9fc2263c59969590f8004580c7b1a0aee",
     "true_breed": "Abyssinian",
-    "created_utc": "2026-11-02T02:34:44.998077+00:00"
+    "created_utc": "2026-11-02T02:34:44.998077+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.099498+00:00"
   },
   {
     "status": "ok",
@@ -267,7 +307,12 @@
     "image_id": "Abyssinian_86",
     "input_sha256": "dfe78e6ec4e8b898e524f575b478bf0d14a76deb8a748b68b013b3379bae52bf",
     "true_breed": "Abyssinian",
-    "created_utc": "2026-11-02T02:34:45.685436+00:00"
+    "created_utc": "2026-11-02T02:34:45.685436+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.102503+00:00"
   },
   {
     "status": "ok",
@@ -299,7 +344,12 @@
     "image_id": "Abyssinian_26",
     "input_sha256": "9b8406aae4012cff8d51ec32813460a2e1238fc6cd3e337601e9239f18d1be23",
     "true_breed": "Abyssinian",
-    "created_utc": "2026-11-02T02:34:46.370488+00:00"
+    "created_utc": "2026-11-02T02:34:46.370488+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.104502+00:00"
   },
   {
     "status": "ok",
@@ -331,7 +381,12 @@
     "image_id": "Bengal_40",
     "input_sha256": "f47076a7cb1b39d4a82aaadff0848632a768fc7c6821d494a365f94944026733",
     "true_breed": "Bengal",
-    "created_utc": "2026-11-02T02:34:47.045552+00:00"
+    "created_utc": "2026-11-02T02:34:47.045552+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.108246+00:00"
   },
   {
     "status": "ok",
@@ -363,7 +418,12 @@
     "image_id": "Bengal_47",
     "input_sha256": "c9d43917dbdb245a001e58ee964ee2236b0c8bf4b1ceb58e4f89af5541e993ff",
     "true_breed": "Bengal",
-    "created_utc": "2026-11-02T02:34:47.715037+00:00"
+    "created_utc": "2026-11-02T02:34:47.715037+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.110253+00:00"
   },
   {
     "status": "ok",
@@ -395,7 +455,12 @@
     "image_id": "Bengal_23",
     "input_sha256": "7e7dd000d31022a7ca9d6816910421eaf68ad0685694b421046a9d8298b1afcd",
     "true_breed": "Bengal",
-    "created_utc": "2026-11-02T02:34:48.400744+00:00"
+    "created_utc": "2026-11-02T02:34:48.400744+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.112251+00:00"
   },
   {
     "status": "ok",
@@ -427,7 +492,12 @@
     "image_id": "Bengal_25",
     "input_sha256": "f4c827e926f2888cf78e6eadc097d4245713bb246efb22e31836c94629f87f2b",
     "true_breed": "Bengal",
-    "created_utc": "2026-11-02T02:34:49.068120+00:00"
+    "created_utc": "2026-11-02T02:34:49.068120+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.115252+00:00"
   },
   {
     "status": "ok",
@@ -459,7 +529,12 @@
     "image_id": "Bengal_60",
     "input_sha256": "0aec49e8336d43e1d38485b9d255f2db486714015f742e009bad972f01237220",
     "true_breed": "Bengal",
-    "created_utc": "2026-11-02T02:34:49.733864+00:00"
+    "created_utc": "2026-11-02T02:34:49.733864+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.117536+00:00"
   },
   {
     "status": "ok",
@@ -491,7 +566,12 @@
     "image_id": "Bengal_73",
     "input_sha256": "d182c26dc2456acbb964c96dce4753f95b59e12e8da2895ae8b5dc1c902e33b8",
     "true_breed": "Bengal",
-    "created_utc": "2026-11-02T02:34:50.406933+00:00"
+    "created_utc": "2026-11-02T02:34:50.406933+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.119527+00:00"
   },
   {
     "status": "ok",
@@ -523,7 +603,12 @@
     "image_id": "Bengal_65",
     "input_sha256": "b91ef79bc40f408d63002c491cfdfa2c40a63ec3d0e8130627ac7a1c9b5f8284",
     "true_breed": "Bengal",
-    "created_utc": "2026-11-02T02:34:51.077345+00:00"
+    "created_utc": "2026-11-02T02:34:51.077345+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.121820+00:00"
   },
   {
     "status": "ok",
@@ -555,7 +640,12 @@
     "image_id": "Bengal_20",
     "input_sha256": "32aacdce170d4a60e707a754683f80b295011f29365467cc238d1e268ea4f345",
     "true_breed": "Bengal",
-    "created_utc": "2026-11-02T02:34:51.766642+00:00"
+    "created_utc": "2026-11-02T02:34:51.766642+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.124816+00:00"
   },
   {
     "status": "ok",
@@ -587,7 +677,12 @@
     "image_id": "Bengal_24",
     "input_sha256": "d6c98fdb7410b35e9e20b7a6239f25f8303873b380f2cb1b79f60ec2bbbddc66",
     "true_breed": "Bengal",
-    "created_utc": "2026-11-02T02:34:52.445208+00:00"
+    "created_utc": "2026-11-02T02:34:52.445208+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.126823+00:00"
   },
   {
     "status": "ok",
@@ -619,7 +714,12 @@
     "image_id": "Bengal_80",
     "input_sha256": "ce28eff3a92a644ee971568e5d6ba95c7e50e81090a00530a705d2f9d6bbb9ca",
     "true_breed": "Bengal",
-    "created_utc": "2026-11-02T02:34:53.121845+00:00"
+    "created_utc": "2026-11-02T02:34:53.121845+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.128820+00:00"
   },
   {
     "status": "no_cat",
@@ -633,7 +733,12 @@
     "image_id": "Birman_1",
     "input_sha256": "c314af60fcc1652e95404e413e45185b8146e1f5272b89c41ff6cad7827f82a0",
     "true_breed": "Birman",
-    "created_utc": "2026-11-02T02:34:53.341786+00:00"
+    "created_utc": "2026-11-02T02:34:53.341786+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.131202+00:00"
   },
   {
     "status": "ok",
@@ -665,7 +770,12 @@
     "image_id": "Birman_5",
     "input_sha256": "248f9391d5462f3231d5e349736012c28b73a6bda1a859b984f1e1dda15edbda",
     "true_breed": "Birman",
-    "created_utc": "2026-11-02T02:34:54.138976+00:00"
+    "created_utc": "2026-11-02T02:34:54.138976+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.133496+00:00"
   },
   {
     "status": "ok",
@@ -697,7 +807,12 @@
     "image_id": "Birman_192",
     "input_sha256": "008ab3d9e8f8d0d8296c381e9e9b8b01671ed092271bbe79a6bb89d91012c42c",
     "true_breed": "Birman",
-    "created_utc": "2026-11-02T02:34:54.806618+00:00"
+    "created_utc": "2026-11-02T02:34:54.806618+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.136492+00:00"
   },
   {
     "status": "ok",
@@ -729,7 +844,12 @@
     "image_id": "Birman_65",
     "input_sha256": "bce13f7d7bfab8a4a63894d9bb199eb80b60859b47090a5484498c5b2ae279b6",
     "true_breed": "Birman",
-    "created_utc": "2026-11-02T02:34:55.474850+00:00"
+    "created_utc": "2026-11-02T02:34:55.474850+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.138496+00:00"
   },
   {
     "status": "ok",
@@ -761,7 +881,12 @@
     "image_id": "Birman_53",
     "input_sha256": "bc097c76e924350ebafce412b6ecf5850a8a1b406a0a065ef49f8b30f9544bee",
     "true_breed": "Birman",
-    "created_utc": "2026-11-02T02:34:56.173086+00:00"
+    "created_utc": "2026-11-02T02:34:56.173086+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.140505+00:00"
   },
   {
     "status": "ok",
@@ -793,7 +918,12 @@
     "image_id": "Birman_201",
     "input_sha256": "e12a9fd5b5936370f6f7227225780ce3cfa9ebd82b5890622ec5b4de6a6e33eb",
     "true_breed": "Birman",
-    "created_utc": "2026-11-02T02:34:56.852103+00:00"
+    "created_utc": "2026-11-02T02:34:56.852103+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.143500+00:00"
   },
   {
     "status": "no_cat",
@@ -807,7 +937,12 @@
     "image_id": "Birman_66",
     "input_sha256": "35ee48a24dd610f6584a9bda4f9571f32ed5550b59886a82a3785440784a5880",
     "true_breed": "Birman",
-    "created_utc": "2026-11-02T02:34:57.069182+00:00"
+    "created_utc": "2026-11-02T02:34:57.069182+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.145492+00:00"
   },
   {
     "status": "ok",
@@ -839,7 +974,12 @@
     "image_id": "Birman_3",
     "input_sha256": "32443a89ce29d0d31234b8435d904160a90ef94885504831e9b55874700851a3",
     "true_breed": "Birman",
-    "created_utc": "2026-11-02T02:34:57.748722+00:00"
+    "created_utc": "2026-11-02T02:34:57.748722+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.147500+00:00"
   },
   {
     "status": "ok",
@@ -871,7 +1011,12 @@
     "image_id": "Birman_88",
     "input_sha256": "3952f9528c56c11033e3d1ee98d9daf418d0d5a958b5d6cf4cc55579b7bedaae",
     "true_breed": "Birman",
-    "created_utc": "2026-11-02T02:34:58.422042+00:00"
+    "created_utc": "2026-11-02T02:34:58.422042+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.150492+00:00"
   },
   {
     "status": "ok",
@@ -903,7 +1048,12 @@
     "image_id": "Birman_81",
     "input_sha256": "39e82e0322b63a85fbc87a6ce386744baac5b066891c783690c4bc63189d7fbe",
     "true_breed": "Birman",
-    "created_utc": "2026-11-02T02:34:59.217041+00:00"
+    "created_utc": "2026-11-02T02:34:59.217041+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.152491+00:00"
   },
   {
     "status": "ok",
@@ -935,7 +1085,12 @@
     "image_id": "Bombay_54",
     "input_sha256": "f466a41d7d452fa44f73b2ef2e5da9182ef12e2bb958849e0f6c15f3d6adf205",
     "true_breed": "Bombay",
-    "created_utc": "2026-11-02T02:35:00.016750+00:00"
+    "created_utc": "2026-11-02T02:35:00.016750+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.154498+00:00"
   },
   {
     "status": "ok",
@@ -967,7 +1122,12 @@
     "image_id": "Bombay_42",
     "input_sha256": "7062336b1a0d58d58c37e293cc7307dc14a44ea71de2e8894b30d9c832b9a778",
     "true_breed": "Bombay",
-    "created_utc": "2026-11-02T02:35:00.812982+00:00"
+    "created_utc": "2026-11-02T02:35:00.812982+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.157499+00:00"
   },
   {
     "status": "ok",
@@ -999,7 +1159,12 @@
     "image_id": "Bombay_34",
     "input_sha256": "80052de2c4aa775769f3e150e617c48fbe60b82186ab7598b9752ef30e9c3daa",
     "true_breed": "Bombay",
-    "created_utc": "2026-11-02T02:35:01.623207+00:00"
+    "created_utc": "2026-11-02T02:35:01.623207+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.159493+00:00"
   },
   {
     "status": "no_cat",
@@ -1013,7 +1178,12 @@
     "image_id": "Bombay_50",
     "input_sha256": "b67ffa06cb9d47df9b9929cdbf32b8211e992a5f1bc365723a4eb8ddd48dee65",
     "true_breed": "Bombay",
-    "created_utc": "2026-11-02T02:35:01.841067+00:00"
+    "created_utc": "2026-11-02T02:35:01.841067+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.161496+00:00"
   },
   {
     "status": "ok",
@@ -1045,7 +1215,12 @@
     "image_id": "Bombay_53",
     "input_sha256": "76e3e62e7def459bfcbda60323a153c055e7410252ee2766ddc4924a22d49355",
     "true_breed": "Bombay",
-    "created_utc": "2026-11-02T02:35:02.505457+00:00"
+    "created_utc": "2026-11-02T02:35:02.505457+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.163496+00:00"
   },
   {
     "status": "ok",
@@ -1077,7 +1252,12 @@
     "image_id": "Bombay_201",
     "input_sha256": "4d140eb6b94cf6552b8957669d638303643c83f2fd1cfe8a2c9188159fc4ffa2",
     "true_breed": "Bombay",
-    "created_utc": "2026-11-02T02:35:03.172553+00:00"
+    "created_utc": "2026-11-02T02:35:03.172553+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.166492+00:00"
   },
   {
     "status": "ok",
@@ -1109,7 +1289,12 @@
     "image_id": "Bombay_30",
     "input_sha256": "c1b1a1be64f2576fd7e88a8fd6d8aa3730f3d92bdf0aed4d39dcf0853005f7c5",
     "true_breed": "Bombay",
-    "created_utc": "2026-11-02T02:35:03.848243+00:00"
+    "created_utc": "2026-11-02T02:35:03.848243+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.168499+00:00"
   },
   {
     "status": "ok",
@@ -1141,7 +1326,12 @@
     "image_id": "Bombay_41",
     "input_sha256": "810f9fdbed94223b4f8c8afc74ab60e31c8006b0e5306b0404d317d4025c74e2",
     "true_breed": "Bombay",
-    "created_utc": "2026-11-02T02:35:04.581337+00:00"
+    "created_utc": "2026-11-02T02:35:04.581337+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.170498+00:00"
   },
   {
     "status": "ok",
@@ -1173,7 +1363,12 @@
     "image_id": "Bombay_63",
     "input_sha256": "4c6ec9df3dd8766cf12f8f66691c4847e7cc7bba19905f9ff44ac47058fbd111",
     "true_breed": "Bombay",
-    "created_utc": "2026-11-02T02:35:05.371335+00:00"
+    "created_utc": "2026-11-02T02:35:05.371335+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.173501+00:00"
   },
   {
     "status": "ok",
@@ -1205,7 +1400,12 @@
     "image_id": "Bombay_5",
     "input_sha256": "96b619bdc6376251d8f07cde625a861c7a8b16d6c9444cb9c564915da70d4c3f",
     "true_breed": "Bombay",
-    "created_utc": "2026-11-02T02:35:06.063362+00:00"
+    "created_utc": "2026-11-02T02:35:06.063362+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.175498+00:00"
   },
   {
     "status": "ok",
@@ -1237,7 +1437,12 @@
     "image_id": "British_Shorthair_41",
     "input_sha256": "6bc5443ad037ee11176c2cd7377b3663ad14d0704246bf1f28a68fa9cec2324a",
     "true_breed": "British_Shorthair",
-    "created_utc": "2026-11-02T02:35:06.734442+00:00"
+    "created_utc": "2026-11-02T02:35:06.734442+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.177492+00:00"
   },
   {
     "status": "ok",
@@ -1269,7 +1474,12 @@
     "image_id": "British_Shorthair_29",
     "input_sha256": "a052fb442f0fdff2003eab9770a8edc278f2987ff945be60977370e7ab7e5fc5",
     "true_breed": "British_Shorthair",
-    "created_utc": "2026-11-02T02:35:07.410361+00:00"
+    "created_utc": "2026-11-02T02:35:07.410361+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.180504+00:00"
   },
   {
     "status": "ok",
@@ -1301,7 +1511,12 @@
     "image_id": "British_Shorthair_56",
     "input_sha256": "a0eeb70d54338471b349cd4096c391d60e6b641289ad8f08deab00e02ef22b48",
     "true_breed": "British_Shorthair",
-    "created_utc": "2026-11-02T02:35:08.088405+00:00"
+    "created_utc": "2026-11-02T02:35:08.088405+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.182499+00:00"
   },
   {
     "status": "ok",
@@ -1333,7 +1548,12 @@
     "image_id": "British_Shorthair_50",
     "input_sha256": "11958d0146f413cc351e731e01ea45cb64cf19d5eeae1bee2c5648b3b1fd783d",
     "true_breed": "British_Shorthair",
-    "created_utc": "2026-11-02T02:35:08.764621+00:00"
+    "created_utc": "2026-11-02T02:35:08.764621+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.184496+00:00"
   },
   {
     "status": "ok",
@@ -1365,7 +1585,12 @@
     "image_id": "British_Shorthair_63",
     "input_sha256": "31344bcee600a5ebfece72c80e26b80b1d60c9b188f0c204dd26e54255d35a3c",
     "true_breed": "British_Shorthair",
-    "created_utc": "2026-11-02T02:35:09.433536+00:00"
+    "created_utc": "2026-11-02T02:35:09.433536+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.187335+00:00"
   },
   {
     "status": "ok",
@@ -1397,7 +1622,12 @@
     "image_id": "British_Shorthair_223",
     "input_sha256": "f952cdf86ae4d4d9c7f349e8344898818a76651cfae713249801e406ca5e6986",
     "true_breed": "British_Shorthair",
-    "created_utc": "2026-11-02T02:35:10.100480+00:00"
+    "created_utc": "2026-11-02T02:35:10.100480+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.189340+00:00"
   },
   {
     "status": "ok",
@@ -1429,7 +1659,12 @@
     "image_id": "British_Shorthair_75",
     "input_sha256": "295a5260f8a0193a1873a12d314ef2966a9b6bf8fd489be19e815903a5c2d296",
     "true_breed": "British_Shorthair",
-    "created_utc": "2026-11-02T02:35:10.892807+00:00"
+    "created_utc": "2026-11-02T02:35:10.892807+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.191889+00:00"
   },
   {
     "status": "ok",
@@ -1461,7 +1696,12 @@
     "image_id": "British_Shorthair_230",
     "input_sha256": "7c462fb330a5b353483037c11f4968ea78f0c46658c27566d5710e17bc52eae2",
     "true_breed": "British_Shorthair",
-    "created_utc": "2026-11-02T02:35:11.582797+00:00"
+    "created_utc": "2026-11-02T02:35:11.582797+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.193901+00:00"
   },
   {
     "status": "ok",
@@ -1493,7 +1733,12 @@
     "image_id": "British_Shorthair_55",
     "input_sha256": "44e1d7cd4539f9097b46a79715dfd7a5368d6d507dc8b5470eda94ce8d56124d",
     "true_breed": "British_Shorthair",
-    "created_utc": "2026-11-02T02:35:12.255242+00:00"
+    "created_utc": "2026-11-02T02:35:12.255242+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.196898+00:00"
   },
   {
     "status": "ok",
@@ -1525,7 +1770,12 @@
     "image_id": "British_Shorthair_54",
     "input_sha256": "1ffe15ac447c3926372a6dc7155ae52b7068153d5773cbfd67b2667dfde35ee7",
     "true_breed": "British_Shorthair",
-    "created_utc": "2026-11-02T02:35:12.934834+00:00"
+    "created_utc": "2026-11-02T02:35:12.934834+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.198892+00:00"
   },
   {
     "status": "ok",
@@ -1557,7 +1807,12 @@
     "image_id": "Egyptian_Mau_221",
     "input_sha256": "480d27b3292b160dee72cb1f223078755c044d0773373c53a191eb5404d26b86",
     "true_breed": "Egyptian_Mau",
-    "created_utc": "2026-11-02T02:35:13.607398+00:00"
+    "created_utc": "2026-11-02T02:35:13.607398+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.200909+00:00"
   },
   {
     "status": "no_cat",
@@ -1571,7 +1826,12 @@
     "image_id": "Egyptian_Mau_44",
     "input_sha256": "519893ceb79307362905c1dfb829847756de1f5af48f18d3e42d9a69e2f05ddd",
     "true_breed": "Egyptian_Mau",
-    "created_utc": "2026-11-02T02:35:13.838448+00:00"
+    "created_utc": "2026-11-02T02:35:13.838448+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.203909+00:00"
   },
   {
     "status": "ok",
@@ -1603,7 +1863,12 @@
     "image_id": "Egyptian_Mau_87",
     "input_sha256": "0c468c5026e8ffb1a3df76f98665e05d8e59758d9bd1bba9fa87cb4e321bcc09",
     "true_breed": "Egyptian_Mau",
-    "created_utc": "2026-11-02T02:35:14.510675+00:00"
+    "created_utc": "2026-11-02T02:35:14.510675+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.205910+00:00"
   },
   {
     "status": "ok",
@@ -1635,7 +1900,12 @@
     "image_id": "Egyptian_Mau_63",
     "input_sha256": "41af2f3b63f5656eaf2581870458c9634805c88a7173f467cc237514c6e27649",
     "true_breed": "Egyptian_Mau",
-    "created_utc": "2026-11-02T02:35:15.189039+00:00"
+    "created_utc": "2026-11-02T02:35:15.189039+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.207909+00:00"
   },
   {
     "status": "ok",
@@ -1667,7 +1937,12 @@
     "image_id": "Egyptian_Mau_224",
     "input_sha256": "c2fcb2a7c7a8113ab9fb1759d4c05e6093ae77b3a6b7f6974e686de745ecaff1",
     "true_breed": "Egyptian_Mau",
-    "created_utc": "2026-11-02T02:35:15.964955+00:00"
+    "created_utc": "2026-11-02T02:35:15.964955+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.210904+00:00"
   },
   {
     "status": "ok",
@@ -1699,7 +1974,12 @@
     "image_id": "Egyptian_Mau_67",
     "input_sha256": "9cc820eca2e58dd9618284d0671f7b6e5fbce9eef100e102c9ff705fd7e56c79",
     "true_breed": "Egyptian_Mau",
-    "created_utc": "2026-11-02T02:35:16.755796+00:00"
+    "created_utc": "2026-11-02T02:35:16.755796+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.212911+00:00"
   },
   {
     "status": "ok",
@@ -1731,7 +2011,12 @@
     "image_id": "Egyptian_Mau_94",
     "input_sha256": "109d8f6711ee75638fac9f245f72eb5e87b0b9609b4b73b67b70b268216e5469",
     "true_breed": "Egyptian_Mau",
-    "created_utc": "2026-11-02T02:35:17.422099+00:00"
+    "created_utc": "2026-11-02T02:35:17.422099+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.215416+00:00"
   },
   {
     "status": "ok",
@@ -1763,7 +2048,12 @@
     "image_id": "Egyptian_Mau_6",
     "input_sha256": "564bc9c9bfcb417009b26fd87efcab6a1c7635c46646f1fb57ea387679161359",
     "true_breed": "Egyptian_Mau",
-    "created_utc": "2026-11-02T02:35:18.087410+00:00"
+    "created_utc": "2026-11-02T02:35:18.087410+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.217938+00:00"
   },
   {
     "status": "ok",
@@ -1795,7 +2085,12 @@
     "image_id": "Egyptian_Mau_213",
     "input_sha256": "c3f1515e3455f4b5eccb03271f395bbf72931a7f070ffcdc36a356efbdd94125",
     "true_breed": "Egyptian_Mau",
-    "created_utc": "2026-11-02T02:35:18.753781+00:00"
+    "created_utc": "2026-11-02T02:35:18.753781+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.219985+00:00"
   },
   {
     "status": "ok",
@@ -1827,7 +2122,12 @@
     "image_id": "Egyptian_Mau_5",
     "input_sha256": "d18892e011ee31f588a1b7ffb9c08d82c2e415f52469ded903a910b53b9db55c",
     "true_breed": "Egyptian_Mau",
-    "created_utc": "2026-11-02T02:35:19.440913+00:00"
+    "created_utc": "2026-11-02T02:35:19.440913+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.221985+00:00"
   },
   {
     "status": "ok",
@@ -1859,7 +2159,12 @@
     "image_id": "Maine_Coon_254",
     "input_sha256": "d11ae93dc76a31f4a5d66f3b0ffd706501c3cf04cbd853dea89ed7d28be0fcd7",
     "true_breed": "Maine_Coon",
-    "created_utc": "2026-11-02T02:35:20.108653+00:00"
+    "created_utc": "2026-11-02T02:35:20.108653+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.223985+00:00"
   },
   {
     "status": "ok",
@@ -1891,7 +2196,12 @@
     "image_id": "Maine_Coon_83",
     "input_sha256": "91f552b31b90729b380d3b4836c1494447e15be640314f271f16512a0c0cc86c",
     "true_breed": "Maine_Coon",
-    "created_utc": "2026-11-02T02:35:20.788420+00:00"
+    "created_utc": "2026-11-02T02:35:20.788420+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.226985+00:00"
   },
   {
     "status": "ok",
@@ -1923,7 +2233,12 @@
     "image_id": "Maine_Coon_68",
     "input_sha256": "46adbc7b8bed2debcbc66be6083536d972716945f51ab55ba851b6555e3027bd",
     "true_breed": "Maine_Coon",
-    "created_utc": "2026-11-02T02:35:21.568450+00:00"
+    "created_utc": "2026-11-02T02:35:21.568450+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.228985+00:00"
   },
   {
     "status": "ok",
@@ -1955,7 +2270,12 @@
     "image_id": "Maine_Coon_58",
     "input_sha256": "8c3595c73c1613eefe66a2f45cdcc320613e21cc35b5421b8c81115c01b37bf7",
     "true_breed": "Maine_Coon",
-    "created_utc": "2026-11-02T02:35:22.237369+00:00"
+    "created_utc": "2026-11-02T02:35:22.237369+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.231985+00:00"
   },
   {
     "status": "ok",
@@ -1987,7 +2307,12 @@
     "image_id": "Maine_Coon_71",
     "input_sha256": "a7a3bdd4093841460f9fe56919987650312424f8736771a589b2da9783be31ec",
     "true_breed": "Maine_Coon",
-    "created_utc": "2026-11-02T02:35:22.913339+00:00"
+    "created_utc": "2026-11-02T02:35:22.913339+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.234487+00:00"
   },
   {
     "status": "ok",
@@ -2019,7 +2344,12 @@
     "image_id": "Maine_Coon_8",
     "input_sha256": "9f7c6c15d4d7963f62138a91b06b0ea842de48b0b6d1b388e1838bc6e5e122ed",
     "true_breed": "Maine_Coon",
-    "created_utc": "2026-11-02T02:35:23.582087+00:00"
+    "created_utc": "2026-11-02T02:35:23.582087+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.236488+00:00"
   },
   {
     "status": "ok",
@@ -2051,7 +2381,12 @@
     "image_id": "Maine_Coon_92",
     "input_sha256": "5e7a69e7d72558d21c8a863d3dfc42fee7e25011c402de37778ecf32013f1feb",
     "true_breed": "Maine_Coon",
-    "created_utc": "2026-11-02T02:35:24.252547+00:00"
+    "created_utc": "2026-11-02T02:35:24.252547+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.238486+00:00"
   },
   {
     "status": "ok",
@@ -2083,7 +2418,12 @@
     "image_id": "Maine_Coon_9",
     "input_sha256": "8e02bc8b875ccbcec67c997a5dc7523db406d96a5dc74b6de3c47156a58aa285",
     "true_breed": "Maine_Coon",
-    "created_utc": "2026-11-02T02:35:24.926310+00:00"
+    "created_utc": "2026-11-02T02:35:24.926310+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.241487+00:00"
   },
   {
     "status": "ok",
@@ -2115,7 +2455,12 @@
     "image_id": "Maine_Coon_2",
     "input_sha256": "6bb22b5b6b1e3d1abc65b25b43302d8fe91b2ed41d2dbd2156556f517fdf8043",
     "true_breed": "Maine_Coon",
-    "created_utc": "2026-11-02T02:35:25.592546+00:00"
+    "created_utc": "2026-11-02T02:35:25.592546+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.243489+00:00"
   },
   {
     "status": "ok",
@@ -2147,7 +2492,12 @@
     "image_id": "Maine_Coon_87",
     "input_sha256": "6adb942f899926eeef209d1d1f42d3d217777ee19b210a0064c680c05abb07fb",
     "true_breed": "Maine_Coon",
-    "created_utc": "2026-11-02T02:35:26.264423+00:00"
+    "created_utc": "2026-11-02T02:35:26.264423+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.245481+00:00"
   },
   {
     "status": "ok",
@@ -2179,7 +2529,12 @@
     "image_id": "Persian_26",
     "input_sha256": "bd69545c0e1d4a2510b71bd3e28cd36649fe57f554b4d0aa7422c7a0fbce1676",
     "true_breed": "Persian",
-    "created_utc": "2026-11-02T02:35:27.062404+00:00"
+    "created_utc": "2026-11-02T02:35:27.062404+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.248489+00:00"
   },
   {
     "status": "no_cat",
@@ -2193,7 +2548,12 @@
     "image_id": "Persian_85",
     "input_sha256": "3deba35a24517ce4dc31020ed7f27a6424d887e4f7afb6094997bcdb3ffeab3e",
     "true_breed": "Persian",
-    "created_utc": "2026-11-02T02:35:27.281513+00:00"
+    "created_utc": "2026-11-02T02:35:27.281513+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.250487+00:00"
   },
   {
     "status": "ok",
@@ -2225,7 +2585,12 @@
     "image_id": "Persian_264",
     "input_sha256": "3fa1e77c197aebc377bc690b9cd3d810adc2e1d32c496ee789f269ff77338b83",
     "true_breed": "Persian",
-    "created_utc": "2026-11-02T02:35:27.950145+00:00"
+    "created_utc": "2026-11-02T02:35:27.950145+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.253216+00:00"
   },
   {
     "status": "ok",
@@ -2257,7 +2622,12 @@
     "image_id": "Persian_95",
     "input_sha256": "6c0c90ac03edf011872f3c68e7b137c42418e3ad69453b950b1212378fef5e8a",
     "true_breed": "Persian",
-    "created_utc": "2026-11-02T02:35:28.626862+00:00"
+    "created_utc": "2026-11-02T02:35:28.626862+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.255221+00:00"
   },
   {
     "status": "ok",
@@ -2289,7 +2659,12 @@
     "image_id": "Persian_67",
     "input_sha256": "38f0a76c9bfcad1d40b9e539fb204dcdc40cc305323edf3b702c23368c813976",
     "true_breed": "Persian",
-    "created_utc": "2026-11-02T02:35:29.304569+00:00"
+    "created_utc": "2026-11-02T02:35:29.304569+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.258222+00:00"
   },
   {
     "status": "ok",
@@ -2321,7 +2696,12 @@
     "image_id": "Persian_74",
     "input_sha256": "070e00d7fb1df1042a5b78c0f51a8ab8958b9a49f65715cd5cadfc3df41ded50",
     "true_breed": "Persian",
-    "created_utc": "2026-11-02T02:35:29.977503+00:00"
+    "created_utc": "2026-11-02T02:35:29.977503+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.260221+00:00"
   },
   {
     "status": "ok",
@@ -2353,7 +2733,12 @@
     "image_id": "Persian_6",
     "input_sha256": "3eea1c479cc87406c4a2a6078f1133a7e6959de5c78bb140887715fcb9d44a68",
     "true_breed": "Persian",
-    "created_utc": "2026-11-02T02:35:30.653185+00:00"
+    "created_utc": "2026-11-02T02:35:30.653185+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.262219+00:00"
   },
   {
     "status": "ok",
@@ -2385,7 +2770,12 @@
     "image_id": "Persian_270",
     "input_sha256": "7a893062f632c49f3bfa4c2e92b4f11b1b5ddab56d6449176be2875bc770ffbf",
     "true_breed": "Persian",
-    "created_utc": "2026-11-02T02:35:31.326483+00:00"
+    "created_utc": "2026-11-02T02:35:31.326483+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.265221+00:00"
   },
   {
     "status": "ok",
@@ -2417,7 +2807,12 @@
     "image_id": "Persian_60",
     "input_sha256": "54b89c8ef509fe2869122c0781510341b9d21873134ec679f6c6f25b2299cdc5",
     "true_breed": "Persian",
-    "created_utc": "2026-11-02T02:35:31.994998+00:00"
+    "created_utc": "2026-11-02T02:35:31.994998+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.267220+00:00"
   },
   {
     "status": "ok",
@@ -2449,7 +2844,12 @@
     "image_id": "Persian_59",
     "input_sha256": "4c52fe0fb62c89a99a62d64a94ba143d330aeacceb86d454709504994346d346",
     "true_breed": "Persian",
-    "created_utc": "2026-11-02T02:35:32.676690+00:00"
+    "created_utc": "2026-11-02T02:35:32.676690+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.270222+00:00"
   },
   {
     "status": "ok",
@@ -2481,7 +2881,12 @@
     "image_id": "Ragdoll_259",
     "input_sha256": "0638448e4af57ec4b9af830d08834a09ecf3df03041e9c08bd13566b4ce308e1",
     "true_breed": "Ragdoll",
-    "created_utc": "2026-11-02T02:35:33.470506+00:00"
+    "created_utc": "2026-11-02T02:35:33.470506+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.272227+00:00"
   },
   {
     "status": "ok",
@@ -2513,7 +2918,12 @@
     "image_id": "Ragdoll_263",
     "input_sha256": "73ed6039b76f55a665cc86e6a62391a8450dace9a8f183070328bd7d486a5227",
     "true_breed": "Ragdoll",
-    "created_utc": "2026-11-02T02:35:34.169721+00:00"
+    "created_utc": "2026-11-02T02:35:34.169721+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.274225+00:00"
   },
   {
     "status": "ok",
@@ -2545,7 +2955,12 @@
     "image_id": "Ragdoll_69",
     "input_sha256": "e6380e9f2427518e6da1fdee57067188456068d86ab7d41c039db45f5762e354",
     "true_breed": "Ragdoll",
-    "created_utc": "2026-11-02T02:35:34.851383+00:00"
+    "created_utc": "2026-11-02T02:35:34.851383+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.277226+00:00"
   },
   {
     "status": "ok",
@@ -2577,7 +2992,12 @@
     "image_id": "Ragdoll_205",
     "input_sha256": "67a14bea0208b798231d29e4d466af5ef30a32d9e1df34b4d24eeafb990172f0",
     "true_breed": "Ragdoll",
-    "created_utc": "2026-11-02T02:35:35.529157+00:00"
+    "created_utc": "2026-11-02T02:35:35.529157+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.279235+00:00"
   },
   {
     "status": "ok",
@@ -2609,7 +3029,12 @@
     "image_id": "Ragdoll_258",
     "input_sha256": "78c51ae79f73bec5304809049205c82955b553f33badf997e48ae97aa1634745",
     "true_breed": "Ragdoll",
-    "created_utc": "2026-11-02T02:35:36.197796+00:00"
+    "created_utc": "2026-11-02T02:35:36.197796+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.281634+00:00"
   },
   {
     "status": "ok",
@@ -2641,7 +3066,12 @@
     "image_id": "Ragdoll_84",
     "input_sha256": "b1a9215bb9814533d7eb0f2421fb652894428e1d8187e5799ad7b8b244f7f9af",
     "true_breed": "Ragdoll",
-    "created_utc": "2026-11-02T02:35:36.869865+00:00"
+    "created_utc": "2026-11-02T02:35:36.869865+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.284627+00:00"
   },
   {
     "status": "ok",
@@ -2673,7 +3103,12 @@
     "image_id": "Ragdoll_33",
     "input_sha256": "b26a543edbc5a8e9f7c25cf2494dae51d5a8e2152fa3bbd10bd081ddf065e970",
     "true_breed": "Ragdoll",
-    "created_utc": "2026-11-02T02:35:37.547491+00:00"
+    "created_utc": "2026-11-02T02:35:37.547491+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.287156+00:00"
   },
   {
     "status": "ok",
@@ -2705,7 +3140,12 @@
     "image_id": "Ragdoll_49",
     "input_sha256": "f9d84c85a5d0262fd5d9150680307c5058ea76b2a8f5569504d80e4ec145f5fe",
     "true_breed": "Ragdoll",
-    "created_utc": "2026-11-02T02:35:38.345657+00:00"
+    "created_utc": "2026-11-02T02:35:38.345657+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.289164+00:00"
   },
   {
     "status": "ok",
@@ -2737,7 +3177,12 @@
     "image_id": "Ragdoll_91",
     "input_sha256": "4de8214668ef14a4f7b5cf0c203fddef58b04a46753fea5c5808935371065c37",
     "true_breed": "Ragdoll",
-    "created_utc": "2026-11-02T02:35:39.015899+00:00"
+    "created_utc": "2026-11-02T02:35:39.015899+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.291161+00:00"
   },
   {
     "status": "ok",
@@ -2769,7 +3214,12 @@
     "image_id": "Ragdoll_52",
     "input_sha256": "fde7690be09604b74514ef25635cabfa4b189aec686cd6b966229e75a7a8019a",
     "true_breed": "Ragdoll",
-    "created_utc": "2026-11-02T02:35:39.696204+00:00"
+    "created_utc": "2026-11-02T02:35:39.696204+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.293723+00:00"
   },
   {
     "status": "ok",
@@ -2801,7 +3251,12 @@
     "image_id": "Russian_Blue_9",
     "input_sha256": "9599ff5bb195aacb3716cb3a36450e810fa47a5ed5b7050be894bea257d0231a",
     "true_breed": "Russian_Blue",
-    "created_utc": "2026-11-02T02:35:40.364798+00:00"
+    "created_utc": "2026-11-02T02:35:40.364798+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.296723+00:00"
   },
   {
     "status": "ok",
@@ -2833,7 +3288,12 @@
     "image_id": "Russian_Blue_99",
     "input_sha256": "d0eeca505f55c34baa01bb8b614d33c16f222a163df76780846bca2f787a79aa",
     "true_breed": "Russian_Blue",
-    "created_utc": "2026-11-02T02:35:41.036768+00:00"
+    "created_utc": "2026-11-02T02:35:41.036768+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.298729+00:00"
   },
   {
     "status": "ok",
@@ -2865,7 +3325,12 @@
     "image_id": "Russian_Blue_83",
     "input_sha256": "1421f3e5c07e6d911a36ddb8540132cfd3de9ed24f6cfd645857e762244d5ac8",
     "true_breed": "Russian_Blue",
-    "created_utc": "2026-11-02T02:35:41.710345+00:00"
+    "created_utc": "2026-11-02T02:35:41.710345+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.300728+00:00"
   },
   {
     "status": "ok",
@@ -2897,7 +3362,12 @@
     "image_id": "Russian_Blue_38",
     "input_sha256": "5eeff0f5ea2a1c57228d8142de93ff5648d5ee272954101ca4c0961652a4cd2b",
     "true_breed": "Russian_Blue",
-    "created_utc": "2026-11-02T02:35:42.390438+00:00"
+    "created_utc": "2026-11-02T02:35:42.390438+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.303733+00:00"
   },
   {
     "status": "ok",
@@ -2929,7 +3399,12 @@
     "image_id": "Russian_Blue_207",
     "input_sha256": "a926bc15835a58f4a3dc6a038299228fe5238af6066a2487f92720ae6071fa2a",
     "true_breed": "Russian_Blue",
-    "created_utc": "2026-11-02T02:35:43.169160+00:00"
+    "created_utc": "2026-11-02T02:35:43.169160+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.305741+00:00"
   },
   {
     "status": "ok",
@@ -2961,7 +3436,12 @@
     "image_id": "Russian_Blue_220",
     "input_sha256": "215b909f88d3b77e3bc9cad95c20b24f48e2f746a2f036543a39dcac64e53c33",
     "true_breed": "Russian_Blue",
-    "created_utc": "2026-11-02T02:35:43.834721+00:00"
+    "created_utc": "2026-11-02T02:35:43.834721+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.308734+00:00"
   },
   {
     "status": "ok",
@@ -2993,7 +3473,12 @@
     "image_id": "Russian_Blue_239",
     "input_sha256": "83374ea1a4768d74491d378220dd33cf2c40fb706aa7678d0010b8436fe4a6de",
     "true_breed": "Russian_Blue",
-    "created_utc": "2026-11-02T02:35:44.497852+00:00"
+    "created_utc": "2026-11-02T02:35:44.497852+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.310734+00:00"
   },
   {
     "status": "no_cat",
@@ -3007,7 +3492,12 @@
     "image_id": "Russian_Blue_264",
     "input_sha256": "cbcb4e266831a08ca77193450cf53786066ecd4fe020c11e4a75d8349cf33605",
     "true_breed": "Russian_Blue",
-    "created_utc": "2026-11-02T02:35:44.714230+00:00"
+    "created_utc": "2026-11-02T02:35:44.714230+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.313374+00:00"
   },
   {
     "status": "ok",
@@ -3039,7 +3529,12 @@
     "image_id": "Russian_Blue_32",
     "input_sha256": "f0cdc066cc33f64560f7edcf3f8e669ff7fa5b3cf3e0fdd147c8d0b0872194ff",
     "true_breed": "Russian_Blue",
-    "created_utc": "2026-11-02T02:35:45.389947+00:00"
+    "created_utc": "2026-11-02T02:35:45.389947+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.315886+00:00"
   },
   {
     "status": "ok",
@@ -3071,7 +3566,12 @@
     "image_id": "Russian_Blue_35",
     "input_sha256": "ae2362f5095edd318f9dc89bdf0c4fd149a1f5e060ce0f0bd920c3d507a60ae9",
     "true_breed": "Russian_Blue",
-    "created_utc": "2026-11-02T02:35:46.067452+00:00"
+    "created_utc": "2026-11-02T02:35:46.067452+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.317892+00:00"
   },
   {
     "status": "ok",
@@ -3103,7 +3603,12 @@
     "image_id": "Siamese_209",
     "input_sha256": "2969aeb9f171a02cb207c29d4e453f0719418bfde638063ef9d40ff9019a2768",
     "true_breed": "Siamese",
-    "created_utc": "2026-11-02T02:35:46.740365+00:00"
+    "created_utc": "2026-11-02T02:35:46.740365+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.320892+00:00"
   },
   {
     "status": "ok",
@@ -3135,7 +3640,12 @@
     "image_id": "Siamese_73",
     "input_sha256": "96443d1631539c3e69ae29c81cc60a68f10157452e1c15828b6225dc632c6016",
     "true_breed": "Siamese",
-    "created_utc": "2026-11-02T02:35:47.411091+00:00"
+    "created_utc": "2026-11-02T02:35:47.411091+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.322891+00:00"
   },
   {
     "status": "ok",
@@ -3167,7 +3677,12 @@
     "image_id": "Siamese_37",
     "input_sha256": "b3d314a5a4fb83b5cbbe0c9957ea1ceecc37c2d4ae2f6b3de45ceb75e3f6a3d2",
     "true_breed": "Siamese",
-    "created_utc": "2026-11-02T02:35:48.084521+00:00"
+    "created_utc": "2026-11-02T02:35:48.084521+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.325892+00:00"
   },
   {
     "status": "ok",
@@ -3199,7 +3714,12 @@
     "image_id": "Siamese_44",
     "input_sha256": "0e459d8dbff5157e65d68dcb3b359e161bd7167959ee209fd1403cd8882100a0",
     "true_breed": "Siamese",
-    "created_utc": "2026-11-02T02:35:48.878006+00:00"
+    "created_utc": "2026-11-02T02:35:48.878006+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.327892+00:00"
   },
   {
     "status": "no_cat",
@@ -3213,7 +3733,12 @@
     "image_id": "Siamese_6",
     "input_sha256": "9faca29d518aab29f2c43a7e812a0bff2a71ff419bc6f22637315586e8408dae",
     "true_breed": "Siamese",
-    "created_utc": "2026-11-02T02:35:49.091399+00:00"
+    "created_utc": "2026-11-02T02:35:49.091399+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.329890+00:00"
   },
   {
     "status": "no_cat",
@@ -3227,7 +3752,12 @@
     "image_id": "Siamese_55",
     "input_sha256": "42c0b106dffd5a8227f2f2cde7235b8ef78cc9927aa2a1767515c9ffcb1cc1e7",
     "true_breed": "Siamese",
-    "created_utc": "2026-11-02T02:35:49.306768+00:00"
+    "created_utc": "2026-11-02T02:35:49.306768+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.332892+00:00"
   },
   {
     "status": "ok",
@@ -3259,7 +3789,12 @@
     "image_id": "Siamese_247",
     "input_sha256": "aa14e79dd224142f12f8826f361ca9a1e70340c728f689d35d93e80bcd0826be",
     "true_breed": "Siamese",
-    "created_utc": "2026-11-02T02:35:50.095554+00:00"
+    "created_utc": "2026-11-02T02:35:50.095554+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.334894+00:00"
   },
   {
     "status": "ok",
@@ -3291,7 +3826,12 @@
     "image_id": "Siamese_216",
     "input_sha256": "6eb44d5fdc77908d7104ecaf21bd961cbd14dc1c65068dc98969490631b2c937",
     "true_breed": "Siamese",
-    "created_utc": "2026-11-02T02:35:50.886247+00:00"
+    "created_utc": "2026-11-02T02:35:50.886247+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.336890+00:00"
   },
   {
     "status": "no_cat",
@@ -3305,7 +3845,12 @@
     "image_id": "Siamese_5",
     "input_sha256": "ea6f13fa04aedfc512f9fcce5c21c8759dbbb7d1e8e92c354b5c25b2b653cdc9",
     "true_breed": "Siamese",
-    "created_utc": "2026-11-02T02:35:51.099095+00:00"
+    "created_utc": "2026-11-02T02:35:51.099095+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.339891+00:00"
   },
   {
     "status": "ok",
@@ -3337,7 +3882,12 @@
     "image_id": "Siamese_88",
     "input_sha256": "8a56f2e7d8f78f1099aefd8a34276ba95e03c02a62b20ad74750168494b95c50",
     "true_breed": "Siamese",
-    "created_utc": "2026-11-02T02:35:51.774913+00:00"
+    "created_utc": "2026-11-02T02:35:51.774913+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.342892+00:00"
   },
   {
     "status": "no_cat",
@@ -3351,7 +3901,12 @@
     "image_id": "Sphynx_37",
     "input_sha256": "4fcc56da883456bdaf8faa7b2561fe0cec77b46e6cc8ffd11864f13192fd6dfe",
     "true_breed": "Sphynx",
-    "created_utc": "2026-11-02T02:35:51.992841+00:00"
+    "created_utc": "2026-11-02T02:35:51.992841+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.344892+00:00"
   },
   {
     "status": "no_cat",
@@ -3365,7 +3920,12 @@
     "image_id": "Sphynx_243",
     "input_sha256": "e21c33e6630543d5e9089557bbe22d804dc2a0d7c35b66fc73b99e498074ca07",
     "true_breed": "Sphynx",
-    "created_utc": "2026-11-02T02:35:52.210564+00:00"
+    "created_utc": "2026-11-02T02:35:52.210564+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.346892+00:00"
   },
   {
     "status": "no_cat",
@@ -3379,7 +3939,12 @@
     "image_id": "Sphynx_95",
     "input_sha256": "9bf367b46fe1a4a7820d587b0c836b4e7c879c46eddc16e48ef4a0a9cb3d53b5",
     "true_breed": "Sphynx",
-    "created_utc": "2026-11-02T02:35:52.427796+00:00"
+    "created_utc": "2026-11-02T02:35:52.427796+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.349892+00:00"
   },
   {
     "status": "ok",
@@ -3411,7 +3976,12 @@
     "image_id": "Sphynx_96",
     "input_sha256": "5a60b378980f386aefb0bfac988d89b08bc0dd46b23397a16083abe76d3b39cb",
     "true_breed": "Sphynx",
-    "created_utc": "2026-11-02T02:35:53.104256+00:00"
+    "created_utc": "2026-11-02T02:35:53.104256+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.351891+00:00"
   },
   {
     "status": "ok",
@@ -3443,7 +4013,12 @@
     "image_id": "Sphynx_65",
     "input_sha256": "858bbd8bc5347e1ee416467e4345f35163ec0235637d833692ead4d7bf6b03cf",
     "true_breed": "Sphynx",
-    "created_utc": "2026-11-02T02:35:53.777283+00:00"
+    "created_utc": "2026-11-02T02:35:53.777283+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.354892+00:00"
   },
   {
     "status": "ok",
@@ -3475,7 +4050,12 @@
     "image_id": "Sphynx_46",
     "input_sha256": "0fb969efb99b4ff1d2797a61fd7892dfc8f6bf80a988f2292f3004b27205cbca",
     "true_breed": "Sphynx",
-    "created_utc": "2026-11-02T02:35:54.452237+00:00"
+    "created_utc": "2026-11-02T02:35:54.452237+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.356892+00:00"
   },
   {
     "status": "ok",
@@ -3507,7 +4087,12 @@
     "image_id": "Sphynx_235",
     "input_sha256": "f58ea342e0c5ba16741e03eca52a2f559efa6e0fb325420b0d66d36ff86435a6",
     "true_breed": "Sphynx",
-    "created_utc": "2026-11-02T02:35:55.132737+00:00"
+    "created_utc": "2026-11-02T02:35:55.132737+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.358892+00:00"
   },
   {
     "status": "no_cat",
@@ -3521,7 +4106,12 @@
     "image_id": "Sphynx_47",
     "input_sha256": "7192ca3b519d9292b416a148e7def22643af9f5d157b660159ef3d40de511a45",
     "true_breed": "Sphynx",
-    "created_utc": "2026-11-02T02:35:55.347782+00:00"
+    "created_utc": "2026-11-02T02:35:55.347782+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.361892+00:00"
   },
   {
     "status": "no_cat",
@@ -3535,7 +4125,12 @@
     "image_id": "Sphynx_82",
     "input_sha256": "614d47a6930689b2db40d2ecc6d36bd24050981aeefed82de25ade32281d1787",
     "true_breed": "Sphynx",
-    "created_utc": "2026-11-02T02:35:55.567904+00:00"
+    "created_utc": "2026-11-02T02:35:55.567904+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.363892+00:00"
   },
   {
     "status": "ok",
@@ -3567,6 +4162,11 @@
     "image_id": "Sphynx_233",
     "input_sha256": "16637e8ebfa5285eeba60b21bac83fe8869509fd0105d1ddf1cf45894fe6e701",
     "true_breed": "Sphynx",
-    "created_utc": "2026-11-02T02:35:56.361726+00:00"
+    "created_utc": "2026-11-02T02:35:56.361726+00:00",
+    "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+    "prediction_origin": "reused",
+    "fresh_run": false,
+    "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+    "last_reused_utc": "2026-11-02T03:08:29.365890+00:00"
   }
 ]

@@ -1,0 +1,20 @@
+{
+  "created_utc": "2026-11-02T03:07:08.814586+00:00",
+  "actual_source_files_verified": 120,
+  "model_inference_rerun": false,
+  "schema_status_changes": 0,
+  "routes": {
+    "traditional": {
+      "records_verified": 120,
+      "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+      "metrics_unchanged": true,
+      "original_run_records": "pre-provenance/"
+    },
+    "vlm": {
+      "records_verified": 120,
+      "run_fingerprint": "f3a892688376a8376ca0f3e30cd7c6d3af04e6e3ea4e9409dfb6533c08dc883c",
+      "metrics_unchanged": true,
+      "original_run_records": "pre-provenance/"
+    }
+  }
+}

@@ -1,0 +1,419 @@
+TASK START evaluation; logs=artifacts/run-logs/20261102T030829Z-evaluation-e310bbb9
+REUSE 1/120 Abyssinian_96; measured input and model identity match
+REUSE 2/120 Abyssinian_213; measured input and model identity match
+REUSE 3/120 Abyssinian_217; measured input and model identity match
+REUSE 4/120 Abyssinian_52; measured input and model identity match
+REUSE 5/120 Abyssinian_207; measured input and model identity match
+REUSE 6/120 Abyssinian_90; measured input and model identity match
+REUSE 7/120 Abyssinian_205; measured input and model identity match
+REUSE 8/120 Abyssinian_206; measured input and model identity match
+REUSE 9/120 Abyssinian_86; measured input and model identity match
+REUSE 10/120 Abyssinian_26; measured input and model identity match
+REUSE 11/120 Bengal_40; measured input and model identity match
+REUSE 12/120 Bengal_47; measured input and model identity match
+REUSE 13/120 Bengal_23; measured input and model identity match
+REUSE 14/120 Bengal_25; measured input and model identity match
+REUSE 15/120 Bengal_60; measured input and model identity match
+REUSE 16/120 Bengal_73; measured input and model identity match
+REUSE 17/120 Bengal_65; measured input and model identity match
+REUSE 18/120 Bengal_20; measured input and model identity match
+REUSE 19/120 Bengal_24; measured input and model identity match
+REUSE 20/120 Bengal_80; measured input and model identity match
+REUSE 21/120 Birman_1; measured input and model identity match
+REUSE 22/120 Birman_5; measured input and model identity match
+REUSE 23/120 Birman_192; measured input and model identity match
+REUSE 24/120 Birman_65; measured input and model identity match
+REUSE 25/120 Birman_53; measured input and model identity match
+REUSE 26/120 Birman_201; measured input and model identity match
+REUSE 27/120 Birman_66; measured input and model identity match
+REUSE 28/120 Birman_3; measured input and model identity match
+REUSE 29/120 Birman_88; measured input and model identity match
+REUSE 30/120 Birman_81; measured input and model identity match
+REUSE 31/120 Bombay_54; measured input and model identity match
+REUSE 32/120 Bombay_42; measured input and model identity match
+REUSE 33/120 Bombay_34; measured input and model identity match
+REUSE 34/120 Bombay_50; measured input and model identity match
+REUSE 35/120 Bombay_53; measured input and model identity match
+REUSE 36/120 Bombay_201; measured input and model identity match
+REUSE 37/120 Bombay_30; measured input and model identity match
+REUSE 38/120 Bombay_41; measured input and model identity match
+REUSE 39/120 Bombay_63; measured input and model identity match
+REUSE 40/120 Bombay_5; measured input and model identity match
+REUSE 41/120 British_Shorthair_41; measured input and model identity match
+REUSE 42/120 British_Shorthair_29; measured input and model identity match
+REUSE 43/120 British_Shorthair_56; measured input and model identity match
+REUSE 44/120 British_Shorthair_50; measured input and model identity match
+REUSE 45/120 British_Shorthair_63; measured input and model identity match
+REUSE 46/120 British_Shorthair_223; measured input and model identity match
+REUSE 47/120 British_Shorthair_75; measured input and model identity match
+REUSE 48/120 British_Shorthair_230; measured input and model identity match
+REUSE 49/120 British_Shorthair_55; measured input and model identity match
+REUSE 50/120 British_Shorthair_54; measured input and model identity match
+REUSE 51/120 Egyptian_Mau_221; measured input and model identity match
+REUSE 52/120 Egyptian_Mau_44; measured input and model identity match
+REUSE 53/120 Egyptian_Mau_87; measured input and model identity match
+REUSE 54/120 Egyptian_Mau_63; measured input and model identity match
+REUSE 55/120 Egyptian_Mau_224; measured input and model identity match
+REUSE 56/120 Egyptian_Mau_67; measured input and model identity match
+REUSE 57/120 Egyptian_Mau_94; measured input and model identity match
+REUSE 58/120 Egyptian_Mau_6; measured input and model identity match
+REUSE 59/120 Egyptian_Mau_213; measured input and model identity match
+REUSE 60/120 Egyptian_Mau_5; measured input and model identity match
+REUSE 61/120 Maine_Coon_254; measured input and model identity match
+REUSE 62/120 Maine_Coon_83; measured input and model identity match
+REUSE 63/120 Maine_Coon_68; measured input and model identity match
+REUSE 64/120 Maine_Coon_58; measured input and model identity match
+REUSE 65/120 Maine_Coon_71; measured input and model identity match
+REUSE 66/120 Maine_Coon_8; measured input and model identity match
+REUSE 67/120 Maine_Coon_92; measured input and model identity match
+REUSE 68/120 Maine_Coon_9; measured input and model identity match
+REUSE 69/120 Maine_Coon_2; measured input and model identity match
+REUSE 70/120 Maine_Coon_87; measured input and model identity match
+REUSE 71/120 Persian_26; measured input and model identity match
+REUSE 72/120 Persian_85; measured input and model identity match
+REUSE 73/120 Persian_264; measured input and model identity match
+REUSE 74/120 Persian_95; measured input and model identity match
+REUSE 75/120 Persian_67; measured input and model identity match
+REUSE 76/120 Persian_74; measured input and model identity match
+REUSE 77/120 Persian_6; measured input and model identity match
+REUSE 78/120 Persian_270; measured input and model identity match
+REUSE 79/120 Persian_60; measured input and model identity match
+REUSE 80/120 Persian_59; measured input and model identity match
+REUSE 81/120 Ragdoll_259; measured input and model identity match
+REUSE 82/120 Ragdoll_263; measured input and model identity match
+REUSE 83/120 Ragdoll_69; measured input and model identity match
+REUSE 84/120 Ragdoll_205; measured input and model identity match
+REUSE 85/120 Ragdoll_258; measured input and model identity match
+REUSE 86/120 Ragdoll_84; measured input and model identity match
+REUSE 87/120 Ragdoll_33; measured input and model identity match
+REUSE 88/120 Ragdoll_49; measured input and model identity match
+REUSE 89/120 Ragdoll_91; measured input and model identity match
+REUSE 90/120 Ragdoll_52; measured input and model identity match
+REUSE 91/120 Russian_Blue_9; measured input and model identity match
+REUSE 92/120 Russian_Blue_99; measured input and model identity match
+REUSE 93/120 Russian_Blue_83; measured input and model identity match
+REUSE 94/120 Russian_Blue_38; measured input and model identity match
+REUSE 95/120 Russian_Blue_207; measured input and model identity match
+REUSE 96/120 Russian_Blue_220; measured input and model identity match
+REUSE 97/120 Russian_Blue_239; measured input and model identity match
+REUSE 98/120 Russian_Blue_264; measured input and model identity match
+REUSE 99/120 Russian_Blue_32; measured input and model identity match
+REUSE 100/120 Russian_Blue_35; measured input and model identity match
+REUSE 101/120 Siamese_209; measured input and model identity match
+REUSE 102/120 Siamese_73; measured input and model identity match
+REUSE 103/120 Siamese_37; measured input and model identity match
+REUSE 104/120 Siamese_44; measured input and model identity match
+REUSE 105/120 Siamese_6; measured input and model identity match
+REUSE 106/120 Siamese_55; measured input and model identity match
+REUSE 107/120 Siamese_247; measured input and model identity match
+REUSE 108/120 Siamese_216; measured input and model identity match
+REUSE 109/120 Siamese_5; measured input and model identity match
+REUSE 110/120 Siamese_88; measured input and model identity match
+REUSE 111/120 Sphynx_37; measured input and model identity match
+REUSE 112/120 Sphynx_243; measured input and model identity match
+REUSE 113/120 Sphynx_95; measured input and model identity match
+REUSE 114/120 Sphynx_96; measured input and model identity match
+REUSE 115/120 Sphynx_65; measured input and model identity match
+REUSE 116/120 Sphynx_46; measured input and model identity match
+REUSE 117/120 Sphynx_235; measured input and model identity match
+REUSE 118/120 Sphynx_47; measured input and model identity match
+REUSE 119/120 Sphynx_82; measured input and model identity match
+REUSE 120/120 Sphynx_233; measured input and model identity match
+{
+  "count": 120,
+  "correct": 88,
+  "accuracy": 0.7333333333333333,
+  "macro_f1": 0.7781915238184588,
+  "status_counts": {
+    "ok": 105,
+    "no_cat": 15
+  },
+  "per_class": {
+    "Abyssinian": {
+      "support": 10,
+      "precision": 0.7272727272727273,
+      "recall": 0.8,
+      "f1": 0.761904761904762
+    },
+    "Bengal": {
+      "support": 10,
+      "precision": 0.8181818181818182,
+      "recall": 0.9,
+      "f1": 0.8571428571428572
+    },
+    "Birman": {
+      "support": 10,
+      "precision": 0.7272727272727273,
+      "recall": 0.8,
+      "f1": 0.761904761904762
+    },
+    "Bombay": {
+      "support": 10,
+      "precision": 0.75,
+      "recall": 0.9,
+      "f1": 0.8181818181818182
+    },
+    "British_Shorthair": {
+      "support": 10,
+      "precision": 1.0,
+      "recall": 0.6,
+      "f1": 0.7499999999999999
+    },
+    "Egyptian_Mau": {
+      "support": 10,
+      "precision": 1.0,
+      "recall": 0.7,
+      "f1": 0.8235294117647058
+    },
+    "Maine_Coon": {
+      "support": 10,
+      "precision": 0.9,
+      "recall": 0.9,
+      "f1": 0.9
+    },
+    "Persian": {
+      "support": 10,
+      "precision": 0.8888888888888888,
+      "recall": 0.8,
+      "f1": 0.8421052631578948
+    },
+    "Ragdoll": {
+      "support": 10,
+      "precision": 0.75,
+      "recall": 0.6,
+      "f1": 0.6666666666666665
+    },
+    "Russian_Blue": {
+      "support": 10,
+      "precision": 0.75,
+      "recall": 0.6,
+      "f1": 0.6666666666666665
+    },
+    "Siamese": {
+      "support": 10,
+      "precision": 1.0,
+      "recall": 0.7,
+      "f1": 0.8235294117647058
+    },
+    "Sphynx": {
+      "support": 10,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6666666666666666
+    }
+  },
+  "row_labels": [
+    "Abyssinian",
+    "Bengal",
+    "Birman",
+    "Bombay",
+    "British_Shorthair",
+    "Egyptian_Mau",
+    "Maine_Coon",
+    "Persian",
+    "Ragdoll",
+    "Russian_Blue",
+    "Siamese",
+    "Sphynx"
+  ],
+  "column_labels": [
+    "Abyssinian",
+    "Bengal",
+    "Birman",
+    "Bombay",
+    "British_Shorthair",
+    "Egyptian_Mau",
+    "Maine_Coon",
+    "Persian",
+    "Ragdoll",
+    "Russian_Blue",
+    "Siamese",
+    "Sphynx",
+    "no_result"
+  ],
+  "confusion_matrix": [
+    [
+      8,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      9,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      8,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2
+    ],
+    [
+      0,
+      0,
+      0,
+      9,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      0,
+      0,
+      1,
+      6,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0,
+      0,
+      7,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      9,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      8,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      3,
+      0,
+      0,
+      0,
+      0,
+      1,
+      6,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      6,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      7,
+      0,
+      3
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      5,
+      5
+    ]
+  ],
+  "mean_inference_seconds": 0.09008656666707492,
+  "median_inference_seconds": 0.0639333999992232
+}
+TASK END evaluation; state=completed

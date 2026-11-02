@@ -1,0 +1,20 @@
+{
+  "task": "evaluation",
+  "state": "completed",
+  "pid": 31200,
+  "created_utc": "2026-11-02T03:08:29.006977+00:00",
+  "logs": "artifacts/run-logs/20261102T030829Z-evaluation-e310bbb9",
+  "automatic_retry": false,
+  "automatic_restart": false,
+  "argv": [
+    "scripts/evaluate.py",
+    "--route",
+    "traditional",
+    "--set",
+    "comparison",
+    "--data-root",
+    "../../work/cat-data/oxford-iiit-pet",
+    "--cache-only"
+  ],
+  "finished_utc": "2026-11-02T03:08:29.369892+00:00"
+}

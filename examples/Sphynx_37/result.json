@@ -17,7 +17,12 @@
       "image_id": "Sphynx_37",
       "input_sha256": "4fcc56da883456bdaf8faa7b2561fe0cec77b46e6cc8ffd11864f13192fd6dfe",
       "true_breed": "Sphynx",
-      "created_utc": "2026-11-02T02:35:51.992841+00:00"
+      "created_utc": "2026-11-02T02:35:51.992841+00:00",
+      "run_fingerprint": "d77b5b46361d9f0c03bdcbb72d13d939001052093684893db9f764966c159318",
+      "prediction_origin": "reused",
+      "fresh_run": false,
+      "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+      "last_reused_utc": "2026-11-02T03:08:29.344892+00:00"
     },
     "vlm": {
       "status": "ok",
@@ -40,7 +45,12 @@
       "image_id": "Sphynx_37",
       "input_sha256": "4fcc56da883456bdaf8faa7b2561fe0cec77b46e6cc8ffd11864f13192fd6dfe",
       "true_breed": "Sphynx",
-      "created_utc": "2026-11-02T02:32:15.831691+00:00"
+      "created_utc": "2026-11-02T02:32:15.831691+00:00",
+      "run_fingerprint": "f3a892688376a8376ca0f3e30cd7c6d3af04e6e3ea4e9409dfb6533c08dc883c",
+      "prediction_origin": "reused",
+      "fresh_run": false,
+      "provenance_verified_utc": "2026-11-02T03:07:08.814586+00:00",
+      "last_reused_utc": "2026-11-02T03:08:34.226549+00:00"
     },
     "fresh_run": false,
     "total_seconds": 6.109083000003011

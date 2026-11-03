@@ -1,0 +1,10 @@
+FROM python:3.12.12-slim-bookworm
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 PIP_NO_CACHE_DIR=1
+WORKDIR /app
+COPY requirements-web.txt ./
+RUN python -m pip install -r requirements-web.txt
+COPY catvision/ ./catvision/
+COPY configs/ ./configs/
+COPY .streamlit/ ./.streamlit/
+EXPOSE 8000 8501
+CMD ["python", "-m", "catvision.stage3_api"]

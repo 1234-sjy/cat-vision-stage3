@@ -1,0 +1,14 @@
+FROM nvidia/cuda:12.8.1-cudnn-runtime-ubuntu24.04
+ENV DEBIAN_FRONTEND=noninteractive PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 PIP_NO_CACHE_DIR=1 \
+    PATH=/opt/venv/bin:$PATH CATVISION_FAST_INFERENCE=1 TOKENIZERS_PARALLELISM=false
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    python3.12 python3.12-venv ca-certificates libgl1 libglib2.0-0t64 \
+    && rm -rf /var/lib/apt/lists/* && python3.12 -m venv /opt/venv
+WORKDIR /app
+RUN python -m pip install torch==2.9.1 torchvision==0.24.1 --index-url https://download.pytorch.org/whl/cu128
+COPY requirements.txt requirements-worker.txt ./
+RUN python -m pip install -r requirements-worker.txt
+COPY catvision/ ./catvision/
+COPY configs/ ./configs/
+COPY scripts/ ./scripts/
+CMD ["python", "-m", "catvision.stage3_worker"]

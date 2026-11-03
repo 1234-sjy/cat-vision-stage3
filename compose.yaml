@@ -1,0 +1,83 @@
+name: catvision-stage3
+services:
+  db:
+    image: postgres:17.6
+    environment:
+      POSTGRES_DB: catvision
+      POSTGRES_USER: catvision
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?Run scripts/setup_stage3.py first}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: [CMD-SHELL, "pg_isready -U catvision -d catvision"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+  queue:
+    image: rabbitmq:4.1.4-management
+    environment:
+      RABBITMQ_DEFAULT_USER: catvision
+      RABBITMQ_DEFAULT_PASS: ${MQ_PASSWORD:?Run scripts/setup_stage3.py first}
+      RABBITMQ_DEFAULT_VHOST: catvision
+    volumes:
+      - rabbitmq-data:/var/lib/rabbitmq
+    healthcheck:
+      test: [CMD, rabbitmq-diagnostics, -q, ping]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+  api:
+    image: catvision-web:0.3
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+    environment: &application-env
+      DATABASE_URL: postgresql+psycopg://catvision:${DB_PASSWORD}@db:5432/catvision
+      AMQP_URL: amqp://catvision:${MQ_PASSWORD}@queue:5672/catvision
+      JWT_SECRET: ${JWT_SECRET:?Run scripts/setup_stage3.py first}
+      CATVISION_DATA_DIR: /data/jobs
+    volumes:
+      - ./runtime/stage3/data:/data
+    depends_on:
+      db: {condition: service_healthy}
+      queue: {condition: service_healthy}
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/health', timeout=3)"]
+      interval: 5s
+      timeout: 4s
+      retries: 15
+  ui:
+    image: catvision-web:0.3
+    command: [python, -m, streamlit, run, catvision/stage3_ui.py, --server.address=0.0.0.0, --server.port=8501]
+    environment:
+      CATVISION_API_URL: http://api:8000
+    depends_on:
+      api: {condition: service_healthy}
+  worker:
+    image: catvision-worker:0.3
+    build:
+      context: .
+      dockerfile: Dockerfile.worker
+    environment: *application-env
+    gpus: all
+    shm_size: 2gb
+    volumes:
+      - ${CATVISION_MODEL_ROOT:-./weights}:/app/weights:ro
+      - ./runtime/stage3/data:/data
+      - ./runtime/stage3/model-runtime:/app/runtime
+      - ./runtime/stage3/model-logs:/app/artifacts/run-logs
+    depends_on:
+      api: {condition: service_healthy}
+    restart: "no"
+  nginx:
+    image: nginx:1.28.0-alpine
+    ports:
+      - ${BIND_ADDRESS:-127.0.0.1}:${WEB_PORT:-8080}:80
+    volumes:
+      - ./deploy/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      api: {condition: service_healthy}
+      ui: {condition: service_started}
+volumes:
+  postgres-data:
+  rabbitmq-data:

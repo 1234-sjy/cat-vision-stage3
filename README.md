@@ -1,4 +1,19 @@
-# 看图识猫 第二阶段
+# 看图识猫 第三阶段
+
+在第二阶段双模型基础上，新增登录、图片任务队列和数据库历史，以Linux+Docker运行完整Web应用。网页用Streamlit并排展示同一张照片的两条路线，支持原图观察和继续问答。
+
+第三阶段入口由nginx统一转发，CPU Web进程与常驻GPU工作端分开。部署和依赖见[第三阶段运行说明](docs/第三阶段运行说明.md)，配置在`compose.yaml`、`Dockerfile.web`、`Dockerfile.worker`和`.env.example`。本机可用WSL2部署，使用已有显卡，不需要购买云服务器或模型API。
+
+```bash
+python3 scripts/setup_stage3.py
+bash scripts/start_stage3.sh --build
+```
+
+打开`http://127.0.0.1:8080`，在网页注册应用账号。后续启动用`bash scripts/start_stage3.sh`；已配置好CatVision WSL环境的Windows电脑可以双击“启动项目.cmd”。旧的第二阶段单机入口保留为“启动第二阶段本地版.cmd”。
+
+下面保留第二阶段模型方法、数据与成绩，作为第三阶段复用的模型依据。第三阶段未重新训练模型。
+
+## 第二阶段模型与实验记录
 
 上传一张照片，同时查看传统视觉与本地视觉大模型的结果。每条路线各输出一个品种；大模型另外说明可见外观、姿态和背景，支持继续对这张图提问。识别页只展示本次图片的结果。
 

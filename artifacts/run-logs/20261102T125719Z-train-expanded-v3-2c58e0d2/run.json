@@ -1,0 +1,22 @@
+{
+  "task": "train-expanded-v3",
+  "state": "interrupted",
+  "pid": 20572,
+  "created_utc": "2026-11-02T12:57:19.433970+00:00",
+  "logs": "artifacts/run-logs/20261102T125719Z-train-expanded-v3-2c58e0d2",
+  "automatic_retry": false,
+  "automatic_restart": false,
+  "argv": [
+    "scripts/train_expanded.py",
+    "--data-root",
+    "..\\..\\work\\cat-data",
+    "--device",
+    "cuda",
+    "--epochs",
+    "24",
+    "--patience",
+    "7"
+  ],
+  "finished_utc": "2026-11-02T13:02:49.363085+00:00",
+  "reason": "Manually stopped after fresh code review found v2 initialization inherited heldout near-duplicate exposure. Preserve trial; use only generic ImageNet initialization for a distinct run."
+}

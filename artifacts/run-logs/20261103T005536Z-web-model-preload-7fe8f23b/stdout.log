@@ -1,0 +1,4 @@
+TASK START web-model-preload; logs=artifacts/run-logs/20261103T005536Z-web-model-preload-7fe8f23b
+MODEL READY traditional
+MODEL READY vlm
+TASK END web-model-preload; state=completed

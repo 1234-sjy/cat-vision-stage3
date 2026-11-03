@@ -1,0 +1,16 @@
+{
+  "task": "shared20-test-v3",
+  "state": "interrupted",
+  "pid": 13564,
+  "created_utc": "2026-11-02T14:19:41.381191+00:00",
+  "logs": "artifacts/run-logs/20261102T141941Z-shared20-test-v3-769ff5ca",
+  "automatic_retry": false,
+  "automatic_restart": false,
+  "argv": [
+    "scripts/compare_expanded.py",
+    "--data-root",
+    "..\\..\\work\\cat-data"
+  ],
+  "finished_utc": "2026-11-02T14:28:22.559526+00:00",
+  "reason": "Manual diagnosis: repeated new CUDA streams exhausted physical VRAM and caused paging; fixed model/parameters unchanged. Preserve all partial sharedtest outputs and resource evidence."
+}

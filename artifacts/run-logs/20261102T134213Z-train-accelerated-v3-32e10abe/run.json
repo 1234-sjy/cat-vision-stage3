@@ -1,0 +1,25 @@
+{
+  "task": "train-accelerated-v3",
+  "state": "completed",
+  "pid": 34408,
+  "created_utc": "2026-11-02T13:42:13.841624+00:00",
+  "logs": "artifacts/run-logs/20261102T134213Z-train-accelerated-v3-32e10abe",
+  "automatic_retry": false,
+  "automatic_restart": false,
+  "argv": [
+    "scripts/train_accelerated.py",
+    "--source",
+    "artifacts/optimization-v3/training-generic/epoch20.pt",
+    "--start-epoch",
+    "20",
+    "--end-epoch",
+    "24",
+    "--data-root",
+    "..\\..\\work\\cat-data",
+    "--output",
+    "artifacts/optimization-v3/training-accelerated-e21-24",
+    "--checkpoint",
+    "weights/breed-swin-v3-accelerated-e21-24.pt"
+  ],
+  "finished_utc": "2026-11-02T13:48:18.638900+00:00"
+}

@@ -1,0 +1,12 @@
+TASK START shared20-test-v3; logs=artifacts/run-logs/20261102T141941Z-shared20-test-v3-769ff5ca
+SHARED 1/120 Abyssinian A=Abyssinian B=Bengal seconds=1.750
+SHARED 2/120 Abyssinian A=Scottish_Fold B=British_Shorthair seconds=0.757
+SHARED 3/120 Abyssinian A=Abyssinian B=Abyssinian seconds=0.824
+SHARED 4/120 Abyssinian A=Abyssinian B=Abyssinian seconds=0.987
+SHARED 5/120 Abyssinian A=Abyssinian B=American_Shorthair seconds=0.634
+SHARED 6/120 Abyssinian A=Abyssinian B=American_Shorthair seconds=0.874
+SHARED 7/120 Bengal A=Bengal B=Bengal seconds=0.676
+SHARED 8/120 Bengal A=Bengal B=Bengal seconds=81.025
+SHARED 9/120 Bengal A=Bengal B=Bengal seconds=187.378
+SHARED 10/120 Bengal A=Bengal B=Bengal seconds=124.501
+SHARED 11/120 Bengal A=Bengal B=Bengal seconds=111.919

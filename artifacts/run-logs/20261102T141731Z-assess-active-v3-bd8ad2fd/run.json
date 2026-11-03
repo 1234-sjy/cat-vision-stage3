@@ -1,0 +1,19 @@
+{
+  "task": "assess-active-v3",
+  "state": "completed",
+  "pid": 19488,
+  "created_utc": "2026-11-02T14:17:31.191172+00:00",
+  "logs": "artifacts/run-logs/20261102T141731Z-assess-active-v3-bd8ad2fd",
+  "automatic_retry": false,
+  "automatic_restart": false,
+  "argv": [
+    "scripts/assess_active.py",
+    "--data-root",
+    "..\\..\\work\\cat-data",
+    "--batch-size",
+    "64",
+    "--output",
+    "artifacts/optimization-v3/frozen-test"
+  ],
+  "finished_utc": "2026-11-02T14:18:11.447089+00:00"
+}

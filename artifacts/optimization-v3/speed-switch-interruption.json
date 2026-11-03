@@ -1,0 +1,22 @@
+{
+  "task": "train-expanded-v3",
+  "state": "interrupted",
+  "pid": 13868,
+  "created_utc": "2026-11-02T13:04:34.975619+00:00",
+  "logs": "artifacts/run-logs/20261102T130434Z-train-expanded-v3-86367a27",
+  "automatic_retry": false,
+  "automatic_restart": false,
+  "argv": [
+    "scripts/train_expanded.py",
+    "--data-root",
+    "..\\..\\work\\cat-data",
+    "--device",
+    "cuda",
+    "--epochs",
+    "24",
+    "--patience",
+    "7"
+  ],
+  "finished_utc": "2026-11-02T13:38:38.027092+00:00",
+  "reason": "User now explicitly requests progressively unthrottled faster training and an85% overall20-class gate after20epochs.20complete checkpoints retained; partialepoch21 discarded. Switching to a separately logged accelerated stage, no automatic retry."
+}

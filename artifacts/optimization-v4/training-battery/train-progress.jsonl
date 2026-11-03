@@ -1,0 +1,1 @@
+{"timestamp_utc": "2026-11-02T16:06:24.057043+00:00", "epoch": 1, "microstep": 20, "global_step": 5, "epoch_batch": 20, "loss": 1.1025017656385898, "images_per_second": 0.14046538154092136, "window_images": 80, "learning_rate": 2.5e-05, "peak_allocated_gib": 9.623479843139648, "peak_reserved_gib": 10.044921875}

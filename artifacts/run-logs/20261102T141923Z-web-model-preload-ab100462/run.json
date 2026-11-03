@@ -1,0 +1,15 @@
+{
+  "task": "web-model-preload",
+  "state": "completed",
+  "pid": 13564,
+  "created_utc": "2026-11-02T14:19:23.171191+00:00",
+  "logs": "artifacts/run-logs/20261102T141923Z-web-model-preload-ab100462",
+  "automatic_retry": false,
+  "automatic_restart": false,
+  "argv": [
+    "scripts/compare_expanded.py",
+    "--data-root",
+    "..\\..\\work\\cat-data"
+  ],
+  "finished_utc": "2026-11-02T14:19:41.369929+00:00"
+}

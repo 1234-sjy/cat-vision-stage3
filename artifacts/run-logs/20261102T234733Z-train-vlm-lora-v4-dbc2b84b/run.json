@@ -1,0 +1,20 @@
+{
+  "task": "train-vlm-lora-v4",
+  "state": "completed",
+  "pid": 16168,
+  "created_utc": "2026-11-02T23:47:33.427773+00:00",
+  "logs": "artifacts/run-logs/20261102T234733Z-train-vlm-lora-v4-dbc2b84b",
+  "automatic_retry": false,
+  "automatic_restart": false,
+  "argv": [
+    "scripts/train_vlm_lora.py",
+    "--resume-from",
+    "artifacts/optimization-v4/recovered-step000010",
+    "--output",
+    "artifacts/optimization-v4/training-resumed01",
+    "--save-steps",
+    "50",
+    "--no-gpu-telemetry"
+  ],
+  "finished_utc": "2026-11-03T00:45:21.847190+00:00"
+}

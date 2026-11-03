@@ -1,0 +1,21 @@
+{
+  "selected": "morphology-lines-v3",
+  "candidates": [
+    {
+      "prompt_version": "expanded-baseline-v3",
+      "accuracy": 0.47,
+      "mean_seconds": 1.0330621920009435
+    },
+    {
+      "prompt_version": "morphology-v3",
+      "accuracy": 0.48,
+      "mean_seconds": 1.269158894999855
+    },
+    {
+      "prompt_version": "morphology-lines-v3",
+      "accuracy": 0.56,
+      "mean_seconds": 0.624106049999682
+    }
+  ],
+  "test_used": false
+}

@@ -1,0 +1,383 @@
+[
+  {
+    "traditional": {
+      "status": "ok",
+      "has_cat": true,
+      "box": [
+        14.342041969299316,
+        27.14826011657715,
+        209.27560424804688,
+        313.0558166503906
+      ],
+      "detection_score": 0.945274293422699,
+      "cat_count": 1,
+      "crop_box": [
+        2,
+        12,
+        220,
+        328
+      ],
+      "crop_source": "sam_mask",
+      "segmentation_error": null,
+      "detection_seconds": 0.4454092999949353,
+      "segmentation_seconds": 0.23211879999144003,
+      "inference_seconds": 0.7012212999979965,
+      "throttle_seconds": 0.0,
+      "breed": "British_Shorthair",
+      "breed_zh": "英国短毛猫",
+      "breed_score": 0.9612860679626465,
+      "cat_probability": 0.9999955892562866,
+      "localization_status": "ok",
+      "classification_source": "original",
+      "route": "yolo26_sam2_swin_v2"
+    },
+    "vlm": {
+      "status": "ok",
+      "has_cat": true,
+      "breed": "British_Shorthair",
+      "breed_zh": "英国短毛猫",
+      "features": [
+        "灰色短毛",
+        "圆脸",
+        "金色眼睛"
+      ],
+      "raw_text": "{\"has_cat\":true,\"breed\":\"British_Shorthair\",\"features\":[\"灰色短毛\",\"圆脸\",\"金色眼睛\"]}",
+      "route": "qwen3_vl_4b",
+      "model": "Qwen/Qwen3-VL-4B-Instruct",
+      "prompt_version": "cat-breed-v1",
+      "inference_seconds": 1.173157600002014,
+      "patch_projection": "equivalent_linear",
+      "throttle_seconds": 0.0,
+      "input_tokens": 460,
+      "output_tokens": 27
+    },
+    "total_seconds": 1.8745463999948697,
+    "mode": "serial",
+    "image_id": "British_Shorthair_10",
+    "scope": "Oxford validation; v2 classifier with expanded VLM candidates",
+    "peak_allocated_mib": 9066.6005859375,
+    "peak_reserved_mib": 9380.0
+  },
+  {
+    "input_sha256": "a20fcba4f6df4821e9ab23d82446d14d74ff3b0eb073bfa31e9d51eb5fb35ada",
+    "fresh_run": true,
+    "traditional": {
+      "status": "ok",
+      "has_cat": true,
+      "box": [
+        14.342041969299316,
+        27.14826011657715,
+        209.27560424804688,
+        313.0558166503906
+      ],
+      "detection_score": 0.945274293422699,
+      "cat_count": 1,
+      "crop_box": [
+        2,
+        12,
+        220,
+        328
+      ],
+      "crop_source": "sam_mask",
+      "segmentation_error": null,
+      "detection_seconds": 0.04596800000581425,
+      "segmentation_seconds": 0.1234515999967698,
+      "inference_seconds": 0.19869570000446402,
+      "throttle_seconds": 0.0,
+      "breed": "British_Shorthair",
+      "breed_zh": "英国短毛猫",
+      "breed_score": 0.9612860679626465,
+      "cat_probability": 0.9999955892562866,
+      "localization_status": "ok",
+      "classification_source": "original",
+      "route": "yolo26_sam2_swin_v2",
+      "load_seconds": 0.0,
+      "model_reused": true,
+      "initial_load_seconds": 2.290288000003784
+    },
+    "vlm": {
+      "status": "ok",
+      "has_cat": true,
+      "breed": "British_Shorthair",
+      "breed_zh": "英国短毛猫",
+      "features": [
+        "灰色短毛",
+        "圆脸",
+        "金色眼睛"
+      ],
+      "raw_text": "{\"has_cat\":true,\"breed\":\"British_Shorthair\",\"features\":[\"灰色短毛\",\"圆脸\",\"金色眼睛\"]}",
+      "route": "qwen3_vl_4b",
+      "model": "Qwen/Qwen3-VL-4B-Instruct",
+      "prompt_version": "cat-breed-v1",
+      "inference_seconds": 1.1059796000045026,
+      "patch_projection": "equivalent_linear",
+      "throttle_seconds": 0.0,
+      "input_tokens": 460,
+      "output_tokens": 27,
+      "load_seconds": 0.0,
+      "model_reused": true,
+      "initial_load_seconds": 4.531715699995402
+    },
+    "execution_mode": "parallel_routes",
+    "total_seconds": 1.1104398000024958,
+    "mode": "parallel",
+    "image_id": "British_Shorthair_10",
+    "scope": "Oxford validation; v2 classifier with expanded VLM candidates",
+    "peak_allocated_mib": 9265.828125,
+    "peak_reserved_mib": 10210.0
+  },
+  {
+    "input_sha256": "bb5424e69adc66a3bad45d143b473935d1f6fe3dc0a8afd34c939900180c0fad",
+    "fresh_run": true,
+    "traditional": {
+      "status": "ok",
+      "has_cat": true,
+      "box": [
+        92.26167297363281,
+        1.3130903244018555,
+        499.2701416015625,
+        394.07757568359375
+      ],
+      "detection_score": 0.9060944318771362,
+      "cat_count": 1,
+      "crop_box": [
+        72,
+        0,
+        500,
+        420
+      ],
+      "crop_source": "sam_mask",
+      "segmentation_error": null,
+      "detection_seconds": 0.048932400008197874,
+      "segmentation_seconds": 0.15571239999553654,
+      "inference_seconds": 0.2308577000076184,
+      "throttle_seconds": 0.0,
+      "breed": "Bengal",
+      "breed_zh": "孟加拉猫",
+      "breed_score": 0.9610161185264587,
+      "cat_probability": 0.9999995231628418,
+      "localization_status": "ok",
+      "classification_source": "original",
+      "route": "yolo26_sam2_swin_v2",
+      "load_seconds": 0.0,
+      "model_reused": true,
+      "initial_load_seconds": 2.290288000003784
+    },
+    "vlm": {
+      "status": "ok",
+      "has_cat": true,
+      "breed": "Bengal",
+      "breed_zh": "孟加拉猫",
+      "features": [
+        "斑点花纹",
+        "琥珀色眼睛",
+        "耳朵尖且直立"
+      ],
+      "raw_text": "{\"has_cat\":true,\"breed\":\"Bengal\",\"features\":[\"斑点花纹\",\"琥珀色眼睛\",\"耳朵尖且直立\"]}",
+      "route": "qwen3_vl_4b",
+      "model": "Qwen/Qwen3-VL-4B-Instruct",
+      "prompt_version": "cat-breed-v1",
+      "inference_seconds": 1.261102699994808,
+      "patch_projection": "equivalent_linear",
+      "throttle_seconds": 0.0,
+      "input_tokens": 607,
+      "output_tokens": 31,
+      "load_seconds": 0.0,
+      "model_reused": true,
+      "initial_load_seconds": 4.531715699995402
+    },
+    "execution_mode": "parallel_routes",
+    "total_seconds": 1.2628764000110095,
+    "mode": "parallel",
+    "image_id": "Bengal_104",
+    "scope": "Oxford validation; v2 classifier with expanded VLM candidates",
+    "peak_allocated_mib": 9444.47802734375,
+    "peak_reserved_mib": 11144.0
+  },
+  {
+    "traditional": {
+      "status": "ok",
+      "has_cat": true,
+      "box": [
+        92.26167297363281,
+        1.3130903244018555,
+        499.2701416015625,
+        394.07757568359375
+      ],
+      "detection_score": 0.9060944318771362,
+      "cat_count": 1,
+      "crop_box": [
+        72,
+        0,
+        500,
+        420
+      ],
+      "crop_source": "sam_mask",
+      "segmentation_error": null,
+      "detection_seconds": 0.026624000005540438,
+      "segmentation_seconds": 0.04238089999125805,
+      "inference_seconds": 0.08253319999494124,
+      "throttle_seconds": 0.0,
+      "breed": "Bengal",
+      "breed_zh": "孟加拉猫",
+      "breed_score": 0.9610161185264587,
+      "cat_probability": 0.9999995231628418,
+      "localization_status": "ok",
+      "classification_source": "original",
+      "route": "yolo26_sam2_swin_v2"
+    },
+    "vlm": {
+      "status": "ok",
+      "has_cat": true,
+      "breed": "Bengal",
+      "breed_zh": "孟加拉猫",
+      "features": [
+        "斑点花纹",
+        "琥珀色眼睛",
+        "耳朵尖且直立"
+      ],
+      "raw_text": "{\"has_cat\":true,\"breed\":\"Bengal\",\"features\":[\"斑点花纹\",\"琥珀色眼睛\",\"耳朵尖且直立\"]}",
+      "route": "qwen3_vl_4b",
+      "model": "Qwen/Qwen3-VL-4B-Instruct",
+      "prompt_version": "cat-breed-v1",
+      "inference_seconds": 1.2325454999954673,
+      "patch_projection": "equivalent_linear",
+      "throttle_seconds": 0.0,
+      "input_tokens": 607,
+      "output_tokens": 31
+    },
+    "total_seconds": 1.3153620999946725,
+    "mode": "serial",
+    "image_id": "Bengal_104",
+    "scope": "Oxford validation; v2 classifier with expanded VLM candidates",
+    "peak_allocated_mib": 9283.84716796875,
+    "peak_reserved_mib": 11144.0
+  },
+  {
+    "traditional": {
+      "status": "ok",
+      "has_cat": true,
+      "box": [
+        1.5245758295059204,
+        7.593728542327881,
+        129.6002197265625,
+        202.33926391601562
+      ],
+      "detection_score": 0.7897509932518005,
+      "cat_count": 1,
+      "crop_box": [
+        0,
+        0,
+        136,
+        214
+      ],
+      "crop_source": "sam_mask",
+      "segmentation_error": null,
+      "detection_seconds": 0.025392099996679462,
+      "segmentation_seconds": 0.04124610000872053,
+      "inference_seconds": 0.07823210000060499,
+      "throttle_seconds": 0.0,
+      "breed": "Bengal",
+      "breed_zh": "孟加拉猫",
+      "breed_score": 0.9417688250541687,
+      "cat_probability": 0.997474730014801,
+      "localization_status": "ok",
+      "classification_source": "original",
+      "route": "yolo26_sam2_swin_v2"
+    },
+    "vlm": {
+      "status": "ok",
+      "has_cat": true,
+      "breed": "Abyssinian",
+      "breed_zh": "阿比西尼亚猫",
+      "features": [
+        "虎斑纹",
+        "大而直立的耳朵",
+        "绿色眼睛"
+      ],
+      "raw_text": "{\"has_cat\":true,\"breed\":\"Abyssinian\",\"features\":[\"虎斑纹\",\"大而直立的耳朵\",\"绿色眼睛\"]}",
+      "route": "qwen3_vl_4b",
+      "model": "Qwen/Qwen3-VL-4B-Instruct",
+      "prompt_version": "cat-breed-v1",
+      "inference_seconds": 1.2104216000007,
+      "patch_projection": "equivalent_linear",
+      "throttle_seconds": 0.0,
+      "input_tokens": 418,
+      "output_tokens": 31
+    },
+    "total_seconds": 1.2887926000112202,
+    "mode": "serial",
+    "image_id": "Maine_Coon_1",
+    "scope": "Oxford validation; v2 classifier with expanded VLM candidates",
+    "peak_allocated_mib": 9283.83251953125,
+    "peak_reserved_mib": 11144.0
+  },
+  {
+    "input_sha256": "4cc8362d58ed3c6fc172a44e2dc43350a07428e611dda1735f282dd2f77d861e",
+    "fresh_run": true,
+    "traditional": {
+      "status": "ok",
+      "has_cat": true,
+      "box": [
+        1.5245758295059204,
+        7.593728542327881,
+        129.6002197265625,
+        202.33926391601562
+      ],
+      "detection_score": 0.7897509932518005,
+      "cat_count": 1,
+      "crop_box": [
+        0,
+        0,
+        136,
+        214
+      ],
+      "crop_source": "sam_mask",
+      "segmentation_error": null,
+      "detection_seconds": 0.04161719999683555,
+      "segmentation_seconds": 0.11335369999869727,
+      "inference_seconds": 0.17377719999058172,
+      "throttle_seconds": 0.0,
+      "breed": "Bengal",
+      "breed_zh": "孟加拉猫",
+      "breed_score": 0.9417688250541687,
+      "cat_probability": 0.997474730014801,
+      "localization_status": "ok",
+      "classification_source": "original",
+      "route": "yolo26_sam2_swin_v2",
+      "load_seconds": 0.0,
+      "model_reused": true,
+      "initial_load_seconds": 2.290288000003784
+    },
+    "vlm": {
+      "status": "ok",
+      "has_cat": true,
+      "breed": "Abyssinian",
+      "breed_zh": "阿比西尼亚猫",
+      "features": [
+        "虎斑纹",
+        "大而直立的耳朵",
+        "绿色眼睛"
+      ],
+      "raw_text": "{\"has_cat\":true,\"breed\":\"Abyssinian\",\"features\":[\"虎斑纹\",\"大而直立的耳朵\",\"绿色眼睛\"]}",
+      "route": "qwen3_vl_4b",
+      "model": "Qwen/Qwen3-VL-4B-Instruct",
+      "prompt_version": "cat-breed-v1",
+      "inference_seconds": 1.1890549999952782,
+      "patch_projection": "equivalent_linear",
+      "throttle_seconds": 0.0,
+      "input_tokens": 418,
+      "output_tokens": 31,
+      "load_seconds": 0.0,
+      "model_reused": true,
+      "initial_load_seconds": 4.531715699995402
+    },
+    "execution_mode": "parallel_routes",
+    "total_seconds": 1.1904751000110991,
+    "mode": "parallel",
+    "image_id": "Maine_Coon_1",
+    "scope": "Oxford validation; v2 classifier with expanded VLM candidates",
+    "peak_allocated_mib": 9407.30810546875,
+    "peak_reserved_mib": 11946.0
+  }
+]

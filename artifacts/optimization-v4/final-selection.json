@@ -1,0 +1,126 @@
+{
+  "created_utc": "2026-11-03T00:49:35.800224+00:00",
+  "active_config_sha256": "2b222fa1220d469b04b46192033fd308ba9dd0b0491e9717140a52b406dbfa33",
+  "adapter_sha256": "aa441496afa5bd1c4521e6fb5efdc9e8223bf67bfcb898197fe54a7d757336d7",
+  "training_complete_sha256": "8b7c6d435a868fb8f8bbb87db40226171c665dec088a2f53725a7749a11d46bd",
+  "best_epoch": 2,
+  "validation": {
+    "cat_correct": 171,
+    "cat_total": 200,
+    "cat_accuracy": 0.855,
+    "cat_macro_accuracy": 0.8550000000000001,
+    "per_class": {
+      "Abyssinian": {
+        "correct": 7,
+        "total": 10,
+        "accuracy": 0.7
+      },
+      "Bengal": {
+        "correct": 8,
+        "total": 10,
+        "accuracy": 0.8
+      },
+      "Birman": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "Bombay": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "British_Shorthair": {
+        "correct": 9,
+        "total": 10,
+        "accuracy": 0.9
+      },
+      "Egyptian_Mau": {
+        "correct": 7,
+        "total": 10,
+        "accuracy": 0.7
+      },
+      "Maine_Coon": {
+        "correct": 9,
+        "total": 10,
+        "accuracy": 0.9
+      },
+      "Persian": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "Ragdoll": {
+        "correct": 5,
+        "total": 10,
+        "accuracy": 0.5
+      },
+      "Russian_Blue": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "Siamese": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "Sphynx": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "American_Bobtail": {
+        "correct": 3,
+        "total": 10,
+        "accuracy": 0.3
+      },
+      "American_Curl": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "American_Shorthair": {
+        "correct": 9,
+        "total": 10,
+        "accuracy": 0.9
+      },
+      "Exotic_Shorthair": {
+        "correct": 9,
+        "total": 10,
+        "accuracy": 0.9
+      },
+      "Manx": {
+        "correct": 9,
+        "total": 10,
+        "accuracy": 0.9
+      },
+      "Norwegian_Forest": {
+        "correct": 9,
+        "total": 10,
+        "accuracy": 0.9
+      },
+      "Scottish_Fold": {
+        "correct": 9,
+        "total": 10,
+        "accuracy": 0.9
+      },
+      "Turkish_Angora": {
+        "correct": 8,
+        "total": 10,
+        "accuracy": 0.8
+      }
+    },
+    "dog": {
+      "total": 50,
+      "false_cat": 0,
+      "correct_no_cat": 50,
+      "parse_error": 0,
+      "false_cat_rate": 0.0,
+      "no_cat_accuracy": 1.0
+    }
+  },
+  "resolution_selection": "artifacts\\optimization-v4\\image-budget-selection\\selection.json",
+  "selection": "Fixed validation cat accuracy; dog false-cat rate breaks ties",
+  "no_test_input_for_selection": true
+}

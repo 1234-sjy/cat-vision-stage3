@@ -1,0 +1,17 @@
+TASK START web-model-preload; logs=artifacts/run-logs/20261102T124801Z-web-model-preload-d4170ff9
+MODEL READY traditional
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:  50%|█████     | 1/2 [00:02<00:02,  2.32s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  1.97s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  2.02s/it]
+MODEL READY vlm
+TASK END web-model-preload; state=completed
+TASK START benchmark-parallel-v3; logs=artifacts/run-logs/20261102T124813Z-benchmark-parallel-v3-7ee2a32b
+serial British_Shorthair_10 1.875
+parallel British_Shorthair_10 1.11
+parallel Bengal_104 1.263
+serial Bengal_104 1.315
+serial Maine_Coon_1 1.289
+parallel Maine_Coon_1 1.19
+TASK END benchmark-parallel-v3; state=completed

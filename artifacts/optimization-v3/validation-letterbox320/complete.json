@@ -1,0 +1,9 @@
+{
+  "count": 1425,
+  "set": "val",
+  "weights_sha256": "9aa80029a3440248d2d8eedcae0d759d1ac0dcfea5af3c4b72cf641a9dc2ed88",
+  "manifest_sha256": "e7e638526747e90692d53ea1959414f9d09ec78a4600c814a31de4d863d99ac4",
+  "predictions_sha256": "d83eca15d56ac9e951225fb33ed59ecd4f184b569cf97ad10b335fc66ca0c7a4",
+  "metrics_sha256": "eceaa26c9fe1fe41402cf75eedc13ce920425db0af60688684125ea2acb9e394",
+  "elapsed_seconds": 11.118778699994436
+}

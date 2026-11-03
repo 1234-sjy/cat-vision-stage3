@@ -1,0 +1,33 @@
+- banner:
+  - text: 看图识猫
+  - generic: 本地显卡运行
+- generic: CAT BREED · TWO PERSPECTIVES
+- heading "一张猫图，两个答案。" [level=1]
+- paragraph: 选择一张照片，对照两种方法的品种识别。
+- text: 第二阶段 · 猫品种识别
+- text: 同一输入，独立判断
+- main:
+  - strong: 共同输入
+  - generic: 01 / 选择照片
+  - img "共同输入的猫照片"
+  - button "选择图片" [active]
+  - generic: cat-photo.jpg
+  - button "开始识别"
+  - article:
+    - generic: A
+    - generic: 传统视觉
+    - generic: 定位 · 分割 · 品种分类
+    - text: 保留完整原图识别
+    - text: 标出猫的位置和轮廓
+    - generic: 分类模型分数
+    - generic: —
+  - article:
+    - generic: B
+    - generic: 视觉大模型
+    - generic: 原图理解 · 品种识别
+    - text: 直接观察同一张原图
+    - text: 给出一个品种判断
+    - generic: 独立图像判断
+    - generic: —
+  - generic: 照片已选好，点击开始识别。
+- generic "方法、品种范围与运行记录"

@@ -1,0 +1,19 @@
+{
+  "task": "select-vlm-v3",
+  "state": "completed",
+  "pid": 2552,
+  "created_utc": "2026-11-02T12:51:01.547951+00:00",
+  "logs": "artifacts/run-logs/20261102T125101Z-select-vlm-v3-9670194f",
+  "automatic_retry": false,
+  "automatic_restart": false,
+  "argv": [
+    "scripts/select_vlm_v3.py",
+    "--data-root",
+    "..\\..\\work\\cat-data",
+    "--per-class",
+    "5",
+    "--output",
+    "artifacts/optimization-v3/vlm-selection"
+  ],
+  "finished_utc": "2026-11-02T12:55:04.778384+00:00"
+}

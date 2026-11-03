@@ -1,0 +1,1807 @@
+{
+  "proposal_count": 102673,
+  "edges": [
+    {
+      "left": "Abyssinian_177",
+      "right": "Abyssinian_45",
+      "kind": "orb_photographic_session",
+      "inliers": 50,
+      "ratio": 1.0,
+      "coverage_left": 0.08598,
+      "coverage_right": 0.14666,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Abyssinian_177",
+      "right": "refined_Abyssinian_42",
+      "kind": "orb_photographic_session",
+      "inliers": 50,
+      "ratio": 1.0,
+      "coverage_left": 0.08598,
+      "coverage_right": 0.14666,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Abyssinian_24",
+      "right": "Abyssinian_80",
+      "kind": "orb_photographic_session",
+      "inliers": 348,
+      "ratio": 0.98864,
+      "coverage_left": 0.07038,
+      "coverage_right": 0.08453,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Abyssinian_24",
+      "right": "refined_Abyssinian_91",
+      "kind": "orb_photographic_session",
+      "inliers": 348,
+      "ratio": 0.98864,
+      "coverage_left": 0.07038,
+      "coverage_right": 0.08453,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Abyssinian_45",
+      "right": "refined_Abyssinian_265",
+      "kind": "orb_photographic_session",
+      "inliers": 57,
+      "ratio": 1.0,
+      "coverage_left": 0.12355,
+      "coverage_right": 0.07097,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Abyssinian_45",
+      "right": "refined_Abyssinian_324",
+      "kind": "orb_photographic_session",
+      "inliers": 25,
+      "ratio": 0.96154,
+      "coverage_left": 0.11942,
+      "coverage_right": 0.06813,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Abyssinian_56",
+      "right": "Abyssinian_80",
+      "kind": "orb_photographic_session",
+      "inliers": 123,
+      "ratio": 0.91791,
+      "coverage_left": 0.06688,
+      "coverage_right": 0.07786,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Abyssinian_56",
+      "right": "refined_Abyssinian_91",
+      "kind": "orb_photographic_session",
+      "inliers": 123,
+      "ratio": 0.91791,
+      "coverage_left": 0.06688,
+      "coverage_right": 0.07786,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Abyssinian_66",
+      "right": "refined_Abyssinian_93",
+      "kind": "orb_photographic_session",
+      "inliers": 218,
+      "ratio": 0.92766,
+      "coverage_left": 0.18429,
+      "coverage_right": 0.20715,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Abyssinian_80",
+      "right": "refined_Abyssinian_20",
+      "kind": "orb_photographic_session",
+      "inliers": 356,
+      "ratio": 0.98615,
+      "coverage_left": 0.08491,
+      "coverage_right": 0.07032,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Abyssinian_80",
+      "right": "refined_Abyssinian_58",
+      "kind": "orb_photographic_session",
+      "inliers": 125,
+      "ratio": 1.0,
+      "coverage_left": 0.0796,
+      "coverage_right": 0.0665,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Bengal_33",
+      "right": "Bengal_35",
+      "kind": "orb_photographic_session",
+      "inliers": 24,
+      "ratio": 0.96,
+      "coverage_left": 0.15748,
+      "coverage_right": 0.10242,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Bengal_33",
+      "right": "refined_Bengal_20",
+      "kind": "orb_photographic_session",
+      "inliers": 24,
+      "ratio": 0.96,
+      "coverage_left": 0.15748,
+      "coverage_right": 0.10242,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Bengal_35",
+      "right": "refined_Bengal_15",
+      "kind": "orb_photographic_session",
+      "inliers": 22,
+      "ratio": 0.88,
+      "coverage_left": 0.09921,
+      "coverage_right": 0.15265,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Bengal_67",
+      "right": "Bengal_69",
+      "kind": "orb_photographic_session",
+      "inliers": 79,
+      "ratio": 0.89773,
+      "coverage_left": 0.2645,
+      "coverage_right": 0.25655,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Bengal_67",
+      "right": "refined_Bengal_70",
+      "kind": "orb_photographic_session",
+      "inliers": 79,
+      "ratio": 0.89773,
+      "coverage_left": 0.2645,
+      "coverage_right": 0.25655,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Bengal_83",
+      "right": "Bengal_85",
+      "kind": "orb_photographic_session",
+      "inliers": 266,
+      "ratio": 0.95683,
+      "coverage_left": 0.49609,
+      "coverage_right": 0.57248,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Bengal_83",
+      "right": "refined_Bengal_94",
+      "kind": "orb_photographic_session",
+      "inliers": 266,
+      "ratio": 0.95683,
+      "coverage_left": 0.49609,
+      "coverage_right": 0.57248,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Bengal_85",
+      "right": "refined_Bengal_92",
+      "kind": "orb_photographic_session",
+      "inliers": 303,
+      "ratio": 0.98058,
+      "coverage_left": 0.61437,
+      "coverage_right": 0.52874,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Bombay_107",
+      "right": "Bombay_120",
+      "kind": "orb_photographic_session",
+      "inliers": 71,
+      "ratio": 1.0,
+      "coverage_left": 0.11583,
+      "coverage_right": 0.14302,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Bombay_107",
+      "right": "refined_Bombay_245",
+      "kind": "orb_photographic_session",
+      "inliers": 71,
+      "ratio": 1.0,
+      "coverage_left": 0.11583,
+      "coverage_right": 0.14302,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Bombay_120",
+      "right": "Bombay_132",
+      "kind": "orb_photographic_session",
+      "inliers": 36,
+      "ratio": 0.87805,
+      "coverage_left": 0.14925,
+      "coverage_right": 0.11738,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Bombay_120",
+      "right": "Bombay_19",
+      "kind": "orb_photographic_session",
+      "inliers": 42,
+      "ratio": 0.875,
+      "coverage_left": 0.13324,
+      "coverage_right": 0.10783,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Bombay_120",
+      "right": "refined_Bombay_226",
+      "kind": "orb_photographic_session",
+      "inliers": 55,
+      "ratio": 1.0,
+      "coverage_left": 0.145,
+      "coverage_right": 0.11355,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Bombay_120",
+      "right": "refined_Bombay_260",
+      "kind": "orb_photographic_session",
+      "inliers": 36,
+      "ratio": 0.87805,
+      "coverage_left": 0.14925,
+      "coverage_right": 0.11738,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Bombay_120",
+      "right": "refined_Bombay_317",
+      "kind": "orb_photographic_session",
+      "inliers": 42,
+      "ratio": 0.875,
+      "coverage_left": 0.13324,
+      "coverage_right": 0.10783,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Bombay_130",
+      "right": "Bombay_166",
+      "kind": "orb_photographic_session",
+      "inliers": 91,
+      "ratio": 0.86667,
+      "coverage_left": 0.21843,
+      "coverage_right": 0.27767,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Bombay_130",
+      "right": "Bombay_177",
+      "kind": "orb_photographic_session",
+      "inliers": 110,
+      "ratio": 0.99099,
+      "coverage_left": 0.19906,
+      "coverage_right": 0.21539,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Bombay_130",
+      "right": "refined_Bombay_287",
+      "kind": "orb_photographic_session",
+      "inliers": 91,
+      "ratio": 0.86667,
+      "coverage_left": 0.21843,
+      "coverage_right": 0.27767,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Bombay_130",
+      "right": "refined_Bombay_301",
+      "kind": "orb_photographic_session",
+      "inliers": 110,
+      "ratio": 0.99099,
+      "coverage_left": 0.19906,
+      "coverage_right": 0.21539,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Bombay_132",
+      "right": "refined_Bombay_245",
+      "kind": "orb_photographic_session",
+      "inliers": 45,
+      "ratio": 0.9375,
+      "coverage_left": 0.12034,
+      "coverage_right": 0.15058,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Bombay_166",
+      "right": "Bombay_177",
+      "kind": "orb_photographic_session",
+      "inliers": 53,
+      "ratio": 0.98148,
+      "coverage_left": 0.2398,
+      "coverage_right": 0.21166,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Bombay_166",
+      "right": "refined_Bombay_258",
+      "kind": "orb_photographic_session",
+      "inliers": 76,
+      "ratio": 0.98701,
+      "coverage_left": 0.27414,
+      "coverage_right": 0.21659,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Bombay_166",
+      "right": "refined_Bombay_301",
+      "kind": "orb_photographic_session",
+      "inliers": 53,
+      "ratio": 0.98148,
+      "coverage_left": 0.2398,
+      "coverage_right": 0.21166,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Bombay_177",
+      "right": "refined_Bombay_258",
+      "kind": "orb_photographic_session",
+      "inliers": 93,
+      "ratio": 0.98936,
+      "coverage_left": 0.20584,
+      "coverage_right": 0.18795,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Bombay_177",
+      "right": "refined_Bombay_287",
+      "kind": "orb_photographic_session",
+      "inliers": 54,
+      "ratio": 0.79412,
+      "coverage_left": 0.20048,
+      "coverage_right": 0.23105,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Bombay_19",
+      "right": "refined_Bombay_245",
+      "kind": "orb_photographic_session",
+      "inliers": 55,
+      "ratio": 0.96491,
+      "coverage_left": 0.1067,
+      "coverage_right": 0.13562,
+      "manual_confirmation": false
+    },
+    {
+      "left": "British_Shorthair_175",
+      "right": "refined_British Shorthair_258",
+      "kind": "orb_photographic_session",
+      "inliers": 17,
+      "ratio": 0.89474,
+      "coverage_left": 0.19605,
+      "coverage_right": 0.20177,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Egyptian_Mau_109",
+      "right": "refined_Egyptian Mau_90",
+      "kind": "orb_photographic_session",
+      "inliers": 60,
+      "ratio": 0.98361,
+      "coverage_left": 0.17092,
+      "coverage_right": 0.0808,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Egyptian_Mau_111",
+      "right": "Egyptian_Mau_46",
+      "kind": "orb_photographic_session",
+      "inliers": 200,
+      "ratio": 0.98522,
+      "coverage_left": 0.18485,
+      "coverage_right": 0.18007,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Egyptian_Mau_111",
+      "right": "refined_Egyptian Mau_39",
+      "kind": "orb_photographic_session",
+      "inliers": 200,
+      "ratio": 0.98522,
+      "coverage_left": 0.18485,
+      "coverage_right": 0.18007,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Egyptian_Mau_116",
+      "right": "Egyptian_Mau_31",
+      "kind": "orb_photographic_session",
+      "inliers": 176,
+      "ratio": 0.97778,
+      "coverage_left": 0.21448,
+      "coverage_right": 0.31258,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Egyptian_Mau_116",
+      "right": "Egyptian_Mau_54",
+      "kind": "orb_photographic_session",
+      "inliers": 39,
+      "ratio": 1.0,
+      "coverage_left": 0.15924,
+      "coverage_right": 0.10125,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Egyptian_Mau_116",
+      "right": "refined_Egyptian Mau_21",
+      "kind": "orb_photographic_session",
+      "inliers": 176,
+      "ratio": 0.97778,
+      "coverage_left": 0.21448,
+      "coverage_right": 0.31258,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Egyptian_Mau_116",
+      "right": "refined_Egyptian Mau_52",
+      "kind": "orb_photographic_session",
+      "inliers": 39,
+      "ratio": 1.0,
+      "coverage_left": 0.15924,
+      "coverage_right": 0.10125,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Egyptian_Mau_117",
+      "right": "Egyptian_Mau_19",
+      "kind": "orb_photographic_session",
+      "inliers": 220,
+      "ratio": 0.98655,
+      "coverage_left": 0.14688,
+      "coverage_right": 0.27229,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Egyptian_Mau_117",
+      "right": "refined_Egyptian Mau_319",
+      "kind": "orb_photographic_session",
+      "inliers": 220,
+      "ratio": 0.98655,
+      "coverage_left": 0.14688,
+      "coverage_right": 0.27229,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Egyptian_Mau_153",
+      "right": "Egyptian_Mau_52",
+      "kind": "orb_photographic_session",
+      "inliers": 64,
+      "ratio": 1.0,
+      "coverage_left": 0.15816,
+      "coverage_right": 0.08324,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Egyptian_Mau_153",
+      "right": "refined_Egyptian Mau_49",
+      "kind": "orb_photographic_session",
+      "inliers": 64,
+      "ratio": 1.0,
+      "coverage_left": 0.15816,
+      "coverage_right": 0.08324,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Egyptian_Mau_19",
+      "right": "refined_Egyptian Mau_256",
+      "kind": "orb_photographic_session",
+      "inliers": 216,
+      "ratio": 0.9863,
+      "coverage_left": 0.26784,
+      "coverage_right": 0.14444,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Egyptian_Mau_197",
+      "right": "refined_Egyptian Mau_338",
+      "kind": "orb_photographic_session",
+      "inliers": 130,
+      "ratio": 0.97744,
+      "coverage_left": 0.20739,
+      "coverage_right": 0.2445,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Egyptian_Mau_31",
+      "right": "refined_Egyptian Mau_1",
+      "kind": "orb_photographic_session",
+      "inliers": 61,
+      "ratio": 1.0,
+      "coverage_left": 0.23124,
+      "coverage_right": 0.1605,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Egyptian_Mau_31",
+      "right": "refined_Egyptian Mau_255",
+      "kind": "orb_photographic_session",
+      "inliers": 185,
+      "ratio": 0.98404,
+      "coverage_left": 0.31918,
+      "coverage_right": 0.21858,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Egyptian_Mau_31",
+      "right": "refined_Egyptian Mau_68",
+      "kind": "orb_photographic_session",
+      "inliers": 135,
+      "ratio": 0.9854,
+      "coverage_left": 0.05114,
+      "coverage_right": 0.1167,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Egyptian_Mau_42",
+      "right": "Egyptian_Mau_90",
+      "kind": "orb_photographic_session",
+      "inliers": 160,
+      "ratio": 0.99379,
+      "coverage_left": 0.196,
+      "coverage_right": 0.18998,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Egyptian_Mau_42",
+      "right": "refined_Egyptian Mau_99",
+      "kind": "orb_photographic_session",
+      "inliers": 160,
+      "ratio": 0.99379,
+      "coverage_left": 0.196,
+      "coverage_right": 0.18998,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Egyptian_Mau_46",
+      "right": "refined_Egyptian Mau_248",
+      "kind": "orb_photographic_session",
+      "inliers": 199,
+      "ratio": 0.995,
+      "coverage_left": 0.18065,
+      "coverage_right": 0.18337,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Egyptian_Mau_52",
+      "right": "refined_Egyptian Mau_201",
+      "kind": "orb_photographic_session",
+      "inliers": 58,
+      "ratio": 0.87879,
+      "coverage_left": 0.08265,
+      "coverage_right": 0.15707,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Egyptian_Mau_54",
+      "right": "refined_Egyptian Mau_1",
+      "kind": "orb_photographic_session",
+      "inliers": 53,
+      "ratio": 0.94643,
+      "coverage_left": 0.09819,
+      "coverage_right": 0.154,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Egyptian_Mau_54",
+      "right": "refined_Egyptian Mau_255",
+      "kind": "orb_photographic_session",
+      "inliers": 46,
+      "ratio": 0.7931,
+      "coverage_left": 0.10386,
+      "coverage_right": 0.16453,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Egyptian_Mau_90",
+      "right": "refined_Egyptian Mau_33",
+      "kind": "orb_photographic_session",
+      "inliers": 155,
+      "ratio": 0.98726,
+      "coverage_left": 0.20402,
+      "coverage_right": 0.21212,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Persian_131",
+      "right": "Persian_95",
+      "kind": "orb_photographic_session",
+      "inliers": 41,
+      "ratio": 0.87234,
+      "coverage_left": 0.12186,
+      "coverage_right": 0.10926,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Persian_131",
+      "right": "refined_Persian_109",
+      "kind": "orb_photographic_session",
+      "inliers": 41,
+      "ratio": 0.87234,
+      "coverage_left": 0.12186,
+      "coverage_right": 0.10926,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Persian_155",
+      "right": "Persian_273",
+      "kind": "orb_photographic_session",
+      "inliers": 304,
+      "ratio": 0.99023,
+      "coverage_left": 0.32771,
+      "coverage_right": 0.46509,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Persian_155",
+      "right": "refined_Persian_20",
+      "kind": "orb_photographic_session",
+      "inliers": 304,
+      "ratio": 0.99023,
+      "coverage_left": 0.32771,
+      "coverage_right": 0.46509,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Persian_273",
+      "right": "refined_Persian_101",
+      "kind": "orb_photographic_session",
+      "inliers": 295,
+      "ratio": 0.99327,
+      "coverage_left": 0.4625,
+      "coverage_right": 0.32555,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Persian_95",
+      "right": "refined_Persian_271",
+      "kind": "orb_photographic_session",
+      "inliers": 40,
+      "ratio": 0.8,
+      "coverage_left": 0.10878,
+      "coverage_right": 0.12118,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Ragdoll_159",
+      "right": "Ragdoll_160",
+      "kind": "orb_photographic_session",
+      "inliers": 51,
+      "ratio": 0.79688,
+      "coverage_left": 0.05413,
+      "coverage_right": 0.05432,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Ragdoll_159",
+      "right": "Ragdoll_161",
+      "kind": "orb_photographic_session",
+      "inliers": 59,
+      "ratio": 0.76623,
+      "coverage_left": 0.14822,
+      "coverage_right": 0.15781,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Ragdoll_159",
+      "right": "refined_Ragdoll_190",
+      "kind": "orb_photographic_session",
+      "inliers": 51,
+      "ratio": 0.79688,
+      "coverage_left": 0.05413,
+      "coverage_right": 0.05432,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Ragdoll_159",
+      "right": "refined_Ragdoll_212",
+      "kind": "orb_photographic_session",
+      "inliers": 59,
+      "ratio": 0.76623,
+      "coverage_left": 0.14822,
+      "coverage_right": 0.15781,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Ragdoll_160",
+      "right": "refined_Ragdoll_168",
+      "kind": "orb_photographic_session",
+      "inliers": 45,
+      "ratio": 0.81818,
+      "coverage_left": 0.12573,
+      "coverage_right": 0.12806,
+      "manual_confirmation": false
+    },
+    {
+      "left": "Ragdoll_161",
+      "right": "refined_Ragdoll_168",
+      "kind": "orb_photographic_session",
+      "inliers": 47,
+      "ratio": 0.71212,
+      "coverage_left": 0.16643,
+      "coverage_right": 0.15895,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Abyssinian_20",
+      "right": "refined_Abyssinian_91",
+      "kind": "orb_photographic_session",
+      "inliers": 348,
+      "ratio": 0.98864,
+      "coverage_left": 0.07038,
+      "coverage_right": 0.08453,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Abyssinian_324",
+      "right": "refined_Abyssinian_42",
+      "kind": "orb_photographic_session",
+      "inliers": 50,
+      "ratio": 1.0,
+      "coverage_left": 0.08598,
+      "coverage_right": 0.14666,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Abyssinian_58",
+      "right": "refined_Abyssinian_91",
+      "kind": "orb_photographic_session",
+      "inliers": 123,
+      "ratio": 0.91791,
+      "coverage_left": 0.06688,
+      "coverage_right": 0.07786,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Abyssinian_70",
+      "right": "refined_Abyssinian_93",
+      "kind": "orb_photographic_session",
+      "inliers": 218,
+      "ratio": 0.92766,
+      "coverage_left": 0.18429,
+      "coverage_right": 0.20715,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_American Curl_1",
+      "right": "refined_American Curl_37",
+      "kind": "orb_photographic_session",
+      "inliers": 268,
+      "ratio": 0.97455,
+      "coverage_left": 0.12553,
+      "coverage_right": 0.15692,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_American Curl_1",
+      "right": "refined_American Curl_68",
+      "kind": "orb_photographic_session",
+      "inliers": 253,
+      "ratio": 0.97308,
+      "coverage_left": 0.12817,
+      "coverage_right": 0.18524,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_American Curl_111",
+      "right": "refined_American Curl_141",
+      "kind": "orb_photographic_session",
+      "inliers": 32,
+      "ratio": 0.86486,
+      "coverage_left": 0.18931,
+      "coverage_right": 0.2697,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_American Curl_115",
+      "right": "refined_American Curl_337",
+      "kind": "orb_photographic_session",
+      "inliers": 138,
+      "ratio": 1.0,
+      "coverage_left": 0.14107,
+      "coverage_right": 0.14271,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_American Curl_129",
+      "right": "refined_American Curl_269",
+      "kind": "orb_photographic_session",
+      "inliers": 115,
+      "ratio": 0.90551,
+      "coverage_left": 0.07799,
+      "coverage_right": 0.07491,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_American Curl_181",
+      "right": "refined_American Curl_222",
+      "kind": "orb_photographic_session",
+      "inliers": 86,
+      "ratio": 0.86869,
+      "coverage_left": 0.09461,
+      "coverage_right": 0.09102,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_American Curl_199",
+      "right": "refined_American Curl_23",
+      "kind": "orb_photographic_session",
+      "inliers": 168,
+      "ratio": 0.96552,
+      "coverage_left": 0.14185,
+      "coverage_right": 0.22424,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_American Curl_254",
+      "right": "refined_American Curl_304",
+      "kind": "orb_photographic_session",
+      "inliers": 64,
+      "ratio": 0.84211,
+      "coverage_left": 0.24075,
+      "coverage_right": 0.22426,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_American Curl_254",
+      "right": "refined_American Curl_329",
+      "kind": "orb_photographic_session",
+      "inliers": 149,
+      "ratio": 0.82778,
+      "coverage_left": 0.20567,
+      "coverage_right": 0.20251,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_American Curl_283",
+      "right": "refined_American Curl_337",
+      "kind": "orb_photographic_session",
+      "inliers": 149,
+      "ratio": 1.0,
+      "coverage_left": 0.13341,
+      "coverage_right": 0.13481,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_American Curl_304",
+      "right": "refined_American Curl_329",
+      "kind": "orb_photographic_session",
+      "inliers": 61,
+      "ratio": 0.71765,
+      "coverage_left": 0.22673,
+      "coverage_right": 0.23139,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_American Curl_37",
+      "right": "refined_American Curl_68",
+      "kind": "orb_photographic_session",
+      "inliers": 332,
+      "ratio": 0.99104,
+      "coverage_left": 0.16618,
+      "coverage_right": 0.19238,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_American Curl_40",
+      "right": "refined_American Curl_58",
+      "kind": "orb_photographic_session",
+      "inliers": 22,
+      "ratio": 0.66667,
+      "coverage_left": 0.07504,
+      "coverage_right": 0.07629,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Bengal_15",
+      "right": "refined_Bengal_20",
+      "kind": "orb_photographic_session",
+      "inliers": 24,
+      "ratio": 0.96,
+      "coverage_left": 0.15748,
+      "coverage_right": 0.10242,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Bengal_67",
+      "right": "refined_Bengal_70",
+      "kind": "orb_photographic_session",
+      "inliers": 79,
+      "ratio": 0.89773,
+      "coverage_left": 0.2645,
+      "coverage_right": 0.25655,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Bengal_92",
+      "right": "refined_Bengal_94",
+      "kind": "orb_photographic_session",
+      "inliers": 266,
+      "ratio": 0.95683,
+      "coverage_left": 0.49609,
+      "coverage_right": 0.57248,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Bombay_163",
+      "right": "refined_Bombay_182",
+      "kind": "orb_photographic_session",
+      "inliers": 80,
+      "ratio": 0.98765,
+      "coverage_left": 0.14226,
+      "coverage_right": 0.07388,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Bombay_226",
+      "right": "refined_Bombay_245",
+      "kind": "orb_photographic_session",
+      "inliers": 71,
+      "ratio": 1.0,
+      "coverage_left": 0.11583,
+      "coverage_right": 0.14302,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Bombay_245",
+      "right": "refined_Bombay_260",
+      "kind": "orb_photographic_session",
+      "inliers": 36,
+      "ratio": 0.87805,
+      "coverage_left": 0.14925,
+      "coverage_right": 0.11738,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Bombay_245",
+      "right": "refined_Bombay_317",
+      "kind": "orb_photographic_session",
+      "inliers": 42,
+      "ratio": 0.875,
+      "coverage_left": 0.13324,
+      "coverage_right": 0.10783,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Bombay_258",
+      "right": "refined_Bombay_287",
+      "kind": "orb_photographic_session",
+      "inliers": 91,
+      "ratio": 0.86667,
+      "coverage_left": 0.21843,
+      "coverage_right": 0.27767,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Bombay_258",
+      "right": "refined_Bombay_301",
+      "kind": "orb_photographic_session",
+      "inliers": 110,
+      "ratio": 0.99099,
+      "coverage_left": 0.19906,
+      "coverage_right": 0.21539,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Bombay_287",
+      "right": "refined_Bombay_301",
+      "kind": "orb_photographic_session",
+      "inliers": 53,
+      "ratio": 0.98148,
+      "coverage_left": 0.2398,
+      "coverage_right": 0.21166,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Egyptian Mau_1",
+      "right": "refined_Egyptian Mau_21",
+      "kind": "orb_photographic_session",
+      "inliers": 71,
+      "ratio": 0.89873,
+      "coverage_left": 0.16073,
+      "coverage_right": 0.22914,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Egyptian Mau_1",
+      "right": "refined_Egyptian Mau_52",
+      "kind": "orb_photographic_session",
+      "inliers": 72,
+      "ratio": 1.0,
+      "coverage_left": 0.19043,
+      "coverage_right": 0.12077,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Egyptian Mau_193",
+      "right": "refined_Egyptian Mau_90",
+      "kind": "orb_photographic_session",
+      "inliers": 69,
+      "ratio": 1.0,
+      "coverage_left": 0.18096,
+      "coverage_right": 0.09038,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Egyptian Mau_201",
+      "right": "refined_Egyptian Mau_49",
+      "kind": "orb_photographic_session",
+      "inliers": 64,
+      "ratio": 1.0,
+      "coverage_left": 0.15816,
+      "coverage_right": 0.08324,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Egyptian Mau_21",
+      "right": "refined_Egyptian Mau_255",
+      "kind": "orb_photographic_session",
+      "inliers": 185,
+      "ratio": 0.98404,
+      "coverage_left": 0.31918,
+      "coverage_right": 0.21858,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Egyptian Mau_21",
+      "right": "refined_Egyptian Mau_68",
+      "kind": "orb_photographic_session",
+      "inliers": 135,
+      "ratio": 0.9854,
+      "coverage_left": 0.05114,
+      "coverage_right": 0.1167,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Egyptian Mau_244",
+      "right": "refined_Egyptian Mau_90",
+      "kind": "orb_photographic_session",
+      "inliers": 60,
+      "ratio": 0.98361,
+      "coverage_left": 0.17092,
+      "coverage_right": 0.0808,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Egyptian Mau_248",
+      "right": "refined_Egyptian Mau_39",
+      "kind": "orb_photographic_session",
+      "inliers": 200,
+      "ratio": 0.98522,
+      "coverage_left": 0.18485,
+      "coverage_right": 0.18007,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Egyptian Mau_255",
+      "right": "refined_Egyptian Mau_52",
+      "kind": "orb_photographic_session",
+      "inliers": 39,
+      "ratio": 1.0,
+      "coverage_left": 0.15924,
+      "coverage_right": 0.10125,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Egyptian Mau_256",
+      "right": "refined_Egyptian Mau_319",
+      "kind": "orb_photographic_session",
+      "inliers": 220,
+      "ratio": 0.98655,
+      "coverage_left": 0.14688,
+      "coverage_right": 0.27229,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Egyptian Mau_33",
+      "right": "refined_Egyptian Mau_99",
+      "kind": "orb_photographic_session",
+      "inliers": 160,
+      "ratio": 0.99379,
+      "coverage_left": 0.196,
+      "coverage_right": 0.18998,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Egyptian Mau_330",
+      "right": "refined_Egyptian Mau_338",
+      "kind": "orb_photographic_session",
+      "inliers": 130,
+      "ratio": 0.97744,
+      "coverage_left": 0.20739,
+      "coverage_right": 0.2445,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Exotic Shorthair_1",
+      "right": "refined_Exotic Shorthair_140",
+      "kind": "orb_photographic_session",
+      "inliers": 72,
+      "ratio": 1.0,
+      "coverage_left": 0.13439,
+      "coverage_right": 0.0681,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Exotic Shorthair_137",
+      "right": "refined_Exotic Shorthair_315",
+      "kind": "orb_photographic_session",
+      "inliers": 96,
+      "ratio": 1.0,
+      "coverage_left": 0.09999,
+      "coverage_right": 0.1149,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Exotic Shorthair_153",
+      "right": "refined_Exotic Shorthair_239",
+      "kind": "orb_photographic_session",
+      "inliers": 82,
+      "ratio": 0.91111,
+      "coverage_left": 0.07592,
+      "coverage_right": 0.07466,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Exotic Shorthair_160",
+      "right": "refined_Exotic Shorthair_57",
+      "kind": "orb_photographic_session",
+      "inliers": 148,
+      "ratio": 0.88095,
+      "coverage_left": 0.14263,
+      "coverage_right": 0.13541,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Exotic Shorthair_161",
+      "right": "refined_Exotic Shorthair_182",
+      "kind": "orb_photographic_session",
+      "inliers": 99,
+      "ratio": 0.84615,
+      "coverage_left": 0.22523,
+      "coverage_right": 0.21699,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Exotic Shorthair_161",
+      "right": "refined_Exotic Shorthair_289",
+      "kind": "orb_photographic_session",
+      "inliers": 63,
+      "ratio": 0.91304,
+      "coverage_left": 0.1834,
+      "coverage_right": 0.20761,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Exotic Shorthair_169",
+      "right": "refined_Exotic Shorthair_20",
+      "kind": "orb_photographic_session",
+      "inliers": 163,
+      "ratio": 0.98193,
+      "coverage_left": 0.29985,
+      "coverage_right": 0.27005,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Exotic Shorthair_182",
+      "right": "refined_Exotic Shorthair_289",
+      "kind": "orb_photographic_session",
+      "inliers": 68,
+      "ratio": 0.87179,
+      "coverage_left": 0.22521,
+      "coverage_right": 0.2651,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Exotic Shorthair_187",
+      "right": "refined_Exotic Shorthair_297",
+      "kind": "orb_photographic_session",
+      "inliers": 83,
+      "ratio": 0.9881,
+      "coverage_left": 0.24078,
+      "coverage_right": 0.21115,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Exotic Shorthair_222",
+      "right": "refined_Exotic Shorthair_233",
+      "kind": "orb_photographic_session",
+      "inliers": 37,
+      "ratio": 0.86047,
+      "coverage_left": 0.10653,
+      "coverage_right": 0.17455,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Exotic Shorthair_222",
+      "right": "refined_Exotic Shorthair_323",
+      "kind": "orb_photographic_session",
+      "inliers": 92,
+      "ratio": 0.8932,
+      "coverage_left": 0.06819,
+      "coverage_right": 0.09338,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Exotic Shorthair_224",
+      "right": "refined_Exotic Shorthair_337",
+      "kind": "orb_photographic_session",
+      "inliers": 105,
+      "ratio": 0.85366,
+      "coverage_left": 0.05974,
+      "coverage_right": 0.06466,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Exotic Shorthair_233",
+      "right": "refined_Exotic Shorthair_323",
+      "kind": "orb_photographic_session",
+      "inliers": 96,
+      "ratio": 0.9505,
+      "coverage_left": 0.32144,
+      "coverage_right": 0.26706,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Exotic Shorthair_246",
+      "right": "refined_Exotic Shorthair_331",
+      "kind": "orb_photographic_session",
+      "inliers": 249,
+      "ratio": 0.98419,
+      "coverage_left": 0.23221,
+      "coverage_right": 0.31181,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Exotic Shorthair_268",
+      "right": "refined_Exotic Shorthair_50",
+      "kind": "orb_photographic_session",
+      "inliers": 22,
+      "ratio": 0.91667,
+      "coverage_left": 0.05215,
+      "coverage_right": 0.05144,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Exotic Shorthair_295",
+      "right": "refined_Exotic Shorthair_311",
+      "kind": "orb_photographic_session",
+      "inliers": 340,
+      "ratio": 0.99415,
+      "coverage_left": 0.1938,
+      "coverage_right": 0.29429,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Manx_1",
+      "right": "refined_Manx_199",
+      "kind": "orb_photographic_session",
+      "inliers": 251,
+      "ratio": 0.97287,
+      "coverage_left": 0.23957,
+      "coverage_right": 0.1991,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Manx_1",
+      "right": "refined_Manx_48",
+      "kind": "orb_photographic_session",
+      "inliers": 249,
+      "ratio": 0.99203,
+      "coverage_left": 0.20363,
+      "coverage_right": 0.20287,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Manx_11",
+      "right": "refined_Manx_216",
+      "kind": "orb_photographic_session",
+      "inliers": 71,
+      "ratio": 0.86585,
+      "coverage_left": 0.3232,
+      "coverage_right": 0.28494,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Manx_125",
+      "right": "refined_Manx_52",
+      "kind": "orb_photographic_session",
+      "inliers": 94,
+      "ratio": 1.0,
+      "coverage_left": 0.22512,
+      "coverage_right": 0.2307,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Manx_126",
+      "right": "refined_Manx_308",
+      "kind": "orb_photographic_session",
+      "inliers": 89,
+      "ratio": 0.94681,
+      "coverage_left": 0.24531,
+      "coverage_right": 0.28585,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Manx_164",
+      "right": "refined_Manx_81",
+      "kind": "orb_photographic_session",
+      "inliers": 35,
+      "ratio": 1.0,
+      "coverage_left": 0.11421,
+      "coverage_right": 0.0666,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Manx_164",
+      "right": "refined_Manx_89",
+      "kind": "orb_photographic_session",
+      "inliers": 75,
+      "ratio": 0.98684,
+      "coverage_left": 0.12808,
+      "coverage_right": 0.0607,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Manx_195",
+      "right": "refined_Manx_52",
+      "kind": "orb_photographic_session",
+      "inliers": 89,
+      "ratio": 0.98889,
+      "coverage_left": 0.27057,
+      "coverage_right": 0.27845,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Manx_199",
+      "right": "refined_Manx_48",
+      "kind": "orb_photographic_session",
+      "inliers": 302,
+      "ratio": 0.9967,
+      "coverage_left": 0.21399,
+      "coverage_right": 0.25138,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Manx_201",
+      "right": "refined_Manx_292",
+      "kind": "orb_photographic_session",
+      "inliers": 22,
+      "ratio": 0.73333,
+      "coverage_left": 0.06343,
+      "coverage_right": 0.07573,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Manx_226",
+      "right": "refined_Manx_272",
+      "kind": "orb_photographic_session",
+      "inliers": 35,
+      "ratio": 0.89744,
+      "coverage_left": 0.18646,
+      "coverage_right": 0.10448,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Manx_233",
+      "right": "refined_Manx_299",
+      "kind": "orb_photographic_session",
+      "inliers": 138,
+      "ratio": 0.99281,
+      "coverage_left": 0.31425,
+      "coverage_right": 0.23141,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Manx_25",
+      "right": "refined_Manx_346",
+      "kind": "orb_photographic_session",
+      "inliers": 105,
+      "ratio": 0.84,
+      "coverage_left": 0.15542,
+      "coverage_right": 0.19549,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Manx_276",
+      "right": "refined_Manx_287",
+      "kind": "orb_photographic_session",
+      "inliers": 50,
+      "ratio": 1.0,
+      "coverage_left": 0.12265,
+      "coverage_right": 0.09281,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Manx_310",
+      "right": "refined_Manx_84",
+      "kind": "orb_photographic_session",
+      "inliers": 103,
+      "ratio": 0.9717,
+      "coverage_left": 0.18114,
+      "coverage_right": 0.1596,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Manx_325",
+      "right": "refined_Manx_39",
+      "kind": "orb_photographic_session",
+      "inliers": 154,
+      "ratio": 0.99355,
+      "coverage_left": 0.23393,
+      "coverage_right": 0.18702,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Manx_326",
+      "right": "refined_Manx_90",
+      "kind": "orb_photographic_session",
+      "inliers": 298,
+      "ratio": 0.99333,
+      "coverage_left": 0.25165,
+      "coverage_right": 0.27866,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Manx_52",
+      "right": "refined_Manx_60",
+      "kind": "orb_photographic_session",
+      "inliers": 72,
+      "ratio": 0.87805,
+      "coverage_left": 0.19233,
+      "coverage_right": 0.18708,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Manx_81",
+      "right": "refined_Manx_89",
+      "kind": "orb_photographic_session",
+      "inliers": 86,
+      "ratio": 0.92473,
+      "coverage_left": 0.14242,
+      "coverage_right": 0.11677,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Norwegian Forest_147",
+      "right": "refined_Norwegian Forest_255",
+      "kind": "orb_photographic_session",
+      "inliers": 151,
+      "ratio": 0.97419,
+      "coverage_left": 0.25504,
+      "coverage_right": 0.28581,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Norwegian Forest_207",
+      "right": "refined_Norwegian Forest_226",
+      "kind": "orb_photographic_session",
+      "inliers": 92,
+      "ratio": 0.92929,
+      "coverage_left": 0.17664,
+      "coverage_right": 0.17638,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Norwegian Forest_218",
+      "right": "refined_Norwegian Forest_52",
+      "kind": "orb_photographic_session",
+      "inliers": 85,
+      "ratio": 0.83333,
+      "coverage_left": 0.07198,
+      "coverage_right": 0.10117,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Norwegian Forest_221",
+      "right": "refined_Norwegian Forest_49",
+      "kind": "orb_photographic_session",
+      "inliers": 235,
+      "ratio": 0.97917,
+      "coverage_left": 0.38705,
+      "coverage_right": 0.24241,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Norwegian Forest_226",
+      "right": "refined_Norwegian Forest_331",
+      "kind": "orb_photographic_session",
+      "inliers": 133,
+      "ratio": 0.97794,
+      "coverage_left": 0.18191,
+      "coverage_right": 0.17829,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Norwegian Forest_250",
+      "right": "refined_Norwegian Forest_274",
+      "kind": "orb_photographic_session",
+      "inliers": 288,
+      "ratio": 0.99654,
+      "coverage_left": 0.35475,
+      "coverage_right": 0.32468,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Norwegian Forest_255",
+      "right": "refined_Norwegian Forest_339",
+      "kind": "orb_photographic_session",
+      "inliers": 213,
+      "ratio": 0.98157,
+      "coverage_left": 0.28501,
+      "coverage_right": 0.25324,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Norwegian Forest_271",
+      "right": "refined_Norwegian Forest_280",
+      "kind": "orb_photographic_session",
+      "inliers": 221,
+      "ratio": 0.97788,
+      "coverage_left": 0.2973,
+      "coverage_right": 0.33289,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Norwegian Forest_280",
+      "right": "refined_Norwegian Forest_97",
+      "kind": "orb_photographic_session",
+      "inliers": 237,
+      "ratio": 0.9958,
+      "coverage_left": 0.32755,
+      "coverage_right": 0.292,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Persian_101",
+      "right": "refined_Persian_20",
+      "kind": "orb_photographic_session",
+      "inliers": 304,
+      "ratio": 0.99023,
+      "coverage_left": 0.32771,
+      "coverage_right": 0.46509,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Persian_109",
+      "right": "refined_Persian_271",
+      "kind": "orb_photographic_session",
+      "inliers": 40,
+      "ratio": 0.8,
+      "coverage_left": 0.10878,
+      "coverage_right": 0.12118,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Persian_193",
+      "right": "refined_Persian_35",
+      "kind": "orb_photographic_session",
+      "inliers": 199,
+      "ratio": 0.98515,
+      "coverage_left": 0.241,
+      "coverage_right": 0.18983,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Ragdoll_168",
+      "right": "refined_Ragdoll_190",
+      "kind": "orb_photographic_session",
+      "inliers": 51,
+      "ratio": 0.79688,
+      "coverage_left": 0.05413,
+      "coverage_right": 0.05432,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Ragdoll_168",
+      "right": "refined_Ragdoll_212",
+      "kind": "orb_photographic_session",
+      "inliers": 59,
+      "ratio": 0.76623,
+      "coverage_left": 0.14822,
+      "coverage_right": 0.15781,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Scottish Fold_11",
+      "right": "refined_Scottish Fold_253",
+      "kind": "orb_photographic_session",
+      "inliers": 117,
+      "ratio": 0.68023,
+      "coverage_left": 0.18134,
+      "coverage_right": 0.22225,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Scottish Fold_116",
+      "right": "refined_Scottish Fold_68",
+      "kind": "orb_photographic_session",
+      "inliers": 115,
+      "ratio": 1.0,
+      "coverage_left": 0.17496,
+      "coverage_right": 0.10128,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Scottish Fold_119",
+      "right": "refined_Scottish Fold_349",
+      "kind": "orb_photographic_session",
+      "inliers": 73,
+      "ratio": 0.87952,
+      "coverage_left": 0.07173,
+      "coverage_right": 0.0754,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Scottish Fold_119",
+      "right": "refined_Scottish Fold_58",
+      "kind": "orb_photographic_session",
+      "inliers": 54,
+      "ratio": 0.72973,
+      "coverage_left": 0.07545,
+      "coverage_right": 0.08331,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Scottish Fold_119",
+      "right": "refined_Scottish Fold_92",
+      "kind": "orb_photographic_session",
+      "inliers": 54,
+      "ratio": 0.80597,
+      "coverage_left": 0.07185,
+      "coverage_right": 0.07516,
+      "manual_confirmation": true
+    },
+    {
+      "left": "refined_Scottish Fold_138",
+      "right": "refined_Scottish Fold_206",
+      "kind": "orb_photographic_session",
+      "inliers": 195,
+      "ratio": 0.9799,
+      "coverage_left": 0.37822,
+      "coverage_right": 0.28579,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Scottish Fold_17",
+      "right": "refined_Scottish Fold_7",
+      "kind": "orb_photographic_session",
+      "inliers": 55,
+      "ratio": 0.76389,
+      "coverage_left": 0.07059,
+      "coverage_right": 0.07014,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Scottish Fold_177",
+      "right": "refined_Scottish Fold_29",
+      "kind": "orb_photographic_session",
+      "inliers": 23,
+      "ratio": 0.7931,
+      "coverage_left": 0.10534,
+      "coverage_right": 0.1034,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Scottish Fold_186",
+      "right": "refined_Scottish Fold_63",
+      "kind": "orb_photographic_session",
+      "inliers": 66,
+      "ratio": 1.0,
+      "coverage_left": 0.21665,
+      "coverage_right": 0.19217,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Scottish Fold_193",
+      "right": "refined_Scottish Fold_20",
+      "kind": "orb_photographic_session",
+      "inliers": 186,
+      "ratio": 0.98413,
+      "coverage_left": 0.15688,
+      "coverage_right": 0.21483,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Scottish Fold_218",
+      "right": "refined_Scottish Fold_219",
+      "kind": "orb_photographic_session",
+      "inliers": 149,
+      "ratio": 0.94904,
+      "coverage_left": 0.19333,
+      "coverage_right": 0.29968,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Scottish Fold_233",
+      "right": "refined_Scottish Fold_255",
+      "kind": "orb_photographic_session",
+      "inliers": 24,
+      "ratio": 0.66667,
+      "coverage_left": 0.05526,
+      "coverage_right": 0.05903,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Scottish Fold_244",
+      "right": "refined_Scottish Fold_4",
+      "kind": "orb_photographic_session",
+      "inliers": 180,
+      "ratio": 1.0,
+      "coverage_left": 0.32779,
+      "coverage_right": 0.21934,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Scottish Fold_253",
+      "right": "refined_Scottish Fold_343",
+      "kind": "orb_photographic_session",
+      "inliers": 123,
+      "ratio": 0.7193,
+      "coverage_left": 0.23705,
+      "coverage_right": 0.19073,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Scottish Fold_316",
+      "right": "refined_Scottish Fold_326",
+      "kind": "orb_photographic_session",
+      "inliers": 86,
+      "ratio": 0.87755,
+      "coverage_left": 0.37062,
+      "coverage_right": 0.45711,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Scottish Fold_328",
+      "right": "refined_Scottish Fold_49",
+      "kind": "orb_photographic_session",
+      "inliers": 45,
+      "ratio": 0.83333,
+      "coverage_left": 0.11581,
+      "coverage_right": 0.11606,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Scottish Fold_349",
+      "right": "refined_Scottish Fold_92",
+      "kind": "orb_photographic_session",
+      "inliers": 80,
+      "ratio": 0.74766,
+      "coverage_left": 0.07444,
+      "coverage_right": 0.07361,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Scottish Fold_78",
+      "right": "refined_Scottish Fold_95",
+      "kind": "orb_photographic_session",
+      "inliers": 46,
+      "ratio": 0.67647,
+      "coverage_left": 0.15664,
+      "coverage_right": 0.16425,
+      "manual_confirmation": false
+    },
+    {
+      "left": "refined_Sphynx_162",
+      "right": "refined_Sphynx_174",
+      "kind": "orb_photographic_session",
+      "inliers": 77,
+      "ratio": 1.0,
+      "coverage_left": 0.25959,
+      "coverage_right": 0.11836,
+      "manual_confirmation": false
+    }
+  ],
+  "algorithm": "Same-label top10 HSV-colour and top6 pHash neighbours; ORB500,maxside512,Lowe0.70,homographyRANSAC4px,>=16inliers,ratio>=0.65,hull coverage>=0.05 in each image.",
+  "scope": "Single pretraining CPU audit; shared photographic-session edges conservatively stay within one split."
+}

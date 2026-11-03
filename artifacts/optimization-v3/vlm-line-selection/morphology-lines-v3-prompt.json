@@ -1,0 +1,4 @@
+{
+  "text": "识别照片中主体猫的品种。先观察耳朵形状、脸和鼻口、毛长与花纹，再结合这些外观给出一个最匹配的品种。不要仅凭毛色判断。候选代码：\nAbyssinian: 阿比西尼亚猫\nBengal: 孟加拉猫\nBirman: 伯曼猫\nBombay: 孟买猫\nBritish_Shorthair: 英国短毛猫\nEgyptian_Mau: 埃及猫\nMaine_Coon: 缅因猫\nPersian: 波斯猫\nRagdoll: 布偶猫\nRussian_Blue: 俄罗斯蓝猫\nSiamese: 暹罗猫\nSphynx: 斯芬克斯猫\nAmerican_Bobtail: 美国短尾猫\nAmerican_Curl: 美国卷耳猫\nAmerican_Shorthair: 美国短毛猫\nExotic_Shorthair: 异国短毛猫\nManx: 曼岛猫\nNorwegian_Forest: 挪威森林猫\nScottish_Fold: 苏格兰折耳猫\nTurkish_Angora: 土耳其安哥拉猫\n区分要点：Scottish_Fold耳朵向前折；American_Curl耳尖向后卷。Persian长毛扁脸，Exotic_Shorthair短毛扁脸。Maine_Coon体大、方形口鼻、长毛耳簇，Norwegian_Forest三角脸直鼻。British_Shorthair脸圆、毛密；Russian_Blue脸较窄、绿眼睛。Siamese短毛重点色，Ragdoll与Birman长毛蓝眼重点色，Birman通常四爪白手套。American_Shorthair可以有多种毛色，虎斑不是独立品种。普通家猫、混种或看不清特征时允许other，不要强行猜一个纯种。\n严格输出两行，不要JSON或Markdown。第一行只写一个英文品种代码。第二行写两条简短的中文可见外观特征，用顿号隔开。没有猫时第一行只写no_cat；范围外品种、普通家猫或混种时第一行写other。",
+  "version": "morphology-lines-v3"
+}

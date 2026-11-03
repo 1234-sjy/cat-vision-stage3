@@ -1,0 +1,21 @@
+{
+  "task": "assess-vlm-v4-shared-regression",
+  "state": "completed",
+  "pid": 20628,
+  "created_utc": "2026-11-03T00:54:27.947946+00:00",
+  "logs": "artifacts/run-logs/20261103T005427Z-assess-vlm-v4-shared-regression-ed3012fb",
+  "automatic_retry": false,
+  "automatic_restart": false,
+  "argv": [
+    "scripts/assess_vlm_adapted.py",
+    "--data-root",
+    "../../work/cat-data",
+    "--cohort",
+    "shared-regression",
+    "--output",
+    "artifacts/optimization-v4/shared-regression",
+    "--batch",
+    "4"
+  ],
+  "finished_utc": "2026-11-03T00:55:08.626546+00:00"
+}

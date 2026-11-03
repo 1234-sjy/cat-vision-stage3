@@ -1,0 +1,16 @@
+{
+  "state": "monitoring",
+  "pid": 22504,
+  "shutdown_percent": 10,
+  "checkpoint_percent": 12,
+  "stop_file": "C:\\Users\\sjysj\\Documents\\Codex\\2026-10-31\\new-chat\\outputs\\cat-vision-stage2\\runtime\\stop-for-10-percent-shutdown.json",
+  "user_authorized": true,
+  "automatic_startup": false,
+  "prevent_idle_system_sleep": true,
+  "created_utc": "2026-11-02T15:58:07.354701+00:00",
+  "last_reading": {
+    "time_utc": "2026-11-02T17:47:17.890787+00:00",
+    "battery_percent": 16,
+    "ac_online": false
+  }
+}

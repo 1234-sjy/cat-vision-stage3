@@ -1,0 +1,26 @@
+{
+  "task": "assess-expanded-v3-val",
+  "state": "completed",
+  "pid": 26824,
+  "created_utc": "2026-11-02T13:50:40.208331+00:00",
+  "logs": "artifacts/run-logs/20261102T135040Z-assess-expanded-v3-val-1d8bb601",
+  "automatic_retry": false,
+  "automatic_restart": false,
+  "argv": [
+    "scripts/assess_expanded.py",
+    "--data-root",
+    "..\\..\\work\\cat-data",
+    "--weights",
+    "weights/breed-swin-v3-generic.pt",
+    "--device",
+    "cuda",
+    "--setval",
+    "--output",
+    "artifacts/optimization-v3/validation-letterbox320",
+    "--preprocess",
+    "letterbox",
+    "--image-size",
+    "320"
+  ],
+  "finished_utc": "2026-11-02T13:50:55.838579+00:00"
+}

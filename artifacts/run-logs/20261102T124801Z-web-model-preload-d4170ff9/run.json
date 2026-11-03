@@ -1,0 +1,17 @@
+{
+  "task": "web-model-preload",
+  "state": "completed",
+  "pid": 26248,
+  "created_utc": "2026-11-02T12:48:01.895761+00:00",
+  "logs": "artifacts/run-logs/20261102T124801Z-web-model-preload-d4170ff9",
+  "automatic_retry": false,
+  "automatic_restart": false,
+  "argv": [
+    "scripts/benchmark_parallel.py",
+    "--data-root",
+    "..\\..\\work\\cat-data\\oxford-iiit-pet",
+    "--output",
+    "artifacts/optimization-v3/parallel-diagnostic.json"
+  ],
+  "finished_utc": "2026-11-02T12:48:13.570996+00:00"
+}

@@ -1,0 +1,386 @@
+[
+  {
+    "epoch": 1,
+    "backbone_frozen": true,
+    "train_loss": 1.2131839463468481,
+    "val_loss": 1.125443025151945,
+    "val_breed_accuracy": 0.6951351351351351,
+    "val_breed_macro_accuracy": 0.710734756742528,
+    "val_old12_macro_accuracy": 0.8548696423335748,
+    "val_new8_macro_accuracy": 0.4945324283559578,
+    "val_per_breed": {
+      "Abyssinian": {
+        "count": 46,
+        "correct": 40,
+        "accuracy": 0.8695652173913043
+      },
+      "Bengal": {
+        "count": 42,
+        "correct": 33,
+        "accuracy": 0.7857142857142857
+      },
+      "Birman": {
+        "count": 42,
+        "correct": 35,
+        "accuracy": 0.8333333333333334
+      },
+      "Bombay": {
+        "count": 46,
+        "correct": 45,
+        "accuracy": 0.9782608695652174
+      },
+      "British_Shorthair": {
+        "count": 43,
+        "correct": 24,
+        "accuracy": 0.5581395348837209
+      },
+      "Egyptian_Mau": {
+        "count": 41,
+        "correct": 32,
+        "accuracy": 0.7804878048780488
+      },
+      "Maine_Coon": {
+        "count": 42,
+        "correct": 33,
+        "accuracy": 0.7857142857142857
+      },
+      "Persian": {
+        "count": 42,
+        "correct": 40,
+        "accuracy": 0.9523809523809523
+      },
+      "Ragdoll": {
+        "count": 42,
+        "correct": 33,
+        "accuracy": 0.7857142857142857
+      },
+      "Russian_Blue": {
+        "count": 42,
+        "correct": 40,
+        "accuracy": 0.9523809523809523
+      },
+      "Siamese": {
+        "count": 43,
+        "correct": 42,
+        "accuracy": 0.9767441860465116
+      },
+      "Sphynx": {
+        "count": 43,
+        "correct": 43,
+        "accuracy": 1.0
+      },
+      "American_Bobtail": {
+        "count": 52,
+        "correct": 13,
+        "accuracy": 0.25
+      },
+      "American_Curl": {
+        "count": 51,
+        "correct": 12,
+        "accuracy": 0.23529411764705882
+      },
+      "American_Shorthair": {
+        "count": 52,
+        "correct": 19,
+        "accuracy": 0.36538461538461536
+      },
+      "Exotic_Shorthair": {
+        "count": 51,
+        "correct": 38,
+        "accuracy": 0.7450980392156863
+      },
+      "Manx": {
+        "count": 51,
+        "correct": 24,
+        "accuracy": 0.47058823529411764
+      },
+      "Norwegian_Forest": {
+        "count": 51,
+        "correct": 37,
+        "accuracy": 0.7254901960784313
+      },
+      "Scottish_Fold": {
+        "count": 51,
+        "correct": 28,
+        "accuracy": 0.5490196078431373
+      },
+      "Turkish_Angora": {
+        "count": 52,
+        "correct": 32,
+        "accuracy": 0.6153846153846154
+      }
+    },
+    "val_cats": 925,
+    "val_cats_accepted": 923,
+    "val_dogs": 500,
+    "val_false_cat_dogs": 1,
+    "learning_rates": [
+      1.5e-05,
+      0.0005
+    ],
+    "train_batches": 645,
+    "val_batches": 179,
+    "seconds": 88.46021179998934,
+    "elapsed_seconds": 88.46080939999956,
+    "device": "NVIDIA GeForce RTX 5080 Laptop GPU",
+    "allocated_mb": 123.6,
+    "reserved_mb": 280.0,
+    "peak_allocated_mb": 213.9
+  },
+  {
+    "epoch": 2,
+    "backbone_frozen": true,
+    "train_loss": 0.8946924130522622,
+    "val_loss": 1.05715159516529,
+    "val_breed_accuracy": 0.7156756756756757,
+    "val_breed_macro_accuracy": 0.7277295160870298,
+    "val_old12_macro_accuracy": 0.8409619637146827,
+    "val_new8_macro_accuracy": 0.5578808446455505,
+    "val_per_breed": {
+      "Abyssinian": {
+        "count": 46,
+        "correct": 39,
+        "accuracy": 0.8478260869565217
+      },
+      "Bengal": {
+        "count": 42,
+        "correct": 35,
+        "accuracy": 0.8333333333333334
+      },
+      "Birman": {
+        "count": 42,
+        "correct": 31,
+        "accuracy": 0.7380952380952381
+      },
+      "Bombay": {
+        "count": 46,
+        "correct": 45,
+        "accuracy": 0.9782608695652174
+      },
+      "British_Shorthair": {
+        "count": 43,
+        "correct": 24,
+        "accuracy": 0.5581395348837209
+      },
+      "Egyptian_Mau": {
+        "count": 41,
+        "correct": 29,
+        "accuracy": 0.7073170731707317
+      },
+      "Maine_Coon": {
+        "count": 42,
+        "correct": 30,
+        "accuracy": 0.7142857142857143
+      },
+      "Persian": {
+        "count": 42,
+        "correct": 41,
+        "accuracy": 0.9761904761904762
+      },
+      "Ragdoll": {
+        "count": 42,
+        "correct": 33,
+        "accuracy": 0.7857142857142857
+      },
+      "Russian_Blue": {
+        "count": 42,
+        "correct": 40,
+        "accuracy": 0.9523809523809523
+      },
+      "Siamese": {
+        "count": 43,
+        "correct": 43,
+        "accuracy": 1.0
+      },
+      "Sphynx": {
+        "count": 43,
+        "correct": 43,
+        "accuracy": 1.0
+      },
+      "American_Bobtail": {
+        "count": 52,
+        "correct": 22,
+        "accuracy": 0.4230769230769231
+      },
+      "American_Curl": {
+        "count": 51,
+        "correct": 17,
+        "accuracy": 0.3333333333333333
+      },
+      "American_Shorthair": {
+        "count": 52,
+        "correct": 14,
+        "accuracy": 0.2692307692307692
+      },
+      "Exotic_Shorthair": {
+        "count": 51,
+        "correct": 44,
+        "accuracy": 0.8627450980392157
+      },
+      "Manx": {
+        "count": 51,
+        "correct": 24,
+        "accuracy": 0.47058823529411764
+      },
+      "Norwegian_Forest": {
+        "count": 51,
+        "correct": 43,
+        "accuracy": 0.8431372549019608
+      },
+      "Scottish_Fold": {
+        "count": 51,
+        "correct": 29,
+        "accuracy": 0.5686274509803921
+      },
+      "Turkish_Angora": {
+        "count": 52,
+        "correct": 36,
+        "accuracy": 0.6923076923076923
+      }
+    },
+    "val_cats": 925,
+    "val_cats_accepted": 924,
+    "val_dogs": 500,
+    "val_false_cat_dogs": 2,
+    "learning_rates": [
+      1.5e-05,
+      0.0005
+    ],
+    "train_batches": 645,
+    "val_batches": 179,
+    "seconds": 90.1957437999954,
+    "elapsed_seconds": 178.86193759999878,
+    "device": "NVIDIA GeForce RTX 5080 Laptop GPU",
+    "allocated_mb": 123.6,
+    "reserved_mb": 280.0,
+    "peak_allocated_mb": 213.9
+  },
+  {
+    "epoch": 3,
+    "backbone_frozen": false,
+    "train_loss": 0.7927428893427039,
+    "val_loss": 0.9522544329767828,
+    "val_breed_accuracy": 0.7718918918918919,
+    "val_breed_macro_accuracy": 0.7779502966101823,
+    "val_old12_macro_accuracy": 0.8334113792170711,
+    "val_new8_macro_accuracy": 0.6947586726998491,
+    "val_per_breed": {
+      "Abyssinian": {
+        "count": 46,
+        "correct": 37,
+        "accuracy": 0.8043478260869565
+      },
+      "Bengal": {
+        "count": 42,
+        "correct": 28,
+        "accuracy": 0.6666666666666666
+      },
+      "Birman": {
+        "count": 42,
+        "correct": 34,
+        "accuracy": 0.8095238095238095
+      },
+      "Bombay": {
+        "count": 46,
+        "correct": 44,
+        "accuracy": 0.9565217391304348
+      },
+      "British_Shorthair": {
+        "count": 43,
+        "correct": 30,
+        "accuracy": 0.6976744186046512
+      },
+      "Egyptian_Mau": {
+        "count": 41,
+        "correct": 32,
+        "accuracy": 0.7804878048780488
+      },
+      "Maine_Coon": {
+        "count": 42,
+        "correct": 28,
+        "accuracy": 0.6666666666666666
+      },
+      "Persian": {
+        "count": 42,
+        "correct": 39,
+        "accuracy": 0.9285714285714286
+      },
+      "Ragdoll": {
+        "count": 42,
+        "correct": 29,
+        "accuracy": 0.6904761904761905
+      },
+      "Russian_Blue": {
+        "count": 42,
+        "correct": 42,
+        "accuracy": 1.0
+      },
+      "Siamese": {
+        "count": 43,
+        "correct": 43,
+        "accuracy": 1.0
+      },
+      "Sphynx": {
+        "count": 43,
+        "correct": 43,
+        "accuracy": 1.0
+      },
+      "American_Bobtail": {
+        "count": 52,
+        "correct": 15,
+        "accuracy": 0.28846153846153844
+      },
+      "American_Curl": {
+        "count": 51,
+        "correct": 35,
+        "accuracy": 0.6862745098039216
+      },
+      "American_Shorthair": {
+        "count": 52,
+        "correct": 28,
+        "accuracy": 0.5384615384615384
+      },
+      "Exotic_Shorthair": {
+        "count": 51,
+        "correct": 47,
+        "accuracy": 0.9215686274509803
+      },
+      "Manx": {
+        "count": 51,
+        "correct": 36,
+        "accuracy": 0.7058823529411765
+      },
+      "Norwegian_Forest": {
+        "count": 51,
+        "correct": 46,
+        "accuracy": 0.9019607843137255
+      },
+      "Scottish_Fold": {
+        "count": 51,
+        "correct": 41,
+        "accuracy": 0.803921568627451
+      },
+      "Turkish_Angora": {
+        "count": 52,
+        "correct": 37,
+        "accuracy": 0.7115384615384616
+      }
+    },
+    "val_cats": 925,
+    "val_cats_accepted": 925,
+    "val_dogs": 500,
+    "val_false_cat_dogs": 2,
+    "learning_rates": [
+      1.5e-05,
+      0.0005
+    ],
+    "train_batches": 645,
+    "val_batches": 179,
+    "seconds": 99.7560197999992,
+    "elapsed_seconds": 278.82908690000477,
+    "device": "NVIDIA GeForce RTX 5080 Laptop GPU",
+    "allocated_mb": 446.8,
+    "reserved_mb": 1126.0,
+    "peak_allocated_mb": 958.8
+  }
+]

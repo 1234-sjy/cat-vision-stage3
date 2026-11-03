@@ -1,0 +1,522 @@
+{
+  "torch": "2.9.1+cu128",
+  "cuda": "12.8",
+  "load_seconds": 6.141159100006917,
+  "threads": 8,
+  "device_map": "{'': 0}",
+  "dtype": "torch.bfloat16",
+  "generation_config": {
+    "max_length": 20,
+    "max_new_tokens": null,
+    "min_length": 0,
+    "min_new_tokens": null,
+    "early_stopping": false,
+    "max_time": null,
+    "stop_strings": null,
+    "do_sample": false,
+    "num_beams": 1,
+    "use_cache": true,
+    "cache_implementation": null,
+    "cache_config": null,
+    "return_legacy_cache": null,
+    "prefill_chunk_size": null,
+    "temperature": 1.0,
+    "top_k": 50,
+    "top_p": 1.0,
+    "min_p": null,
+    "typical_p": 1.0,
+    "epsilon_cutoff": 0.0,
+    "eta_cutoff": 0.0,
+    "repetition_penalty": 1.0,
+    "encoder_repetition_penalty": 1.0,
+    "length_penalty": 1.0,
+    "no_repeat_ngram_size": 0,
+    "bad_words_ids": null,
+    "renormalize_logits": false,
+    "forced_bos_token_id": null,
+    "forced_eos_token_id": null,
+    "remove_invalid_values": false,
+    "exponential_decay_length_penalty": null,
+    "suppress_tokens": null,
+    "begin_suppress_tokens": null,
+    "sequence_bias": null,
+    "token_healing": false,
+    "guidance_scale": null,
+    "watermarking_config": null,
+    "num_return_sequences": 1,
+    "output_attentions": false,
+    "output_hidden_states": false,
+    "output_scores": false,
+    "output_logits": null,
+    "return_dict_in_generate": false,
+    "pad_token_id": 151643,
+    "bos_token_id": 151643,
+    "eos_token_id": [
+      151645,
+      151643
+    ],
+    "encoder_no_repeat_ngram_size": 0,
+    "decoder_start_token_id": null,
+    "is_assistant": false,
+    "num_assistant_tokens": 20,
+    "num_assistant_tokens_schedule": "constant",
+    "assistant_confidence_threshold": 0.4,
+    "prompt_lookup_num_tokens": null,
+    "max_matching_ngram_size": null,
+    "assistant_early_exit": null,
+    "assistant_lookbehind": 10,
+    "target_lookbehind": 10,
+    "disable_compile": false,
+    "low_memory": null,
+    "penalty_alpha": null,
+    "dola_layers": null,
+    "diversity_penalty": 0.0,
+    "num_beam_groups": 1,
+    "constraints": null,
+    "force_words_ids": null,
+    "_from_model_config": false,
+    "transformers_version": "4.57.6"
+  },
+  "runs": [
+    {
+      "image_id": "British_Shorthair_10",
+      "true_breed": "British_Shorthair",
+      "result": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "British_Shorthair",
+        "breed_zh": "英国短毛猫",
+        "features": [
+          "灰色短毛",
+          "圆脸",
+          "金色眼睛"
+        ],
+        "raw_text": "{\"has_cat\":true,\"breed\":\"British_Shorthair\",\"features\":[\"灰色短毛\",\"圆脸\",\"金色眼睛\"]}",
+        "route": "qwen3_vl_4b",
+        "model": "Qwen/Qwen3-VL-4B-Instruct",
+        "prompt_version": "cat-breed-v1",
+        "inference_seconds": 4.071927900004084,
+        "throttle_seconds": 0.0,
+        "input_tokens": 361,
+        "output_tokens": 27
+      },
+      "forward_calls": [
+        {
+          "tokens": 361,
+          "seconds": 3.081850000002305
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.04384170001139864
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03252420001081191
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.037740200001280755
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03224529999715742
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.031979699997464195
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03210650000255555
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.031947200011927634
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.031775800001923926
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03185929999744985
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03158840000105556
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03193499999179039
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03190010000253096
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.032375800001318567
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03202309999323916
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03222220001043752
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.031824999998207204
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03222309998818673
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03202620000229217
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.032030999995185994
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03185920001124032
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03229570000257809
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03211559999908786
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03299649999826215
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03214070000103675
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03237749999971129
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03258510000887327
+        }
+      ],
+      "vision_seconds": [
+        2.8351372000033734
+      ]
+    },
+    {
+      "image_id": "Bengal_104",
+      "true_breed": "Bengal",
+      "result": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Bengal",
+        "breed_zh": "孟加拉猫",
+        "features": [
+          "斑点花纹",
+          "琥珀色眼睛",
+          "耳朵尖且直立"
+        ],
+        "raw_text": "{\"has_cat\":true,\"breed\":\"Bengal\",\"features\":[\"斑点花纹\",\"琥珀色眼睛\",\"耳朵尖且直立\"]}",
+        "route": "qwen3_vl_4b",
+        "model": "Qwen/Qwen3-VL-4B-Instruct",
+        "prompt_version": "cat-breed-v1",
+        "inference_seconds": 8.801075700001093,
+        "throttle_seconds": 0.0,
+        "input_tokens": 508,
+        "output_tokens": 31
+      },
+      "forward_calls": [
+        {
+          "tokens": 508,
+          "seconds": 7.7921170000045095
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03262759999779519
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03285160000086762
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03303569999116007
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.032265699992422014
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03333970000676345
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03309200001240242
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.032964199999696575
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03227609999885317
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03263159999914933
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03303530000266619
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.032308800000464544
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03218759999435861
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03180219999921974
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03188670000236016
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.031592200000886805
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.033045400006813
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03243569999176543
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03252170000632759
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03231559999403544
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03324179998890031
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03194709999661427
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.032811800003401004
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03259329999855254
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03287720000662375
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03334979999635834
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03176769999845419
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.034462399999029
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03274239999882411
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03343640000093728
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03269140000338666
+        }
+      ],
+      "vision_seconds": [
+        7.683506200002739
+      ]
+    },
+    {
+      "image_id": "Maine_Coon_1",
+      "true_breed": "Maine_Coon",
+      "result": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Abyssinian",
+        "breed_zh": "阿比西尼亚猫",
+        "features": [
+          "虎斑纹",
+          "大而直立的耳朵",
+          "绿色眼睛"
+        ],
+        "raw_text": "{\"has_cat\":true,\"breed\":\"Abyssinian\",\"features\":[\"虎斑纹\",\"大而直立的耳朵\",\"绿色眼睛\"]}",
+        "route": "qwen3_vl_4b",
+        "model": "Qwen/Qwen3-VL-4B-Instruct",
+        "prompt_version": "cat-breed-v1",
+        "inference_seconds": 2.355285300000105,
+        "throttle_seconds": 0.0,
+        "input_tokens": 319,
+        "output_tokens": 31
+      },
+      "forward_calls": [
+        {
+          "tokens": 319,
+          "seconds": 1.334481899990351
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.034670099994400516
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.0346986999938963
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.0407608999958029
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03290170000400394
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.0323725999915041
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.033053699997253716
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03257530000701081
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.032807199997478165
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03278160000627395
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03299710000283085
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03284130000974983
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03272810000635218
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03515229999902658
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03259680001065135
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03382450000208337
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03224610000324901
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03412219999881927
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.032767900003818795
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03290620000916533
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03246600000420585
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03290770000603516
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.0331609999993816
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03214149999257643
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.032187300006626174
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03297200000088196
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.031983600012608804
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03273730000364594
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03274039999814704
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.032548599992878735
+        },
+        {
+          "tokens": 1,
+          "seconds": 0.03259570000227541
+        }
+      ],
+      "vision_seconds": [
+        1.2543694000050891
+      ]
+    }
+  ]
+}

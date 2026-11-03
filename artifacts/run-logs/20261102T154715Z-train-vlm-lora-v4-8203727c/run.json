@@ -1,0 +1,18 @@
+{
+  "task": "train-vlm-lora-v4",
+  "state": "completed",
+  "pid": 17336,
+  "created_utc": "2026-11-02T15:47:15.612719+00:00",
+  "logs": "artifacts/run-logs/20261102T154715Z-train-vlm-lora-v4-8203727c",
+  "automatic_retry": false,
+  "automatic_restart": false,
+  "argv": [
+    "scripts/train_vlm_lora.py",
+    "--probe-only",
+    "--output",
+    "artifacts/optimization-v4/probe01",
+    "--adapter-output",
+    "weights/qwen-cat-lora-v4-probe01"
+  ],
+  "finished_utc": "2026-11-02T15:47:42.634719+00:00"
+}

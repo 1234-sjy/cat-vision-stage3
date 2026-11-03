@@ -1,0 +1,48 @@
+TASK START expanded-data-download-v3; logs=artifacts/run-logs/20261102T123508Z-expanded-data-download-v3-a6173b68
+download_bytes=16777216 elapsed_seconds=5.1
+download_bytes=33554432 elapsed_seconds=6.9
+download_bytes=50331648 elapsed_seconds=8.5
+download_bytes=67108864 elapsed_seconds=10.2
+download_bytes=83886080 elapsed_seconds=12.0
+download_bytes=100663296 elapsed_seconds=13.6
+download_bytes=117440512 elapsed_seconds=15.4
+download_bytes=134217728 elapsed_seconds=17.1
+download_bytes=150994944 elapsed_seconds=18.8
+download_bytes=167772160 elapsed_seconds=20.5
+download_bytes=184549376 elapsed_seconds=22.3
+download_bytes=201326592 elapsed_seconds=24.0
+download_bytes=218103808 elapsed_seconds=25.7
+download_bytes=234881024 elapsed_seconds=27.4
+download_bytes=251658240 elapsed_seconds=29.1
+download_bytes=268435456 elapsed_seconds=30.8
+download_bytes=285212672 elapsed_seconds=32.7
+download_bytes=301989888 elapsed_seconds=34.3
+download_bytes=318767104 elapsed_seconds=36.0
+download_bytes=335544320 elapsed_seconds=37.7
+download_bytes=352321536 elapsed_seconds=39.4
+download_bytes=369098752 elapsed_seconds=41.1
+download_bytes=385875968 elapsed_seconds=43.0
+download_bytes=402653184 elapsed_seconds=44.6
+download_bytes=419430400 elapsed_seconds=46.3
+download_bytes=436207616 elapsed_seconds=48.1
+download_bytes=452984832 elapsed_seconds=49.8
+{
+  "url": "https://www.kaggle.com/api/v1/datasets/download/doctrinek/catbreedsrefined-7k",
+  "started_utc": "2026-11-02T12:35:08.921549+00:00",
+  "state": "completed",
+  "automatic_retry": false,
+  "range_requests": false,
+  "streams": 1,
+  "archive": "expanded-v3-catbreedsrefined-7k.zip",
+  "advertised_version": 2,
+  "advertised_zip_bytes": 463820141,
+  "license": "CC BY-SA 4.0",
+  "dataset_owner": "doctrinek",
+  "http_status": 200,
+  "bytes": 463820141,
+  "sha256": "4617dea457acc50daf78f1efeddd0551d05275735ed4c9af6472ed345a25e3e1",
+  "zip_entries": 7000,
+  "elapsed_seconds": 50.89099999998871,
+  "finished_utc": "2026-11-02T12:35:59.817781+00:00"
+}
+TASK END expanded-data-download-v3; state=completed

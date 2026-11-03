@@ -1,12 +1,17 @@
 {
   "model": "Qwen/Qwen3-VL-4B-Instruct",
-  "prompt_version": "morphology-lines-v3",
+  "adapter": "weights/qwen-cat-lora-v4",
+  "adapter_sha256": "aa441496afa5bd1c4521e6fb5efdc9e8223bf67bfcb898197fe54a7d757336d7",
+  "prompt_version": "cat20-lora-v1",
   "output_format": "lines",
   "max_pixels": 589824,
-  "max_new_tokens": 192,
+  "max_new_tokens": 24,
   "accelerate_patch": true,
-  "validation_count": 100,
-  "validation_correct": 56,
-  "selection_source": "artifacts/optimization-v3/vlm-selection/selection.json",
+  "runtime_precision": "BF16 AMP",
+  "validation_count": 200,
+  "validation_correct": 171,
+  "validation_dog_count": 50,
+  "validation_dog_false_cat_rate": 0.0,
+  "selection_source": "artifacts/optimization-v4/training-resumed01/complete.json",
   "test_used": false
 }

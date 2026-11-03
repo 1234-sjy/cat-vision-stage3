@@ -1,0 +1,16 @@
+{
+  "task": "expanded-data-download-v3",
+  "state": "completed",
+  "pid": 13240,
+  "created_utc": "2026-11-02T12:35:08.924548+00:00",
+  "logs": "artifacts/run-logs/20261102T123508Z-expanded-data-download-v3-a6173b68",
+  "automatic_retry": false,
+  "automatic_restart": false,
+  "argv": [
+    "outputs/cat-vision-stage2/scripts/prepare_expanded.py",
+    "--data-root",
+    "work/cat-data",
+    "--download"
+  ],
+  "finished_utc": "2026-11-02T12:35:59.818781+00:00"
+}

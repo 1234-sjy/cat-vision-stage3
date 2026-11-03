@@ -1,0 +1,202 @@
+[
+  {
+    "full": "full",
+    "detail": "detail",
+    "detail_weight": 0,
+    "correct": 776,
+    "count": 925,
+    "accuracy": 0.8389189189189189,
+    "macro_accuracy": 0.8403165622611812,
+    "dog_false_cat": 3
+  },
+  {
+    "full": "full",
+    "detail": "detail",
+    "detail_weight": 0.15,
+    "correct": 779,
+    "count": 925,
+    "accuracy": 0.8421621621621621,
+    "macro_accuracy": 0.8437844711638727,
+    "dog_false_cat": 3
+  },
+  {
+    "full": "full",
+    "detail": "detail",
+    "detail_weight": 0.25,
+    "correct": 778,
+    "count": 925,
+    "accuracy": 0.841081081081081,
+    "macro_accuracy": 0.8428606400929828,
+    "dog_false_cat": 3
+  },
+  {
+    "full": "full",
+    "detail": "detail",
+    "detail_weight": 0.4,
+    "correct": 773,
+    "count": 925,
+    "accuracy": 0.8356756756756757,
+    "macro_accuracy": 0.8381464455561808,
+    "dog_false_cat": 3
+  },
+  {
+    "full": "full",
+    "detail": "detail",
+    "detail_weight": 0.5,
+    "correct": 771,
+    "count": 925,
+    "accuracy": 0.8335135135135135,
+    "macro_accuracy": 0.8367789766583782,
+    "dog_false_cat": 3
+  },
+  {
+    "full": "full",
+    "detail": "detail_flip",
+    "detail_weight": 0,
+    "correct": 776,
+    "count": 925,
+    "accuracy": 0.8389189189189189,
+    "macro_accuracy": 0.8403165622611812,
+    "dog_false_cat": 3
+  },
+  {
+    "full": "full",
+    "detail": "detail_flip",
+    "detail_weight": 0.15,
+    "correct": 780,
+    "count": 925,
+    "accuracy": 0.8432432432432433,
+    "macro_accuracy": 0.8447460096254111,
+    "dog_false_cat": 3
+  },
+  {
+    "full": "full",
+    "detail": "detail_flip",
+    "detail_weight": 0.25,
+    "correct": 778,
+    "count": 925,
+    "accuracy": 0.841081081081081,
+    "macro_accuracy": 0.8428606400929828,
+    "dog_false_cat": 3
+  },
+  {
+    "full": "full",
+    "detail": "detail_flip",
+    "detail_weight": 0.4,
+    "correct": 773,
+    "count": 925,
+    "accuracy": 0.8356756756756757,
+    "macro_accuracy": 0.8381652992515051,
+    "dog_false_cat": 3
+  },
+  {
+    "full": "full",
+    "detail": "detail_flip",
+    "detail_weight": 0.5,
+    "correct": 768,
+    "count": 925,
+    "accuracy": 0.8302702702702702,
+    "macro_accuracy": 0.8336277161541765,
+    "dog_false_cat": 3
+  },
+  {
+    "full": "full_flip",
+    "detail": "detail",
+    "detail_weight": 0,
+    "correct": 775,
+    "count": 925,
+    "accuracy": 0.8378378378378378,
+    "macro_accuracy": 0.8390472071986304,
+    "dog_false_cat": 3
+  },
+  {
+    "full": "full_flip",
+    "detail": "detail",
+    "detail_weight": 0.15,
+    "correct": 778,
+    "count": 925,
+    "accuracy": 0.841081081081081,
+    "macro_accuracy": 0.8425062843038444,
+    "dog_false_cat": 3
+  },
+  {
+    "full": "full_flip",
+    "detail": "detail",
+    "detail_weight": 0.25,
+    "correct": 779,
+    "count": 925,
+    "accuracy": 0.8421621621621621,
+    "macro_accuracy": 0.8440322625881347,
+    "dog_false_cat": 3
+  },
+  {
+    "full": "full_flip",
+    "detail": "detail",
+    "detail_weight": 0.4,
+    "correct": 773,
+    "count": 925,
+    "accuracy": 0.8356756756756757,
+    "macro_accuracy": 0.8381275918608564,
+    "dog_false_cat": 3
+  },
+  {
+    "full": "full_flip",
+    "detail": "detail",
+    "detail_weight": 0.5,
+    "correct": 772,
+    "count": 925,
+    "accuracy": 0.8345945945945946,
+    "macro_accuracy": 0.837904059965404,
+    "dog_false_cat": 3
+  },
+  {
+    "full": "full_flip",
+    "detail": "detail_flip",
+    "detail_weight": 0,
+    "correct": 775,
+    "count": 925,
+    "accuracy": 0.8378378378378378,
+    "macro_accuracy": 0.8390472071986304,
+    "dog_false_cat": 3
+  },
+  {
+    "full": "full_flip",
+    "detail": "detail_flip",
+    "detail_weight": 0.15,
+    "correct": 778,
+    "count": 925,
+    "accuracy": 0.841081081081081,
+    "macro_accuracy": 0.8425062843038444,
+    "dog_false_cat": 3
+  },
+  {
+    "full": "full_flip",
+    "detail": "detail_flip",
+    "detail_weight": 0.25,
+    "correct": 780,
+    "count": 925,
+    "accuracy": 0.8432432432432433,
+    "macro_accuracy": 0.8449938010496731,
+    "dog_false_cat": 3
+  },
+  {
+    "full": "full_flip",
+    "detail": "detail_flip",
+    "detail_weight": 0.4,
+    "correct": 771,
+    "count": 925,
+    "accuracy": 0.8335135135135135,
+    "macro_accuracy": 0.8359755772088417,
+    "dog_false_cat": 3
+  },
+  {
+    "full": "full_flip",
+    "detail": "detail_flip",
+    "detail_weight": 0.5,
+    "correct": 771,
+    "count": 925,
+    "accuracy": 0.8335135135135135,
+    "macro_accuracy": 0.8369425215038655,
+    "dog_false_cat": 3
+  }
+]

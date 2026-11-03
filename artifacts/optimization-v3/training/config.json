@@ -1,0 +1,171 @@
+{
+  "architecture": "torchvision.swin_t",
+  "classes": [
+    "Abyssinian",
+    "Bengal",
+    "Birman",
+    "Bombay",
+    "British_Shorthair",
+    "Egyptian_Mau",
+    "Maine_Coon",
+    "Persian",
+    "Ragdoll",
+    "Russian_Blue",
+    "Siamese",
+    "Sphynx",
+    "American_Bobtail",
+    "American_Curl",
+    "American_Shorthair",
+    "Exotic_Shorthair",
+    "Manx",
+    "Norwegian_Forest",
+    "Scottish_Fold",
+    "Turkish_Angora"
+  ],
+  "classes_zh": [
+    "阿比西尼亚猫",
+    "孟加拉猫",
+    "伯曼猫",
+    "孟买猫",
+    "英国短毛猫",
+    "埃及猫",
+    "缅因猫",
+    "波斯猫",
+    "布偶猫",
+    "俄罗斯蓝猫",
+    "暹罗猫",
+    "斯芬克斯猫",
+    "美国短尾猫",
+    "美国卷耳猫",
+    "美国短毛猫",
+    "异国短毛猫",
+    "曼岛猫",
+    "挪威森林猫",
+    "苏格兰折耳猫",
+    "土耳其安哥拉猫"
+  ],
+  "initialization_file": "weights/breed-swin-v2-fp16.pt",
+  "initialization_sha256": "4b049fff1437bfdf46b4f4d05e0c57b711be0366291e0c700397fdc445d121c1",
+  "initialization": {
+    "backbone": "all tensors copied from trained stage2 checkpoint",
+    "species_head": "all tensors copied from trained stage2 checkpoint",
+    "copied_breed_rows": [
+      {
+        "breed": "Abyssinian",
+        "source_row": 0,
+        "target_row": 0
+      },
+      {
+        "breed": "Bengal",
+        "source_row": 1,
+        "target_row": 1
+      },
+      {
+        "breed": "Birman",
+        "source_row": 2,
+        "target_row": 2
+      },
+      {
+        "breed": "Bombay",
+        "source_row": 3,
+        "target_row": 3
+      },
+      {
+        "breed": "British_Shorthair",
+        "source_row": 4,
+        "target_row": 4
+      },
+      {
+        "breed": "Egyptian_Mau",
+        "source_row": 5,
+        "target_row": 5
+      },
+      {
+        "breed": "Maine_Coon",
+        "source_row": 6,
+        "target_row": 6
+      },
+      {
+        "breed": "Persian",
+        "source_row": 7,
+        "target_row": 7
+      },
+      {
+        "breed": "Ragdoll",
+        "source_row": 8,
+        "target_row": 8
+      },
+      {
+        "breed": "Russian_Blue",
+        "source_row": 9,
+        "target_row": 9
+      },
+      {
+        "breed": "Siamese",
+        "source_row": 10,
+        "target_row": 10
+      },
+      {
+        "breed": "Sphynx",
+        "source_row": 11,
+        "target_row": 11
+      }
+    ],
+    "new_breed_rows": [
+      "American_Bobtail",
+      "American_Curl",
+      "American_Shorthair",
+      "Exotic_Shorthair",
+      "Manx",
+      "Norwegian_Forest",
+      "Scottish_Fold",
+      "Turkish_Angora"
+    ],
+    "new_row_initialization": "torch.nn.Linear default, seeded before model construction",
+    "master_weights": "FP32"
+  },
+  "classes_sha256": "8fb44de15a56dc69e89a254a87673113891d6d1aa0691b34477b91ce0e019f20",
+  "train_manifest_sha256": "e7e638526747e90692d53ea1959414f9d09ec78a4600c814a31de4d863d99ac4",
+  "train_manifest": "C:\\Users\\sjysj\\Documents\\Codex\\2026-10-31\\new-chat\\outputs\\cat-vision-stage2\\artifacts\\optimization-v3\\data\\train-manifest.json",
+  "data_root": "C:\\Users\\sjysj\\Documents\\Codex\\2026-10-31\\new-chat\\work\\cat-data",
+  "seed": 20261102,
+  "epochs_max": 24,
+  "warmup_frozen_epochs": 2,
+  "patience": 7,
+  "early_stop_minimum_epoch": 10,
+  "batch": 8,
+  "validation_batch": 8,
+  "workers": 0,
+  "cpu_threads": 2,
+  "image_size": 224,
+  "backbone_lr": 1.5e-05,
+  "heads_lr": 0.0005,
+  "optimizer": "AdamW",
+  "weight_decay": 0.0001,
+  "lr_schedule": "cosine, factor 1.0 to 0.15 after two frozen epochs",
+  "breed_label_smoothing": 0.03,
+  "species_loss_weight": 0.5,
+  "precision": "BF16 autocast with FP32 master weights",
+  "tf32_matmul_allowed": true,
+  "pause_after_sync_seconds": 0.05,
+  "sampling": {
+    "replacement": true,
+    "samples_per_epoch": 5156,
+    "cat_mass": 0.8,
+    "dog_mass": 0.2,
+    "cat_breeds_equal_mass": true
+  },
+  "source_images": "original images only; no subject crop",
+  "train_source_count": 5156,
+  "val_source_count": 1425,
+  "train_batches": 645,
+  "val_batches": 179,
+  "selection": "maximum validation mean per-breed raw-head accuracy; lower validation loss on tie",
+  "cat_threshold": 0.5,
+  "tta": false,
+  "no_test_input": true,
+  "automatic_retry": false,
+  "automatic_resume": false,
+  "torch_version": "2.9.1+cu128",
+  "device": "cuda"
+}

@@ -1,0 +1,256 @@
+[
+  {
+    "epoch": 1,
+    "global_step": 323,
+    "train_loss": 0.14048992733987659,
+    "train_images": 4996,
+    "train_loss_scope": "remaining_segment_after_explicit_resume",
+    "previously_completed_batches": 40,
+    "seconds": 1692.7963140999927,
+    "validation": {
+      "cat_correct": 164,
+      "cat_total": 200,
+      "cat_accuracy": 0.82,
+      "cat_macro_accuracy": 0.82,
+      "per_class": {
+        "Abyssinian": {
+          "correct": 7,
+          "total": 10,
+          "accuracy": 0.7
+        },
+        "Bengal": {
+          "correct": 6,
+          "total": 10,
+          "accuracy": 0.6
+        },
+        "Birman": {
+          "correct": 10,
+          "total": 10,
+          "accuracy": 1.0
+        },
+        "Bombay": {
+          "correct": 10,
+          "total": 10,
+          "accuracy": 1.0
+        },
+        "British_Shorthair": {
+          "correct": 10,
+          "total": 10,
+          "accuracy": 1.0
+        },
+        "Egyptian_Mau": {
+          "correct": 9,
+          "total": 10,
+          "accuracy": 0.9
+        },
+        "Maine_Coon": {
+          "correct": 9,
+          "total": 10,
+          "accuracy": 0.9
+        },
+        "Persian": {
+          "correct": 10,
+          "total": 10,
+          "accuracy": 1.0
+        },
+        "Ragdoll": {
+          "correct": 4,
+          "total": 10,
+          "accuracy": 0.4
+        },
+        "Russian_Blue": {
+          "correct": 10,
+          "total": 10,
+          "accuracy": 1.0
+        },
+        "Siamese": {
+          "correct": 10,
+          "total": 10,
+          "accuracy": 1.0
+        },
+        "Sphynx": {
+          "correct": 10,
+          "total": 10,
+          "accuracy": 1.0
+        },
+        "American_Bobtail": {
+          "correct": 0,
+          "total": 10,
+          "accuracy": 0.0
+        },
+        "American_Curl": {
+          "correct": 10,
+          "total": 10,
+          "accuracy": 1.0
+        },
+        "American_Shorthair": {
+          "correct": 7,
+          "total": 10,
+          "accuracy": 0.7
+        },
+        "Exotic_Shorthair": {
+          "correct": 7,
+          "total": 10,
+          "accuracy": 0.7
+        },
+        "Manx": {
+          "correct": 9,
+          "total": 10,
+          "accuracy": 0.9
+        },
+        "Norwegian_Forest": {
+          "correct": 9,
+          "total": 10,
+          "accuracy": 0.9
+        },
+        "Scottish_Fold": {
+          "correct": 8,
+          "total": 10,
+          "accuracy": 0.8
+        },
+        "Turkish_Angora": {
+          "correct": 9,
+          "total": 10,
+          "accuracy": 0.9
+        }
+      },
+      "dog": {
+        "total": 50,
+        "false_cat": 0,
+        "correct_no_cat": 50,
+        "parse_error": 0,
+        "false_cat_rate": 0.0,
+        "no_cat_accuracy": 1.0
+      }
+    },
+    "checkpoint": "C:\\Users\\sjysj\\Documents\\Codex\\2026-10-31\\new-chat\\outputs\\cat-vision-stage2\\artifacts\\optimization-v4\\training-resumed01\\epoch01",
+    "adapter_sha256": "11c13c650db724bafcc14281e257a7777fdd06fac1ac64cac3559dbf48cd0f4c"
+  },
+  {
+    "epoch": 2,
+    "global_step": 646,
+    "train_loss": 0.08697943181384069,
+    "train_images": 5156,
+    "train_loss_scope": "full_epoch",
+    "previously_completed_batches": 0,
+    "seconds": 1751.7065278999944,
+    "validation": {
+      "cat_correct": 170,
+      "cat_total": 200,
+      "cat_accuracy": 0.85,
+      "cat_macro_accuracy": 0.85,
+      "per_class": {
+        "Abyssinian": {
+          "correct": 7,
+          "total": 10,
+          "accuracy": 0.7
+        },
+        "Bengal": {
+          "correct": 8,
+          "total": 10,
+          "accuracy": 0.8
+        },
+        "Birman": {
+          "correct": 10,
+          "total": 10,
+          "accuracy": 1.0
+        },
+        "Bombay": {
+          "correct": 10,
+          "total": 10,
+          "accuracy": 1.0
+        },
+        "British_Shorthair": {
+          "correct": 9,
+          "total": 10,
+          "accuracy": 0.9
+        },
+        "Egyptian_Mau": {
+          "correct": 7,
+          "total": 10,
+          "accuracy": 0.7
+        },
+        "Maine_Coon": {
+          "correct": 9,
+          "total": 10,
+          "accuracy": 0.9
+        },
+        "Persian": {
+          "correct": 10,
+          "total": 10,
+          "accuracy": 1.0
+        },
+        "Ragdoll": {
+          "correct": 5,
+          "total": 10,
+          "accuracy": 0.5
+        },
+        "Russian_Blue": {
+          "correct": 10,
+          "total": 10,
+          "accuracy": 1.0
+        },
+        "Siamese": {
+          "correct": 10,
+          "total": 10,
+          "accuracy": 1.0
+        },
+        "Sphynx": {
+          "correct": 10,
+          "total": 10,
+          "accuracy": 1.0
+        },
+        "American_Bobtail": {
+          "correct": 3,
+          "total": 10,
+          "accuracy": 0.3
+        },
+        "American_Curl": {
+          "correct": 10,
+          "total": 10,
+          "accuracy": 1.0
+        },
+        "American_Shorthair": {
+          "correct": 9,
+          "total": 10,
+          "accuracy": 0.9
+        },
+        "Exotic_Shorthair": {
+          "correct": 8,
+          "total": 10,
+          "accuracy": 0.8
+        },
+        "Manx": {
+          "correct": 9,
+          "total": 10,
+          "accuracy": 0.9
+        },
+        "Norwegian_Forest": {
+          "correct": 9,
+          "total": 10,
+          "accuracy": 0.9
+        },
+        "Scottish_Fold": {
+          "correct": 9,
+          "total": 10,
+          "accuracy": 0.9
+        },
+        "Turkish_Angora": {
+          "correct": 8,
+          "total": 10,
+          "accuracy": 0.8
+        }
+      },
+      "dog": {
+        "total": 50,
+        "false_cat": 0,
+        "correct_no_cat": 50,
+        "parse_error": 0,
+        "false_cat_rate": 0.0,
+        "no_cat_accuracy": 1.0
+      }
+    },
+    "checkpoint": "C:\\Users\\sjysj\\Documents\\Codex\\2026-10-31\\new-chat\\outputs\\cat-vision-stage2\\artifacts\\optimization-v4\\training-resumed01\\epoch02",
+    "adapter_sha256": "aa441496afa5bd1c4521e6fb5efdc9e8223bf67bfcb898197fe54a7d757336d7"
+  }
+]

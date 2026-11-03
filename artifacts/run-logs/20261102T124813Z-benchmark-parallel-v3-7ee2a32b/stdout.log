@@ -1,0 +1,8 @@
+TASK START benchmark-parallel-v3; logs=artifacts/run-logs/20261102T124813Z-benchmark-parallel-v3-7ee2a32b
+serial British_Shorthair_10 1.875
+parallel British_Shorthair_10 1.11
+parallel Bengal_104 1.263
+serial Bengal_104 1.315
+serial Maine_Coon_1 1.289
+parallel Maine_Coon_1 1.19
+TASK END benchmark-parallel-v3; state=completed

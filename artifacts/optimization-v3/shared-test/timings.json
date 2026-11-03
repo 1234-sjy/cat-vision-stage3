@@ -1,0 +1,962 @@
+[
+  {
+    "image_id": "Abyssinian_77",
+    "total_seconds": 1.7145552000001771,
+    "traditional_seconds": 1.0103665000060573,
+    "vlm_seconds": 1.695329900001525,
+    "cuda_allocated_mib": 8989.39501953125,
+    "cuda_reserved_mib": 9860.0
+  },
+  {
+    "image_id": "Abyssinian_21",
+    "total_seconds": 0.7605309999926249,
+    "traditional_seconds": 0.28752389999863226,
+    "vlm_seconds": 0.7591901000123471,
+    "cuda_allocated_mib": 9055.39501953125,
+    "cuda_reserved_mib": 9876.0
+  },
+  {
+    "image_id": "Abyssinian_50",
+    "total_seconds": 0.8202636000060011,
+    "traditional_seconds": 0.32249880000017583,
+    "vlm_seconds": 0.8189351000037277,
+    "cuda_allocated_mib": 9055.37060546875,
+    "cuda_reserved_mib": 9876.0
+  },
+  {
+    "image_id": "refined_Abyssinian_313",
+    "total_seconds": 0.9870706999936374,
+    "traditional_seconds": 0.2427313999942271,
+    "vlm_seconds": 0.9858364999963669,
+    "cuda_allocated_mib": 9055.2978515625,
+    "cuda_reserved_mib": 9876.0
+  },
+  {
+    "image_id": "refined_Abyssinian_170",
+    "total_seconds": 0.6401117999921553,
+    "traditional_seconds": 0.2567842999997083,
+    "vlm_seconds": 0.6388411000079941,
+    "cuda_allocated_mib": 9055.29443359375,
+    "cuda_reserved_mib": 9876.0
+  },
+  {
+    "image_id": "refined_Abyssinian_162",
+    "total_seconds": 0.9598098999995273,
+    "traditional_seconds": 0.2753318000031868,
+    "vlm_seconds": 0.9586363999987952,
+    "cuda_allocated_mib": 9055.31298828125,
+    "cuda_reserved_mib": 9876.0
+  },
+  {
+    "image_id": "Bengal_57",
+    "total_seconds": 0.6918753999925684,
+    "traditional_seconds": 0.3007177999970736,
+    "vlm_seconds": 0.6901861000078497,
+    "cuda_allocated_mib": 9055.39453125,
+    "cuda_reserved_mib": 9876.0
+  },
+  {
+    "image_id": "Bengal_195",
+    "total_seconds": 0.6876970000012079,
+    "traditional_seconds": 0.27749730000505224,
+    "vlm_seconds": 0.6863267000007909,
+    "cuda_allocated_mib": 9055.31298828125,
+    "cuda_reserved_mib": 9880.0
+  },
+  {
+    "image_id": "Bengal_97",
+    "total_seconds": 0.8855636999942362,
+    "traditional_seconds": 0.3087798000051407,
+    "vlm_seconds": 0.884236999991117,
+    "cuda_allocated_mib": 9055.39453125,
+    "cuda_reserved_mib": 9880.0
+  },
+  {
+    "image_id": "refined_Bengal_68",
+    "total_seconds": 4.0391394999896875,
+    "traditional_seconds": 0.6317016999964835,
+    "vlm_seconds": 4.037679799992475,
+    "cuda_allocated_mib": 9055.2802734375,
+    "cuda_reserved_mib": 9880.0
+  },
+  {
+    "image_id": "refined_Bengal_170",
+    "total_seconds": 7.997441200001049,
+    "traditional_seconds": 3.4447018000064418,
+    "vlm_seconds": 7.994934599992121,
+    "cuda_allocated_mib": 9055.267578125,
+    "cuda_reserved_mib": 9880.0
+  },
+  {
+    "image_id": "refined_Bengal_211",
+    "total_seconds": 13.23354560000007,
+    "traditional_seconds": 3.4433908999926643,
+    "vlm_seconds": 13.230988299997989,
+    "cuda_allocated_mib": 9055.26806640625,
+    "cuda_reserved_mib": 9880.0
+  },
+  {
+    "image_id": "Birman_7",
+    "total_seconds": 10.393152400007239,
+    "traditional_seconds": 4.440397699989262,
+    "vlm_seconds": 10.39109720000124,
+    "cuda_allocated_mib": 9055.39501953125,
+    "cuda_reserved_mib": 9880.0
+  },
+  {
+    "image_id": "Birman_80",
+    "total_seconds": 11.498195500011207,
+    "traditional_seconds": 4.444446499997866,
+    "vlm_seconds": 11.495816999988165,
+    "cuda_allocated_mib": 9055.4111328125,
+    "cuda_reserved_mib": 9880.0
+  },
+  {
+    "image_id": "Birman_63",
+    "total_seconds": 12.054698499996448,
+    "traditional_seconds": 4.441954699999769,
+    "vlm_seconds": 12.052828100000625,
+    "cuda_allocated_mib": 9055.39501953125,
+    "cuda_reserved_mib": 9880.0
+  },
+  {
+    "image_id": "refined_Birman_153",
+    "total_seconds": 9.816295299999183,
+    "traditional_seconds": 3.6266132000018843,
+    "vlm_seconds": 9.814093000008143,
+    "cuda_allocated_mib": 9055.32763671875,
+    "cuda_reserved_mib": 9880.0
+  },
+  {
+    "image_id": "refined_Birman_256",
+    "total_seconds": 9.806124200011254,
+    "traditional_seconds": 3.6319780000048922,
+    "vlm_seconds": 9.803434900008142,
+    "cuda_allocated_mib": 9055.32861328125,
+    "cuda_reserved_mib": 9880.0
+  },
+  {
+    "image_id": "refined_Birman_152",
+    "total_seconds": 8.046270599996205,
+    "traditional_seconds": 3.4496220000000903,
+    "vlm_seconds": 8.044125599990366,
+    "cuda_allocated_mib": 9055.28515625,
+    "cuda_reserved_mib": 9880.0
+  },
+  {
+    "image_id": "Bombay_82",
+    "total_seconds": 13.134499100007815,
+    "traditional_seconds": 3.384414200001629,
+    "vlm_seconds": 13.13244569998642,
+    "cuda_allocated_mib": 9055.25732421875,
+    "cuda_reserved_mib": 9880.0
+  },
+  {
+    "image_id": "Bombay_64",
+    "total_seconds": 10.092690499994205,
+    "traditional_seconds": 3.963513199996669,
+    "vlm_seconds": 10.091016699996544,
+    "cuda_allocated_mib": 9055.26708984375,
+    "cuda_reserved_mib": 9880.0
+  },
+  {
+    "image_id": "Bombay_83",
+    "total_seconds": 10.644646400003694,
+    "traditional_seconds": 3.4810873000096763,
+    "vlm_seconds": 10.643115300001227,
+    "cuda_allocated_mib": 9055.2802734375,
+    "cuda_reserved_mib": 9880.0
+  },
+  {
+    "image_id": "refined_Bombay_227",
+    "total_seconds": 10.033484599989606,
+    "traditional_seconds": 3.406740799997351,
+    "vlm_seconds": 10.031338500004495,
+    "cuda_allocated_mib": 9055.26416015625,
+    "cuda_reserved_mib": 9880.0
+  },
+  {
+    "image_id": "refined_Bombay_279",
+    "total_seconds": 10.339049799993518,
+    "traditional_seconds": 3.647684299998218,
+    "vlm_seconds": 10.336859100003494,
+    "cuda_allocated_mib": 9055.3291015625,
+    "cuda_reserved_mib": 9880.0
+  },
+  {
+    "image_id": "refined_Bombay_199",
+    "total_seconds": 9.67835030000424,
+    "traditional_seconds": 3.538187199999811,
+    "vlm_seconds": 9.674885500004166,
+    "cuda_allocated_mib": 9055.306640625,
+    "cuda_reserved_mib": 9880.0
+  },
+  {
+    "image_id": "British_Shorthair_274",
+    "total_seconds": 10.483113800000865,
+    "traditional_seconds": 3.7855186999950092,
+    "vlm_seconds": 10.480874799992307,
+    "cuda_allocated_mib": 9055.3125,
+    "cuda_reserved_mib": 9880.0
+  },
+  {
+    "image_id": "British_Shorthair_66",
+    "total_seconds": 14.5577145999996,
+    "traditional_seconds": 4.275303400005214,
+    "vlm_seconds": 14.555038800011971,
+    "cuda_allocated_mib": 9055.36962890625,
+    "cuda_reserved_mib": 9880.0
+  },
+  {
+    "image_id": "British_Shorthair_86",
+    "total_seconds": 11.270198199999868,
+    "traditional_seconds": 4.2709729999915,
+    "vlm_seconds": 11.268189399997937,
+    "cuda_allocated_mib": 9055.36962890625,
+    "cuda_reserved_mib": 9880.0
+  },
+  {
+    "image_id": "refined_British Shorthair_223",
+    "total_seconds": 10.397036900001694,
+    "traditional_seconds": 3.273355899989838,
+    "vlm_seconds": 10.395375300009619,
+    "cuda_allocated_mib": 9055.25048828125,
+    "cuda_reserved_mib": 9880.0
+  },
+  {
+    "image_id": "refined_British Shorthair_119",
+    "total_seconds": 10.848360899995896,
+    "traditional_seconds": 3.6404849999962607,
+    "vlm_seconds": 10.846444799986784,
+    "cuda_allocated_mib": 9055.32763671875,
+    "cuda_reserved_mib": 9880.0
+  },
+  {
+    "image_id": "refined_British Shorthair_338",
+    "total_seconds": 10.71950440001092,
+    "traditional_seconds": 3.5362624999979744,
+    "vlm_seconds": 10.717063299991423,
+    "cuda_allocated_mib": 9055.3046875,
+    "cuda_reserved_mib": 9880.0
+  },
+  {
+    "image_id": "Egyptian_Mau_210",
+    "total_seconds": 13.246605799999088,
+    "traditional_seconds": 3.477617899989127,
+    "vlm_seconds": 13.244595600001048,
+    "cuda_allocated_mib": 9055.2802734375,
+    "cuda_reserved_mib": 9880.0
+  },
+  {
+    "image_id": "Egyptian_Mau_213",
+    "total_seconds": 10.631387700006599,
+    "traditional_seconds": 3.476311100006569,
+    "vlm_seconds": 10.629182899996522,
+    "cuda_allocated_mib": 9055.2802734375,
+    "cuda_reserved_mib": 9880.0
+  },
+  {
+    "image_id": "Egyptian_Mau_85",
+    "total_seconds": 13.062581800011685,
+    "traditional_seconds": 3.994943099998636,
+    "vlm_seconds": 13.06087820000539,
+    "cuda_allocated_mib": 9055.34033203125,
+    "cuda_reserved_mib": 9880.0
+  },
+  {
+    "image_id": "refined_Egyptian Mau_116",
+    "total_seconds": 12.71295509999618,
+    "traditional_seconds": 3.4770541999896523,
+    "vlm_seconds": 12.711459600002854,
+    "cuda_allocated_mib": 9055.2802734375,
+    "cuda_reserved_mib": 9880.0
+  },
+  {
+    "image_id": "refined_Egyptian Mau_201",
+    "total_seconds": 13.19588179999846,
+    "traditional_seconds": 3.808601099997759,
+    "vlm_seconds": 13.193877600002452,
+    "cuda_allocated_mib": 9055.34033203125,
+    "cuda_reserved_mib": 9880.0
+  },
+  {
+    "image_id": "refined_Egyptian Mau_313",
+    "total_seconds": 20.986027699997067,
+    "traditional_seconds": 7.80924750000122,
+    "vlm_seconds": 20.98181620000105,
+    "cuda_allocated_mib": 9057.046875,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "Maine_Coon_85",
+    "total_seconds": 5.216962499995134,
+    "traditional_seconds": 4.448673999999301,
+    "vlm_seconds": 5.215050800004974,
+    "cuda_allocated_mib": 9055.39501953125,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "Maine_Coon_67",
+    "total_seconds": 0.7737726000050316,
+    "traditional_seconds": 0.30968180000490975,
+    "vlm_seconds": 0.772367800003849,
+    "cuda_allocated_mib": 9055.478515625,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "Maine_Coon_2",
+    "total_seconds": 0.7025493000110146,
+    "traditional_seconds": 0.28096269999514334,
+    "vlm_seconds": 0.701341499996488,
+    "cuda_allocated_mib": 9055.29541015625,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "refined_Maine Coon_1",
+    "total_seconds": 0.7022177999897394,
+    "traditional_seconds": 0.29010090000519995,
+    "vlm_seconds": 0.7008765000064159,
+    "cuda_allocated_mib": 9055.33056640625,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "refined_Maine Coon_202",
+    "total_seconds": 0.6730038000096101,
+    "traditional_seconds": 0.25616450000961777,
+    "vlm_seconds": 0.6717072000028566,
+    "cuda_allocated_mib": 9055.2861328125,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "refined_Maine Coon_188",
+    "total_seconds": 0.7059066999936476,
+    "traditional_seconds": 0.25101619999622926,
+    "vlm_seconds": 0.7046129000082146,
+    "cuda_allocated_mib": 9055.30224609375,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "Persian_70",
+    "total_seconds": 0.6419503999932203,
+    "traditional_seconds": 0.3107508999964921,
+    "vlm_seconds": 0.6406540000025416,
+    "cuda_allocated_mib": 9055.36962890625,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "Persian_68",
+    "total_seconds": 0.6705234999972163,
+    "traditional_seconds": 0.30958849999296945,
+    "vlm_seconds": 0.6690977000107523,
+    "cuda_allocated_mib": 9055.47412109375,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "Persian_25",
+    "total_seconds": 0.5385399000078905,
+    "traditional_seconds": 0.2837735000066459,
+    "vlm_seconds": 0.5371584999957122,
+    "cuda_allocated_mib": 9055.3603515625,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "refined_Persian_269",
+    "total_seconds": 0.6278533000004245,
+    "traditional_seconds": 0.28359189999173395,
+    "vlm_seconds": 0.6261121999996249,
+    "cuda_allocated_mib": 9055.3369140625,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "refined_Persian_4",
+    "total_seconds": 0.5047506999981124,
+    "traditional_seconds": 0.25477390000014566,
+    "vlm_seconds": 0.5034728000027826,
+    "cuda_allocated_mib": 9055.2802734375,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "refined_Persian_60",
+    "total_seconds": 0.6447654999938095,
+    "traditional_seconds": 0.2536255000013625,
+    "vlm_seconds": 0.6434952999989036,
+    "cuda_allocated_mib": 9055.3251953125,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "Ragdoll_97",
+    "total_seconds": 0.6957306999975117,
+    "traditional_seconds": 0.2989769999985583,
+    "vlm_seconds": 0.6943621999962488,
+    "cuda_allocated_mib": 9055.39501953125,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "Ragdoll_78",
+    "total_seconds": 0.6416862000041874,
+    "traditional_seconds": 0.2927754999982426,
+    "vlm_seconds": 0.6402620000008028,
+    "cuda_allocated_mib": 9055.40283203125,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "Ragdoll_25",
+    "total_seconds": 0.7644757000089157,
+    "traditional_seconds": 0.28770270000677556,
+    "vlm_seconds": 0.7629715000075521,
+    "cuda_allocated_mib": 9055.3701171875,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "refined_Ragdoll_59",
+    "total_seconds": 0.579642500000773,
+    "traditional_seconds": 0.27175919999717735,
+    "vlm_seconds": 0.5785140999942087,
+    "cuda_allocated_mib": 9055.326171875,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "refined_Ragdoll_181",
+    "total_seconds": 0.672975099994801,
+    "traditional_seconds": 0.23930529999779537,
+    "vlm_seconds": 0.671772300003795,
+    "cuda_allocated_mib": 9055.2802734375,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "refined_Ragdoll_228",
+    "total_seconds": 0.7132243999949424,
+    "traditional_seconds": 0.2688564999989467,
+    "vlm_seconds": 0.7117419999995036,
+    "cuda_allocated_mib": 9055.33935546875,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "Russian_Blue_78",
+    "total_seconds": 0.6072816000087187,
+    "traditional_seconds": 0.2812197000021115,
+    "vlm_seconds": 0.6057136000017636,
+    "cuda_allocated_mib": 9055.4091796875,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "Russian_Blue_212",
+    "total_seconds": 0.6076465000078315,
+    "traditional_seconds": 0.27675469999667257,
+    "vlm_seconds": 0.6062366000114707,
+    "cuda_allocated_mib": 9055.3701171875,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "Russian_Blue_31",
+    "total_seconds": 0.6175590999919223,
+    "traditional_seconds": 0.27649180000298657,
+    "vlm_seconds": 0.6162608000013279,
+    "cuda_allocated_mib": 9055.39501953125,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "refined_Russian Blue_304",
+    "total_seconds": 0.5791944999946281,
+    "traditional_seconds": 0.2468673000112176,
+    "vlm_seconds": 0.577906599995913,
+    "cuda_allocated_mib": 9055.2802734375,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "refined_Russian Blue_221",
+    "total_seconds": 0.5774758999905316,
+    "traditional_seconds": 0.2563735000003362,
+    "vlm_seconds": 0.5758807999955025,
+    "cuda_allocated_mib": 9055.29736328125,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "refined_Russian Blue_256",
+    "total_seconds": 0.6369653000001563,
+    "traditional_seconds": 0.2658017999929143,
+    "vlm_seconds": 0.635494899994228,
+    "cuda_allocated_mib": 9055.33056640625,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "Siamese_55",
+    "total_seconds": 0.6530741000024136,
+    "traditional_seconds": 0.12481229999684729,
+    "vlm_seconds": 0.6515756000007968,
+    "cuda_allocated_mib": 9055.33056640625,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "Siamese_233",
+    "total_seconds": 0.7103222999867285,
+    "traditional_seconds": 0.25267729999904986,
+    "vlm_seconds": 0.7089061999868136,
+    "cuda_allocated_mib": 9055.28564453125,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "Siamese_35",
+    "total_seconds": 0.6540864999988116,
+    "traditional_seconds": 0.28112050000345334,
+    "vlm_seconds": 0.6526728000026196,
+    "cuda_allocated_mib": 9055.37060546875,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "refined_Siamese_316",
+    "total_seconds": 0.7317965999973239,
+    "traditional_seconds": 0.2485832000093069,
+    "vlm_seconds": 0.7303874999925029,
+    "cuda_allocated_mib": 9055.27783203125,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "refined_Siamese_287",
+    "total_seconds": 0.7479202000104124,
+    "traditional_seconds": 0.25354420000803657,
+    "vlm_seconds": 0.7465805999963777,
+    "cuda_allocated_mib": 9055.2802734375,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "refined_Siamese_160",
+    "total_seconds": 0.6435953999898629,
+    "traditional_seconds": 0.2590382999915164,
+    "vlm_seconds": 0.6423316000000341,
+    "cuda_allocated_mib": 9055.32568359375,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "Sphynx_91",
+    "total_seconds": 0.759278199999244,
+    "traditional_seconds": 0.2794531999970786,
+    "vlm_seconds": 0.7579624999925727,
+    "cuda_allocated_mib": 9055.3701171875,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "Sphynx_251",
+    "total_seconds": 0.8020811000023969,
+    "traditional_seconds": 0.3189499000000069,
+    "vlm_seconds": 0.8006610000011278,
+    "cuda_allocated_mib": 9055.4736328125,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "Sphynx_31",
+    "total_seconds": 0.6936226999969222,
+    "traditional_seconds": 0.12799799999629613,
+    "vlm_seconds": 0.692093500008923,
+    "cuda_allocated_mib": 9055.4736328125,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "refined_Sphynx_150",
+    "total_seconds": 0.6369754000043031,
+    "traditional_seconds": 0.25595970000722446,
+    "vlm_seconds": 0.635650700001861,
+    "cuda_allocated_mib": 9055.2802734375,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "refined_Sphynx_220",
+    "total_seconds": 0.7290386999957263,
+    "traditional_seconds": 0.2543811000068672,
+    "vlm_seconds": 0.7276540999882855,
+    "cuda_allocated_mib": 9055.2783203125,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "refined_Sphynx_60",
+    "total_seconds": 0.640317800003686,
+    "traditional_seconds": 0.11957650000113063,
+    "vlm_seconds": 0.6386817000020528,
+    "cuda_allocated_mib": 9055.27294921875,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "refined_American Bobtail_107",
+    "total_seconds": 0.7761899999895832,
+    "traditional_seconds": 0.2631122999882791,
+    "vlm_seconds": 0.7746946999977808,
+    "cuda_allocated_mib": 9055.32763671875,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "refined_American Bobtail_26",
+    "total_seconds": 0.5981484000076307,
+    "traditional_seconds": 0.2579725999967195,
+    "vlm_seconds": 0.596966600001906,
+    "cuda_allocated_mib": 9055.2802734375,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "refined_American Bobtail_166",
+    "total_seconds": 0.7520213999960106,
+    "traditional_seconds": 0.253044899989618,
+    "vlm_seconds": 0.7505718000029447,
+    "cuda_allocated_mib": 9055.267578125,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "refined_American Bobtail_45",
+    "total_seconds": 0.8034866999951191,
+    "traditional_seconds": 0.25548479999997653,
+    "vlm_seconds": 0.8022835000010673,
+    "cuda_allocated_mib": 9055.2802734375,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "refined_American Bobtail_52",
+    "total_seconds": 0.7700624999997672,
+    "traditional_seconds": 0.2612518999958411,
+    "vlm_seconds": 0.7684119999903487,
+    "cuda_allocated_mib": 9055.30712890625,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "refined_American Bobtail_216",
+    "total_seconds": 0.7890610000031302,
+    "traditional_seconds": 0.25269190000835806,
+    "vlm_seconds": 0.7876841000106651,
+    "cuda_allocated_mib": 9055.2802734375,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "refined_American Curl_201",
+    "total_seconds": 0.9137568000005558,
+    "traditional_seconds": 0.495610800004215,
+    "vlm_seconds": 0.909887499990873,
+    "cuda_allocated_mib": 9057.046875,
+    "cuda_reserved_mib": 10174.0
+  },
+  {
+    "image_id": "refined_American Curl_268",
+    "total_seconds": 1.0212188000004971,
+    "traditional_seconds": 0.5378027999977348,
+    "vlm_seconds": 1.0165264999959618,
+    "cuda_allocated_mib": 9057.58056640625,
+    "cuda_reserved_mib": 10438.0
+  },
+  {
+    "image_id": "refined_American Curl_248",
+    "total_seconds": 0.8926638000120874,
+    "traditional_seconds": 0.49737549999554176,
+    "vlm_seconds": 0.888871699993615,
+    "cuda_allocated_mib": 9057.046875,
+    "cuda_reserved_mib": 10438.0
+  },
+  {
+    "image_id": "refined_American Curl_135",
+    "total_seconds": 0.6809379999904195,
+    "traditional_seconds": 0.27139639999950305,
+    "vlm_seconds": 0.6794432000024244,
+    "cuda_allocated_mib": 9055.33837890625,
+    "cuda_reserved_mib": 10438.0
+  },
+  {
+    "image_id": "refined_American Curl_237",
+    "total_seconds": 0.6971276999975089,
+    "traditional_seconds": 0.30110029999923427,
+    "vlm_seconds": 0.695580700004939,
+    "cuda_allocated_mib": 9055.4169921875,
+    "cuda_reserved_mib": 10438.0
+  },
+  {
+    "image_id": "refined_American Curl_12",
+    "total_seconds": 0.9324467000114964,
+    "traditional_seconds": 0.4637129999900935,
+    "vlm_seconds": 0.9294999999983702,
+    "cuda_allocated_mib": 9056.12255859375,
+    "cuda_reserved_mib": 10440.0
+  },
+  {
+    "image_id": "refined_American Shorthair_201",
+    "total_seconds": 0.7777129000023706,
+    "traditional_seconds": 0.2505098999972688,
+    "vlm_seconds": 0.776331899993238,
+    "cuda_allocated_mib": 9055.2890625,
+    "cuda_reserved_mib": 10440.0
+  },
+  {
+    "image_id": "refined_American Shorthair_291",
+    "total_seconds": 0.6769109000015305,
+    "traditional_seconds": 0.2624089000019012,
+    "vlm_seconds": 0.6753460000036284,
+    "cuda_allocated_mib": 9055.2802734375,
+    "cuda_reserved_mib": 10440.0
+  },
+  {
+    "image_id": "refined_American Shorthair_283",
+    "total_seconds": 0.9052486000000499,
+    "traditional_seconds": 0.12874640000518411,
+    "vlm_seconds": 0.9036527999996906,
+    "cuda_allocated_mib": 9055.28466796875,
+    "cuda_reserved_mib": 10440.0
+  },
+  {
+    "image_id": "refined_American Shorthair_212",
+    "total_seconds": 0.7569833000015933,
+    "traditional_seconds": 0.2733668999862857,
+    "vlm_seconds": 0.7553693999943789,
+    "cuda_allocated_mib": 9055.33056640625,
+    "cuda_reserved_mib": 10440.0
+  },
+  {
+    "image_id": "refined_American Shorthair_205",
+    "total_seconds": 0.8194602000003215,
+    "traditional_seconds": 0.291516600002069,
+    "vlm_seconds": 0.8180104999919422,
+    "cuda_allocated_mib": 9055.33056640625,
+    "cuda_reserved_mib": 10440.0
+  },
+  {
+    "image_id": "refined_American Shorthair_102",
+    "total_seconds": 0.7885372999880929,
+    "traditional_seconds": 0.24932979998993687,
+    "vlm_seconds": 0.7870865000004414,
+    "cuda_allocated_mib": 9055.33056640625,
+    "cuda_reserved_mib": 10440.0
+  },
+  {
+    "image_id": "refined_Exotic Shorthair_192",
+    "total_seconds": 0.8166647000034573,
+    "traditional_seconds": 0.3501972000085516,
+    "vlm_seconds": 0.8144332000083523,
+    "cuda_allocated_mib": 9055.5322265625,
+    "cuda_reserved_mib": 10440.0
+  },
+  {
+    "image_id": "refined_Exotic Shorthair_217",
+    "total_seconds": 1.0423229000007268,
+    "traditional_seconds": 0.4920509000075981,
+    "vlm_seconds": 1.0387351999961538,
+    "cuda_allocated_mib": 9056.84033203125,
+    "cuda_reserved_mib": 10440.0
+  },
+  {
+    "image_id": "refined_Exotic Shorthair_138",
+    "total_seconds": 1.0262167000037152,
+    "traditional_seconds": 0.4928500999958487,
+    "vlm_seconds": 1.0232116999977734,
+    "cuda_allocated_mib": 9056.57470703125,
+    "cuda_reserved_mib": 10716.0
+  },
+  {
+    "image_id": "refined_Exotic Shorthair_161",
+    "total_seconds": 1.038220199989155,
+    "traditional_seconds": 0.5198773000010988,
+    "vlm_seconds": 1.0342575999966357,
+    "cuda_allocated_mib": 9057.0302734375,
+    "cuda_reserved_mib": 10716.0
+  },
+  {
+    "image_id": "refined_Exotic Shorthair_19",
+    "total_seconds": 0.8617431999882683,
+    "traditional_seconds": 0.3927207999950042,
+    "vlm_seconds": 0.8600148999976227,
+    "cuda_allocated_mib": 9055.58203125,
+    "cuda_reserved_mib": 10716.0
+  },
+  {
+    "image_id": "refined_Exotic Shorthair_41",
+    "total_seconds": 0.8243224999896483,
+    "traditional_seconds": 0.3693439000053331,
+    "vlm_seconds": 0.8222733000002336,
+    "cuda_allocated_mib": 9055.501953125,
+    "cuda_reserved_mib": 10716.0
+  },
+  {
+    "image_id": "refined_Manx_149",
+    "total_seconds": 0.793173600002774,
+    "traditional_seconds": 0.30407920001016464,
+    "vlm_seconds": 0.7916758000064874,
+    "cuda_allocated_mib": 9055.43505859375,
+    "cuda_reserved_mib": 10716.0
+  },
+  {
+    "image_id": "refined_Manx_9",
+    "total_seconds": 0.94157450000057,
+    "traditional_seconds": 0.3228934000071604,
+    "vlm_seconds": 0.939862200000789,
+    "cuda_allocated_mib": 9055.4208984375,
+    "cuda_reserved_mib": 10716.0
+  },
+  {
+    "image_id": "refined_Manx_212",
+    "total_seconds": 1.3064226999995299,
+    "traditional_seconds": 0.5702866000065114,
+    "vlm_seconds": 1.3036701000091853,
+    "cuda_allocated_mib": 9056.02880859375,
+    "cuda_reserved_mib": 10716.0
+  },
+  {
+    "image_id": "refined_Manx_293",
+    "total_seconds": 15.450673099985579,
+    "traditional_seconds": 6.096530499999062,
+    "vlm_seconds": 15.447654800009332,
+    "cuda_allocated_mib": 9055.92138671875,
+    "cuda_reserved_mib": 10716.0
+  },
+  {
+    "image_id": "refined_Manx_3",
+    "total_seconds": 10.970221400013543,
+    "traditional_seconds": 4.05027570000675,
+    "vlm_seconds": 10.967406299998402,
+    "cuda_allocated_mib": 9055.32763671875,
+    "cuda_reserved_mib": 10716.0
+  },
+  {
+    "image_id": "refined_Manx_318",
+    "total_seconds": 19.11014079999586,
+    "traditional_seconds": 7.854020600003423,
+    "vlm_seconds": 19.106325400003698,
+    "cuda_allocated_mib": 9056.8583984375,
+    "cuda_reserved_mib": 10716.0
+  },
+  {
+    "image_id": "refined_Norwegian Forest_272",
+    "total_seconds": 13.491784600002575,
+    "traditional_seconds": 4.666131399993901,
+    "vlm_seconds": 13.4893485000066,
+    "cuda_allocated_mib": 9055.4541015625,
+    "cuda_reserved_mib": 10716.0
+  },
+  {
+    "image_id": "refined_Norwegian Forest_113",
+    "total_seconds": 13.163291399992886,
+    "traditional_seconds": 5.750969400003669,
+    "vlm_seconds": 13.161302399996202,
+    "cuda_allocated_mib": 9055.5322265625,
+    "cuda_reserved_mib": 10716.0
+  },
+  {
+    "image_id": "refined_Norwegian Forest_65",
+    "total_seconds": 10.320477600005688,
+    "traditional_seconds": 4.173251399988658,
+    "vlm_seconds": 10.318423099990468,
+    "cuda_allocated_mib": 9055.32861328125,
+    "cuda_reserved_mib": 10716.0
+  },
+  {
+    "image_id": "refined_Norwegian Forest_115",
+    "total_seconds": 10.030914100003429,
+    "traditional_seconds": 4.180556100007379,
+    "vlm_seconds": 10.029094199999236,
+    "cuda_allocated_mib": 9055.353515625,
+    "cuda_reserved_mib": 10716.0
+  },
+  {
+    "image_id": "refined_Norwegian Forest_117",
+    "total_seconds": 10.209375999998883,
+    "traditional_seconds": 3.570704500001739,
+    "vlm_seconds": 10.206544100001338,
+    "cuda_allocated_mib": 9055.2841796875,
+    "cuda_reserved_mib": 10716.0
+  },
+  {
+    "image_id": "refined_Norwegian Forest_293",
+    "total_seconds": 10.144906000001356,
+    "traditional_seconds": 3.8826303999958327,
+    "vlm_seconds": 10.142748400001437,
+    "cuda_allocated_mib": 9055.33056640625,
+    "cuda_reserved_mib": 10716.0
+  },
+  {
+    "image_id": "refined_Scottish Fold_136",
+    "total_seconds": 8.996943399994052,
+    "traditional_seconds": 1.0757365999888862,
+    "vlm_seconds": 8.995162999999593,
+    "cuda_allocated_mib": 9055.3115234375,
+    "cuda_reserved_mib": 10716.0
+  },
+  {
+    "image_id": "refined_Scottish Fold_179",
+    "total_seconds": 9.516463699997985,
+    "traditional_seconds": 3.4177574000059394,
+    "vlm_seconds": 9.514014999993378,
+    "cuda_allocated_mib": 9055.2451171875,
+    "cuda_reserved_mib": 10716.0
+  },
+  {
+    "image_id": "refined_Scottish Fold_163",
+    "total_seconds": 15.216551899997285,
+    "traditional_seconds": 3.8738784000015585,
+    "vlm_seconds": 15.211530100001255,
+    "cuda_allocated_mib": 9057.0439453125,
+    "cuda_reserved_mib": 10716.0
+  },
+  {
+    "image_id": "refined_Scottish Fold_89",
+    "total_seconds": 15.231777499997406,
+    "traditional_seconds": 7.963844199999585,
+    "vlm_seconds": 15.227103900004295,
+    "cuda_allocated_mib": 9057.046875,
+    "cuda_reserved_mib": 10716.0
+  },
+  {
+    "image_id": "refined_Scottish Fold_247",
+    "total_seconds": 15.67518600000767,
+    "traditional_seconds": 8.144092299990007,
+    "vlm_seconds": 15.669351699994877,
+    "cuda_allocated_mib": 9057.68115234375,
+    "cuda_reserved_mib": 10716.0
+  },
+  {
+    "image_id": "refined_Scottish Fold_70",
+    "total_seconds": 11.250289200004772,
+    "traditional_seconds": 4.67008129999158,
+    "vlm_seconds": 11.24821730000258,
+    "cuda_allocated_mib": 9055.4541015625,
+    "cuda_reserved_mib": 10716.0
+  },
+  {
+    "image_id": "refined_Turkish Angora_161",
+    "total_seconds": 7.432702200007043,
+    "traditional_seconds": 3.865546200002427,
+    "vlm_seconds": 7.430953700008104,
+    "cuda_allocated_mib": 9055.32763671875,
+    "cuda_reserved_mib": 10716.0
+  },
+  {
+    "image_id": "refined_Turkish Angora_155",
+    "total_seconds": 6.9548274999979185,
+    "traditional_seconds": 3.453810599996359,
+    "vlm_seconds": 6.9532558000064455,
+    "cuda_allocated_mib": 9055.267578125,
+    "cuda_reserved_mib": 10716.0
+  },
+  {
+    "image_id": "refined_Turkish Angora_335",
+    "total_seconds": 6.897681799993734,
+    "traditional_seconds": 1.3761568999907468,
+    "vlm_seconds": 6.896131100002094,
+    "cuda_allocated_mib": 9055.27294921875,
+    "cuda_reserved_mib": 10716.0
+  },
+  {
+    "image_id": "refined_Turkish Angora_257",
+    "total_seconds": 9.030662499993923,
+    "traditional_seconds": 3.447515599997132,
+    "vlm_seconds": 9.02881430000707,
+    "cuda_allocated_mib": 9055.26806640625,
+    "cuda_reserved_mib": 10716.0
+  },
+  {
+    "image_id": "refined_Turkish Angora_231",
+    "total_seconds": 14.713830299995607,
+    "traditional_seconds": 4.020493100004387,
+    "vlm_seconds": 14.711942800000543,
+    "cuda_allocated_mib": 9055.3408203125,
+    "cuda_reserved_mib": 10716.0
+  },
+  {
+    "image_id": "refined_Turkish Angora_119",
+    "total_seconds": 11.147470500000054,
+    "traditional_seconds": 3.47750310000265,
+    "vlm_seconds": 11.145493000003626,
+    "cuda_allocated_mib": 9055.2802734375,
+    "cuda_reserved_mib": 10716.0
+  }
+]

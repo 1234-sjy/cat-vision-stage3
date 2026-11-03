@@ -1,0 +1,21 @@
+{
+  "task": "assess-vlm-v4-fresh-test",
+  "state": "completed",
+  "pid": 13728,
+  "created_utc": "2026-11-03T00:49:36.241411+00:00",
+  "logs": "artifacts/run-logs/20261103T004936Z-assess-vlm-v4-fresh-test-11263c56",
+  "automatic_retry": false,
+  "automatic_restart": false,
+  "argv": [
+    "scripts/assess_vlm_adapted.py",
+    "--data-root",
+    "../../work/cat-data",
+    "--cohort",
+    "fresh-test",
+    "--output",
+    "artifacts/optimization-v4/fresh-test",
+    "--batch",
+    "4"
+  ],
+  "finished_utc": "2026-11-03T00:54:08.466897+00:00"
+}

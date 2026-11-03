@@ -1,0 +1,18 @@
+{
+  "task": "assess-active-v3",
+  "state": "completed",
+  "pid": 5684,
+  "created_utc": "2026-11-02T14:14:19.114048+00:00",
+  "logs": "artifacts/run-logs/20261102T141419Z-assess-active-v3-596b3f16",
+  "automatic_retry": false,
+  "automatic_restart": false,
+  "argv": [
+    "scripts/assess_active.py",
+    "--data-root",
+    "..\\..\\work\\cat-data",
+    "--setval",
+    "--output",
+    "artifacts/optimization-v3/validation-exported"
+  ],
+  "finished_utc": "2026-11-02T14:14:51.195121+00:00"
+}

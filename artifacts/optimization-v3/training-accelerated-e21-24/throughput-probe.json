@@ -1,0 +1,53 @@
+[
+  {
+    "batch": 32,
+    "status": "measured",
+    "steps": 3,
+    "wall_seconds": 0.2085205000039423,
+    "wall_step_seconds": 0.06950683333464742,
+    "images_per_second": 460.3863888595367,
+    "peak_allocated_bytes": 2479539200,
+    "peak_reserved_bytes": 2740977664,
+    "optimizer_moment_reserve_bytes": 220290176,
+    "budget_bytes": 15032385536,
+    "fits_training_memory_budget": true,
+    "input": "fixed transformed training images; decode and transfers outside timer",
+    "optimizer_steps": 0
+  },
+  {
+    "batch": 64,
+    "status": "measured",
+    "steps": 3,
+    "wall_seconds": 0.32496460000402294,
+    "wall_step_seconds": 0.10832153333467431,
+    "images_per_second": 590.8335861740728,
+    "peak_allocated_bytes": 4741160960,
+    "peak_reserved_bytes": 5211422720,
+    "optimizer_moment_reserve_bytes": 220290176,
+    "budget_bytes": 15032385536,
+    "fits_training_memory_budget": true,
+    "input": "fixed transformed training images; decode and transfers outside timer",
+    "optimizer_steps": 0
+  },
+  {
+    "batch": 128,
+    "status": "measured",
+    "steps": 3,
+    "wall_seconds": 0.6298667000082787,
+    "wall_step_seconds": 0.20995556666942625,
+    "images_per_second": 609.6528043075667,
+    "peak_allocated_bytes": 9289615360,
+    "peak_reserved_bytes": 10066329600,
+    "optimizer_moment_reserve_bytes": 220290176,
+    "budget_bytes": 15032385536,
+    "fits_training_memory_budget": true,
+    "input": "fixed transformed training images; decode and transfers outside timer",
+    "optimizer_steps": 0
+  },
+  {
+    "batch": 192,
+    "status": "ramp_stopped_memory_forecast",
+    "projected_peak_with_optimizer_bytes": 16164608755.199999,
+    "budget_bytes": 15032385536
+  }
+]

@@ -1,0 +1,4383 @@
+{
+  "epoch": 2,
+  "prompt": "观察照片中的主体动物，根据耳朵、脸型、毛长、花纹和身体外形识别猫的品种。只输出以下候选中的一个英文代码，不要解释、标点或多个候选。\nAbyssinian: 阿比西尼亚猫\nBengal: 孟加拉猫\nBirman: 伯曼猫\nBombay: 孟买猫\nBritish_Shorthair: 英国短毛猫\nEgyptian_Mau: 埃及猫\nMaine_Coon: 缅因猫\nPersian: 波斯猫\nRagdoll: 布偶猫\nRussian_Blue: 俄罗斯蓝猫\nSiamese: 暹罗猫\nSphynx: 斯芬克斯猫\nAmerican_Bobtail: 美国短尾猫\nAmerican_Curl: 美国卷耳猫\nAmerican_Shorthair: 美国短毛猫\nExotic_Shorthair: 异国短毛猫\nManx: 曼岛猫\nNorwegian_Forest: 挪威森林猫\nScottish_Fold: 苏格兰折耳猫\nTurkish_Angora: 土耳其安哥拉猫\n图片中没有真实猫时输出no_cat；明确属于其他品种或混种时输出other。",
+  "prompt_version": "cat20-lora-v1",
+  "provenance": {
+    "adapter_sha256": "aa441496afa5bd1c4521e6fb5efdc9e8223bf67bfcb898197fe54a7d757336d7",
+    "manifest_sha256": "59dd129394dd76fbbcc39209de7a12f221d415765e20fadac79da6835c1532e6",
+    "max_pixels": 262144
+  },
+  "selection": "cat accuracy; dog false-cat rate only breaks ties",
+  "max_new_tokens": 24,
+  "do_sample": false,
+  "metrics": {
+    "cat_correct": 170,
+    "cat_total": 200,
+    "cat_accuracy": 0.85,
+    "cat_macro_accuracy": 0.85,
+    "per_class": {
+      "Abyssinian": {
+        "correct": 7,
+        "total": 10,
+        "accuracy": 0.7
+      },
+      "Bengal": {
+        "correct": 8,
+        "total": 10,
+        "accuracy": 0.8
+      },
+      "Birman": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "Bombay": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "British_Shorthair": {
+        "correct": 9,
+        "total": 10,
+        "accuracy": 0.9
+      },
+      "Egyptian_Mau": {
+        "correct": 7,
+        "total": 10,
+        "accuracy": 0.7
+      },
+      "Maine_Coon": {
+        "correct": 9,
+        "total": 10,
+        "accuracy": 0.9
+      },
+      "Persian": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "Ragdoll": {
+        "correct": 5,
+        "total": 10,
+        "accuracy": 0.5
+      },
+      "Russian_Blue": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "Siamese": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "Sphynx": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "American_Bobtail": {
+        "correct": 3,
+        "total": 10,
+        "accuracy": 0.3
+      },
+      "American_Curl": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "American_Shorthair": {
+        "correct": 9,
+        "total": 10,
+        "accuracy": 0.9
+      },
+      "Exotic_Shorthair": {
+        "correct": 8,
+        "total": 10,
+        "accuracy": 0.8
+      },
+      "Manx": {
+        "correct": 9,
+        "total": 10,
+        "accuracy": 0.9
+      },
+      "Norwegian_Forest": {
+        "correct": 9,
+        "total": 10,
+        "accuracy": 0.9
+      },
+      "Scottish_Fold": {
+        "correct": 9,
+        "total": 10,
+        "accuracy": 0.9
+      },
+      "Turkish_Angora": {
+        "correct": 8,
+        "total": 10,
+        "accuracy": 0.8
+      }
+    },
+    "dog": {
+      "total": 50,
+      "false_cat": 0,
+      "correct_no_cat": 50,
+      "parse_error": 0,
+      "false_cat_rate": 0.0,
+      "no_cat_accuracy": 1.0
+    }
+  },
+  "seconds": 51.21422029999667,
+  "records": [
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Abyssinian/Abyssinian_177.jpg",
+      "sha256": "7b99db4d135bd6a4587e44750cfed21ef1b1337f395cd9b0be819c727b6edc7d",
+      "group": "group_4b785c3c76950a0927b3",
+      "is_cat": true,
+      "target_text": "Abyssinian",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "American_Shorthair",
+        "breed_zh": "美国短毛猫",
+        "features": [],
+        "raw_text": "American_Shorthair"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 400
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Abyssinian_193.jpg",
+      "sha256": "5952bffe730abb6f8ec9b548abe46fc5131448f0cbd964c31a823d04bcbc267b",
+      "group": "group_6449180dfefbe05dd6e9",
+      "is_cat": true,
+      "target_text": "Abyssinian",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Abyssinian",
+        "breed_zh": "阿比西尼亚猫",
+        "features": [],
+        "raw_text": "Abyssinian"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 400
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Abyssinian/Abyssinian_4.jpg",
+      "sha256": "d2115bd57e284589450eff1863b24f5e38213c5263977fc3218d297ea5c33a55",
+      "group": "group_9d2a5c7983670ed27782",
+      "is_cat": true,
+      "target_text": "Abyssinian",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Abyssinian",
+        "breed_zh": "阿比西尼亚猫",
+        "features": [],
+        "raw_text": "Abyssinian"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 364
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Abyssinian/Abyssinian_29.jpg",
+      "sha256": "5f6710a83422f45bb6700817b3923a5f14b88880a83a1df323c0c7c01075a31c",
+      "group": "group_2199d1980cd450d94502",
+      "is_cat": true,
+      "target_text": "Abyssinian",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Egyptian_Mau",
+        "breed_zh": "埃及猫",
+        "features": [],
+        "raw_text": "Egyptian_Mau"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 364
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Abyssinian_196.jpg",
+      "sha256": "bdc10f452220ad82c7204dbf6a52acad4339b61519a38e7197e76594f5a3a578",
+      "group": "group_b733d32541609e7628e7",
+      "is_cat": true,
+      "target_text": "Abyssinian",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Abyssinian",
+        "breed_zh": "阿比西尼亚猫",
+        "features": [],
+        "raw_text": "Abyssinian"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 500
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Abyssinian_117.jpg",
+      "sha256": "c8ecbb90066b277a371bb0fcfa98f4b0ccbe6826885c5fbf50178a44eb8c048c",
+      "group": "group_33cf8b56d0443eed243c",
+      "is_cat": true,
+      "target_text": "Abyssinian",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Abyssinian",
+        "breed_zh": "阿比西尼亚猫",
+        "features": [],
+        "raw_text": "Abyssinian"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 500
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Abyssinian/Abyssinian_169.jpg",
+      "sha256": "0b6426f8bf2900ae3d989205cdcc1cd7da53a11d0de0d952525eaba012201612",
+      "group": "group_c35a568b06dae96d962b",
+      "is_cat": true,
+      "target_text": "Abyssinian",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Bombay",
+        "breed_zh": "孟买猫",
+        "features": [],
+        "raw_text": "Bombay"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 424
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Abyssinian_180.jpg",
+      "sha256": "6d21160e0ace8eabff0b90951f80cba77da1bcac743903fda60eb81f003b92cd",
+      "group": "group_4285ba3df30caf214723",
+      "is_cat": true,
+      "target_text": "Abyssinian",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Abyssinian",
+        "breed_zh": "阿比西尼亚猫",
+        "features": [],
+        "raw_text": "Abyssinian"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 424
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Abyssinian/Abyssinian_186.jpg",
+      "sha256": "828007944d7a6a39c4c12d40f39f2f17b3764e8bc7ef921cb626803676c88e4c",
+      "group": "group_dc862928eaa53e2dbb1e",
+      "is_cat": true,
+      "target_text": "Abyssinian",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Abyssinian",
+        "breed_zh": "阿比西尼亚猫",
+        "features": [],
+        "raw_text": "Abyssinian"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 424
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Abyssinian_19.jpg",
+      "sha256": "ba120ab8f5d51285ba70ec45efc313ef182e762e17ff491e5ebf2d73d91c56f4",
+      "group": "group_883f051cc098c003f437",
+      "is_cat": true,
+      "target_text": "Abyssinian",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Abyssinian",
+        "breed_zh": "阿比西尼亚猫",
+        "features": [],
+        "raw_text": "Abyssinian"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 424
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Bengal/Bengal_154.jpg",
+      "sha256": "b07ac924b6e54725f8bf3bc6fb3f406427a8ff38a9ea9a276b4f84703c8f4036",
+      "group": "group_f4ccdb92c82e83cae8df",
+      "is_cat": true,
+      "target_text": "Bengal",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Bengal",
+        "breed_zh": "孟加拉猫",
+        "features": [],
+        "raw_text": "Bengal"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 355
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Bengal/Bengal_183.jpg",
+      "sha256": "e38a11919d7aeddc99e4fbb07deeb626198667159c07a3f6cc60c1bfc0df5efd",
+      "group": "group_8be315f8935307432bf4",
+      "is_cat": true,
+      "target_text": "Bengal",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Bengal",
+        "breed_zh": "孟加拉猫",
+        "features": [],
+        "raw_text": "Bengal"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 355
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Bengal_138.jpg",
+      "sha256": "00895b7602b25c545758c28c979aadf98b4f378d093eb5d1b23295b44441b99a",
+      "group": "group_f2a1e6a17259d09679b0",
+      "is_cat": true,
+      "target_text": "Bengal",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Bengal",
+        "breed_zh": "孟加拉猫",
+        "features": [],
+        "raw_text": "Bengal"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 418
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Bengal/Bengal_178.jpg",
+      "sha256": "2d6927711e4f9300fd7a04fabc56ca7cedadca054183f436ad9891e7784375d6",
+      "group": "group_b950d1dd989c819252ff",
+      "is_cat": true,
+      "target_text": "Bengal",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Bengal",
+        "breed_zh": "孟加拉猫",
+        "features": [],
+        "raw_text": "Bengal"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 418
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Bengal/Bengal_205.jpg",
+      "sha256": "5ed20b47be296943c5a80d1b18c496de41aa357af794f6abdd262bc99673d5ef",
+      "group": "group_4ba16114f69ea307c983",
+      "is_cat": true,
+      "target_text": "Bengal",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "American_Shorthair",
+        "breed_zh": "美国短毛猫",
+        "features": [],
+        "raw_text": "American_Shorthair"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 355
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Bengal/Bengal_209.jpg",
+      "sha256": "ab897fe6d15190a772a66df9ef5f589fe4e7424227ebc334d2fd5fb8c50f29a5",
+      "group": "group_6467a845471497a53445",
+      "is_cat": true,
+      "target_text": "Bengal",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Bengal",
+        "breed_zh": "孟加拉猫",
+        "features": [],
+        "raw_text": "Bengal"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 355
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Bengal/Bengal_126.jpg",
+      "sha256": "20f3ad00353bb33bc9e973c4d4330904816b4d73a048b1ca61d615c476189511",
+      "group": "group_362018ddeb1d7585dcf2",
+      "is_cat": true,
+      "target_text": "Bengal",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Bengal",
+        "breed_zh": "孟加拉猫",
+        "features": [],
+        "raw_text": "Bengal"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 452
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Bengal_14.jpg",
+      "sha256": "c8a0224bbef5c7bdaec9c7513d1a89c4cae28882ef67885071a8008f6cd3e6ea",
+      "group": "group_d3f54251d059ae570a05",
+      "is_cat": true,
+      "target_text": "Bengal",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Bengal",
+        "breed_zh": "孟加拉猫",
+        "features": [],
+        "raw_text": "Bengal"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 452
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Bengal/Bengal_17.jpg",
+      "sha256": "a35f8354e1433088a7db553e26c20a8f2f38e449fc417f25cc028d47908e8e4c",
+      "group": "group_e02b4a3e47e87285a0cd",
+      "is_cat": true,
+      "target_text": "Bengal",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Bengal",
+        "breed_zh": "孟加拉猫",
+        "features": [],
+        "raw_text": "Bengal"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 409
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Bengal/Bengal_200.jpg",
+      "sha256": "3ce669a30b0c1bd73e622f38c287ec6a18b2f93c4cf05375b321e59917c37645",
+      "group": "group_93b3a78757a9ed282a6d",
+      "is_cat": true,
+      "target_text": "Bengal",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Egyptian_Mau",
+        "breed_zh": "埃及猫",
+        "features": [],
+        "raw_text": "Egyptian_Mau"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 409
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Birman/Birman_207.jpg",
+      "sha256": "c7a7c3c025b9e19ec0b594d946b53f2ca8337b46791e3d7d3399606388b63de1",
+      "group": "group_6ecfa4caca8741d4b84e",
+      "is_cat": true,
+      "target_text": "Birman",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Birman",
+        "breed_zh": "伯曼猫",
+        "features": [],
+        "raw_text": "Birman"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 382
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Birman/Birman_16.jpg",
+      "sha256": "274dfb895425f0ec2c5724223cd8eca101005ddac7a1b5605b72af18fdf5a706",
+      "group": "group_93dd0570895af6a603af",
+      "is_cat": true,
+      "target_text": "Birman",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Birman",
+        "breed_zh": "伯曼猫",
+        "features": [],
+        "raw_text": "Birman"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 382
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Birman_105.jpg",
+      "sha256": "e82f25ff2c64800d5da5228a9c3c8c617051ac2324cbc0cfd97c01bccd14ef38",
+      "group": "group_2f26c3ee229e6759c4d3",
+      "is_cat": true,
+      "target_text": "Birman",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Birman",
+        "breed_zh": "伯曼猫",
+        "features": [],
+        "raw_text": "Birman"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 452
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Birman/Birman_225.jpg",
+      "sha256": "9badf2992365ef3256d7e5e10cf7fd0e33cf79aeeb586ea179658f81326460d3",
+      "group": "group_bfd2c2f991b7f7764c68",
+      "is_cat": true,
+      "target_text": "Birman",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Birman",
+        "breed_zh": "伯曼猫",
+        "features": [],
+        "raw_text": "Birman"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 452
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Birman_117.jpg",
+      "sha256": "761c5e4c8d0acff676c6668d0a17b384af06eda18e8bb221609bf2633e0754d8",
+      "group": "group_8eacfa9aa5763ebcebf6",
+      "is_cat": true,
+      "target_text": "Birman",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Birman",
+        "breed_zh": "伯曼猫",
+        "features": [],
+        "raw_text": "Birman"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Birman_172.jpg",
+      "sha256": "5384e7af03fa5c97215237a84fe3ffd912492938192c467ebbf1f0a6a52959e3",
+      "group": "group_98fb698efbd20e4976d0",
+      "is_cat": true,
+      "target_text": "Birman",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Birman",
+        "breed_zh": "伯曼猫",
+        "features": [],
+        "raw_text": "Birman"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Birman/Birman_226.jpg",
+      "sha256": "f98748c90c85d0ba6c43d90a4252ae572695f7f96cc0fa934ddf2088886e1967",
+      "group": "group_9d0ac9414cb1cf34106d",
+      "is_cat": true,
+      "target_text": "Birman",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Birman",
+        "breed_zh": "伯曼猫",
+        "features": [],
+        "raw_text": "Birman"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 364
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Birman/Birman_73.jpg",
+      "sha256": "5c8f6a2113fbc608f88a2675cdab288774f44972bbcd56fc52584a4610e28aa4",
+      "group": "group_15f39ccfc2a59b65d653",
+      "is_cat": true,
+      "target_text": "Birman",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Birman",
+        "breed_zh": "伯曼猫",
+        "features": [],
+        "raw_text": "Birman"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 364
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Birman_12.jpg",
+      "sha256": "7f36bae83500710a53cadacf56046faf1aea78ec2951bd719cfd1771ccd7f54e",
+      "group": "group_8ab249368c1758921d5a",
+      "is_cat": true,
+      "target_text": "Birman",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Birman",
+        "breed_zh": "伯曼猫",
+        "features": [],
+        "raw_text": "Birman"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 452
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Birman_116.jpg",
+      "sha256": "e3e6b86885cc097002ae20ed865240a287fd51d543930717d75c80ddf3951ed6",
+      "group": "group_c5e299df093e8367ce9f",
+      "is_cat": true,
+      "target_text": "Birman",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Birman",
+        "breed_zh": "伯曼猫",
+        "features": [],
+        "raw_text": "Birman"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 452
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Bombay_115.jpg",
+      "sha256": "1aeca46245fc99fb684f62309bdebd32d87f4dfcf59af729c124981548cf72d9",
+      "group": "group_4956aca4d611ee52697b",
+      "is_cat": true,
+      "target_text": "Bombay",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Bombay",
+        "breed_zh": "孟买猫",
+        "features": [],
+        "raw_text": "Bombay"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 539
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Bombay/Bombay_251.jpg",
+      "sha256": "84d78c13b52bb184831fc30f4cf7c6f08cf9ac68bebf019ac32ded9152e56bb0",
+      "group": "group_20fd90a1f9088b4964a5",
+      "is_cat": true,
+      "target_text": "Bombay",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Bombay",
+        "breed_zh": "孟买猫",
+        "features": [],
+        "raw_text": "Bombay"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 539
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Bombay/Bombay_187.jpg",
+      "sha256": "47ce5535f92898e92a56bab376b8ae283cd662f454b7eb161b2bdc3c9709d456",
+      "group": "group_d13c7ec2e937eea4f2fb",
+      "is_cat": true,
+      "target_text": "Bombay",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Bombay",
+        "breed_zh": "孟买猫",
+        "features": [],
+        "raw_text": "Bombay"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 355
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Bombay/Bombay_193.jpg",
+      "sha256": "348a9392ac93c236bae4abc6fbc6e029e4f54a5c41ea8dc8f8db52838580ec95",
+      "group": "group_eebc33febe27419730c9",
+      "is_cat": true,
+      "target_text": "Bombay",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Bombay",
+        "breed_zh": "孟买猫",
+        "features": [],
+        "raw_text": "Bombay"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 355
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Bombay/Bombay_286.jpg",
+      "sha256": "77c2dd30bf65b618f96832187110aaacad434a50a76c5d5f489a0b45ce405a77",
+      "group": "group_7e3e52b1fa8eb965a317",
+      "is_cat": true,
+      "target_text": "Bombay",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Bombay",
+        "breed_zh": "孟买猫",
+        "features": [],
+        "raw_text": "Bombay"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 539
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Bombay_110.jpg",
+      "sha256": "9b30f65f8b0dce87190461349d2673d1333cc07a9fafe5eeba4a0933b8151a15",
+      "group": "group_4b9e54f1a1168d01fd06",
+      "is_cat": true,
+      "target_text": "Bombay",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Bombay",
+        "breed_zh": "孟买猫",
+        "features": [],
+        "raw_text": "Bombay"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 539
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Bombay/Bombay_142.jpg",
+      "sha256": "bf4d18816004980468b6781299e80430c99c2910a837197f1f17a426dac613f3",
+      "group": "group_85c77a119a6fe6171faf",
+      "is_cat": true,
+      "target_text": "Bombay",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Bombay",
+        "breed_zh": "孟买猫",
+        "features": [],
+        "raw_text": "Bombay"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 436
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Bombay/Bombay_204.jpg",
+      "sha256": "07f0ea5066dff4929333e0c77fedd35f648a047482104b2c83363bb29fe6c6b8",
+      "group": "group_8996411ec43778df6607",
+      "is_cat": true,
+      "target_text": "Bombay",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Bombay",
+        "breed_zh": "孟买猫",
+        "features": [],
+        "raw_text": "Bombay"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 436
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Bombay_131.jpg",
+      "sha256": "a202d2982419e7d7f9e8b2646c973a0489dbc795e7cc4b2ae8717d22198eb3d5",
+      "group": "group_d775f6ff17289f3c2b8e",
+      "is_cat": true,
+      "target_text": "Bombay",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Bombay",
+        "breed_zh": "孟买猫",
+        "features": [],
+        "raw_text": "Bombay"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 373
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Bombay/Bombay_138.jpg",
+      "sha256": "a1026cf24234cfa0985e6593d8f0a1a2c49cb896381420d31c973cb19dd9e711",
+      "group": "group_8aa6f5c696e57bde73cb",
+      "is_cat": true,
+      "target_text": "Bombay",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Bombay",
+        "breed_zh": "孟买猫",
+        "features": [],
+        "raw_text": "Bombay"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 373
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/British_Shorthair_204.jpg",
+      "sha256": "9c5e3500eebbd2144b2d1d423977a4f3dd0acadb6a958e5a3bbe7ae99696ab4d",
+      "group": "group_dffd7f4bacc54df2f3a1",
+      "is_cat": true,
+      "target_text": "British_Shorthair",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "British_Shorthair",
+        "breed_zh": "英国短毛猫",
+        "features": [],
+        "raw_text": "British_Shorthair"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 452
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/British_Shorthair_125.jpg",
+      "sha256": "1df09f5cef4f6b19473ecbc525973bccd54fa57e3edbef748e6a5637f150ed0c",
+      "group": "group_c783c2881da2bd5897dc",
+      "is_cat": true,
+      "target_text": "British_Shorthair",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "British_Shorthair",
+        "breed_zh": "英国短毛猫",
+        "features": [],
+        "raw_text": "British_Shorthair"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 452
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/British Shorthair/British Shorthair_184.jpg",
+      "sha256": "8170d22154c9fdabac9d9f8faf9198ac4573e2b92069c48295ed2f91cb38004e",
+      "group": "group_1b2a4ce0854cd5b585f6",
+      "is_cat": true,
+      "target_text": "British_Shorthair",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "British_Shorthair",
+        "breed_zh": "英国短毛猫",
+        "features": [],
+        "raw_text": "British_Shorthair"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 400
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/British Shorthair/British Shorthair_126.jpg",
+      "sha256": "e4f6e236bb8382932432a5d75148c1dfc189471cb464b4c594a8133b12af6bf3",
+      "group": "group_a584872e3b27c660afab",
+      "is_cat": true,
+      "target_text": "British_Shorthair",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "British_Shorthair",
+        "breed_zh": "英国短毛猫",
+        "features": [],
+        "raw_text": "British_Shorthair"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 400
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/British Shorthair/British Shorthair_219.jpg",
+      "sha256": "367c957c810a7144bc14271a471e0555dcaed0b7c960dee0bab8a96baf8aaa63",
+      "group": "group_90f7c255939893bd5cb6",
+      "is_cat": true,
+      "target_text": "British_Shorthair",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "British_Shorthair",
+        "breed_zh": "英国短毛猫",
+        "features": [],
+        "raw_text": "British_Shorthair"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 452
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/British_Shorthair_17.jpg",
+      "sha256": "1703af446e3033ec468fa0bf3874c780870462a113f7570440304153a6cf4567",
+      "group": "group_1aea85bae233479fddad",
+      "is_cat": true,
+      "target_text": "British_Shorthair",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "British_Shorthair",
+        "breed_zh": "英国短毛猫",
+        "features": [],
+        "raw_text": "British_Shorthair"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 452
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/British_Shorthair_129.jpg",
+      "sha256": "bd77ff2f44f4043665e1585e083f3c066b1ea1fe29bd1d5a5a057af6be6a5212",
+      "group": "group_50ac19fd42594cb7f8b4",
+      "is_cat": true,
+      "target_text": "British_Shorthair",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "British_Shorthair",
+        "breed_zh": "英国短毛猫",
+        "features": [],
+        "raw_text": "British_Shorthair"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/British_Shorthair_120.jpg",
+      "sha256": "115577dd5f9e4eaecfac46d632501266f286349ed87feb3200f8253b55f2e59d",
+      "group": "group_d32ccc09221293eff0fd",
+      "is_cat": true,
+      "target_text": "British_Shorthair",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "British_Shorthair",
+        "breed_zh": "英国短毛猫",
+        "features": [],
+        "raw_text": "British_Shorthair"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/British Shorthair/British Shorthair_173.jpg",
+      "sha256": "efc5973dce6bc553fa500ca78d1c3919b828ed26776dbc187b78512e4afcdd7f",
+      "group": "group_871a7297789e1e91a8e9",
+      "is_cat": true,
+      "target_text": "British_Shorthair",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "British_Shorthair",
+        "breed_zh": "英国短毛猫",
+        "features": [],
+        "raw_text": "British_Shorthair"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 400
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/British Shorthair/British Shorthair_187.jpg",
+      "sha256": "6aee89359976bcaabf18a46d9185a8ba8cd9ed181681061b9111518c6ea1882c",
+      "group": "group_7d82495f3f683b6e81ec",
+      "is_cat": true,
+      "target_text": "British_Shorthair",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "American_Shorthair",
+        "breed_zh": "美国短毛猫",
+        "features": [],
+        "raw_text": "American_Shorthair"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 400
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Egyptian_Mau_150.jpg",
+      "sha256": "b24a924aaa37c263e42ca12d6755361fb5915743ced20186ea3bc5180c35fe51",
+      "group": "group_c1803d9f72718d981c88",
+      "is_cat": true,
+      "target_text": "Egyptian_Mau",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Egyptian_Mau",
+        "breed_zh": "埃及猫",
+        "features": [],
+        "raw_text": "Egyptian_Mau"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 418
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Egyptian Mau/Egyptian Mau_241.jpg",
+      "sha256": "06480ba917eb7bd2697f75994239a8de1cc460e2585255cd40ff3a6d5891ed82",
+      "group": "group_b2bab4946d9115cbd8b9",
+      "is_cat": true,
+      "target_text": "Egyptian_Mau",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "American_Shorthair",
+        "breed_zh": "美国短毛猫",
+        "features": [],
+        "raw_text": "American_Shorthair"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 418
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Egyptian_Mau_178.jpg",
+      "sha256": "d5b290a334c81af6d89d8788646e8892444ac87169ae5e44c95ba2a502e761cf",
+      "group": "group_ecd5c57a8b2fc4bdef4a",
+      "is_cat": true,
+      "target_text": "Egyptian_Mau",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Egyptian_Mau",
+        "breed_zh": "埃及猫",
+        "features": [],
+        "raw_text": "Egyptian_Mau"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 508
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Egyptian_Mau_102.jpg",
+      "sha256": "26df54d5eb39396feccd77f3d8f13d12138786a047512d8cddf0f73eedd789e0",
+      "group": "group_ed57b26cedaa6faeff7f",
+      "is_cat": true,
+      "target_text": "Egyptian_Mau",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Egyptian_Mau",
+        "breed_zh": "埃及猫",
+        "features": [],
+        "raw_text": "Egyptian_Mau"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 508
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Egyptian Mau/Egyptian Mau_163.jpg",
+      "sha256": "c9a591c2af8957de4aa8c3277fb15d890f6d0ceabeb51badb640b43257986dbe",
+      "group": "group_9342713fa8f0becfa92a",
+      "is_cat": true,
+      "target_text": "Egyptian_Mau",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Egyptian_Mau",
+        "breed_zh": "埃及猫",
+        "features": [],
+        "raw_text": "Egyptian_Mau"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 530
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Egyptian_Mau_195.jpg",
+      "sha256": "b5c24d066b426809decbb05a7ebd265cd709798c9ba3462338e1d67a8a8f65a7",
+      "group": "group_d5d19032a63096c4e476",
+      "is_cat": true,
+      "target_text": "Egyptian_Mau",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Egyptian_Mau",
+        "breed_zh": "埃及猫",
+        "features": [],
+        "raw_text": "Egyptian_Mau"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 530
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Egyptian_Mau_141.jpg",
+      "sha256": "dba7aeca84f8f68a75ffadfeaa1012cc3bb8be8fac8c2490d054ab2a7606adc4",
+      "group": "group_095362af9ef366b6b5b2",
+      "is_cat": true,
+      "target_text": "Egyptian_Mau",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Egyptian_Mau",
+        "breed_zh": "埃及猫",
+        "features": [],
+        "raw_text": "Egyptian_Mau"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 452
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Egyptian Mau/Egyptian Mau_301.jpg",
+      "sha256": "a9aed7f98f50aa725461d4914834e0bcb8872e7c445eb5c455bbf5808b857507",
+      "group": "group_2de02f2f622fddb129ba",
+      "is_cat": true,
+      "target_text": "Egyptian_Mau",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Bengal",
+        "breed_zh": "孟加拉猫",
+        "features": [],
+        "raw_text": "Bengal"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 452
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Egyptian_Mau_125.jpg",
+      "sha256": "29a02227095e8d3de1cde6aed8e62edb362338ebe6433d3b633b3133778918ee",
+      "group": "group_0b10da9a2650b52d08cc",
+      "is_cat": true,
+      "target_text": "Egyptian_Mau",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Egyptian_Mau",
+        "breed_zh": "埃及猫",
+        "features": [],
+        "raw_text": "Egyptian_Mau"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 364
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Egyptian Mau/Egyptian Mau_350.jpg",
+      "sha256": "f7bf1037823f8cd24ef4c74e7161b5fc3582b26b1465f84260598008a4df08b2",
+      "group": "group_70b50cb616592ea34f49",
+      "is_cat": true,
+      "target_text": "Egyptian_Mau",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "American_Shorthair",
+        "breed_zh": "美国短毛猫",
+        "features": [],
+        "raw_text": "American_Shorthair"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 364
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Maine Coon/Maine Coon_45.jpg",
+      "sha256": "feec11711611f5f88c6ca2c05caa53a4840212abf82584b73853457c0eb7d483",
+      "group": "group_e8b6c002fc6a4d4eae77",
+      "is_cat": true,
+      "target_text": "Maine_Coon",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Maine_Coon",
+        "breed_zh": "缅因猫",
+        "features": [],
+        "raw_text": "Maine_Coon"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 452
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Maine_Coon_197.jpg",
+      "sha256": "4668d8b80f97e3d0f5de05ffb27643c1eb03a7dadd28e5053ebb423ad4f9ee77",
+      "group": "group_4c911493a5545e4baeff",
+      "is_cat": true,
+      "target_text": "Maine_Coon",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Maine_Coon",
+        "breed_zh": "缅因猫",
+        "features": [],
+        "raw_text": "Maine_Coon"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 452
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Maine Coon/Maine Coon_341.jpg",
+      "sha256": "59b9ec7a21a081d3f6e35981ba94e4eec0e0a37ec955c7197af7b4a5773044c4",
+      "group": "group_6141bad3a345b10ad9c8",
+      "is_cat": true,
+      "target_text": "Maine_Coon",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Maine_Coon",
+        "breed_zh": "缅因猫",
+        "features": [],
+        "raw_text": "Maine_Coon"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 400
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Maine Coon/Maine Coon_218.jpg",
+      "sha256": "723afe219703ea430881a1bdbe2563502a04925d0018e062b497547c62b8e6d9",
+      "group": "group_ef0963f21dc0e47f3ad0",
+      "is_cat": true,
+      "target_text": "Maine_Coon",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Maine_Coon",
+        "breed_zh": "缅因猫",
+        "features": [],
+        "raw_text": "Maine_Coon"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 400
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Maine Coon/Maine Coon_219.jpg",
+      "sha256": "163dcc560e9e68d94aa8cf9fae76e43a5c92b4cfc6e9cb8f9418319480ab3dda",
+      "group": "group_87d017bdfd9211c42630",
+      "is_cat": true,
+      "target_text": "Maine_Coon",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Turkish_Angora",
+        "breed_zh": "土耳其安哥拉猫",
+        "features": [],
+        "raw_text": "Turkish_Angora"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 452
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Maine_Coon_143.jpg",
+      "sha256": "95848cfbb667920c11352b4574fc7754eed84e9812ad15b5ccd5ff667302fe23",
+      "group": "group_50b516aa080a710aabd3",
+      "is_cat": true,
+      "target_text": "Maine_Coon",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Maine_Coon",
+        "breed_zh": "缅因猫",
+        "features": [],
+        "raw_text": "Maine_Coon"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 452
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Maine_Coon_219.jpg",
+      "sha256": "1b44e2b49748aeb0c78430131cd7dcbde81be36932e901cab3953084a6bbd2a5",
+      "group": "group_5c5e29cef5dc4946f7c4",
+      "is_cat": true,
+      "target_text": "Maine_Coon",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Maine_Coon",
+        "breed_zh": "缅因猫",
+        "features": [],
+        "raw_text": "Maine_Coon"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 355
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Maine Coon/Maine Coon_165.jpg",
+      "sha256": "8eb33588bada7d5378deac73fcb9f46f67a661cffd6185a4fd55e59c51332a2d",
+      "group": "group_ad23e7487b536fd76551",
+      "is_cat": true,
+      "target_text": "Maine_Coon",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Maine_Coon",
+        "breed_zh": "缅因猫",
+        "features": [],
+        "raw_text": "Maine_Coon"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 355
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Maine_Coon_140.jpg",
+      "sha256": "fd073630aa651d5edaf99c31185c76517d74b3d497b218bdc1aa58fbaf3e1869",
+      "group": "group_128ebb8233c228dc944d",
+      "is_cat": true,
+      "target_text": "Maine_Coon",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Maine_Coon",
+        "breed_zh": "缅因猫",
+        "features": [],
+        "raw_text": "Maine_Coon"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Maine_Coon_106.jpg",
+      "sha256": "a3a2286cb91a185c2db7939c773cd6cff8b4944b31b3be009ba605f409746a2f",
+      "group": "group_b8fd1245f965d5dd7313",
+      "is_cat": true,
+      "target_text": "Maine_Coon",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Maine_Coon",
+        "breed_zh": "缅因猫",
+        "features": [],
+        "raw_text": "Maine_Coon"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Persian_135.jpg",
+      "sha256": "d6879734b2f14c4528f2bcd5d66035e4f2ba53ee52ca0091f283e0a1a520e433",
+      "group": "group_491008e13ccd3d124271",
+      "is_cat": true,
+      "target_text": "Persian",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Persian",
+        "breed_zh": "波斯猫",
+        "features": [],
+        "raw_text": "Persian"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 468
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Persian_173.jpg",
+      "sha256": "7466543b7df68e9a02917e116af24c5d6055fa4ab3b251ae8f054c2b2efb80f8",
+      "group": "group_7f13ee74858e837c25ce",
+      "is_cat": true,
+      "target_text": "Persian",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Persian",
+        "breed_zh": "波斯猫",
+        "features": [],
+        "raw_text": "Persian"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 468
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Persian/Persian_191.jpg",
+      "sha256": "445bb0aae10b0a528bc88348f79726cd30256027e82d10bdfe8ce8e5bea380e3",
+      "group": "group_4bd2de730be1408b2e05",
+      "is_cat": true,
+      "target_text": "Persian",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Persian",
+        "breed_zh": "波斯猫",
+        "features": [],
+        "raw_text": "Persian"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 364
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Persian/Persian_128.jpg",
+      "sha256": "42558a7b1ba571598b8993fac68f0e640542f94cee3ada60ad8ead9e30aee536",
+      "group": "group_edc5acc96c8f64306e7c",
+      "is_cat": true,
+      "target_text": "Persian",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Persian",
+        "breed_zh": "波斯猫",
+        "features": [],
+        "raw_text": "Persian"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 364
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Persian_132.jpg",
+      "sha256": "3832597695caf05397b151f9df845d430dd6cf07001309aa6a6a11c74e96c595",
+      "group": "group_92dade9ec08becac9173",
+      "is_cat": true,
+      "target_text": "Persian",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Persian",
+        "breed_zh": "波斯猫",
+        "features": [],
+        "raw_text": "Persian"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 452
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Persian_145.jpg",
+      "sha256": "45a1176247779a0fcbbbb0ba124a34df524539cceafae6819c808ebc73900ed7",
+      "group": "group_7eb75e09b8a28f153ced",
+      "is_cat": true,
+      "target_text": "Persian",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Persian",
+        "breed_zh": "波斯猫",
+        "features": [],
+        "raw_text": "Persian"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 452
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Persian/Persian_19.jpg",
+      "sha256": "d8f40c42c4b8064de8971d169b2eaabf8cbe5c31167c6c9b24d2260013b19c00",
+      "group": "group_c481e86758c33af1e307",
+      "is_cat": true,
+      "target_text": "Persian",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Persian",
+        "breed_zh": "波斯猫",
+        "features": [],
+        "raw_text": "Persian"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 373
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Persian/Persian_195.jpg",
+      "sha256": "0c884dbcd33aa4fc36b81cfce8fd90171177856ca8aa998ea4a18ef3ec3fcbb9",
+      "group": "group_93007e266dd095353d65",
+      "is_cat": true,
+      "target_text": "Persian",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Persian",
+        "breed_zh": "波斯猫",
+        "features": [],
+        "raw_text": "Persian"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 373
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Persian_187.jpg",
+      "sha256": "b226e4c313d5d1c95b4cd0aea102c608259b980ea0067147b86f04145acc178e",
+      "group": "group_3445556254da2c438f6b",
+      "is_cat": true,
+      "target_text": "Persian",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Persian",
+        "breed_zh": "波斯猫",
+        "features": [],
+        "raw_text": "Persian"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Persian_116.jpg",
+      "sha256": "39cb610e174ec04261c71ce2c6a9bca4e314ee6fb4544b0dd3466addd6eb36ac",
+      "group": "group_f710e274c09d5a828d51",
+      "is_cat": true,
+      "target_text": "Persian",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Persian",
+        "breed_zh": "波斯猫",
+        "features": [],
+        "raw_text": "Persian"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Ragdoll/Ragdoll_72.jpg",
+      "sha256": "a5e16326170e58a85f111f97c4741170aac8be4a5ea068be07039be4853e054f",
+      "group": "group_f5085660dbaedac3a862",
+      "is_cat": true,
+      "target_text": "Ragdoll",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Birman",
+        "breed_zh": "伯曼猫",
+        "features": [],
+        "raw_text": "Birman"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Ragdoll_10.jpg",
+      "sha256": "e4e11d0226578267151989c63fa9fec37ef27a63a264a2edc929535e327dfb50",
+      "group": "group_3ff2a86beb8a0bdd6a3e",
+      "is_cat": true,
+      "target_text": "Ragdoll",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Birman",
+        "breed_zh": "伯曼猫",
+        "features": [],
+        "raw_text": "Birman"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Ragdoll_176.jpg",
+      "sha256": "0ed79ac6e3803790f9b156739676879ef5a70ca5d640d694a112e723beedda5e",
+      "group": "group_3ddc68a7ee48b15c2ae0",
+      "is_cat": true,
+      "target_text": "Ragdoll",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Birman",
+        "breed_zh": "伯曼猫",
+        "features": [],
+        "raw_text": "Birman"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Ragdoll_199.jpg",
+      "sha256": "351441854db0a0e18949ffc50f440fe9c337af00fe602034fa2f4713c2d39b3d",
+      "group": "group_d9a2c47a14745d434e30",
+      "is_cat": true,
+      "target_text": "Ragdoll",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Ragdoll",
+        "breed_zh": "布偶猫",
+        "features": [],
+        "raw_text": "Ragdoll"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Ragdoll/Ragdoll_217.jpg",
+      "sha256": "1dab23126cce3d606b6b29155537bd3a408281a424f2c2f89e941c170170846d",
+      "group": "group_356292fafdc3ccb36097",
+      "is_cat": true,
+      "target_text": "Ragdoll",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Ragdoll",
+        "breed_zh": "布偶猫",
+        "features": [],
+        "raw_text": "Ragdoll"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 452
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Ragdoll_184.jpg",
+      "sha256": "68b0de5f51019d7ea06e6d254ac5022135db3c2be55f91a1396c6b46ab54f244",
+      "group": "group_01e9761625f72a6703c3",
+      "is_cat": true,
+      "target_text": "Ragdoll",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Birman",
+        "breed_zh": "伯曼猫",
+        "features": [],
+        "raw_text": "Birman"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 452
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Ragdoll/Ragdoll_161.jpg",
+      "sha256": "b3e32b11d962e81cf0b279126b6280ad93e8b15adbf0b609d7dac8783976ab42",
+      "group": "group_52d9226b70dbc6880c33",
+      "is_cat": true,
+      "target_text": "Ragdoll",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Birman",
+        "breed_zh": "伯曼猫",
+        "features": [],
+        "raw_text": "Birman"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 409
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Ragdoll/Ragdoll_159.jpg",
+      "sha256": "1bcf42ac5e27200333fb91c7f9d984d285455b397f2a6cc2c619612d1626ae5a",
+      "group": "group_7938907a945b266e6e18",
+      "is_cat": true,
+      "target_text": "Ragdoll",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Ragdoll",
+        "breed_zh": "布偶猫",
+        "features": [],
+        "raw_text": "Ragdoll"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 409
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Ragdoll_145.jpg",
+      "sha256": "bc7b229604e8689be130911b98138544c5b058189cdc1d45ea2dcbfd7341fba8",
+      "group": "group_1b0a37e7c255e768d893",
+      "is_cat": true,
+      "target_text": "Ragdoll",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Ragdoll",
+        "breed_zh": "布偶猫",
+        "features": [],
+        "raw_text": "Ragdoll"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 516
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Ragdoll_142.jpg",
+      "sha256": "14d5cd18108dd108ca47209030626361bab0f98a4b76de982ba3d79e61c601d7",
+      "group": "group_c667f2592ca9e377505d",
+      "is_cat": true,
+      "target_text": "Ragdoll",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Ragdoll",
+        "breed_zh": "布偶猫",
+        "features": [],
+        "raw_text": "Ragdoll"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 516
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Russian Blue/Russian Blue_230.jpg",
+      "sha256": "dd559a45ab3a5e2667f1ec9ae9f7c47ee9128c938ad3d9f391d885083a4cd197",
+      "group": "group_303550973d3b250c07d9",
+      "is_cat": true,
+      "target_text": "Russian_Blue",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Russian_Blue",
+        "breed_zh": "俄罗斯蓝猫",
+        "features": [],
+        "raw_text": "Russian_Blue"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 452
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Russian_Blue_110.jpg",
+      "sha256": "00b3b2998605449135bb5b4968342ce74a7d2ebb2020ba5cd0eb12c0df34a173",
+      "group": "group_81d6f2ef865e25111e06",
+      "is_cat": true,
+      "target_text": "Russian_Blue",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Russian_Blue",
+        "breed_zh": "俄罗斯蓝猫",
+        "features": [],
+        "raw_text": "Russian_Blue"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 452
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Russian Blue/Russian Blue_158.jpg",
+      "sha256": "72d83b3e5d9759bfdef94e49436fc0800ba6c92a355e6eba1ff8b57e91f2ce33",
+      "group": "group_a4f2ec2302b31d99cb06",
+      "is_cat": true,
+      "target_text": "Russian_Blue",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Russian_Blue",
+        "breed_zh": "俄罗斯蓝猫",
+        "features": [],
+        "raw_text": "Russian_Blue"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 500
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Russian_Blue_173.jpg",
+      "sha256": "1cf7b4ad11c3eb5f2b10917dac3f37efac6b456130f563f1e2b906863850122b",
+      "group": "group_e5a9fe0e723f2cf1efcf",
+      "is_cat": true,
+      "target_text": "Russian_Blue",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Russian_Blue",
+        "breed_zh": "俄罗斯蓝猫",
+        "features": [],
+        "raw_text": "Russian_Blue"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 500
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Russian_Blue_139.jpg",
+      "sha256": "cdbd9dc4f327d55c4e8c2976290bec00d60a05e0a431fd99a2b2d726a30fe03f",
+      "group": "group_abdd1721e491f331a612",
+      "is_cat": true,
+      "target_text": "Russian_Blue",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Russian_Blue",
+        "breed_zh": "俄罗斯蓝猫",
+        "features": [],
+        "raw_text": "Russian_Blue"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 452
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Russian_Blue_107.jpg",
+      "sha256": "3ac088b46f295d7fe1cea98d08deb86142350548d8beddd2ed39c888200d6973",
+      "group": "group_0bf65deaa63bf4998168",
+      "is_cat": true,
+      "target_text": "Russian_Blue",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Russian_Blue",
+        "breed_zh": "俄罗斯蓝猫",
+        "features": [],
+        "raw_text": "Russian_Blue"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 452
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Russian_Blue_148.jpg",
+      "sha256": "f66feb51d468947dc53e1734da5d585471cafc4d88a9900923cd56969c4e0f4e",
+      "group": "group_0a7ad7cb92a39c8f6768",
+      "is_cat": true,
+      "target_text": "Russian_Blue",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Russian_Blue",
+        "breed_zh": "俄罗斯蓝猫",
+        "features": [],
+        "raw_text": "Russian_Blue"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Russian_Blue_194.jpg",
+      "sha256": "d2f279c5c797efacffdd90bd58d4d519d59bc6eb48206e0e52c235109815f077",
+      "group": "group_a245063433e782a40238",
+      "is_cat": true,
+      "target_text": "Russian_Blue",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Russian_Blue",
+        "breed_zh": "俄罗斯蓝猫",
+        "features": [],
+        "raw_text": "Russian_Blue"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Russian_Blue_142.jpg",
+      "sha256": "bbc24d29eeaaa827cb5976c04c62edfd394185c5f7af26fd2500bafecac4b5e2",
+      "group": "group_bb4eac03f2a6b2ff29af",
+      "is_cat": true,
+      "target_text": "Russian_Blue",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Russian_Blue",
+        "breed_zh": "俄罗斯蓝猫",
+        "features": [],
+        "raw_text": "Russian_Blue"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 452
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Russian Blue/Russian Blue_19.jpg",
+      "sha256": "67a8dba8aec93ae59f9247bc5350cba59da8e7831b91465e293148b415d50bee",
+      "group": "group_4d0d4494825fcfba7bb4",
+      "is_cat": true,
+      "target_text": "Russian_Blue",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Russian_Blue",
+        "breed_zh": "俄罗斯蓝猫",
+        "features": [],
+        "raw_text": "Russian_Blue"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 452
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Siamese/Siamese_79.jpg",
+      "sha256": "58ab76c4342a2569c21222d09a79aaa76efd068a79d3a73a3dfb428024082e4a",
+      "group": "group_c92d12899f94bb1c53b6",
+      "is_cat": true,
+      "target_text": "Siamese",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Siamese",
+        "breed_zh": "暹罗猫",
+        "features": [],
+        "raw_text": "Siamese"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 400
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Siamese/Siamese_227.jpg",
+      "sha256": "e93b181e8de8c29fc25a50b7c68d1e82a25611a5de3befe955e2822be5fc75e5",
+      "group": "group_c11ae0fec02d5a17c761",
+      "is_cat": true,
+      "target_text": "Siamese",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Siamese",
+        "breed_zh": "暹罗猫",
+        "features": [],
+        "raw_text": "Siamese"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 400
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Siamese/Siamese_256.jpg",
+      "sha256": "1667c32d7c1a0e400a6e2bdae54effdfee7e9959c12ce9d757ffdc9c64fddf7f",
+      "group": "group_cd8a50ab51f56c98cd96",
+      "is_cat": true,
+      "target_text": "Siamese",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Siamese",
+        "breed_zh": "暹罗猫",
+        "features": [],
+        "raw_text": "Siamese"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 355
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Siamese/Siamese_326.jpg",
+      "sha256": "ae0beef76397e3393b0c786b621dd7049c52974ef3d1bba117ebf3b3210ff862",
+      "group": "group_13ff4a119232b3da743b",
+      "is_cat": true,
+      "target_text": "Siamese",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Siamese",
+        "breed_zh": "暹罗猫",
+        "features": [],
+        "raw_text": "Siamese"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 355
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Siamese/Siamese_189.jpg",
+      "sha256": "02029c6627021d0e9674a40dedd939617965736a73a18e47cb0b842302023534",
+      "group": "group_93fafe50582b173c72c2",
+      "is_cat": true,
+      "target_text": "Siamese",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Siamese",
+        "breed_zh": "暹罗猫",
+        "features": [],
+        "raw_text": "Siamese"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Siamese_206.jpg",
+      "sha256": "4a8d00b53df8d48cb66646cc8d7de86ee431b8dacfc860b3284c113b26c077a7",
+      "group": "group_2fbfe8ff471baf24988b",
+      "is_cat": true,
+      "target_text": "Siamese",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Siamese",
+        "breed_zh": "暹罗猫",
+        "features": [],
+        "raw_text": "Siamese"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Siamese/Siamese_313.jpg",
+      "sha256": "bd89a370903fa4535c0eccbe75d4c3681e7b06fc789a5bf95b3c2d89495ef39e",
+      "group": "group_1f547616a002a7852354",
+      "is_cat": true,
+      "target_text": "Siamese",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Siamese",
+        "breed_zh": "暹罗猫",
+        "features": [],
+        "raw_text": "Siamese"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 427
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Siamese/Siamese_35.jpg",
+      "sha256": "dd73e570118d452fbf716c7bb4934d9c0369651b174b3761648397ca4b446e0c",
+      "group": "group_94b10b2b711d2e52bb47",
+      "is_cat": true,
+      "target_text": "Siamese",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Siamese",
+        "breed_zh": "暹罗猫",
+        "features": [],
+        "raw_text": "Siamese"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 427
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Siamese/Siamese_139.jpg",
+      "sha256": "3a156a311530300bd77d42745e4dc802e37992bd37cc591435bd84995d261035",
+      "group": "group_bc33ad4f9d1a0b96ab93",
+      "is_cat": true,
+      "target_text": "Siamese",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Siamese",
+        "breed_zh": "暹罗猫",
+        "features": [],
+        "raw_text": "Siamese"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Siamese_112.jpg",
+      "sha256": "f1e257d2c5510d4f8790687eaafef79682144b32d5675120345cea81d87990e0",
+      "group": "group_85f6f01173493c14b6db",
+      "is_cat": true,
+      "target_text": "Siamese",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Siamese",
+        "breed_zh": "暹罗猫",
+        "features": [],
+        "raw_text": "Siamese"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Sphynx/Sphynx_140.jpg",
+      "sha256": "4efbe9e44fb3d6e76b70a4e0212b47eb5e5512d1cdbf495a296dae7cc5b5d5f4",
+      "group": "group_c044532efc77605c0b3e",
+      "is_cat": true,
+      "target_text": "Sphynx",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Sphynx",
+        "breed_zh": "斯芬克斯猫",
+        "features": [],
+        "raw_text": "Sphynx"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 418
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Sphynx_182.jpg",
+      "sha256": "115643c644fdd6cabfb2585ce6e66754674e5e1c71c5cf98d1de4ebc8c482505",
+      "group": "group_4c53ff3e99fe9db68704",
+      "is_cat": true,
+      "target_text": "Sphynx",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Sphynx",
+        "breed_zh": "斯芬克斯猫",
+        "features": [],
+        "raw_text": "Sphynx"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 418
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Sphynx_171.jpg",
+      "sha256": "37532b3062f3cb9ec2cd460a9f0458b0cf74c7cdb8f54530823c78b07b7098ea",
+      "group": "group_2973486dba8192f85bf7",
+      "is_cat": true,
+      "target_text": "Sphynx",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Sphynx",
+        "breed_zh": "斯芬克斯猫",
+        "features": [],
+        "raw_text": "Sphynx"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 452
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Sphynx/Sphynx_65.jpg",
+      "sha256": "9f3b275610534529f913ccb9fddedca4879916522159aca9430e01de6a2b8230",
+      "group": "group_3b206af6f28e432d0806",
+      "is_cat": true,
+      "target_text": "Sphynx",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Sphynx",
+        "breed_zh": "斯芬克斯猫",
+        "features": [],
+        "raw_text": "Sphynx"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 452
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Sphynx/Sphynx_255.jpg",
+      "sha256": "130dbe676fb8d026cfd3b58aa4decfb7bea0982ee9cc0358c8e5331a24cc7787",
+      "group": "group_867c0a03b0ca8b553654",
+      "is_cat": true,
+      "target_text": "Sphynx",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Sphynx",
+        "breed_zh": "斯芬克斯猫",
+        "features": [],
+        "raw_text": "Sphynx"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 452
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Sphynx_115.jpg",
+      "sha256": "06375aeea85e5624a5b4a9f2b50c439c73c20e17737f7d55df9a928bcc9301c2",
+      "group": "group_e6a9df23640ed1bed15f",
+      "is_cat": true,
+      "target_text": "Sphynx",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Sphynx",
+        "breed_zh": "斯芬克斯猫",
+        "features": [],
+        "raw_text": "Sphynx"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 452
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Sphynx/Sphynx_230.jpg",
+      "sha256": "9d44c341594c7a11e45471bf2b805c425589b5929cff0e1b41f848d764d2630a",
+      "group": "group_396b90dfe3f0ca84d324",
+      "is_cat": true,
+      "target_text": "Sphynx",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Sphynx",
+        "breed_zh": "斯芬克斯猫",
+        "features": [],
+        "raw_text": "Sphynx"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/Sphynx_183.jpg",
+      "sha256": "08630b3dcf3c37ad175d79ae5693633751a4ffece9f8c3a7a946862bca7388df",
+      "group": "group_a6cb7fa8b49e70aaaca8",
+      "is_cat": true,
+      "target_text": "Sphynx",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Sphynx",
+        "breed_zh": "斯芬克斯猫",
+        "features": [],
+        "raw_text": "Sphynx"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Sphynx/Sphynx_32.jpg",
+      "sha256": "35c656c6330060efc944206103b6045affd204b97e9fecaf1edad2d415b685f5",
+      "group": "group_f40df5eae8e4efd0ed91",
+      "is_cat": true,
+      "target_text": "Sphynx",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Sphynx",
+        "breed_zh": "斯芬克斯猫",
+        "features": [],
+        "raw_text": "Sphynx"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 364
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Sphynx/Sphynx_144.jpg",
+      "sha256": "afcb86be36e2bec603615e1e56cbf4551d5f48f1df3086fe6983f59cd065e9a6",
+      "group": "group_eeb45d27811a6e0d13e1",
+      "is_cat": true,
+      "target_text": "Sphynx",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Sphynx",
+        "breed_zh": "斯芬克斯猫",
+        "features": [],
+        "raw_text": "Sphynx"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 364
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/American Bobtail/American Bobtail_115.jpg",
+      "sha256": "e44fd4d7c5ff20e91888460a975751d1753432d73adf66045dee42692b993683",
+      "group": "group_eb47b2724bd0c9f0e05a",
+      "is_cat": true,
+      "target_text": "American_Bobtail",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "American_Shorthair",
+        "breed_zh": "美国短毛猫",
+        "features": [],
+        "raw_text": "American_Shorthair"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 418
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/American Bobtail/American Bobtail_322.jpg",
+      "sha256": "2728394c705870cd437174d6a5d726332c4b7a9b55271cbba5709dbc4f0e8268",
+      "group": "group_272c442943b883c55d9a",
+      "is_cat": true,
+      "target_text": "American_Bobtail",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "American_Bobtail",
+        "breed_zh": "美国短尾猫",
+        "features": [],
+        "raw_text": "American_Bobtail"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 418
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/American Bobtail/American Bobtail_348.jpg",
+      "sha256": "b9c54a4044b2ccedc1d0099acd298b0352c067aaf4bd0cba201b52124014449d",
+      "group": "group_1493bf28febbc0734454",
+      "is_cat": true,
+      "target_text": "American_Bobtail",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "American_Bobtail",
+        "breed_zh": "美国短尾猫",
+        "features": [],
+        "raw_text": "American_Bobtail"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 445
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/American Bobtail/American Bobtail_238.jpg",
+      "sha256": "ed804220eb1bfe31f8a2801b02a9bc09d74e49df7673be3a92bcd077cf63b9bf",
+      "group": "group_c410731c8a3bf810f814",
+      "is_cat": true,
+      "target_text": "American_Bobtail",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "American_Bobtail",
+        "breed_zh": "美国短尾猫",
+        "features": [],
+        "raw_text": "American_Bobtail"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 445
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/American Bobtail/American Bobtail_262.jpg",
+      "sha256": "715a8533ae6fa5fe4e257e2720849ee6ec5194ea4f9ce7300a7d1ddcb963b4a2",
+      "group": "group_dd5afdd88073f64b6c27",
+      "is_cat": true,
+      "target_text": "American_Bobtail",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "American_Shorthair",
+        "breed_zh": "美国短毛猫",
+        "features": [],
+        "raw_text": "American_Shorthair"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 390
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/American Bobtail/American Bobtail_179.jpg",
+      "sha256": "a316f561ef771f3a72c7a044ddfd63d90f26121bbff69e286fa00f70b4cd47a7",
+      "group": "group_161c8c997c6a5e35d31c",
+      "is_cat": true,
+      "target_text": "American_Bobtail",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "American_Shorthair",
+        "breed_zh": "美国短毛猫",
+        "features": [],
+        "raw_text": "American_Shorthair"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 390
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/American Bobtail/American Bobtail_183.jpg",
+      "sha256": "c298ecafa7402e1d27f681803d95c49a34290ca9d0cf29962cc6791305298639",
+      "group": "group_af4029891040e36684c1",
+      "is_cat": true,
+      "target_text": "American_Bobtail",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "American_Shorthair",
+        "breed_zh": "美国短毛猫",
+        "features": [],
+        "raw_text": "American_Shorthair"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 400
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/American Bobtail/American Bobtail_295.jpg",
+      "sha256": "085097745a8fbccf22f9c1127e9201dc1d87f4ff3b79c53a2401da67916e317c",
+      "group": "group_3732ec58ffab0cba72a2",
+      "is_cat": true,
+      "target_text": "American_Bobtail",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "American_Shorthair",
+        "breed_zh": "美国短毛猫",
+        "features": [],
+        "raw_text": "American_Shorthair"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 400
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/American Bobtail/American Bobtail_66.jpg",
+      "sha256": "70ec9edccf7f0688dde1e4a18a9a59924da35e1d7a113e649a93a4ce6278d783",
+      "group": "group_97aad2f85dda098b57f0",
+      "is_cat": true,
+      "target_text": "American_Bobtail",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Bombay",
+        "breed_zh": "孟买猫",
+        "features": [],
+        "raw_text": "Bombay"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 364
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/American Bobtail/American Bobtail_48.jpg",
+      "sha256": "a31a40f19b91a66a5e2dbf92400cc5da97c95b3dc2c542dbf49bcedafe4f40e5",
+      "group": "group_ce77ab1857b8f5e9541d",
+      "is_cat": true,
+      "target_text": "American_Bobtail",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "American_Shorthair",
+        "breed_zh": "美国短毛猫",
+        "features": [],
+        "raw_text": "American_Shorthair"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 364
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/American Curl/American Curl_309.jpg",
+      "sha256": "5d210bcbc1e2dc7738cfbd04ac096c3c5a0723a3637686b6ada9ccde5f28ec6c",
+      "group": "group_2572141347becf85fd78",
+      "is_cat": true,
+      "target_text": "American_Curl",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "American_Curl",
+        "breed_zh": "美国卷耳猫",
+        "features": [],
+        "raw_text": "American_Curl"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 442
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/American Curl/American Curl_187.jpg",
+      "sha256": "f3b58d739774e8ac630a7d516f8aa15d01cdd2b78758186887ce792e38153db2",
+      "group": "group_ee682f52ddace7c272fa",
+      "is_cat": true,
+      "target_text": "American_Curl",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "American_Curl",
+        "breed_zh": "美国卷耳猫",
+        "features": [],
+        "raw_text": "American_Curl"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 442
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/American Curl/American Curl_278.jpg",
+      "sha256": "2375505ebba217a17b051ed54f621858dd101e1ab22c5dadbc1aec471f1ecc45",
+      "group": "group_c97da351c3bb094f5c5a",
+      "is_cat": true,
+      "target_text": "American_Curl",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "American_Curl",
+        "breed_zh": "美国卷耳猫",
+        "features": [],
+        "raw_text": "American_Curl"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 526
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/American Curl/American Curl_289.jpg",
+      "sha256": "a9acd4e0b87d1b125a01e0234314113b9019af8f6f277dc58e05d94f343e02f7",
+      "group": "group_c1c4ea72856dab881983",
+      "is_cat": true,
+      "target_text": "American_Curl",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "American_Curl",
+        "breed_zh": "美国卷耳猫",
+        "features": [],
+        "raw_text": "American_Curl"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 526
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/American Curl/American Curl_311.jpg",
+      "sha256": "33c4ec5ecc775b688bc3797191554feab840bb18c8d4517ebfcc195cdf1f4558",
+      "group": "group_f6aaad87da53c0f14185",
+      "is_cat": true,
+      "target_text": "American_Curl",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "American_Curl",
+        "breed_zh": "美国卷耳猫",
+        "features": [],
+        "raw_text": "American_Curl"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 530
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/American Curl/American Curl_208.jpg",
+      "sha256": "b6ec88fa3bfd2fe185fbd28420681ba254e17c7edd590a80a7c687ef9ee774b3",
+      "group": "group_fa05917dce9c4edda1d8",
+      "is_cat": true,
+      "target_text": "American_Curl",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "American_Curl",
+        "breed_zh": "美国卷耳猫",
+        "features": [],
+        "raw_text": "American_Curl"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 530
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/American Curl/American Curl_75.jpg",
+      "sha256": "58d23d151f623e835694c3638a7c479ef66f340da8e7ecf0d74f5cc1f437f747",
+      "group": "group_901da8fcc467d15c38c4",
+      "is_cat": true,
+      "target_text": "American_Curl",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "American_Curl",
+        "breed_zh": "美国卷耳猫",
+        "features": [],
+        "raw_text": "American_Curl"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 539
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/American Curl/American Curl_291.jpg",
+      "sha256": "e5d4f6c4eb76ffde1d24230b6172a5ab6e8aa74174e48e732c15fa2dc1e14c35",
+      "group": "group_adb8c5dbea71e3c96a36",
+      "is_cat": true,
+      "target_text": "American_Curl",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "American_Curl",
+        "breed_zh": "美国卷耳猫",
+        "features": [],
+        "raw_text": "American_Curl"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 539
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/American Curl/American Curl_281.jpg",
+      "sha256": "e86fb6453974248d3e5a899d56d3f40dd48226954a8ad97d38019babe89acd40",
+      "group": "group_ca366fc35c3c83242325",
+      "is_cat": true,
+      "target_text": "American_Curl",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "American_Curl",
+        "breed_zh": "美国卷耳猫",
+        "features": [],
+        "raw_text": "American_Curl"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 532
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/American Curl/American Curl_94.jpg",
+      "sha256": "2099c198334c5477df4bc7d4b1242b138db8918419f5234f785bd08261751f12",
+      "group": "group_a954867b6e3fa2316fbc",
+      "is_cat": true,
+      "target_text": "American_Curl",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "American_Curl",
+        "breed_zh": "美国卷耳猫",
+        "features": [],
+        "raw_text": "American_Curl"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 532
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/American Shorthair/American Shorthair_172.jpg",
+      "sha256": "a297b36023a49d980f73c61635aaccb047c3e6699217260e2f56dbff07eec451",
+      "group": "group_9ae929fbb8b12f079e9d",
+      "is_cat": true,
+      "target_text": "American_Shorthair",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "American_Shorthair",
+        "breed_zh": "美国短毛猫",
+        "features": [],
+        "raw_text": "American_Shorthair"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 409
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/American Shorthair/American Shorthair_294.jpg",
+      "sha256": "208b9d4ce47db273e0ec26c8ea575af845e8e9e2142fdebf67806169dc3e89a4",
+      "group": "group_eef4468c1ddff129d935",
+      "is_cat": true,
+      "target_text": "American_Shorthair",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "American_Shorthair",
+        "breed_zh": "美国短毛猫",
+        "features": [],
+        "raw_text": "American_Shorthair"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 409
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/American Shorthair/American Shorthair_213.jpg",
+      "sha256": "9a248fdf1d3688ce3ac027ffab5a7b2a78a1860360915b14dc9a075617eb2347",
+      "group": "group_15886e7477d32f53406b",
+      "is_cat": true,
+      "target_text": "American_Shorthair",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "American_Shorthair",
+        "breed_zh": "美国短毛猫",
+        "features": [],
+        "raw_text": "American_Shorthair"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 400
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/American Shorthair/American Shorthair_217.jpg",
+      "sha256": "038370e4641abed3fe627f9021bd432353ace9eeb977a3836b7cd68817ec9d5c",
+      "group": "group_ef5d2583a686127fc5d0",
+      "is_cat": true,
+      "target_text": "American_Shorthair",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "American_Shorthair",
+        "breed_zh": "美国短毛猫",
+        "features": [],
+        "raw_text": "American_Shorthair"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 400
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/American Shorthair/American Shorthair_204.jpg",
+      "sha256": "bbaf4296d54325c7dea2f5c2fc059a468d86f33273ddf756a003347c4ccfde75",
+      "group": "group_3e046a6258236f7d0a9c",
+      "is_cat": true,
+      "target_text": "American_Shorthair",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "American_Shorthair",
+        "breed_zh": "美国短毛猫",
+        "features": [],
+        "raw_text": "American_Shorthair"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 400
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/American Shorthair/American Shorthair_349.jpg",
+      "sha256": "55ec4c8a52337a90789225a202817a7d669dc3b8cd9fc62162b004e023fda4fe",
+      "group": "group_a94ddf2b4eb69ab52d8f",
+      "is_cat": true,
+      "target_text": "American_Shorthair",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "American_Shorthair",
+        "breed_zh": "美国短毛猫",
+        "features": [],
+        "raw_text": "American_Shorthair"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 400
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/American Shorthair/American Shorthair_68.jpg",
+      "sha256": "ce0b4eabcf4f7dae81ec27dda8e3607222ee212c1ca38900ec177297cca28ebc",
+      "group": "group_b06ac44906c32d9dabb8",
+      "is_cat": true,
+      "target_text": "American_Shorthair",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Turkish_Angora",
+        "breed_zh": "土耳其安哥拉猫",
+        "features": [],
+        "raw_text": "Turkish_Angora"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 364
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/American Shorthair/American Shorthair_214.jpg",
+      "sha256": "f5cba5a5a719920565010c6f3caba2249da88a7ed2889d71fbc34fe1a73afcb5",
+      "group": "group_2495bb245a748d4a8ef1",
+      "is_cat": true,
+      "target_text": "American_Shorthair",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "American_Shorthair",
+        "breed_zh": "美国短毛猫",
+        "features": [],
+        "raw_text": "American_Shorthair"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 364
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/American Shorthair/American Shorthair_180.jpg",
+      "sha256": "c68eb87c8d479d8de4f1568a883b7da5db47ab9ff9f6624f3455ff262d19764d",
+      "group": "group_e05d819b2690a4f3c100",
+      "is_cat": true,
+      "target_text": "American_Shorthair",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "American_Shorthair",
+        "breed_zh": "美国短毛猫",
+        "features": [],
+        "raw_text": "American_Shorthair"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 400
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/American Shorthair/American Shorthair_39.jpg",
+      "sha256": "4a5940569622903105130adf4ff8b4ff6b14c8d5e7ab5a581c27047b50ebe984",
+      "group": "group_7e3d1c26ce33b0f66570",
+      "is_cat": true,
+      "target_text": "American_Shorthair",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "American_Shorthair",
+        "breed_zh": "美国短毛猫",
+        "features": [],
+        "raw_text": "American_Shorthair"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 400
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Exotic Shorthair/Exotic Shorthair_116.jpg",
+      "sha256": "16363f8ef2d96c33496630655d05ec801b76896a743d8983a4f4b8c7e58c895e",
+      "group": "group_8b16bd952bd60b33d747",
+      "is_cat": true,
+      "target_text": "Exotic_Shorthair",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Exotic_Shorthair",
+        "breed_zh": "异国短毛猫",
+        "features": [],
+        "raw_text": "Exotic_Shorthair"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 539
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Exotic Shorthair/Exotic Shorthair_221.jpg",
+      "sha256": "c55d735f54f43089306ff6a1120ec90d9cf4af5da44b530392f779fa78a3bb09",
+      "group": "group_ae745a6f77a57e68ac1c",
+      "is_cat": true,
+      "target_text": "Exotic_Shorthair",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Exotic_Shorthair",
+        "breed_zh": "异国短毛猫",
+        "features": [],
+        "raw_text": "Exotic_Shorthair"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 539
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Exotic Shorthair/Exotic Shorthair_56.jpg",
+      "sha256": "648ea792c253ce20cee5d96b2db952d10abf39b5fb1b152e7e6d478919552391",
+      "group": "group_e0fbcea4be109dcfe1bd",
+      "is_cat": true,
+      "target_text": "Exotic_Shorthair",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Exotic_Shorthair",
+        "breed_zh": "异国短毛猫",
+        "features": [],
+        "raw_text": "Exotic_Shorthair"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 539
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Exotic Shorthair/Exotic Shorthair_281.jpg",
+      "sha256": "001447f7ee4f3866fa7284237b5acff00c7302e4753b5407df03c531e0cbe6fa",
+      "group": "group_352e41df1bc92a8f4573",
+      "is_cat": true,
+      "target_text": "Exotic_Shorthair",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "British_Shorthair",
+        "breed_zh": "英国短毛猫",
+        "features": [],
+        "raw_text": "British_Shorthair"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 539
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Exotic Shorthair/Exotic Shorthair_112.jpg",
+      "sha256": "4a3e864bfaf6032e1d951f6488679b49e084bbb7a0e90cec914389e020f68b00",
+      "group": "group_9ff0b41a6d37f89276e5",
+      "is_cat": true,
+      "target_text": "Exotic_Shorthair",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Exotic_Shorthair",
+        "breed_zh": "异国短毛猫",
+        "features": [],
+        "raw_text": "Exotic_Shorthair"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 539
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Exotic Shorthair/Exotic Shorthair_257.jpg",
+      "sha256": "837d6e31c05c5e319edd2617dbfba3291208eea5978b149b28b9ef4b7e046c89",
+      "group": "group_4e2c15a7289021430419",
+      "is_cat": true,
+      "target_text": "Exotic_Shorthair",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Exotic_Shorthair",
+        "breed_zh": "异国短毛猫",
+        "features": [],
+        "raw_text": "Exotic_Shorthair"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 539
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Exotic Shorthair/Exotic Shorthair_127.jpg",
+      "sha256": "78c163b17104b1072a51ad39fea8a584247da6a2fa26041972eb2c052570e80e",
+      "group": "group_a81f9c45d2f2c3b61636",
+      "is_cat": true,
+      "target_text": "Exotic_Shorthair",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Exotic_Shorthair",
+        "breed_zh": "异国短毛猫",
+        "features": [],
+        "raw_text": "Exotic_Shorthair"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 442
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Exotic Shorthair/Exotic Shorthair_168.jpg",
+      "sha256": "3c1c947d50d362bdae561830833e554c9c0cfb3cb7008942a1bca676cd572274",
+      "group": "group_b00bbf4fa93f488aa81b",
+      "is_cat": true,
+      "target_text": "Exotic_Shorthair",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Exotic_Shorthair",
+        "breed_zh": "异国短毛猫",
+        "features": [],
+        "raw_text": "Exotic_Shorthair"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 442
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Exotic Shorthair/Exotic Shorthair_319.jpg",
+      "sha256": "1a2eeae93d121a4a51d1d4c5b83a37c23789177899156b3b1b02fa1a0065e3b2",
+      "group": "group_8a6dbec4d876dd12798b",
+      "is_cat": true,
+      "target_text": "Exotic_Shorthair",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "British_Shorthair",
+        "breed_zh": "英国短毛猫",
+        "features": [],
+        "raw_text": "British_Shorthair"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 522
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Exotic Shorthair/Exotic Shorthair_53.jpg",
+      "sha256": "a16ff8a2a773e5b356c6f50b85c5a2e3f215bc5a49e18f466e282bb222d0fd33",
+      "group": "group_a4c2f0758254f7bde92e",
+      "is_cat": true,
+      "target_text": "Exotic_Shorthair",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Exotic_Shorthair",
+        "breed_zh": "异国短毛猫",
+        "features": [],
+        "raw_text": "Exotic_Shorthair"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 522
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Manx/Manx_200.jpg",
+      "sha256": "a3e49c28c16794c421edb2ebafdcbdd41d5700596fcfaf37781e75fe446f9f70",
+      "group": "group_cff3e1753b6fc81634a7",
+      "is_cat": true,
+      "target_text": "Manx",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Norwegian_Forest",
+        "breed_zh": "挪威森林猫",
+        "features": [],
+        "raw_text": "Norwegian_Forest"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 388
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Manx/Manx_151.jpg",
+      "sha256": "eabaeb9e5c2976c253babc6818ebf732b2754c29f9368c93ef355a6e8a916b5f",
+      "group": "group_8cb68115e8fb78195945",
+      "is_cat": true,
+      "target_text": "Manx",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Manx",
+        "breed_zh": "曼岛猫",
+        "features": [],
+        "raw_text": "Manx"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 388
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Manx/Manx_263.jpg",
+      "sha256": "eb502eca2f47fbd3168716e573299321c1ab4f11ffe49a16ea84dabc0498f33a",
+      "group": "group_e4ff7d71717dcc2da518",
+      "is_cat": true,
+      "target_text": "Manx",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Manx",
+        "breed_zh": "曼岛猫",
+        "features": [],
+        "raw_text": "Manx"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 526
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Manx/Manx_156.jpg",
+      "sha256": "6d8a6e8154fe6530bd4abd0c9930f3ecfc88c966ce45a440eac418aea93a3f28",
+      "group": "group_6984eb4e13f056b79325",
+      "is_cat": true,
+      "target_text": "Manx",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Manx",
+        "breed_zh": "曼岛猫",
+        "features": [],
+        "raw_text": "Manx"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 526
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Manx/Manx_178.jpg",
+      "sha256": "909e964bcec04279d45fd631a1e8d2f92559bb7624e2e7a6fc07fb4bd73eac86",
+      "group": "group_e07f2f55702ba7939ea0",
+      "is_cat": true,
+      "target_text": "Manx",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Manx",
+        "breed_zh": "曼岛猫",
+        "features": [],
+        "raw_text": "Manx"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 544
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Manx/Manx_270.jpg",
+      "sha256": "90d1086fd7c4d78b57b1c93f1ab481386bbc8c18980a09864d6bf14e2d1924ef",
+      "group": "group_ffbc4d73efac17598e4f",
+      "is_cat": true,
+      "target_text": "Manx",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Manx",
+        "breed_zh": "曼岛猫",
+        "features": [],
+        "raw_text": "Manx"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 544
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Manx/Manx_194.jpg",
+      "sha256": "e29e0e8314d51c46b082b47a7d1ce977a1e5947612d39607b9a21bde6f685f8e",
+      "group": "group_3dafa3c7b83086fa36e9",
+      "is_cat": true,
+      "target_text": "Manx",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Manx",
+        "breed_zh": "曼岛猫",
+        "features": [],
+        "raw_text": "Manx"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 522
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Manx/Manx_312.jpg",
+      "sha256": "7a0b173b37205667ef01fbdf86e6e600d5e10d2a516460129e425f537a68fe58",
+      "group": "group_22b3e37d6c7b7da5a3d9",
+      "is_cat": true,
+      "target_text": "Manx",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Manx",
+        "breed_zh": "曼岛猫",
+        "features": [],
+        "raw_text": "Manx"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 522
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Manx/Manx_75.jpg",
+      "sha256": "6ccec0761569ce7455013a8c33504710258b4a2b1942a1050029d4ed84922214",
+      "group": "group_fa1413c6f8b1c9f17a13",
+      "is_cat": true,
+      "target_text": "Manx",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Manx",
+        "breed_zh": "曼岛猫",
+        "features": [],
+        "raw_text": "Manx"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 532
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Manx/Manx_160.jpg",
+      "sha256": "81a9afeb2b77c0ead342b6aa1abcc286300da21d155363343ac2a93d09f75f2c",
+      "group": "group_3044689b85720cfe79f8",
+      "is_cat": true,
+      "target_text": "Manx",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Manx",
+        "breed_zh": "曼岛猫",
+        "features": [],
+        "raw_text": "Manx"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 532
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Norwegian Forest/Norwegian Forest_121.jpg",
+      "sha256": "12f6764066f153b94d9b8fcb1357c876e1a00a6ce2977b4702193f4f87aacf1c",
+      "group": "group_2a225e5455163001bbec",
+      "is_cat": true,
+      "target_text": "Norwegian_Forest",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Norwegian_Forest",
+        "breed_zh": "挪威森林猫",
+        "features": [],
+        "raw_text": "Norwegian_Forest"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 526
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Norwegian Forest/Norwegian Forest_197.jpg",
+      "sha256": "e7b7c22ec530d0e855a42d1b51a81363b5ff24288d7b7cbefaa94603423076b1",
+      "group": "group_a9c5c38788ed543e2aa0",
+      "is_cat": true,
+      "target_text": "Norwegian_Forest",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Manx",
+        "breed_zh": "曼岛猫",
+        "features": [],
+        "raw_text": "Manx"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 526
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Norwegian Forest/Norwegian Forest_154.jpg",
+      "sha256": "2f5a04dd3bcd0a61da824b3790174348dfe4938f219a584482a4c080417105db",
+      "group": "group_e6f2e07f76a7c568d17d",
+      "is_cat": true,
+      "target_text": "Norwegian_Forest",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Norwegian_Forest",
+        "breed_zh": "挪威森林猫",
+        "features": [],
+        "raw_text": "Norwegian_Forest"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 539
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Norwegian Forest/Norwegian Forest_231.jpg",
+      "sha256": "8dc379c533367ddccbd2f6d88bd11e14226ff5dcf75d00ea1ef3010861066d8b",
+      "group": "group_61c9e22dd1779d947887",
+      "is_cat": true,
+      "target_text": "Norwegian_Forest",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Norwegian_Forest",
+        "breed_zh": "挪威森林猫",
+        "features": [],
+        "raw_text": "Norwegian_Forest"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 539
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Norwegian Forest/Norwegian Forest_305.jpg",
+      "sha256": "642b1623ce6f4754ab320ca22fde6d5a3c176510c016c24f65b06bfc61d04d7d",
+      "group": "group_e90b23ac79566b5d3776",
+      "is_cat": true,
+      "target_text": "Norwegian_Forest",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Norwegian_Forest",
+        "breed_zh": "挪威森林猫",
+        "features": [],
+        "raw_text": "Norwegian_Forest"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 530
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Norwegian Forest/Norwegian Forest_120.jpg",
+      "sha256": "99c756524db07832e0616feb09ec7ed74ae507720a44b549af0c7b626525e115",
+      "group": "group_da7a9de2cad08a541774",
+      "is_cat": true,
+      "target_text": "Norwegian_Forest",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Norwegian_Forest",
+        "breed_zh": "挪威森林猫",
+        "features": [],
+        "raw_text": "Norwegian_Forest"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 530
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Norwegian Forest/Norwegian Forest_161.jpg",
+      "sha256": "26ab695625c18f4480dcc12230217311aee97532884b1c8e6fce7cff389f6a18",
+      "group": "group_a946a206eb068d2f1f86",
+      "is_cat": true,
+      "target_text": "Norwegian_Forest",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Norwegian_Forest",
+        "breed_zh": "挪威森林猫",
+        "features": [],
+        "raw_text": "Norwegian_Forest"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 539
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Norwegian Forest/Norwegian Forest_303.jpg",
+      "sha256": "36f4405221fbca0eab51e718ada9b0e2adb78e0c50904387a08039abd401fc3a",
+      "group": "group_f35506a3968c48f89c3a",
+      "is_cat": true,
+      "target_text": "Norwegian_Forest",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Norwegian_Forest",
+        "breed_zh": "挪威森林猫",
+        "features": [],
+        "raw_text": "Norwegian_Forest"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 539
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Norwegian Forest/Norwegian Forest_315.jpg",
+      "sha256": "b5b95fa4a74ebd4fdc833df35630116ea2d9b0661a3dc617708914868760a6ce",
+      "group": "group_15b371e82f65be996de7",
+      "is_cat": true,
+      "target_text": "Norwegian_Forest",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Norwegian_Forest",
+        "breed_zh": "挪威森林猫",
+        "features": [],
+        "raw_text": "Norwegian_Forest"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 530
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Norwegian Forest/Norwegian Forest_31.jpg",
+      "sha256": "dd9a9a2130306c4590c805d62bbce9e213b3903a2d0a37348a372474af2626cf",
+      "group": "group_94a1336e32897bf78345",
+      "is_cat": true,
+      "target_text": "Norwegian_Forest",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Norwegian_Forest",
+        "breed_zh": "挪威森林猫",
+        "features": [],
+        "raw_text": "Norwegian_Forest"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 530
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Scottish Fold/Scottish Fold_93.jpg",
+      "sha256": "2d3732bc6b1c08f71be8ad375572fafb9d6701ba87d347c948dd45d6a3898869",
+      "group": "group_5a69bc36f8446da3c05c",
+      "is_cat": true,
+      "target_text": "Scottish_Fold",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Persian",
+        "breed_zh": "波斯猫",
+        "features": [],
+        "raw_text": "Persian"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 526
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Scottish Fold/Scottish Fold_49.jpg",
+      "sha256": "224c9fd4868d00f306bde2b8d0f14cfa074d33e072808d67c7d4ada10ddde9d4",
+      "group": "group_6b71c429e774c21ea61c",
+      "is_cat": true,
+      "target_text": "Scottish_Fold",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Scottish_Fold",
+        "breed_zh": "苏格兰折耳猫",
+        "features": [],
+        "raw_text": "Scottish_Fold"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 526
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Scottish Fold/Scottish Fold_85.jpg",
+      "sha256": "3f9f398a1028022b033f686a381742d5f5cbe862516aa5f290091682feb69ec6",
+      "group": "group_9d1084dca783433c3cf5",
+      "is_cat": true,
+      "target_text": "Scottish_Fold",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Scottish_Fold",
+        "breed_zh": "苏格兰折耳猫",
+        "features": [],
+        "raw_text": "Scottish_Fold"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 544
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Scottish Fold/Scottish Fold_181.jpg",
+      "sha256": "efb5ee37d0dffc0a2cd6ce6fbb25329340e35ce3419dfbc532629df533d91373",
+      "group": "group_297100a692ab67c42293",
+      "is_cat": true,
+      "target_text": "Scottish_Fold",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Scottish_Fold",
+        "breed_zh": "苏格兰折耳猫",
+        "features": [],
+        "raw_text": "Scottish_Fold"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 544
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Scottish Fold/Scottish Fold_71.jpg",
+      "sha256": "e9c0a0cde567746cd3ccc6a675b21caaf177159683769620bfb4595bcf59eeda",
+      "group": "group_a9f9d7790a21a2a17a87",
+      "is_cat": true,
+      "target_text": "Scottish_Fold",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Scottish_Fold",
+        "breed_zh": "苏格兰折耳猫",
+        "features": [],
+        "raw_text": "Scottish_Fold"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 539
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Scottish Fold/Scottish Fold_298.jpg",
+      "sha256": "cc5ffe772c1c5d976d23df647ceecbe19b692b66ee3f05c026d71cf49b5ded94",
+      "group": "group_ebe88900ac1fb855b231",
+      "is_cat": true,
+      "target_text": "Scottish_Fold",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Scottish_Fold",
+        "breed_zh": "苏格兰折耳猫",
+        "features": [],
+        "raw_text": "Scottish_Fold"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 539
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Scottish Fold/Scottish Fold_256.jpg",
+      "sha256": "b9f351d1369e2f5d73bd83417cba361fd71083a7bbbf3cd2e5d8b8a075a9f95c",
+      "group": "group_610869ac12bde64aee1b",
+      "is_cat": true,
+      "target_text": "Scottish_Fold",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Scottish_Fold",
+        "breed_zh": "苏格兰折耳猫",
+        "features": [],
+        "raw_text": "Scottish_Fold"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 548
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Scottish Fold/Scottish Fold_246.jpg",
+      "sha256": "3ea67e3dff7ff9a371510ca4fb4a3c6366b3924b60a9000ab35a91e29a50f117",
+      "group": "group_41309b398a59c00527a7",
+      "is_cat": true,
+      "target_text": "Scottish_Fold",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Scottish_Fold",
+        "breed_zh": "苏格兰折耳猫",
+        "features": [],
+        "raw_text": "Scottish_Fold"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 548
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Scottish Fold/Scottish Fold_80.jpg",
+      "sha256": "a5634633443020d859f2efcf0416a6eb4c65d5bb4471240149fccaff326cf92b",
+      "group": "group_125350ca954616792fec",
+      "is_cat": true,
+      "target_text": "Scottish_Fold",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Scottish_Fold",
+        "breed_zh": "苏格兰折耳猫",
+        "features": [],
+        "raw_text": "Scottish_Fold"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 532
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Scottish Fold/Scottish Fold_310.jpg",
+      "sha256": "4d80cafbef79e4ec4a8e1f072002d3b551ce8218731f09eccd19b5c2263c9445",
+      "group": "group_9cc7324cc7eb1a07d229",
+      "is_cat": true,
+      "target_text": "Scottish_Fold",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Scottish_Fold",
+        "breed_zh": "苏格兰折耳猫",
+        "features": [],
+        "raw_text": "Scottish_Fold"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 532
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Turkish Angora/Turkish Angora_13.jpg",
+      "sha256": "dd488af81a2d6dd4cab3bc90dfe21ce207d02b64d324cf9545e65e6de4d92527",
+      "group": "group_2ff6f26d362547eafbb7",
+      "is_cat": true,
+      "target_text": "Turkish_Angora",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Turkish_Angora",
+        "breed_zh": "土耳其安哥拉猫",
+        "features": [],
+        "raw_text": "Turkish_Angora"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 400
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Turkish Angora/Turkish Angora_44.jpg",
+      "sha256": "e55aa297f6af3ea2c2fcdc8eda04023649f755dd49d97f06fc9e142ee1d342d1",
+      "group": "group_dba93b207622634dce95",
+      "is_cat": true,
+      "target_text": "Turkish_Angora",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Turkish_Angora",
+        "breed_zh": "土耳其安哥拉猫",
+        "features": [],
+        "raw_text": "Turkish_Angora"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 400
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Turkish Angora/Turkish Angora_7.jpg",
+      "sha256": "37ccca02d71c26905583e6f608c79795c0874f93b32cd9f9106107023d21df63",
+      "group": "group_1117266f098caf16fb64",
+      "is_cat": true,
+      "target_text": "Turkish_Angora",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Turkish_Angora",
+        "breed_zh": "土耳其安哥拉猫",
+        "features": [],
+        "raw_text": "Turkish_Angora"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 373
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Turkish Angora/Turkish Angora_151.jpg",
+      "sha256": "258bfabd2895c33685cea86d79f63aac2dff6885f2daba14b63eb7b91744b86b",
+      "group": "group_a24582d0d5b1eb8f2fb5",
+      "is_cat": true,
+      "target_text": "Turkish_Angora",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Turkish_Angora",
+        "breed_zh": "土耳其安哥拉猫",
+        "features": [],
+        "raw_text": "Turkish_Angora"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 373
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Turkish Angora/Turkish Angora_114.jpg",
+      "sha256": "ce2f2d54e5a9e740d4519e1169e7382e8e622e3f94038356b01d16f28b9dad56",
+      "group": "group_7f2418f28c0a08b4fb2f",
+      "is_cat": true,
+      "target_text": "Turkish_Angora",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Turkish_Angora",
+        "breed_zh": "土耳其安哥拉猫",
+        "features": [],
+        "raw_text": "Turkish_Angora"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 355
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Turkish Angora/Turkish Angora_350.jpg",
+      "sha256": "673c61eb31d0187a001519d7c05a5fc28a3cb2fcf9b74ddf221a52bb6e36df0c",
+      "group": "group_5200b0b0d713b73ea11c",
+      "is_cat": true,
+      "target_text": "Turkish_Angora",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Maine_Coon",
+        "breed_zh": "缅因猫",
+        "features": [],
+        "raw_text": "Maine_Coon"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 355
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Turkish Angora/Turkish Angora_270.jpg",
+      "sha256": "65f2f4926db9f9dd3c81c372875f71059464beb283d2142eb4befbffdd7691fa",
+      "group": "group_b395675a7f356ef70809",
+      "is_cat": true,
+      "target_text": "Turkish_Angora",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Turkish_Angora",
+        "breed_zh": "土耳其安哥拉猫",
+        "features": [],
+        "raw_text": "Turkish_Angora"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 391
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Turkish Angora/Turkish Angora_117.jpg",
+      "sha256": "256ab52caadd70cb2e6e7b6230c009704291516a62580e59dfcfc29a82f28ff5",
+      "group": "group_a36bdd2707657137ba9b",
+      "is_cat": true,
+      "target_text": "Turkish_Angora",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Turkish_Angora",
+        "breed_zh": "土耳其安哥拉猫",
+        "features": [],
+        "raw_text": "Turkish_Angora"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 391
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Turkish Angora/Turkish Angora_137.jpg",
+      "sha256": "79827ac402918f3ced54b641f5f0ed225f0c5dbaa0aa1c11cc09a82ecc47b036",
+      "group": "group_0333638275dc759da3e6",
+      "is_cat": true,
+      "target_text": "Turkish_Angora",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Turkish_Angora",
+        "breed_zh": "土耳其安哥拉猫",
+        "features": [],
+        "raw_text": "Turkish_Angora"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 400
+    },
+    {
+      "relative_path": "expanded-v3/CatBreedsRefined-v2/Turkish Angora/Turkish Angora_78.jpg",
+      "sha256": "7d956bac065e21963e916eb7bc8cef91ec666a57e733dfe1185ce8e579cbd555",
+      "group": "group_c8ffe8d3335d69677c9b",
+      "is_cat": true,
+      "target_text": "Turkish_Angora",
+      "prediction": {
+        "status": "ok",
+        "has_cat": true,
+        "breed": "Maine_Coon",
+        "breed_zh": "缅因猫",
+        "features": [],
+        "raw_text": "Maine_Coon"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 400
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/shiba_inu_198.jpg",
+      "sha256": "95a21e1f18a4800bbc4c0cf7df612a07f780590bd681f7f0740b91a5060c1106",
+      "group": "group_928ba30edf7737ee11a0",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 500
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/japanese_chin_134.jpg",
+      "sha256": "75c08c1fabb1fbcd456f22b292dba00c8bfba33774bfac5307d2049008db0d67",
+      "group": "group_43b82bcd20b5a16fbbba",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 500
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/american_pit_bull_terrier_161.jpg",
+      "sha256": "32c75fecf6cc2b5b64dc3c3ddc36af44f9ed6da6de4b5d23f6d11c9935dc9601",
+      "group": "group_f0ab2ab0cb9bfb1fcb47",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 452
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/scottish_terrier_158.jpg",
+      "sha256": "1ea36a1b163bd5fb5be2c4ff0765ef659dde901208259bc608e5319c00f6a50b",
+      "group": "group_09ef8887dfc12a2631d7",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 452
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/english_cocker_spaniel_126.jpg",
+      "sha256": "3fd3f76e0b0701a345afc3fc94b391bc7bbc7aad3952717200b08dfa3db610ad",
+      "group": "group_117b5c1aa1056a8b4614",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/keeshond_135.jpg",
+      "sha256": "7a26b09a5e36fc88ecf32b518fe9205686dfcbddf9b9870caf4f1dac464bc268",
+      "group": "group_e6a80df6940b4c016aab",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/keeshond_151.jpg",
+      "sha256": "26b9b8b7c52d29797f66525855e73d6193cb39bb52f57cd8df876c9e9f846932",
+      "group": "group_642a48189e6b2fd87ef5",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/wheaten_terrier_151.jpg",
+      "sha256": "ec7af2b3e10e7b378cac925b041bf5ec1968f2cc86be32930222f8268fc1a649",
+      "group": "group_257c182e014b5f0c2cf4",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/basset_hound_136.jpg",
+      "sha256": "31148e89ad5d950c194a393537ea8bc12963518ade4ebc0b038fcb3811bbd8e6",
+      "group": "group_d6876a62fb2b623d3a01",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/staffordshire_bull_terrier_124.jpg",
+      "sha256": "e37fe138bf9cccd577919545e39b6ac975883ca3564a44b0df83a9c2de1d142a",
+      "group": "group_bcf27228f85644f721b6",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/scottish_terrier_142.jpg",
+      "sha256": "ed2399ddb4f9d6b85be9bbf5eb438e43103389368dadc2be8dc10e0cd8f0189e",
+      "group": "group_3e5fab5bc2b8a4dade89",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 516
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/wheaten_terrier_112.jpg",
+      "sha256": "59432881135f79256ffd7a929aaeedf751deeffc2f3a3d22abb8eec241dfb697",
+      "group": "group_a3df0971e65e0e41de46",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 516
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/basset_hound_112.jpg",
+      "sha256": "3780f2838edb0f1eb3f42f9ac5d5c989fa4c623f4c076f83adc585a00a48a2e8",
+      "group": "group_d07e9efb84c708ce17a0",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/german_shorthaired_126.jpg",
+      "sha256": "d519b3770cff51f650fd42aaf3c5ad43a99e4e4d9e393a8be189ab3ef6b0efe9",
+      "group": "group_c47fcf24c21f34baa65b",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/beagle_102.jpg",
+      "sha256": "0bfdb1b63f00e1440f2b664e7edc16ea7a8cb20a99f952ac1c815863d4e0d9dd",
+      "group": "group_d7b69b881b32aa80512b",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 452
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/english_cocker_spaniel_151.jpg",
+      "sha256": "2e0b444c16a1e068aeb6fc8e7bdb178fceb9f55c37ef916a08559550f7d4e30a",
+      "group": "group_a60f68755a1eb8936f77",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 452
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/saint_bernard_176.jpg",
+      "sha256": "2a6833dbf1b679ed533a1a8dd9e7d93e2304d04de620e95d3a505faefdbdefd9",
+      "group": "group_f9f4946cc00c50a0c3cb",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/beagle_172.jpg",
+      "sha256": "8b800b5d1688c65cb79e3587a1c567792dc4440949e512e09493609bcb07167c",
+      "group": "group_dc88526a866b095b02d2",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/scottish_terrier_18.jpg",
+      "sha256": "4cc17582ecfaacd2363ec4b07c7840c2ae0dfe5e578a5e7ffbf26b4141173c98",
+      "group": "group_72b6ec500eea6d119712",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 452
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/pomeranian_124.jpg",
+      "sha256": "5848241b5b9dfd9ae2bf25fa30abb5d51f3cca76ad27a0056e1bb2c3a2e135a9",
+      "group": "group_d1a1f1368981970688fd",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 452
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/leonberger_120.jpg",
+      "sha256": "9f3e9064dd154560da84e320214ca0205c7b3a2af39a6dfc984e12df25ddbae6",
+      "group": "group_8d89e8011a696673919a",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/chihuahua_140.jpg",
+      "sha256": "8a25af13d5e926a93f5bb0cbd2117f9bb90205fab22606468ac756978a7ec0de",
+      "group": "group_9acda398bdb141b4c8b5",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/beagle_188.jpg",
+      "sha256": "f416f5e8aded708e7a1d975c2e44194ea9ad46c33360d0003b7c8b92a342f8df",
+      "group": "group_3719c8a1d657659dcb46",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 468
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/japanese_chin_101.jpg",
+      "sha256": "1e932dc46e75b702867c8739e47049cb89a53628487cda65e47316888521254a",
+      "group": "group_578774344af09865dfb2",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 468
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/yorkshire_terrier_116.jpg",
+      "sha256": "0ec76f04b98745f533ee27d0a394cb30130ff71a7de9a9f6b342989549cec26b",
+      "group": "group_2b9f2c58d24ddad6ef6d",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 452
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/leonberger_10.jpg",
+      "sha256": "7209e464058da9ad79e4cfd5c7c004d4a8f284a5e1817f07096e39502f6abb14",
+      "group": "group_756039088883432257e3",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 452
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/basset_hound_117.jpg",
+      "sha256": "ce8b2241be7dbc5ac7576e3d9fcd31318005849b600ef4f8516be8f856a2a925",
+      "group": "group_45c9da3281f0d9e04235",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/american_bulldog_131.jpg",
+      "sha256": "3973b6da4b65b3549040ca1148111df19af28e7e51d76ac82fde748863fa62f7",
+      "group": "group_4c4d3535c949ffaae057",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/pomeranian_142.jpg",
+      "sha256": "ff01216a2b4fccb821a0c6c40e746c62293eb16c8fdb7898bf4b9e85dd8f1693",
+      "group": "group_127bbb496030c5d382a0",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/american_bulldog_149.jpg",
+      "sha256": "91bdfa6c9a2cadbedcd1545cf43d7104639a6595fe07b2924c09fb0f15464efa",
+      "group": "group_f788498dc437737b0bbe",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/yorkshire_terrier_121.jpg",
+      "sha256": "6be71d43906ec30647712a4c6683252fb72803bc63c2e0a1503beaee25b1e34b",
+      "group": "group_344b3bb198590da730b0",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 355
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/american_pit_bull_terrier_179.jpg",
+      "sha256": "18e876737b757381dcdf2b696fcbd8c992c59ab6e2eda2925c679c82b877c7f2",
+      "group": "group_9ac62645f23a6a31cde7",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 355
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/newfoundland_166.jpg",
+      "sha256": "a6f708bd044f2b828d8da6278f9fcfc993a0e08be5e7d782e5364b1baf9e47e3",
+      "group": "group_7372ab1e5c0f540c2f9d",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 452
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/chihuahua_17.jpg",
+      "sha256": "689f40bff526f523f305c9e74c4d15db3a74e80937db2f427b5d7acbfc315a96",
+      "group": "group_934d09bc9bc8870ae427",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 452
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/leonberger_175.jpg",
+      "sha256": "6702df28ae4979802db116090c6a347c046200675fd458b4b97d6d6838421f67",
+      "group": "group_07f743fd6d32163d2346",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/havanese_155.jpg",
+      "sha256": "3cb2d8433b19e9e878a6b768357e77749c57bb952e636b2dc3d3ecb6aac7c804",
+      "group": "group_41c0d8ba562eeed59cec",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/yorkshire_terrier_149.jpg",
+      "sha256": "0cbfcb10387741e6d6623bd1dc4a033a51a4ff30eb88a984ac1e71361b4ca234",
+      "group": "group_2986b65cf0086046d7f8",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 452
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/newfoundland_107.jpg",
+      "sha256": "530efe94f01a07555d0c1ec764ddce446c9cbdd1a0a307033443af11891a0fc9",
+      "group": "group_fbcba6d154e7cdbea3cf",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 452
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/pomeranian_153.jpg",
+      "sha256": "940d899594dfd44f6a8e083b2ba195b21abee2c83cfdd2c1864eba66f9901dfd",
+      "group": "group_e8627bfe38d3f9fdf669",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/japanese_chin_161.jpg",
+      "sha256": "3550544e3cff7d8698bac2545a0784f3b13f7dd99ee9acf9aa2337a725fe3a05",
+      "group": "group_f070128c354acc0b52db",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/havanese_150.jpg",
+      "sha256": "5d99c36891beb951024cb506f76baf3d4770310230b08bb96bd8d14ee0f9c600",
+      "group": "group_fb33fcca64d01997fdcc",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 500
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/leonberger_125.jpg",
+      "sha256": "4b96e0ed722a51773a63fd4adef71ad5b6ffbd4dea9d19b4cb20d83b7bc6e942",
+      "group": "group_26f6b5090fb9a8c8a61e",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 500
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/samoyed_14.jpg",
+      "sha256": "1c70f0a83cc382781b7c67145e46cd5f14c234f7dabac5cf651ba35bb9e9e980",
+      "group": "group_7c3dce13382317c95280",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/staffordshire_bull_terrier_158.jpg",
+      "sha256": "97379bff7a592ec69eec5541a2e6b521589c6a888f1c1a1dafd2c2fda3d8f6de",
+      "group": "group_d869f1b2f3c920cf0153",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/pug_105.jpg",
+      "sha256": "fe4510065eb6b9579342ac0ef2723956ef39ec03dbb12b05352ed7d55b8fe840",
+      "group": "group_ac66d4e5998828a52029",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/pomeranian_150.jpg",
+      "sha256": "9467f63576d29a8afb20c33a723ba4d1e48b784d7df6a49b590cce623349ec86",
+      "group": "group_2c79ed7517772002422a",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/yorkshire_terrier_15.jpg",
+      "sha256": "b4c5e277cba50b8f7380ca6118647e9cc7f485e5b7640baa5a82c53a91d24355",
+      "group": "group_7471c8a65e2875a79c10",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 532
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/scottish_terrier_103.jpg",
+      "sha256": "bca2a0f79bbc78ca98f8eda3ffb11c5d4b48392d32f7d905d715323178324ba7",
+      "group": "group_6182cdef7489e15f8b5d",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 532
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/german_shorthaired_190.jpg",
+      "sha256": "a9eeda10e151cc96513f8af839b59f8e3f014600211d570f4dd2903c6dcb3389",
+      "group": "group_31e50102f7b44af5f1ab",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/american_bulldog_123.jpg",
+      "sha256": "bc5915c8bb56bf2730982444ffa666d80566b293e76a8c64d516a82479e59045",
+      "group": "group_89a5cbee7843525e9c7b",
+      "is_cat": false,
+      "target_text": "no_cat",
+      "prediction": {
+        "status": "no_cat",
+        "has_cat": false,
+        "breed": null,
+        "breed_zh": null,
+        "features": [],
+        "raw_text": "no_cat"
+      },
+      "prompt_version": "cat20-lora-v1",
+      "input_tokens": 484
+    }
+  ],
+  "no_test_input": true
+}

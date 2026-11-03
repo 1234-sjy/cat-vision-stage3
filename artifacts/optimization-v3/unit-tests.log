@@ -1,0 +1,29 @@
+MODEL READY traditional
+MODEL READY vlm
+MODEL READY traditional
+MODEL READY vlm
+RANGE test-model.bin 1/6
+RANGE test-model.bin 2/6
+RANGE test-model.bin 3/6
+RANGE test-model.bin 4/6
+RANGE test-model.bin 5/6
+RANGE test-model.bin 6/6
+TASK START validation; logs=artifacts/run-logs/20261102T125238Z-validation-46fcfc10
+Traceback (most recent call last):
+  File "C:\Users\sjysj\Documents\Codex\2026-10-31\new-chat\outputs\cat-vision-stage2\tests\test_run_control.py", line 39, in test_failure_is_logged_and_next_run_requires_manual_handling
+    raise ValueError("original diagnostic")
+ValueError: original diagnostic
+before failure
+TASK END validation; state=failed
+TASK START download; logs=artifacts/run-logs/20261102T125238Z-download-b936e812
+TASK END download; state=completed
+TASK START download; logs=artifacts/run-logs/20261102T125238Z-download-438edc80
+download finished
+TASK END download; state=completed
+TASK START validate; logs=artifacts/run-logs/20261102T125238Z-validate-729f60ec
+next task
+TASK END validate; state=completed
+----------------------------------------------------------------------
+Ran 59 tests in 1.493s
+
+OK

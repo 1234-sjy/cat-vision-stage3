@@ -1,0 +1,5 @@
+{
+  "directory": "C:\\Users\\sjysj\\Documents\\Codex\\2026-10-31\\new-chat\\outputs\\cat-vision-stage2\\artifacts\\optimization-v4\\probe01",
+  "probe_complete_sha256": "57880e08658e7e9365c4b38026944afafdfee1919eab7e2ce8987efb22a539a6",
+  "reason": "Already measured on this GPU; avoid repeating work during battery operation"
+}

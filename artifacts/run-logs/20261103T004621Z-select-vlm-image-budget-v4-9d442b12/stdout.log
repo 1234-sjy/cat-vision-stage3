@@ -1,0 +1,5 @@
+TASK START select-vlm-image-budget-v4; logs=artifacts/run-logs/20261103T004621Z-select-vlm-image-budget-v4-9d442b12
+IMAGE BUDGET 262144 170 200 51.21422029999667
+IMAGE BUDGET 589824 171 200 53.42481630000111
+CHOSEN 589824
+TASK END select-vlm-image-budget-v4; state=completed

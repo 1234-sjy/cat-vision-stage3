@@ -1,0 +1,248 @@
+session_features=500/9371
+session_features=1000/9371
+session_features=1500/9371
+session_features=2000/9371
+session_features=2500/9371
+session_features=3000/9371
+session_features=3500/9371
+session_features=4000/9371
+session_features=4500/9371
+session_features=5000/9371
+session_features=5500/9371
+session_features=6000/9371
+session_features=6500/9371
+session_features=7000/9371
+session_features=7500/9371
+session_features=8000/9371
+session_features=8500/9371
+session_features=9000/9371
+{
+  "summary": {
+    "created_utc": "2026-11-02T12:40:43.552329+00:00",
+    "frozen_before_training": true,
+    "seed": 20261102,
+    "data_root": "work/cat-data",
+    "relative_path_base": "--data-root",
+    "class_count": 20,
+    "raw_refined_class_counts": {
+      "Abyssinian": 350,
+      "American_Bobtail": 350,
+      "American_Curl": 350,
+      "American_Shorthair": 350,
+      "Bengal": 350,
+      "Birman": 350,
+      "Bombay": 350,
+      "British_Shorthair": 350,
+      "Egyptian_Mau": 350,
+      "Exotic_Shorthair": 350,
+      "Maine_Coon": 350,
+      "Manx": 350,
+      "Norwegian_Forest": 350,
+      "Persian": 350,
+      "Ragdoll": 350,
+      "Russian_Blue": 350,
+      "Scottish_Fold": 350,
+      "Siamese": 350,
+      "Sphynx": 350,
+      "Turkish_Angora": 350
+    },
+    "counts": {
+      "train": 5156,
+      "val": 1425,
+      "test": 1872
+    },
+    "cat_counts": {
+      "train": 4157,
+      "val": 925,
+      "test": 1872
+    },
+    "dog_counts": {
+      "train": 999,
+      "val": 500
+    },
+    "class_counts": {
+      "Abyssinian": {
+        "train": 194,
+        "val": 46,
+        "test": 123
+      },
+      "Bengal": {
+        "train": 186,
+        "test": 122,
+        "val": 42
+      },
+      "Birman": {
+        "train": 186,
+        "test": 121,
+        "val": 42
+      },
+      "Bombay": {
+        "train": 185,
+        "test": 111,
+        "val": 46
+      },
+      "British_Shorthair": {
+        "val": 43,
+        "train": 183,
+        "test": 122
+      },
+      "Egyptian_Mau": {
+        "test": 125,
+        "train": 179,
+        "val": 41
+      },
+      "Maine_Coon": {
+        "test": 122,
+        "val": 42,
+        "train": 186
+      },
+      "Persian": {
+        "train": 184,
+        "test": 124,
+        "val": 42
+      },
+      "Ragdoll": {
+        "train": 185,
+        "val": 42,
+        "test": 122
+      },
+      "Russian_Blue": {
+        "train": 186,
+        "test": 122,
+        "val": 42
+      },
+      "Siamese": {
+        "train": 188,
+        "test": 123,
+        "val": 43
+      },
+      "Sphynx": {
+        "train": 186,
+        "test": 123,
+        "val": 43
+      },
+      "American_Bobtail": {
+        "train": 246,
+        "val": 52,
+        "test": 52
+      },
+      "American_Curl": {
+        "train": 239,
+        "val": 51,
+        "test": 51
+      },
+      "American_Shorthair": {
+        "val": 52,
+        "train": 246,
+        "test": 52
+      },
+      "Exotic_Shorthair": {
+        "train": 240,
+        "test": 51,
+        "val": 51
+      },
+      "Manx": {
+        "train": 236,
+        "test": 51,
+        "val": 51
+      },
+      "Norwegian_Forest": {
+        "train": 238,
+        "test": 52,
+        "val": 51
+      },
+      "Scottish_Fold": {
+        "train": 238,
+        "val": 51,
+        "test": 51
+      },
+      "Turkish_Angora": {
+        "train": 246,
+        "test": 52,
+        "val": 52
+      }
+    },
+    "source_counts": {
+      "kaggle_doctrinek_catbreedsrefined_v2": {
+        "train": 3230,
+        "val": 688,
+        "test": 695
+      },
+      "oxford_iiit_pet_official": {
+        "train": 1926,
+        "val": 737,
+        "test": 1177
+      }
+    },
+    "evaluation_counts": {
+      "expanded_test": 695,
+      "oxford_test": 1177
+    },
+    "excluded_counts": {
+      "duplicate_or_near_duplicate": 2399,
+      "official_cross_split_duplicate_or_identity_group": 18,
+      "label_conflicts_with_official_group": 1
+    },
+    "old_extra_identity_references": 17933,
+    "audit": {
+      "cross_split_sha256": 0,
+      "cross_split_groups": 0,
+      "unique_sha256": 8453,
+      "unique_groups": 8367,
+      "minimum_image_edge": 97,
+      "cross_split_phash_pairs": 0,
+      "cross_split_photographic_session_pairs": 0
+    },
+    "identity_policy": "All known original ma7555 animal ids and pHash/SHA256 connected components remain in one split. Identity reference images never enter training. A single conservative ORB photographic-session round and the documented manual same-animal pair also union groups before splitting.",
+    "identity_limitation": "The refined publisher renamed and reencoded all images. Original animal ids can only be recovered through near-duplicate links to local ma7555 references. Unmatched refined images lack animal identity; distinct unrecognized views of the same animal may remain.",
+    "split_policy": "Existing Oxford train/val/official test assignments are retained; lower-priority cross-split duplicates are excluded, never moved. Additional independent groups use seed20261102 and approximate70/15/15 train/val/test. Groups linked to Oxford inherit its split.",
+    "duplicate_policy": "SHA256 equality or63-bit DCT pHash Hamming distance<=6 forms duplicate components; keep one active representative. Known animal ids union grouping, retaining distinct views only within one split.",
+    "quality_policy": "Active images require complete PIL verify/decode, min edge96, gray std>=5; label-conflicting identity groups excluded.20 source labels all correspond to named breeds; no coat-colour classes.",
+    "sources": [
+      {
+        "name": "Oxford-IIIT Pet",
+        "url": "https://www.robots.ox.ac.uk/~vgg/data/pets/",
+        "license": "CC BY-SA4.0 per Oxford dataset page",
+        "role": "official cats plus existing dog train/val",
+        "provenance_file": "work/cat-data/download_source.json"
+      },
+      {
+        "name": "doctrinek/catbreedsrefined-7k",
+        "version": 2,
+        "url": "https://www.kaggle.com/datasets/doctrinek/catbreedsrefined-7k",
+        "license": "CC BY-SA4.0",
+        "role": "expanded20-class cleaned images",
+        "download_record": "download-attempt.json"
+      },
+      {
+        "name": "ma7555/cat-breeds-dataset",
+        "version": 2,
+        "url": "https://www.kaggle.com/datasets/ma7555/cat-breeds-dataset",
+        "role": "identity/duplicate reference only; no direct training samples",
+        "license_note": "Historical local acquisition; source metadata should be retained. No new raw download."
+      }
+    ],
+    "raw_files_deleted": 0,
+    "revision": "v2-photographic-session-groups",
+    "frozen_utc": "2026-11-02T12:50:01.112175+00:00",
+    "photographic_session_edges": 180,
+    "visual_review_fact": "Deterministic20-image samples per new class include several ordinary-looking adoption cats without the label's distinctive ear/tail traits; the publisher's breed labels are retained as source labels. Scottish Fold_119 and_92 show the same cat in different studio poses and were grouped together."
+  },
+  "freeze": {
+    "revision": "v2-photographic-session-groups",
+    "seed": 20261102,
+    "frozen_utc": "2026-11-02T12:50:01.112175+00:00",
+    "files": {
+      "manifest.json": "68b12c32330c4248886749b67b2de29ca98684c61349430a7f69435013a9e5d4",
+      "train-manifest.json": "e7e638526747e90692d53ea1959414f9d09ec78a4600c814a31de4d863d99ac4",
+      "test-manifest.json": "6956e25ba7cf0e7ee497cc2068eb46ee827c0523e7129be1afd5c1f9ac5ee226",
+      "classes.json": "8fb44de15a56dc69e89a254a87673113891d6d1aa0691b34477b91ce0e019f20"
+    },
+    "previous_revision": "history/v1-phash-only",
+    "training_started": false,
+    "manual_pair": [
+      "refined_Scottish Fold_119",
+      "refined_Scottish Fold_92"
+    ]
+  }
+}

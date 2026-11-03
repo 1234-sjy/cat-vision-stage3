@@ -1,0 +1,17 @@
+{
+  "task": "benchmark-parallel-v3",
+  "state": "completed",
+  "pid": 26248,
+  "created_utc": "2026-11-02T12:48:13.584336+00:00",
+  "logs": "artifacts/run-logs/20261102T124813Z-benchmark-parallel-v3-7ee2a32b",
+  "automatic_retry": false,
+  "automatic_restart": false,
+  "argv": [
+    "scripts/benchmark_parallel.py",
+    "--data-root",
+    "..\\..\\work\\cat-data\\oxford-iiit-pet",
+    "--output",
+    "artifacts/optimization-v3/parallel-diagnostic.json"
+  ],
+  "finished_utc": "2026-11-02T12:48:21.957071+00:00"
+}

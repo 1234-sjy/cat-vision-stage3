@@ -1,80 +1,85 @@
-# 看图识猫 · 第二阶段改进版
+# 看图识猫 第二阶段
 
-上传同一张猫图，两条路线独立判断，各返回一个品种。
+上传一张照片，同时查看传统视觉与本地视觉大模型的结果。每条路线只输出一个品种，识别页只展示本次图片的结果。
 
-- 传统视觉：YOLO26n与SAM2.1标出猫的位置、轮廓；独立微调的Swin-Tiny从完整原图识别12种猫，并用单独训练的猫/狗头处理狗负例。检测漏掉时仍运行原图分类。
-- 视觉大模型：本地Qwen3-VL-4B-Instruct通过Transformers SDK读取相同原图及固定任务说明，给出单品种与简短特征。两路不传递答案。
+## 当前方法
 
-验证集比较原图、裁剪及融合后，原图与25%主体融合并列最好；最终选计算更少的原图方案。SAM分割真实运行并用于轮廓展示，当前分类融合权重为0，没有把它写成准确率提升的来源。
+传统路线用YOLO26n检测、SAM2.1分割，Swin-Tiny识别20个猫品种。完整画面模型采用320像素等比例补边，细节模型采用224像素中心视图；验证集选定完整画面75%、细节25%，分别平均原图和水平翻转后的分数。猫狗判断同样融合。检测漏掉时，原图分类继续运行。
 
-## 已测结果
+另一条路线使用本地Qwen3-VL-4B-Instruct，冻结视觉编码器和通用基础参数，用训练集的原始品种标签微调文本层LoRA。它独立读取相同原图，只返回一个品种代码，不读取传统路线的品种或分数。rank8、alpha16，768×768推理像素预算，最多24个输出token，BF16 AMP。图像切块投影使用与原卷积等价的矩阵运算。适配器及提示由固定验证集选定，配置见`configs/active-vlm.json`。
 
-| 同题范围 | 第一阶段保存结果 | 第二阶段改进版 |
-|---|---:|---:|
-| 全部1183张猫，原图分类器 | 1051/1183，88.84% | 1067/1183，90.19% |
-| 旧共同120张，流程回归 | 97/120，80.83% | 107/120，89.17% |
-| 新共同120张，独立测试 | 103/120，85.83% | 106/120，88.33% |
+普通启动即预加载、常驻模型；两条路线使用独立线程与各自复用的CUDA流。实际推理没有人为暂停。不同上传请求排队，避免重复加载大模型。每次重新读图推理，未缓存识别答案。
 
-旧第二阶段在旧共同120张上为88/120（73.33%），其中15张检测漏掉而没有运行分类器。这个硬门槛已移除。新共同120张从旧120之外提前固定，种子20261102，每类10张；只在验证集选模、选阈值和融合方式，测试失败都计入分母。全量1183张包含之前排查过的旧120张；全量原图成绩与实际带定位/分割的120张流程成绩分别记录。100张独立官方测试狗图全部被物种头挡住；狗负例验证不等于所有物体的开放类别测试。
+## 实际测试
 
-两路线在新共同120张上的完整对照、原始输出和耗时见`artifacts/evaluation/comparison-v2`及`artifacts/comparison-v2`。第一阶段对照只读取之前保存的预测，没有载入其训练权重。新版权重与第一阶段独立训练。
+| 范围 | 传统分类器或路线 | 视觉大模型 |
+| --- | --- | --- |
+| 20类独立测试1872张 | 1600/1872（85.47%） | 此范围未全量运行 |
+| 同1514张，Qwen另留测试 | 1292/1514（85.34%） | 1317/1514（86.99%） |
+| 原120张回归，每类6张 | 97/120（80.83%） | 98/120（81.67%） |
 
-[项目介绍与个人感悟 Word文档](docs/项目介绍与个人感悟.docx) · [课程提要](docs/课程依据/第二阶段指定课程实读提要.txt) · [改进记录](docs/改进说明.txt)
+1514张由原测试集排除历史本地Qwen推理用过的图片及身份关联组后固定，覆盖20类。Qwen重新逐图推理；传统列从同一冻结分类器的原1872张逐图记录取对应图片，SHA256逐图核对。原120张用于回归，改进前Qwen为67/120（55.83%）。训练与选模型只用训练/验证集，各组分母分别记录。
+
+本次实机单图演示：传统1.50秒，Qwen1.66秒，两条路线并行总耗时1.67秒。模型在启动时预加载，视频保留真实选图与等待。原始测试输出和各品种成绩见`artifacts/optimization-v4`。
 
 ## 环境与启动
 
-Python3.12、PyTorch2.9.1、torchvision0.24.1，开发使用CUDA12.8版PyTorch与RTX5080Laptop16GB。完整双路线建议NVIDIA显卡及16GB显存。路径从项目根目录确定，外部数据由参数传入。
+Python3.12、torch2.9.1、torchvision0.24.1；开发机为RTX5080Laptop16GB，CUDA12.8。完整双路线使用NVIDIA显卡，建议16GB显存。
 
 ```powershell
 python -m venv .venv
 .venv/Scripts/python.exe -m pip install torch==2.9.1 torchvision==0.24.1 --index-url https://download.pytorch.org/whl/cu128
 .venv/Scripts/python.exe -m pip install -r requirements.txt
+.venv/Scripts/python.exe scripts/download_models.py --only all
 .venv/Scripts/python.exe -m catvision.server
 ```
 
-也可双击“安装环境.cmd”，再双击“启动项目.cmd”。已有环境通过`CATVISION_PYTHON`或`scripts/start.ps1 -PythonExe`指定解释器。浏览器打开 http://127.0.0.1:8765 。
+浏览器打开`http://127.0.0.1:8765`。也可双击“安装环境.cmd”“启动项目.cmd”。已有解释器由`CATVISION_PYTHON`或`scripts/start.ps1 -PythonExe`指定。训练、下载和驻留服务由GPU租约隔离；训练前关闭网页服务。失败保留日志并停止，没有自动重试或重启。
 
-自训练权重`weights/breed-swin-v2-fp16.pt`约55MB，随源码入库；`configs/active-classifier.json`指定当前权重、阈值与融合方式。FP16仅用于存储，模型以FP32执行。旧`breed-best.pt`约11MB保留为历史。较大的官方检测、分割和Qwen权重从完整保留包恢复；只有源码时可单独执行下载：
+两份自训练权重`weights/breed-swin-v3-20-fp16.pt`与`breed-swin-v3-detail20-fp16.pt`各约55MB，随代码入库。FP16用于磁盘存储，Swin以FP32执行。官方YOLO/SAM/Qwen从完整保留包恢复，或按上面的脚本获取并校验摘要。运行网页无需训练集，也无需重新训练。Qwen适配器`weights/qwen-cat-lora-v4/adapter_model.safetensors`约66MB，也随Git入库；官方4B底座仍按下载脚本获取或从完整保留包恢复。
+
+## 数据与训练
+
+来源为Oxford-IIIT Pet和CatBreedsRefined-7k第2版。筛选后猫训练4157张、验证925张、测试1872张；狗训练999张、验证500张。原始文件保留，清单中的排除项没有删除。原950张训练图已经扩充，裁剪或翻转视图不另算独立样本。
+
+清单记录SHA256、pHash、可恢复的原动物ID和摄影会话关联。已知同源组放在同一划分，冻结摘要见`data/freeze.json`。扩充来源重新命名了图片，部分图片缺少标签品种的典型特征；实际标签按来源保留，审计观察见`data/summary.json`。
+
+正式20类模型从通用ImageNet初始化；早期继承旧分类器的尝试在来源审查后停止，其权重和日志保留。先训练20轮，再比较输入方式，以完整画面320像素、同物种MixUp及细节补充继续优化。最终按验证结果选权重和组合比例，选定后才运行测试。
+
+加速训练先实测批量32、64、128、192的显存需求与吞吐量，再选择已验证的最快批量。224像素阶段采用batch128，接电实测约510训练图/秒，训练加验证约12.7秒/轮；320像素阶段采用batch64，约240训练图/秒。CPU8线程、4个数据加载进程、BF16训练、无固定等待。每秒GPU占用、显存、温度和功耗见各训练目录的`gpu-telemetry.jsonl`。
+
+复现训练可恢复完整保留包中的`原始数据/cat-data`，直接使用仓库冻结清单，通过`--data-root`传入实际位置。自行获取扩充数据时使用`prepare_expanded.py --download --out-dir runtime/data-acquisition`，再用`--extract-only`恢复路径；Oxford按其官方地址获取。重新训练指定新的`--output`和`--checkpoint`，保留已有历史。
 
 ```powershell
-.venv/Scripts/python.exe scripts/download_models.py --only all
+python scripts/download_swin.py
+python scripts/train_expanded.py --data-root <cat-data目录> --epochs 20 --output artifacts/reproduction/initial --checkpoint weights/reproduction.pt
 ```
 
-不要同时执行下载和模型计算。原始pip freeze保留在`artifacts/environment`；`requirements-lock.txt`已去掉私人wheel路径，记录可恢复的包版本和官方CUDA来源。其他显卡应选择兼容的PyTorch/CUDA组合。
+后续阶段使用`scripts/train_accelerated.py`，源检查点轮次由`--start-epoch`指定，完整画面选项为`--image-size 320 --preprocess letterbox --mixup 0.2`。各阶段参数、来源摘要、选模记录和不可覆盖的每轮检查点均保留在本地完整保留包。
 
-## 数据与复现
+### Qwen轻量微调
 
-猫950张训练、238张验证、1183张官方测试。新增狗负例1000张训练、500张验证，均来自官方trainval；官方test不进入训练。猫训练随机使用原图或已保存主体视图，不把视图当成新的独立来源。清单与SHA256在`artifacts/data`和`artifacts/optimization-v2`。
+训练集为4157张猫和999张狗。只监督assistant的品种代码与结束符，题目、图像和补齐位置不计算训练损失。固定选择验证集为200张猫与50张狗；最佳为第2轮。LoRA更新16,515,072个参数，学习率0.0001，有效batch16，microbatch4，BF16、梯度检查点和余弦学习率。原始配置、断点、恢复记录及验证输出全部保留。
 
-从头复现本轮训练需要另取通用ImageNet初始化：先单独运行`python scripts/download_swin.py`，完成后再运行`python scripts/train_transformer.py --data-root <Oxford原始目录>`。训练输出目录已有历史时脚本会停止，不覆盖、不自动续训。正式结果已有权重，运行网页不用重新训练。
+```powershell
+python scripts/train_vlm_lora.py --data-root <cat-data目录> --output artifacts/reproduction/vlm --adapter-output weights/reproduction-lora
+```
 
-本轮训练batch8、workers0、CPU线程2，每批同步后等待0.05秒；独立验证最多batch2、每批等待0.2秒；网页单图推理。训练23轮，最佳15轮，只用验证结果选检查点。GPU入口使用`ModelTask`锁，失败时保留完整日志并停止，不自动重试或重启。`configs/frozen-v2.json`在测试前记录模型、代码与新共同清单身份；评估缓存核对实际输入字节、权重和配置。
+需要接续时显式传`--resume-from <检查点目录>`并指定新的输出目录，恢复优化器、调度器、随机状态和抽样位置，不自动重试或重启。最新用户要求下，默认不记录显卡状态。独立测试在选模完成后运行；不使用传统分类器的预测当训练标签。
 
-## 保留资料
+## 说明与交付
 
-旧版测试、权重、日志、完整交付包均保留。新完整包通过`scripts/package_project.py`按来源目录收集，包含Git忽略的数据、所有每轮权重、下载分段和历史记录；不使用git archive作为完整保留包。两阶段PDF、课程要求提要、68集视频、原始Oxford数据及全部第二阶段模型资料继续保留。
+[项目介绍与个人感悟](docs/项目介绍与个人感悟.docx) · [完整课程提要](docs/课程依据/第二阶段指定课程实读提要.txt) · [提交与复现要求](docs/提交与复现要求.md)。旧12类结果放在历史记录中。
 
-## 参考与许可
+上传包使用Git bundle恢复全部真实提交后推送。代码、依赖、启动和模型获取说明统一入库；不重新git init、不压成单个提交、不倒填日期。本地开发时间与GitHub收到推送的时间分别保留。大型原始数据、全部模型与训练资料通过完整保留包保存，打包不按gitignore或git archive过滤。
 
-方法参考Grounded-SAM-2的框提示分割、Pytorch-garbage-classify的训练/验证组织和LAVIS的图文SDK调用。本项目独立实现猫品种任务，AI辅助开发，指标来自本机实际运行。
-
+参考：
 - https://github.com/IDEA-Research/Grounded-SAM-2
 - https://github.com/Candy-CY/Pytorch-garbage-classify
 - https://github.com/salesforce/LAVIS
 - https://pytorch.org/vision/stable/models/swin_transformer.html
 - https://huggingface.co/Qwen/Qwen3-VL-4B-Instruct
-- Oxford数据与许可：https://www.robots.ox.ac.uk/~vgg/data/pets/
+- https://www.robots.ox.ac.uk/~vgg/data/pets/
+- https://www.kaggle.com/datasets/doctrinek/catbreedsrefined-7k
 
-Ultralytics、SAM、Qwen与Swin遵循各自上游许可。
-
-## GitHub提交与开发历史
-
-开发中的真实Git提交随源码一并保留。交接时通过Git bundle恢复仓库，再将原有提交整体推送到GitHub；不要只用网页上传最终文件，也不要重新git init、压成单个提交或改写提交日期。代码、requirements.txt、requirements-lock.txt、安装启动脚本和运行说明都在同一仓库。
-
-本地提交记录与GitHub推送时间分别保留；仓库恢复方式见docs/提交与复现要求.md。
-
-## 快速识别模式
-
-双击“快速识别.cmd”，或运行`python -m catvision.server --fast-demo`。启动时先串行加载两路模型，准备好后再选图识别。模型常驻约10GB显存，推理取消人为暂停，CPU使用8线程；两条路线仍依次计算，每次重新读取图片推理，不复用识别答案。训练参数与原有测试成绩不变。
-
-普通启动方式继续在每次请求后释放模型。识别页只显示本次图片和两路识别结果。原图分类器1183张测试的90.19%，以及共同120张的88.33%和72.50%，保留在项目文档与实验记录中，不作为单张图片的输出。
+Oxford与扩充图片按各自数据源许可使用；模型与代码遵循相应上游许可。开发和排查使用AI辅助，提交材料保留真实实验过程。

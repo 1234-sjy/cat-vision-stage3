@@ -1,0 +1,15 @@
+{
+  "state": "superseded_to_add_idle_sleep_prevention",
+  "pid": 14284,
+  "shutdown_percent": 10,
+  "checkpoint_percent": 12,
+  "stop_file": "C:\\Users\\sjysj\\Documents\\Codex\\2026-10-31\\new-chat\\outputs\\cat-vision-stage2\\runtime\\stop-for-10-percent-shutdown.json",
+  "user_authorized": true,
+  "automatic_startup": false,
+  "created_utc": "2026-11-02T23:56:27.226571+08:00",
+  "last_reading": {
+    "time_utc": "2026-11-02T23:57:57.347356+08:00",
+    "battery_percent": 69,
+    "ac_online": false
+  }
+}

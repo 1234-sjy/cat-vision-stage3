@@ -1,0 +1,26 @@
+{
+  "scope": "three preselected Oxford validation images; diagnostic only",
+  "results": [
+    {
+      "image_id": "British_Shorthair_10",
+      "old_seconds": 4.006522200012114,
+      "new_seconds": 1.5119418999966001,
+      "same_breed": true,
+      "same_raw_text": true
+    },
+    {
+      "image_id": "Bengal_104",
+      "old_seconds": 8.747310399994603,
+      "new_seconds": 1.0541924999997718,
+      "same_breed": true,
+      "same_raw_text": false
+    },
+    {
+      "image_id": "Maine_Coon_1",
+      "old_seconds": 2.337489199999254,
+      "new_seconds": 1.1235597999911988,
+      "same_breed": true,
+      "same_raw_text": true
+    }
+  ]
+}

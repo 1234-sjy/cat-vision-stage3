@@ -1,0 +1,120 @@
+{
+  "epoch": 2,
+  "metrics": {
+    "cat_correct": 170,
+    "cat_total": 200,
+    "cat_accuracy": 0.85,
+    "cat_macro_accuracy": 0.85,
+    "per_class": {
+      "Abyssinian": {
+        "correct": 7,
+        "total": 10,
+        "accuracy": 0.7
+      },
+      "Bengal": {
+        "correct": 8,
+        "total": 10,
+        "accuracy": 0.8
+      },
+      "Birman": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "Bombay": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "British_Shorthair": {
+        "correct": 9,
+        "total": 10,
+        "accuracy": 0.9
+      },
+      "Egyptian_Mau": {
+        "correct": 7,
+        "total": 10,
+        "accuracy": 0.7
+      },
+      "Maine_Coon": {
+        "correct": 9,
+        "total": 10,
+        "accuracy": 0.9
+      },
+      "Persian": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "Ragdoll": {
+        "correct": 5,
+        "total": 10,
+        "accuracy": 0.5
+      },
+      "Russian_Blue": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "Siamese": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "Sphynx": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "American_Bobtail": {
+        "correct": 3,
+        "total": 10,
+        "accuracy": 0.3
+      },
+      "American_Curl": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "American_Shorthair": {
+        "correct": 9,
+        "total": 10,
+        "accuracy": 0.9
+      },
+      "Exotic_Shorthair": {
+        "correct": 8,
+        "total": 10,
+        "accuracy": 0.8
+      },
+      "Manx": {
+        "correct": 9,
+        "total": 10,
+        "accuracy": 0.9
+      },
+      "Norwegian_Forest": {
+        "correct": 9,
+        "total": 10,
+        "accuracy": 0.9
+      },
+      "Scottish_Fold": {
+        "correct": 9,
+        "total": 10,
+        "accuracy": 0.9
+      },
+      "Turkish_Angora": {
+        "correct": 8,
+        "total": 10,
+        "accuracy": 0.8
+      }
+    },
+    "dog": {
+      "total": 50,
+      "false_cat": 0,
+      "correct_no_cat": 50,
+      "parse_error": 0,
+      "false_cat_rate": 0.0,
+      "no_cat_accuracy": 1.0
+    }
+  },
+  "selection": "validation cat accuracy, dog false-cat tie break"
+}

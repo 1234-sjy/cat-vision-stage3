@@ -1,0 +1,27 @@
+{
+  "task": "assess-expanded-v3-val",
+  "state": "completed",
+  "pid": 25904,
+  "created_utc": "2026-11-02T14:05:39.900542+00:00",
+  "logs": "artifacts/run-logs/20261102T140539Z-assess-expanded-v3-val-b067cf73",
+  "automatic_retry": false,
+  "automatic_restart": false,
+  "argv": [
+    "scripts/assess_expanded.py",
+    "--data-root",
+    "..\\..\\work\\cat-data",
+    "--weights",
+    "artifacts/optimization-v3/training-fullframe/epoch21.pt",
+    "--device",
+    "cuda",
+    "--setval",
+    "--preprocess",
+    "letterbox",
+    "--image-size",
+    "320",
+    "--tta",
+    "--output",
+    "artifacts/optimization-v3/validation-fullframe-flip"
+  ],
+  "finished_utc": "2026-11-02T14:06:02.985471+00:00"
+}

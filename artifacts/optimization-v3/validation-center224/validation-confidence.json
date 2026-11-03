@@ -1,0 +1,208 @@
+{
+  "set": "validation",
+  "automatic_threshold_selection": false,
+  "inference_decision_changed": false,
+  "limitation": "Known-class confidence/ambiguity only; no unseen-breed detection claim.",
+  "coverage_risk": [
+    {
+      "measure": "breed_score",
+      "threshold": 0.4,
+      "operator": ">=",
+      "accepted": 870,
+      "known_cat_count": 925,
+      "coverage": 0.9405405405405406,
+      "accuracy_when_covered": 0.8379310344827586,
+      "error_when_covered": 0.16206896551724137
+    },
+    {
+      "measure": "breed_score",
+      "threshold": 0.5,
+      "operator": ">=",
+      "accepted": 817,
+      "known_cat_count": 925,
+      "coverage": 0.8832432432432432,
+      "accuracy_when_covered": 0.8580171358629131,
+      "error_when_covered": 0.14198286413708694
+    },
+    {
+      "measure": "breed_score",
+      "threshold": 0.6,
+      "operator": ">=",
+      "accepted": 760,
+      "known_cat_count": 925,
+      "coverage": 0.8216216216216217,
+      "accuracy_when_covered": 0.8881578947368421,
+      "error_when_covered": 0.11184210526315785
+    },
+    {
+      "measure": "breed_score",
+      "threshold": 0.7,
+      "operator": ">=",
+      "accepted": 711,
+      "known_cat_count": 925,
+      "coverage": 0.7686486486486487,
+      "accuracy_when_covered": 0.9085794655414908,
+      "error_when_covered": 0.09142053445850917
+    },
+    {
+      "measure": "breed_score",
+      "threshold": 0.8,
+      "operator": ">=",
+      "accepted": 647,
+      "known_cat_count": 925,
+      "coverage": 0.6994594594594594,
+      "accuracy_when_covered": 0.9258114374034003,
+      "error_when_covered": 0.07418856259659967
+    },
+    {
+      "measure": "breed_score",
+      "threshold": 0.9,
+      "operator": ">=",
+      "accepted": 535,
+      "known_cat_count": 925,
+      "coverage": 0.5783783783783784,
+      "accuracy_when_covered": 0.9514018691588785,
+      "error_when_covered": 0.04859813084112152
+    },
+    {
+      "measure": "breed_score",
+      "threshold": 0.95,
+      "operator": ">=",
+      "accepted": 387,
+      "known_cat_count": 925,
+      "coverage": 0.4183783783783784,
+      "accuracy_when_covered": 0.9689922480620154,
+      "error_when_covered": 0.03100775193798455
+    },
+    {
+      "measure": "normalized_entropy",
+      "threshold": 0.1,
+      "operator": "<=",
+      "accepted": 378,
+      "known_cat_count": 925,
+      "coverage": 0.40864864864864864,
+      "accuracy_when_covered": 0.9682539682539683,
+      "error_when_covered": 0.031746031746031744
+    },
+    {
+      "measure": "normalized_entropy",
+      "threshold": 0.2,
+      "operator": "<=",
+      "accepted": 568,
+      "known_cat_count": 925,
+      "coverage": 0.614054054054054,
+      "accuracy_when_covered": 0.9436619718309859,
+      "error_when_covered": 0.05633802816901412
+    },
+    {
+      "measure": "normalized_entropy",
+      "threshold": 0.3,
+      "operator": "<=",
+      "accepted": 663,
+      "known_cat_count": 925,
+      "coverage": 0.7167567567567568,
+      "accuracy_when_covered": 0.9170437405731523,
+      "error_when_covered": 0.0829562594268477
+    },
+    {
+      "measure": "normalized_entropy",
+      "threshold": 0.4,
+      "operator": "<=",
+      "accepted": 740,
+      "known_cat_count": 925,
+      "coverage": 0.8,
+      "accuracy_when_covered": 0.8905405405405405,
+      "error_when_covered": 0.10945945945945945
+    },
+    {
+      "measure": "normalized_entropy",
+      "threshold": 0.5,
+      "operator": "<=",
+      "accepted": 804,
+      "known_cat_count": 925,
+      "coverage": 0.8691891891891892,
+      "accuracy_when_covered": 0.8631840796019901,
+      "error_when_covered": 0.13681592039800994
+    },
+    {
+      "measure": "normalized_entropy",
+      "threshold": 0.6,
+      "operator": "<=",
+      "accepted": 859,
+      "known_cat_count": 925,
+      "coverage": 0.9286486486486486,
+      "accuracy_when_covered": 0.840512223515716,
+      "error_when_covered": 0.15948777648428403
+    },
+    {
+      "measure": "normalized_entropy",
+      "threshold": 0.75,
+      "operator": "<=",
+      "accepted": 913,
+      "known_cat_count": 925,
+      "coverage": 0.987027027027027,
+      "accuracy_when_covered": 0.8181818181818182,
+      "error_when_covered": 0.18181818181818177
+    },
+    {
+      "measure": "margin",
+      "threshold": 0.05,
+      "operator": ">=",
+      "accepted": 899,
+      "known_cat_count": 925,
+      "coverage": 0.9718918918918918,
+      "accuracy_when_covered": 0.8197997775305895,
+      "error_when_covered": 0.18020022246941048
+    },
+    {
+      "measure": "margin",
+      "threshold": 0.1,
+      "operator": ">=",
+      "accepted": 878,
+      "known_cat_count": 925,
+      "coverage": 0.9491891891891892,
+      "accuracy_when_covered": 0.8280182232346242,
+      "error_when_covered": 0.17198177676537585
+    },
+    {
+      "measure": "margin",
+      "threshold": 0.2,
+      "operator": ">=",
+      "accepted": 841,
+      "known_cat_count": 925,
+      "coverage": 0.9091891891891892,
+      "accuracy_when_covered": 0.8501783590963139,
+      "error_when_covered": 0.1498216409036861
+    },
+    {
+      "measure": "margin",
+      "threshold": 0.3,
+      "operator": ">=",
+      "accepted": 800,
+      "known_cat_count": 925,
+      "coverage": 0.8648648648648649,
+      "accuracy_when_covered": 0.86875,
+      "error_when_covered": 0.13124999999999998
+    },
+    {
+      "measure": "margin",
+      "threshold": 0.4,
+      "operator": ">=",
+      "accepted": 758,
+      "known_cat_count": 925,
+      "coverage": 0.8194594594594594,
+      "accuracy_when_covered": 0.8839050131926122,
+      "error_when_covered": 0.11609498680738783
+    },
+    {
+      "measure": "margin",
+      "threshold": 0.5,
+      "operator": ">=",
+      "accepted": 725,
+      "known_cat_count": 925,
+      "coverage": 0.7837837837837838,
+      "accuracy_when_covered": 0.9020689655172414,
+      "error_when_covered": 0.09793103448275864
+    }
+  ]
+}

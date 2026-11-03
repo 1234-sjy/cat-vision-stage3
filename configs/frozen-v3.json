@@ -1,0 +1,70 @@
+{
+  "active_classifier": {
+    "architecture": "swin_t",
+    "checkpoint": "breed-swin-v3-20-fp16.pt",
+    "classes": [
+      "Abyssinian",
+      "Bengal",
+      "Birman",
+      "Bombay",
+      "British_Shorthair",
+      "Egyptian_Mau",
+      "Maine_Coon",
+      "Persian",
+      "Ragdoll",
+      "Russian_Blue",
+      "Siamese",
+      "Sphynx",
+      "American_Bobtail",
+      "American_Curl",
+      "American_Shorthair",
+      "Exotic_Shorthair",
+      "Manx",
+      "Norwegian_Forest",
+      "Scottish_Fold",
+      "Turkish_Angora"
+    ],
+    "image_size": 320,
+    "preprocess": "letterbox",
+    "tta": true,
+    "cat_threshold": 0.5,
+    "subject_weight": 0.0,
+    "weight_sha256": "3656dce0703e6de57668e1b4d72fa4773b1727e461c9fd348daecd96687c170c",
+    "secondary_classifier": {
+      "checkpoint": "breed-swin-v3-detail20-fp16.pt",
+      "weight": 0.25,
+      "image_size": 224,
+      "preprocess": "center",
+      "tta": true,
+      "weight_sha256": "ad028c3ea460d72f33e504315a22a92a2a3bdd17a04f22c1d7915edde98312a8"
+    },
+    "selection": "same frozen20-class validation set only; overall accuracy, then macro; no test used"
+  },
+  "active_vlm": {
+    "model": "Qwen/Qwen3-VL-4B-Instruct",
+    "prompt_version": "morphology-lines-v3",
+    "output_format": "lines",
+    "max_pixels": 589824,
+    "max_new_tokens": 192,
+    "accelerate_patch": true,
+    "validation_count": 100,
+    "validation_correct": 56,
+    "selection_source": "artifacts/optimization-v3/vlm-selection/selection.json",
+    "test_used": false
+  },
+  "git_head": "615ae4d31e6b1add69ecccaee594adb96b02e92b",
+  "shared_test_sha256": "4dc73c94a318d419ede5cf0c837c45cc0303775f25ffe2987339717d74070461",
+  "test_manifest_sha256": "6956e25ba7cf0e7ee497cc2068eb46ee827c0523e7129be1afd5c1f9ac5ee226",
+  "fingerprints": {
+    "traditional": "2e27c4ec65ecac73bc8a7348686c9e3210c6d6880ef4d85e596fd1061c8d81e0",
+    "vlm": "38ba20e92ac2422e18130f7cf87a10082d922141bcc344c81292959c7a93abdd"
+  },
+  "frozen_before_test": true,
+  "validation_exported": {
+    "correct": 780,
+    "count": 925
+  },
+  "target": "20-class overall independent test accuracy>=0.85",
+  "runtime_revision": "reuse per-engine CUDA streams; model weights and all prediction settings unchanged",
+  "selection_frozen_before_any_test": "configs/frozen-v3-selection-original.json"
+}

@@ -1,0 +1,19 @@
+{
+  "task": "select-vlm-image-budget-v4",
+  "state": "completed",
+  "pid": 13572,
+  "created_utc": "2026-11-03T00:46:21.003636+00:00",
+  "logs": "artifacts/run-logs/20261103T004621Z-select-vlm-image-budget-v4-9d442b12",
+  "automatic_retry": false,
+  "automatic_restart": false,
+  "argv": [
+    "scripts/select_vlm_image_budget.py",
+    "--training-dir",
+    "artifacts/optimization-v4/training-resumed01",
+    "--data-root",
+    "../../work/cat-data",
+    "--output",
+    "artifacts/optimization-v4/image-budget-selection"
+  ],
+  "finished_utc": "2026-11-03T00:48:21.634997+00:00"
+}

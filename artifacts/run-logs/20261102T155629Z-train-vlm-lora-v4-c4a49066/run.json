@@ -1,0 +1,23 @@
+{
+  "task": "train-vlm-lora-v4",
+  "state": "failed",
+  "pid": 34044,
+  "created_utc": "2026-11-02T15:56:29.377083+00:00",
+  "logs": "artifacts/run-logs/20261102T155629Z-train-vlm-lora-v4-c4a49066",
+  "automatic_retry": false,
+  "automatic_restart": false,
+  "argv": [
+    "scripts/train_vlm_lora.py",
+    "--output",
+    "artifacts/optimization-v4/training-battery",
+    "--save-steps",
+    "10",
+    "--no-gpu-telemetry",
+    "--stop-file",
+    "runtime/stop-for-10-percent-shutdown.json",
+    "--reuse-probe",
+    "artifacts/optimization-v4/probe01"
+  ],
+  "finished_utc": "2026-11-02T16:15:29.237233+00:00",
+  "error": "OSError: [Errno 9] Bad file descriptor"
+}

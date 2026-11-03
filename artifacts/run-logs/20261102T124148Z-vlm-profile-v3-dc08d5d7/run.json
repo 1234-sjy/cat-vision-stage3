@@ -1,0 +1,17 @@
+{
+  "task": "vlm-profile-v3",
+  "state": "completed",
+  "pid": 13684,
+  "created_utc": "2026-11-02T12:41:48.641011+00:00",
+  "logs": "artifacts/run-logs/20261102T124148Z-vlm-profile-v3-dc08d5d7",
+  "automatic_retry": false,
+  "automatic_restart": false,
+  "argv": [
+    "scripts/profile_vlm.py",
+    "--data-root",
+    "..\\..\\work\\cat-data\\oxford-iiit-pet",
+    "--output",
+    "artifacts/optimization-v3/vlm-profile-linear.json"
+  ],
+  "finished_utc": "2026-11-02T12:42:04.821573+00:00"
+}

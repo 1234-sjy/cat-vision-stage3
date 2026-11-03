@@ -1,0 +1,15 @@
+{
+  "task": "vlm-oldset-control-v3",
+  "state": "completed",
+  "pid": 35524,
+  "created_utc": "2026-11-02T15:19:04.844286+00:00",
+  "logs": "artifacts/run-logs/20261102T151904Z-vlm-oldset-control-v3-d567c556",
+  "automatic_retry": false,
+  "automatic_restart": false,
+  "argv": [
+    "scripts/control_vlm_oldset.py",
+    "--data-root",
+    "..\\..\\work\\cat-data\\oxford-iiit-pet"
+  ],
+  "finished_utc": "2026-11-02T15:20:38.061163+00:00"
+}

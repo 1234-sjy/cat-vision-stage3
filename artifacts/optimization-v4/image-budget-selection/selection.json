@@ -1,0 +1,366 @@
+{
+  "chosen_max_pixels": 589824,
+  "validation": {
+    "cat_correct": 171,
+    "cat_total": 200,
+    "cat_accuracy": 0.855,
+    "cat_macro_accuracy": 0.8550000000000001,
+    "per_class": {
+      "Abyssinian": {
+        "correct": 7,
+        "total": 10,
+        "accuracy": 0.7
+      },
+      "Bengal": {
+        "correct": 8,
+        "total": 10,
+        "accuracy": 0.8
+      },
+      "Birman": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "Bombay": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "British_Shorthair": {
+        "correct": 9,
+        "total": 10,
+        "accuracy": 0.9
+      },
+      "Egyptian_Mau": {
+        "correct": 7,
+        "total": 10,
+        "accuracy": 0.7
+      },
+      "Maine_Coon": {
+        "correct": 9,
+        "total": 10,
+        "accuracy": 0.9
+      },
+      "Persian": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "Ragdoll": {
+        "correct": 5,
+        "total": 10,
+        "accuracy": 0.5
+      },
+      "Russian_Blue": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "Siamese": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "Sphynx": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "American_Bobtail": {
+        "correct": 3,
+        "total": 10,
+        "accuracy": 0.3
+      },
+      "American_Curl": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "American_Shorthair": {
+        "correct": 9,
+        "total": 10,
+        "accuracy": 0.9
+      },
+      "Exotic_Shorthair": {
+        "correct": 9,
+        "total": 10,
+        "accuracy": 0.9
+      },
+      "Manx": {
+        "correct": 9,
+        "total": 10,
+        "accuracy": 0.9
+      },
+      "Norwegian_Forest": {
+        "correct": 9,
+        "total": 10,
+        "accuracy": 0.9
+      },
+      "Scottish_Fold": {
+        "correct": 9,
+        "total": 10,
+        "accuracy": 0.9
+      },
+      "Turkish_Angora": {
+        "correct": 8,
+        "total": 10,
+        "accuracy": 0.8
+      }
+    },
+    "dog": {
+      "total": 50,
+      "false_cat": 0,
+      "correct_no_cat": 50,
+      "parse_error": 0,
+      "false_cat_rate": 0.0,
+      "no_cat_accuracy": 1.0
+    }
+  },
+  "candidates": [
+    {
+      "max_pixels": 262144,
+      "metrics": {
+        "cat_correct": 170,
+        "cat_total": 200,
+        "cat_accuracy": 0.85,
+        "cat_macro_accuracy": 0.85,
+        "per_class": {
+          "Abyssinian": {
+            "correct": 7,
+            "total": 10,
+            "accuracy": 0.7
+          },
+          "Bengal": {
+            "correct": 8,
+            "total": 10,
+            "accuracy": 0.8
+          },
+          "Birman": {
+            "correct": 10,
+            "total": 10,
+            "accuracy": 1.0
+          },
+          "Bombay": {
+            "correct": 10,
+            "total": 10,
+            "accuracy": 1.0
+          },
+          "British_Shorthair": {
+            "correct": 9,
+            "total": 10,
+            "accuracy": 0.9
+          },
+          "Egyptian_Mau": {
+            "correct": 7,
+            "total": 10,
+            "accuracy": 0.7
+          },
+          "Maine_Coon": {
+            "correct": 9,
+            "total": 10,
+            "accuracy": 0.9
+          },
+          "Persian": {
+            "correct": 10,
+            "total": 10,
+            "accuracy": 1.0
+          },
+          "Ragdoll": {
+            "correct": 5,
+            "total": 10,
+            "accuracy": 0.5
+          },
+          "Russian_Blue": {
+            "correct": 10,
+            "total": 10,
+            "accuracy": 1.0
+          },
+          "Siamese": {
+            "correct": 10,
+            "total": 10,
+            "accuracy": 1.0
+          },
+          "Sphynx": {
+            "correct": 10,
+            "total": 10,
+            "accuracy": 1.0
+          },
+          "American_Bobtail": {
+            "correct": 3,
+            "total": 10,
+            "accuracy": 0.3
+          },
+          "American_Curl": {
+            "correct": 10,
+            "total": 10,
+            "accuracy": 1.0
+          },
+          "American_Shorthair": {
+            "correct": 9,
+            "total": 10,
+            "accuracy": 0.9
+          },
+          "Exotic_Shorthair": {
+            "correct": 8,
+            "total": 10,
+            "accuracy": 0.8
+          },
+          "Manx": {
+            "correct": 9,
+            "total": 10,
+            "accuracy": 0.9
+          },
+          "Norwegian_Forest": {
+            "correct": 9,
+            "total": 10,
+            "accuracy": 0.9
+          },
+          "Scottish_Fold": {
+            "correct": 9,
+            "total": 10,
+            "accuracy": 0.9
+          },
+          "Turkish_Angora": {
+            "correct": 8,
+            "total": 10,
+            "accuracy": 0.8
+          }
+        },
+        "dog": {
+          "total": 50,
+          "false_cat": 0,
+          "correct_no_cat": 50,
+          "parse_error": 0,
+          "false_cat_rate": 0.0,
+          "no_cat_accuracy": 1.0
+        }
+      },
+      "seconds": 51.21422029999667
+    },
+    {
+      "max_pixels": 589824,
+      "metrics": {
+        "cat_correct": 171,
+        "cat_total": 200,
+        "cat_accuracy": 0.855,
+        "cat_macro_accuracy": 0.8550000000000001,
+        "per_class": {
+          "Abyssinian": {
+            "correct": 7,
+            "total": 10,
+            "accuracy": 0.7
+          },
+          "Bengal": {
+            "correct": 8,
+            "total": 10,
+            "accuracy": 0.8
+          },
+          "Birman": {
+            "correct": 10,
+            "total": 10,
+            "accuracy": 1.0
+          },
+          "Bombay": {
+            "correct": 10,
+            "total": 10,
+            "accuracy": 1.0
+          },
+          "British_Shorthair": {
+            "correct": 9,
+            "total": 10,
+            "accuracy": 0.9
+          },
+          "Egyptian_Mau": {
+            "correct": 7,
+            "total": 10,
+            "accuracy": 0.7
+          },
+          "Maine_Coon": {
+            "correct": 9,
+            "total": 10,
+            "accuracy": 0.9
+          },
+          "Persian": {
+            "correct": 10,
+            "total": 10,
+            "accuracy": 1.0
+          },
+          "Ragdoll": {
+            "correct": 5,
+            "total": 10,
+            "accuracy": 0.5
+          },
+          "Russian_Blue": {
+            "correct": 10,
+            "total": 10,
+            "accuracy": 1.0
+          },
+          "Siamese": {
+            "correct": 10,
+            "total": 10,
+            "accuracy": 1.0
+          },
+          "Sphynx": {
+            "correct": 10,
+            "total": 10,
+            "accuracy": 1.0
+          },
+          "American_Bobtail": {
+            "correct": 3,
+            "total": 10,
+            "accuracy": 0.3
+          },
+          "American_Curl": {
+            "correct": 10,
+            "total": 10,
+            "accuracy": 1.0
+          },
+          "American_Shorthair": {
+            "correct": 9,
+            "total": 10,
+            "accuracy": 0.9
+          },
+          "Exotic_Shorthair": {
+            "correct": 9,
+            "total": 10,
+            "accuracy": 0.9
+          },
+          "Manx": {
+            "correct": 9,
+            "total": 10,
+            "accuracy": 0.9
+          },
+          "Norwegian_Forest": {
+            "correct": 9,
+            "total": 10,
+            "accuracy": 0.9
+          },
+          "Scottish_Fold": {
+            "correct": 9,
+            "total": 10,
+            "accuracy": 0.9
+          },
+          "Turkish_Angora": {
+            "correct": 8,
+            "total": 10,
+            "accuracy": 0.8
+          }
+        },
+        "dog": {
+          "total": 50,
+          "false_cat": 0,
+          "correct_no_cat": 50,
+          "parse_error": 0,
+          "false_cat_rate": 0.0,
+          "no_cat_accuracy": 1.0
+        }
+      },
+      "seconds": 53.42481630000111
+    }
+  ],
+  "adapter_sha256": "aa441496afa5bd1c4521e6fb5efdc9e8223bf67bfcb898197fe54a7d757336d7",
+  "manifest_sha256": "59dd129394dd76fbbcc39209de7a12f221d415765e20fadac79da6835c1532e6",
+  "prompt_version": "cat20-lora-v1",
+  "test_used": false,
+  "selection": "validation cat accuracy, dog false-cat tie break, then smaller pixel budget"
+}

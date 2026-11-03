@@ -1,0 +1,133 @@
+TASK START web-model-preload; logs=artifacts/run-logs/20261102T143038Z-web-model-preload-f64ffc4e
+MODEL READY traditional
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:  50%|█████     | 1/2 [00:02<00:02,  2.36s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  1.97s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  2.02s/it]
+MODEL READY vlm
+TASK END web-model-preload; state=completed
+TASK START shared20-test-v3; logs=artifacts/run-logs/20261102T143048Z-shared20-test-v3-bc942618
+SHARED 1/120 Abyssinian A=Abyssinian B=Bengal seconds=1.715
+SHARED 2/120 Abyssinian A=Scottish_Fold B=British_Shorthair seconds=0.761
+SHARED 3/120 Abyssinian A=Abyssinian B=Abyssinian seconds=0.820
+SHARED 4/120 Abyssinian A=Abyssinian B=Abyssinian seconds=0.987
+SHARED 5/120 Abyssinian A=Abyssinian B=American_Shorthair seconds=0.640
+SHARED 6/120 Abyssinian A=Abyssinian B=American_Shorthair seconds=0.960
+SHARED 7/120 Bengal A=Bengal B=Bengal seconds=0.692
+SHARED 8/120 Bengal A=Bengal B=Bengal seconds=0.688
+SHARED 9/120 Bengal A=Bengal B=Bengal seconds=0.886
+SHARED 10/120 Bengal A=Bengal B=Bengal seconds=4.039
+SHARED 11/120 Bengal A=Bengal B=Bengal seconds=7.997
+SHARED 12/120 Bengal A=Egyptian_Mau B=Bengal seconds=13.234
+SHARED 13/120 Birman A=Birman B=Birman seconds=10.393
+SHARED 14/120 Birman A=Birman B=Ragdoll seconds=11.498
+SHARED 15/120 Birman A=Birman B=Birman seconds=12.055
+SHARED 16/120 Birman A=Birman B=Birman seconds=9.816
+SHARED 17/120 Birman A=Siamese B=Birman seconds=9.806
+SHARED 18/120 Birman A=Birman B=Russian_Blue seconds=8.046
+SHARED 19/120 Bombay A=American_Bobtail B=British_Shorthair seconds=13.134
+SHARED 20/120 Bombay A=Bombay B=British_Shorthair seconds=10.093
+SHARED 21/120 Bombay A=Bombay B=British_Shorthair seconds=10.645
+SHARED 22/120 Bombay A=Bombay B=American_Shorthair seconds=10.033
+SHARED 23/120 Bombay A=Bombay B=British_Shorthair seconds=10.339
+SHARED 24/120 Bombay A=Bombay B=British_Shorthair seconds=9.678
+SHARED 25/120 British_Shorthair A=British_Shorthair B=British_Shorthair seconds=10.483
+SHARED 26/120 British_Shorthair A=British_Shorthair B=British_Shorthair seconds=14.558
+SHARED 27/120 British_Shorthair A=British_Shorthair B=British_Shorthair seconds=11.270
+SHARED 28/120 British_Shorthair A=American_Bobtail B=American_Shorthair seconds=10.397
+SHARED 29/120 British_Shorthair A=American_Shorthair B=American_Shorthair seconds=10.848
+SHARED 30/120 British_Shorthair A=American_Bobtail B=American_Shorthair seconds=10.720
+SHARED 31/120 Egyptian_Mau A=Egyptian_Mau B=Abyssinian seconds=13.247
+SHARED 32/120 Egyptian_Mau A=Abyssinian B=American_Shorthair seconds=10.631
+SHARED 33/120 Egyptian_Mau A=Bengal B=Bengal seconds=13.063
+SHARED 34/120 Egyptian_Mau A=American_Shorthair B=American_Shorthair seconds=12.713
+SHARED 35/120 Egyptian_Mau A=Egyptian_Mau B=Egyptian_Mau seconds=13.196
+SHARED 36/120 Egyptian_Mau A=Manx B=Abyssinian seconds=20.986
+SHARED 37/120 Maine_Coon A=Maine_Coon B=American_Shorthair seconds=5.217
+SHARED 38/120 Maine_Coon A=Norwegian_Forest B=Maine_Coon seconds=0.774
+SHARED 39/120 Maine_Coon A=Norwegian_Forest B=Maine_Coon seconds=0.703
+SHARED 40/120 Maine_Coon A=Maine_Coon B=Maine_Coon seconds=0.702
+SHARED 41/120 Maine_Coon A=Maine_Coon B=Maine_Coon seconds=0.673
+SHARED 42/120 Maine_Coon A=Maine_Coon B=British_Shorthair seconds=0.706
+SHARED 43/120 Persian A=Persian B=Persian seconds=0.642
+SHARED 44/120 Persian A=Persian B=Persian seconds=0.671
+SHARED 45/120 Persian A=British_Shorthair B=Persian seconds=0.539
+SHARED 46/120 Persian A=Persian B=Persian seconds=0.628
+SHARED 47/120 Persian A=Persian B=Persian seconds=0.505
+SHARED 48/120 Persian A=Persian B=Persian seconds=0.645
+SHARED 49/120 Ragdoll A=Ragdoll B=Ragdoll seconds=0.696
+SHARED 50/120 Ragdoll A=Ragdoll B=Ragdoll seconds=0.642
+SHARED 51/120 Ragdoll A=Ragdoll B=Ragdoll seconds=0.764
+SHARED 52/120 Ragdoll A=Ragdoll B=Russian_Blue seconds=0.580
+SHARED 53/120 Ragdoll A=Birman B=Birman seconds=0.673
+SHARED 54/120 Ragdoll A=Ragdoll B=Ragdoll seconds=0.713
+SHARED 55/120 Russian_Blue A=Russian_Blue B=Russian_Blue seconds=0.607
+SHARED 56/120 Russian_Blue A=Russian_Blue B=Russian_Blue seconds=0.608
+SHARED 57/120 Russian_Blue A=Russian_Blue B=Russian_Blue seconds=0.618
+SHARED 58/120 Russian_Blue A=Russian_Blue B=Russian_Blue seconds=0.579
+SHARED 59/120 Russian_Blue A=Russian_Blue B=Russian_Blue seconds=0.577
+SHARED 60/120 Russian_Blue A=Russian_Blue B=Russian_Blue seconds=0.637
+SHARED 61/120 Siamese A=Birman B=Birman seconds=0.653
+SHARED 62/120 Siamese A=Siamese B=Siamese seconds=0.710
+SHARED 63/120 Siamese A=Siamese B=Siamese seconds=0.654
+SHARED 64/120 Siamese A=Siamese B=Birman seconds=0.732
+SHARED 65/120 Siamese A=Siamese B=Siamese seconds=0.748
+SHARED 66/120 Siamese A=Siamese B=Siamese seconds=0.644
+SHARED 67/120 Sphynx A=Sphynx B=Sphynx seconds=0.759
+SHARED 68/120 Sphynx A=Sphynx B=Sphynx seconds=0.802
+SHARED 69/120 Sphynx A=Sphynx B=Sphynx seconds=0.694
+SHARED 70/120 Sphynx A=Russian_Blue B=Sphynx seconds=0.637
+SHARED 71/120 Sphynx A=Sphynx B=Sphynx seconds=0.729
+SHARED 72/120 Sphynx A=Sphynx B=Sphynx seconds=0.640
+SHARED 73/120 American_Bobtail A=American_Bobtail B=American_Shorthair seconds=0.776
+SHARED 74/120 American_Bobtail A=American_Bobtail B=Russian_Blue seconds=0.598
+SHARED 75/120 American_Bobtail A=American_Bobtail B=American_Shorthair seconds=0.752
+SHARED 76/120 American_Bobtail A=American_Bobtail B=American_Shorthair seconds=0.803
+SHARED 77/120 American_Bobtail A=British_Shorthair B=American_Shorthair seconds=0.770
+SHARED 78/120 American_Bobtail A=American_Bobtail B=American_Shorthair seconds=0.789
+SHARED 79/120 American_Curl A=American_Curl B=American_Curl seconds=0.914
+SHARED 80/120 American_Curl A=Ragdoll B=American_Curl seconds=1.021
+SHARED 81/120 American_Curl A=American_Curl B=Persian seconds=0.893
+SHARED 82/120 American_Curl A=American_Curl B=American_Curl seconds=0.681
+SHARED 83/120 American_Curl A=American_Curl B=American_Curl seconds=0.697
+SHARED 84/120 American_Curl A=American_Curl B=American_Curl seconds=0.932
+SHARED 85/120 American_Shorthair A=American_Shorthair B=American_Shorthair seconds=0.778
+SHARED 86/120 American_Shorthair A=American_Bobtail B=Russian_Blue seconds=0.677
+SHARED 87/120 American_Shorthair A=American_Shorthair B=American_Shorthair seconds=0.905
+SHARED 88/120 American_Shorthair A=American_Shorthair B=American_Shorthair seconds=0.757
+SHARED 89/120 American_Shorthair A=American_Shorthair B=American_Shorthair seconds=0.819
+SHARED 90/120 American_Shorthair A=Bengal B=American_Shorthair seconds=0.789
+SHARED 91/120 Exotic_Shorthair A=Exotic_Shorthair B=Persian seconds=0.817
+SHARED 92/120 Exotic_Shorthair A=Exotic_Shorthair B=Exotic_Shorthair seconds=1.042
+SHARED 93/120 Exotic_Shorthair A=Exotic_Shorthair B=Exotic_Shorthair seconds=1.026
+SHARED 94/120 Exotic_Shorthair A=Exotic_Shorthair B=Exotic_Shorthair seconds=1.038
+SHARED 95/120 Exotic_Shorthair A=Exotic_Shorthair B=British_Shorthair seconds=0.862
+SHARED 96/120 Exotic_Shorthair A=Exotic_Shorthair B=British_Shorthair seconds=0.824
+SHARED 97/120 Manx A=Manx B=American_Bobtail seconds=0.793
+SHARED 98/120 Manx A=Manx B=American_Shorthair seconds=0.942
+SHARED 99/120 Manx A=Manx B=American_Shorthair seconds=1.306
+SHARED 100/120 Manx A=Manx B=American_Shorthair seconds=15.451
+SHARED 101/120 Manx A=Manx B=American_Shorthair seconds=10.970
+SHARED 102/120 Manx A=Manx B=American_Shorthair seconds=19.110
+SHARED 103/120 Norwegian_Forest A=Norwegian_Forest B=Maine_Coon seconds=13.492
+SHARED 104/120 Norwegian_Forest A=Norwegian_Forest B=Maine_Coon seconds=13.163
+SHARED 105/120 Norwegian_Forest A=Norwegian_Forest B=Maine_Coon seconds=10.320
+SHARED 106/120 Norwegian_Forest A=Norwegian_Forest B=Norwegian_Forest seconds=10.031
+SHARED 107/120 Norwegian_Forest A=Norwegian_Forest B=Norwegian_Forest seconds=10.209
+SHARED 108/120 Norwegian_Forest A=Norwegian_Forest B=Maine_Coon seconds=10.145
+SHARED 109/120 Scottish_Fold A=Scottish_Fold B=Scottish_Fold seconds=8.997
+SHARED 110/120 Scottish_Fold A=Scottish_Fold B=Scottish_Fold seconds=9.516
+SHARED 111/120 Scottish_Fold A=Scottish_Fold B=Scottish_Fold seconds=15.217
+SHARED 112/120 Scottish_Fold A=Scottish_Fold B=Scottish_Fold seconds=15.232
+SHARED 113/120 Scottish_Fold A=Scottish_Fold B=Scottish_Fold seconds=15.675
+SHARED 114/120 Scottish_Fold A=Scottish_Fold B=Scottish_Fold seconds=11.250
+SHARED 115/120 Turkish_Angora A=Turkish_Angora B=Persian seconds=7.433
+SHARED 116/120 Turkish_Angora A=Turkish_Angora B=Persian seconds=6.955
+SHARED 117/120 Turkish_Angora A=Turkish_Angora B=Persian seconds=6.898
+SHARED 118/120 Turkish_Angora A=American_Shorthair B=American_Shorthair seconds=9.031
+SHARED 119/120 Turkish_Angora A=American_Shorthair B=American_Shorthair seconds=14.714
+SHARED 120/120 Turkish_Angora A=Turkish_Angora B=British_Shorthair seconds=11.147
+METRICS traditional 97 120 0.8083333333333333
+METRICS vlm 67 120 0.5583333333333333
+TASK END shared20-test-v3; state=completed

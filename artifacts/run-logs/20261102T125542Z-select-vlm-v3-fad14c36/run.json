@@ -1,0 +1,21 @@
+{
+  "task": "select-vlm-v3",
+  "state": "completed",
+  "pid": 30044,
+  "created_utc": "2026-11-02T12:55:42.932317+00:00",
+  "logs": "artifacts/run-logs/20261102T125542Z-select-vlm-v3-fad14c36",
+  "automatic_retry": false,
+  "automatic_restart": false,
+  "argv": [
+    "scripts/select_vlm_v3.py",
+    "--data-root",
+    "..\\..\\work\\cat-data",
+    "--per-class",
+    "5",
+    "--versions",
+    "morphology-lines-v3",
+    "--output",
+    "artifacts/optimization-v3/vlm-line-selection"
+  ],
+  "finished_utc": "2026-11-02T12:56:58.055708+00:00"
+}

@@ -1,0 +1,76 @@
+{
+  "candidate_count": 32,
+  "selection": "longest processed inputs among first 32 train images",
+  "records": [
+    {
+      "relative_path": "oxford-iiit-pet/images/american_bulldog_110.jpg",
+      "sha256": "f36b5c4ef2fb064ad4aa5e873ec91e2d4500c163e4ae85f916ca49ca81fd36eb"
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/american_bulldog_114.jpg",
+      "sha256": "362326f79c4d00507602b9fca6bc91f25176eb03ccf2b5d446638a4c6baef7ee"
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/american_bulldog_116.jpg",
+      "sha256": "ed7d79074720f39b934eb9b200122165a6e04415975c822c6e8cf127075db06e"
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/american_bulldog_129.jpg",
+      "sha256": "b5460fc965ff04ef7ecbc8cb66c1d7260069ba2b2e751308d04ecfe84927faa2"
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/american_bulldog_14.jpg",
+      "sha256": "3ae1d9058774b3d4dd4a71af0fca79d9b5a50c0044ecb9a5c75831df66a6788d"
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/american_bulldog_146.jpg",
+      "sha256": "3d9c0b6b742ccb676164f2e732958617474a75a34f48254cfeda39d03ebfad47"
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/american_bulldog_164.jpg",
+      "sha256": "f0a960acf869a864b2a19507a5c2527721587aad5683a3e9e77eb8b022b398c0"
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/american_bulldog_166.jpg",
+      "sha256": "e584592e551be553f15ddbf54eec72ebb19cd97ce7b152d686b13aaa7fbe9046"
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/american_bulldog_167.jpg",
+      "sha256": "9142e2e65fa61df6d4f91c90eab49e4757f774f4d0f40ff7868c1f154183e210"
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/american_bulldog_171.jpg",
+      "sha256": "780416414b47f258abf58061182b8c916649f4b985828ef5e628e31b42610935"
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/american_bulldog_182.jpg",
+      "sha256": "eb0bf3787c0be2625422b15e6c7d5757c37c9decef6baf3ad80a87ce3261cba9"
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/american_bulldog_100.jpg",
+      "sha256": "87b54b307240064533bc4d9d035df41f07c997e450a7441702643063963b3dbf"
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/american_bulldog_105.jpg",
+      "sha256": "d3895f7103a0333f9caaf014a51cbcc26d0512854cb15827db0ae082f161dc0d"
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/american_bulldog_109.jpg",
+      "sha256": "f9aa4a3fca00b1ae90e886382a001b14baaf39e3169aa76394278ecaff79c6fd"
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/american_bulldog_112.jpg",
+      "sha256": "032462fef141d1a9e311e08529fc63abab7d9e1c869699810850b6f1f811ac33"
+    },
+    {
+      "relative_path": "oxford-iiit-pet/images/american_bulldog_115.jpg",
+      "sha256": "d62d43a1bb873c85f4bd1a6cb630702c811b7e5128fbee007de36d4148cdcde7"
+    }
+  ],
+  "baseline_allocated_bytes": 8941711360,
+  "optimizer_future_state_bytes": 132120576,
+  "device_total_bytes": 17094475776,
+  "external_gpu_bytes": 1358495744,
+  "training_budget_bytes": 14662238208,
+  "physical_headroom_bytes": 1073741824
+}

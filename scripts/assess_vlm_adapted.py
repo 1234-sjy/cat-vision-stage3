@@ -80,7 +80,7 @@ def main(args):
                 batch_started = time.perf_counter()
                 inputs = collate_processor(engine.processor, samples, engine.prompt, training=False)
                 inputs = inputs.to(engine.model.device)
-                with torch.inference_mode():
+                with torch.inference_mode(), torch.autocast(device_type='cuda', dtype=torch.bfloat16):
                     generated = engine.model.generate(**inputs, max_new_tokens=engine.max_new_tokens,
                                                       do_sample=False, use_cache=True)
                 answers = generated[:, inputs['input_ids'].shape[1]:]

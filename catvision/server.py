@@ -191,6 +191,19 @@ def create_app(base_dir: Path = ROOT, runner=None) -> FastAPI:
         result = {}
         active_path=base_dir/'configs/active-classifier.json'
         active=json.loads(active_path.read_text(encoding='utf-8')) if active_path.exists() else {}
+        vlm_path=base_dir/'configs/active-vlm.json'
+        vlm=json.loads(vlm_path.read_text(encoding='utf-8')) if vlm_path.exists() else {}
+        if vlm.get('adapter'):
+            summary_path=base_dir/'artifacts/optimization-v4/comparison-summary.json'
+            summary=json.loads(summary_path.read_text(encoding='utf-8')) if summary_path.exists() else {}
+            if not summary or summary.get('adapter_sha256') != vlm.get('adapter_sha256'):
+                return {'experiment':'adapted-v4','assessment':'pending',
+                        'traditional':None,'vlm':None,'class_count':len(active.get('classes',[]))}
+            matched=summary['fresh_matched']
+            return {'experiment':'adapted-v4','class_count':len(active['classes']),
+                    'traditional':matched['traditional']['all'],'vlm':matched['vlm']['all'],
+                    'fresh_cohorts':matched,'full_classifier':summary['traditional_full_test']['all'],
+                    'regression':summary['regression_120']}
         expanded=base_dir/'artifacts/optimization-v3'
         if (active.get('checkpoint','').startswith('breed-swin-v3')
                 and (expanded/'frozen-test/metrics.json').exists()

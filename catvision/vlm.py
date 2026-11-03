@@ -80,7 +80,7 @@ class LocalVLM:
         inputs = self.processor.apply_chat_template(
             messages, tokenize=True, add_generation_prompt=True,
             return_dict=True, return_tensors="pt").to(self.model.device)
-        with torch.inference_mode():
+        with torch.inference_mode(), torch.autocast(device_type='cuda', dtype=torch.bfloat16):
             generated = self.model.generate(**inputs, max_new_tokens=self.max_new_tokens, do_sample=False)
         answer = generated[:, inputs["input_ids"].shape[1]:]
         text = self.processor.batch_decode(answer, skip_special_tokens=True,

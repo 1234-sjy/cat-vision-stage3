@@ -1,0 +1,6 @@
+{
+  "reviewed_utc": "2026-11-03T03:05:58.996480+00:00",
+  "cause": "All 120 predictions had completed and were saved. CPU summary read old UTF-8 predictions using Windows GBK default.",
+  "correction": "All text reads specify UTF-8; rebuild summary from existing 120 outputs only, no GPU rerun.",
+  "gpu_inference_repeated": false
+}

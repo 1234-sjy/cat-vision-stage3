@@ -1,0 +1,20 @@
+{
+  "task": "image-understanding-validation",
+  "state": "failed",
+  "pid": 22948,
+  "created_utc": "2026-11-03T02:48:37.714762+00:00",
+  "logs": "artifacts/run-logs/20261103T024837Z-image-understanding-validation-7b6bb024",
+  "automatic_retry": false,
+  "automatic_restart": false,
+  "argv": [
+    "scripts/check_image_understanding.py",
+    "--mode",
+    "validation",
+    "--data-root",
+    "../../work/cat-data",
+    "--output",
+    "artifacts/image-understanding-v2/validation"
+  ],
+  "finished_utc": "2026-11-03T02:48:39.087613+00:00",
+  "error": "StopIteration: "
+}

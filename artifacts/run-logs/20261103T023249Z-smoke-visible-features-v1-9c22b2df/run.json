@@ -1,0 +1,13 @@
+{
+  "task": "smoke-visible-features-v1",
+  "state": "completed",
+  "pid": 16156,
+  "created_utc": "2026-11-03T02:32:49.737889+00:00",
+  "logs": "artifacts/run-logs/20261103T023249Z-smoke-visible-features-v1-9c22b2df",
+  "automatic_retry": false,
+  "automatic_restart": false,
+  "argv": [
+    "scripts/smoke_visible_features.py"
+  ],
+  "finished_utc": "2026-11-03T02:33:22.801130+00:00"
+}

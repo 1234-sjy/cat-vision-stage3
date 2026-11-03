@@ -1,0 +1,6 @@
+{
+  "reviewed_utc": "2026-11-03T02:49:27.340731+00:00",
+  "cause": "Validation dog records use breed=negative_dog and is_cat=False; no_cat is generation target, not source label. Failure happened before LocalVLM loading.",
+  "correction": "Select negative example by is_cat=False.",
+  "action": "Agent inspected traceback and source record, corrected selection, then manually authorized one new run. No automatic retry."
+}

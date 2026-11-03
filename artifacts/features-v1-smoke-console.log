@@ -1,0 +1,11 @@
+TASK START smoke-visible-features-v1; logs=artifacts/run-logs/20261103T023249Z-smoke-visible-features-v1-9c22b2df
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:  50%|����������     | 1/2 [00:04<00:04,  4.53s/it]
+Loading checkpoint shards: 100%|��������������������| 2/2 [00:08<00:00,  3.93s/it]
+Loading checkpoint shards: 100%|��������������������| 2/2 [00:08<00:00,  4.02s/it]
+{"image_id": "refined_Scottish Fold_286", "breed": "Scottish_Fold", "features": ["��ë��ǳ��ɫ����ɫ����", "�����´���Բ��������ɫ��"], "feature_status": "ok", "seconds": 2.1610504999989644}
+{"image_id": "refined_Bengal_154", "breed": "Bengal", "features": ["��ë����ɫ��������", "�����������������"], "feature_status": "ok", "seconds": 1.0355635000014445}
+{"image_id": "refined_Sphynx_140", "breed": "Sphynx", "features": ["��ë��ǳ�����������", "����������۴��Բ"], "feature_status": "ok", "seconds": 1.2061701999919023}
+{"image_id": "refined_Scottish Fold_286", "breed": "Scottish_Fold", "features": ["��ë��ǳ��ɫ����ɫ����", "�����´���Բ��������ɫ��"], "feature_status": "ok", "seconds": 1.2764078000036534}
+TASK END smoke-visible-features-v1; state=completed

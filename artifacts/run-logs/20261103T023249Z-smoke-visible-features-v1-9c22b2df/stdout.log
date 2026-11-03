@@ -1,0 +1,6 @@
+TASK START smoke-visible-features-v1; logs=artifacts/run-logs/20261103T023249Z-smoke-visible-features-v1-9c22b2df
+{"image_id": "refined_Scottish Fold_286", "breed": "Scottish_Fold", "features": ["短毛，浅橘色带深色条纹", "耳朵下垂，圆脸，琥珀色眼"], "feature_status": "ok", "seconds": 2.1610504999989644}
+{"image_id": "refined_Bengal_154", "breed": "Bengal", "features": ["短毛，深色斑纹清晰", "耳朵尖立，脸型狭长"], "feature_status": "ok", "seconds": 1.0355635000014445}
+{"image_id": "refined_Sphynx_140", "breed": "Sphynx", "features": ["无毛，浅棕与深棕相间", "大耳竖立，眼大而圆"], "feature_status": "ok", "seconds": 1.2061701999919023}
+{"image_id": "refined_Scottish Fold_286", "breed": "Scottish_Fold", "features": ["短毛，浅橘色带深色条纹", "耳朵下垂，圆脸，琥珀色眼"], "feature_status": "ok", "seconds": 1.2764078000036534}
+TASK END smoke-visible-features-v1; state=completed

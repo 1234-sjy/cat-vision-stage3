@@ -1,0 +1,7 @@
+{
+  "count": 4,
+  "same_image_breed_stable": true,
+  "two_observations_each": true,
+  "source": "validation only",
+  "teacher_breed_supplied_to_description": false
+}

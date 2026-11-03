@@ -1,0 +1,2 @@
+TASK START image-understanding-validation; logs=artifacts/run-logs/20261103T024837Z-image-understanding-validation-7b6bb024
+TASK END image-understanding-validation; state=failed

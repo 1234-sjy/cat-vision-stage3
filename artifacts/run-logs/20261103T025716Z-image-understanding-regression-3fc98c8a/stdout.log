@@ -1,0 +1,122 @@
+TASK START image-understanding-regression; logs=artifacts/run-logs/20261103T025716Z-image-understanding-regression-3fc98c8a
+{"index": 1, "total": 120, "image_id": "Abyssinian_77", "breed": "Abyssinian", "observation_status": "ok", "seconds": 4.85106739999901}
+{"index": 2, "total": 120, "image_id": "Abyssinian_21", "breed": "Abyssinian", "observation_status": "ok", "seconds": 3.47008499999356}
+{"index": 3, "total": 120, "image_id": "Abyssinian_50", "breed": "Abyssinian", "observation_status": "ok", "seconds": 4.0213899000082165}
+{"index": 4, "total": 120, "image_id": "refined_Abyssinian_313", "breed": "Abyssinian", "observation_status": "ok", "seconds": 3.318048399989493}
+{"index": 5, "total": 120, "image_id": "refined_Abyssinian_170", "breed": "Abyssinian", "observation_status": "ok", "seconds": 3.283304600001429}
+{"index": 6, "total": 120, "image_id": "refined_Abyssinian_162", "breed": "American_Shorthair", "observation_status": "ok", "seconds": 3.397449299998698}
+{"index": 7, "total": 120, "image_id": "Bengal_57", "breed": "Bengal", "observation_status": "ok", "seconds": 3.498194700005115}
+{"index": 8, "total": 120, "image_id": "Bengal_195", "breed": "Bengal", "observation_status": "ok", "seconds": 3.69448979999288}
+{"index": 9, "total": 120, "image_id": "Bengal_97", "breed": "Bengal", "observation_status": "ok", "seconds": 3.8917211999942083}
+{"index": 10, "total": 120, "image_id": "refined_Bengal_68", "breed": "Bengal", "observation_status": "ok", "seconds": 3.2044655999925453}
+{"index": 11, "total": 120, "image_id": "refined_Bengal_170", "breed": "Bengal", "observation_status": "ok", "seconds": 4.293015099974582}
+{"index": 12, "total": 120, "image_id": "refined_Bengal_211", "breed": "Egyptian_Mau", "observation_status": "ok", "seconds": 4.1675908000033814}
+{"index": 13, "total": 120, "image_id": "Birman_7", "breed": "Birman", "observation_status": "ok", "seconds": 3.386220999993384}
+{"index": 14, "total": 120, "image_id": "Birman_80", "breed": "Birman", "observation_status": "ok", "seconds": 4.108690300025046}
+{"index": 15, "total": 120, "image_id": "Birman_63", "breed": "Birman", "observation_status": "ok", "seconds": 3.507020499993814}
+{"index": 16, "total": 120, "image_id": "refined_Birman_153", "breed": "Birman", "observation_status": "ok", "seconds": 3.9337272999982815}
+{"index": 17, "total": 120, "image_id": "refined_Birman_256", "breed": "Birman", "observation_status": "ok", "seconds": 3.615988900011871}
+{"index": 18, "total": 120, "image_id": "refined_Birman_152", "breed": "Birman", "observation_status": "ok", "seconds": 3.2097633999946993}
+{"index": 19, "total": 120, "image_id": "Bombay_82", "breed": "Bombay", "observation_status": "ok", "seconds": 3.060120599984657}
+{"index": 20, "total": 120, "image_id": "Bombay_64", "breed": "Bombay", "observation_status": "ok", "seconds": 2.99518079997506}
+{"index": 21, "total": 120, "image_id": "Bombay_83", "breed": "Bombay", "observation_status": "ok", "seconds": 2.7373523999995086}
+{"index": 22, "total": 120, "image_id": "refined_Bombay_227", "breed": "Bombay", "observation_status": "ok", "seconds": 3.012235200003488}
+{"index": 23, "total": 120, "image_id": "refined_Bombay_279", "breed": "Bombay", "observation_status": "ok", "seconds": 3.0662628000136465}
+{"index": 24, "total": 120, "image_id": "refined_Bombay_199", "breed": "Bombay", "observation_status": "ok", "seconds": 2.644266199989943}
+{"index": 25, "total": 120, "image_id": "British_Shorthair_274", "breed": "British_Shorthair", "observation_status": "ok", "seconds": 3.1119978000060655}
+{"index": 26, "total": 120, "image_id": "British_Shorthair_66", "breed": "British_Shorthair", "observation_status": "ok", "seconds": 3.8022419000044465}
+{"index": 27, "total": 120, "image_id": "British_Shorthair_86", "breed": "British_Shorthair", "observation_status": "ok", "seconds": 3.9210557999904267}
+{"index": 28, "total": 120, "image_id": "refined_British Shorthair_223", "breed": "American_Shorthair", "observation_status": "ok", "seconds": 4.3023763000092}
+{"index": 29, "total": 120, "image_id": "refined_British Shorthair_119", "breed": "American_Bobtail", "observation_status": "ok", "seconds": 3.2818952000234276}
+{"index": 30, "total": 120, "image_id": "refined_British Shorthair_338", "breed": "American_Bobtail", "observation_status": "ok", "seconds": 3.9207619999942835}
+{"index": 31, "total": 120, "image_id": "Egyptian_Mau_210", "breed": "Egyptian_Mau", "observation_status": "ok", "seconds": 3.42467820001184}
+{"index": 32, "total": 120, "image_id": "Egyptian_Mau_213", "breed": "American_Shorthair", "observation_status": "ok", "seconds": 3.770260599994799}
+{"index": 33, "total": 120, "image_id": "Egyptian_Mau_85", "breed": "Egyptian_Mau", "observation_status": "ok", "seconds": 3.157045100000687}
+{"index": 34, "total": 120, "image_id": "refined_Egyptian Mau_116", "breed": "Egyptian_Mau", "observation_status": "ok", "seconds": 3.5285504999919794}
+{"index": 35, "total": 120, "image_id": "refined_Egyptian Mau_201", "breed": "Egyptian_Mau", "observation_status": "ok", "seconds": 3.7402426000044215}
+{"index": 36, "total": 120, "image_id": "refined_Egyptian Mau_313", "breed": "Manx", "observation_status": "ok", "seconds": 4.009128999983659}
+{"index": 37, "total": 120, "image_id": "Maine_Coon_85", "breed": "Maine_Coon", "observation_status": "ok", "seconds": 3.1327346000180114}
+{"index": 38, "total": 120, "image_id": "Maine_Coon_67", "breed": "Maine_Coon", "observation_status": "ok", "seconds": 3.411014899989823}
+{"index": 39, "total": 120, "image_id": "Maine_Coon_2", "breed": "Maine_Coon", "observation_status": "ok", "seconds": 4.192875000007916}
+{"index": 40, "total": 120, "image_id": "refined_Maine Coon_1", "breed": "Maine_Coon", "observation_status": "ok", "seconds": 4.098679300019285}
+{"index": 41, "total": 120, "image_id": "refined_Maine Coon_202", "breed": "Maine_Coon", "observation_status": "ok", "seconds": 4.058316800015746}
+{"index": 42, "total": 120, "image_id": "refined_Maine Coon_188", "breed": "Maine_Coon", "observation_status": "ok", "seconds": 3.364209799998207}
+{"index": 43, "total": 120, "image_id": "Persian_70", "breed": "Persian", "observation_status": "ok", "seconds": 3.7826789999962784}
+{"index": 44, "total": 120, "image_id": "Persian_68", "breed": "Persian", "observation_status": "ok", "seconds": 3.6205245000019204}
+{"index": 45, "total": 120, "image_id": "Persian_25", "breed": "Exotic_Shorthair", "observation_status": "ok", "seconds": 3.559782200027257}
+{"index": 46, "total": 120, "image_id": "refined_Persian_269", "breed": "Persian", "observation_status": "ok", "seconds": 3.846466099988902}
+{"index": 47, "total": 120, "image_id": "refined_Persian_4", "breed": "Persian", "observation_status": "ok", "seconds": 3.250614399992628}
+{"index": 48, "total": 120, "image_id": "refined_Persian_60", "breed": "Persian", "observation_status": "ok", "seconds": 3.011999599984847}
+{"index": 49, "total": 120, "image_id": "Ragdoll_97", "breed": "Ragdoll", "observation_status": "ok", "seconds": 3.929731999989599}
+{"index": 50, "total": 120, "image_id": "Ragdoll_78", "breed": "Ragdoll", "observation_status": "ok", "seconds": 2.9084071000106633}
+{"index": 51, "total": 120, "image_id": "Ragdoll_25", "breed": "Ragdoll", "observation_status": "ok", "seconds": 4.771747299993876}
+{"index": 52, "total": 120, "image_id": "refined_Ragdoll_59", "breed": "Birman", "observation_status": "ok", "seconds": 3.6120439999795053}
+{"index": 53, "total": 120, "image_id": "refined_Ragdoll_181", "breed": "Birman", "observation_status": "ok", "seconds": 2.8485896999773104}
+{"index": 54, "total": 120, "image_id": "refined_Ragdoll_228", "breed": "Birman", "observation_status": "ok", "seconds": 3.93452690000413}
+{"index": 55, "total": 120, "image_id": "Russian_Blue_78", "breed": "Russian_Blue", "observation_status": "ok", "seconds": 3.0013838000013493}
+{"index": 56, "total": 120, "image_id": "Russian_Blue_212", "breed": "Russian_Blue", "observation_status": "ok", "seconds": 3.256041599990567}
+{"index": 57, "total": 120, "image_id": "Russian_Blue_31", "breed": "Russian_Blue", "observation_status": "ok", "seconds": 3.394830000004731}
+{"index": 58, "total": 120, "image_id": "refined_Russian Blue_304", "breed": "Russian_Blue", "observation_status": "ok", "seconds": 3.01834440001403}
+{"index": 59, "total": 120, "image_id": "refined_Russian Blue_221", "breed": "Russian_Blue", "observation_status": "ok", "seconds": 3.2750984999875072}
+{"index": 60, "total": 120, "image_id": "refined_Russian Blue_256", "breed": "Russian_Blue", "observation_status": "ok", "seconds": 2.8819402999943122}
+{"index": 61, "total": 120, "image_id": "Siamese_55", "breed": "Birman", "observation_status": "ok", "seconds": 3.8505165000096895}
+{"index": 62, "total": 120, "image_id": "Siamese_233", "breed": "Siamese", "observation_status": "ok", "seconds": 3.8697317999904044}
+{"index": 63, "total": 120, "image_id": "Siamese_35", "breed": "Siamese", "observation_status": "ok", "seconds": 3.911991400003899}
+{"index": 64, "total": 120, "image_id": "refined_Siamese_316", "breed": "Birman", "observation_status": "ok", "seconds": 3.719623100012541}
+{"index": 65, "total": 120, "image_id": "refined_Siamese_287", "breed": "Siamese", "observation_status": "ok", "seconds": 3.706414499989478}
+{"index": 66, "total": 120, "image_id": "refined_Siamese_160", "breed": "Siamese", "observation_status": "ok", "seconds": 3.4982772000075784}
+{"index": 67, "total": 120, "image_id": "Sphynx_91", "breed": "Sphynx", "observation_status": "ok", "seconds": 3.745098599989433}
+{"index": 68, "total": 120, "image_id": "Sphynx_251", "breed": "Sphynx", "observation_status": "ok", "seconds": 4.018729000003077}
+{"index": 69, "total": 120, "image_id": "Sphynx_31", "breed": "Sphynx", "observation_status": "ok", "seconds": 3.5446384999959264}
+{"index": 70, "total": 120, "image_id": "refined_Sphynx_150", "breed": "Sphynx", "observation_status": "ok", "seconds": 3.8042836999811698}
+{"index": 71, "total": 120, "image_id": "refined_Sphynx_220", "breed": "Sphynx", "observation_status": "ok", "seconds": 3.295991800026968}
+{"index": 72, "total": 120, "image_id": "refined_Sphynx_60", "breed": "Sphynx", "observation_status": "ok", "seconds": 3.738690800004406}
+{"index": 73, "total": 120, "image_id": "refined_American Bobtail_107", "breed": "American_Shorthair", "observation_status": "ok", "seconds": 3.528667700011283}
+{"index": 74, "total": 120, "image_id": "refined_American Bobtail_26", "breed": "American_Bobtail", "observation_status": "ok", "seconds": 3.3322698999836575}
+{"index": 75, "total": 120, "image_id": "refined_American Bobtail_166", "breed": "American_Bobtail", "observation_status": "ok", "seconds": 3.2339017000049353}
+{"index": 76, "total": 120, "image_id": "refined_American Bobtail_45", "breed": "American_Bobtail", "observation_status": "ok", "seconds": 3.429445099987788}
+{"index": 77, "total": 120, "image_id": "refined_American Bobtail_52", "breed": "American_Bobtail", "observation_status": "ok", "seconds": 3.180855499987956}
+{"index": 78, "total": 120, "image_id": "refined_American Bobtail_216", "breed": "American_Bobtail", "observation_status": "ok", "seconds": 3.423114000004716}
+{"index": 79, "total": 120, "image_id": "refined_American Curl_201", "breed": "American_Curl", "observation_status": "ok", "seconds": 4.247030799975619}
+{"index": 80, "total": 120, "image_id": "refined_American Curl_268", "breed": "American_Curl", "observation_status": "ok", "seconds": 3.827760700020008}
+{"index": 81, "total": 120, "image_id": "refined_American Curl_248", "breed": "Norwegian_Forest", "observation_status": "ok", "seconds": 3.8855915000021923}
+{"index": 82, "total": 120, "image_id": "refined_American Curl_135", "breed": "American_Curl", "observation_status": "ok", "seconds": 4.1338334000029135}
+{"index": 83, "total": 120, "image_id": "refined_American Curl_237", "breed": "American_Curl", "observation_status": "ok", "seconds": 4.559914799989201}
+{"index": 84, "total": 120, "image_id": "refined_American Curl_12", "breed": "American_Curl", "observation_status": "ok", "seconds": 5.20722179999575}
+{"index": 85, "total": 120, "image_id": "refined_American Shorthair_201", "breed": "American_Shorthair", "observation_status": "ok", "seconds": 3.3515716000110842}
+{"index": 86, "total": 120, "image_id": "refined_American Shorthair_291", "breed": "American_Bobtail", "observation_status": "ok", "seconds": 3.411770400009118}
+{"index": 87, "total": 120, "image_id": "refined_American Shorthair_283", "breed": "American_Bobtail", "observation_status": "ok", "seconds": 3.246652899979381}
+{"index": 88, "total": 120, "image_id": "refined_American Shorthair_212", "breed": "American_Shorthair", "observation_status": "ok", "seconds": 3.1133831000188366}
+{"index": 89, "total": 120, "image_id": "refined_American Shorthair_205", "breed": "American_Shorthair", "observation_status": "ok", "seconds": 3.7289119999913964}
+{"index": 90, "total": 120, "image_id": "refined_American Shorthair_102", "breed": "American_Bobtail", "observation_status": "ok", "seconds": 3.5940213999710977}
+{"index": 91, "total": 120, "image_id": "refined_Exotic Shorthair_192", "breed": "Exotic_Shorthair", "observation_status": "ok", "seconds": 3.1559348999871872}
+{"index": 92, "total": 120, "image_id": "refined_Exotic Shorthair_217", "breed": "Exotic_Shorthair", "observation_status": "ok", "seconds": 4.29219199999352}
+{"index": 93, "total": 120, "image_id": "refined_Exotic Shorthair_138", "breed": "Exotic_Shorthair", "observation_status": "ok", "seconds": 4.6299527999944985}
+{"index": 94, "total": 120, "image_id": "refined_Exotic Shorthair_161", "breed": "Exotic_Shorthair", "observation_status": "ok", "seconds": 4.597580199973891}
+{"index": 95, "total": 120, "image_id": "refined_Exotic Shorthair_19", "breed": "Exotic_Shorthair", "observation_status": "ok", "seconds": 3.9407956000068225}
+{"index": 96, "total": 120, "image_id": "refined_Exotic Shorthair_41", "breed": "Exotic_Shorthair", "observation_status": "ok", "seconds": 3.207400300016161}
+{"index": 97, "total": 120, "image_id": "refined_Manx_149", "breed": "Manx", "observation_status": "ok", "seconds": 3.813599199987948}
+{"index": 98, "total": 120, "image_id": "refined_Manx_9", "breed": "Manx", "observation_status": "ok", "seconds": 3.7933979999797884}
+{"index": 99, "total": 120, "image_id": "refined_Manx_212", "breed": "Manx", "observation_status": "ok", "seconds": 3.5780747999961022}
+{"index": 100, "total": 120, "image_id": "refined_Manx_293", "breed": "Manx", "observation_status": "ok", "seconds": 3.516400699998485}
+{"index": 101, "total": 120, "image_id": "refined_Manx_3", "breed": "Manx", "observation_status": "ok", "seconds": 3.904217300005257}
+{"index": 102, "total": 120, "image_id": "refined_Manx_318", "breed": "Manx", "observation_status": "ok", "seconds": 3.65461110000615}
+{"index": 103, "total": 120, "image_id": "refined_Norwegian Forest_272", "breed": "Manx", "observation_status": "ok", "seconds": 3.362192500004312}
+{"index": 104, "total": 120, "image_id": "refined_Norwegian Forest_113", "breed": "Norwegian_Forest", "observation_status": "ok", "seconds": 4.03912540001329}
+{"index": 105, "total": 120, "image_id": "refined_Norwegian Forest_65", "breed": "Norwegian_Forest", "observation_status": "ok", "seconds": 3.7595472000248265}
+{"index": 106, "total": 120, "image_id": "refined_Norwegian Forest_115", "breed": "Norwegian_Forest", "observation_status": "ok", "seconds": 3.3760837999871}
+{"index": 107, "total": 120, "image_id": "refined_Norwegian Forest_117", "breed": "Norwegian_Forest", "observation_status": "ok", "seconds": 3.377519299974665}
+{"index": 108, "total": 120, "image_id": "refined_Norwegian Forest_293", "breed": "Norwegian_Forest", "observation_status": "ok", "seconds": 3.7229175999818835}
+{"index": 109, "total": 120, "image_id": "refined_Scottish Fold_136", "breed": "Scottish_Fold", "observation_status": "ok", "seconds": 3.2517360000056215}
+{"index": 110, "total": 120, "image_id": "refined_Scottish Fold_179", "breed": "Scottish_Fold", "observation_status": "ok", "seconds": 3.3320020999817643}
+{"index": 111, "total": 120, "image_id": "refined_Scottish Fold_163", "breed": "Scottish_Fold", "observation_status": "ok", "seconds": 4.077714199986076}
+{"index": 112, "total": 120, "image_id": "refined_Scottish Fold_89", "breed": "Scottish_Fold", "observation_status": "ok", "seconds": 3.6992882000049576}
+{"index": 113, "total": 120, "image_id": "refined_Scottish Fold_247", "breed": "Scottish_Fold", "observation_status": "ok", "seconds": 4.227359799988335}
+{"index": 114, "total": 120, "image_id": "refined_Scottish Fold_70", "breed": "Scottish_Fold", "observation_status": "ok", "seconds": 3.5511539000144694}
+{"index": 115, "total": 120, "image_id": "refined_Turkish Angora_161", "breed": "Turkish_Angora", "observation_status": "ok", "seconds": 3.3208788000047207}
+{"index": 116, "total": 120, "image_id": "refined_Turkish Angora_155", "breed": "Turkish_Angora", "observation_status": "ok", "seconds": 3.3112662000057753}
+{"index": 117, "total": 120, "image_id": "refined_Turkish Angora_335", "breed": "Turkish_Angora", "observation_status": "ok", "seconds": 3.006400800019037}
+{"index": 118, "total": 120, "image_id": "refined_Turkish Angora_257", "breed": "American_Shorthair", "observation_status": "ok", "seconds": 4.165367600013269}
+{"index": 119, "total": 120, "image_id": "refined_Turkish Angora_231", "breed": "Turkish_Angora", "observation_status": "ok", "seconds": 2.9521740000054706}
+{"index": 120, "total": 120, "image_id": "refined_Turkish Angora_119", "breed": "Turkish_Angora", "observation_status": "ok", "seconds": 3.1028589000052307}
+TASK END image-understanding-regression; state=failed

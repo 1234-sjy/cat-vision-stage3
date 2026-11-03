@@ -30,8 +30,8 @@ def main(args):
         selected=json.loads((data/'shared-regression.json').read_text(encoding='utf-8'))
     args.output.mkdir(parents=True)
     save_json(args.output/'selection.json',{'mode':args.mode,'selection':'fixed before reading outputs',
-        'records':selected,'classification_config':json.loads((ROOT/'configs/active-vlm.json').read_text()),
-        'observation_config':json.loads((ROOT/'configs/feature-description.json').read_text())})
+        'records':selected,'classification_config':json.loads((ROOT/'configs/active-vlm.json').read_text(encoding='utf-8')),
+        'observation_config':json.loads((ROOT/'configs/feature-description.json').read_text(encoding='utf-8'))})
     predictions=[];engine=LocalVLM();started=time.perf_counter()
     try:
         for index,row in enumerate(selected):
@@ -61,7 +61,7 @@ def main(args):
         'structured_observations':sum(p['observation_status']=='ok' for p in predictions),
         'classification_accuracy_is_not_description_accuracy':True}
     if args.mode=='regression':
-        old=json.loads((ROOT/'artifacts/optimization-v4/shared-regression/predictions.json').read_text())
+        old=json.loads((ROOT/'artifacts/optimization-v4/shared-regression/predictions.json').read_text(encoding='utf-8'))
         lookup={r['image_id']:r for r in old}
         changed=[{'image_id':p['image_id'],'old':lookup[p['image_id']].get('breed'),'new':p.get('breed')}
                  for p in predictions if p.get('breed')!=lookup[p['image_id']].get('breed')]

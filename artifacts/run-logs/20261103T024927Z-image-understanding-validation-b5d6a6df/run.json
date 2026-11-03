@@ -1,0 +1,19 @@
+{
+  "task": "image-understanding-validation",
+  "state": "completed",
+  "pid": 15640,
+  "created_utc": "2026-11-03T02:49:27.453859+00:00",
+  "logs": "artifacts/run-logs/20261103T024927Z-image-understanding-validation-b5d6a6df",
+  "automatic_retry": false,
+  "automatic_restart": false,
+  "argv": [
+    "scripts/check_image_understanding.py",
+    "--mode",
+    "validation",
+    "--data-root",
+    "../../work/cat-data",
+    "--output",
+    "artifacts/image-understanding-v2/validation"
+  ],
+  "finished_utc": "2026-11-03T02:50:30.639399+00:00"
+}

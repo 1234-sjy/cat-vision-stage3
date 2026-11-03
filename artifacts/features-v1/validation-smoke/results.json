@@ -1,0 +1,130 @@
+[
+  {
+    "image_id": "refined_Scottish Fold_286",
+    "input_sha256": "0c0009a5fcd4a327be93072d0df8909bfb3ed142d558c4c8cd45078c2a1a0a76",
+    "result": {
+      "status": "ok",
+      "has_cat": true,
+      "breed": "Scottish_Fold",
+      "breed_zh": "苏格兰折耳猫",
+      "features": [
+        "短毛，浅橘色带深色条纹",
+        "耳朵下垂，圆脸，琥珀色眼"
+      ],
+      "raw_text": "Scottish_Fold",
+      "feature_raw_text": "短毛，浅橘色带深色条纹\n耳朵下垂，圆脸，琥珀色眼",
+      "feature_prompt_version": "visible-cat-features-v1",
+      "feature_status": "ok",
+      "feature_adapter_disabled": true,
+      "feature_seconds": 0.9125656000105664,
+      "feature_output_tokens": 24,
+      "route": "qwen3_vl_4b",
+      "model": "Qwen/Qwen3-VL-4B-Instruct",
+      "adapter": "weights/qwen-cat-lora-v4",
+      "classification_seconds": 1.2466853999940213,
+      "prompt_version": "cat20-lora-v1",
+      "inference_seconds": 2.1610504999989644,
+      "patch_projection": "equivalent_linear",
+      "output_format": "lines",
+      "throttle_seconds": 0.0,
+      "input_tokens": 340,
+      "output_tokens": 5
+    }
+  },
+  {
+    "image_id": "refined_Bengal_154",
+    "input_sha256": "b07ac924b6e54725f8bf3bc6fb3f406427a8ff38a9ea9a276b4f84703c8f4036",
+    "result": {
+      "status": "ok",
+      "has_cat": true,
+      "breed": "Bengal",
+      "breed_zh": "孟加拉猫",
+      "features": [
+        "短毛，深色斑纹清晰",
+        "耳朵尖立，脸型狭长"
+      ],
+      "raw_text": "Bengal",
+      "feature_raw_text": "短毛，深色斑纹清晰\n耳朵尖立，脸型狭长",
+      "feature_prompt_version": "visible-cat-features-v1",
+      "feature_status": "ok",
+      "feature_adapter_disabled": true,
+      "feature_seconds": 0.7290731999964919,
+      "feature_output_tokens": 18,
+      "route": "qwen3_vl_4b",
+      "model": "Qwen/Qwen3-VL-4B-Instruct",
+      "adapter": "weights/qwen-cat-lora-v4",
+      "classification_seconds": 0.30644349999784026,
+      "prompt_version": "cat20-lora-v1",
+      "inference_seconds": 1.0355635000014445,
+      "patch_projection": "equivalent_linear",
+      "output_format": "lines",
+      "throttle_seconds": 0.0,
+      "input_tokens": 346,
+      "output_tokens": 4
+    }
+  },
+  {
+    "image_id": "refined_Sphynx_140",
+    "input_sha256": "4efbe9e44fb3d6e76b70a4e0212b47eb5e5512d1cdbf495a296dae7cc5b5d5f4",
+    "result": {
+      "status": "ok",
+      "has_cat": true,
+      "breed": "Sphynx",
+      "breed_zh": "斯芬克斯猫",
+      "features": [
+        "无毛，浅棕与深棕相间",
+        "大耳竖立，眼大而圆"
+      ],
+      "raw_text": "Sphynx",
+      "feature_raw_text": "无毛，浅棕与深棕相间。\n大耳竖立，眼大而圆。",
+      "feature_prompt_version": "visible-cat-features-v1",
+      "feature_status": "ok",
+      "feature_adapter_disabled": true,
+      "feature_seconds": 0.8345925000030547,
+      "feature_output_tokens": 22,
+      "route": "qwen3_vl_4b",
+      "model": "Qwen/Qwen3-VL-4B-Instruct",
+      "adapter": "weights/qwen-cat-lora-v4",
+      "classification_seconds": 0.37153679999755695,
+      "prompt_version": "cat20-lora-v1",
+      "inference_seconds": 1.2061701999919023,
+      "patch_projection": "equivalent_linear",
+      "output_format": "lines",
+      "throttle_seconds": 0.0,
+      "input_tokens": 355,
+      "output_tokens": 5
+    }
+  },
+  {
+    "image_id": "refined_Scottish Fold_286",
+    "input_sha256": "0c0009a5fcd4a327be93072d0df8909bfb3ed142d558c4c8cd45078c2a1a0a76",
+    "result": {
+      "status": "ok",
+      "has_cat": true,
+      "breed": "Scottish_Fold",
+      "breed_zh": "苏格兰折耳猫",
+      "features": [
+        "短毛，浅橘色带深色条纹",
+        "耳朵下垂，圆脸，琥珀色眼"
+      ],
+      "raw_text": "Scottish_Fold",
+      "feature_raw_text": "短毛，浅橘色带深色条纹\n耳朵下垂，圆脸，琥珀色眼",
+      "feature_prompt_version": "visible-cat-features-v1",
+      "feature_status": "ok",
+      "feature_adapter_disabled": true,
+      "feature_seconds": 0.9152593999897363,
+      "feature_output_tokens": 24,
+      "route": "qwen3_vl_4b",
+      "model": "Qwen/Qwen3-VL-4B-Instruct",
+      "adapter": "weights/qwen-cat-lora-v4",
+      "classification_seconds": 0.3611078000103589,
+      "prompt_version": "cat20-lora-v1",
+      "inference_seconds": 1.2764078000036534,
+      "patch_projection": "equivalent_linear",
+      "output_format": "lines",
+      "throttle_seconds": 0.0,
+      "input_tokens": 340,
+      "output_tokens": 5
+    }
+  }
+]

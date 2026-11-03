@@ -1,0 +1,301 @@
+{
+  "started_utc": "2026-11-03T03:08:15.418Z",
+  "frames": [
+    {
+      "file": "00000.jpg",
+      "at_ms": 0
+    },
+    {
+      "file": "00001.jpg",
+      "at_ms": 67
+    },
+    {
+      "file": "00002.jpg",
+      "at_ms": 114
+    },
+    {
+      "file": "00003.jpg",
+      "at_ms": 161
+    },
+    {
+      "file": "00004.jpg",
+      "at_ms": 208
+    },
+    {
+      "file": "00005.jpg",
+      "at_ms": 256
+    },
+    {
+      "file": "00006.jpg",
+      "at_ms": 303
+    },
+    {
+      "file": "00007.jpg",
+      "at_ms": 350
+    },
+    {
+      "file": "00008.jpg",
+      "at_ms": 395
+    },
+    {
+      "file": "00009.jpg",
+      "at_ms": 457
+    },
+    {
+      "file": "00010.jpg",
+      "at_ms": 504
+    },
+    {
+      "file": "00011.jpg",
+      "at_ms": 551
+    },
+    {
+      "file": "00012.jpg",
+      "at_ms": 612
+    },
+    {
+      "file": "00013.jpg",
+      "at_ms": 674
+    },
+    {
+      "file": "00014.jpg",
+      "at_ms": 720
+    },
+    {
+      "file": "00015.jpg",
+      "at_ms": 784
+    },
+    {
+      "file": "00016.jpg",
+      "at_ms": 831
+    },
+    {
+      "file": "00017.jpg",
+      "at_ms": 877
+    },
+    {
+      "file": "00018.jpg",
+      "at_ms": 924
+    },
+    {
+      "file": "00019.jpg",
+      "at_ms": 971
+    },
+    {
+      "file": "00020.jpg",
+      "at_ms": 1018
+    },
+    {
+      "file": "00021.jpg",
+      "at_ms": 1065
+    },
+    {
+      "file": "00022.jpg",
+      "at_ms": 1111
+    },
+    {
+      "file": "00023.jpg",
+      "at_ms": 1157
+    },
+    {
+      "file": "00024.jpg",
+      "at_ms": 1204
+    },
+    {
+      "file": "00025.jpg",
+      "at_ms": 1251
+    },
+    {
+      "file": "00026.jpg",
+      "at_ms": 1297
+    },
+    {
+      "file": "00027.jpg",
+      "at_ms": 1345
+    },
+    {
+      "file": "00028.jpg",
+      "at_ms": 1391
+    },
+    {
+      "file": "00029.jpg",
+      "at_ms": 1438
+    },
+    {
+      "file": "00030.jpg",
+      "at_ms": 1484
+    },
+    {
+      "file": "00031.jpg",
+      "at_ms": 1546
+    },
+    {
+      "file": "00032.jpg",
+      "at_ms": 1593
+    },
+    {
+      "file": "00033.jpg",
+      "at_ms": 1639
+    },
+    {
+      "file": "00034.jpg",
+      "at_ms": 1702
+    },
+    {
+      "file": "00035.jpg",
+      "at_ms": 1763
+    },
+    {
+      "file": "00036.jpg",
+      "at_ms": 1825
+    },
+    {
+      "file": "00037.jpg",
+      "at_ms": 1887
+    },
+    {
+      "file": "00038.jpg",
+      "at_ms": 1933
+    },
+    {
+      "file": "00039.jpg",
+      "at_ms": 1980
+    },
+    {
+      "file": "00040.jpg",
+      "at_ms": 2027
+    },
+    {
+      "file": "00041.jpg",
+      "at_ms": 2074
+    },
+    {
+      "file": "00042.jpg",
+      "at_ms": 2121
+    },
+    {
+      "file": "00043.jpg",
+      "at_ms": 2168
+    },
+    {
+      "file": "00044.jpg",
+      "at_ms": 2215
+    },
+    {
+      "file": "00045.jpg",
+      "at_ms": 2260
+    },
+    {
+      "file": "00046.jpg",
+      "at_ms": 2308
+    },
+    {
+      "file": "00047.jpg",
+      "at_ms": 2355
+    },
+    {
+      "file": "00048.jpg",
+      "at_ms": 2402
+    },
+    {
+      "file": "00049.jpg",
+      "at_ms": 2449
+    },
+    {
+      "file": "00050.jpg",
+      "at_ms": 2496
+    },
+    {
+      "file": "00051.jpg",
+      "at_ms": 2543
+    },
+    {
+      "file": "00052.jpg",
+      "at_ms": 2591
+    },
+    {
+      "file": "00053.jpg",
+      "at_ms": 2637
+    },
+    {
+      "file": "00054.jpg",
+      "at_ms": 2683
+    },
+    {
+      "file": "00055.jpg",
+      "at_ms": 2730
+    },
+    {
+      "file": "00056.jpg",
+      "at_ms": 2777
+    },
+    {
+      "file": "00057.jpg",
+      "at_ms": 2824
+    },
+    {
+      "file": "00058.jpg",
+      "at_ms": 2871
+    },
+    {
+      "file": "00059.jpg",
+      "at_ms": 2918
+    },
+    {
+      "file": "00060.jpg",
+      "at_ms": 2965
+    },
+    {
+      "file": "00061.jpg",
+      "at_ms": 3012
+    },
+    {
+      "file": "00062.jpg",
+      "at_ms": 3059
+    },
+    {
+      "file": "00063.jpg",
+      "at_ms": 3106
+    },
+    {
+      "file": "00064.jpg",
+      "at_ms": 3169
+    },
+    {
+      "file": "00065.jpg",
+      "at_ms": 3216
+    },
+    {
+      "file": "00066.jpg",
+      "at_ms": 3263
+    },
+    {
+      "file": "00067.jpg",
+      "at_ms": 3311
+    },
+    {
+      "file": "00068.jpg",
+      "at_ms": 3371
+    },
+    {
+      "file": "00069.jpg",
+      "at_ms": 3419
+    },
+    {
+      "file": "00070.jpg",
+      "at_ms": 3466
+    },
+    {
+      "file": "00071.jpg",
+      "at_ms": 3513
+    },
+    {
+      "file": "00072.jpg",
+      "at_ms": 3558
+    }
+  ],
+  "inference_completed_at_ms": null,
+  "question_completed_at_ms": null,
+  "real_input_actions": true,
+  "waiting_trimmed": false
+}

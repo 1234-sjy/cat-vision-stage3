@@ -1,0 +1,11 @@
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:02<00:02,  2.65s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  2.28s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  2.34s/it]
+Traceback (most recent call last):
+  File "C:\Users\sjysj\Documents\Codex\2026-10-31\new-chat\outputs\cat-vision-stage2\scripts\check_image_understanding.py", line 83, in <module>
+    main(args)
+  File "C:\Users\sjysj\Documents\Codex\2026-10-31\new-chat\outputs\cat-vision-stage2\scripts\check_image_understanding.py", line 64, in main
+    old=json.loads((ROOT/'artifacts/optimization-v4/shared-regression/predictions.json').read_text())
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sjysj\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py", line 1028, in read_text
+    return f.read()
+           ^^^^^^^^
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xad in position 3379: illegal multibyte sequence

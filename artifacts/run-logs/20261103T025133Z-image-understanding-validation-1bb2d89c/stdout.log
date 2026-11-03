@@ -1,0 +1,10 @@
+TASK START image-understanding-validation; logs=artifacts/run-logs/20261103T025133Z-image-understanding-validation-1bb2d89c
+{"index": 1, "total": 7, "image_id": "refined_Scottish Fold_286", "breed": "Scottish_Fold", "observation_status": "ok", "seconds": 4.190601900001639}
+{"index": 2, "total": 7, "image_id": "refined_Sphynx_125", "breed": "Sphynx", "observation_status": "ok", "seconds": 3.62848899999517}
+{"index": 3, "total": 7, "image_id": "refined_Bengal_117", "breed": "Abyssinian", "observation_status": "ok", "seconds": 3.6755625999940094}
+{"index": 4, "total": 7, "image_id": "refined_Maine Coon_102", "breed": "Maine_Coon", "observation_status": "ok", "seconds": 3.4587592000025325}
+{"index": 5, "total": 7, "image_id": "refined_Persian_122", "breed": "Persian", "observation_status": "ok", "seconds": 3.3452705000090646}
+{"index": 6, "total": 7, "image_id": "american_bulldog_102", "breed": null, "observation_status": "ok", "seconds": 3.9614316999941366}
+{"index": 7, "total": 7, "image_id": "refined_Scottish Fold_286", "breed": "Scottish_Fold", "observation_status": "ok", "seconds": 3.9113590000051772}
+{"count": 7, "seconds": 30.81251489999704, "structured_observations": 7, "classification_accuracy_is_not_description_accuracy": true, "repeated_first_image_breed_stable": true}
+TASK END image-understanding-validation; state=completed

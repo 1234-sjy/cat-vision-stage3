@@ -1,0 +1,20 @@
+{
+  "task": "image-understanding-regression",
+  "state": "failed",
+  "pid": 34896,
+  "created_utc": "2026-11-03T02:57:16.295519+00:00",
+  "logs": "artifacts/run-logs/20261103T025716Z-image-understanding-regression-3fc98c8a",
+  "automatic_retry": false,
+  "automatic_restart": false,
+  "argv": [
+    "scripts/check_image_understanding.py",
+    "--mode",
+    "regression",
+    "--data-root",
+    "../../work/cat-data",
+    "--output",
+    "artifacts/image-understanding-v3/regression"
+  ],
+  "finished_utc": "2026-11-03T03:04:44.367902+00:00",
+  "error": "UnicodeDecodeError: 'gbk' codec can't decode byte 0xad in position 3379: illegal multibyte sequence"
+}

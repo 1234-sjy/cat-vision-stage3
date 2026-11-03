@@ -35,6 +35,8 @@ runtime-*.log
 /artifacts/demo-v4/frames/
 /artifacts/demo-understanding-v3/frames/
 /artifacts/demo-understanding-v3-final/frames/
+/docs/history/**/*.docx
+/docs/history/*.docx
 # Derived image caches are retained in the complete preservation archive.
 /artifacts/optimization-v3/shared-test/images/
 /artifacts/optimization-v3/shared-test/history/**/images/

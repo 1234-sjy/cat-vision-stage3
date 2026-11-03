@@ -19,6 +19,7 @@ def sha(path):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--training-dir', type=Path, required=True)
+    parser.add_argument('--resolution-selection', type=Path)
     args = parser.parse_args()
     complete = json.loads((args.training_dir/'complete.json').read_text(encoding='utf-8'))
     if complete.get('state') != 'complete' or not complete.get('no_test_input'):
@@ -33,11 +34,20 @@ if __name__ == '__main__':
         raise FileExistsError('Final selection already frozen; retain existing assessment')
     metrics = complete['best_validation']
     config = complete['config']
+    max_pixels = config['input_image_pixels_max']
+    if args.resolution_selection is not None:
+        resolution = json.loads(args.resolution_selection.read_text(encoding='utf-8'))
+        if (resolution['adapter_sha256'] != complete['best_adapter_sha256']
+                or resolution['manifest_sha256'] != config['manifest_sha256']['val-selection.json']
+                or resolution['test_used']):
+            raise ValueError('Image-budget selection must use the same adapter and fixed validation')
+        metrics = resolution['validation']
+        max_pixels = resolution['chosen_max_pixels']
     settings = {'model': 'Qwen/Qwen3-VL-4B-Instruct',
         'adapter': adapter.relative_to(ROOT).as_posix(),
         'adapter_sha256': complete['best_adapter_sha256'],
         'prompt_version': VLM_CLASS_PROMPT_VERSION, 'output_format': 'lines',
-        'max_pixels': config['input_image_pixels_max'], 'max_new_tokens': 24,
+        'max_pixels': max_pixels, 'max_new_tokens': 24,
         'accelerate_patch': True, 'runtime_precision': 'BF16 AMP',
         'validation_count': metrics['cat_total'], 'validation_correct': metrics['cat_correct'],
         'validation_dog_count': metrics['dog']['total'],
@@ -54,6 +64,7 @@ if __name__ == '__main__':
         'active_config_sha256': sha(active_path), 'adapter_sha256': complete['best_adapter_sha256'],
         'training_complete_sha256': sha(args.training_dir/'complete.json'),
         'best_epoch': complete['best_epoch'], 'validation': metrics,
+        'resolution_selection': str(args.resolution_selection) if args.resolution_selection else None,
         'selection': 'Fixed validation cat accuracy; dog false-cat rate breaks ties',
         'no_test_input_for_selection': True})
     print('ACTIVATED', complete['best_epoch'], metrics['cat_correct'], metrics['cat_total'], flush=True)

@@ -43,6 +43,9 @@ def main():
     regression_truth = read(BASE/'data/shared-regression.json')
     regression_b = read(BASE/'shared-regression/predictions.json')
     regression_a_source = ROOT/'artifacts/optimization-v3/shared-test/traditional-predictions.json'
+    regression_config = read(regression_a_source.parent/'run-config.json')
+    if regression_config['active_classifier'] != read(ROOT/'configs/active-classifier.json'):
+        raise ValueError('Retained regression classifier configuration changed')
     regression_a = read(regression_a_source)
     validate_comparison(regression_truth, regression_a, regression_b)
     regression = {'traditional': grouped_metrics(regression_truth, regression_a),

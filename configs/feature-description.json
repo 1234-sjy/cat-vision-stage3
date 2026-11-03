@@ -1,0 +1,10 @@
+{
+  "enabled": true,
+  "prompt_version": "image-observation-v3",
+  "max_new_tokens": 384,
+  "question_max_new_tokens": 256,
+  "question_prompt_version": "image-question-v4-separated",
+  "adapter_mode": "base_model_for_observations",
+  "input": "same original image; no breed answer supplied",
+  "breed_classification_config": "active-vlm.json"
+}

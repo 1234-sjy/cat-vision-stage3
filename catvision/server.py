@@ -12,9 +12,24 @@ from uuid import uuid4
 from fastapi import FastAPI, HTTPException, UploadFile
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
+from pydantic import BaseModel, Field, field_validator
 
 from .common import BREEDS, ROOT, image_hash, load_image, save_json
 from .run_control import ModelTask, inference_stream, GpuReservation
+
+
+class ImageQuestion(BaseModel):
+    question: str = Field(min_length=1,max_length=500)
+
+    @field_validator('question')
+    @classmethod
+    def strip_question(cls,value):
+        value=value.strip()
+        if not value:
+            raise ValueError('请输入图片问题')
+        from .vlm_features import split_image_questions
+        split_image_questions(value)
+        return value
 
 
 def model_files_ready(base_dir: Path) -> bool:
@@ -95,6 +110,22 @@ class LocalComparison:
         with ModelTask("web-comparison"):
             try:
                 return self._run(image, directory, progress)
+            except BaseException:
+                self.close()
+                raise
+            finally:
+                if not self.keep_loaded:
+                    self.close()
+
+    def answer_question(self,image,question):
+        with ModelTask('web-image-question'):
+            try:
+                engine,reused=self._engine_for('vlm')
+                with inference_stream(owner=engine):
+                    result=engine.answer_question(image,question)
+                result['input_sha256']=image_hash(image)
+                result['load_seconds']=0.0 if reused else engine.load_seconds
+                return result
             except BaseException:
                 self.close()
                 raise
@@ -228,11 +259,30 @@ def create_app(base_dir: Path = ROOT, runner=None) -> FastAPI:
         def progress(text):
             job.update(state="running", message=text)
         try:
-            job["result"] = pipeline(image, directory, progress)
-            job.update(state="completed", message="识别完成")
+            result = pipeline(image, directory, progress)
+            outcome={**job,'result':result,'state':'completed','message':'识别完成'}
         except Exception as exc:
-            job.update(state="error", message=f"识别未完成：{type(exc).__name__}: {exc}")
-        save_json(directory / "result.json", job)
+            outcome={**job,'state':'error','message':f'识别未完成：{type(exc).__name__}: {exc}'}
+        finish_job(job,directory,outcome)
+
+    def finish_job(job,directory,outcome):
+        # Publish completion only after the corresponding record is on disk.
+        try:
+            save_json(directory/'result.json',outcome)
+        except Exception as exc:
+            job.update(state='error',message=f'保存结果失败：{type(exc).__name__}: {exc}')
+            return
+        job.update(outcome)
+
+    def execute_question(job_id,image,directory):
+        job=jobs[job_id]
+        job.update(state='running',message='正在观察原图并回答问题')
+        try:
+            result=pipeline.answer_question(image,job['question'])
+            outcome={**job,'result':result,'state':'completed','message':'回答完成'}
+        except Exception as exc:
+            outcome={**job,'state':'error','message':f'回答未完成：{type(exc).__name__}: {exc}'}
+        finish_job(job,directory,outcome)
 
     @app.post("/api/recognize", status_code=202)
     async def recognize(file: UploadFile):
@@ -266,6 +316,27 @@ def create_app(base_dir: Path = ROOT, runner=None) -> FastAPI:
         if path.exists():
             return json.loads(path.read_text(encoding="utf-8"))
         raise HTTPException(404, "没有找到这次识别")
+
+    @app.post('/api/jobs/{job_id}/questions',status_code=202)
+    def ask_image(job_id: str,payload: ImageQuestion):
+        parent=get_job(job_id)
+        if parent['state']!='completed' or parent.get('kind')=='image_question':
+            raise HTTPException(409,'请先完成这张图片的识别')
+        photo=results_dir/job_id/'input.png'
+        if not photo.is_file():
+            raise HTTPException(404,'没有找到这张原图')
+        if not callable(getattr(pipeline,'answer_question',None)):
+            raise HTTPException(503,'当前服务未加载图像问答模型')
+        if sum(j['state'] in {'queued','running'} for j in jobs.values())>=4:
+            raise HTTPException(429,'已有任务等待处理，请稍后再问')
+        image=load_image(photo.read_bytes(),max_side=1600)
+        identity=uuid4().hex
+        directory=results_dir/identity;directory.mkdir()
+        jobs[identity]={'id':identity,'kind':'image_question','parent_id':job_id,
+            'question':payload.question,'state':'queued','message':'等待图片问答',
+            'input_sha256':image_hash(image),'created_utc':datetime.now(timezone.utc).isoformat()}
+        executor.submit(execute_question,identity,image,directory)
+        return JSONResponse({'id':identity,'state':'queued'},status_code=202)
 
     return app
 

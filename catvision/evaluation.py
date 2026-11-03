@@ -53,6 +53,7 @@ def inference_fingerprint(root: Path, route: str) -> str:
         files += [root / "catvision/vlm.py"]
         files += [root/name for name in ['catvision/vlm_prompts.py','catvision/vlm_format.py',
                   'catvision/vlm_acceleration.py','catvision/vlm_adapter.py',
+                  'catvision/vlm_features.py','configs/feature-description.json',
                   'configs/active-vlm.json'] if (root/name).exists()]
         from .vlm_adapter import resolve_adapter, adapter_files
         settings_path = root/'configs/active-vlm.json'

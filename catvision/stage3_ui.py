@@ -95,6 +95,8 @@ def current_result():
         st.session_state.current_job=job
         if job['state'] in {'queued','running'}:
             st.info(job['message'])
+            if not job.get('worker',{}).get('ready',True):
+                st.warning(job['worker']['message'])
             return
         if job['state'] in {'error','interrupted'}:
             st.error(job['message'])

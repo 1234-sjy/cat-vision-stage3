@@ -4,6 +4,8 @@ import io
 from pathlib import Path
 from tempfile import TemporaryDirectory
 import unittest
+from concurrent.futures import ThreadPoolExecutor
+from dataclasses import replace
 
 from fastapi.testclient import TestClient
 from PIL import Image
@@ -120,6 +122,21 @@ class Stage3ServiceTests(unittest.TestCase):
         self.assertEqual(question['parent_id'], identity)
         self.assertEqual(question['kind'], 'image_question')
         self.assertEqual(self.client.post('/api/jobs/'+identity+'/questions', headers=self.b, json={'question':'耳朵？'}).status_code, 404)
+
+    def test_concurrent_admission_respects_queue_capacity(self):
+        from catvision.stage3_store import Store
+        limited = Store(replace(self.settings,max_pending=2))
+        self.addCleanup(limited.engine.dispose)
+        user = limited.user(username='first_user')
+        def submit(_):
+            try:
+                limited.add_job(user.id)
+                return True
+            except OverflowError:
+                return False
+        with ThreadPoolExecutor(max_workers=6) as pool:
+            admitted = list(pool.map(submit,range(6)))
+        self.assertEqual(sum(admitted),2)
 
 
 if __name__ == '__main__':

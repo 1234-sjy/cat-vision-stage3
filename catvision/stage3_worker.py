@@ -68,6 +68,7 @@ def main():
     stop = threading.Event()
     runner = LocalComparison(keep_loaded=True)
     connection = None
+    thread = None
 
     def heartbeat():
         while not stop.wait(5):
@@ -122,6 +123,8 @@ def main():
             raise
         finally:
             stop.set()
+            if thread is not None:
+                thread.join(timeout=10)
             if connection is not None and connection.is_open:
                 connection.close()
             runner.close()

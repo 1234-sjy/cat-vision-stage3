@@ -14,7 +14,7 @@ from pydantic import BaseModel, Field, field_validator
 from sqlalchemy.exc import IntegrityError
 
 from .common import BREEDS, load_image
-from .stage3_auth import create_token, hash_password, token_user, verify_password
+from .stage3_auth import DUMMY_PASSWORD_HASH, create_token, hash_password, token_user, verify_password
 from .stage3_queue import Publisher
 from .stage3_settings import Settings
 from .stage3_store import Store
@@ -108,7 +108,7 @@ def create_app(settings=None, publisher=None):
     def login(payload: Credentials):
         user = store.user(username=payload.username)
         # Equal work also for an unknown username.
-        expected = user.password_hash if user else hash_password('unregistered-user')
+        expected = user.password_hash if user else DUMMY_PASSWORD_HASH
         matched = verify_password(payload.password,expected)
         if not user or not matched:
             raise HTTPException(401,'用户名或密码不正确')
@@ -169,6 +169,8 @@ def create_app(settings=None, publisher=None):
     @app.get('/api/jobs/{identity}')
     def job(identity: str,user=Depends(current_user)):
         result = owned(identity,user)
+        if result['state'] in {'queued','running'}:
+            result['worker'] = store.worker()
         if result['kind']=='comparison':
             result['questions'] = store.history(user.id,100,parent_id=identity)['items']
         return result

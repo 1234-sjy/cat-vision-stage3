@@ -24,6 +24,9 @@ def verify_password(password: str, stored: str) -> bool:
         return False
 
 
+DUMMY_PASSWORD_HASH = hash_password('unregistered-user')
+
+
 def create_token(user_id: str, settings) -> str:
     now = datetime.now(timezone.utc)
     return jwt.encode({'sub':user_id, 'iat':now, 'exp':now+timedelta(hours=settings.token_hours),

@@ -2,7 +2,8 @@
 from datetime import datetime, timezone
 from uuid import uuid4
 
-from sqlalchemy import JSON, Boolean, DateTime, ForeignKey, Integer, String, Text, create_engine, func, select, update
+from sqlalchemy import JSON, Boolean, DateTime, ForeignKey, String, Text, create_engine, func, select, text, update
+from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, sessionmaker
 
 
@@ -63,6 +64,13 @@ class Store:
         self.engine = create_engine(settings.database_url, connect_args=options, pool_pre_ping=True)
         self.session = sessionmaker(self.engine, expire_on_commit=False)
         Base.metadata.create_all(self.engine)
+        try:
+            with self.session.begin() as db:
+                if db.get(WorkerState,'gpu') is None:
+                    db.add(WorkerState(name='gpu',ready=False,message='模型工作端尚未启动'))
+        except IntegrityError:
+            # A simultaneously starting process already created the singleton row.
+            pass
 
     def add_user(self, username, password_hash):
         with self.session.begin() as db:
@@ -76,8 +84,10 @@ class Store:
 
     def add_job(self, user_id, *, label='猫的照片', kind='comparison', parent_id=None, question=None, identity=None):
         with self.session.begin() as db:
-            # Serialize admission against the worker row on PostgreSQL.
-            db.scalar(select(WorkerState).where(WorkerState.name=='gpu').with_for_update())
+            if self.engine.dialect.name=='sqlite':
+                db.execute(text('BEGIN IMMEDIATE'))
+            else:
+                db.scalar(select(WorkerState).where(WorkerState.name=='gpu').with_for_update())
             pending = db.scalar(select(func.count()).select_from(Job).where(Job.state.in_(['queued','running'])))
             if pending >= self.settings.max_pending:
                 raise OverflowError('已有任务等待处理，请稍后再试')

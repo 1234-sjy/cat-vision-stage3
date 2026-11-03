@@ -1,9 +1,10 @@
-FROM nvidia/cuda:12.8.1-cudnn-runtime-ubuntu24.04
+FROM python:3.12.12-slim-bookworm
 ENV DEBIAN_FRONTEND=noninteractive PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 PIP_NO_CACHE_DIR=1 \
-    PATH=/opt/venv/bin:$PATH CATVISION_FAST_INFERENCE=1 TOKENIZERS_PARALLELISM=false
+    CATVISION_FAST_INFERENCE=1 TOKENIZERS_PARALLELISM=false \
+    NVIDIA_VISIBLE_DEVICES=all NVIDIA_DRIVER_CAPABILITIES=compute,utility
+# CUDA/cuDNN userspace libraries are supplied by the pinned PyTorch cu128 wheels.
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    python3.12 python3.12-venv ca-certificates libgl1 libglib2.0-0t64 \
-    && rm -rf /var/lib/apt/lists/* && python3.12 -m venv /opt/venv
+    libgl1 libglib2.0-0 && rm -rf /var/lib/apt/lists/*
 WORKDIR /app
 RUN python -m pip install torch==2.9.1 torchvision==0.24.1 --index-url https://download.pytorch.org/whl/cu128
 COPY requirements.txt requirements-worker.txt ./

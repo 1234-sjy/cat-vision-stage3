@@ -3,12 +3,16 @@ ENV DEBIAN_FRONTEND=noninteractive PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 
     CATVISION_FAST_INFERENCE=1 TOKENIZERS_PARALLELISM=false \
     NVIDIA_VISIBLE_DEVICES=all NVIDIA_DRIVER_CAPABILITIES=compute,utility
 # CUDA/cuDNN userspace libraries are supplied by the pinned PyTorch cu128 wheels.
-RUN apt-get update && apt-get install -y --no-install-recommends \
+ARG DEBIAN_MIRROR=https://deb.debian.org
+RUN sed -i "s|http://deb.debian.org|${DEBIAN_MIRROR}|g" /etc/apt/sources.list.d/debian.sources \
+    && apt-get update && apt-get install -y --no-install-recommends \
     libgl1 libglib2.0-0 && rm -rf /var/lib/apt/lists/*
 WORKDIR /app
-RUN python -m pip install torch==2.9.1 torchvision==0.24.1 --index-url https://download.pytorch.org/whl/cu128
+ARG TORCH_INDEX_URL=https://download.pytorch.org/whl/cu128
+ARG PIP_INDEX_URL=https://pypi.org/simple
+RUN python -m pip install torch==2.9.1 torchvision==0.24.1 --index-url "$TORCH_INDEX_URL"
 COPY requirements.txt requirements-worker.txt ./
-RUN python -m pip install -r requirements-worker.txt
+RUN python -m pip install --index-url "$PIP_INDEX_URL" -r requirements-worker.txt
 COPY catvision/ ./catvision/
 COPY configs/ ./configs/
 COPY scripts/ ./scripts/

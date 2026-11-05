@@ -31,6 +31,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.web
+      args:
+        PIP_INDEX_URL: ${CATVISION_PIP_INDEX_URL:-https://pypi.org/simple}
     environment: &application-env
       DATABASE_URL: postgresql+psycopg://catvision:${DB_PASSWORD}@db:5432/catvision
       AMQP_URL: amqp://catvision:${MQ_PASSWORD}@queue:5672/catvision
@@ -58,6 +60,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.worker
+      args:
+        PIP_INDEX_URL: ${CATVISION_PIP_INDEX_URL:-https://pypi.org/simple}
+        TORCH_INDEX_URL: ${CATVISION_TORCH_INDEX_URL:-https://download.pytorch.org/whl/cu128}
+        DEBIAN_MIRROR: ${CATVISION_DEBIAN_MIRROR:-https://deb.debian.org}
     environment: *application-env
     gpus: all
     shm_size: 2gb

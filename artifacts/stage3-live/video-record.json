@@ -1,0 +1,29 @@
+{
+  "video": "实际运行演示.mp4",
+  "playback_speed": 1.0,
+  "model_wait_removed": false,
+  "answers_modified": false,
+  "segments": [
+    {
+      "source": "page@e91bcf84f5ac2ee106967dd9c319bfdc.webm",
+      "start_seconds": 0,
+      "end_seconds": null,
+      "playback_speed": 1.0,
+      "purpose": "real Linux and Docker startup with model preload"
+    },
+    {
+      "source": "page@d6cbb9cd19273fcc141cc48b6e7bd4ad.webm",
+      "start_seconds": 0,
+      "end_seconds": 13,
+      "playback_speed": 1.0,
+      "purpose": "real upload and complete new inference; later idle time from automation timeout removed"
+    },
+    {
+      "source": "page@5b376c22f674849532325d0bb4bb9f6e.webm",
+      "start_seconds": 0,
+      "end_seconds": null,
+      "playback_speed": 1.0,
+      "purpose": "open the same completed task, run a new image question, rename and restore history"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "started_utc": "2026-11-05T05:06:52.215Z",
+  "completed_utc": "2026-11-05T05:07:05.182Z",
+  "real_gpu_recognition": true,
+  "real_image_question": true,
+  "history_persisted": true,
+  "user_isolation": true,
+  "upload_lock": true,
+  "task_identity": true,
+  "browser_errors": [],
+  "comparison_id": "b9db7658b0614ef995b74956bdb6cc71",
+  "question_id": "5ef2f3f823f34e90aa590aec6b4adca8",
+  "recognition_seconds": 4.711026677000007,
+  "question_seconds": 1.421064969999975,
+  "video_file": "page@5b376c22f674849532325d0bb4bb9f6e.webm",
+  "input_image_sha256_verified": true,
+  "input_hash_method": "sha256(str(RGB_image.size).encode() + RGB_image.tobytes()), max_side=1600",
+  "recognition_created_utc": "2026-11-05T05:04:43.966350+00:00",
+  "recognition_capture": "page@d6cbb9cd19273fcc141cc48b6e7bd4ad.webm"
+}

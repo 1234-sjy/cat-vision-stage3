@@ -11,6 +11,14 @@ bash scripts/start_stage3.sh --build
 
 打开`http://127.0.0.1:8080`，在网页注册应用账号。后续启动用`bash scripts/start_stage3.sh`；已配置好CatVision WSL环境的Windows电脑可以双击“启动项目.cmd”。旧的第二阶段单机入口保留为“启动第二阶段本地版.cmd”。
 
+Windows启动器会维持隐藏的WSL会话，关闭启动窗口后网站仍可使用。停止使用时运行`powershell -ExecutionPolicy Bypass -File scripts/stop_stage3.ps1`，先停止容器，再释放会话。
+
+## 第三阶段实机运行
+
+在本机WSL2 Ubuntu 24.04与真实PostgreSQL、RabbitMQ、GPU容器上运行。上传一张原图，两条路线均返回苏格兰折耳猫：传统视觉1.81秒，Qwen分类与原图描述4.70秒，并行总耗时4.71秒；随后图片问答1.42秒。耗时只对应这次图片任务，启动阶段预加载模型。
+
+实机操作还确认了运行期间锁定选图与拖放、任务ID及图片摘要对应、换图清空旧结果、重新登录后恢复历史、不同账号不能访问彼此的记录。原始结果和运行环境保存在`artifacts/stage3-live`，视频保留实际推理等待。
+
 下面保留第二阶段模型方法、数据与成绩，作为第三阶段复用的模型依据。第三阶段未重新训练模型。
 
 ## 第二阶段模型与实验记录
@@ -36,7 +44,7 @@ bash scripts/start_stage3.sh --build
 
 1514张由原测试集排除历史本地Qwen推理用过的图片及身份关联组后固定，覆盖20类。Qwen按batch4评测；传统列从同一冻结分类器的原1872张逐图记录取对应图片，SHA256逐图核对。原120张用于回归，改进前Qwen为67/120（55.83%）。训练与选模型只用训练/验证集，各组分母分别记录。
 
-本次实机演示的Qwen耗时包含分类与图像描述：传统0.41秒，Qwen4.82秒，两条路线并行总耗时4.82秒。模型在启动时预加载，视频保留真实选图与等待，并演示图片问答（本次1.00秒）。原始测试输出和各品种成绩见`artifacts/optimization-v4`。
+第二阶段已保存的实机演示中，Qwen耗时包含分类与图像描述：传统0.41秒，Qwen4.82秒，两条路线并行总耗时4.82秒，图片问答1.00秒。模型在启动时预加载，原始测试输出和各品种成绩见`artifacts/optimization-v4`。
 
 ## 原图观察与问答
 
@@ -62,7 +70,7 @@ python -m venv .venv
 .venv/Scripts/python.exe -m catvision.server
 ```
 
-浏览器打开`http://127.0.0.1:8765`。也可双击“安装环境.cmd”“启动项目.cmd”。已有解释器由`CATVISION_PYTHON`或`scripts/start.ps1 -PythonExe`指定。训练、下载和驻留服务由GPU租约隔离；训练前关闭网页服务。失败保留日志并停止，没有自动重试或重启。
+浏览器打开`http://127.0.0.1:8765`。也可双击“安装环境.cmd”“启动第二阶段本地版.cmd”。已有解释器由`CATVISION_PYTHON`或`scripts/start.ps1 -PythonExe`指定。训练、下载和驻留服务由GPU租约隔离；训练前关闭网页服务。失败保留日志并停止，没有自动重试或重启。
 
 两份自训练权重`weights/breed-swin-v3-20-fp16.pt`与`breed-swin-v3-detail20-fp16.pt`各约55MB，随代码入库。FP16用于磁盘存储，Swin以FP32执行。官方YOLO/SAM/Qwen从完整保留包恢复，或按上面的脚本获取并校验摘要。运行网页无需训练集，也无需重新训练。Qwen适配器`weights/qwen-cat-lora-v4/adapter_model.safetensors`约66MB，也随Git入库；官方4B底座仍按下载脚本获取或从完整保留包恢复。
 

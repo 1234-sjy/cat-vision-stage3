@@ -1,0 +1,40 @@
+{
+  "id": "5ef2f3f823f34e90aa590aec6b4adca8",
+  "kind": "image_question",
+  "parent_id": "b9db7658b0614ef995b74956bdb6cc71",
+  "label": "猫的照片",
+  "question": "这只猫的耳朵和姿态有什么特点？",
+  "state": "completed",
+  "message": "回答完成",
+  "result": {
+    "status": "ok",
+    "question": "这只猫的耳朵和姿态有什么特点？",
+    "answer": "1. 猫的耳朵呈折叠状，向两侧平展。  \n2. 猫呈坐姿，身体正对镜头，头部略微上扬。",
+    "subquestions": [
+      {
+        "question": "这只猫的耳朵和姿态有什么特点？",
+        "answer": "1. 猫的耳朵呈折叠状，向两侧平展。  \n2. 猫呈坐姿，身体正对镜头，头部略微上扬。",
+        "raw_text": "1. 猫的耳朵呈折叠状，向两侧平展。  \n2. 猫呈坐姿，身体正对镜头，头部略微上扬。",
+        "seconds": 1.421064969999975,
+        "input_tokens": 174,
+        "output_tokens": 37
+      }
+    ],
+    "raw_text": "1. 猫的耳朵呈折叠状，向两侧平展。  \n2. 猫呈坐姿，身体正对镜头，头部略微上扬。",
+    "inference_seconds": 1.421064969999975,
+    "input_tokens": 174,
+    "output_tokens": 37,
+    "prompt_version": "image-question-v4-separated",
+    "adapter_disabled": true,
+    "model": "Qwen/Qwen3-VL-4B-Instruct",
+    "input": "same_original_image_and_question",
+    "input_sha256": "790fd06d582a40e515d43fa9b8b33be7e7f971b966368a07d02ead086560f26d",
+    "load_seconds": 0,
+    "task_id": "5ef2f3f823f34e90aa590aec6b4adca8",
+    "parent_id": "b9db7658b0614ef995b74956bdb6cc71"
+  },
+  "created_utc": "2026-11-05T05:06:55.904887+00:00",
+  "updated_utc": "2026-11-05T05:06:57.389683+00:00",
+  "input_url": "/api/files/5ef2f3f823f34e90aa590aec6b4adca8/input.png",
+  "visualization_url": "/api/files/5ef2f3f823f34e90aa590aec6b4adca8/traditional.png"
+}

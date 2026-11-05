@@ -1,0 +1,6 @@
+{
+  "name": "catvision-web-tests",
+  "private": true,
+  "scripts": {"test": "node --test task_identity.test.cjs"},
+  "devDependencies": {"playwright": "1.62.1"}
+}

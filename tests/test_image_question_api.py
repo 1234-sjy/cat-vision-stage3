@@ -1,4 +1,5 @@
 import io
+import hashlib
 from pathlib import Path
 import tempfile
 import time
@@ -31,6 +32,32 @@ def wait_job(client, identity):
 
 
 class ImageQuestionApiTests(unittest.TestCase):
+    def test_server_binds_results_to_task_and_saved_image_not_runner_metadata(self):
+        class ForeignMetadata(QuestionRunner):
+            def __call__(self, image, directory, progress):
+                return {**super().__call__(image, directory, progress),
+                    'task_id': 'b'*32, 'input_sha256': 'wrong-image'}
+
+            def answer_question(self, image, question):
+                return {**super().answer_question(image, question),
+                    'task_id': 'b'*32, 'parent_id': 'b'*32, 'input_sha256': 'wrong-image'}
+
+        buffer=io.BytesIO();Image.new('RGB',(5,3),(14,36,71)).save(buffer,'PNG')
+        expected=hashlib.sha256(b'(5, 3)'+bytes([14,36,71])*15).hexdigest()
+        with tempfile.TemporaryDirectory() as folder, TestClient(create_app(Path(folder),ForeignMetadata())) as client:
+            accepted=client.post('/api/recognize',files={'file':('A.png',buffer.getvalue(),'image/png')}).json()
+            self.assertEqual(accepted.get('input_sha256'),expected)
+            self.assertEqual(accepted.get('filename'),'A.png')
+            image=wait_job(client,accepted['id'])
+            self.assertEqual(image['result']['task_id'],accepted['id'])
+            self.assertEqual(image['result']['input_sha256'],expected)
+            queued=client.post('/api/jobs/'+image['id']+'/questions',json={'question':'耳朵是什么样？'}).json()
+            self.assertEqual(queued.get('parent_id'),image['id'])
+            answer=wait_job(client,queued['id'])
+            self.assertEqual(answer['result']['task_id'],queued['id'])
+            self.assertEqual(answer['result']['parent_id'],image['id'])
+            self.assertEqual(answer['result']['input_sha256'],expected)
+
     def test_question_reads_the_same_saved_pixels_and_is_persisted_separately(self):
         buffer=io.BytesIO();Image.new('RGB',(5,3),(14,36,71)).save(buffer,'PNG')
         runner=QuestionRunner()

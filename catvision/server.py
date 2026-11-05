@@ -259,7 +259,8 @@ def create_app(base_dir: Path = ROOT, runner=None) -> FastAPI:
         def progress(text):
             job.update(state="running", message=text)
         try:
-            result = pipeline(image, directory, progress)
+            result = dict(pipeline(image, directory, progress))
+            result.update(task_id=job_id, input_sha256=job['input_sha256'])
             outcome={**job,'result':result,'state':'completed','message':'识别完成'}
         except Exception as exc:
             outcome={**job,'state':'error','message':f'识别未完成：{type(exc).__name__}: {exc}'}
@@ -278,7 +279,9 @@ def create_app(base_dir: Path = ROOT, runner=None) -> FastAPI:
         job=jobs[job_id]
         job.update(state='running',message='正在观察原图并回答问题')
         try:
-            result=pipeline.answer_question(image,job['question'])
+            result=dict(pipeline.answer_question(image,job['question']))
+            result.update(task_id=job_id, parent_id=job['parent_id'],
+                          input_sha256=job['input_sha256'])
             outcome={**job,'result':result,'state':'completed','message':'回答完成'}
         except Exception as exc:
             outcome={**job,'state':'error','message':f'回答未完成：{type(exc).__name__}: {exc}'}
@@ -299,12 +302,16 @@ def create_app(base_dir: Path = ROOT, runner=None) -> FastAPI:
         directory = results_dir / job_id
         directory.mkdir()
         image.save(directory / "input.png")
-        jobs[job_id] = {"id": job_id, "state": "queued", "message": "等待显卡处理",
+        filename = (file.filename or '图片').replace('\\', '/').rsplit('/', 1)[-1]
+        digest = image_hash(image)
+        jobs[job_id] = {"id": job_id, "kind": "recognition", "filename": filename,
+                        "input_sha256": digest, "state": "queued", "message": "等待显卡处理",
                         "input_url": f"/files/{job_id}/input.png",
                         "visualization_url": f"/files/{job_id}/traditional.png",
                         "created_utc": datetime.now(timezone.utc).isoformat()}
         executor.submit(execute, job_id, image, directory)
-        return JSONResponse({"id": job_id, "state": "queued"}, status_code=202)
+        return JSONResponse({"id": job_id, "kind": "recognition", "state": "queued",
+                             "filename": filename, "input_sha256": digest}, status_code=202)
 
     @app.get("/api/jobs/{job_id}")
     def get_job(job_id: str):
@@ -336,7 +343,8 @@ def create_app(base_dir: Path = ROOT, runner=None) -> FastAPI:
             'question':payload.question,'state':'queued','message':'等待图片问答',
             'input_sha256':image_hash(image),'created_utc':datetime.now(timezone.utc).isoformat()}
         executor.submit(execute_question,identity,image,directory)
-        return JSONResponse({'id':identity,'state':'queued'},status_code=202)
+        return JSONResponse({'id':identity,'kind':'image_question','state':'queued',
+                             'parent_id':job_id,'input_sha256':jobs[identity]['input_sha256']},status_code=202)
 
     return app
 

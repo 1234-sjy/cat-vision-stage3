@@ -16,26 +16,225 @@
 </main>
 <details><summary>方法、品种范围与运行记录</summary><p id="breed-list"></p><p>传统视觉组合检测、框提示分割和独立微调的Swin分类器；原图保留，定位失败时仍可识别。视觉大模型在本地读取同一原图，先判断一个品种，再独立生成外观、姿态与背景描述。图片问答读取原图与问题，不使用另一条路线的答案。两边各返回一个品种，结果、参数和原始输出分别保存。耗时显示本次推理时间，模型加载时间单独记录。选择图片后，点击“开始识别”执行本次推理。整体测试结果记录在项目文档中。</p></details>
 </div><script>
-const $=id=>document.getElementById(id);let selectedFile=null,displayUrl=null,pollTimer=null,activeJobId=null,questionPollTimer=null;
-function status(text,busy=false){$('status-text').textContent=text;$('status').classList.toggle('busy',busy)}
-function choose(file){if(!file)return;if(file.size>12*1024*1024){status('图片超过12MB，请缩小后再试。');return}selectedFile=file;clearQuestion();for(let route of ['traditional','vlm']){$(route+'-body').replaceChildren(node('div','等待这张照片的识别结果','empty'));$(route+'-time').textContent='—'}if(displayUrl)URL.revokeObjectURL(displayUrl);displayUrl=URL.createObjectURL(file);$('input-image').src=displayUrl;$('input-image').style.display='block';$('placeholder').style.display='none';$('file-name').textContent=file.name;$('run').disabled=false;status('照片已选好，点击开始识别。')}
-$('choose').onclick=()=>$('file').click();$('file').onchange=e=>choose(e.target.files[0]);$('drop').ondragover=e=>e.preventDefault();$('drop').ondrop=e=>{e.preventDefault();choose(e.dataTransfer.files[0])};
+const $ = id => document.getElementById(id);
+let selectedFile = null, displayUrl = null, pollTimer = null, questionPollTimer = null;
+let activeJobId = null, activeImageHash = null, selectionVersion = 0, busy = false, operation = null;
+
+function status(text, running = false) {
+  $('status-text').textContent = text;
+  $('status').classList.toggle('busy', running);
+}
+
+function setBusy(value) {
+  busy = value;
+  $('file').disabled = value;
+  $('choose').disabled = value;
+  $('run').disabled = value || !selectedFile;
+  $('ask').disabled = value || !activeJobId;
+  $('question-input').disabled = value || !activeJobId;
+  $('drop').setAttribute('aria-disabled', String(value));
+  $('drop').title = value ? '处理完成后可以更换图片' : '';
+}
+
+function isCurrent(request) {
+  return operation === request && request.selection === selectionVersion && request.file === selectedFile;
+}
+
+function finish(request) {
+  if (!isCurrent(request)) return;
+  clearTimeout(pollTimer);
+  clearTimeout(questionPollTimer);
+  operation = null;
+  setBusy(false);
+}
+
+function fail(request, error) {
+  if (!isCurrent(request)) return;
+  if (request.kind === 'recognition') clearQuestion();
+  status(error.message);
+  finish(request);
+}
+
+function resetCards() {
+  for (const route of ['traditional', 'vlm']) {
+    $(route + '-body').replaceChildren(node('div', '等待这张照片的识别结果', 'empty'));
+    $(route + '-time').textContent = '—';
+    $(route + '-score').textContent = route === 'traditional' ? '分类模型分数' : '独立图像判断';
+  }
+}
+
+function choose(file) {
+  if (busy || !file) return;
+  if (file.size > 12 * 1024 * 1024) {
+    status('图片超过12MB，请缩小后再试。');
+    return;
+  }
+  clearTimeout(pollTimer);
+  clearTimeout(questionPollTimer);
+  operation = null;
+  selectionVersion += 1;
+  selectedFile = file;
+  clearQuestion();
+  resetCards();
+  if (displayUrl) URL.revokeObjectURL(displayUrl);
+  displayUrl = URL.createObjectURL(file);
+  $('input-image').src = displayUrl;
+  $('input-image').style.display = 'block';
+  $('placeholder').style.display = 'none';
+  $('file-name').textContent = file.name;
+  setBusy(false);
+  status('照片已选好，点击开始识别。');
+}
+
+$('choose').onclick = () => {if (!busy) $('file').click()};
+$('file').onchange = event => choose(event.target.files[0]);
+$('drop').ondragover = event => {
+  event.preventDefault();
+  if (event.dataTransfer) event.dataTransfer.dropEffect = busy ? 'none' : 'copy';
+};
+$('drop').ondrop = event => {
+  event.preventDefault();
+  if (!busy) choose(event.dataTransfer?.files[0]);
+};
+// A file dropped elsewhere must not navigate away from a running task.
+for (const type of ['dragover', 'drop']) document.addEventListener(type, event => {
+  if (Array.from(event.dataTransfer?.types || []).includes('Files')) event.preventDefault();
+});
 function node(tag,text,cls){let n=document.createElement(tag);if(text!=null)n.textContent=text;if(cls)n.className=cls;return n}
 function card(route,result,imageUrl){let body=$(route+'-body');body.replaceChildren();let labels={no_cat:'未检测到猫',unsupported:'其他品种',parse_error:'结果解析未完成',error:'本次识别未完成'};let title=result.status==='ok'?result.breed_zh:(labels[result.status]||'尚无结果');body.append(node('div',title,'breed'));body.append(node('p',result.status==='ok'?(route==='traditional'?'这张照片的品种判断':'这张照片的品种判断'):'已保留本次运行状态','breed-caption'));if(route==='traditional'&&imageUrl){let img=node('img',null,'visual');img.src=imageUrl;img.alt='检测框和分割轮廓';img.style.display='block';body.append(img)}if(route==='vlm'&&result.features?.length){let ul=node('ul',null,'features');for(let f of result.features)ul.append(node('li',f));body.append(ul)}if(route==='vlm'){for(let [key,label] of [['pose','姿态与位置'],['scene','画面背景']]){if(result[key]){body.append(node('div',label,'observation-label'));body.append(node('p',result[key],'observation-text'))}}if(result.observation_status&&result.observation_status!=='ok'&&result.observation_raw_text){body.append(node('p','模型原始观察：'+result.observation_raw_text,'observation-text'))}}if(result.error)body.append(node('p',result.error,'helper'));$(route+'-time').textContent=Number.isFinite(result.inference_seconds)?result.inference_seconds.toFixed(2)+' 秒':'—';$(route+'-score').textContent=route==='traditional'&&Number.isFinite(result.breed_score)?'分类分数 '+(result.breed_score*100).toFixed(1)+'%':(route==='vlm'?'独立图像判断':'未输出品种分数')}
-function render(job,replay=false){if(job.input_url){$('input-image').src=job.input_url;$('input-image').style.display='block';$('placeholder').style.display='none'}activeJobId=job.id;$('question-area').hidden=false;let result=job.result;card('traditional',result.traditional||{status:'error'},job.visualization_url);card('vlm',result.vlm||{status:'error'});status(replay?'历史运行结果 · '+(job.label||'已保存案例'):'识别完成 · 本次总耗时 '+(result.total_seconds||0).toFixed(1)+' 秒');$('run').disabled=!selectedFile;$('choose').disabled=false;}
-async function poll(id){try{let response=await fetch('/api/jobs/'+id);if(!response.ok)throw Error('读取识别进度失败');let job=await response.json();if(job.state==='completed'){render(job);return}if(job.state==='error')throw Error(job.message);status(job.message,true);pollTimer=setTimeout(()=>poll(id),250)}catch(e){status(e.message);$('run').disabled=!selectedFile;$('choose').disabled=false}}
-$('run').onclick=async()=>{if(!selectedFile)return;clearTimeout(pollTimer);$('run').disabled=true;$('choose').disabled=true;clearQuestion();status('正在识别这张图片。',true);let data=new FormData();data.append('file',selectedFile);try{let response=await fetch('/api/recognize',{method:'POST',body:data});let payload=await response.json();if(!response.ok)throw Error(payload.detail||'提交失败');poll(payload.id)}catch(e){status(e.message);$('run').disabled=false;$('choose').disabled=false}};
+function validateJob(job, request) {
+  const mismatch = () => Error('返回任务与当前图片不匹配，请重新开始识别。');
+  if (job.id !== request.id || job.kind !== request.kind || job.input_sha256 !== request.inputSha256) throw mismatch();
+  if (request.kind === 'image_question' && (job.parent_id !== request.parentId || activeJobId !== request.parentId)) throw mismatch();
+  if (job.state === 'completed') {
+    if (job.result?.task_id !== request.id || job.result?.input_sha256 !== request.inputSha256) throw mismatch();
+    if (request.kind === 'image_question' && job.result.parent_id !== request.parentId) throw mismatch();
+  }
+}
 
-function clearQuestion(){activeJobId=null;clearTimeout(questionPollTimer);$('question-area').hidden=true;$('question-input').value='';$('answers').replaceChildren();$('ask').disabled=false}
-function questionReady(){$('ask').disabled=false;$('run').disabled=!selectedFile;$('choose').disabled=false}
-async function pollQuestion(id){try{let response=await fetch('/api/jobs/'+id);if(!response.ok)throw Error('读取回答失败');let job=await response.json();if(job.state==='completed'){let item=node('div',null,'qa-item');item.append(node('div','问：'+job.question,'qa-question'));item.append(node('div',job.result.answer||'本次没有返回回答'));$('answers').append(item);status('回答完成 · 本次问答 '+job.result.inference_seconds.toFixed(2)+' 秒');questionReady();return}if(job.state==='error')throw Error(job.message);status(job.message,true);questionPollTimer=setTimeout(()=>pollQuestion(id),250)}catch(e){status(e.message);questionReady()}}
-$('question-form').onsubmit=async e=>{e.preventDefault();let question=$('question-input').value.trim();if(!activeJobId||!question)return;$('ask').disabled=true;$('run').disabled=true;$('choose').disabled=true;status('正在观察原图并回答问题。',true);try{let response=await fetch('/api/jobs/'+activeJobId+'/questions',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question})});let data=await response.json();if(!response.ok)throw Error(typeof data.detail==='string'?data.detail:'问题提交失败');pollQuestion(data.id)}catch(e){status(e.message);questionReady()}};
+function render(job, request) {
+  if (!isCurrent(request)) return;
+  if (job.input_url) {
+    $('input-image').src = job.input_url;
+    $('input-image').style.display = 'block';
+    $('placeholder').style.display = 'none';
+  }
+  $('file-name').textContent = request.file.name;
+  activeJobId = job.id;
+  activeImageHash = job.input_sha256;
+  $('question-area').hidden = false;
+  const result = job.result;
+  card('traditional', result.traditional || {status: 'error'}, job.visualization_url);
+  card('vlm', result.vlm || {status: 'error'});
+  status('识别完成 · 本次总耗时 ' + (result.total_seconds || 0).toFixed(1) + ' 秒');
+}
+
+async function poll(request) {
+  if (!isCurrent(request)) return;
+  try {
+    const response = await fetch('/api/jobs/' + request.id);
+    if (!response.ok) throw Error('读取识别进度失败');
+    const job = await response.json();
+    if (!isCurrent(request)) return;
+    validateJob(job, request);
+    if (job.state === 'completed') {
+      render(job, request);
+      finish(request);
+      return;
+    }
+    if (job.state === 'error') throw Error(job.message);
+    status(job.message, true);
+    pollTimer = setTimeout(() => poll(request), 250);
+  } catch (error) {fail(request, error)}
+}
+
+$('run').onclick = async () => {
+  if (busy || !selectedFile) return;
+  clearTimeout(pollTimer);
+  const request = {kind: 'recognition', selection: selectionVersion, file: selectedFile};
+  operation = request;
+  clearQuestion();
+  resetCards();
+  setBusy(true);
+  status('正在识别这张图片。', true);
+  const data = new FormData();
+  data.append('file', request.file);
+  try {
+    const response = await fetch('/api/recognize', {method: 'POST', body: data});
+    const accepted = await response.json();
+    if (!isCurrent(request)) return;
+    if (!response.ok) throw Error(typeof accepted.detail === 'string' ? accepted.detail : '提交失败');
+    if (!/^[0-9a-f]{32}$/.test(accepted.id) || accepted.kind !== request.kind ||
+        !/^[0-9a-f]{64}$/.test(accepted.input_sha256) || accepted.filename !== request.file.name) {
+      throw Error('返回任务与当前图片不匹配，请重新开始识别。');
+    }
+    request.id = accepted.id;
+    request.inputSha256 = accepted.input_sha256;
+    poll(request);
+  } catch (error) {fail(request, error)}
+};
+
+function clearQuestion() {
+  activeJobId = null;
+  activeImageHash = null;
+  clearTimeout(questionPollTimer);
+  $('question-area').hidden = true;
+  $('question-input').value = '';
+  $('answers').replaceChildren();
+}
+
+async function pollQuestion(request) {
+  if (!isCurrent(request)) return;
+  try {
+    const response = await fetch('/api/jobs/' + request.id);
+    if (!response.ok) throw Error('读取回答失败');
+    const job = await response.json();
+    if (!isCurrent(request)) return;
+    validateJob(job, request);
+    if (job.state === 'completed') {
+      const item = node('div', null, 'qa-item');
+      item.append(node('div', '问：' + job.question, 'qa-question'));
+      item.append(node('div', job.result.answer || '本次没有返回回答'));
+      $('answers').append(item);
+      const seconds = job.result.inference_seconds;
+      status('回答完成' + (Number.isFinite(seconds) ? ' · 本次问答 ' + seconds.toFixed(2) + ' 秒' : ''));
+      finish(request);
+      return;
+    }
+    if (job.state === 'error') throw Error(job.message);
+    status(job.message, true);
+    questionPollTimer = setTimeout(() => pollQuestion(request), 250);
+  } catch (error) {fail(request, error)}
+}
+
+$('question-form').onsubmit = async event => {
+  event.preventDefault();
+  const question = $('question-input').value.trim();
+  if (busy || !activeJobId || !question) return;
+  const request = {kind: 'image_question', selection: selectionVersion, file: selectedFile,
+                   parentId: activeJobId, inputSha256: activeImageHash};
+  operation = request;
+  setBusy(true);
+  status('正在观察原图并回答问题。', true);
+  try {
+    const response = await fetch('/api/jobs/' + request.parentId + '/questions', {
+      method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({question})
+    });
+    const accepted = await response.json();
+    if (!isCurrent(request)) return;
+    if (!response.ok) throw Error(typeof accepted.detail === 'string' ? accepted.detail : '问题提交失败');
+    request.id = accepted.id;
+    if (!/^[0-9a-f]{32}$/.test(request.id)) throw Error('返回任务与当前图片不匹配，请重新开始识别。');
+    validateJob(accepted, request);
+    pollQuestion(request);
+  } catch (error) {fail(request, error)}
+};
 
 async function init(){
   try{
     let info=await(await fetch('/api/info')).json();
     $('breed-list').textContent='支持品种：'+info.breeds.join('、')+'。';
-    if(info.models_preloaded)status('模型已准备好，选择一张猫的照片。');
-  }catch(e){status('服务尚未就绪，请稍后刷新。')}
+    if(info.models_preloaded && !selectedFile && !busy)status('模型已准备好，选择一张猫的照片。');
+  }catch(e){if(!selectedFile && !busy)status('服务尚未就绪，请稍后刷新。')}
 }init();
 </script></body></html>

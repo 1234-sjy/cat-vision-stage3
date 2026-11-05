@@ -46,6 +46,8 @@ bash scripts/start_stage3.sh --build
 
 识别完成后，在“再问这张图”输入问题。`POST /api/jobs/{图片任务ID}/questions`接收`{"question":"问题"}`，返回问答任务ID；用`GET /api/jobs/{任务ID}`取进度与回答。多个问号分开逐项回答，一次最多4项；逐项返回和原文一起保存。问答重读该图片任务保存的原图，使用已有GPU请求队列，避免与另一请求的适配器切换交叉运行。单次识别内A/B仍并行。
 
+识别和问答进行时，选图按钮、文件选择器和拖放入口都会锁定。完成后更换图片，会清空上一张图的结果、分数和问答。页面显示结果前核对任务ID和原图摘要，问答还核对所属的图片任务；不匹配的返回不会显示。
+
 图片理解的逐例图像、原始文字和验证记录见`artifacts/image-understanding-v3`。固定120张回归在描述开启时重新逐张运行；它验证分类有无受影响，不是描述准确率评测。1514张的86.99%是品种分类成绩，不能换算成每句描述或回答的正确率。参考阅读记录见`docs/课程依据/LAVIS参考阅读`，没有安装或提交整套参考项目作为自己的实现。
 
 ## 环境与启动
@@ -91,15 +93,12 @@ python scripts/train_expanded.py --data-root <cat-data目录> --epochs 20 --outp
 python scripts/train_vlm_lora.py --data-root <cat-data目录> --output artifacts/reproduction/vlm --adapter-output weights/reproduction-lora
 ```
 
-需要接续时显式传`--resume-from <检查点目录>`并指定新的输出目录，恢复优化器、调度器、随机状态和抽样位置，不自动重试或重启。最新用户要求下，默认不记录显卡状态。独立测试在选模完成后运行；不使用传统分类器的预测当训练标签。
+需要接续时显式传`--resume-from <检查点目录>`并指定新的输出目录，恢复优化器、调度器、随机状态和抽样位置，不自动重试或重启。默认不记录显卡状态。独立测试在选模完成后运行；不使用传统分类器的预测当训练标签。
 
-## 说明与交付
+## 参考资料
 
-[项目介绍与个人感悟](docs/项目介绍与个人感悟.docx) · [完整课程提要](docs/课程依据/第二阶段指定课程实读提要.txt) · [提交与复现要求](docs/提交与复现要求.md)。旧12类结果放在历史记录中。
+[项目介绍与个人感悟](docs/项目介绍与个人感悟.docx)和[课程笔记](docs/课程依据/第二阶段指定课程实读提要.txt)放在`docs`中。旧12类实验保存在历史记录中。
 
-上传包使用Git bundle恢复全部真实提交后推送。代码、依赖、启动和模型获取说明统一入库；不重新git init、不压成单个提交、不倒填日期。本地开发时间与GitHub收到推送的时间分别保留。大型原始数据、全部模型与训练资料通过完整保留包保存，打包不按gitignore或git archive过滤。
-
-参考：
 - https://github.com/IDEA-Research/Grounded-SAM-2
 - https://github.com/Candy-CY/Pytorch-garbage-classify
 - https://github.com/salesforce/LAVIS

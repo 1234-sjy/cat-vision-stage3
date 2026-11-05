@@ -1,4 +1,4 @@
-param([string]$Distribution = 'CatVision', [switch]$Build, [switch]$NoBrowser)
+﻿param([string]$Distribution = 'CatVision', [switch]$Build, [switch]$NoBrowser)
 $ErrorActionPreference = 'Stop'
 $taskEncoding = New-Object System.Text.UTF8Encoding($false)
 $OutputEncoding = $taskEncoding

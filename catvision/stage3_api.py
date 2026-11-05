@@ -148,11 +148,16 @@ def create_app(settings=None, publisher=None):
         except ValueError as exc:
             raise HTTPException(400,str(exc)) from exc
         identity = uuid4().hex
-        directory = settings.data_dir/identity
-        directory.mkdir()
-        image.save(directory/'input.png')
         label = Path(name or '猫的照片').stem[:80] or '猫的照片'
         job = new_job(user,identity=identity,label=label)
+        directory = settings.data_dir/identity
+        try:
+            directory.mkdir()
+            image.save(directory/'input.png')
+        except OSError:
+            log.exception('Accepted image could not be saved: %s',identity)
+            store.change(identity,state='error',message='原图保存失败，任务未投递；请查看服务器日志')
+            raise HTTPException(503,'原图保存失败，记录已保存')
         return dispatch(job)
 
     @app.post('/api/recognize',status_code=202)
@@ -211,10 +216,15 @@ def create_app(settings=None, publisher=None):
         if not source.is_file():
             raise HTTPException(404,'没有找到这张原图')
         new_id = uuid4().hex
-        target = settings.data_dir/new_id
-        target.mkdir()
-        shutil.copy2(source,target/'input.png')
         queued = new_job(user,identity=new_id,label=previous['label'])
+        target = settings.data_dir/new_id
+        try:
+            target.mkdir()
+            shutil.copy2(source,target/'input.png')
+        except OSError:
+            log.exception('Retry image could not be saved: %s',new_id)
+            store.change(new_id,state='error',message='原图复制失败，任务未投递；请查看服务器日志')
+            raise HTTPException(503,'原图复制失败，记录已保存')
         return dispatch(queued)
 
     @app.get('/api/files/{identity}/{filename}')

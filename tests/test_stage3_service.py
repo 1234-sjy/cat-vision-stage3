@@ -138,6 +138,23 @@ class Stage3ServiceTests(unittest.TestCase):
             admitted = list(pool.map(submit,range(6)))
         self.assertEqual(sum(admitted),2)
 
+    def test_capacity_rejected_uploads_leave_no_untracked_photos(self):
+        api = importlib.import_module('catvision.stage3_api')
+        other = self.enterContext(TestClient(api.create_app(replace(self.settings,max_pending=0),publisher=self.delivery)))
+        for _ in range(3):
+            response = other.post('/api/recognize',headers=self.a,files={'file':('cat.png',self.photo(),'image/png')})
+            self.assertEqual(response.status_code,429)
+        self.assertEqual(list(self.settings.data_dir.glob('*/input.png')),[])
+
+    def test_capacity_rejected_retry_does_not_copy_original(self):
+        identity = self.submit()
+        self.app.state.store.change(identity,state='error')
+        api = importlib.import_module('catvision.stage3_api')
+        other = self.enterContext(TestClient(api.create_app(replace(self.settings,max_pending=0),publisher=self.delivery)))
+        response = other.post('/api/jobs/'+identity+'/retry',headers=self.a)
+        self.assertEqual(response.status_code,429)
+        self.assertEqual(len(list(self.settings.data_dir.glob('*/input.png'))),1)
+
 
 if __name__ == '__main__':
     unittest.main()

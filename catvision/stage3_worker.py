@@ -1,5 +1,6 @@
 """One resident GPU consumer; independent routes remain parallel inside each job."""
 import json
+from concurrent.futures import ThreadPoolExecutor
 import logging
 import os
 from pathlib import Path
@@ -8,7 +9,7 @@ import traceback
 
 import pika
 
-from .common import ROOT, load_image
+from .common import ROOT, image_hash, load_image
 from .stage3_queue import declare
 from .stage3_settings import Settings
 from .stage3_store import Store
@@ -35,6 +36,7 @@ def process_job(store, identity, runner):
     try:
         image_id = job['parent_id'] if job['kind']=='image_question' else identity
         image = load_image(store.settings.data_dir/image_id/'input.png',max_side=1600)
+        digest = image_hash(image)
         if job['kind']=='image_question':
             progress('正在观察原图并回答问题')
             result = runner.answer_question(image,job['question'])
@@ -42,6 +44,10 @@ def process_job(store, identity, runner):
         else:
             result = runner(image,directory,progress)
             message = '识别完成'
+        result = dict(result)
+        result.update(task_id=identity,input_sha256=digest)
+        if job['kind']=='image_question':
+            result['parent_id']=job['parent_id']
         outcome = {**job,'state':'completed','message':message,'result':result}
         atomic_json(directory/'result.json',outcome)
         store.finish(identity,result,message)
@@ -57,6 +63,49 @@ def process_job(store, identity, runner):
         raise
 
 
+def recover_interrupted(store, root=ROOT):
+    from .run_control import GpuReservation
+    with GpuReservation(root):
+        store.interrupt_running()
+        store.worker(False,'已确认中断状态，请手动启动工作端')
+
+
+class QueueConsumer:
+    """Keep AMQP heartbeats on the I/O thread while a single model thread runs."""
+    def __init__(self,store,runner,connection):
+        self.store,self.runner,self.connection=store,runner,connection
+        self.executor=ThreadPoolExecutor(max_workers=1,thread_name_prefix='cat-gpu')
+
+    def receive(self,channel,method,properties,body):
+        try:
+            identity=json.loads(body)['job_id']
+            if not isinstance(identity,str) or len(identity)!=32 or any(c not in '0123456789abcdef' for c in identity):
+                raise ValueError('invalid task id')
+        except (ValueError,TypeError,KeyError):
+            log.error('Invalid queue message rejected')
+            channel.basic_nack(method.delivery_tag,requeue=False)
+            return
+        future=self.executor.submit(process_job,self.store,identity,self.runner)
+
+        def complete(task):
+            def acknowledge():
+                try:
+                    task.result()
+                except Exception:
+                    channel.basic_nack(method.delivery_tag,requeue=False)
+                    raise
+                channel.basic_ack(method.delivery_tag)
+            try:
+                self.connection.add_callback_threadsafe(acknowledge)
+            except pika.exceptions.ConnectionWrongStateError:
+                # The durable DB record prevents duplicate inference on redelivery.
+                log.exception('Connection closed before task acknowledgement: %s',identity)
+        future.add_done_callback(complete)
+
+    def close(self):
+        self.executor.shutdown(wait=True)
+
+
 def main():
     logging.basicConfig(level=logging.INFO,format='%(asctime)s %(levelname)s %(message)s')
     os.environ['CATVISION_FAST_INFERENCE']='1'
@@ -69,6 +118,7 @@ def main():
     runner = LocalComparison(keep_loaded=True)
     connection = None
     thread = None
+    consumer = None
 
     def heartbeat():
         while not stop.wait(5):
@@ -96,24 +146,8 @@ def main():
             declare(channel,settings.queue_name)
             channel.basic_qos(prefetch_count=1)
 
-            def receive(ch,method,properties,body):
-                try:
-                    message = json.loads(body)
-                    identity = message['job_id']
-                    if not isinstance(identity,str) or len(identity)!=32 or any(c not in '0123456789abcdef' for c in identity):
-                        raise ValueError('invalid task id')
-                except (ValueError,TypeError,KeyError):
-                    log.error('Invalid queue message rejected')
-                    ch.basic_nack(method.delivery_tag,requeue=False)
-                    return
-                try:
-                    process_job(store,identity,runner)
-                except Exception:
-                    ch.basic_nack(method.delivery_tag,requeue=False)
-                    raise
-                ch.basic_ack(method.delivery_tag)
-
-            channel.basic_consume(queue=settings.queue_name,on_message_callback=receive,auto_ack=False)
+            consumer=QueueConsumer(store,runner,connection)
+            channel.basic_consume(queue=settings.queue_name,on_message_callback=consumer.receive,auto_ack=False)
             log.info('GPU worker ready; prefetch=1, parallel routes within a job')
             channel.start_consuming()
         except BaseException as exc:
@@ -123,6 +157,8 @@ def main():
             raise
         finally:
             stop.set()
+            if consumer is not None:
+                consumer.close()
             if thread is not None:
                 thread.join(timeout=10)
             if connection is not None and connection.is_open:

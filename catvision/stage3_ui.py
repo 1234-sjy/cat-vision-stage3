@@ -1,5 +1,6 @@
 """Streamlit client for the authenticated API. This process has no GPU models."""
 import os
+import re
 import requests
 import streamlit as st
 
@@ -13,8 +14,7 @@ def request(method,path,**kwargs):
     response = requests.request(method,API+path,headers=headers,timeout=(5,45),**kwargs)
     if response.status_code==401 and token:
         st.session_state.clear()
-        st.warning('登录已过期，请重新登录。')
-        st.stop()
+        st.rerun()
     if not response.ok:
         try:
             detail = response.json().get('detail','请求未完成')
@@ -34,6 +34,42 @@ def image(identity,filename):
     return cache[key]
 
 
+def upload_changed():
+    if st.session_state.get('task_busy'):
+        # Discard a late upload event from the previous widget instance.
+        st.session_state.upload_epoch=st.session_state.get('upload_epoch',0)+1
+        return
+    st.session_state.active_job=None
+    st.session_state.current_job=None
+    st.session_state.pop('active_filename',None)
+
+
+def activate(identity,filename=None):
+    if not isinstance(identity,str) or not re.fullmatch('[0-9a-f]{32}',identity):
+        raise ValueError('返回任务与当前图片不匹配，请刷新后重新提交。')
+    st.session_state.active_job=identity
+    st.session_state.current_job=None
+    st.session_state.upload_epoch=st.session_state.get('upload_epoch',0)+1
+    st.session_state.active_filename=filename
+
+
+def validate_job(job,identity):
+    if job.get('id')!=identity or job.get('kind')!='comparison':
+        raise ValueError('返回任务与当前图片不匹配，请刷新后重新提交。')
+    if job.get('state')=='completed':
+        result=job.get('result') or {}
+        if result.get('task_id')!=identity or not re.fullmatch('[0-9a-f]{64}',result.get('input_sha256','')):
+            raise ValueError('结果任务与当前图片不匹配，请刷新后重新提交。')
+    for question in job.get('questions',[]):
+        if question.get('parent_id')!=identity or question.get('kind')!='image_question':
+            raise ValueError('问答任务与当前图片不匹配。')
+        if question.get('state')=='completed':
+            answer=question.get('result') or {}
+            if (answer.get('task_id')!=question.get('id') or answer.get('parent_id')!=identity or
+                    answer.get('input_sha256')!=(job.get('result') or {}).get('input_sha256')):
+                raise ValueError('问答结果任务与当前图片不匹配。')
+
+
 def auth():
     st.title('看图识猫')
     st.write('用同一张照片，对照传统视觉与视觉大模型的结果。')
@@ -46,7 +82,7 @@ def auth():
                 password = st.text_input('密码',type='password',key=action+'-password',max_chars=128)
                 if action=='register':
                     st.caption('用户名3–32个字符，可用中文、字母、数字、下划线或短横线；密码至少8个字符。')
-                submit = st.form_submit_button(label,type='primary',use_container_width=True)
+                submit = st.form_submit_button(label,type='primary',width='stretch')
                 if submit:
                     try:
                         data = request('POST','/api/auth/'+action,json={'username':username,'password':password}).json()
@@ -63,7 +99,7 @@ def route_result(route,result,identity):
     st.subheader(title or '尚无结果')
     if route=='traditional':
         try:
-            st.image(image(identity,'traditional.png'),use_container_width=True)
+            st.image(image(identity,'traditional.png'),width='stretch')
         except ValueError:
             st.info('这次运行没有生成标注图。')
         score = result.get('breed_score')
@@ -92,7 +128,15 @@ def current_result():
         return
     try:
         job = request('GET','/api/jobs/'+identity).json()
+        if st.session_state.get('active_job')!=identity:
+            return
+        validate_job(job,identity)
         st.session_state.current_job=job
+        pending = job['state'] in {'queued','running'} or any(
+            item['state'] in {'queued','running'} for item in job.get('questions',[]))
+        if st.session_state.get('task_busy',False)!=pending:
+            st.session_state.task_busy=pending
+            st.rerun()
         if job['state'] in {'queued','running'}:
             st.info(job['message'])
             if not job.get('worker',{}).get('ready',True):
@@ -102,7 +146,8 @@ def current_result():
             st.error(job['message'])
             if st.button('重新提交这张图片',key='retry-'+identity):
                 new = request('POST','/api/jobs/'+identity+'/retry').json()
-                st.session_state.active_job=new['id']
+                activate(new['id'],st.session_state.get('active_filename'))
+                st.session_state.task_busy=True
                 st.rerun()
             return
         result = job['result'] or {}
@@ -137,7 +182,12 @@ def current_result():
             question = st.text_input('关于这张图片的问题',max_chars=500,placeholder='例如：这只猫的耳朵有什么特点？')
             if st.form_submit_button('提问',disabled=pending):
                 if question.strip():
-                    request('POST','/api/jobs/'+identity+'/questions',json={'question':question})
+                    st.session_state.task_busy=True
+                    try:
+                        request('POST','/api/jobs/'+identity+'/questions',json={'question':question})
+                    except (ValueError,requests.RequestException):
+                        st.session_state.task_busy=False
+                        raise
                     st.rerun()
         with st.expander('整理这条记录'):
             label = st.text_input('照片名称',value=job['label'],key='label-'+identity,max_chars=80)
@@ -148,6 +198,8 @@ def current_result():
             if st.button('从列表移除',disabled=not confirmed or pending,key='hide-'+identity):
                 request('DELETE','/api/jobs/'+identity)
                 st.session_state.active_job=None
+                st.session_state.current_job=None
+                st.session_state.pop('active_filename',None)
                 st.rerun()
     except (ValueError,requests.RequestException) as exc:
         st.error(str(exc))
@@ -173,8 +225,9 @@ def main():
                 st.caption('还没有识别记录。')
             for job in history['items']:
                 caption = {'completed':'完成','error':'失败','interrupted':'中断','queued':'等待','running':'处理中'}.get(job['state'],job['state'])
-                if st.button(job['label']+' · '+caption,key='open-'+job['id'],use_container_width=True):
-                    st.session_state.active_job=job['id']
+                if st.button(job['label']+' · '+caption,key='open-'+job['id'],width='stretch',
+                             disabled=st.session_state.get('task_busy',False)):
+                    activate(job['id'])
                     st.rerun()
         except (ValueError,requests.RequestException) as exc:
             st.error(str(exc))
@@ -192,21 +245,30 @@ def main():
     photo_column,result_column = st.columns([1,2.5],gap='large')
     with photo_column:
         st.subheader('共同输入')
-        uploaded = st.file_uploader('选择猫的照片',type=['jpg','jpeg','png','webp'])
-        if uploaded:
-            st.image(uploaded,use_container_width=True)
-            if st.button('开始识别',type='primary',use_container_width=True,disabled=not info['worker']['ready']):
-                try:
-                    job = request('POST','/api/recognize',files={'file':(uploaded.name,uploaded.getvalue(),uploaded.type)}).json()
-                    st.session_state.active_job=job['id']
-                    st.rerun()
-                except (ValueError,requests.RequestException) as exc:
-                    st.error(str(exc))
-        elif st.session_state.get('active_job'):
+        busy=st.session_state.get('task_busy',False)
+        epoch=st.session_state.get('upload_epoch',0)
+        uploaded = st.file_uploader('选择猫的照片',type=['jpg','jpeg','png','webp'],
+                                    key=f'upload-{epoch}',disabled=busy,on_change=upload_changed)
+        if st.session_state.get('active_job'):
             try:
-                st.image(image(st.session_state.active_job,'input.png'),use_container_width=True)
+                st.image(image(st.session_state.active_job,'input.png'),width='stretch')
+                current=st.session_state.get('current_job') or {}
+                caption=st.session_state.get('active_filename') or current.get('label')
+                if caption:
+                    st.caption(caption)
             except (ValueError,requests.RequestException):
                 pass
+        elif uploaded:
+            st.image(uploaded,width='stretch')
+            if st.button('开始识别',type='primary',width='stretch',disabled=busy or not info['worker']['ready']):
+                st.session_state.task_busy=True
+                try:
+                    job = request('POST','/api/recognize',files={'file':(uploaded.name,uploaded.getvalue(),uploaded.type)}).json()
+                    activate(job['id'],uploaded.name)
+                    st.rerun()
+                except (ValueError,requests.RequestException) as exc:
+                    st.session_state.task_busy=False
+                    st.error(str(exc))
         st.caption('支持JPG、PNG、WebP，单张不超过12MB。')
     with result_column:
         current_result()

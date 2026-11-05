@@ -4,6 +4,9 @@ import json
 from pathlib import Path
 from tempfile import TemporaryDirectory
 import unittest
+import threading
+import time
+from types import SimpleNamespace
 
 from PIL import Image
 from catvision.stage3_settings import Settings
@@ -59,6 +62,8 @@ class Stage3WorkerTests(unittest.TestCase):
         self.assertEqual(self.store.get(identity)['state'],'completed')
         saved = json.loads((self.settings.data_dir/identity/'result.json').read_text(encoding='utf-8'))
         self.assertEqual(saved['state'],'completed')
+        self.assertEqual(saved['result'].get('task_id'),identity)
+        self.assertEqual(len(saved['result'].get('input_sha256','')),64)
 
     def test_question_reads_parent_original(self):
         parent = self.submit()
@@ -67,6 +72,8 @@ class Stage3WorkerTests(unittest.TestCase):
         self.worker.process_job(self.store,child['id'],self.runner)
         self.assertEqual(self.runner.questions,[((37,29),'耳朵？')])
         self.assertEqual(self.store.get(child['id'])['result']['answer'],'能看到竖起的耳朵')
+        self.assertEqual(self.store.get(child['id'])['result'].get('task_id'),child['id'])
+        self.assertEqual(self.store.get(child['id'])['result'].get('parent_id'),parent)
 
     def test_failure_keeps_traceback_and_stops_inference(self):
         identity = self.submit()
@@ -87,6 +94,41 @@ class Stage3WorkerTests(unittest.TestCase):
         self.worker.process_job(self.store,identity,self.runner)
         self.assertEqual(self.runner.calls,0)
         self.assertEqual(self.store.get(identity)['state'],'interrupted')
+
+    def test_explicit_recovery_interrupts_task_without_rerunning_model(self):
+        self.assertTrue(hasattr(self.worker,'recover_interrupted'),'需要显式恢复操作')
+        identity = self.submit()
+        self.store.claim(identity)
+        self.worker.recover_interrupted(self.store,self.root)
+        self.assertEqual(self.store.get(identity)['state'],'interrupted')
+        self.assertEqual(self.runner.calls,0)
+
+    def test_consumer_returns_to_io_loop_while_inference_is_pending(self):
+        self.assertTrue(hasattr(self.worker,'QueueConsumer'),'GPU工作应从AMQP回调移到独立线程')
+        identity = self.submit()
+        release = threading.Event()
+        scheduled = []
+        acknowledged = []
+        class SlowRunner(Runner):
+            def __call__(self,image,directory,progress):
+                release.wait(1)
+                return super().__call__(image,directory,progress)
+        connection = SimpleNamespace(add_callback_threadsafe=scheduled.append)
+        channel = SimpleNamespace(basic_ack=lambda tag:acknowledged.append(tag),basic_nack=lambda *a,**k:None)
+        consumer = self.worker.QueueConsumer(self.store,SlowRunner(),connection)
+        try:
+            started = time.perf_counter()
+            consumer.receive(channel,SimpleNamespace(delivery_tag=7),None,json.dumps({'job_id':identity}).encode())
+            self.assertLess(time.perf_counter()-started,0.15)
+            self.assertEqual(acknowledged,[])
+            release.set()
+        finally:
+            release.set()
+            consumer.close()
+        self.assertEqual(self.store.get(identity)['state'],'completed')
+        self.assertEqual(len(scheduled),1)
+        scheduled[0]()
+        self.assertEqual(acknowledged,[7])
 
 
 if __name__=='__main__':

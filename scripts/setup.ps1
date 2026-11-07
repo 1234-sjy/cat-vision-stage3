@@ -17,4 +17,4 @@ if ($DownloadModels) {
     & $projectPython scripts/download_models.py --only all
     if ($LASTEXITCODE -ne 0) { throw '模型下载未完成，已停止，请保留日志。' }
 }
-Write-Host '环境已准备好。源码和完整成果包均包含自训练分类权重；官方大模型按运行说明恢复。'
+Write-Host '依赖安装成功。使用方法见 README.md。'

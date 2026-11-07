@@ -42,3 +42,7 @@ runtime-*.log
 /artifacts/optimization-v3/shared-test/images/
 /artifacts/optimization-v3/shared-test/history/**/images/
 /artifacts/optimization-v3/parallel-diagnostic-runs/**/*.png
+
+# Local course notes, reports and agent instructions.
+/AGENTS.md
+/docs/

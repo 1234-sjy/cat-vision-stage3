@@ -1,43 +1,32 @@
-# 看图识猫 第二阶段
+# 看图识猫
 
-上传一张照片，同时查看传统视觉与本地视觉大模型的结果。每条路线各输出一个品种；大模型另外说明可见外观、姿态和背景，支持继续对这张图提问。识别页只展示本次图片的结果。
+一个在本地运行的猫品种识别工具。上传一张照片，页面并排显示传统视觉和视觉大模型的结果：各自给出一个品种，传统视觉标出猫的位置与轮廓，大模型描述外观、姿态和背景。识别后可以继续对这张照片提问。
 
-## 当前方法
+品种分类支持20类。两条路线读取同一张原图，并行计算。
 
-传统路线用YOLO26n检测、SAM2.1分割，Swin-Tiny识别20个猫品种。完整画面模型采用320像素等比例补边，细节模型采用224像素中心视图；验证集选定完整画面75%、细节25%，分别平均原图和水平翻转后的分数。猫狗判断同样融合。检测漏掉时，原图分类继续运行。
+## 运行环境
 
-另一条路线使用本地Qwen3-VL-4B-Instruct，冻结视觉编码器和通用基础参数，用训练集的原始品种标签微调文本层LoRA。它独立读取相同原图，分类阶段返回一个品种代码，不读取传统路线的品种或分数。rank8、alpha16，768×768推理像素预算，分类最多24个输出token，BF16 AMP。图像切块投影使用与原卷积等价的矩阵运算。适配器及提示由固定验证集选定，配置见`configs/active-vlm.json`。
+- Python 3.12。
+- 支持 BF16 的 NVIDIA 显卡，建议16GB显存。
+- PyTorch 2.9.1、torchvision 0.24.1，使用 CUDA 12.8 版本。
 
-普通启动即预加载、常驻模型；两条路线使用独立线程与各自复用的CUDA流。实际推理没有人为暂停。不同上传请求排队，避免重复加载大模型。每次重新读图推理，未缓存识别答案。
+以下命令都在项目根目录执行。
 
-## 实际测试
+## Windows 启动
 
-| 范围 | 传统分类器或路线 | 视觉大模型 |
-| --- | --- | --- |
-| 20类独立测试1872张 | 1600/1872（85.47%） | 此范围未全量运行 |
-| 同1514张，Qwen另留测试 | 1292/1514（85.34%） | 1317/1514（86.99%） |
-| 原120张批量分类记录，每类6张 | 97/120（80.83%） | 98/120（81.67%） |
-| 原120张当前逐图调用，开启描述 | 本轮未重跑A | 100/120（83.33%） |
+1. 安装 Python 3.12，安装时勾选加入 PATH，并安装适用于显卡的 NVIDIA 驱动。
+2. 双击 `安装环境.cmd`，等待依赖安装结束。脚本会在项目目录建立 `.venv` 环境。
+3. 在项目目录打开 PowerShell，下载官方模型：
 
-1514张由原测试集排除历史本地Qwen推理用过的图片及身份关联组后固定，覆盖20类。Qwen按batch4评测；传统列从同一冻结分类器的原1872张逐图记录取对应图片，SHA256逐图核对。原120张用于回归，改进前Qwen为67/120（55.83%）。训练与选模型只用训练/验证集，各组分母分别记录。
+   ```powershell
+   .venv/Scripts/python.exe scripts/download_models.py --only all
+   ```
 
-本次实机演示的Qwen耗时包含分类与图像描述：传统0.41秒，Qwen4.82秒，两条路线并行总耗时4.82秒。模型在启动时预加载，视频保留真实选图与等待，并演示图片问答（本次1.00秒）。原始测试输出和各品种成绩见`artifacts/optimization-v4`。
+4. 双击 `启动项目.cmd`。启动时会先加载模型；终端出现 `Uvicorn running on http://127.0.0.1:8765` 后，在浏览器打开这个地址。
 
-## 原图观察与问答
+运行期间保留终端窗口，按 `Ctrl+C` 停止服务。
 
-对照PDF的“图像观察与问答”和LAVIS参考示例，B路线保留品种判断，并对同一原图生成外观、姿态和背景描述。描述与问答临时关闭只学品种代码的LoRA，调用同一Qwen底座；退出上下文后恢复分类适配器，不另加载一份大模型。模型不读取A的答案、检测框、分割图或文件名，也不按品种名生成固定特征。
-
-描述最多384个输出token，问答最多256个；配置见`configs/feature-description.json`，提示见`catvision/vlm_features.py`。这些上限与分类的24个token分开。失败和不完整解析保留原始返回，页面显示实际文本，不补造特征。
-
-识别完成后，在“再问这张图”输入问题。`POST /api/jobs/{图片任务ID}/questions`接收`{"question":"问题"}`，返回问答任务ID；用`GET /api/jobs/{任务ID}`取进度与回答。多个问号分开逐项回答，一次最多4项；逐项返回和原文一起保存。问答重读该图片任务保存的原图，使用已有GPU请求队列，避免与另一请求的适配器切换交叉运行。单次识别内A/B仍并行。
-
-识别和问答进行时，选图按钮、文件选择器和拖放入口都会锁定。完成后更换图片，会清空上一张图的结果、分数和问答。页面显示结果前核对任务ID和原图摘要，问答还核对所属的图片任务；不匹配的返回不会显示。
-
-图片理解的逐例图像、原始文字和验证记录见`artifacts/image-understanding-v3`。固定120张回归在描述开启时重新逐张运行；它验证分类有无受影响，不是描述准确率评测。1514张的86.99%是品种分类成绩，不能换算成每句描述或回答的正确率。参考阅读记录见`docs/课程依据/LAVIS参考阅读`，没有安装或提交整套参考项目作为自己的实现。
-
-## 环境与启动
-
-Python3.12、torch2.9.1、torchvision0.24.1；开发机为RTX5080Laptop16GB，CUDA12.8。完整双路线使用NVIDIA显卡，建议16GB显存。
+也可以全程使用命令行：
 
 ```powershell
 python -m venv .venv
@@ -47,49 +36,74 @@ python -m venv .venv
 .venv/Scripts/python.exe -m catvision.server
 ```
 
-浏览器打开`http://127.0.0.1:8765`。也可双击“安装环境.cmd”“启动项目.cmd”。已有解释器由`CATVISION_PYTHON`或`scripts/start.ps1 -PythonExe`指定。训练、下载和驻留服务由GPU租约隔离；训练前关闭网页服务。失败保留日志并停止，没有自动重试或重启。
+Linux 使用 Python 3.12 创建虚拟环境，将上述命令中的 `.venv/Scripts/python.exe` 换成 `.venv/bin/python`。
 
-两份自训练权重`weights/breed-swin-v3-20-fp16.pt`与`breed-swin-v3-detail20-fp16.pt`各约55MB，随代码入库。FP16用于磁盘存储，Swin以FP32执行。官方YOLO/SAM/Qwen从完整保留包恢复，或按上面的脚本获取并校验摘要。运行网页无需训练集，也无需重新训练。Qwen适配器`weights/qwen-cat-lora-v4/adapter_model.safetensors`约66MB，也随Git入库；官方4B底座仍按下载脚本获取或从完整保留包恢复。
+## 模型文件
 
-## 数据与训练
+模型统一放在 `weights` 目录。程序加载的文件如下：
 
-来源为Oxford-IIIT Pet和CatBreedsRefined-7k第2版。筛选后猫训练4157张、验证925张、测试1872张；狗训练999张、验证500张。原始文件保留，清单中的排除项没有删除。原950张训练图已经扩充，裁剪或翻转视图不另算独立样本。
+| 文件或目录 | 用途 | 获取方式 |
+| --- | --- | --- |
+| `yolo26n.pt` | 检测猫的位置 | 下载脚本 |
+| `sam2.1_t.pt` | 分割猫的轮廓 | 下载脚本 |
+| `qwen3-vl-4b/` | Qwen3-VL-4B 基础模型 | 下载脚本 |
+| `breed-swin-v3-20-fp16.pt` | 完整画面分类器 | 仓库中提供 |
+| `breed-swin-v3-detail20-fp16.pt` | 细节分类器 | 仓库中提供 |
+| `qwen-cat-lora-v4/` | 猫品种分类 LoRA 适配器 | 仓库中提供 |
 
-清单记录SHA256、pHash、可恢复的原动物ID和摄影会话关联。已知同源组放在同一划分，冻结摘要见`data/freeze.json`。扩充来源重新命名了图片，部分图片缺少标签品种的典型特征；实际标签按来源保留，审计观察见`data/summary.json`。
+官方模型和项目训练的权重合计约9GB。已有官方模型时，按上表放入对应位置即可。下载脚本会校验文件摘要，运行日志保存在 `artifacts/run-logs`。
 
-正式20类模型从通用ImageNet初始化；早期继承旧分类器的尝试在来源审查后停止，其权重和日志保留。先训练20轮，再比较输入方式，以完整画面320像素、同物种MixUp及细节补充继续优化。最终按验证结果选权重和组合比例，选定后才运行测试。
+## 页面怎么用
 
-加速训练先实测批量32、64、128、192的显存需求与吞吐量，再选择已验证的最快批量。224像素阶段采用batch128，接电实测约510训练图/秒，训练加验证约12.7秒/轮；320像素阶段采用batch64，约240训练图/秒。CPU8线程、4个数据加载进程、BF16训练、无固定等待。每秒GPU占用、显存、温度和功耗见各训练目录的`gpu-telemetry.jsonl`。
+1. 选择或拖入一张猫的照片，支持 JPG、PNG、WebP，单张不超过12MB。
+2. 点击“开始识别”，查看两条路线的品种结果、标注图、原图描述和耗时。
+3. 在“再问这张图”中输入问题，例如“这只猫的耳朵有什么特点？”。多个问题可以用问号分开，一次最多4项。
+4. 当前任务结束后，可以换一张照片继续识别。
 
-复现训练可恢复完整保留包中的`原始数据/cat-data`，直接使用仓库冻结清单，通过`--data-root`传入实际位置。自行获取扩充数据时使用`prepare_expanded.py --download --out-dir runtime/data-acquisition`，再用`--extract-only`恢复路径；Oxford按其官方地址获取。重新训练指定新的`--output`和`--checkpoint`，保留已有历史。
+识别和问答期间，选图与拖放控件会锁定。更换照片时会清空上一张图的结果和问答。原图、标注图、结果和问答保存在 `runtime/results`，每次任务使用单独的目录。
 
-```powershell
-python scripts/download_swin.py
-python scripts/train_expanded.py --data-root <cat-data目录> --epochs 20 --output artifacts/reproduction/initial --checkpoint weights/reproduction.pt
-```
+传统视觉结果下的“分类分数”对应这张照片的品种判断；测试集准确率列在下面的评测表中。
 
-后续阶段使用`scripts/train_accelerated.py`，源检查点轮次由`--start-epoch`指定，完整画面选项为`--image-size 320 --preprocess letterbox --mixup 0.2`。各阶段参数、来源摘要、选模记录和不可覆盖的每轮检查点均保留在本地完整保留包。
+## 代码入口
 
-### Qwen轻量微调
+| 位置 | 内容 |
+| --- | --- |
+| `catvision/server.py` | FastAPI 服务入口，组织图片任务和问答 |
+| `web/index.html` | 上传、结果展示与图片问答页面 |
+| `catvision/traditional.py` | YOLO 检测、SAM 分割与 Swin 分类 |
+| `catvision/vlm.py` | 视觉大模型调用 |
+| `catvision/vlm_features.py` | 原图描述与问答提示 |
+| `configs/active-classifier.json` | 分类器权重和组合配置 |
+| `configs/active-vlm.json` | Qwen 适配器与推理配置 |
+| `scripts/` | 模型下载、数据准备、训练与评测脚本 |
 
-训练集为4157张猫和999张狗。只监督assistant的品种代码与结束符，题目、图像和补齐位置不计算训练损失。固定选择验证集为200张猫与50张狗；最佳为第2轮。LoRA更新16,515,072个参数，学习率0.0001，有效batch16，microbatch4，BF16、梯度检查点和余弦学习率。原始配置、断点、恢复记录及验证输出全部保留。
+启动服务后，接口文档位于 `http://127.0.0.1:8765/docs`。图片识别用 `POST /api/recognize`，通过返回的任务ID调用 `GET /api/jobs/{id}` 查询结果；图片问答用 `POST /api/jobs/{id}/questions`。
 
-```powershell
-python scripts/train_vlm_lora.py --data-root <cat-data目录> --output artifacts/reproduction/vlm --adapter-output weights/reproduction-lora
-```
+## 识别方法与评测
 
-需要接续时显式传`--resume-from <检查点目录>`并指定新的输出目录，恢复优化器、调度器、随机状态和抽样位置，不自动重试或重启。默认不记录显卡状态。独立测试在选模完成后运行；不使用传统分类器的预测当训练标签。
+传统视觉使用 YOLO26n 定位、SAM2.1 分割，以及两个 Swin-Tiny 分类器。完整画面模型采用320像素等比例补边，细节模型采用224像素中心视图，两者分数按75%和25%组合，并平均原图与水平翻转后的预测。
 
-## 参考资料
+视觉大模型使用 Qwen3-VL-4B-Instruct，以 LoRA 微调品种分类。描述与问答使用同一基础模型，并在生成时暂时关闭品种分类适配器。模型在启动时加载，后续请求复用显存中的实例。
 
-[项目介绍与个人感悟](docs/项目介绍与个人感悟.docx)和[课程笔记](docs/课程依据/第二阶段指定课程实读提要.txt)放在`docs`中。旧12类实验保存在历史记录中。
+同一组1514张测试照片覆盖20个猫品种，分类结果如下：
 
-- https://github.com/IDEA-Research/Grounded-SAM-2
-- https://github.com/Candy-CY/Pytorch-garbage-classify
-- https://github.com/salesforce/LAVIS
-- https://pytorch.org/vision/stable/models/swin_transformer.html
-- https://huggingface.co/Qwen/Qwen3-VL-4B-Instruct
-- https://www.robots.ox.ac.uk/~vgg/data/pets/
-- https://www.kaggle.com/datasets/doctrinek/catbreedsrefined-7k
+| 方法 | 正确数量 | 准确率 |
+| --- | --- | --- |
+| 传统分类器 | 1292 / 1514 | 85.34% |
+| Qwen 品种分类 | 1317 / 1514 | 86.99% |
 
-Oxford与扩充图片按各自数据源许可使用；模型与代码遵循相应上游许可。开发和排查使用AI辅助，提交材料保留真实实验过程。
+这组 Qwen 评测采用 batch=4。逐图输出、各品种统计和训练记录保存在 `artifacts/optimization-v4`；原始1872张测试集上的传统分类器结果为1600张正确，准确率85.47%。
+
+## 常见问题
+
+- **提示模型文件不齐**：按照模型表核对 `weights`，补齐文件后重新启动。
+- **PyTorch 无法使用显卡**：核对 NVIDIA 驱动，并使用上面的 CUDA 12.8 安装命令安装 PyTorch。
+- **模型运行出错**：从终端和 `artifacts/run-logs` 查看错误，处理后重新启动服务。
+
+已有 Python 环境可以通过 `CATVISION_PYTHON` 指定解释器，或运行 `scripts/start.ps1 -PythonExe <python.exe路径>`。
+
+## 模型与数据来源
+
+检测与分割使用 [Ultralytics](https://github.com/ultralytics/ultralytics) 和 [SAM 2](https://github.com/facebookresearch/sam2)，分类器使用 [torchvision Swin Transformer](https://pytorch.org/vision/stable/models/swin_transformer.html)，视觉大模型为 [Qwen3-VL-4B-Instruct](https://huggingface.co/Qwen/Qwen3-VL-4B-Instruct)。
+
+训练图片来自 [Oxford-IIIT Pet](https://www.robots.ox.ac.uk/~vgg/data/pets/) 和 [CatBreedsRefined-7k 第2版](https://www.kaggle.com/datasets/doctrinek/catbreedsrefined-7k)。预训练模型和数据集按各自发布页所列许可使用。

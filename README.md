@@ -94,14 +94,6 @@ Linux 使用 Python 3.12 创建虚拟环境，将上述命令中的 `.venv/Scrip
 
 这组 Qwen 评测采用 batch=4。逐图输出、各品种统计和训练记录保存在 `artifacts/optimization-v4`；原始1872张测试集上的传统分类器结果为1600张正确，准确率85.47%。
 
-## 常见问题
-
-- **提示模型文件不齐**：按照模型表核对 `weights`，补齐文件后重新启动。
-- **PyTorch 无法使用显卡**：核对 NVIDIA 驱动，并使用上面的 CUDA 12.8 安装命令安装 PyTorch。
-- **模型运行出错**：从终端和 `artifacts/run-logs` 查看错误，处理后重新启动服务。
-
-已有 Python 环境可以通过 `CATVISION_PYTHON` 指定解释器，或运行 `scripts/start.ps1 -PythonExe <python.exe路径>`。
-
 ## 模型与数据来源
 
 检测与分割使用 [Ultralytics](https://github.com/ultralytics/ultralytics) 和 [SAM 2](https://github.com/facebookresearch/sam2)，分类器使用 [torchvision Swin Transformer](https://pytorch.org/vision/stable/models/swin_transformer.html)，视觉大模型为 [Qwen3-VL-4B-Instruct](https://huggingface.co/Qwen/Qwen3-VL-4B-Instruct)。

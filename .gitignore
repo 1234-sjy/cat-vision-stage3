@@ -43,3 +43,7 @@ runtime-*.log
 /artifacts/optimization-v3/shared-test/history/**/images/
 /artifacts/optimization-v3/parallel-diagnostic-runs/**/*.png
 /artifacts/stage3-live/raw/
+
+# Local course notes, reports and agent instructions.
+/AGENTS.md
+/docs/
